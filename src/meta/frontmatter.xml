@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<frontmatter xml:id="frontmatter" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <xi:include href="./titlepage.xml" />
+
+  <acknowledgement>
+    <p>
+        TODO thank people
+    </p>
+
+    <attribution>
+      <line>Steven Clontz</line>
+      <line>Mobile, AL</line>
+      <line>August 2020</line>
+      <line><email>steven.clontz@gmail.com</email></line>
+    </attribution>
+  </acknowledgement>
+  
+</frontmatter>
+

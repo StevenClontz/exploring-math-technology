@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="C-changing">
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="programming">
   	<title>Programming for Data Science and Mathematics</title>
   	<xi:include href="./01-jupyter.xml" />
 </chapter>
