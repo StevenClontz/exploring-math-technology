@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-changing-in-tandem">
+  	<title>Jupyter Notebooks and CoCalc</title>
+<!--  	<objectives>
+	  	<ul>
+	  		<li>
+	  			<p>
+	  				If we have two quantities that are changing in tandem, how can we connect the quantities and understand how change in one affects the other?
+	  			</p>
+	  		</li>
+	  		<li>
+	  			<p>
+	  				When the amount of water in a tank is changing, what behaviors can we observe?
+	  			</p>
+	  		</li>
+	  	</ul>
+  	</objectives>
+
+	<introduction>
+		<p>
+			Mathematics is the art of making sense of patterns.  One way that patterns arise is when two quantities are changing in tandem.  In this setting, we may make sense of the situation by expressing the relationship between the changing quantities through words, through images, through data, or through a formula.
+		</p>
+	</introduction>
+
+	<subsection xml:id="subsec-changing-tandem-graphs">
+		<title>Using Graphs to Represent Relationships</title>
+
+		<p>
+			In foobar, we saw how several changing quantities were related in the setting of an aquarium filling with water: time, the depth of the water, and the total amount of water in the tank are all changing, and any pair of these quantities changes in related ways.  One way that we can make sense of the situation is to record some data in a table.  For instance, observing that the tank is filling at a rate of <m>0.5</m> cubic feet per minute, this tells us that after <m>1</m> minute there will be <m>0.5</m> cubic feet of water in the tank, and after <m>2</m> minutes there will be <m>1</m> cubic foot of water in the tank, and so on.  If we let <m>t</m> denote the time in minutes and <m>V</m> the amount of water in the tank at time <m>t</m>, we can represent the relationship between these quantities through <xref ref="T-tandem-aquarium">Table</xref>.
+		</p>
+
+		<sidebyside widths="47% 47%" margins="0% 0%" valign="middle">
+
+			<table xml:id="T-tandem-aquarium">
+				<caption>Data for how the volume of water in the tank changes with time.</caption>
+				<tabular>
+				    <row bottom="minor">
+				      <cell><m>t</m></cell>
+				      <cell><m>V</m></cell>
+				    </row>
+				    <row>
+				      <cell><m>0</m></cell>
+				      <cell><m>0.0</m></cell>
+				    </row>
+				    <row>
+				      <cell><m>1</m></cell>
+				      <cell><m>0.5</m></cell>
+				    </row>
+				    <row>
+				      <cell><m>2</m></cell>
+				      <cell><m>1.0</m></cell>
+				    </row>
+				    <row>
+				      <cell><m>3</m></cell>
+				      <cell><m>1.5</m></cell>
+				    </row>
+				    <row>
+				      <cell><m>4</m></cell>
+				      <cell><m>2.0</m></cell>
+				    </row>
+				    <row>
+				      <cell><m>5</m></cell>
+				      <cell><m>2.5</m></cell>
+				    </row>				    
+				</tabular>
+			</table>			
+			<figure xml:id="F-tandem-Volume-time" >
+				<caption>A visual representation of the data in <xref ref="T-tandem-aquarium">Table</xref>.</caption>
+			</figure>
+		</sidebyside>
+    </subsection>-->
+</section>
+

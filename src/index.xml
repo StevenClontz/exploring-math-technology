@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
+
+	<!-- <xi:include href="./meta/bookinfo.xml" /> -->
+
+    <book>
+		<title>Mathematics of Data</title>
+
+		<!--<xi:include href="./meta/frontmatter.xml" />  -->
+
+        <!-- chapters -->
+        <xi:include href="./01-programming/index.xml" />
+
+        <!-- <xi:include href="./meta/backmatter.xml" /> -->
+    </book>
+
+</pretext>
+
