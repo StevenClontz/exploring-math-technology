@@ -10,7 +10,7 @@
         <xi:include href="./meta/frontmatter.xml" /> 
 
         <!-- chapters -->
-        <xi:include href="./01-programming/index.xml" />
+        <xi:include href="./01-programming/main.xml" />
 
         <xi:include href="./meta/backmatter.xml" />
     </book>
