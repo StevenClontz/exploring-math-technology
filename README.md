@@ -6,5 +6,5 @@ high school students.
 
 ```
 # from output folder
-xsltproc --xinclude ~/mathbook/xsl/pretext-html.xsl ../src/index.xml
+xsltproc --xinclude ~/mathbook/xsl/pretext-html.xsl ../source/main.xml
 ```
