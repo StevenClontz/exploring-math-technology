@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="programming-kernel">
+    <title>Programming Kernels and Languages</title>
+    <objectives>
+        <ul>
+            <li>
+                <p>
+What are some common programming languages used by mathematicians and data scientists?
+                </p>
+            </li>
+        </ul>
+    </objectives>
+
+<!--    <exploration>
+        <statement>
+            <p>
+Throughout this course, you will complete the activities from this text within
+Jupyter notebooks hosted on <url href="https://cocalc.com">CoCalc.com</url>, some
+individually, and some within groups.
+Your first activity is to set these Jupyter notebooks up for yourself!
+            </p>
+            <p>
+                <ol>
+                    <li>
+                        <p>
+First, either create an account at <url href="https://cocalc.com">CoCalc.com</url>,
+or log in with the account provided by your instructor.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+Go to <url href="#">TODO https://share.cocalc.com/share/d17525…</url>,
+and use the <q>Open in CoCalc</q> button to create
+a new project with your notebooks for the course.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+Open the <c>Settings</c> for this project, and add your instructor's account as a
+<c>Collaborator</c>. This allows them to see your work, and unlock the premium features
+required for this course (such as importing data from other websites to analyze).
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+Finally, navigate to the notebook associated with this activity. (You may need
+to select a <q>kernel</q> to open it; that choice is not important for now, so
+pick anything.) In the editable textbox
+appearing below this activity in the notebook, double-click to edit, erase any default content,
+and type the well-worn phrase of computing: <c>Hello World!</c>. Tap
+<kbd>Shift</kbd>+<kbd>Enter</kbd> to save your note.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </exploration>
+    <activity>
+        <introduction>
+            <p>
+Jupyter notebooks consist of <term>cells</term> that can include either writing or
+code. Let's explore how writing code in Jupyter works.
+            </p>
+        </introduction>
+        <task>
+            <p>
+To write and execute code, your notebook needs to have a <term>kernel</term>,
+that is, an associated programming language. Select a <code>Python 3</code> kernel from
+the notebook menu. (If there are multiple versions of Python 3 available,
+it doesn't matter which one you choose. Do not choose a Python 2 kernel, however.)
+            </p>
+            <p>
+Once you've done this, edit the contents of the below cell to read
+<c>import sys; sys.version</c> and hit <kbd>Shift</kbd>+<kbd>Enter</kbd>.
+            </p>
+        </task>
+        <task>
+            <p>
+Most likely, the result of entering the code
+<c>import sys; sys.version</c> into the above cell just make the text
+<q>import sys; sys.version</q> appear. This is because the editable
+cells in this notebook are set to <q>Markdown</q> mode by default, which is used
+for writing text, such as the paragraph you're currently reading.
+(If the above cell wasn't already in Markdown mode, use the menu
+to switch it to Markdown mode, so the output is simply
+<q>import sys; sys.version</q>.)
+            </p>
+            <p>
+Now enter <c>import sys; sys.version</c> into the below cell, and use the menu to switch
+the cell type to <q>Code</q>. Now using <kbd>Shift</kbd>+<kbd>Enter</kbd> should
+display something like <c>'3.6.9 (default, Apr 18 2020, 01:56:04) \n[GCC 8.4.0]'</c>,
+the version of the Python kernel you selected.
+            </p>
+        </task>
+        <task>
+            <p>
+Each task in these notebooks includes a single editable Markdown cell by default.
+However, you may add as many Markdown and Code cells as you like by clicking above or below
+an existing cell.
+            </p>
+            <p>
+Enter <c>The value of 1+1 is:</c> into the below Markdown cell. Then
+create a Code cell below it with the contents <c>1+1</c> to calculate the result.
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+Jupyter notebooks provide a convenient interface for communiating mathematics
+and data science. The Jupyter server CoCalc.com also provides access to a full Linux
+environment, which you can access from your browser without installing anything on
+your computer.
+            </p>
+        </introduction>
+        <task>
+            <p>
+To access the Linux command-line interface, go to <q>Files</q> and create a new
+<q>Terminal</q> file.
+            </p>
+            <p>
+We can use the Linux command-line program <c>cat</c> to display information about
+the version of Linux being run, which is stored in the file <c>/etc/os-release</c>.
+To do this, enter <c>cat /etc/os-release</c> in your terminal. Copy and paste the
+results (which should include a line such as
+<c>PRETTY_NAME="Ubuntu 18.04.4 LTS"</c>) into the below cell. (It's okay
+if the line breaks pasted from the terminal don't appear in the output below;
+we will explore Markdown formatting in a later activity.)
+            </p>
+        </task>
+        <task>
+            <p>
+You can upload any files you need to CoCalc, which can then be used by your notebooks.
+Use a search engine to find an image of a <q>Klein bottle</q> on the internet. Download
+a copy of this image to your computer. Using the <q>New</q> menu option in CoCalc,
+upload a copy of this image to the server, in the same folder as this notebook's
+file.
+            </p>
+            <p>
+Make this image display in the below Markdown cell by entering
+<c>![Klein bottle](image.png)</c>, replacing <c>image.png</c>
+with the filename of the image you uploaded. (The text <c>Klein bottle</c> is used
+to describe the image in case it doesn't load, or for those using a screen reader.)
+            </p>
+        </task>
+        <task>
+            <p>
+Now create a new file called <c>data.csv</c> in the same folder as this notebook.
+Copy-paste the text from <xref ref="programming-jupyter-tempdata"/> into this
+new file to save a <term>Comma-Separated Values spreadsheet</term>.
+            </p>
+            <listing xml:id="programming-jupyter-tempdata">
+                <p><cd>Time,TempInF
+8:00,74
+9:00,78
+10:00,82
+11:00,85
+12:00,88
+13:00,89
+14:00,90
+15:00,91
+16:00,89
+17:00,88</cd></p>
+            </listing>
+            <p>
+Then copy-paste the text from <xref ref="programming-jupyter-use-tempdata"/> into
+a Code cell below to use this data in a Python 3 script to display the temperatures
+in Celcius.
+            </p>
+            <listing xml:id="programming-jupyter-use-tempdata">
+                <p><cd>import csv
+with open("data.csv", "r") as csv_file:
+    rows = csv.DictReader(csv_file, delimiter=',')
+    for row in rows:
+        temp = format((float(row["TempInF"])-32)*5/9, '.2f')
+        print("The temperature at "+row["Time"]+" is "+temp+" degrees Celcius.")</cd></p>
+            </listing>
+        </task>
+    </activity>
+    <exercises>
+        <exercise>
+            <p>Foo</p>
+        </exercise>
+    </exercises>-->
+</section>
+
