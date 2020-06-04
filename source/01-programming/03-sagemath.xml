@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="programming-python">
-    <title>The Python Kernel</title>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="programming-sagemath">
+    <title>The SageMath Kernel</title>
     <objectives>
         <ul>
             <li>
@@ -202,6 +202,9 @@ suggesting how <c>^</c> might be useful in order to tell when two variables in m
     </activity>
     <activity>
         <p>(exploration of <m>0.1+0.2</m>)</p>
+    </activity>
+    <activity>
+        <p>(exploration of SageMath)</p>
     </activity>
 </section>
 

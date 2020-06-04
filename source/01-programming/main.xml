@@ -3,5 +3,6 @@
   	<title>Programming for Data Science and Mathematics</title>
   	<xi:include href="./01-jupyter.xml" />
   	<xi:include href="./02-kernel.xml" />
+  	<xi:include href="./03-sagemath.xml" />
 </chapter>
 
