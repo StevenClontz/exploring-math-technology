@@ -15,196 +15,26 @@ TODO
     <exploration>
         <introduction>
             <p>
-Use a <c>Python 3</c> kernel for these tasks.
+                TODO
             </p>
         </introduction>
         <task>
             <p>
-Use a Code cell to compute <m>95+87</m>.
-            </p>
-        </task>
-        <task>
-            <p>
-Use a Code cell to compute <m>11(12)</m>.
-            </p>
-            <p>
-If you get a <c>TypeError</c>, use the <c>*</c> operator to do
-the multiplication instead.
-            </p>
-        </task>
-        <task>
-            <p>
-Use two Code cells to evaulate <c>7/3</c> and <c>7//3</c>.
-            </p>
-            <p>
-Try using <c>/</c>
-and <c>//</c> with other numbers to explore.
-Then use a Markdown cell to write a sentence or two explaining
-how these results are different. 
-            </p>
-        </task>
-        <task>
-            <p>
-Evaluate the expressions <c>6**2</c> and <c>6^2</c>.
-            </p>
-            <p>
-Experiment using <c>**</c> and <c>^</c> with other numbers as well.
-Then write a sentence or two explaining how these expressions might
-have been interpreted by the computer.
-            </p>
-        </task>
-        <task>
-            <p>
-Evaluate the expression <c>1/10 + 1/5</c>.
-            </p>
-            <p>
-Wirte a sentence explaining why this result might be surprising.
+                TODO
             </p>
         </task>
     </exploration>
     <activity>
         <introduction>
             <p>
-Use a <c>Python 3</c> kernel and
-the addition <c>+</c>, subtraction <c>-</c>, multiplication <c>*</c>,
-division <c>/</c>, and exponentiation <c>**</c> operators to evaluate
-the following mathematical expressions. Then check your result by computing
-each expression's value by hand.
+                TODO
             </p>
         </introduction>
         <task>
             <p>
-                <me>4-3(7)</me>
+                TODO
             </p>
          </task>
-        <task>
-            <p>
-                <me>3^2+4^2</me>
-            </p>
-        </task>
-        <task>
-            <p>
-Use parentheses, <c>(</c> and <c>)</c>, to group expressions within
-more complicated expressions as necessary.
-            </p>
-            <p>
-                <me>\frac{2^{7-5}+7}{3\times(1+4)}</me>
-            </p>
-        </task>
-    </activity>
-    <activity>
-        <introduction>
-            <p>
-Computers generally store numerical data using <term>binary</term>:
-sequences of <m>0</m>s and <m>1</m>s.
-            </p>
-            <p>
-Just like <term>decimal</term> numbers describe values in terms of powers of
-ten, binary numbers describe values using powers of two.
-            </p>
-            <p>
-                <md>
-                    <mrow>
-125 \amp= 1\times 100 + 2\times 10 + 5\times 1
-                    </mrow>
-                    <mrow>
-\amp= 1\times 10^2 + 2\times 10^1+ 5\times 10^0
-                    </mrow>
-                    <mrow>
-\amp= 1\times 64 + 1\times 32 + 1\times 16 + 1\times 8 + 1\times 4 + 0\times 2 + 1\times 1
-                    </mrow>
-                    <mrow>
-\amp= 1\times 2^6 + 1\times 2^5 + 1\times 2^4 + 1\times 2^3 + 1\times 2^2 + 0\times 2^1 + 1\times 2^0
-                    </mrow>
-                    <mrow>
-\amp= 1111101_2
-                    </mrow>
-                </md>
-            </p>
-            <p>
-Use <c>format(n,"b")</c> to have Python display the binary form of each of the following
-positive integers (replacing <c>n</c> with the value of each integer). Then check that
-the binary form is valid by adding up appropriate powers of two as shown above.
-            </p>
-        </introduction>
-        <task>
-            <p>
-                <m>28</m>
-            </p>
-        </task>
-        <task>
-            <p>
-                <m>63</m>
-            </p>
-        </task>
-        <task>
-            <p>
-                <m>493</m>
-            </p>
-        </task>
-        <task>
-            <p>
-                <m>1000</m>
-            </p>
-        </task>
-        <task>
-            <p>
-Considering that <m>2^{-1}=\frac{1}{2}=0.5</m> and <m>2^{-2}=\frac{1}{4}=0.25</m>,
-how might <m>6.75</m> be expressed as a binary number?
-            </p>
-        </task>
-    </activity>
-    <activity>
-        <introduction>
-            <p>
-While <c>10^3</c> in writing might seem to refer to the number <m>10^3=1000</m>,
-in many programming languages such as Python 3, the caret <c>^</c> instead refers to the
-<term>bitwise XOR</term> operation,
-which can be evaluated by hand using a variation of long addition on the
-binary form of each number.
-            </p>
-            <p>
-                <me>
-10 \hat{} 3 = 1010_2  \hat{} 0011_2
-                </me>
-            </p>
-            <p>
-                <me>
-\begin{array}{r}
-1010_2\\\verb|^|\hspace{1em}
-0011_2\\\hline
-1001_2
-\end{array}
-                </me>
-            </p>
-            <p>
-Therefore <m>10\hat{} 3=1001_2=9</m>.
-            </p>
-        </introduction>
-        <task>
-            <p>
-Based on the above example, write a sentence guessing how the
-<c>^</c> operation works.
-            </p>
-        </task>
-        <task>
-            <p>
-Test your rule by using it with a few combinations of small numbers (less than 16),
-using <c>format(n,'b')</c> and <c>x^y</c> in Code cells to help you as needed.
-            </p>
-        </task>
-        <task>
-            <p>
-The <c>^</c> operation can be performed very efficiently by computers. Write a sentence
-suggesting how <c>^</c> might be useful in order to tell when two variables in memory have the same value.
-            </p>
-        </task>
-    </activity>
-    <activity>
-        <p>(exploration of <m>0.1+0.2</m>)</p>
-    </activity>
-    <activity>
-        <p>(exploration of SageMath)</p>
     </activity>
 </section>
 
