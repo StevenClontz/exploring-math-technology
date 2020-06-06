@@ -4,7 +4,8 @@ Textbook/activities for an introduction to using technology
 for exploring mathematics and data science, appropriate for
 high school students.
 
+To build HTML:
+
 ```
-# from output folder
-xsltproc --xinclude ~/mathbook/xsl/pretext-html.xsl ../source/main.xml
+(cd output/html ; xsltproc --xinclude ~/mathbook/xsl/pretext-html.xsl ../../source/main.xml)
 ```
