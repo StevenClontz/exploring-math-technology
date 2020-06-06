@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <frontmatter xml:id="frontmatter" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <xi:include href="./titlepage.xml" />
+    <xi:include href="./titlepage.ptx" />
 
   <acknowledgement>
     <p>

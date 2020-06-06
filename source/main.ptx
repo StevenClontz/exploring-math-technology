@@ -2,17 +2,17 @@
 
 <pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
 
-    <xi:include href="./meta/bookinfo.xml" />
+    <xi:include href="./meta/bookinfo.ptx" />
 
     <book>
         <title>Mathematics of Data</title>
 
-        <xi:include href="./meta/frontmatter.xml" /> 
+        <xi:include href="./meta/frontmatter.ptx" /> 
 
         <!-- chapters -->
-        <xi:include href="./01-programming/main.xml" />
+        <xi:include href="./01-programming/main.ptx" />
 
-        <xi:include href="./meta/backmatter.xml" />
+        <xi:include href="./meta/backmatter.ptx" />
     </book>
 
 </pretext>

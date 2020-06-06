@@ -7,5 +7,5 @@ high school students.
 To build HTML:
 
 ```
-(cd output/html ; xsltproc --xinclude ~/mathbook/xsl/pretext-html.xsl ../../source/main.xml)
+(cd output/html ; xsltproc --xinclude ~/mathbook/xsl/pretext-html.xsl ../../source/main.ptx)
 ```
