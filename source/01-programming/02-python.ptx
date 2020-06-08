@@ -195,8 +195,9 @@ using <c>format(n,'b')</c> and <c>x^y</c> in Code cells to help you as needed.
         </task>
         <task>
             <p>
-The <c>^</c> operation can be performed very efficiently by computers. Write a sentence
-suggesting how <c>^</c> might be useful in order to tell when two variables in memory have the same value.
+What happens to <c>42</c> if you apply <c>^11</c> to it twice, as in <c>42^11^11</c>?
+Is there anything special about the numbers <m>42</m> or <m>11</m> that made this happen?
+Write a short paragraph on how this effect might be used to create a simple encryption.
             </p>
         </task>
     </activity>
