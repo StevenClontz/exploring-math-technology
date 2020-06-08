@@ -35,7 +35,7 @@
      "cell_type": "markdown",
      "metadata": {
       "collapsed": false,
-      "editable": <xsl:choose><xsl:when test="$editable"><xsl:value-of select="normalize-space($editable)"/></xsl:when><xsl:otherwise>false</xsl:otherwise></xsl:choose>
+      "editable": <xsl:choose><xsl:when test="$editable"><xsl:value-of select="$editable"/></xsl:when><xsl:otherwise>false</xsl:otherwise></xsl:choose>
      },
     "source":
     <xsl:choose>
@@ -43,7 +43,7 @@
         "&lt;div class=\"editable\" style=\"<xsl:call-template name="css-editable"/>\"&gt;Enter your response/code here.&lt;/div&gt;"
       </xsl:when>
       <xsl:otherwise>
-        "&lt;div class=\"not-editable\" style=\"<xsl:call-template name="css-not-editable"/>\"&gt;\n\n<xsl:call-template name="escape-json-string"><xsl:with-param name="text" select="normalize-space($source)"/></xsl:call-template>\n\n&lt;/div&gt;"
+        "&lt;div class=\"not-editable\" style=\"<xsl:call-template name="css-not-editable"/>\"&gt;\n\n<xsl:call-template name="escape-json-string"><xsl:with-param name="text" select="$source"/></xsl:call-template>\n\n&lt;/div&gt;"
       </xsl:otherwise>
     </xsl:choose>
     }
@@ -127,7 +127,7 @@
     ]}
   </xsl:template>
   <xsl:template match="section" mode="url">
-    https://activecalculus.org/prelude/<xsl:value-of select="./@xml:id"/>.html
+    https://TODO/<xsl:value-of select="./@xml:id"/>.html
   </xsl:template>
   <xsl:template match="section" mode="link">
     &lt;a href="<xsl:apply-templates select="." mode="url"/>"&gt;<xsl:apply-templates select="." mode="url"/>&lt;/a&gt;
@@ -161,7 +161,7 @@
           <xsl:apply-templates select="*"/>
         </xsl:otherwise>
       </xsl:choose>
-      <xsl:if test="not(.//ol[@label='a.'])">
+      <xsl:if test="not(.//task)">
         <xsl:call-template name="jupyter-cell">
           <xsl:with-param name="editable">true</xsl:with-param>
         </xsl:call-template>
@@ -178,26 +178,8 @@
     Activity <xsl:apply-templates select="." mode="number"/>
   </xsl:template>
 
-  <xsl:template match="statement">
+  <xsl:template match="statement|introduction">
     <xsl:apply-templates select="*"/>
-  </xsl:template>
-
-  <xsl:template match="p">
-    <xsl:choose>
-      <xsl:when test="text()[normalize-space()]">
-        <xsl:call-template name="jupyter-cell">
-          <xsl:with-param name="source">
-            <xsl:apply-templates select="." mode="markdown"/>
-          </xsl:with-param>
-        </xsl:call-template>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:apply-templates select="*"/>
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
-  <xsl:template match="p" mode="markdown">
-    &lt;span&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/span&gt;
   </xsl:template>
 
   <xsl:template match="sidebyside">
@@ -210,45 +192,20 @@
     </xsl:call-template>
   </xsl:template>
 
-  <xsl:template match="ol|ul">
-    <xsl:apply-templates select="*"/>
-  </xsl:template>
-  <xsl:template match="ol" mode="markdown">
-    &lt;ol&gt;<xsl:apply-templates select="li" mode="markdown"/>&lt;/ol&gt;
-  </xsl:template>
-  <xsl:template match="ul" mode="markdown">
-    &lt;ul&gt;<xsl:apply-templates select="li" mode="markdown"/>&lt;/ul&gt;
-  </xsl:template>
-
-  <xsl:template match="li">
-    <xsl:choose>
-      <xsl:when test="p">
-        <xsl:call-template name="jupyter-cell">
-          <xsl:with-param name="source">
-            &lt;b&gt;<xsl:number format="a. "/>&lt;/b&gt;
-            <xsl:apply-templates select="*[position()=1]" mode="markdown"/>
-          </xsl:with-param>
-        </xsl:call-template>
-        <xsl:apply-templates select="*[position()>1]"/>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:call-template name="jupyter-cell">
-          <xsl:with-param name="source">
-            &lt;b&gt;<xsl:number format="a. "/>&lt;/b&gt; 
-            <xsl:apply-templates select="*|text()" mode="markdown"/>
-          </xsl:with-param>
-        </xsl:call-template>
-      </xsl:otherwise>
-    </xsl:choose>
+  <xsl:template match="task">
+    <xsl:call-template name="jupyter-cell">
+      <xsl:with-param name="source">
+        &lt;div&gt;&lt;b&gt;<xsl:number format="a. "/>&lt;/b&gt;&lt;/div&gt;
+        <xsl:apply-templates select="*[position()=1]" mode="markdown"/>
+      </xsl:with-param>
+    </xsl:call-template>
+    <xsl:apply-templates select="*[position()>1]"/>
     <xsl:call-template name="jupyter-cell">
       <xsl:with-param name="editable">true</xsl:with-param>
     </xsl:call-template>
   </xsl:template>
-  <xsl:template match="li" mode="markdown">
-    &lt;li&gt;<xsl:apply-templates select="*|text()" mode="markdown"/>&lt;/li&gt;
-  </xsl:template>
 
-  <xsl:template match="image|figure|table|tabular">
+  <xsl:template match="image|figure|table|tabular|listing|ol|ul|p">
     <xsl:call-template name="jupyter-cell">
       <xsl:with-param name="source">
         <xsl:apply-templates select="." mode="markdown"/>
@@ -271,6 +228,10 @@
   <xsl:template match="tabular" mode="markdown">
     &lt;div&gt;&lt;table&gt;<xsl:apply-templates select="row" mode="markdown"/>&lt;/table&gt;&lt;/div&gt;
   </xsl:template>
+  <xsl:template match="listing" mode="markdown">
+    &lt;div&gt;&lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt;&lt;/div&gt;
+    &lt;div&gt;<xsl:apply-templates select="*" mode="markdown"/>&lt;/div&gt;
+  </xsl:template>
 
   <xsl:template match="row" mode="markdown">
     &lt;tr&gt;<xsl:apply-templates select="cell" mode="markdown"/>&lt;/tr&gt;
@@ -280,15 +241,31 @@
 
   <xsl:template match="fn" mode="markdown"> &lt;span class="fn" style="<xsl:call-template name="css-fn"/>"&gt;(<xsl:apply-templates select="text()|*" mode="markdown"/>)&lt;/span&gt; </xsl:template>
   <xsl:template match="q" mode="markdown">"<xsl:apply-templates select="text()|*" mode="markdown"/>"</xsl:template>
-  <xsl:template match="m" mode="markdown">\(<xsl:apply-templates select="text()|*" mode="markdown"/>\)</xsl:template>
-  <xsl:template match="me" mode="markdown">\[<xsl:apply-templates select="text()|*" mode="markdown"/>\]</xsl:template>
+  <xsl:template match="m" mode="markdown">\(<xsl:value-of select="normalize-space(text())"/>\)</xsl:template>
+  <xsl:template match="me" mode="markdown">\[<xsl:value-of select="normalize-space(text())"/>\]</xsl:template>
   <xsl:template match="md" mode="markdown">\[\begin{align*}<xsl:apply-templates select="mrow" mode="markdown"/>\end{align*}\]</xsl:template>
-  <xsl:template match="mrow" mode="markdown"><xsl:apply-templates select="text()" mode="markdown"/>\\</xsl:template>
+  <xsl:template match="cd" mode="markdown">&lt;pre&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/pre&gt;</xsl:template>
+  <xsl:template match="c" mode="markdown">&lt;tt&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/tt&gt;</xsl:template>
+  <xsl:template match="mrow" mode="markdown"><xsl:value-of select="normalize-space(text())"/>\\</xsl:template>
   <xsl:template match="caption" mode="markdown"><xsl:apply-templates select="text()|*" mode="markdown"/></xsl:template>
   <xsl:template match="fillin" mode="markdown">&lt;span class="fillin" style="<xsl:call-template name="css-fillin"/>"&gt;&lt;/span&gt;</xsl:template>
-  
-  <xsl:template match="table|figure|definition|example" mode="number">
-    <xsl:apply-templates select="./ancestor::section" mode="number"/>.<xsl:number from="//section" level="any" count="table|figure|definition|example"/>
+
+  <xsl:template match="ol" mode="markdown">
+    &lt;ol&gt;<xsl:apply-templates select="li" mode="markdown"/>&lt;/ol&gt;
+  </xsl:template>
+  <xsl:template match="ul" mode="markdown">
+    &lt;ul&gt;<xsl:apply-templates select="li" mode="markdown"/>&lt;/ul&gt;
+  </xsl:template>
+  <xsl:template match="li" mode="markdown">
+    &lt;li&gt;<xsl:apply-templates select="*|text()" mode="markdown"/>&lt;/li&gt;
+  </xsl:template>
+  <xsl:template match="p" mode="markdown">
+    &lt;span&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/span&gt;
+  </xsl:template>
+
+
+  <xsl:template match="table|figure|listing|definition|example" mode="number">
+    <xsl:apply-templates select="./ancestor::section" mode="number"/>.<xsl:number from="//section" level="any" count="table|figure|listing|definition|example"/>
   </xsl:template>
   <xsl:template match="table" mode="name">
     Table <xsl:apply-templates select="." mode="number"/>
@@ -301,6 +278,9 @@
   </xsl:template>
   <xsl:template match="example" mode="name">
     Example <xsl:apply-templates select="." mode="number"/>
+  </xsl:template>
+  <xsl:template match="listing" mode="name">
+    Listing <xsl:apply-templates select="." mode="number"/>
   </xsl:template>
 
   <xsl:template match="xref" mode="markdown"><xsl:apply-templates select="//*[@xml:id=current()/@ref]" mode="name"/></xsl:template>
