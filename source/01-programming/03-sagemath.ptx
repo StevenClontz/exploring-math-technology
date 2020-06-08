@@ -12,27 +12,68 @@ TODO
         </ul>
     </objectives>
 
-    <exploration>
+    <exploration xml:id="programming-sagemath-preview">
         <introduction>
             <p>
-                TODO
+Many of the features of the Python language/kernel are optimized for computational
+efficiency, such as using binary approximations of fractions. This is valuable for
+applications like data science, but for studying mathematics itself we will
+find it useful to have another kernel available to more precisely model things.
             </p>
         </introduction>
         <task>
             <p>
-                TODO
+Use the latest <c>SageMath</c> kernel to confirm that <c>6^2</c> and
+<c>6**2</c> are both equal to <m>36</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+Confirm that <c>1/10+1/5</c> equals exactly <m>\frac{3}{10}</m> in SageMath.
+            </p>
+        </task>
+        <task>
+            <p>
+Finally, use <c>show( (x+1)^3 == ((x+1)^3).full_simplify() )</c> to confirm the
+algebraic formula <m>(x+1)^3=x^3+3x^2+3x+1</m>.
             </p>
         </task>
     </exploration>
     <activity>
         <introduction>
             <p>
-                TODO
+SageMath is a mathematical software system designed for representing ideas
+from mathematics as faithfully as possible.
             </p>
         </introduction>
         <task>
             <p>
-                TODO
+Several important numbers in mathematics may be used in SageMath with <c>pi</c>
+for the circular constant <m>\pi</m>, <c>e</c> for the natural number <m>e</m>,
+and <c>i</c> for the imaginary unit <m>i</m>. (Don't worry if you aren't familiar
+with these yet.)
+            </p>
+            <p>
+Check to see what Sage gives as the value of <m>e^{i\pi}+1</m>.
+            </p>
+         </task>
+        <task>
+            <p>
+SageMath won't approximate any values unless asked. You can check this by typing <c>pi^2</c>
+and <c>e^3</c>. To make them appear with mathematical formatting as <m>\pi^2</m>
+and <m>e^3</m>, use the <c>show()</c> syntax
+like you did in <xref ref="programming-sagemath-preview"/>.
+            </p>
+         </task>
+        <task>
+            <p>
+If an approximation is desired, the numerical approximation tool <c>n</c> may be used.
+Find an approximate value for <m>\sqrt{2}</m> by using <c>sqrt(2).n(digits=10)</c>.
+            </p>
+         </task>
+        <task>
+            <p>
+Which is bigger: <m>\pi^e</m> or <m>e^\pi</m>?
             </p>
          </task>
     </activity>
