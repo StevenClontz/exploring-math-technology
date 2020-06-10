@@ -217,12 +217,12 @@
   </xsl:template>
   <xsl:template match="figure" mode="markdown">
     &lt;div&gt;&lt;figure&gt;&lt;figcaption style="<xsl:call-template name="css-figcaption"/>"&gt;
-      &lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption" mode="markdown"/>
+      &lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption|title" mode="markdown"/>
     &lt;/figcaption&gt;<xsl:apply-templates select="image" mode="markdown"/>&lt;/figure&gt;&lt;/div&gt;
   </xsl:template>
   <xsl:template match="table" mode="markdown">
     &lt;div&gt;&lt;table&gt;&lt;caption style="<xsl:call-template name="css-caption"/>"&gt;
-      &lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption" mode="markdown"/>
+      &lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption|title" mode="markdown"/>
     &lt;/caption&gt;<xsl:apply-templates select="tabular/row" mode="markdown"/>&lt;/table&gt;&lt;/div&gt;
   </xsl:template>
   <xsl:template match="tabular" mode="markdown">
@@ -247,7 +247,7 @@
   <xsl:template match="cd" mode="markdown">&lt;pre&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/pre&gt;</xsl:template>
   <xsl:template match="c" mode="markdown">&lt;tt&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/tt&gt;</xsl:template>
   <xsl:template match="mrow" mode="markdown"><xsl:value-of select="normalize-space(text())"/>\\</xsl:template>
-  <xsl:template match="caption" mode="markdown"><xsl:apply-templates select="text()|*" mode="markdown"/></xsl:template>
+  <xsl:template match="caption|title" mode="markdown"><xsl:apply-templates select="text()|*" mode="markdown"/></xsl:template>
   <xsl:template match="fillin" mode="markdown">&lt;span class="fillin" style="<xsl:call-template name="css-fillin"/>"&gt;&lt;/span&gt;</xsl:template>
 
   <xsl:template match="ol" mode="markdown">

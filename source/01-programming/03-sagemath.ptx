@@ -24,7 +24,7 @@ find it useful to have another kernel available to more precisely model things.
         <task>
             <p>
 Use the latest <c>SageMath</c> kernel to confirm that <c>6^2</c> and
-<c>6**2</c> are both equal to <m>36</m>.
+<c>6**2</c> both represent <m>6^2=36</m>.
             </p>
         </task>
         <task>
@@ -76,6 +76,55 @@ Find an approximate value for <m>\sqrt{2}</m> by using <c>sqrt(2).n(digits=10)</
 Which is bigger: <m>\pi^e</m> or <m>e^\pi</m>?
             </p>
          </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+The term <term>variable</term> means slightly differen things in computer science and mathematics.
+In computer science, variables are used to store and retrieve
+data within an application. In mathematics, variables are used to represent an
+arbitrary or unknown value of data within a statement.
+            </p>
+            <p>
+These two concepts are related, but not exactly the same. Since SageMath is built upon Python,
+it provides support for both <term>CS variables</term> and <term>math variables</term>.
+            </p>
+        </introduction>
+        <task>
+            <p>
+To assign a value to a CS variable, the <term>assignment operator</term> <c>=</c> is used.
+It's considered best practice to give CS variables long descriptive names such as
+<c>temperature_in_room</c>.
+            </p>
+            <p>
+For each member of your group, use a code cell to assign a CS variable storing the day of the
+month each person was born.
+An example is given in <xref ref="programming-sagemath-bdays"/>;
+note that only a single Code cell is necessary, but each assignment should be made on a separate line.
+            </p>
+            <sidebyside>
+                <table>
+                    <title>Birthdays for the author's immediate family.</title>
+                    <tabular>
+                        <row><cell>Name</cell><cell>Birthday</cell></row>
+                        <row><cell>Craig</cell><cell>Oct 01</cell></row>
+                        <row><cell>Laura</cell><cell>Dec 30</cell></row>
+                        <row><cell>Phillip</cell><cell>Jul 18</cell></row>
+                        <row><cell>Sherill</cell><cell>Nov 03</cell></row>
+                        <row><cell>Steven</cell><cell>Jul 22</cell></row>
+                    </tabular>
+                </table>
+                <listing xml:id="programming-sagemath-bdays">
+                    <caption>Corresponding variable assignments</caption>
+                    <p><cd>craig_birthday = 1
+laura_birthday = 30
+phillip_birthday = 18
+sherill_birthday = 3
+steven_birthday = 22</cd></p>
+                </listing>
+            </sidebyside>
+        </task>
+        <task><p>foo</p></task>
     </activity>
 </section>
 
