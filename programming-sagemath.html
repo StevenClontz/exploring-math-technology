@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-10T02:11:09Z    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MoD The SageMath Kernel</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Mathematics of Data</span></a></h1>
+<p class="byline">Steven Clontz</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="programming-python.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="programming.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="programming-python.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="programming.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul><li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li></ul>
+</li>
+<li class="link">
+<a href="programming.html" data-scroll="programming"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
+<li><a href="programming-jupyter.html" data-scroll="programming-jupyter">Jupyter Notebooks and CoCalc</a></li>
+<li><a href="programming-python.html" data-scroll="programming-python">The Python Kernel</a></li>
+<li><a href="programming-sagemath.html" data-scroll="programming-sagemath" class="active">The SageMath Kernel</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="programming-sagemath"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">The SageMath Kernel</span>
+</h2>
+<article class="objectives goal-like" id="objectives-3"><h6 class="heading"><span class="type">Motivating Questions</span></h6>
+<ul class="disc"><li id="li-8"><p id="p-67">TODO</p></li></ul></article><article class="exploration project-like" id="programming-sagemath-preview"><h6 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-8"><p id="p-68">Many of the features of the Python language/kernel are optimized for computational efficiency, such as using binary approximations of fractions. This is valuable for applications like data science, but for studying mathematics itself we will find it useful to have another kernel available to more precisely model things.</p></div>
+<article class="task exercise-like" id="task-27"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-69">Use the latest <code class="code-inline tex2jax_ignore">SageMath</code> kernel to confirm that <code class="code-inline tex2jax_ignore">6^2</code> and <code class="code-inline tex2jax_ignore">6**2</code> both represent \(6^2=36\text{.}\)</p></article><article class="task exercise-like" id="task-28"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-70">Confirm that <code class="code-inline tex2jax_ignore">1/10+1/5</code> equals exactly \(\frac{3}{10}\) in SageMath.</p></article><article class="task exercise-like" id="task-29"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-71">Finally, use <code class="code-inline tex2jax_ignore">show( (x+1)^3 == ((x+1)^3).full_simplify() )</code> to confirm the algebraic formula \((x+1)^3=x^3+3x^2+3x+1\text{.}\)</p></article></article><article class="activity project-like" id="activity-7"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-9"><p id="p-72">SageMath is a mathematical software system designed for representing ideas from mathematics as faithfully as possible.</p></div>
+<article class="task exercise-like" id="task-30"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-73">Several important numbers in mathematics may be used in SageMath with <code class="code-inline tex2jax_ignore">pi</code> for the circular constant \(\pi\text{,}\) <code class="code-inline tex2jax_ignore">e</code> for the natural number \(e\text{,}\) and <code class="code-inline tex2jax_ignore">i</code> for the imaginary unit \(i\text{.}\) (Don't worry if you aren't familiar with these yet.)</p>
+<p id="p-74">Check to see what Sage gives as the value of \(e^{i\pi}+1\text{.}\)</p></article><article class="task exercise-like" id="task-31"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-75">SageMath won't approximate any values unless asked. You can check this by typing <code class="code-inline tex2jax_ignore">pi^2</code> and <code class="code-inline tex2jax_ignore">e^3</code>. To make them appear with mathematical formatting as \(\pi^2\) and \(e^3\text{,}\) use the <code class="code-inline tex2jax_ignore">show()</code> syntax like you did in <a class="xref" data-knowl="./knowl/programming-sagemath-preview.html" title="Preview Activity 1.3.1">1.3.1</a>.</p></article><article class="task exercise-like" id="task-32"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-76">If an approximation is desired, the numerical approximation tool <code class="code-inline tex2jax_ignore">n</code> may be used. Find an approximate value for \(\sqrt{2}\) by using <code class="code-inline tex2jax_ignore">sqrt(2).n(digits=10)</code>.</p></article><article class="task exercise-like" id="task-33"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-77">Which is bigger: \(\pi^e\) or \(e^\pi\text{?}\)</p></article></article><article class="activity project-like" id="activity-8"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-10">
+<p id="p-78">The term <dfn class="terminology">variable</dfn> means slightly differen things in computer science and mathematics. In computer science, variables are used to store and retrieve data within an application. In mathematics, variables are used to represent an arbitrary or unknown value of data within a statement.</p>
+<p id="p-79">These two concepts are related, but not exactly the same. Since SageMath is built upon Python, it provides support for both <dfn class="terminology">CS variables</dfn> and <dfn class="terminology">math variables</dfn>.</p>
+</div>
+<article class="task exercise-like" id="task-34"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-80">To assign a value to a CS variable, the <dfn class="terminology">assignment operator</dfn> <code class="code-inline tex2jax_ignore">=</code> is used. It's considered best practice to give CS variables long descriptive names such as <code class="code-inline tex2jax_ignore">temperature_in_room</code>.</p>
+<p id="p-81">For each member of your group, use a code cell to assign a CS variable storing the day of the month each person was born. An example is given in <a class="xref" data-knowl="./knowl/programming-sagemath-bdays.html" title="Listing 1.3.2">1.3.2</a>; note that only a single Code cell is necessary, but each assignment should be made on a separate line.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel fixed-width" style="width:50%;justify-content:flex-start;"><figure class="table table-like" id="table-1"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.3.1<span class="period">.</span></span><span class="space"> </span>Birthdays for the author's immediate family.</figcaption><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Name</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Birthday</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Craig</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Oct 01</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Laura</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Dec 30</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Phillip</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Jul 18</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Sherill</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Nov 03</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Steven</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Jul 22</td>
+</tr>
+</table></figure></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="programming-sagemath-bdays"><pre class="code-block tex2jax_ignore" id="p-82">craig_birthday = 1
+laura_birthday = 30
+phillip_birthday = 18
+sherill_birthday = 3
+steven_birthday = 22</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.3.2<span class="period">.</span></span><span class="space"> </span>Corresponding variable assignments</figcaption></figure></div>
+</div></div></article><article class="task exercise-like" id="task-35"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-83">foo</p></article></article></section></div></main>
+</div>
+</body>
+</html>
