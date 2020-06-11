@@ -34,7 +34,7 @@ Confirm that <c>1/10+1/5</c> equals exactly <m>\frac{3}{10}</m> in SageMath.
         </task>
         <task>
             <p>
-Finally, use <c>show( (x+1)^3 == ((x+1)^3).full_simplify() )</c> to confirm the
+Finally, use <c>show( (x+1)^3 == ((x+1)^3).full_simplify() )</c> to display the
 algebraic formula <m>(x+1)^3=x^3+3x^2+3x+1</m>.
             </p>
         </task>
@@ -77,10 +77,10 @@ Which is bigger: <m>\pi^e</m> or <m>e^\pi</m>?
             </p>
          </task>
     </activity>
-    <activity>
+    <activity xml:id="programming-sagemath-csvars">
         <introduction>
             <p>
-The term <term>variable</term> means slightly differen things in computer science and mathematics.
+The term <term>variable</term> means slightly different things in computer science and mathematics.
 In computer science, variables are used to store and retrieve
 data within an application. In mathematics, variables are used to represent an
 arbitrary or unknown value of data within a statement.
@@ -97,34 +97,90 @@ It's considered best practice to give CS variables long descriptive names such a
 <c>temperature_in_room</c>.
             </p>
             <p>
-For each member of your group, use a code cell to assign a CS variable storing the day of the
-month each person was born.
-An example is given in <xref ref="programming-sagemath-bdays"/>;
+For each member of your group, use a code cell to assign a CS variable storing the number of pens
+(or pencils, or any object you'd like) each person has with them.
+An example is given in <xref ref="programming-sagemath-pens"/>;
 note that only a single Code cell is necessary, but each assignment should be made on a separate line.
             </p>
             <sidebyside>
                 <table>
-                    <title>Birthdays for the author's immediate family.</title>
+                    <title>Pens owned by the author's immediate family.</title>
                     <tabular>
-                        <row><cell>Name</cell><cell>Birthday</cell></row>
-                        <row><cell>Craig</cell><cell>Oct 01</cell></row>
-                        <row><cell>Laura</cell><cell>Dec 30</cell></row>
-                        <row><cell>Phillip</cell><cell>Jul 18</cell></row>
-                        <row><cell>Sherill</cell><cell>Nov 03</cell></row>
-                        <row><cell>Steven</cell><cell>Jul 22</cell></row>
+                        <row><cell>Name</cell><cell>Pens kept in backpack</cell></row>
+                        <row><cell>Craig</cell><cell>1</cell></row>
+                        <row><cell>Laura</cell><cell>30</cell></row>
+                        <row><cell>Phillip</cell><cell>18</cell></row>
+                        <row><cell>Sherill</cell><cell>03</cell></row>
+                        <row><cell>Steven</cell><cell>22</cell></row>
                     </tabular>
                 </table>
-                <listing xml:id="programming-sagemath-bdays">
+                <listing xml:id="programming-sagemath-pens">
                     <caption>Corresponding variable assignments</caption>
-                    <p><cd>craig_birthday = 1
-laura_birthday = 30
-phillip_birthday = 18
-sherill_birthday = 3
-steven_birthday = 22</cd></p>
+                    <p><cd>craig_pens = 1
+laura_pens = 30
+phillip_pens = 18
+sherill_pens = 3
+steven_pens = 22</cd></p>
                 </listing>
             </sidebyside>
         </task>
-        <task><p>foo</p></task>
+        <task>
+            <p>
+The value stored in a CS variable may be reused later by using the variable name. For example,
+<c>craig_pens+laura_pens+phillip_pens+sherill_pens+steven_pens</c>
+would return the result <c>74</c>.
+            </p>
+            <p>
+Use a code cell to find the sum of the pens in your group by writing the sum of the variable names.
+(Later we will learn much more elegant patterns for storing and using lists of data while still
+using long descriptive variable names as recommended.)
+            </p>
+        </task>
+        <task>
+            <p>
+Variables can be overwritten. In a Jupyter notebook, you can go to a previous cell and edit the assignment,
+and you can also create a new Code cell and write the assignment.
+            </p>
+            <p>
+Try editing the assignment of one group member's pens in the previous Code cell, and try overwriting
+another group member's pens value by creating a Code cell below. For example, in
+<xref ref="programming-sagemath-pens-1"/> the original assignment for <c>craig_pens</c> is amended,
+but you could also amend the value of <c>phillip_pens</c> by creating a new Code cell below
+with the line <c>phillip_pens = 42</c>.
+            </p>
+            <listing xml:id="programming-sagemath-pens-1">
+                <caption>Amended variable assignments</caption>
+                <p><cd>craig_pens = 100
+laura_pens = 30
+phillip_pens = 18
+sherill_pens = 3
+steven_pens = 22</cd></p>
+            </listing>
+        </task>
+        <task>
+            <p>
+Before doing anything further, write a sentence about what you notice about the result of your existing code cell
+adding the variables together.
+            </p>
+        </task>
+        <task>
+            <p>
+Now use the <c>Kernel &gt; Run All</c> menu option.
+Write a sentence or two explaining how the sum changed, and why.
+            </p>
+        </task>
+        <task>
+            <p>
+Copy the line of code summing your variables into a new Code cell below
+(e.g. <c>craig_pens+laura_pens+phillip_pens+sherill_pens+steven_pens</c>).
+Write a sentence explaining why you get a different result even though the Code cells are exactly the same.
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>As mentioned in <xref ref="programming-sagemath-csvars"/>,... TODO math variables activity</p>
+        </introduction>
     </activity>
 </section>
 
