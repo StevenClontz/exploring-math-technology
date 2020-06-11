@@ -6,6 +6,10 @@
     <index-list />
   </index>
 
+    <references xml:id="references">
+        <biblio type="raw">Firstname Lastname, <title>Title</title>, Publisher, Year</biblio>
+    </references>
+
   <colophon>
     <p>
       This book was authored in <pretext />.
