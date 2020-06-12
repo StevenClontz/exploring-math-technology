@@ -11,6 +11,7 @@
 
         <!-- chapters -->
         <xi:include href="./01-programming/main.ptx" />
+        <xi:include href="./02-writing/main.ptx" />
 
         <xi:include href="./meta/backmatter.ptx" />
     </book>

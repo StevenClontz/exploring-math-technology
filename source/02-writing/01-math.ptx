@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="writing-math">
+    <title>The Importance of Writing in Mathematics and Data Science</title>
+    <exploration>
+        <task>
+            <p>
+Write a few sentences answering the following questions.
+            </p>
+            <p>
+                <ul>
+<li>Is writing important? Why or why not?</li>
+<li>Is writing important for doing mathematics or studying data? Why or why not?</li>
+                </ul>
+            </p>
+        </task>
+        <task>
+            <p>
+TODO
+Read the following article by Dr. Francis Su,
+<url href="https://faculty.math.illinois.edu/~notlaw/Su-Guidelines_for_Good_Mathematical_Writing.pdf">Some Guidelines for Good Mathematical Writing</url>.
+            </p>
+        </task>
+    </exploration>
+    <activity>
+        <introduction>
+            <p>
+                TODO reflection on preview activity in groups.
+            </p>
+        </introduction>
+    </activity>
+</section>
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="writing-markup">
+    <title>Using Markdown and LaTeX</title>
+    <exploration>
+        <statement>
+            <p>
+Like many online platforms, Jupyter notebooks use <term>Markdown</term> syntax
+for formatting text. The <url href="https://www.markdowntutorial.com/">Markdown Tutorial</url>
+provides an excellent walkthrough on its basics.
+            </p>
+            <p>
+Complete the <url href="https://www.markdowntutorial.com/">Markdown Tutorial</url> and
+upload a screenshot of its <q>Congratulations</q> page below when you are done.
+            </p>
+        </statement>
+    </exploration>
+    <activity>
+        <introduction>
+            <p>
+                TODO LaTeX in Markdown
+            </p>
+        </introduction>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+                TODO a LaTeX document
+            </p>
+        </introduction>
+    </activity>
+</section>
+

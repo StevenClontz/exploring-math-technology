@@ -302,7 +302,7 @@ Equations can be manipulated by SageMath similarly to how you manipulate them by
 This may be verified by entering <c>(x+7==11)-7</c> into a Code cell.
             </p>
             <p>
-Solve the equation <m>2x+5=x-7</m> by subtracting <m>x+5</m> from both sides of the equation.
+Solve the equation <m>2x+5=x-7</m> by subtracting <m>x</m> and <m>5</m> from both sides of the equation.
             </p>
         </task>
         <task>
