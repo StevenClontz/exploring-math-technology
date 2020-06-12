@@ -165,7 +165,7 @@ adding the variables together.
         </task>
         <task>
             <p>
-Now use the <c>Kernel &gt; Run All</c> menu option in CoCalc.
+Now use the <kbd>Kernel</kbd> &gt; <kbd>Run All</kbd> menu option in CoCalc.
 Write a sentence or two explaining how the sum changed, and why.
             </p>
         </task>
@@ -237,8 +237,77 @@ and confirm that the resulting value is equal to <m>1^2+4(2)(3)</m>.
         </task>
     </activity>
     <activity>
+        <introduction>
+            <p>
+In addition to storing and manipulating expressions of mathematical variables,
+SageMath also supports studying <term>equations</term> that set two expressions equal to one another.
+            </p>
+        </introduction>
         <task>
-            <p>(equations, solving equations)</p>
+            <p>
+Since the equal sign <kbd>=</kbd> is already used as the assignment operator <c>=</c>,
+two equal signs are used to represent the equality operator <c>==</c>.
+            </p>
+            <p>
+When only simple numerical values are present, the equality operator behaves similarly in both Python
+and SageMath: it evaluates both sides of the equation and returns a <term>Boolean value</term>
+of <c>True</c> or <c>False</c>. For example, <c>3*2==6</c> returns <c>True</c> while
+<c>3^2==6</c> returns <c>False</c>.
+            </p>
+            <p>
+Use the equality operator to verify that <m>1+2+3+4+5+6</m> has the same value as
+<m>\frac{6\times 7}{2}</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+When mathematical variables or more advanced values are present, the equality operator
+will return an equation, but won't immediately reveal whether this equation is true or false.
+            </p>
+            <p>
+Check this by entering <c>x==sqrt(x^2)</c> into a Code cell below. (Remember, you can use
+the <c>show()</c> tool to make it appear as <m>x=\sqrt{x^2}</m>.)
+            </p>
+        </task>
+        <task>
+            <p>
+SageMath is able to verify the truth of simple equations by using the <c>bool()</c> tool.
+For example, <c>bool(x==sqrt(x^2))</c> will return <c>False</c>, since it fails when <m>x=-4</m>.
+            </p>
+            <p>
+Use the <c>bool()</c> tool to verify that <m>3e^{1-\frac{1}{2}i\pi}</m> has the same value
+as <m>-3ei</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+Equations can be manipulated by SageMath similarly to how you manipulate them by hand. For example:
+            </p>
+            <md>
+                <mrow>x+7\amp=11</mrow>
+                <mrow>-7\amp\phantom{=}-7</mrow>
+                <mrow>x\amp=4</mrow>
+            </md>
+            <p>
+This may be verified by entering <c>(x+7==11)-7</c> into a Code cell.
+            </p>
+            <p>
+Solve the equation <m>2x+5=x-7</m> by subtracting <m>x+5</m> from both sides of the equation.
+            </p>
+        </task>
+        <task>
+            <p>
+SageMath can automatically solve many equations for you using the <c>solve()</c> tool.
+For example, <c>solve(x+7==11,x)</c> reveals the solution <m>x=4</m> immediately.
+            </p>
+            <p>
+Use the <c>solve()</c> tool to solve <m>2x+5=x-7</m> automatically.
+            </p>
+        </task>
+        <task>
+            <p>
+Use the <c>solve()</c> tool to find both solutions to <m>x^2+3x+7=4-x</m>.
+            </p>
         </task>
     </activity>
 </section>
