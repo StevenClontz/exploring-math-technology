@@ -22,8 +22,8 @@ Markdown has many features for writing formatted documents using plain text, but
 it does not provide much support for mathematical notation out-of-the-box.
             </p>
             <p>
-Fortunately, many platforms that support Markdown also support <m>\LaTeX{}</m>
-(pronounced <q>lay-tek</q>) markup for mathematical notation.
+Fortunately, many platforms that support Markdown also support <term>LaTeX</term>
+(pronounced <q>lay-tek</q>, stylized as <m>\LaTeX{}</m>) markup for mathematical notation.
             </p>
         </introduction>
         <task>
@@ -66,7 +66,7 @@ ax^2+bx+c=0 \Leftrightarrow x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
 To view the source markup for the above formula while in a Jupyter notebook on CoCalc, you can
 select the cell, and then use the <kbd>Edit</kbd> &gt; <kbd>Edit protect</kbd> menu option to make the cell
 editable.
-(To view the <m>\LaTeX{}</m> source of any mathematical notation in the HTML verison of this book,
+(To view the LaTeX source of any mathematical notation in the HTML verison of this book,
 you can simply right-click the equation and use the menu that appears.)
             </p>
             <p>
@@ -77,9 +77,48 @@ Get the source for the formula above, and paste it into a Markdown cell below.
     <activity>
         <introduction>
             <p>
-                TODO using DeTeXify and other references to look up notation.
+Some LaTeX notation is rather straight-forward, with literal notation such as
+<c>+</c> and <c>-</c>, and intuitive notation such as <c>^</c> for superscripts
+and <c>_</c> for subscripts: <c>a_0+a_1^2=-a_2^3</c> produces <m>a_0+a_1^2=-a_2^3</m>.
+            </p>
+            <p>
+But multiplication cannot be represented by, say, <c>x</c>, since that represents the variable
+<m>x</m>. (Instead we write <c>2 \times 3</c> to produce <m>2 \times 3</m>.)
+            </p>
+            <p>
+Even professionals usually know just a small subset of all the LaTeX commands available. Instead, references like
+<url href="http://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm">Dr. Burn's TeX Command Reference</url>
+and tools like
+<url href="https://detexify.kirelabs.org/classify.html">DeTeXify</url>
+allow for easy lookup of LaTeX commands as needed.
+            </p>
+            <p>
+For each of the following samples of mathematical notation, <em>don't</em> peek at
+their source markup. Instead, use the above resources to replicate the notation as
+best as possible in a Markdown cell. After you've done as well as possible on your own,
+then compare with the corresponding source markup.
             </p>
         </introduction>
+        <task>
+            <me>
+\det(A) = x_{11}x_{22}-x_{12}x_{21}
+            </me>
+        </task>
+        <task>
+            <me>
+\sin(\alpha+\beta) = \sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta)
+            </me>
+        </task>
+        <task>
+            <me>
+\sigma(t) = \langle 0,t_1,2t_2,\dots,nt_n \rangle
+            </me>
+        </task>
+        <task>
+            <me>
+\overline{x} = \frac{1}{n}\left(\sum_{0\leq i&lt;n}x_i\right)
+            </me>
+        </task>
     </activity>
     <activity>
         <introduction>
