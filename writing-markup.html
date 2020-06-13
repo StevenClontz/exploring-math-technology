@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-13T01:06:11Z    *-->
+<!--*    on 2020-06-13T01:57:25Z    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -68,11 +68,11 @@ MathJax.Hub.Config({
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="writing-math.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="programming.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter.html" title="Next">Next</a></span>
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="writing-math.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="writing.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter.html" title="Next">Next</a></span>
 </div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="writing-math.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="programming.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="writing-math.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="writing.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -88,7 +88,7 @@ MathJax.Hub.Config({
 </ul>
 </li>
 <li class="link">
-<a href="programming.html" data-scroll="programming"><span class="codenumber">2</span> <span class="title">Writing for Mathematicians and Data Scientists</span></a><ul>
+<a href="writing.html" data-scroll="writing"><span class="codenumber">2</span> <span class="title">Writing for Mathematicians and Data Scientists</span></a><ul>
 <li><a href="writing-math.html" data-scroll="writing-math">The Importance of Writing in Mathematics and Data Science</a></li>
 <li><a href="writing-markup.html" data-scroll="writing-markup" class="active">Using Markdown and LaTeX</a></li>
 </ul>
@@ -109,10 +109,30 @@ MathJax.Hub.Config({
 <p id="p-127">Complete the <a class="external" href="https://www.markdowntutorial.com/" target="_blank">Markdown Tutorial</a> and upload a screenshot of its “Congratulations” page below when you are done.</p></article><article class="activity project-like" id="activity-12"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-14"><p id="p-128">TODO LaTeX in Markdown</p></div></article><article class="activity project-like" id="activity-13"><h6 class="heading">
+<div class="introduction" id="introduction-14">
+<p id="p-128">Markdown has many features for writing formatted documents using plain text, but it does not provide much support for mathematical notation out-of-the-box.</p>
+<p id="p-129">Fortunately, many platforms that support Markdown also support \(\LaTeX{}\) (pronounced “lay-tek”) markup for mathematical notation.</p>
+</div>
+<article class="task exercise-like" id="task-56"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-130">To denote part of your writing as mathematical notation in a Markdown cell, use <code class="code-inline tex2jax_ignore">\(</code> and <code class="code-inline tex2jax_ignore">\)</code> to surround your mathematics.</p>
+<p id="p-131">Create two Markdown cells with the text <code class="code-inline tex2jax_ignore">The solution to x+1=7 is x=6.</code>. Then use <code class="code-inline tex2jax_ignore">\(</code> and <code class="code-inline tex2jax_ignore">\)</code> to surround the mathematical notation in one of those cells to observe the difference. (Don't forget to use <kbd class="kbdkey">Shift</kbd>+<kbd class="kbdkey">Enter</kbd> to display the formatted text.)</p></article><article class="task exercise-like" id="task-57"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-132">Now create two Markdown cells with the text <code class="code-inline tex2jax_ignore">The solutions to x^2-1=0 are x=-1 and x=1.</code>, and use <code class="code-inline tex2jax_ignore">\(</code> and <code class="code-inline tex2jax_ignore">\)</code> to surround the mathematics in one cell.</p></article><article class="task exercise-like" id="task-58"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-133">When typesetting longer mathematical notation, <code class="code-inline tex2jax_ignore">\[</code> and <code class="code-inline tex2jax_ignore">\]</code> may be used instead to center the mathematics on a new line.</p>
+<p id="p-134">Copy <code class="code-inline tex2jax_ignore">The only solution to x^4-4x^3+6x^2-4x+1=0 is x=1.</code> into a Markdown cell and appropriately format the long equation and short solution.</p></article><article class="task exercise-like" id="task-59"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-135">One of the best ways to learn \(\LaTeX{}\) notation is to view the source written by other authors. Consider the following formula:</p>
+<div class="displaymath">
+\begin{equation*}
+ax^2+bx+c=0 \Leftrightarrow x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
+\end{equation*}
+</div>
+<p id="p-136">To view the source markup for the above formula while in a Jupyter notebook on CoCalc, you can select the cell, and then use the <kbd class="kbdkey">Edit</kbd> &gt; <kbd class="kbdkey">Edit protect</kbd> menu option to make the cell editable. (To view the \(\LaTeX{}\) source of any mathematical notation in the HTML verison of this book, you can simply right-click the equation and use the menu that appears.)</p>
+<p id="p-137">Get the source for the formula above, and paste it into a Markdown cell below.</p></article></article><article class="activity project-like" id="activity-13"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-15"><p id="p-129">TODO a LaTeX document</p></div></article></section></div></main>
+<div class="introduction" id="introduction-15"><p id="p-138">TODO using DeTeXify and other references to look up notation.</p></div></article><article class="activity project-like" id="activity-14"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-16"><p id="p-139">TODO a LaTeX document</p></div></article></section></div></main>
 </div>
 </body>
 </html>
