@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="programming">
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="writing">
   	<title>Writing for Mathematicians and Data Scientists</title>
   	<xi:include href="./01-math.ptx" />
   	<xi:include href="./02-markup.ptx" />
