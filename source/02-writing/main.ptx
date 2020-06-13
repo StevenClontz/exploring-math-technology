@@ -2,6 +2,6 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="programming">
   	<title>Writing for Mathematicians and Data Scientists</title>
   	<xi:include href="./01-math.ptx" />
-  	<xi:include href="./02-markdown.ptx" />
+  	<xi:include href="./02-markup.ptx" />
 </chapter>
 
