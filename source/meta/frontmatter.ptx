@@ -1,19 +1,87 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <frontmatter xml:id="frontmatter" xmlns:xi="http://www.w3.org/2001/XInclude">
     <xi:include href="./titlepage.ptx" />
-
-  <acknowledgement>
-    <p>
-        TODO thank people
-    </p>
-
-    <attribution>
-      <line>Steven Clontz</line>
-      <line>Mobile, AL</line>
-      <line>August 2020</line>
-      <line><email>steven.clontz@gmail.com</email></line>
-    </attribution>
-  </acknowledgement>
-  
+    <acknowledgement>
+        <p>
+Thanks to the Alabama School of Cyber Technology and Engineering for
+supporting the author as he developed this text to serve as the backbone
+of their introductory mathematics course.
+        </p>
+    </acknowledgement>
+    <preface xml:id="why">
+        <title>Why Study [the] Mathematics [of Data]?</title>
+        <p>
+It's a common complaint by mathematicians that students aren't interested in
+mathematics for its own sake. And I (that is, me, the author, hello!)
+understand this temptation. I got into math
+because I like to solve puzzles, and who doesn't like puzzles?
+        </p>
+        <p>
+But if you're like many of my students, it's not that they don't like puzzles.
+It's that for them, math has never been about puzzles. Many students have found
+that success in their math courses boils down to memorizing the formulas and tricks
+their teacher tells them to. And yeah, that doesn't sound like much fun to me, either.
+        </p>
+        <p>
+To address this, this textbook may not be like other textbooks you've used before.
+Rather than focusing on a lot of formulas, definitions and worked examples, you'll be engaging with
+several <term>activities</term> designed to get you (ideally with a group of your peers)
+discovering as much of the mathematics for yourself. It's awesome how much more
+mathematical results make sense when you know why they work, not because you're told,
+but because you figured it out for yourself.
+        </p>
+        <p>
+This skill is not limited to your math class. In an increasingly cyber-foused world,
+being able to replicate a skill because someone else told you how to do it
+is only useful to the point where it cannot be more easily
+automated by computers. So rather than focusing on <q>How is this done?</q>,
+I encourage you to consider <q>Why does it work?</q> and <q>Why is it useful?</q> --
+often, how it can be accomplished is involved in answering those questions anyway.
+With that knowledge, either you'll be ready to do the work beyond the scope of automation,
+or you'll be the one automating the work!
+        </p>
+        <p>
+Now this book focuses specifically on the Mathematics of Data. Of course, <term>data</term>
+are all around us. This book may be thought of as a sequence of written words,
+but it was written on a computer, it can also be thought of as a seqeunce of <m>0</m>s and
+<m>1</m>s on a hard disk. While computers do this kind of serialization of data from
+one form to another every day, <term>data scientists</term> also have the job of taking
+information about our world and converting it from one form to another. Their goal is
+to make that information useful to other humans, so that they can make appropriate decisions
+based on reality. But this is only effective if their techniques are based on solid
+mathematical and statistical foundations, and incompetent (or simply evil) actors can
+paint the wrong picture with their analysis by ignoring these foundations.
+        </p>
+        <p>
+As this book was written for the Alabama School of Cyber Technology and Engineering,
+I will especially emphasize mathematical ideas and tools important for success in cyber
+technoloyg, engineering, and security. Before earning my PhD in mathematics, I co-owned
+and operated a cyber technology company offering a CRM <fn>Customer Relationship Management</fn>
+web application for several years, making
+us responsible for the PII <fn>Personally Indentifying Information</fn> of thousands of users.
+Through that work and my continuing experience as a developer of open-source software,
+I have found that the same core techniques of inquiry and problem-solving
+I use in mathematics translate directly to understanding technology and security concerns.
+        </p>
+        <p>
+While you don't need to be a professional
+mathematician to work in cyber, the cutting-edge techniques of cyber are often
+rooted in mathematics. For an excellent overview of the connections between
+cyber security and mathematics, I encourage you to read
+<url href="https://cybersecurityguide.org/resources/math-in-cybersecurity/">this article on CyberSecurityGuide.org</url>.
+        </p>
+        <p>
+Thank you for reading this brief (?) introduction! And as I tell anyone about to dive
+into some fun puzzles, happy solving!
+        </p>
+        <attribution>
+            <line>Dr. Steven Clontz</line>
+            <line>Assistant Professor of Mathematics</line>
+            <line>Univeristy of South Alabama</line>
+            <line>August 2020</line>
+            <line>
+                <email>steven.clontz@gmail.com</email>
+            </line>
+        </attribution>
+    </preface>
 </frontmatter>
-
