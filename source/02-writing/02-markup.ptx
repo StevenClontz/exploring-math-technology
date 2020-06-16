@@ -23,7 +23,8 @@ it does not provide much support for mathematical notation out-of-the-box.
             </p>
             <p>
 Fortunately, many platforms that support Markdown also support <term>LaTeX</term>
-(pronounced <q>lay-tek</q>, stylized as <m>\LaTeX{}</m>) markup for mathematical notation.
+(pronounced <q>lay-tek</q> or <q>lah-tek</q>,
+and stylized as <m>\LaTeX{}</m>) markup for mathematical notation.
             </p>
         </introduction>
         <task>
@@ -121,11 +122,67 @@ then compare with the corresponding source markup.
         </task>
     </activity>
     <activity>
-        <introduction>
+        <statement>
             <p>
-                TODO a LaTeX document
+LaTeX markup is used by many applications for typesetting mathematical notation.
+But it's also possible to write entire documents in LaTeX, that can be distributed
+as PDFs. Since it's very easy to write mathematics, manage bibliographies,
+and integrate a LaTeX document with computer code, it's very common for STEM
+researchers to author documents in LaTeX.
             </p>
-        </introduction>
+            <p>
+CoCalc provides a convenient LaTeX editor that you can use from your web browser.
+Try it out by following these steps.
+            </p>
+            <p>
+                <ul>
+                    <li>
+                        <p>
+From the <kbd>+ New</kbd> menu option, create a new LaTeX document in the
+same folder as this notebook.
+A default document will appear on the left, and its PDF output appears on the right.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+The top part of the code is the <term>preamble</term> with various configurations,
+most of which you don't need to worry about. There is a place to define the title
+and author of the paper. Change the title of the paper to match your favorite TV show,
+and change the author to be named after a character on that show.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+By default the produced PDF will include today's date. This can be configured by
+inserting the command <c>\date{Month Day, Year}</c> in the preamble. Use this
+to change the date to be one week from today instead.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+The <term>body</term> of the document is between the <c>\begin{document}</c>
+and <c>\end{document}</c> commands. The <c>\maketitle</c> command tells LaTeX
+to show the title, author, and date.
+                        </p>
+                        <p>
+Add some text two lines below the <c>\maketitle</c> command, quoting a character
+from your favorite show.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+Finally, copy-paste some mathematical notation from the previous activities
+so it appears below the quote in your LaTeX-produced PDF.
+                        </p>
+                    </li>
+                </ul>
+            </p>
+            <p>
+When you're done, put a link to your LaTeX source file in a Markdown cell below.
+Since it's located in the same folder, if your file was named <c>example.tex</c>,
+then it can be linked to by entering <c>[Link to LaTeX file](example.tex)</c>.
+            </p>
+        </statement>
     </activity>
 </section>
 
