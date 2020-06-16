@@ -7,11 +7,20 @@
     <book>
         <title>Mathematics of Data</title>
 
-        <xi:include href="./meta/frontmatter.ptx" /> 
+        <xi:include href="./meta/frontmatter.ptx" />
 
         <!-- chapters -->
         <xi:include href="./01-programming/main.ptx" />
         <xi:include href="./02-writing/main.ptx" />
+        <chapter><title>Data and Collections</title></chapter>
+        <chapter><title>Visualization of Data</title></chapter>
+        <chapter><title>Measurements of Data</title></chapter>
+        <chapter><title>Making Predictions from Data</title></chapter>
+        <chapter><title>Modeling Random Events</title></chapter>
+        <chapter><title>Two-Dimensional Data and Complex Numbers</title></chapter>
+        <chapter><title>Higher-Dimensional Data and Euclidean Vectors</title></chapter>
+        <chapter><title>Transformations of Higher-Dimensional Data</title></chapter>
+        <chapter><title>Properties of Linear Transformations</title></chapter>
 
         <xi:include href="./meta/backmatter.ptx" />
     </book>
