@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-15T21:04:14Z    *-->
+<!--*    on 2020-06-16T03:49:21Z    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -114,7 +114,7 @@ MathJax.Hub.Config({
 </h6>
 <div class="introduction" id="introduction-14">
 <p id="p-136">Markdown has many features for writing formatted documents using plain text, but it does not provide much support for mathematical notation out-of-the-box.</p>
-<p id="p-137">Fortunately, many platforms that support Markdown also support <dfn class="terminology">LaTeX</dfn> (pronounced “lay-tek”, stylized as \(\LaTeX{}\)) markup for mathematical notation.</p>
+<p id="p-137">Fortunately, many platforms that support Markdown also support <dfn class="terminology">LaTeX</dfn> (pronounced “lay-tek” or “lah-tek”, and stylized as \(\LaTeX{}\)) markup for mathematical notation.</p>
 </div>
 <article class="task exercise-like" id="task-56"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <p id="p-138">To denote part of your writing as mathematical notation in a Markdown cell, use <code class="code-inline tex2jax_ignore">\(</code> and <code class="code-inline tex2jax_ignore">\)</code> to surround your mathematics.</p>
@@ -161,7 +161,19 @@ ax^2+bx+c=0 \Leftrightarrow x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
 </div></article></article><article class="activity project-like" id="activity-14"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-16"><p id="p-150">TODO a LaTeX document</p></div></article></section></div></main>
+<p id="p-150">LaTeX markup is used by many applications for typesetting mathematical notation. But it's also possible to write entire documents in LaTeX, that can be distributed as PDFs. Since it's very easy to write mathematics, manage bibliographies, and integrate a LaTeX document with computer code, it's very common for STEM researchers to author documents in LaTeX.</p>
+<p id="p-151">CoCalc provides a convenient LaTeX editor that you can use from your web browser. Try it out by following these steps.</p>
+<ul id="p-152" class="disc">
+<li id="li-11"><p id="p-153">From the <kbd class="kbdkey">+ New</kbd> menu option, create a new LaTeX document in the same folder as this notebook. A default document will appear on the left, and its PDF output appears on the right.</p></li>
+<li id="li-12"><p id="p-154">The top part of the code is the <dfn class="terminology">preamble</dfn> with various configurations, most of which you don't need to worry about. There is a place to define the title and author of the paper. Change the title of the paper to match your favorite TV show, and change the author to be named after a character on that show.</p></li>
+<li id="li-13"><p id="p-155">By default the produced PDF will include today's date. This can be configured by inserting the command <code class="code-inline tex2jax_ignore">\date{Month Day, Year}</code> in the preamble. Use this to change the date to be one week from today instead.</p></li>
+<li id="li-14">
+<p id="p-156">The <dfn class="terminology">body</dfn> of the document is between the <code class="code-inline tex2jax_ignore">\begin{document}</code> and <code class="code-inline tex2jax_ignore">\end{document}</code> commands. The <code class="code-inline tex2jax_ignore">\maketitle</code> command tells LaTeX to show the title, author, and date.</p>
+<p id="p-157">Add some text two lines below the <code class="code-inline tex2jax_ignore">\maketitle</code> command, quoting a character from your favorite show.</p>
+</li>
+<li id="li-15"><p id="p-158">Finally, copy-paste some mathematical notation from the previous activities so it appears below the quote in your LaTeX-produced PDF.</p></li>
+</ul>
+<p id="p-159">When you're done, put a link to your LaTeX source file in a Markdown cell below. Since it's located in the same folder, if your file was named <code class="code-inline tex2jax_ignore">example.tex</code>, then it can be linked to by entering <code class="code-inline tex2jax_ignore">[Link to LaTeX file](example.tex)</code>.</p></article></section></div></main>
 </div>
 </body>
 </html>
