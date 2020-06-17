@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="data">
+  	<title>Data and Collections</title>
+  	<xi:include href="./01-numbers.ptx" />
+  	<xi:include href="./02-collections.ptx" />
+  	<xi:include href="./03-programming.ptx" />
+</chapter>
+

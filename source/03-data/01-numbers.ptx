@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="data-numbers">
+    <title>Numbers</title>
+    <exploration>
+        <introduction>
+            <p>Write a sentence answering each question.</p>
+        </introduction>
+        <task>
+            <p>
+Which number is bigger: <m>0.999\cdots</m> (with infinitely-many <m>9</m>s)
+or <m>1</m>? Why do you think so?
+            </p>
+        </task>
+        <task>
+            <p>
+What does <m>0.999\cdots</m> mean?
+            </p>
+        </task>
+        <task>
+            <p>
+What does <m>1</m> mean?
+            </p>
+        </task>
+    </exploration>
+    <activity xml:id="data-numbers-counting">
+        <introduction>
+            <p>
+The <term>counting numbers</term> (sometimes written as the lowercase Greek
+letter omega <m>\omega</m>, also sometimes called
+<q>whole numbers</q> or <q>natural numbers</q>) are those numbers used to
+quantify whole items: <me>\{0,1,2,3,\dots,100,101,\dots,8675309,8675310,\dots\}</me>
+            </p>
+            <p>
+For each of the following possible rules for counting numbers, either decide that
+it is true, or explain when the rule might fail.
+            </p>
+        </introduction>
+        <task>
+            <p>
+Adding one to a counting number results in another counting number. For example,
+<m>6</m> is a counting number, so <m>6+1=7</m> is also a counting number.
+            </p>
+        </task>
+        <task>
+            <p>
+Subtracting one from a counting number results in another counting number. For example,
+<m>6</m> is a counting number, so <m>6-1=5</m> is also a counting number.
+            </p>
+        </task>
+        <task>
+            <p>
+Doubling a counting number results in another counting number. For example,
+<m>32</m> is a counting number, so <m>32\times 2=64</m> is also a counting number.
+            </p>
+        </task>
+        <task>
+            <p>
+Halving a counting number results in another counting number. For example,
+<m>32</m> is a counting number, so <m>32\div 2=16</m> is also a counting number.
+            </p>
+        </task>
+        <task>
+            <p>
+Squaring a counting number results in another counting number. For example,
+<m>9</m> is a counting number, so <m>9^2=81</m> is also a counting number.
+            </p>
+        </task>
+        <task>
+            <p>
+Square rooting a counting number results in another counting number. For example,
+<m>9</m> is a counting number, so <m>\sqrt{9}=3</m> is also a counting number.
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <statement>
+            <p>
+The <term>integers</term> <m>\mathbb Z</m> include all the counting numbers as well as their
+negatives: <m>\{\dots,-2,-1,0,1,2,\dots\}</m>.
+            </p>
+            <p>
+Explain which of the number rules from <xref ref="data-numbers-counting"/> work
+when <q>counting number</q> is replaced with <q>integer</q>, and which ones fail.
+            </p>
+        </statement>
+    </activity>
+    <activity>
+        <statement>
+            <p>
+The <term>rational numbers</term> <m>\mathbb Q</m> include all fractions of integers
+that don't divide by zero, such as <m>\frac{1}{2}</m>, <m>\frac{22}{7}</m>,
+and <m>-\frac{1234812348}{42}</m>.
+            </p>
+            <p>
+Explain which of the number rules from <xref ref="data-numbers-counting"/> work
+when <q>counting number</q> is replaced with <q>rational number</q>, and which ones fail.
+            </p>
+        </statement>
+    </activity>
+    <activity>
+        <statement>
+            <p>
+There are other kinds of <term>real numbers</term>, such as <m>e</m> and <m>\pi</m>, that aren't
+rational. (The technical definition of the system of real numbers requires experience with
+calculus, so we won't get into that here.) There are other kinds of numbers as well,
+such as the <term>complex numbers</term> explorered in <xref ref="complex"/>.
+            </p>
+            <p>
+Since SageMath tries to model mathematics as authentically as possible, it will try to recognize
+when you are working with integers or rational numbers. For example, <c>type(-17/3)</c>
+display that it is a <q><c>sage.rings.rational.Rational</c></q>
+            </p>
+            <p>
+Use the <c>type()</c> tool help explain why <m>-\frac{1234812348}{42}</m> is an integer or
+rational number.
+            </p>
+        </statement>
+    </activity>
+    <activity>
+        <p>
+            TODO discussion of integers and floating point numbers
+        </p>
+    </activity>
+</section>
+
