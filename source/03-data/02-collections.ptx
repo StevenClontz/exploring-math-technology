@@ -5,14 +5,46 @@
     <exploration>
         <task>
             <p>
-                TODO
+TODO
             </p>
         </task>
     </exploration>
     <activity>
         <introduction>
             <p>
-                TODO
+An unordered collection of mathematical objects is known as a <term>set</term>.
+Sets are written as a pair of curly braces surrounding a description of its members,
+such as <m>\{2,8,1,4\}</m>.
+            </p>
+        </introduction>
+        <task>
+            <p>
+Sets may be declared in Python and SageMath using the syntax <c>{2,8,1,4}</c>.
+Use this syntax and the equality operator <c>==</c> to confirm that
+<m>\{100,101,100\}=\{101,100\}=\{100,101\}</m> are all the same set (since
+they all contain exactly the same numbers).
+            </p>
+        </task>
+        <task>
+            <p>
+There are only four sets that only use the numbers <m>0</m> and <m>1</m>:
+<m>\{\},\{0\},\{1\},\{0,1\}</m>.
+            </p>
+            <p>
+List all the sets that only use the numbers <m>0</m>, <m>1</m>, and <m>2</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+Based on these examples, guess how many sets only use the counting
+numbers <m>0</m> through <m>7</m>.
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+Lists/tuples/iterables/dictionaries
             </p>
         </introduction>
     </activity>
