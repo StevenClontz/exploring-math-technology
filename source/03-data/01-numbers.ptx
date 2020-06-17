@@ -112,15 +112,42 @@ when you are working with integers or rational numbers. For example, <c>type(-17
 display that it is a <q><c>sage.rings.rational.Rational</c></q>
             </p>
             <p>
-Use the <c>type()</c> tool help explain why <m>-\frac{1234812348}{42}</m> is an integer or
+Use the <c>type()</c> tool to help explain why <m>-\frac{1234812348}{42}</m> is an integer or
 rational number.
             </p>
         </statement>
     </activity>
     <activity>
-        <p>
-            TODO discussion of integers and floating point numbers
-        </p>
+        <introduction>
+            <p>
+Something all these sets of numbers described above is that they are <term>infinite</term>:
+if you had a finite list of them, take the biggest and add one, and you'll have something
+you forgot in your list.
+            </p>
+            <p>
+While SageMath does its best to hide this limitation from users,
+having finitely-many possible numbers is not ideal for data intended
+for storage on a physical computer.
+To account for this, some lower-level languages offer data types like the <term>short</term>
+that account for a useful (but finite) range of integers.
+In particular, shorts are integers that may be written using 16 binary digits.
+            </p>
+        </introduction>
+        <task>
+            <p>
+How many different numbers can be stored using 2 binary digits?
+            </p>
+        </task>
+        <task>
+            <p>
+How many different numbers can be stored using 3 binary digits?
+            </p>
+        </task>
+        <task>
+            <p>
+How many different numbers can be stored as a short?
+            </p>
+        </task>
     </activity>
 </section>
 
