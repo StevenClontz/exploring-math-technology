@@ -1,20 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="data-programming">
-    <title>Data-Driven Programming</title>
+    <title>Programming with Data</title>
     <exploration>
-        <task>
-            <p>
-                TODO
-            </p>
-        </task>
-    </exploration>
-    <activity>
         <introduction>
             <p>
                 TODO
             </p>
         </introduction>
+    </exploration>
+    <activity>
+        <introduction>
+            <p>
+                If/Elif/Else
+            </p>
+        </introduction>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+                For loops
+            </p>
+        </introduction>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+                Comprehension
+            </p>
+        </introduction>
+    </activity>
+    <activity>
+        <statement>
+            <p>
+A common exercise in entry-level programming interviews is known as <q>FizzBuzz</q>.
+Write a program that for each of the numbers <m>1</m> through <m>100</m>
+prints that number, the word <q>Fizz</q> if that number is divisible by <m>3</m>,
+and <q>Buzz</q> if that number is divisible by <m>5</m>. Example output
+for the numbers <m>1</m> through <m>15</m> is given in
+<xref ref="data-programming-fizzbuzz-example"/>.
+            </p>
+            <listing xml:id="data-programming-fizzbuzz-example">
+                <caption>Beginning FizzBuzz output.</caption>
+                <cd>1
+2
+3 Fizz
+4
+5 Buzz
+6 Fizz
+7
+8
+9 Fizz
+10 Buzz
+11
+12 Fizz
+13
+14
+15 Fizz Buzz</cd>
+            </listing>
+            <p>
+Using <c>x % 3 == 0</c> and <c>x % 5 == 0</c> to check if the value of <c>x</c>
+is divisible by <m>3</m> or <m>5</m>, create a Code cell that implements Fizz Buzz
+for the numbers <m>1</m> through <m>100</m>.
+            </p>
+        </statement>
     </activity>
 </section>
 

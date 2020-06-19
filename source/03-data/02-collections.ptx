@@ -37,16 +37,48 @@ List all the sets that only use the numbers <m>0</m>, <m>1</m>, and <m>2</m>.
         <task>
             <p>
 Based on these examples, guess how many sets only use the counting
-numbers <m>0</m> through <m>7</m>.
+numbers <m>0</m> through <m>7</m>. Explain your reasoning.
             </p>
         </task>
+<!--        <task>
+            <p>
+The size of a set is known as its <term>cardinality</term>, which can be
+computed by SageMath: <c>{0,1,2}.cardinality()</c>. SageMath is also able
+to measure infinite cardinalities: <c>QQ.cardinality()</c> confirms that there
+are infinitely-many rational numbers (represented in SageMath by <c>QQ</c>).
+            </p>
+            <p>
+Use SageMath to confirm that <m>\{2,3,5,7,11,13,17,19\}</m> contains 
+            </p>
+        </task>-->
     </activity>
     <activity>
         <introduction>
             <p>
-Lists/tuples/iterables/dictionaries
+Sets are useful collections when you only care if a datum belongs to the set
+or not. But sometimes you want your data to be ordered, and sometimes you
+want to be able count the same datum multiple times in your collection.
+<!--(There are also other shortcomings, such as not being able to define a set
+containing sets itself, such as <m>\{\{0\},\{1,2\}\}</m>.)-->
+This is where <term>lists</term> are useful.
             </p>
         </introduction>
+    </activity>
+    <activity>
+        <p>
+            Tuples
+        </p>
+    </activity>
+    <activity>
+        <p>
+            Dictionaries
+        </p>
+    </activity>
+    <activity>
+        <p>
+            Similar things (arrays, iterators...)
+            Note how there are less than <m>10^100</m> atoms in the universe but 
+        </p>
     </activity>
 </section>
 
