@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-17T03:33:04Z    *-->
+<!--*    on 2020-06-19T16:27:02Z    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -100,7 +100,7 @@ MathJax.Hub.Config({
 <a href="data.html" data-scroll="data"><span class="codenumber">3</span> <span class="title">Data and Collections</span></a><ul>
 <li><a href="data-numbers.html" data-scroll="data-numbers" class="active">Numbers</a></li>
 <li><a href="data-collections.html" data-scroll="data-collections">Collections of Data</a></li>
-<li><a href="data-programming.html" data-scroll="data-programming">Data-Driven Programming</a></li>
+<li><a href="data-programming.html" data-scroll="data-programming">Programming with Data</a></li>
 </ul>
 </li>
 <li class="link"><a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Visualization of Data</span></a></li>
@@ -158,7 +158,17 @@ MathJax.Hub.Config({
 </h6>
 <p id="p-176">There are other kinds of <dfn class="terminology">real numbers</dfn>, such as \(e\) and \(\pi\text{,}\) that aren't rational. (The technical definition of the system of real numbers requires experience with calculus, so we won't get into that here.) There are other kinds of numbers as well, such as the <dfn class="terminology">complex numbers</dfn> explorered in <a href="complex.html" class="internal" title="Chapter 8: Two-Dimensional Data and Complex Numbers">8</a>.</p>
 <p id="p-177">Since SageMath tries to model mathematics as authentically as possible, it will try to recognize when you are working with integers or rational numbers. For example, <code class="code-inline tex2jax_ignore">type(-17/3)</code> display that it is a “<code class="code-inline tex2jax_ignore">sage.rings.rational.Rational</code>”</p>
-<p id="p-178">Use the <code class="code-inline tex2jax_ignore">type()</code> tool help explain why \(-\frac{1234812348}{42}\) is an integer or rational number.</p></article></section></div></main>
+<p id="p-178">Use the <code class="code-inline tex2jax_ignore">type()</code> tool to help explain why \(-\frac{1234812348}{42}\) is an integer or rational number.</p></article><article class="activity project-like" id="activity-19"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-18">
+<p id="p-179">Something all these sets of numbers described above is that they are <dfn class="terminology">infinite</dfn>: if you had a finite list of them, take the biggest and add one, and you'll have something you forgot in your list.</p>
+<p id="p-180">While SageMath does its best to hide this limitation from users, having finitely-many possible numbers is not ideal for data intended for storage on a physical computer. To account for this, some lower-level languages offer data types like the <dfn class="terminology">short</dfn> that account for a useful (but finite) range of integers. In particular, shorts are integers that may be written using 16 binary digits.</p>
+</div>
+<article class="task exercise-like" id="task-73"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-181">How many different numbers can be stored using 2 binary digits?</p></article><article class="task exercise-like" id="task-74"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-182">How many different numbers can be stored using 3 binary digits?</p></article><article class="task exercise-like" id="task-75"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-183">How many different numbers can be stored as a short?</p></article></article></section></div></main>
 </div>
 </body>
 </html>
