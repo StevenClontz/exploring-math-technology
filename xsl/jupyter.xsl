@@ -181,17 +181,6 @@
   <xsl:template match="statement|introduction">
     <xsl:apply-templates select="*"/>
   </xsl:template>
-
-  <xsl:template match="sidebyside">
-    <xsl:call-template name="jupyter-cell">
-      <xsl:with-param name="source">
-        &lt;div class="sidebyside" style="<xsl:call-template name="css-sidebyside"/>"&gt;
-          <xsl:apply-templates select="*" mode="markdown"/>
-        &lt;/div&gt;
-      </xsl:with-param>
-    </xsl:call-template>
-  </xsl:template>
-
   <xsl:template match="task">
     <xsl:call-template name="jupyter-cell">
       <xsl:with-param name="source">
@@ -205,12 +194,18 @@
     </xsl:call-template>
   </xsl:template>
 
-  <xsl:template match="image|figure|table|tabular|listing|ol|ul|p">
+  <xsl:template match="statement/*|introduction/*|task/*">
     <xsl:call-template name="jupyter-cell">
       <xsl:with-param name="source">
         <xsl:apply-templates select="." mode="markdown"/>
       </xsl:with-param>
     </xsl:call-template>
+  </xsl:template>
+
+  <xsl:template match="sidebyside" mode="markdown">
+    &lt;div class="sidebyside" style="<xsl:call-template name="css-sidebyside"/>"&gt;
+      <xsl:apply-templates select="*" mode="markdown"/>
+    &lt;/div&gt;
   </xsl:template>
   <xsl:template match="image" mode="markdown">
     &lt;div&gt;&lt;img src="<xsl:value-of select="@source"/>.svg"/&gt;&lt;/div&gt;

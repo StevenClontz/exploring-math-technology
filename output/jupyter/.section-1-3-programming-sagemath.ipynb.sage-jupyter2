@@ -80,5 +80,5 @@
 {"cell_type":"markdown","id":"fe2660","input":"<div class=\"not-editable\" style=\" background-color:#f8f8f8;padding:1em;border-radius:10px;box-shadow:4px 4px 3px #ddd;margin:5px; \">\n\n\n <div><b>d. </b></div>\n \n <span>\nBefore doing anything further, write a sentence about what you notice about the result of your existing code cell\nadding the variables together.\n </span>\n \n\n</div>","metadata":{"editable":false},"pos":34,"type":"cell"}
 {"cell_type":"markdown","id":"feac09","input":"","metadata":{"editable":true},"pos":80,"type":"cell"}
 {"cell_type":"markdown","id":"ffa5df","input":"<div class=\"not-editable\" style=\" background-color:#f8f8f8;padding:1em;border-radius:10px;box-shadow:4px 4px 3px #ddd;margin:5px; \">\n\n\n <div><b>a. </b></div>\n \n <span>\nUnlike CS variables, mathematical variables represent an unknown value or arbitrary value, rather than\nstoring a specific piece of data. These variables are often represented by single letters rather than the\nlong semantic names used for CS variables. For example, SageMath always assumes <tt>x</tt> is\na mathematical variable named \\(x\\).\n </span>\n \n\n</div>","metadata":{"editable":false},"pos":42,"type":"cell"}
-{"id":0,"time":1592942749281,"type":"user"}
-{"last_load":1592942877372,"type":"file"}
+{"id":0,"time":1592943367151,"type":"user"}
+{"last_load":1592943545272,"type":"file"}
