@@ -40,7 +40,7 @@
     "source":
     <xsl:choose>
       <xsl:when test="$editable">
-        "&lt;div class=\"editable\" style=\"<xsl:call-template name="css-editable"/>\"&gt;Enter your response/code here.&lt;/div&gt;"
+        ""
       </xsl:when>
       <xsl:otherwise>
         "&lt;div class=\"not-editable\" style=\"<xsl:call-template name="css-not-editable"/>\"&gt;\n\n<xsl:call-template name="escape-json-string"><xsl:with-param name="text" select="$source"/></xsl:call-template>\n\n&lt;/div&gt;"

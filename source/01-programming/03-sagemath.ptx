@@ -293,11 +293,13 @@ as <m>-3ei</m>.
             <p>
 Equations can be manipulated by SageMath similarly to how you manipulate them by hand. For example:
             </p>
-            <md>
-                <mrow>x+7\amp=11</mrow>
-                <mrow>-7\amp\phantom{=}-7</mrow>
-                <mrow>x\amp=4</mrow>
-            </md>
+            <p>
+                <md>
+                    <mrow>x+7\amp=11</mrow>
+                    <mrow>-7\amp\phantom{=}-7</mrow>
+                    <mrow>x\amp=4</mrow>
+                </md>
+            </p>
             <p>
 This may be verified by entering <c>(x+7==11)-7</c> into a Code cell.
             </p>
