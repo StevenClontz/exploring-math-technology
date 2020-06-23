@@ -29,4 +29,4 @@
 {"cell_type":"markdown","id":"f56280","input":"<div class=\"not-editable\" style=\" background-color:#f8f8f8;padding:1em;border-radius:10px;box-shadow:4px 4px 3px #ddd;margin:5px; \">\n\n\n <div><b>c. </b></div>\n \n <span>\nNow create a new file called <tt>data.csv</tt> in the same folder as this notebook.\nCopy-paste the text from \n Listing 1.1.1 into this\nnew file to save a Comma-Separated Values spreadsheet.\n </span>\n \n\n</div>","metadata":{"editable":false},"pos":24,"type":"cell"}
 {"cell_type":"markdown","id":"fb6606","input":"<div class=\"not-editable\" style=\" background-color:#f8f8f8;padding:1em;border-radius:10px;box-shadow:4px 4px 3px #ddd;margin:5px; \">\n\n\n <span class=\"newcommands\" style=\"\n display:none;\n \">\\(\\newcommand{\\amp}{&}\\)</span>\n \n <h1>1.1 Jupyter Notebooks and CoCalc</h1>\n <div>\n <a href=\"\n https://TODO/programming-jupyter.html\n \">\n https://TODO/programming-jupyter.html\n </a>\n </div>\n \n\n</div>","metadata":{"editable":false},"pos":0,"type":"cell"}
 {"id":0,"time":1592921175848,"type":"user"}
-{"last_load":1592942878706,"type":"file"}
+{"last_load":1592943545266,"type":"file"}
