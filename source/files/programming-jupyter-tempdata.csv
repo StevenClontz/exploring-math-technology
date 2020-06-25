@@ -1,6 +1,11 @@
-with open("data.csv", "r") as csv_file:
-    rows = csv.DictReader(csv_file, delimiter=',')
-    for row in rows:
-        time = row["Time"]
-        temp = format((float(row["TempInF"])-32)*5/9, '.2f')
-        print("The temperature at", time, "is", temp, "degrees Celcius.")
+Time,TempInF
+8:00,74
+9:00,78
+10:00,82
+11:00,85
+12:00,88
+13:00,89
+14:00,90
+15:00,91
+16:00,89
+17:00,88
