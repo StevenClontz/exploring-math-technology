@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-pretextbook = "==0.0rc1"
+pretextbook = {editable = true,path = "./../pretext.py"}
 
 [requires]
 python_version = "3.6"

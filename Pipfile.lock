@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "bbda016146a47981d4a2110386272046f992cdb468d573a94cb7874c30afbea3"
+            "sha256": "4582e8affcbdc316d7d9f7d30feab72b1bbfdb4eca23a2954ffec5a3d42dc989"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -36,7 +36,6 @@
                 "sha256:83985739b3a6679702f9ab33f0ad016ad564664d0568a31ac14d7c64789453e6",
                 "sha256:f5edfcece1cc9435d0979c19e08739521f4cf1aa1adaf6e571f732df6f568962"
             ],
-            "markers": "python_version < '3.7'",
             "version": "==2.0.1"
         },
         "lxml": {
@@ -72,12 +71,8 @@
             "version": "==4.5.1"
         },
         "pretextbook": {
-            "hashes": [
-                "sha256:a05ba845461047ec83bcc6e9c5b5fdc9a9cd6f8389c45359cf2a481f3f673a21",
-                "sha256:ccdb7ad9620e17de4cf26d148e074a840ce1194976553eaab9b78fbd340b2a81"
-            ],
-            "index": "pypi",
-            "version": "==0.0rc1"
+            "editable": true,
+            "path": "./../pretext.py"
         },
         "python-slugify": {
             "hashes": [
