@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-19T16:27:02Z    *-->
+<!--*    on 2020-06-25T21:13:22Z    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,7 +41,7 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
@@ -153,29 +153,26 @@ MathJax.Hub.Config({
 <p id="p-28">You can upload any files you need to CoCalc, which can then be used by your notebooks. Use a search engine to find an image of a “Klein bottle” on the internet. Download a copy of this image to your computer. Using the “New” menu option in CoCalc, upload a copy of this image to the server, in the same folder as this notebook's file.</p>
 <p id="p-29">Make this image display in the below Markdown cell by entering <code class="code-inline tex2jax_ignore">![Klein bottle](image.png)</code>, replacing <code class="code-inline tex2jax_ignore">image.png</code> with the filename of the image you uploaded. (The text <code class="code-inline tex2jax_ignore">Klein bottle</code> is used to describe the image in case it doesn't load, or for those using a screen reader.)</p></article><article class="task exercise-like" id="task-6"><h6 class="heading"><span class="codenumber">(c)</span></h6>
 <p id="p-30">Now create a new file called <code class="code-inline tex2jax_ignore">data.csv</code> in the same folder as this notebook. Copy-paste the text from <a class="xref" data-knowl="./knowl/programming-jupyter-tempdata.html" title="Listing 1.1.1">1.1.1</a> into this new file to save a <dfn class="terminology">Comma-Separated Values spreadsheet</dfn>.</p>
-<figure class="listing figure-like" id="programming-jupyter-tempdata"><pre class="code-block tex2jax_ignore" id="p-31">Time,TempInF
-8:00,74
-9:00,78
-10:00,82
-11:00,85
-12:00,88
-13:00,89
-14:00,90
-15:00,91
-16:00,89
-17:00,88</pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.1.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-32">Then copy-paste the text from <a class="xref" data-knowl="./knowl/programming-jupyter-use-tempdata.html" title="Listing 1.1.2">1.1.2</a> into a Code cell below to use this data in a Python 3 script to display the temperatures in Celcius.</p>
-<figure class="listing figure-like" id="programming-jupyter-use-tempdata"><pre class="code-block tex2jax_ignore" id="p-33">import csv
-with open("data.csv", "r") as csv_file:
+<figure class="listing figure-like" id="programming-jupyter-tempdata"><figure class="listing figure-like" id="programming-jupyter-use-tempdata"><pre class="plainprint">with open("data.csv", "r") as csv_file:
     rows = csv.DictReader(csv_file, delimiter=',')
     for row in rows:
+        time = row["Time"]
         temp = format((float(row["TempInF"])-32)*5/9, '.2f')
-        print("The temperature at "+row["Time"]+" is "+temp+" degrees Celcius.")</pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.1.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article></article><section class="exercises" id="exercises-1"><h3 class="heading hide-type">
+        print("The temperature at", time, "is", temp, "degrees Celcius.")
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.1.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure><figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.1.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-31">Then copy-paste the text from <a class="xref" data-knowl="./knowl/programming-jupyter-use-tempdata.html" title="Listing 1.1.2">1.1.2</a> into a Code cell below to use this data in a Python 3 script to display the temperatures in Celcius.</p>
+<figure class="listing figure-like" id="programming-jupyter-use-tempdata"><pre class="prettyprint lang-py">with open("data.csv", "r") as csv_file:
+    rows = csv.DictReader(csv_file, delimiter=',')
+    for row in rows:
+        time = row["Time"]
+        temp = format((float(row["TempInF"])-32)*5/9, '.2f')
+        print("The temperature at", time, "is", temp, "degrees Celcius.")
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.1.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article></article><section class="exercises" id="exercises-1"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">1.1.1</span> <span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-1"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-34">Foo</p></article></section></section></div></main>
+<p id="p-32">Foo</p></article></section></section></div></main>
 </div>
 </body>
 </html>
