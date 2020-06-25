@@ -2,7 +2,7 @@
 
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="programming-jupyter">
     <title>Jupyter Notebooks and CoCalc</title>
-    <objectives>
+<!--    <objectives>
         <ul>
             <li>
                 <p>
@@ -16,7 +16,7 @@ mathematics and data science?
                 </p>
             </li>
         </ul>
-    </objectives>
+    </objectives>-->
 
     <exploration>
         <statement>
