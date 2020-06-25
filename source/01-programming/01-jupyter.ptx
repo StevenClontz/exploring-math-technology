@@ -179,8 +179,9 @@ in Celcius.
 with open("data.csv", "r") as csv_file:
     rows = csv.DictReader(csv_file, delimiter=',')
     for row in rows:
-        temp = format((float(row["TempInF"])-32)*5/9, '.2f')
-        print("The temperature at "+row["Time"]+" is "+temp+" degrees Celcius.")</cd></p>
+        time = row["Time"]
+        temp = format(row["TempInF"]-32)*5/9.0, '.2f')
+        print("The temperature at", time, "is", temp, "degrees Celcius.")</cd></p>
             </listing>
         </task>
     </activity>
