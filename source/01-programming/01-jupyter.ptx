@@ -157,17 +157,9 @@ Copy-paste the text from <xref ref="programming-jupyter-tempdata"/> into this
 new file to save a <term>Comma-Separated Values spreadsheet</term>.
             </p>
             <listing xml:id="programming-jupyter-tempdata">
-                <p><cd>Time,TempInF
-8:00,74
-9:00,78
-10:00,82
-11:00,85
-12:00,88
-13:00,89
-14:00,90
-15:00,91
-16:00,89
-17:00,88</cd></p>
+                <program language="csv">
+                    <input><xi:include parse="text" href="../files/programming-jupyter-tempdata.csv"/></input>
+                </program>
             </listing>
             <p>
 Then copy-paste the text from <xref ref="programming-jupyter-use-tempdata"/> into
@@ -175,13 +167,9 @@ a Code cell below to use this data in a Python 3 script to display the temperatu
 in Celcius.
             </p>
             <listing xml:id="programming-jupyter-use-tempdata">
-                <p><cd>import csv
-with open("data.csv", "r") as csv_file:
-    rows = csv.DictReader(csv_file, delimiter=',')
-    for row in rows:
-        time = row["Time"]
-        temp = format((float(row["TempInF"])-32)*5/9, '.2f')
-        print("The temperature at", time, "is", temp, "degrees Celcius.")</cd></p>
+                <program language="python">
+                    <input><xi:include parse="text" href="../files/programming-jupyter-use-tempdata.py"/></input>
+                </program>
             </listing>
         </task>
     </activity>
