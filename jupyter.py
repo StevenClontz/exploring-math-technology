@@ -2,6 +2,7 @@ from lxml import etree
 import os
 from shutil import copytree
 import click
+import subprocess
 
 
 def make_directory(path):
@@ -32,6 +33,7 @@ def build(previews):
                 includepreviews=include_previews).write_output(section_path)
     #if not os.path.exists("activities/images"):
     #  copytree("apc/src/images","activities/images")
+    subprocess.run(['pretext','build'])
 
 
 if __name__ == '__main__':
