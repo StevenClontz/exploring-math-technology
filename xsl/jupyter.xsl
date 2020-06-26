@@ -80,7 +80,7 @@
   <xsl:template name="css-fillin">display:inline-block;width:10em;margin-left:0.2em;margin-right:0.2em;height:1em;border-bottom:1px black solid;</xsl:template>
   <xsl:template name="css-fn">font-size:0.8em;color:rgba(0,0,0.45)</xsl:template>
   <xsl:template name="css-newcommands">display:none;</xsl:template>
-  <xsl:template name="css-code">background-color:#f8f8f8;border:1px #888 solid;border-radius:2px;</xsl:template>
+  <xsl:template name="css-code">background-color:#f8f8f8;border:1px #888 solid;border-radius:2px;padding-left:0.2em;padding-right:0.2em;</xsl:template>
 
   <xsl:template name="newcommands">
     &lt;span class="newcommands" style="<xsl:call-template name="css-newcommands"/>"&gt;\(\newcommand{\amp}{&amp;}\)&lt;/span&gt;
@@ -109,16 +109,10 @@
   <xsl:template match="section" mode="link">
     &lt;a href="<xsl:apply-templates select="." mode="url"/>"&gt;<xsl:apply-templates select="." mode="url"/>&lt;/a&gt;
   </xsl:template>
-  <xsl:template match="section" mode="number">
-    <xsl:value-of select="$section"/>
-  </xsl:template>
+  <xsl:template match="section" mode="number"><xsl:value-of select="$section"/></xsl:template>
 
-  <xsl:template match="subsection" mode="number">
-    <xsl:apply-templates select="./ancestor::section" mode="number"/>.<xsl:number from="//section" level="any" count="subsection"/>
-  </xsl:template>
-  <xsl:template match="subsection" mode="name">
-    Subsection <xsl:apply-templates select="." mode="number"/>
-  </xsl:template>
+  <xsl:template match="subsection" mode="number"><xsl:apply-templates select="./ancestor::section" mode="number"/>.<xsl:number from="//section" level="any" count="subsection"/></xsl:template>
+  <xsl:template match="subsection" mode="name">Subsection <xsl:apply-templates select="." mode="number"/></xsl:template>
 
 
   <!-- Supported PreTeXt elements -->
@@ -145,15 +139,9 @@
       </xsl:if>
     </xsl:if>
   </xsl:template>
-  <xsl:template match="exploration|activity" mode="number">
-    <xsl:apply-templates select="./ancestor::section" mode="number"/>.<xsl:number from="//section" level="any" count="exploration|activity"/>
-  </xsl:template>
-  <xsl:template match="exploration" mode="name">
-    Preview Activity <xsl:apply-templates select="." mode="number"/>
-  </xsl:template>
-  <xsl:template match="activity" mode="name">
-    Activity <xsl:apply-templates select="." mode="number"/>
-  </xsl:template>
+  <xsl:template match="exploration|activity" mode="number"><xsl:apply-templates select="./ancestor::section" mode="number"/>.<xsl:number from="//section" level="any" count="exploration|activity"/></xsl:template>
+  <xsl:template match="exploration" mode="name">Preview Activity <xsl:apply-templates select="." mode="number"/></xsl:template>
+  <xsl:template match="activity" mode="name">Activity <xsl:apply-templates select="." mode="number"/></xsl:template>
 
   <xsl:template match="statement|introduction">
     <xsl:apply-templates select="*"/>
@@ -227,28 +215,15 @@
   <xsl:template match="url" mode="markdown">&lt;a href="<xsl:value-of select="@href"/>"&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/a&gt;</xsl:template>
 
 
-  <xsl:template match="table|figure|listing|definition|example" mode="number">
-    <xsl:apply-templates select="./ancestor::section" mode="number"/>.<xsl:number from="//section" level="any" count="table|figure|listing|definition|example"/>
-  </xsl:template>
-  <xsl:template match="table" mode="name">
-    Table <xsl:apply-templates select="." mode="number"/>
-  </xsl:template>
-  <xsl:template match="figure" mode="name">
-    Figure <xsl:apply-templates select="." mode="number"/>
-  </xsl:template>
-  <xsl:template match="definition" mode="name">
-    Definition <xsl:apply-templates select="." mode="number"/>
-  </xsl:template>
-  <xsl:template match="example" mode="name">
-    Example <xsl:apply-templates select="." mode="number"/>
-  </xsl:template>
-  <xsl:template match="listing" mode="name">
-    Listing <xsl:apply-templates select="." mode="number"/>
-  </xsl:template>
+  <xsl:template match="table|figure|listing|definition|example" mode="number"><xsl:apply-templates select="./ancestor::section" mode="number"/>.<xsl:number from="//section" level="any" count="table|figure|listing|definition|example"/></xsl:template>
+  <xsl:template match="table" mode="name">Table <xsl:apply-templates select="." mode="number"/></xsl:template>
+  <xsl:template match="figure" mode="name">Figure <xsl:apply-templates select="." mode="number"/></xsl:template>
+  <xsl:template match="definition" mode="name">Definition <xsl:apply-templates select="." mode="number"/></xsl:template>
+  <xsl:template match="example" mode="name">Example <xsl:apply-templates select="." mode="number"/></xsl:template>
+  <xsl:template match="listing" mode="name">Listing <xsl:apply-templates select="." mode="number"/></xsl:template>
 
-  <xsl:template match="xref" mode="markdown"><xsl:apply-templates select="//*[@xml:id=current()/@ref]" mode="name"/></xsl:template>
+  <xsl:template match="xref" mode="markdown">&lt;i&gt;<xsl:apply-templates select="//*[@xml:id=current()/@ref]" mode="name"/>&lt;/i&gt;</xsl:template>
 
-<!--  <xsl:template match="text()" mode="markdown"><xsl:value-of select="translate(.,' &#x20;&#xa;&#xd;&#x9;', '')"/></xsl:template>-->
 <!-- https://stackoverflow.com/a/5044657/1607849 -->
   <xsl:template match="text()" mode="markdown"><xsl:value-of select="translate(normalize-space(concat('&#x7F;',.,'&#x7F;')),'&#x7F;','')"/></xsl:template>
 
