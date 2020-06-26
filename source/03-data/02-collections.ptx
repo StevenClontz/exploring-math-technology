@@ -65,20 +65,26 @@ This is where <term>lists</term> are useful.
         </introduction>
     </activity>
     <activity>
+        <introduction>
         <p>
             Tuples
         </p>
+        </introduction>
     </activity>
     <activity>
+        <introduction>
         <p>
             Dictionaries
         </p>
+        </introduction>
     </activity>
     <activity>
+        <introduction>
         <p>
             Similar things (arrays, iterators...)
             Note how there are less than <m>10^100</m> atoms in the universe but 
         </p>
+        </introduction>
     </activity>
 </section>
 

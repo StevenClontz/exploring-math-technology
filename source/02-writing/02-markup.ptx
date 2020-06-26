@@ -118,7 +118,7 @@ then compare with the corresponding source markup.
         </task>
         <task>
             <me>
-\overline{x} = \frac{1}{n}\left(\sum_{0\leq i&lt;n}x_i\right)
+\overline{x} = \frac{1}{n}\left(\sum_{0\leq i\lt n}x_i\right)
             </me>
         </task>
     </activity>

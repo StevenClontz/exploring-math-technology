@@ -3,6 +3,6 @@
   	<title>Programming for Data Science and Mathematics</title>
   	<xi:include href="./01-jupyter.ptx" />
   	<xi:include href="./02-python.ptx" />
-  	<xi:include href="./03-sagemath.ptx" />
+    <xi:include href="./03-sagemath.ptx" />
 </chapter>
 

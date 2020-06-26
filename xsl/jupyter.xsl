@@ -104,7 +104,7 @@
     ]}
   </xsl:template>
   <xsl:template match="section" mode="url">
-    <xml:text>https://TODO/<xsl:value-of select="./@xml:id"/>.html</xml:text>
+    <xml:text>https://stevenclontz.github.io/mathematics-of-data/html/<xsl:value-of select="./@xml:id"/>.html</xml:text>
   </xsl:template>
   <xsl:template match="section" mode="link">
     &lt;a href="<xsl:apply-templates select="." mode="url"/>"&gt;<xsl:apply-templates select="." mode="url"/>&lt;/a&gt;
@@ -167,31 +167,17 @@
     </xsl:call-template>
   </xsl:template>
 
-  <xsl:template match="sidebyside" mode="markdown">
-    &lt;div class="sidebyside" style="<xsl:call-template name="css-sidebyside"/>"&gt;
-      <xsl:apply-templates select="*" mode="markdown"/>
-    &lt;/div&gt;
-  </xsl:template>
-  <xsl:template match="image" mode="markdown">
-    &lt;div&gt;&lt;img src="<xsl:value-of select="normalize-spaces(@source)"/>.svg"/&gt;&lt;/div&gt;
-  </xsl:template>
-  <xsl:template match="figure" mode="markdown">
-    &lt;div&gt;&lt;figure&gt;&lt;figcaption style="<xsl:call-template name="css-figcaption"/>"&gt;
-      &lt;b&gt;<xsl:apply-templates select="normalize-spaces(.)" mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption|title" mode="markdown"/>
-    &lt;/figcaption&gt;<xsl:apply-templates select="image" mode="markdown"/>&lt;/figure&gt;&lt;/div&gt;
-  </xsl:template>
-  <xsl:template match="table" mode="markdown">
-    &lt;div&gt;&lt;table&gt;&lt;caption style="<xsl:call-template name="css-caption"/>"&gt;
-      &lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption|title" mode="markdown"/>
-    &lt;/caption&gt;<xsl:apply-templates select="tabular/row" mode="markdown"/>&lt;/table&gt;&lt;/div&gt;
-  </xsl:template>
-  <xsl:template match="tabular" mode="markdown">
-    &lt;div&gt;&lt;table&gt;<xsl:apply-templates select="row" mode="markdown"/>&lt;/table&gt;&lt;/div&gt;
-  </xsl:template>
-  <xsl:template match="listing" mode="markdown">
-    &lt;div&gt;&lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt;&lt;/div&gt;
-    &lt;div&gt;<xsl:apply-templates select="*" mode="markdown"/>&lt;/div&gt;
-  </xsl:template>
+  <xsl:template match="sidebyside" mode="markdown">&lt;div class="sidebyside" style="<xsl:call-template name="css-sidebyside"/>"&gt;<xsl:apply-templates select="*" mode="markdown"/>&lt;/div&gt;</xsl:template>
+
+  <xsl:template match="image" mode="markdown">&lt;div&gt;&lt;img src="<xsl:value-of select="normalize-spaces(@source)"/>.svg"/&gt;&lt;/div&gt;</xsl:template>
+
+  <xsl:template match="figure" mode="markdown">&lt;div&gt;&lt;figure&gt;&lt;figcaption style="<xsl:call-template name="css-figcaption"/>"&gt;&lt;b&gt;<xsl:apply-templates select="normalize-spaces(.)" mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption|title" mode="markdown"/>&lt;/figcaption&gt;<xsl:apply-templates select="image" mode="markdown"/>&lt;/figure&gt;&lt;/div&gt;</xsl:template>
+
+  <xsl:template match="table" mode="markdown">&lt;div&gt;&lt;table&gt;&lt;caption style="<xsl:call-template name="css-caption"/>"&gt;&lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption|title" mode="markdown"/>&lt;/caption&gt;<xsl:apply-templates select="tabular/row" mode="markdown"/>&lt;/table&gt;&lt;/div&gt;</xsl:template>
+
+  <xsl:template match="tabular" mode="markdown">&lt;div&gt;&lt;table&gt;<xsl:apply-templates select="row" mode="markdown"/>&lt;/table&gt;&lt;/div&gt;</xsl:template>
+
+  <xsl:template match="listing" mode="markdown">&lt;div&gt;&lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt;&lt;/div&gt;&lt;div&gt;<xsl:apply-templates select="*" mode="markdown"/>&lt;/div&gt;</xsl:template>
 
   <xsl:template match="row" mode="markdown">&lt;tr&gt;<xsl:apply-templates select="cell" mode="markdown"/>&lt;/tr&gt;</xsl:template>
 
