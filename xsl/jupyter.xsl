@@ -49,10 +49,10 @@
     }
   </xsl:template>
 
-  <xsl:template name="minimize">
+<!--  <xsl:template name="minimize">
     <xsl:param name="data"/>
     <xsl:value-of select="normalize-space($data)"/>
-  </xsl:template>
+  </xsl:template>-->
 
   <!-- <xsl:template name="css"> TODO this seems to be broken in longer notebooks
     &lt;style&gt;
@@ -66,11 +66,12 @@
       .fillin{<xsl:call-template name="css-fillin"/>}
       .fn{<xsl:call-template name="css-fn"/>}
       .newcommands{<xsl:call-template name="css-newcommands"/>}
+      tt{<xsl:call-template name="css-code"/>}
     &lt;/style&gt;
   </xsl:template>-->
   <xsl:template name="css"/><!-- So for now the template is dummied out; smaller templates below should be used instead. -->
   <xsl:template name="css-editable">margin:1em;color:#ccc;font-size:2em;text-align:center;</xsl:template>
-  <xsl:template name="css-not-editable">background-color:#f8f8f8;padding:1em;border-radius:10px;box-shadow:4px 4px 3px #ddd;margin:5px;</xsl:template>
+  <xsl:template name="css-not-editable">background-color:#eef8ff;padding:1em;border-radius:10px;box-shadow:4px 4px 3px #ddd;margin:5px;</xsl:template>
   <xsl:template name="css-sidebyside">display:flex;justify-content:center;</xsl:template>
   <xsl:template name="css-sidebyside-child">display:flex;justify-content:center;</xsl:template>
   <xsl:template name="css-todo">color:#f00;font-weight:bold;</xsl:template>
@@ -79,6 +80,7 @@
   <xsl:template name="css-fillin">display:inline-block;width:10em;margin-left:0.2em;margin-right:0.2em;height:1em;border-bottom:1px black solid;</xsl:template>
   <xsl:template name="css-fn">font-size:0.8em;color:rgba(0,0,0.45)</xsl:template>
   <xsl:template name="css-newcommands">display:none;</xsl:template>
+  <xsl:template name="css-code">background-color:#f8f8f8;border:1px #888 solid;border-radius:2px;</xsl:template>
 
   <xsl:template name="newcommands">
     &lt;span class="newcommands" style="<xsl:call-template name="css-newcommands"/>"&gt;\(\newcommand{\amp}{&amp;}\)&lt;/span&gt;
@@ -159,7 +161,7 @@
   <xsl:template match="task">
     <xsl:call-template name="jupyter-cell">
       <xsl:with-param name="source">
-        &lt;div&gt;&lt;b&gt;<xsl:number format="a. "/>&lt;/b&gt;&lt;/div&gt;
+        &lt;span&gt;&lt;b&gt;<xsl:number format="a. "/>&lt;/b&gt;&lt;/span&gt;
         <xsl:apply-templates select="*[position()=1]" mode="markdown"/>
       </xsl:with-param>
     </xsl:call-template>
@@ -214,7 +216,7 @@
   <xsl:template match="md" mode="markdown">\[\begin{align*}<xsl:apply-templates select="mrow" mode="markdown"/>\end{align*}\]</xsl:template>
   <xsl:template match="cd|input" mode="markdown">&lt;pre&gt;<xsl:value-of select="text()"/>&lt;/pre&gt;</xsl:template>
   <xsl:template match="program" mode="markdown"><xsl:apply-templates select="input" mode="markdown"/></xsl:template>
-  <xsl:template match="c" mode="markdown">&lt;tt&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/tt&gt;</xsl:template>
+  <xsl:template match="c|kbd" mode="markdown">&lt;tt style="<xsl:call-template name="css-code"/>"&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/tt&gt;</xsl:template>
   <xsl:template match="mrow" mode="markdown"><xsl:value-of select="normalize-space(text())"/>\\</xsl:template>
   <xsl:template match="caption|title" mode="markdown"><xsl:apply-templates select="text()|*" mode="markdown"/></xsl:template>
   <xsl:template match="fillin" mode="markdown">&lt;span class="fillin" style="<xsl:call-template name="css-fillin"/>"&gt;&lt;/span&gt;</xsl:template>
@@ -222,6 +224,7 @@
   <xsl:template match="ul" mode="markdown">&lt;ul&gt;<xsl:apply-templates select="li" mode="markdown"/>&lt;/ul&gt;</xsl:template>
   <xsl:template match="li" mode="markdown">&lt;li&gt;<xsl:apply-templates select="*|text()" mode="markdown"/>&lt;/li&gt;</xsl:template>
   <xsl:template match="p" mode="markdown">&lt;span&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/span&gt;</xsl:template>
+  <xsl:template match="url" mode="markdown">&lt;a href="<xsl:value-of select="@href"/>"&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/a&gt;</xsl:template>
 
 
   <xsl:template match="table|figure|listing|definition|example" mode="number">
@@ -245,6 +248,8 @@
 
   <xsl:template match="xref" mode="markdown"><xsl:apply-templates select="//*[@xml:id=current()/@ref]" mode="name"/></xsl:template>
 
-  <xsl:template match="text()" mode="markdown"><xsl:value-of select="normalize-space(.)"/></xsl:template>
+<!--  <xsl:template match="text()" mode="markdown"><xsl:value-of select="translate(.,' &#x20;&#xa;&#xd;&#x9;', '')"/></xsl:template>-->
+<!-- https://stackoverflow.com/a/5044657/1607849 -->
+  <xsl:template match="text()" mode="markdown"><xsl:value-of select="translate(normalize-space(concat('&#x7F;',.,'&#x7F;')),'&#x7F;','')"/></xsl:template>
 
 </xsl:stylesheet>
