@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-26T18:20:10Z    *-->
+<!--*    on 2020-06-26T21:30:58Z    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -174,66 +174,68 @@ MathJax.Hub.Config({
 <td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">22</td>
 </tr>
 </table></figure></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="programming-sagemath-pens"><pre class="code-block tex2jax_ignore" id="p-84">craig_pens = 1
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="programming-sagemath-pens"><pre class="prettyprint lang-py">craig_pens = 1
 laura_pens = 30
 phillip_pens = 18
 sherill_pens = 3
-steven_pens = 22</pre>
+steven_pens = 22
+</pre>
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.3.2<span class="period">.</span></span><span class="space"> </span>Corresponding variable assignments</figcaption></figure></div>
 </div></div></article><article class="task exercise-like" id="task-35"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-85">The value stored in a CS variable may be reused later by using the variable name. For example, <code class="code-inline tex2jax_ignore">craig_pens+laura_pens+phillip_pens+sherill_pens+steven_pens</code> would return the result <code class="code-inline tex2jax_ignore">74</code>.</p>
-<p id="p-86">Use a code cell to find the sum of the pens in your group by writing the sum of the variable names. (Later we will learn much more elegant patterns for storing and using lists of data while still using long descriptive variable names as recommended.)</p></article><article class="task exercise-like" id="task-36"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-87">Variables can be overwritten. In a Jupyter notebook, you can go to a previous cell and edit the assignment, and you can also create a new Code cell and write the assignment.</p>
-<p id="p-88">Try editing the assignment of one group member's pens in the previous Code cell, and try overwriting another group member's pens value by creating a Code cell below. For example, in <a class="xref" data-knowl="./knowl/programming-sagemath-pens-1.html" title="Listing 1.3.3">1.3.3</a> the original assignment for <code class="code-inline tex2jax_ignore">craig_pens</code> is amended, but you could also amend the value of <code class="code-inline tex2jax_ignore">phillip_pens</code> by creating a new Code cell below with the line <code class="code-inline tex2jax_ignore">phillip_pens = 42</code>.</p>
-<figure class="listing figure-like" id="programming-sagemath-pens-1"><pre class="code-block tex2jax_ignore" id="p-89">craig_pens = 100
+<p id="p-84">The value stored in a CS variable may be reused later by using the variable name. For example, <code class="code-inline tex2jax_ignore">craig_pens+laura_pens+phillip_pens+sherill_pens+steven_pens</code> would return the result <code class="code-inline tex2jax_ignore">74</code>.</p>
+<p id="p-85">Use a code cell to find the sum of the pens in your group by writing the sum of the variable names. (Later we will learn much more elegant patterns for storing and using lists of data while still using long descriptive variable names as recommended.)</p></article><article class="task exercise-like" id="task-36"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-86">Variables can be overwritten. In a Jupyter notebook, you can go to a previous cell and edit the assignment, and you can also create a new Code cell and write the assignment.</p>
+<p id="p-87">Try editing the assignment of one group member's pens in the previous Code cell, and try overwriting another group member's pens value by creating a Code cell below. For example, in <a class="xref" data-knowl="./knowl/programming-sagemath-pens-1.html" title="Listing 1.3.3">1.3.3</a> the original assignment for <code class="code-inline tex2jax_ignore">craig_pens</code> is amended, but you could also amend the value of <code class="code-inline tex2jax_ignore">phillip_pens</code> by creating a new Code cell below with the line <code class="code-inline tex2jax_ignore">phillip_pens = 42</code>.</p>
+<figure class="listing figure-like" id="programming-sagemath-pens-1"><pre class="prettyprint lang-py">craig_pens = 100
 laura_pens = 30
 phillip_pens = 18
 sherill_pens = 3
-steven_pens = 22</pre>
+steven_pens = 22
+</pre>
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.3.3<span class="period">.</span></span><span class="space"> </span>Amended variable assignments</figcaption></figure></article><article class="task exercise-like" id="task-37"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-90">Before doing anything further, write a sentence about what you notice about the result of your existing code cell adding the variables together.</p></article><article class="task exercise-like" id="task-38"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-91">Now use the <kbd class="kbdkey">Kernel</kbd> &gt; <kbd class="kbdkey">Run All</kbd> menu option in CoCalc. Write a sentence or two explaining how the sum changed, and why.</p></article><article class="task exercise-like" id="task-39"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-92">Copy the line of code summing your variables into a new Code cell below (e.g. <code class="code-inline tex2jax_ignore">craig_pens+laura_pens+phillip_pens+sherill_pens+steven_pens</code>). Write a sentence explaining why you get a different result even though the Code cells are exactly the same.</p></article></article><article class="activity project-like" id="activity-9"><h6 class="heading">
+<p id="p-88">Before doing anything further, write a sentence about what you notice about the result of your existing code cell adding the variables together.</p></article><article class="task exercise-like" id="task-38"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-89">Now use the <kbd class="kbdkey">Kernel</kbd> &gt; <kbd class="kbdkey">Run All</kbd> menu option in CoCalc. Write a sentence or two explaining how the sum changed, and why.</p></article><article class="task exercise-like" id="task-39"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-90">Copy the line of code summing your variables into a new Code cell below (e.g. <code class="code-inline tex2jax_ignore">craig_pens+laura_pens+phillip_pens+sherill_pens+steven_pens</code>). Write a sentence explaining why you get a different result even though the Code cells are exactly the same.</p></article></article><article class="activity project-like" id="activity-9"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-11"><p id="p-93">We now will explore mathematical variables.</p></div>
+<div class="introduction" id="introduction-11"><p id="p-91">We now will explore mathematical variables.</p></div>
 <article class="task exercise-like" id="task-40"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-94">Unlike CS variables, mathematical variables represent an unknown value or arbitrary value, rather than storing a specific piece of data. These variables are often represented by single letters rather than the long semantic names used for CS variables. For example, SageMath always assumes <code class="code-inline tex2jax_ignore">x</code> is a mathematical variable named \(x\text{.}\)</p>
-<p id="p-95">Other math variables are declared using by using the <code class="code-inline tex2jax_ignore">var()</code> tool. For example, <code class="code-inline tex2jax_ignore">a = var("a")</code> declares <code class="code-inline tex2jax_ignore">a</code> to be the variable named \(a\text{,}\) and <code class="code-inline tex2jax_ignore">b,c = var("b c")</code> declares both <code class="code-inline tex2jax_ignore">b</code> and <code class="code-inline tex2jax_ignore">c</code> to be variables.</p>
-<p id="p-96">Use a Code cell to declare \(y\) and \(z\) to be variables.</p></article><article class="task exercise-like" id="task-41"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-97">Math variables may be manipulated just like literal values or values store in CS variables. But since they don't store specific values, these combinations of variables represent an <dfn class="terminology">expression</dfn>.</p>
-<p id="p-98">Use the <code class="code-inline tex2jax_ignore">show()</code> tool to display the expression \(x^2+4yz\) using a Code cell. Remember that \(4yz=4\times y\times z\) requires the <code class="code-inline tex2jax_ignore">*</code> operator to perform multiplication.</p></article><article class="task exercise-like" id="task-42"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-99">An expression can itself be stored in a CS variable using the assignment operator <code class="code-inline tex2jax_ignore">=</code>; for example, <code class="code-inline tex2jax_ignore">quadratic = x^2-4*x+4</code> saves the expression \(x^2-4x+4\) using the name <code class="code-inline tex2jax_ignore">quadratic</code>.</p>
-<p id="p-100">Assign the expression \(x^2+4yz\) to a CS variable with the name <code class="code-inline tex2jax_ignore">my_expression</code>.</p></article><article class="task exercise-like" id="task-43"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-101">Math variables and expressions are useful for describing how data should be manipulated before the values of those data are known.</p>
-<p id="p-102">For example, suppose we now want to assume \(x=6,y=0,z=-3\) and compute the corresponding value for the expression \(x^2+4yz\) saved as <code class="code-inline tex2jax_ignore">my_expression</code>. You can check that \(6^2+4(0)(-3)=36\text{,}\) either by hand or evaluating <code class="code-inline tex2jax_ignore">6^2+4*0*(-3)</code>. But to have SageMath compute this for you immediately, you could use the following syntax: <code class="code-inline tex2jax_ignore">my_expression(x=6,y=0,z=-3)</code>.</p>
-<p id="p-103">Use a Code cell to substitute the values \(x=1,y=2,z=3\) into the expression \(x^2+4yz\text{,}\) and confirm that the resulting value is equal to \(1^2+4(2)(3)\text{.}\)</p></article><article class="task exercise-like" id="task-44"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-104">SageMath also supports common simplifications of expressions with the <code class="code-inline tex2jax_ignore">full_simplify()</code> tool. For example, <code class="code-inline tex2jax_ignore">show( ((x+1)^3).full_simplify() )</code> returns the equivalent expression \(x^3+3x^2+3x+1\text{.}\)</p>
-<p id="p-105">Use <code class="code-inline tex2jax_ignore">full_simplify()</code> to find an equivalent expression for \((x+y)^4\text{.}\)</p></article></article><article class="activity project-like" id="activity-10"><h6 class="heading">
+<p id="p-92">Unlike CS variables, mathematical variables represent an unknown value or arbitrary value, rather than storing a specific piece of data. These variables are often represented by single letters rather than the long semantic names used for CS variables. For example, SageMath always assumes <code class="code-inline tex2jax_ignore">x</code> is a mathematical variable named \(x\text{.}\)</p>
+<p id="p-93">Other math variables are declared using by using the <code class="code-inline tex2jax_ignore">var()</code> tool. For example, <code class="code-inline tex2jax_ignore">a = var("a")</code> declares <code class="code-inline tex2jax_ignore">a</code> to be the variable named \(a\text{,}\) and <code class="code-inline tex2jax_ignore">b,c = var("b c")</code> declares both <code class="code-inline tex2jax_ignore">b</code> and <code class="code-inline tex2jax_ignore">c</code> to be variables.</p>
+<p id="p-94">Use a Code cell to declare \(y\) and \(z\) to be variables.</p></article><article class="task exercise-like" id="task-41"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-95">Math variables may be manipulated just like literal values or values store in CS variables. But since they don't store specific values, these combinations of variables represent an <dfn class="terminology">expression</dfn>.</p>
+<p id="p-96">Use the <code class="code-inline tex2jax_ignore">show()</code> tool to display the expression \(x^2+4yz\) using a Code cell. Remember that \(4yz=4\times y\times z\) requires the <code class="code-inline tex2jax_ignore">*</code> operator to perform multiplication.</p></article><article class="task exercise-like" id="task-42"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-97">An expression can itself be stored in a CS variable using the assignment operator <code class="code-inline tex2jax_ignore">=</code>; for example, <code class="code-inline tex2jax_ignore">quadratic = x^2-4*x+4</code> saves the expression \(x^2-4x+4\) using the name <code class="code-inline tex2jax_ignore">quadratic</code>.</p>
+<p id="p-98">Assign the expression \(x^2+4yz\) to a CS variable with the name <code class="code-inline tex2jax_ignore">my_expression</code>.</p></article><article class="task exercise-like" id="task-43"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-99">Math variables and expressions are useful for describing how data should be manipulated before the values of those data are known.</p>
+<p id="p-100">For example, suppose we now want to assume \(x=6,y=0,z=-3\) and compute the corresponding value for the expression \(x^2+4yz\) saved as <code class="code-inline tex2jax_ignore">my_expression</code>. You can check that \(6^2+4(0)(-3)=36\text{,}\) either by hand or evaluating <code class="code-inline tex2jax_ignore">6^2+4*0*(-3)</code>. But to have SageMath compute this for you immediately, you could use the following syntax: <code class="code-inline tex2jax_ignore">my_expression(x=6,y=0,z=-3)</code>.</p>
+<p id="p-101">Use a Code cell to substitute the values \(x=1,y=2,z=3\) into the expression \(x^2+4yz\text{,}\) and confirm that the resulting value is equal to \(1^2+4(2)(3)\text{.}\)</p></article><article class="task exercise-like" id="task-44"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-102">SageMath also supports common simplifications of expressions with the <code class="code-inline tex2jax_ignore">full_simplify()</code> tool. For example, <code class="code-inline tex2jax_ignore">show( ((x+1)^3).full_simplify() )</code> returns the equivalent expression \(x^3+3x^2+3x+1\text{.}\)</p>
+<p id="p-103">Use <code class="code-inline tex2jax_ignore">full_simplify()</code> to find an equivalent expression for \((x+y)^4\text{.}\)</p></article></article><article class="activity project-like" id="activity-10"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-12"><p id="p-106">In addition to storing and manipulating expressions of mathematical variables, SageMath also supports studying <dfn class="terminology">equations</dfn> that set two expressions equal to one another.</p></div>
+<div class="introduction" id="introduction-12"><p id="p-104">In addition to storing and manipulating expressions of mathematical variables, SageMath also supports studying <dfn class="terminology">equations</dfn> that set two expressions equal to one another.</p></div>
 <article class="task exercise-like" id="task-45"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-107">Since the equal sign <kbd class="kbdkey">=</kbd> is already used as the assignment operator <code class="code-inline tex2jax_ignore">=</code>, two equal signs are used to represent the equality operator <code class="code-inline tex2jax_ignore">==</code>.</p>
-<p id="p-108">When only simple numerical values are present, the equality operator behaves similarly in both Python and SageMath: it evaluates both sides of the equation and returns a <dfn class="terminology">Boolean value</dfn> of <code class="code-inline tex2jax_ignore">True</code> or <code class="code-inline tex2jax_ignore">False</code>. For example, <code class="code-inline tex2jax_ignore">3*2==6</code> returns <code class="code-inline tex2jax_ignore">True</code> while <code class="code-inline tex2jax_ignore">3^2==6</code> returns <code class="code-inline tex2jax_ignore">False</code>.</p>
-<p id="p-109">Use the equality operator to verify that \(1+2+3+4+5+6\) has the same value as \(\frac{6\times 7}{2}\text{.}\)</p></article><article class="task exercise-like" id="task-46"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-110">When mathematical variables or more advanced values are present, the equality operator will return an equation, but won't immediately reveal whether this equation is true or false.</p>
-<p id="p-111">Check this by entering <code class="code-inline tex2jax_ignore">x==sqrt(x^2)</code> into a Code cell below. (Remember, you can use the <code class="code-inline tex2jax_ignore">show()</code> tool to make it appear as \(x=\sqrt{x^2}\text{.}\))</p></article><article class="task exercise-like" id="task-47"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-112">SageMath is able to verify the truth of simple equations by using the <code class="code-inline tex2jax_ignore">bool()</code> tool. For example, <code class="code-inline tex2jax_ignore">bool(x==sqrt(x^2))</code> will return <code class="code-inline tex2jax_ignore">False</code>, since it fails when \(x=-4\text{.}\)</p>
-<p id="p-113">Use the <code class="code-inline tex2jax_ignore">bool()</code> tool to verify that \(3e^{1-\frac{1}{2}i\pi}\) has the same value as \(-3ei\text{.}\)</p></article><article class="task exercise-like" id="task-48"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-114">Equations can be manipulated by SageMath similarly to how you manipulate them by hand. For example:</p>
-<div class="displaymath" id="p-115">
+<p id="p-105">Since the equal sign <kbd class="kbdkey">=</kbd> is already used as the assignment operator <code class="code-inline tex2jax_ignore">=</code>, two equal signs are used to represent the equality operator <code class="code-inline tex2jax_ignore">==</code>.</p>
+<p id="p-106">When only simple numerical values are present, the equality operator behaves similarly in both Python and SageMath: it evaluates both sides of the equation and returns a <dfn class="terminology">Boolean value</dfn> of <code class="code-inline tex2jax_ignore">True</code> or <code class="code-inline tex2jax_ignore">False</code>. For example, <code class="code-inline tex2jax_ignore">3*2==6</code> returns <code class="code-inline tex2jax_ignore">True</code> while <code class="code-inline tex2jax_ignore">3^2==6</code> returns <code class="code-inline tex2jax_ignore">False</code>.</p>
+<p id="p-107">Use the equality operator to verify that \(1+2+3+4+5+6\) has the same value as \(\frac{6\times 7}{2}\text{.}\)</p></article><article class="task exercise-like" id="task-46"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-108">When mathematical variables or more advanced values are present, the equality operator will return an equation, but won't immediately reveal whether this equation is true or false.</p>
+<p id="p-109">Check this by entering <code class="code-inline tex2jax_ignore">x==sqrt(x^2)</code> into a Code cell below. (Remember, you can use the <code class="code-inline tex2jax_ignore">show()</code> tool to make it appear as \(x=\sqrt{x^2}\text{.}\))</p></article><article class="task exercise-like" id="task-47"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-110">SageMath is able to verify the truth of simple equations by using the <code class="code-inline tex2jax_ignore">bool()</code> tool. For example, <code class="code-inline tex2jax_ignore">bool(x==sqrt(x^2))</code> will return <code class="code-inline tex2jax_ignore">False</code>, since it fails when \(x=-4\text{.}\)</p>
+<p id="p-111">Use the <code class="code-inline tex2jax_ignore">bool()</code> tool to verify that \(3e^{1-\frac{1}{2}i\pi}\) has the same value as \(-3ei\text{.}\)</p></article><article class="task exercise-like" id="task-48"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-112">Equations can be manipulated by SageMath similarly to how you manipulate them by hand. For example:</p>
+<div class="displaymath" id="p-113">
 \begin{align*}
 x+7\amp=11\\
--7\amp\phantom{=}-7\\
+\scriptsize{-7}\amp\phantom{=}\scriptsize{-7}\\
 x\amp=4
 \end{align*}
 </div>
-<p id="p-116">This may be verified by entering <code class="code-inline tex2jax_ignore">(x+7==11)-7</code> into a Code cell.</p>
-<p id="p-117">Solve the equation \(2x+5=x-7\) by subtracting \(x\) and \(5\) from both sides of the equation.</p></article><article class="task exercise-like" id="task-49"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-118">SageMath can automatically solve many equations for you using the <code class="code-inline tex2jax_ignore">solve()</code> tool. For example, <code class="code-inline tex2jax_ignore">solve(x+7==11,x)</code> reveals the solution \(x=4\) immediately.</p>
-<p id="p-119">Use the <code class="code-inline tex2jax_ignore">solve()</code> tool to solve \(2x+5=x-7\) automatically.</p></article><article class="task exercise-like" id="task-50"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-120">Use the <code class="code-inline tex2jax_ignore">solve()</code> tool to find both solutions to \(x^2+3x+7=4-x\text{.}\)</p></article></article></section></div></main>
+<p id="p-114">This may be verified by entering <code class="code-inline tex2jax_ignore">(x+7==11)-7</code> into a Code cell.</p>
+<p id="p-115">Solve the equation \(2x+5=x-7\) by subtracting \(x\) and \(5\) from both sides of the equation.</p></article><article class="task exercise-like" id="task-49"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-116">SageMath can automatically solve many equations for you using the <code class="code-inline tex2jax_ignore">solve()</code> tool. For example, <code class="code-inline tex2jax_ignore">solve(x+7==11,x)</code> reveals the solution \(x=4\) immediately.</p>
+<p id="p-117">Use the <code class="code-inline tex2jax_ignore">solve()</code> tool to solve \(2x+5=x-7\) automatically.</p></article><article class="task exercise-like" id="task-50"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-118">Use the <code class="code-inline tex2jax_ignore">solve()</code> tool to find both solutions to \(x^2+3x+7=4-x\text{.}\)</p></article></article></section></div></main>
 </div>
 </body>
 </html>
