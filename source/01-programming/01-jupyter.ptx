@@ -18,19 +18,26 @@ mathematics and data science?
         </ul>
     </objectives>-->
 
-    <exploration>
+    <exploration xml:id="programming-jupyter-first-activity">
         <statement>
             <p>
 Throughout this course, you will complete the activities from this text within
 Jupyter notebooks hosted on <url href="https://cocalc.com">CoCalc.com</url>, some
 individually, and some within groups.
-Your first activity is to set these Jupyter notebooks up for yourself!
+<!--Your first activity is to set these Jupyter notebooks up for yourself!-->
             </p>
             <p>
                 <ol>
                     <li>
                         <p>
-First, either create an account at <url href="https://cocalc.com">CoCalc.com</url>,
+Your instructor will provie directions how how to log into
+<url href="https://cocalc.com">CoCalc.com</url> and access your
+<q>Project</q> containing the Jupyter notebooks for this course.
+                        </p>
+                    </li>
+<!--                    <li>
+                        <p>
+If your instructor provides an account, log in at <url href="https://cocalc.com">CoCalc.com</url>,
 or log in with the account provided by your instructor.
                         </p>
                     </li>
@@ -47,15 +54,16 @@ Open the <c>Settings</c> for this project, and add your instructor's account as 
 <c>Collaborator</c>. This allows them to see your work, and unlock the premium features
 required for this course (such as importing data from other websites to analyze).
                         </p>
-                    </li>
+                    </li>-->
                     <li>
                         <p>
-Finally, navigate to the notebook associated with this activity. (You may need
+Navigate to the notebook associated with this activity
+<xref ref="programming-jupyter-first-activity"/>. (You may need
 to select a <q>kernel</q> to open it; that choice is not important for now, so
 pick anything.) In the editable textbox
-appearing below this activity in the notebook, double-click to edit, erase any default content,
+appearing below this activity in the notebook, double-click to edit
 and type the well-worn phrase of computing: <c>Hello World!</c>. Tap
-<kbd>Shift</kbd>+<kbd>Enter</kbd> to save your note.
+<kbd>Ctrl</kbd>+<kbd>Enter</kbd> to save your note.
                         </p>
                     </li>
                 </ol>
