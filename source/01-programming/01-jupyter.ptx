@@ -80,13 +80,15 @@ code. Let's explore how writing code in Jupyter works.
         <task>
             <p>
 To write and execute code, your notebook needs to have a <term>kernel</term>,
-that is, an associated programming language. Select a <code>Python 3</code> kernel from
-the notebook menu. (If there are multiple versions of Python 3 available,
+that is, an associated programming language. The kernel is displayed in the
+upper-right corner of your notebook. If it's not already selected,
+choose a <code>Python 3</code> kernel to use with this notebook.
+(If there are multiple versions of Python 3 available,
 it doesn't matter which one you choose. Do not choose a Python 2 kernel, however.)
             </p>
             <p>
 Once you've done this, edit the contents of the below cell to read
-<c>import sys; sys.version</c> and hit <kbd>Shift</kbd>+<kbd>Enter</kbd>.
+<c>import sys; sys.version</c> and hit <kbd>Ctrl</kbd>+<kbd>Enter</kbd>.
             </p>
         </task>
         <task>
@@ -102,7 +104,7 @@ to switch it to Markdown mode, so the output is simply
             </p>
             <p>
 Now enter <c>import sys; sys.version</c> into the below cell, and use the menu to switch
-the cell type to <q>Code</q>. Now using <kbd>Shift</kbd>+<kbd>Enter</kbd> should
+the cell type to <q>Code</q>. Now pressing <kbd>Ctrl</kbd>+<kbd>Enter</kbd> should
 display something like <c>'3.6.9 (default, Apr 18 2020, 01:56:04) \n[GCC 8.4.0]'</c>,
 the version of the Python kernel you selected.
             </p>
@@ -183,10 +185,10 @@ in Celcius.
             </listing>
         </task>
     </activity>
-    <exercises>
+<!--    <exercises>
         <exercise>
             <p>Foo</p>
         </exercise>
-    </exercises>
+    </exercises>-->
 </section>
 

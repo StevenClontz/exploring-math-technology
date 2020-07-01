@@ -2,7 +2,7 @@
 
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="programming-python">
     <title>The Python Kernel</title>
-    <objectives>
+<!--    <objectives>
         <ul>
             <li>
                 <p>
@@ -10,12 +10,12 @@ TODO
                 </p>
             </li>
         </ul>
-    </objectives>
-
+    </objectives>-->
     <exploration>
         <introduction>
             <p>
-Use a <c>Python 3</c> kernel for these tasks.
+Use a <c>Python 3</c> kernel for these tasks. (Remember, the kernel is displayed
+in the upper-right corner of your notebook.)
             </p>
         </introduction>
         <task>
@@ -28,7 +28,7 @@ Use a Code cell to compute <m>95+87</m>.
 Use a Code cell to compute <m>11(12)</m>.
             </p>
             <p>
-If you get a <c>TypeError</c>, use the <c>*</c> operator to do
+If you get an error like <c>TypeError</c>, use the <c>*</c> operator to do
 the multiplication instead.
             </p>
         </task>
@@ -122,9 +122,10 @@ ten, binary numbers describe values using powers of two.
                 </md>
             </p>
             <p>
-Use <c>format(n,"b")</c> to have Python display the binary form of each of the following
-positive integers (replacing <c>n</c> with the value of each integer). Then check that
-the binary form is valid by adding up appropriate powers of two as shown above.
+The Python tool <c>format(125,"b")</c> displays the binary form of <m>125</m> automatically:
+<c>1111101</c>. Use this tool to find
+the binary form for each of the following numbers. Then check that the result
+is valid by adding up appropriate powers of two as shown above.
             </p>
         </introduction>
         <task>
@@ -145,6 +146,13 @@ the binary form is valid by adding up appropriate powers of two as shown above.
         <task>
             <p>
                 <m>1000</m>
+            </p>
+        </task>
+        <task>
+            <p>
+Python can also automatically convert a binary string to its decimal form using
+the tool <c>int("1111101",2)</c> (returning <m>125</m>). Use this tool to programmatically
+check that each of the binary expressions you found above is correct.
             </p>
         </task>
         <task>
@@ -273,6 +281,44 @@ do not exactly add up to your best binary approximation of <m>\frac{3}{10}</m>.
             </p>
         </task>
     </activity>
+    <exercises>
+        <exercise>
+            <p>
+Find the value of the following expression by hand.
+            </p>
+            <me>3^{\frac{1+7}{6-2}}\times 4</me>
+        </exercise>
+        <exercise>
+            <p>
+Check your work in the previous exercise using a Code cell.
+            </p>
+        </exercise>
+        <exercise>
+            <p>
+Use powers of two to verify that <m>217=11011001_2</m> by hand.
+            </p>
+        </exercise>
+        <exercise>
+            <p>
+Show how to use both the <c>int</c> and <c>format</c> Python tools to verify that <m>217=11011001_2</m> programmatically.
+            </p>
+        </exercise>
+        <exercise>
+            <p>
+Find an approximation of <m>\frac{1}{7}</m> to three decimal places.
+            </p>
+        </exercise>
+        <exercise>
+            <p>
+What is the value of your approximation when multiplied by <m>7</m>? Why isn't the result exactly <m>1</m>?
+            </p>
+        </exercise>
+        <exercise>
+            <p>
+Write a paragraph explaining why, in your own words, <c>0.1+0.2</c> doesn't result in <c>0.3</c> in many programming languages.
+            </p>
+        </exercise>
+    </exercises>
 </section>
 
 
