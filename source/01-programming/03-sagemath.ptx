@@ -8,13 +8,14 @@
 Many of the features of the Python language/kernel are optimized for computational
 efficiency, such as using binary approximations of fractions. This is valuable for
 applications like data science, but for studying mathematics itself we will
-find it useful to have another kernel available to more precisely model things.
+find it useful to have another kernel available to more precisely model things,
+namely, <term>SageMath</term>.
             </p>
         </introduction>
         <task>
             <p>
-Use the latest <c>SageMath</c> kernel to confirm that <c>6^2</c> and
-<c>6**2</c> both represent <m>6^2=36</m>.
+Confirm that <c>6^2</c> and
+<c>6**2</c> both represent <m>6^2=36</m> in SageMath.
             </p>
         </task>
         <task>

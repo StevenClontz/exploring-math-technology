@@ -14,7 +14,7 @@ TODO
     <exploration>
         <introduction>
             <p>
-Use a <c>Python 3</c> kernel for these tasks. (Remember, the kernel is displayed
+Be sure to use a <c>Python 3</c> kernel for these tasks. (Remember, the kernel is displayed
 in the upper-right corner of your notebook.)
             </p>
         </introduction>
@@ -65,7 +65,7 @@ Write a sentence explaining why this result might be surprising.
     <activity>
         <introduction>
             <p>
-Use a <c>Python 3</c> kernel and
+While using a <c>Python 3</c> kernel, use
 the addition <c>+</c>, subtraction <c>-</c>, multiplication <c>*</c>,
 division <c>/</c>, and exponentiation <c>**</c> operators to evaluate
 the following mathematical expressions. Then check your result by computing

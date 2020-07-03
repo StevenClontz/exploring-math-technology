@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="programming-jupyter">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="programming-jupyter" jupyter-kernel="python">
     <title>Jupyter Notebooks and CoCalc</title>
 <!--    <objectives>
         <ul>
@@ -58,9 +58,7 @@ required for this course (such as importing data from other websites to analyze)
                     <li>
                         <p>
 Navigate to the notebook associated with this activity
-<xref ref="programming-jupyter-first-activity"/>. (You may need
-to select a <q>kernel</q> to open it; that choice is not important for now, so
-pick anything.) In the editable textbox
+<xref ref="programming-jupyter-first-activity"/>. In the editable textbox
 appearing below this activity in the notebook, double-click to edit
 and type the well-worn phrase of computing: <c>Hello World!</c>. Tap
 <kbd>Ctrl</kbd>+<kbd>Enter</kbd> to save your note.
@@ -106,7 +104,7 @@ to switch it to Markdown mode, so the output is simply
 Now enter <c>import sys; sys.version</c> into the below cell, and use the menu to switch
 the cell type to <q>Code</q>. Now pressing <kbd>Ctrl</kbd>+<kbd>Enter</kbd> should
 display something like <c>'3.6.9 (default, Apr 18 2020, 01:56:04) \n[GCC 8.4.0]'</c>,
-the version of the Python kernel you selected.
+the version of the Python kernel used in this notebook.
             </p>
         </task>
         <task>
