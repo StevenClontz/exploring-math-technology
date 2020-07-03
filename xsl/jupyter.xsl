@@ -101,7 +101,54 @@
         <xsl:with-param name="source"><xsl:call-template name="css"/><xsl:call-template name="newcommands"/>&lt;h1&gt;<xsl:value-of select="$section"/>&#160;<xsl:value-of select="title"/>&lt;/h1&gt;&lt;div&gt;<xsl:apply-templates select="." mode="link"/>&lt;/div&gt;</xsl:with-param>
       </xsl:call-template>
       <xsl:apply-templates select="//activity|//exploration"/>
-    ]}
+      ]
+      <xsl:choose>
+      <xsl:when test="@jupyter-kernel = 'sage'">
+ ,"metadata": {
+  "kernelspec": {
+   "display_name": "SageMath 9.1",
+   "language": "sagemath",
+   "metadata": {
+    "cocalc": {
+     "description": "Open-source mathematical software system",
+     "priority": 10,
+     "url": "https://www.sagemath.org/"
+    }
+   },
+   "name": "sage-9.1"
+  }
+ }
+      </xsl:when>
+      <xsl:otherwise>
+ ,"metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (system-wide)",
+   "language": "python",
+   "metadata": {
+    "cocalc": {
+     "description": "Python 3 programming language",
+     "priority": 100,
+     "url": "https://www.python.org/"
+    }
+   },
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.9"
+  }
+ }
+      </xsl:otherwise>
+      </xsl:choose>
+    }
   </xsl:template>
   <xsl:template match="section" mode="url">
     <xml:text>https://stevenclontz.github.io/mathematics-of-data/html/<xsl:value-of select="./@xml:id"/>.html</xml:text>

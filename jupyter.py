@@ -3,6 +3,7 @@ import os
 from shutil import copytree
 import click
 import subprocess
+import time
 
 
 def make_directory(path):
@@ -21,10 +22,11 @@ def build(previews):
     xsl = etree.parse("xsl/jupyter.xsl")
     transform = etree.XSLT(xsl)
     make_directory("output")
-    make_directory("output/jupyter")
+    jo_directory = "output/jupyter-"+str(time.time())
+    make_directory(jo_directory)
     for cindex, chapter in enumerate(book.xpath("//chapter"), start=1):
         for sindex, section in enumerate(chapter.xpath("section"), start=1):
-            section_path = "output/jupyter/section-" + str(cindex) + "-" + str(
+            section_path = jo_directory +"/section-" + str(cindex) + "-" + str(
                 sindex) + "-" + section.xpath('./@xml:id')[0] + ".ipynb"
             section_code = "'" + str(cindex) + "." + str(sindex) + "'"
             transform(
