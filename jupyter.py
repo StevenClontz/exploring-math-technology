@@ -12,27 +12,33 @@ def make_directory(path):
 
 
 @click.command()
-@click.option('--previews/--no-previews',
-              default=True,
-              help='Include preview activities for each section.')
-def build(previews):
-    include_previews = "'yes'" if previews else "'no'"
+def build():
     book = etree.parse("source/main.ptx")
     book.xinclude()
     xsl = etree.parse("xsl/jupyter.xsl")
     transform = etree.XSLT(xsl)
     make_directory("output")
     jo_directory = "output/jupyter-"+str(time.time())
+    jo_directory_team = jo_directory+"/team"
+    jo_directory_indv = jo_directory+"/individual"
     make_directory(jo_directory)
+    make_directory(jo_directory_team)
+    make_directory(jo_directory_indv)
     for cindex, chapter in enumerate(book.xpath("//chapter"), start=1):
         for sindex, section in enumerate(chapter.xpath("section"), start=1):
-            section_path = jo_directory +"/section-" + str(cindex) + "-" + str(
+            team_section_path = jo_directory_team +"/section-" + str(cindex) + "-" + str(
+                sindex) + "-" + section.xpath('./@xml:id')[0] + ".ipynb"
+            indv_section_path = jo_directory_indv +"/section-" + str(cindex) + "-" + str(
                 sindex) + "-" + section.xpath('./@xml:id')[0] + ".ipynb"
             section_code = "'" + str(cindex) + "." + str(sindex) + "'"
             transform(
                 section,
                 section=section_code,
-                includepreviews=include_previews).write_output(section_path)
+                mode="'team'").write_output(team_section_path)
+            transform(
+                section,
+                section=section_code,
+                mode="'individual'").write_output(indv_section_path)
     #if not os.path.exists("activities/images"):
     #  copytree("apc/src/images","activities/images")
     subprocess.run(['pretext','build'])

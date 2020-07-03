@@ -9,7 +9,7 @@
   <xsl:output method="text" encoding="UTF-8"/>
 
   <xsl:param name="section" select="'0.0'"/>
-  <xsl:param name="includepreviews" select="'yes'"/>
+  <xsl:param name="mode" select="'team'"/>
 
   <!-- JSON Escaped Strings -->
   <!-- stolen from PreTeXt -->
@@ -98,9 +98,16 @@
     {"nbformat": 4,"nbformat_minor": 0,"cells": [
       <xsl:call-template name="jupyter-cell">
         <xsl:with-param name="first-cell">true</xsl:with-param>
-        <xsl:with-param name="source"><xsl:call-template name="css"/><xsl:call-template name="newcommands"/>&lt;h1&gt;<xsl:value-of select="$section"/>&#160;<xsl:value-of select="title"/>&lt;/h1&gt;&lt;div&gt;<xsl:apply-templates select="." mode="link"/>&lt;/div&gt;</xsl:with-param>
+        <xsl:with-param name="source"><xsl:call-template name="css"/><xsl:call-template name="newcommands"/>&lt;h1&gt;<xsl:value-of select="$section"/>&#160;<xsl:value-of select="title"/>&#160;(<xsl:value-of select="$mode"/>)&lt;/h1&gt;&lt;div&gt;<xsl:apply-templates select="." mode="link"/>&lt;/div&gt;</xsl:with-param>
       </xsl:call-template>
-      <xsl:apply-templates select="//activity|//exploration"/>
+      <xsl:choose>
+          <xsl:when test="$mode='team'">
+              <xsl:apply-templates select="//activity"/>
+          </xsl:when>
+          <xsl:otherwise>
+              <xsl:apply-templates select="//exploration"/>
+          </xsl:otherwise>
+      </xsl:choose>
       ]
       <xsl:choose>
       <xsl:when test="@jupyter-kernel = 'sage'">
@@ -165,7 +172,6 @@
   <!-- Supported PreTeXt elements -->
 
   <xsl:template match="exploration|activity">
-    <xsl:if test="$includepreviews='yes' or local-name()='activity'">
       <xsl:call-template name="jupyter-cell">
         <xsl:with-param name="source">
           &lt;h3&gt;<xsl:apply-templates select="." mode="name"/>&lt;/h3&gt;
@@ -184,7 +190,6 @@
           <xsl:with-param name="editable">true</xsl:with-param>
         </xsl:call-template>
       </xsl:if>
-    </xsl:if>
   </xsl:template>
   <xsl:template match="exploration|activity" mode="number"><xsl:apply-templates select="./ancestor::section" mode="number"/>.<xsl:number from="//section" level="any" count="exploration|activity"/></xsl:template>
   <xsl:template match="exploration" mode="name">Preview Activity <xsl:apply-templates select="." mode="number"/></xsl:template>
