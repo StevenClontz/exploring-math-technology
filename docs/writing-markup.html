@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-07-03T20:38:16Z    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MoD Using Markdown and LaTeX</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Mathematics of Data</span></a></h1>
+<p class="byline">Steven Clontz</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="writing-math.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="writing.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="data.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="writing-math.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="writing.html" title="Up">Up</a><a class="next-button button toolbar-item" href="data.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="why.html" data-scroll="why">Why Study [the] Mathematics [of Data]?</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="programming.html" data-scroll="programming"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
+<li><a href="programming-jupyter.html" data-scroll="programming-jupyter">Jupyter Notebooks and CoCalc</a></li>
+<li><a href="programming-python.html" data-scroll="programming-python">The Python Kernel</a></li>
+<li><a href="programming-sagemath.html" data-scroll="programming-sagemath">The SageMath Kernel</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="writing.html" data-scroll="writing"><span class="codenumber">2</span> <span class="title">Writing for Mathematicians and Data Scientists</span></a><ul>
+<li><a href="writing-math.html" data-scroll="writing-math">The Importance of Writing in Mathematics and Data Science</a></li>
+<li><a href="writing-markup.html" data-scroll="writing-markup" class="active">Using Markdown and LaTeX</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="data.html" data-scroll="data"><span class="codenumber">3</span> <span class="title">Data and Collections</span></a><ul>
+<li><a href="data-numbers.html" data-scroll="data-numbers">Numbers</a></li>
+<li><a href="data-collections.html" data-scroll="data-collections">Collections of Data</a></li>
+<li><a href="data-programming.html" data-scroll="data-programming">Programming with Data</a></li>
+</ul>
+</li>
+<li class="link"><a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Visualization of Data</span></a></li>
+<li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Measurements of Data</span></a></li>
+<li class="link"><a href="chapter-6.html" data-scroll="chapter-6"><span class="codenumber">6</span> <span class="title">Making Predictions from Data</span></a></li>
+<li class="link"><a href="chapter-7.html" data-scroll="chapter-7"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a></li>
+<li class="link"><a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a></li>
+<li class="link"><a href="chapter-9.html" data-scroll="chapter-9"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Vectors</span></a></li>
+<li class="link"><a href="chapter-10.html" data-scroll="chapter-10"><span class="codenumber">10</span> <span class="title">Transformations of Higher-Dimensional Data</span></a></li>
+<li class="link"><a href="chapter-11.html" data-scroll="chapter-11"><span class="codenumber">11</span> <span class="title">Properties of Linear Transformations</span></a></li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link"><a href="references.html" data-scroll="references"><span class="title">References</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="writing-markup"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Using Markdown and LaTeX</span>
+</h2>
+<article class="exploration project-like" id="exploration-5"><h6 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span>
+</h6>
+<p id="p-141">Like many online platforms, Jupyter notebooks use <dfn class="terminology">Markdown</dfn> syntax for formatting text. The <a class="external" href="https://www.markdowntutorial.com/" target="_blank">Markdown Tutorial</a> provides an excellent walkthrough on its basics.</p>
+<p id="p-142">Complete the <a class="external" href="https://www.markdowntutorial.com/" target="_blank">Markdown Tutorial</a> and upload a screenshot of its “Congratulations” page below when you are done.</p></article><article class="activity project-like" id="activity-12"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-14">
+<p id="p-143">Markdown has many features for writing formatted documents using plain text, but it does not provide much support for mathematical notation out-of-the-box.</p>
+<p id="p-144">Fortunately, many platforms that support Markdown also support <dfn class="terminology">LaTeX</dfn> (pronounced “lay-tek” or “lah-tek”, and stylized as \(\LaTeX{}\)) markup for mathematical notation.</p>
+</div>
+<article class="task exercise-like" id="task-57"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-145">To denote part of your writing as mathematical notation in a Markdown cell, use <code class="code-inline tex2jax_ignore">\(</code> and <code class="code-inline tex2jax_ignore">\)</code> to surround your mathematics.</p>
+<p id="p-146">Create two Markdown cells with the text <code class="code-inline tex2jax_ignore">The solution to x+1=7 is x=6.</code>. Then use <code class="code-inline tex2jax_ignore">\(</code> and <code class="code-inline tex2jax_ignore">\)</code> to surround the mathematical notation in one of those cells to observe the difference. (Don't forget to use <kbd class="kbdkey">Shift</kbd>+<kbd class="kbdkey">Enter</kbd> to display the formatted text.)</p></article><article class="task exercise-like" id="task-58"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-147">Now create two Markdown cells with the text <code class="code-inline tex2jax_ignore">The solutions to x^2-1=0 are x=-1 and x=1.</code>, and use <code class="code-inline tex2jax_ignore">\(</code> and <code class="code-inline tex2jax_ignore">\)</code> to surround the mathematics in one cell.</p></article><article class="task exercise-like" id="task-59"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-148">When typesetting longer mathematical notation, <code class="code-inline tex2jax_ignore">\[</code> and <code class="code-inline tex2jax_ignore">\]</code> may be used instead to center the mathematics on a new line.</p>
+<p id="p-149">Copy <code class="code-inline tex2jax_ignore">The only solution to x^4-4x^3+6x^2-4x+1=0 is x=1.</code> into a Markdown cell and appropriately format the long equation and short solution.</p></article><article class="task exercise-like" id="task-60"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-150">One of the best ways to learn \(\LaTeX{}\) notation is to view the source written by other authors. Consider the following formula:</p>
+<div class="displaymath">
+\begin{equation*}
+ax^2+bx+c=0 \Leftrightarrow x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
+\end{equation*}
+</div>
+<p id="p-151">To view the source markup for the above formula while in a Jupyter notebook on CoCalc, you can select the cell, and then use the <kbd class="kbdkey">Edit</kbd> &gt; <kbd class="kbdkey">Edit protect</kbd> menu option to make the cell editable. If you accidentally delete something, you can use CoCalc's Time Travel feature to restore it. (To view the LaTeX source of any mathematical notation in the HTML verison of this book, you can simply right-click the equation and use the menu that appears.)</p>
+<p id="p-152">Get the source for the formula above, and paste it into a Markdown cell below.</p></article></article><article class="activity project-like" id="activity-13"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-15">
+<p id="p-153">Some LaTeX notation is rather straight-forward, with literal notation such as <code class="code-inline tex2jax_ignore">+</code> and <code class="code-inline tex2jax_ignore">-</code>, and intuitive notation such as <code class="code-inline tex2jax_ignore">^</code> for superscripts and <code class="code-inline tex2jax_ignore">_</code> for subscripts: <code class="code-inline tex2jax_ignore">a_0+a_1^2=-a_2^3</code> produces \(a_0+a_1^2=-a_2^3\text{.}\)</p>
+<p id="p-154">But multiplication cannot be represented by, say, <code class="code-inline tex2jax_ignore">x</code>, since that represents the variable \(x\text{.}\) (Instead we write <code class="code-inline tex2jax_ignore">2 \times 3</code> to produce \(2 \times 3\text{.}\))</p>
+<p id="p-155">Even professionals usually know just a small subset of all the LaTeX commands available. Instead, references like <a class="external" href="http://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm" target="_blank">Dr. Burn's TeX Command Reference</a> and tools like <a class="external" href="https://detexify.kirelabs.org/classify.html" target="_blank">DeTeXify</a> allow for easy lookup of LaTeX commands as needed.</p>
+<p id="p-156">For each of the following samples of mathematical notation, <em class="emphasis">don't</em> peek at their source markup. Instead, use the above resources to replicate the notation as best as possible in a Markdown cell. After you've done as well as possible on your own, then compare with the corresponding source markup.</p>
+</div>
+<article class="task exercise-like" id="task-61"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<div class="displaymath">
+\begin{equation*}
+\det(A) = x_{11}x_{22}-x_{12}x_{21}
+\end{equation*}
+</div></article><article class="task exercise-like" id="task-62"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<div class="displaymath">
+\begin{equation*}
+\sin(\alpha+\beta) = \sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta)
+\end{equation*}
+</div></article><article class="task exercise-like" id="task-63"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<div class="displaymath">
+\begin{equation*}
+\sigma(t) = \langle 0,t_1,2t_2,\dots,nt_n \rangle
+\end{equation*}
+</div></article><article class="task exercise-like" id="task-64"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<div class="displaymath">
+\begin{equation*}
+\overline{x} = \frac{1}{n}\left(\sum_{0\leq i\lt n}x_i\right)
+\end{equation*}
+</div></article></article><article class="activity project-like" id="activity-14"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
+</h6>
+<p id="p-157">LaTeX markup is used by many applications for typesetting mathematical notation. But it's also possible to write entire documents in LaTeX, that can be distributed as PDFs. Since it's very easy to write mathematics, manage bibliographies, and integrate a LaTeX document with computer code, it's very common for STEM researchers to author documents in LaTeX.</p>
+<p id="p-158">CoCalc provides a convenient LaTeX editor that you can use from your web browser. Try it out by following these steps.</p>
+<ul id="p-159" class="disc">
+<li id="li-5"><p id="p-160">From the <kbd class="kbdkey">+ New</kbd> menu option, create a new LaTeX document in the same folder as this notebook. A default document will appear on the left, and its PDF output appears on the right.</p></li>
+<li id="li-6"><p id="p-161">The top part of the code is the <dfn class="terminology">preamble</dfn> with various configurations, most of which you don't need to worry about. There is a place to define the title and author of the paper. Change the title of the paper to match your favorite TV show, and change the author to be named after a character on that show.</p></li>
+<li id="li-7"><p id="p-162">By default the produced PDF will include today's date. This can be configured by inserting the command <code class="code-inline tex2jax_ignore">\date{Month Day, Year}</code> in the preamble. Use this to change the date to be one week from today instead.</p></li>
+<li id="li-8">
+<p id="p-163">The <dfn class="terminology">body</dfn> of the document is between the <code class="code-inline tex2jax_ignore">\begin{document}</code> and <code class="code-inline tex2jax_ignore">\end{document}</code> commands. The <code class="code-inline tex2jax_ignore">\maketitle</code> command tells LaTeX to show the title, author, and date.</p>
+<p id="p-164">Add some text two lines below the <code class="code-inline tex2jax_ignore">\maketitle</code> command, quoting a character from your favorite show.</p>
+</li>
+<li id="li-9"><p id="p-165">Finally, copy-paste some mathematical notation from the previous activities so it appears below the quote in your LaTeX-produced PDF.</p></li>
+</ul>
+<p id="p-166">When you're done, put a link to your LaTeX source file in a Markdown cell below. Since it's located in the same folder, if your file was named <code class="code-inline tex2jax_ignore">example.tex</code>, then it can be linked to by entering <code class="code-inline tex2jax_ignore">[Link to LaTeX file](example.tex)</code>.</p></article></section></div></main>
+</div>
+</body>
+</html>

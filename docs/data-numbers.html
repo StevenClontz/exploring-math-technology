@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-07-03T20:38:16Z    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MoD Numbers</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Mathematics of Data</span></a></h1>
+<p class="byline">Steven Clontz</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="data.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="data.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="data-collections.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="data.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="data.html" title="Up">Up</a><a class="next-button button toolbar-item" href="data-collections.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="why.html" data-scroll="why">Why Study [the] Mathematics [of Data]?</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="programming.html" data-scroll="programming"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
+<li><a href="programming-jupyter.html" data-scroll="programming-jupyter">Jupyter Notebooks and CoCalc</a></li>
+<li><a href="programming-python.html" data-scroll="programming-python">The Python Kernel</a></li>
+<li><a href="programming-sagemath.html" data-scroll="programming-sagemath">The SageMath Kernel</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="writing.html" data-scroll="writing"><span class="codenumber">2</span> <span class="title">Writing for Mathematicians and Data Scientists</span></a><ul>
+<li><a href="writing-math.html" data-scroll="writing-math">The Importance of Writing in Mathematics and Data Science</a></li>
+<li><a href="writing-markup.html" data-scroll="writing-markup">Using Markdown and LaTeX</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="data.html" data-scroll="data"><span class="codenumber">3</span> <span class="title">Data and Collections</span></a><ul>
+<li><a href="data-numbers.html" data-scroll="data-numbers" class="active">Numbers</a></li>
+<li><a href="data-collections.html" data-scroll="data-collections">Collections of Data</a></li>
+<li><a href="data-programming.html" data-scroll="data-programming">Programming with Data</a></li>
+</ul>
+</li>
+<li class="link"><a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Visualization of Data</span></a></li>
+<li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Measurements of Data</span></a></li>
+<li class="link"><a href="chapter-6.html" data-scroll="chapter-6"><span class="codenumber">6</span> <span class="title">Making Predictions from Data</span></a></li>
+<li class="link"><a href="chapter-7.html" data-scroll="chapter-7"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a></li>
+<li class="link"><a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a></li>
+<li class="link"><a href="chapter-9.html" data-scroll="chapter-9"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Vectors</span></a></li>
+<li class="link"><a href="chapter-10.html" data-scroll="chapter-10"><span class="codenumber">10</span> <span class="title">Transformations of Higher-Dimensional Data</span></a></li>
+<li class="link"><a href="chapter-11.html" data-scroll="chapter-11"><span class="codenumber">11</span> <span class="title">Properties of Linear Transformations</span></a></li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link"><a href="references.html" data-scroll="references"><span class="title">References</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="data-numbers"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Numbers</span>
+</h2>
+<article class="exploration project-like" id="exploration-6"><h6 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-16"><p id="p-167">Write a sentence answering each question.</p></div>
+<article class="task exercise-like" id="task-65"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-168">Which number is bigger: \(0.999\cdots\) (with infinitely-many \(9\)s) or \(1\text{?}\) Why do you think so?</p></article><article class="task exercise-like" id="task-66"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-169">What does \(0.999\cdots\) mean?</p></article><article class="task exercise-like" id="task-67"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-170">What does \(1\) mean?</p></article></article><article class="activity project-like" id="data-numbers-counting"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-17">
+<p id="p-171">The <dfn class="terminology">counting numbers</dfn> (sometimes written as the lowercase Greek letter omega \(\omega\text{,}\) also sometimes called “whole numbers” or “natural numbers”) are those numbers used to quantify whole items:</p>
+<div class="displaymath">
+\begin{equation*}
+\{0,1,2,3,\dots,100,101,\dots,8675309,8675310,\dots\}
+\end{equation*}
+</div>
+<p id="p-172">For each of the following possible rules for counting numbers, either decide that it is true, or explain when the rule might fail.</p>
+</div>
+<article class="task exercise-like" id="task-68"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-173">Adding one to a counting number results in another counting number. For example, \(6\) is a counting number, so \(6+1=7\) is also a counting number.</p></article><article class="task exercise-like" id="task-69"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-174">Subtracting one from a counting number results in another counting number. For example, \(6\) is a counting number, so \(6-1=5\) is also a counting number.</p></article><article class="task exercise-like" id="task-70"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-175">Doubling a counting number results in another counting number. For example, \(32\) is a counting number, so \(32\times 2=64\) is also a counting number.</p></article><article class="task exercise-like" id="task-71"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-176">Halving a counting number results in another counting number. For example, \(32\) is a counting number, so \(32\div 2=16\) is also a counting number.</p></article><article class="task exercise-like" id="task-72"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-177">Squaring a counting number results in another counting number. For example, \(9\) is a counting number, so \(9^2=81\) is also a counting number.</p></article><article class="task exercise-like" id="task-73"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-178">Square rooting a counting number results in another counting number. For example, \(9\) is a counting number, so \(\sqrt{9}=3\) is also a counting number.</p></article></article><article class="activity project-like" id="activity-16"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
+</h6>
+<p id="p-179">The <dfn class="terminology">integers</dfn> \(\mathbb Z\) include all the counting numbers as well as their negatives: \(\{\dots,-2,-1,0,1,2,\dots\}\text{.}\)</p>
+<p id="p-180">Explain which of the number rules from <a class="xref" data-knowl="./knowl/data-numbers-counting.html" title="Activity 3.1.2">3.1.2</a> work when “counting number” is replaced with “integer”, and which ones fail.</p></article><article class="activity project-like" id="activity-17"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
+</h6>
+<p id="p-181">The <dfn class="terminology">rational numbers</dfn> \(\mathbb Q\) include all fractions of integers that don't divide by zero, such as \(\frac{1}{2}\text{,}\) \(\frac{22}{7}\text{,}\) and \(-\frac{1234812348}{42}\text{.}\)</p>
+<p id="p-182">Explain which of the number rules from <a class="xref" data-knowl="./knowl/data-numbers-counting.html" title="Activity 3.1.2">3.1.2</a> work when “counting number” is replaced with “rational number”, and which ones fail.</p></article><article class="activity project-like" id="activity-18"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span>
+</h6>
+<p id="p-183">There are other kinds of <dfn class="terminology">real numbers</dfn>, such as \(e\) and \(\pi\text{,}\) that aren't rational. (The technical definition of the system of real numbers requires experience with calculus, so we won't get into that here.) There are other kinds of numbers as well, such as the <dfn class="terminology">complex numbers</dfn> explorered in <a href="complex.html" class="internal" title="Chapter 8: Two-Dimensional Data and Complex Numbers">8</a>.</p>
+<p id="p-184">Since SageMath tries to model mathematics as authentically as possible, it will try to recognize when you are working with integers or rational numbers. For example, <code class="code-inline tex2jax_ignore">type(-17/3)</code> display that it is a “<code class="code-inline tex2jax_ignore">sage.rings.rational.Rational</code>”</p>
+<p id="p-185">Use the <code class="code-inline tex2jax_ignore">type()</code> tool to help explain why \(-\frac{1234812348}{42}\) is an integer or rational number.</p></article><article class="activity project-like" id="activity-19"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-18">
+<p id="p-186">Something all these sets of numbers described above is that they are <dfn class="terminology">infinite</dfn>: if you had a finite list of them, take the biggest and add one, and you'll have something you forgot in your list.</p>
+<p id="p-187">While SageMath does its best to hide this limitation from users, having finitely-many possible numbers is not ideal for data intended for storage on a physical computer. To account for this, some lower-level languages offer data types like the <dfn class="terminology">short</dfn> that account for a useful (but finite) range of integers. In particular, shorts are integers that may be written using 16 binary digits.</p>
+</div>
+<article class="task exercise-like" id="task-74"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-188">How many different numbers can be stored using 2 binary digits?</p></article><article class="task exercise-like" id="task-75"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-189">How many different numbers can be stored using 3 binary digits?</p></article><article class="task exercise-like" id="task-76"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-190">How many different numbers can be stored as a short?</p></article></article></section></div></main>
+</div>
+</body>
+</html>

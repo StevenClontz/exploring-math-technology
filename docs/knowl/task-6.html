@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-07-03T20:38:17Z    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="task exercise-like"><h6 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">1.1.3.c</span><span class="period">.</span>
+</h6>
+<p>Now create a new file called <code class="code-inline tex2jax_ignore">data.csv</code> in the same folder as this notebook. Copy-paste the text from <a class="xref" data-knowl="./knowl/programming-jupyter-tempdata.html" title="Listing 1.1.1">1.1.1</a> into this new file to save a <dfn class="terminology">Comma-Separated Values spreadsheet</dfn>.</p>
+<figure class="listing figure-like"><pre class="plainprint">Time,TempInF
+8:00,74
+9:00,78
+10:00,82
+11:00,85
+12:00,88
+13:00,89
+14:00,90
+15:00,91
+16:00,89
+17:00,88
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.1.1<span class="period">.</span></span><span class="space"> </span>Contents for <code class="code-inline tex2jax_ignore">data.csv</code></figcaption></figure><p>Then copy-paste the text from <a class="xref" data-knowl="./knowl/programming-jupyter-use-tempdata.html" title="Listing 1.1.2">1.1.2</a> into a Code cell below to use this data in a Python 3 script to display the temperatures in Celcius.</p>
+<figure class="listing figure-like"><pre class="prettyprint lang-py">with open("data.csv", "r") as csv_file:
+    rows = csv.DictReader(csv_file, delimiter=',')
+    for row in rows:
+        time = row["Time"]
+        temp = format((float(row["TempInF"])-32)*5/9, '.2f')
+        print("The temperature at", time, "is", temp, "degrees Celcius.")
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.1.2<span class="period">.</span></span><span class="space"> </span>Code cell to parse <code class="code-inline tex2jax_ignore">data.csv</code></figcaption></figure></article><span class="incontext"><a href="programming-jupyter.html#task-6">in-context</a></span>
+</body>
+</html>
