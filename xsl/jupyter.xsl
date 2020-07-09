@@ -49,7 +49,7 @@
         ""
       </xsl:when>
       <xsl:otherwise>
-        "&lt;div class=\"not-editable\"&gt;<xsl:call-template name="escape-json-string"><xsl:with-param name="text" select="$source"/></xsl:call-template>&lt;/div&gt;"
+        "&lt;div class=\"not-editable<xsl:if test="$mode='team'"> not-editable-team</xsl:if>\"&gt;<xsl:call-template name="escape-json-string"><xsl:with-param name="text" select="$source"/></xsl:call-template>&lt;/div&gt;"
       </xsl:otherwise>
     </xsl:choose>
     }
@@ -60,6 +60,7 @@
       &lt;style&gt;
         .editable{<xsl:call-template name="css-editable"/>}
         .not-editable{<xsl:call-template name="css-not-editable"/>}
+        .not-editable-team{<xsl:call-template name="css-not-editable-team"/>}
         .sidebyside{<xsl:call-template name="css-sidebyside"/>}
         .sidebyside > *{<xsl:call-template name="css-sidebyside-child"/>}
         .todo{<xsl:call-template name="css-todo"/>}
@@ -73,7 +74,8 @@
     </xsl:with-param></xsl:call-template>
   </xsl:template>
   <xsl:template name="css-editable">margin:1em;color:#ccc;font-size:2em;text-align:center;</xsl:template>
-  <xsl:template name="css-not-editable">background-color:#eef8ff;padding:1em;border-radius:10px;box-shadow:4px 4px 3px #ddd;margin:5px;</xsl:template>
+  <xsl:template name="css-not-editable">background-color:#eefff8;padding:1em;border-radius:10px;box-shadow:4px 4px 3px #ddd;margin:5px;</xsl:template>
+  <xsl:template name="css-not-editable-team">background-color:#eef8ff;</xsl:template>
   <xsl:template name="css-sidebyside">display:flex;justify-content:center;</xsl:template>
   <xsl:template name="css-sidebyside-child">margin-right:1em;flex:1;</xsl:template>
   <xsl:template name="css-todo">color:#f00;font-weight:bold;</xsl:template>
