@@ -75,7 +75,7 @@
   <xsl:template name="css-editable">margin:1em;color:#ccc;font-size:2em;text-align:center;</xsl:template>
   <xsl:template name="css-not-editable">background-color:#eef8ff;padding:1em;border-radius:10px;box-shadow:4px 4px 3px #ddd;margin:5px;</xsl:template>
   <xsl:template name="css-sidebyside">display:flex;justify-content:center;</xsl:template>
-  <xsl:template name="css-sidebyside-child">display:flex;justify-content:center;</xsl:template>
+  <xsl:template name="css-sidebyside-child">margin-right:1em;flex:1;</xsl:template>
   <xsl:template name="css-todo">color:#f00;font-weight:bold;</xsl:template>
   <xsl:template name="css-caption">caption-side:top;white-space: nowrap;color:rgba(0,0,0,.45)}</xsl:template>
   <xsl:template name="css-figcaption">padding-top:0.75em;padding-bottom:0.3em;color:rgba(0,0,0,.45)</xsl:template>
@@ -223,13 +223,13 @@
 
   <xsl:template match="image" mode="markdown">&lt;div&gt;&lt;img src="<xsl:value-of select="normalize-spaces(@source)"/>.svg"/&gt;&lt;/div&gt;</xsl:template>
 
-  <xsl:template match="figure" mode="markdown">&lt;div&gt;&lt;figure&gt;&lt;figcaption&gt;&lt;b&gt;<xsl:apply-templates select="normalize-spaces(.)" mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption|title" mode="markdown"/>&lt;/figcaption&gt;<xsl:apply-templates select="image" mode="markdown"/>&lt;/figure&gt;&lt;/div&gt;</xsl:template>
+  <xsl:template match="figure" mode="markdown">&lt;div&gt;&lt;figure&gt;&lt;figcaption&gt;&lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption|title" mode="markdown"/>&lt;/figcaption&gt;<xsl:apply-templates select="image" mode="markdown"/>&lt;/figure&gt;&lt;/div&gt;</xsl:template>
 
-  <xsl:template match="table" mode="markdown">&lt;div&gt;&lt;table&gt;&lt;caption"&gt;&lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption|title" mode="markdown"/>&lt;/caption&gt;<xsl:apply-templates select="tabular/row" mode="markdown"/>&lt;/table&gt;&lt;/div&gt;</xsl:template>
+  <xsl:template match="table" mode="markdown">&lt;div&gt;&lt;table&gt;&lt;caption&gt;&lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption|title" mode="markdown"/>&lt;/caption&gt;<xsl:apply-templates select="tabular/row" mode="markdown"/>&lt;/table&gt;&lt;/div&gt;</xsl:template>
 
   <xsl:template match="tabular" mode="markdown">&lt;div&gt;&lt;table&gt;<xsl:apply-templates select="row" mode="markdown"/>&lt;/table&gt;&lt;/div&gt;</xsl:template>
 
-  <xsl:template match="listing" mode="markdown">&lt;div&gt;&lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt;&lt;/div&gt;&lt;div&gt;<xsl:apply-templates select="*" mode="markdown"/>&lt;/div&gt;</xsl:template>
+    <xsl:template match="listing" mode="markdown">&lt;div&gt;&lt;figure&gt;&lt;figcaption&gt;&lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption|title" mode="markdown"/>&lt;/figcaption&gt;<xsl:apply-templates select="*" mode="markdown"/>&lt;/figure&gt;&lt;/div&gt;</xsl:template>
 
   <xsl:template match="row" mode="markdown">&lt;tr&gt;<xsl:apply-templates select="cell" mode="markdown"/>&lt;/tr&gt;</xsl:template>
 
