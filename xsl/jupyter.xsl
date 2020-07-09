@@ -25,6 +25,12 @@
     <xsl:value-of select="$sans-dollar" />
   </xsl:template>
 
+  <!-- normalize the whitespace in this content -->
+  <xsl:template name="normalize">
+    <xsl:param name="content"/>
+    <xsl:value-of select="normalize-space($content)"/>
+  </xsl:template>
+
   <!-- Basic Jupyter Cell -->
   <xsl:template name="jupyter-cell">
     <xsl:param name="source"/>
@@ -43,33 +49,29 @@
         ""
       </xsl:when>
       <xsl:otherwise>
-        "&lt;div class=\"not-editable\" style=\"<xsl:call-template name="css-not-editable"/>\"&gt;<xsl:call-template name="escape-json-string"><xsl:with-param name="text" select="$source"/></xsl:call-template>&lt;/div&gt;"
+        "&lt;div class=\"not-editable\"&gt;<xsl:call-template name="escape-json-string"><xsl:with-param name="text" select="$source"/></xsl:call-template>&lt;/div&gt;"
       </xsl:otherwise>
     </xsl:choose>
     }
   </xsl:template>
 
-<!--  <xsl:template name="minimize">
-    <xsl:param name="data"/>
-    <xsl:value-of select="normalize-space($data)"/>
-  </xsl:template>-->
-
-  <!-- <xsl:template name="css"> TODO this seems to be broken in longer notebooks
-    &lt;style&gt;
-      .editable{<xsl:call-template name="css-editable"/>}
-      .not-editable{<xsl:call-template name="css-not-editable"/>}
-      .sidebyside{<xsl:call-template name="css-sidebyside"/>}
-      .sidebyside > *{<xsl:call-template name="css-sidebyside-child"/>}
-      .todo{<xsl:call-template name="css-todo"/>}
-      caption{<xsl:call-template name="css-caption"/>}
-      figcaption{<xsl:call-template name="css-figcaption"/>}
-      .fillin{<xsl:call-template name="css-fillin"/>}
-      .fn{<xsl:call-template name="css-fn"/>}
-      .newcommands{<xsl:call-template name="css-newcommands"/>}
-      tt{<xsl:call-template name="css-code"/>}
-    &lt;/style&gt;
-  </xsl:template>-->
-  <xsl:template name="css"/><!-- So for now the template is dummied out; smaller templates below should be used instead. -->
+  <xsl:template name="css">
+    <xsl:call-template name="normalize"><xsl:with-param name="content">
+      &lt;style&gt;
+        .editable{<xsl:call-template name="css-editable"/>}
+        .not-editable{<xsl:call-template name="css-not-editable"/>}
+        .sidebyside{<xsl:call-template name="css-sidebyside"/>}
+        .sidebyside > *{<xsl:call-template name="css-sidebyside-child"/>}
+        .todo{<xsl:call-template name="css-todo"/>}
+        caption{<xsl:call-template name="css-caption"/>}
+        figcaption{<xsl:call-template name="css-figcaption"/>}
+        .fillin{<xsl:call-template name="css-fillin"/>}
+        .fn{<xsl:call-template name="css-fn"/>}
+        .newcommands{<xsl:call-template name="css-newcommands"/>}
+        tt{<xsl:call-template name="css-code"/>}
+      &lt;/style&gt;
+    </xsl:with-param></xsl:call-template>
+  </xsl:template>
   <xsl:template name="css-editable">margin:1em;color:#ccc;font-size:2em;text-align:center;</xsl:template>
   <xsl:template name="css-not-editable">background-color:#eef8ff;padding:1em;border-radius:10px;box-shadow:4px 4px 3px #ddd;margin:5px;</xsl:template>
   <xsl:template name="css-sidebyside">display:flex;justify-content:center;</xsl:template>
@@ -82,9 +84,7 @@
   <xsl:template name="css-newcommands">display:none;</xsl:template>
   <xsl:template name="css-code">background-color:#f8f8f8;border:1px #888 solid;border-radius:2px;padding-left:0.2em;padding-right:0.2em;</xsl:template>
 
-  <xsl:template name="newcommands">
-    &lt;span class="newcommands" style="<xsl:call-template name="css-newcommands"/>"&gt;\(\newcommand{\amp}{&amp;}\)&lt;/span&gt;
-  </xsl:template>
+  <xsl:template name="newcommands">&lt;span class="newcommands"&gt;\(\newcommand{\amp}{&amp;}\)&lt;/span&gt;</xsl:template>
 
   <!-- Jupyter JSON object -->
   <xsl:template match="/">
@@ -219,13 +219,13 @@
     </xsl:call-template>
   </xsl:template>
 
-  <xsl:template match="sidebyside" mode="markdown">&lt;div class="sidebyside" style="<xsl:call-template name="css-sidebyside"/>"&gt;<xsl:apply-templates select="*" mode="markdown"/>&lt;/div&gt;</xsl:template>
+  <xsl:template match="sidebyside" mode="markdown">&lt;div class="sidebyside"&gt;<xsl:apply-templates select="*" mode="markdown"/>&lt;/div&gt;</xsl:template>
 
   <xsl:template match="image" mode="markdown">&lt;div&gt;&lt;img src="<xsl:value-of select="normalize-spaces(@source)"/>.svg"/&gt;&lt;/div&gt;</xsl:template>
 
-  <xsl:template match="figure" mode="markdown">&lt;div&gt;&lt;figure&gt;&lt;figcaption style="<xsl:call-template name="css-figcaption"/>"&gt;&lt;b&gt;<xsl:apply-templates select="normalize-spaces(.)" mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption|title" mode="markdown"/>&lt;/figcaption&gt;<xsl:apply-templates select="image" mode="markdown"/>&lt;/figure&gt;&lt;/div&gt;</xsl:template>
+  <xsl:template match="figure" mode="markdown">&lt;div&gt;&lt;figure&gt;&lt;figcaption&gt;&lt;b&gt;<xsl:apply-templates select="normalize-spaces(.)" mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption|title" mode="markdown"/>&lt;/figcaption&gt;<xsl:apply-templates select="image" mode="markdown"/>&lt;/figure&gt;&lt;/div&gt;</xsl:template>
 
-  <xsl:template match="table" mode="markdown">&lt;div&gt;&lt;table&gt;&lt;caption style="<xsl:call-template name="css-caption"/>"&gt;&lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption|title" mode="markdown"/>&lt;/caption&gt;<xsl:apply-templates select="tabular/row" mode="markdown"/>&lt;/table&gt;&lt;/div&gt;</xsl:template>
+  <xsl:template match="table" mode="markdown">&lt;div&gt;&lt;table&gt;&lt;caption"&gt;&lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption|title" mode="markdown"/>&lt;/caption&gt;<xsl:apply-templates select="tabular/row" mode="markdown"/>&lt;/table&gt;&lt;/div&gt;</xsl:template>
 
   <xsl:template match="tabular" mode="markdown">&lt;div&gt;&lt;table&gt;<xsl:apply-templates select="row" mode="markdown"/>&lt;/table&gt;&lt;/div&gt;</xsl:template>
 
@@ -235,17 +235,17 @@
 
   <xsl:template match="cell" mode="markdown">&lt;td&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/td&gt;</xsl:template>
 
-  <xsl:template match="fn" mode="markdown"> &lt;span class="fn" style="<xsl:call-template name="css-fn"/>"&gt;(<xsl:apply-templates select="text()|*" mode="markdown"/>)&lt;/span&gt; </xsl:template>
+  <xsl:template match="fn" mode="markdown"> &lt;span class="fn"&gt;(<xsl:apply-templates select="text()|*" mode="markdown"/>)&lt;/span&gt; </xsl:template>
   <xsl:template match="q" mode="markdown">"<xsl:apply-templates select="text()|*" mode="markdown"/>"</xsl:template>
   <xsl:template match="m" mode="markdown">\(<xsl:value-of select="normalize-space(text())"/>\)</xsl:template>
   <xsl:template match="me" mode="markdown">\[<xsl:value-of select="normalize-space(text())"/>\]</xsl:template>
   <xsl:template match="md" mode="markdown">\[\begin{align*}<xsl:apply-templates select="mrow" mode="markdown"/>\end{align*}\]</xsl:template>
   <xsl:template match="cd|input" mode="markdown">&lt;pre&gt;<xsl:value-of select="text()"/>&lt;/pre&gt;</xsl:template>
   <xsl:template match="program" mode="markdown"><xsl:apply-templates select="input" mode="markdown"/></xsl:template>
-  <xsl:template match="c|kbd" mode="markdown">&lt;tt style="<xsl:call-template name="css-code"/>"&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/tt&gt;</xsl:template>
+  <xsl:template match="c|kbd" mode="markdown">&lt;tt&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/tt&gt;</xsl:template>
   <xsl:template match="mrow" mode="markdown"><xsl:value-of select="normalize-space(text())"/>\\</xsl:template>
   <xsl:template match="caption|title" mode="markdown"><xsl:apply-templates select="text()|*" mode="markdown"/></xsl:template>
-  <xsl:template match="fillin" mode="markdown">&lt;span class="fillin" style="<xsl:call-template name="css-fillin"/>"&gt;&lt;/span&gt;</xsl:template>
+  <xsl:template match="fillin" mode="markdown">&lt;span class="fillin"&gt;&lt;/span&gt;</xsl:template>
   <xsl:template match="ol" mode="markdown">&lt;ol&gt;<xsl:apply-templates select="li" mode="markdown"/>&lt;/ol&gt;</xsl:template>
   <xsl:template match="ul" mode="markdown">&lt;ul&gt;<xsl:apply-templates select="li" mode="markdown"/>&lt;/ul&gt;</xsl:template>
   <xsl:template match="li" mode="markdown">&lt;li&gt;<xsl:apply-templates select="*|text()" mode="markdown"/>&lt;/li&gt;</xsl:template>
