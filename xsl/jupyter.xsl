@@ -100,7 +100,22 @@
     {"nbformat": 4,"nbformat_minor": 0,"cells": [
       <xsl:call-template name="jupyter-cell">
         <xsl:with-param name="first-cell">true</xsl:with-param>
-        <xsl:with-param name="source"><xsl:call-template name="css"/><xsl:call-template name="newcommands"/>&lt;h1&gt;<xsl:value-of select="$section"/>&#160;<xsl:value-of select="title"/>&#160;(<xsl:value-of select="$mode"/>)&lt;/h1&gt;&lt;div&gt;<xsl:apply-templates select="." mode="link"/>&lt;/div&gt;</xsl:with-param>
+        <xsl:with-param name="source">
+          <xsl:call-template name="css"/>
+          <xsl:call-template name="newcommands"/>
+          <xsl:call-template name="normalize"><xsl:with-param name="content">
+          &lt;h1&gt;<xsl:value-of select="$section"/>&#160;<xsl:value-of select="title"/>&lt;/h1&gt;
+          <xsl:choose>
+              <xsl:when test="$mode = 'team'">
+                  &lt;h3&gt;Team Notebook&lt;/h3&gt;
+              </xsl:when>
+              <xsl:otherwise>
+                  &lt;h3&gt;Individual Notebook&lt;/h3&gt;
+              </xsl:otherwise>
+          </xsl:choose>
+          &lt;div&gt;<xsl:apply-templates select="." mode="link"/>&lt;/div&gt;
+          </xsl:with-param></xsl:call-template>
+        </xsl:with-param>
       </xsl:call-template>
       <xsl:choose>
           <xsl:when test="$mode='team'">
@@ -160,7 +175,7 @@
     }
   </xsl:template>
   <xsl:template match="section" mode="url">
-    <xml:text>https://stevenclontz.github.io/mathematics-of-data/html/<xsl:value-of select="./@xml:id"/>.html</xml:text>
+    <xml:text>https://stevenclontz.github.io/mathematics-of-data/<xsl:value-of select="./@xml:id"/>.html</xml:text>
   </xsl:template>
   <xsl:template match="section" mode="link">
     &lt;a href="<xsl:apply-templates select="." mode="url"/>"&gt;<xsl:apply-templates select="." mode="url"/>&lt;/a&gt;
@@ -264,7 +279,7 @@
 
   <xsl:template match="xref" mode="markdown">&lt;i&gt;<xsl:apply-templates select="//*[@xml:id=current()/@ref]" mode="name"/>&lt;/i&gt;</xsl:template>
 
-<!-- https://stackoverflow.com/a/5044657/1607849 -->
+  <!-- Normalize whitespace but don't completely trim beginning or end: https://stackoverflow.com/a/5044657/1607849 -->
   <xsl:template match="text()" mode="markdown"><xsl:value-of select="translate(normalize-space(concat('&#x7F;',.,'&#x7F;')),'&#x7F;','')"/></xsl:template>
 
 </xsl:stylesheet>
