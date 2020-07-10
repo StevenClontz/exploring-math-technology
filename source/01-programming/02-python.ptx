@@ -283,40 +283,54 @@ do not exactly add up to your best binary approximation of <m>\frac{3}{10}</m>.
     </activity>
     <exercises>
         <exercise>
+            <statement>
             <p>
 Find the value of the following expression by hand.
             </p>
             <me>3^{\frac{1+7}{6-2}}\times 4</me>
+            </statement>
         </exercise>
         <exercise>
+            <statement>
             <p>
 Check your work in the previous exercise using a Code cell.
             </p>
+            </statement>
         </exercise>
         <exercise>
+            <statement>
             <p>
 Use powers of two to verify that <m>217=11011001_2</m> by hand.
             </p>
+            </statement>
         </exercise>
         <exercise>
+            <statement>
             <p>
 Show how to use both the <c>int</c> and <c>format</c> Python tools to verify that <m>217=11011001_2</m> programmatically.
             </p>
+            </statement>
         </exercise>
         <exercise>
+            <statement>
             <p>
 Find an approximation of <m>\frac{1}{7}</m> to three decimal places.
             </p>
+            </statement>
         </exercise>
         <exercise>
+            <statement>
             <p>
 What is the value of your approximation when multiplied by <m>7{,}000{,}000</m>? Why isn't the result exactly <m>1{,}000{,}000</m>?
             </p>
+            </statement>
         </exercise>
         <exercise>
+            <statement>
             <p>
 Write a paragraph explaining why, in your own words, <c>0.1+0.2</c> doesn't result in <c>0.3</c> in many programming languages.
             </p>
+            </statement>
         </exercise>
     </exercises>
 </section>

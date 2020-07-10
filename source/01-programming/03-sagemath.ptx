@@ -319,24 +319,31 @@ Use the <c>solve()</c> tool to find both solutions to <m>x^2+3x+7=4-x</m>.
     </activity>
     <exercises>
         <exercise>
+            <statement>
             <p>
 Use a SageMath code cell to find the simplified value of <m>i^{\ln(e^4)}</m>.
             </p>
+            </statement>
         </exercise>
         <exercise>
+            <statement>
             <p>
 Save the mathematical expression
 <m>\sin(\frac{\pi}{7})\cos(\frac{5\pi}{14})+\sin(\frac{5\pi}{14})\cos(\frac{\pi}{7})</m>
 to a CS variable named <c>fancy_math</c>. Then (since the <q>trigonometric functions</q> <m>\sin,\cos</m>
 aren't immediately simplified by SageMath) use <c>fancy_math.trig_reduce()</c> to find its exact value.
             </p>
+            </statement>
         </exercise>
         <exercise>
+            <statement>
             <p>
 Are you satisfied with the above results? Write a sentence or two explaining why or why not.
             </p>
+            </statement>
         </exercise>
         <exercise>
+            <statement>
             <p>
 Many mathematicians believe (but no one has been able to prove) that 
 the circular constant <m>\pi=3.14159\cdots</m> is a
@@ -348,32 +355,41 @@ For example, the SageMath code <c>pi.n(digits=10)</c> reveals that <m>65</m> app
             <p>
 Use SageMath to show that <m>42</m> appears somewhere in the decimal expression of <m>\pi</m>.
             </p>
+            </statement>
         </exercise>
         <exercise>
+            <statement>
             <p>
 Use the <c>var()</c> tool to declare the CS variables <c>m</c> and <c>n</c> to represent the math variables
 <m>m</m> and <m>n</m>. Then have the CS variable <c>quotient_expression</c> represent the mathematical
 expression <m>\frac{m+1}{n^2-3n+2}</m>, and use <c>show()</c> to display
 <c>quotient_expression</c> with mathematical formatting.
             </p>
+            </statement>
         </exercise>
         <exercise>
+            <statement>
             <p>
 Compute the value of <m>\frac{7+1}{(-3)^2-3(-3)+2}</m> by substituting <m>m=7</m> and <m>n=-3</m>
 into <c>quotient_expression</c>.
             </p>
+            </statement>
         </exercise>
         <exercise>
+            <statement>
             <p>
 Save the mathematical equation <m>x^3+1=(x+1)(x^2-x+1)</m> to the CS variable <c>sum_of_cubes</c>.
 Use the <c>bool()</c> tool to verify that <c>sum_of_cubes</c> represents a valid mathematical identity.
             </p>
+            </statement>
         </exercise>
         <exercise>
+            <statement>
             <p>
 Show how to solve the equation <m>17-2x=3x+2</m> by hand (by uploading a photograph of your written work).
 Then show how to use SageMath to solve it automatically.
             </p>
+            </statement>
         </exercise>
     </exercises>
 </section>

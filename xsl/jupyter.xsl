@@ -15,7 +15,8 @@
   <!-- stolen from PreTeXt -->
   <xsl:template name="escape-json-string">
     <xsl:param name="text"/>
-    <xsl:variable name="sans-backslash" select="str:replace($text,           '\',      '\\'     )"/>
+    <xsl:variable name="amp-fix"        select="str:replace($text,           '\amp',   '&amp;'     )"/>
+    <xsl:variable name="sans-backslash" select="str:replace($amp-fix,        '\',      '\\'     )"/>
     <xsl:variable name="sans-slash"     select="str:replace($sans-backslash, '/',      '\/'     )"/>
     <xsl:variable name="sans-quote"     select="str:replace($sans-slash,     '&#x22;', '\&#x22;')"/>
     <xsl:variable name="sans-tab"       select="str:replace($sans-quote,     '&#x09;', '\t'     )"/>
@@ -122,7 +123,44 @@
               <xsl:apply-templates select="//activity"/>
           </xsl:when>
           <xsl:otherwise>
-              <xsl:apply-templates select="//exploration"/>
+            <xsl:call-template name="jupyter-cell">
+              <xsl:with-param name="source">
+                &lt;h5 style="text-align:center"&gt;Complete this activity before class.&lt;/h5&gt;
+              </xsl:with-param>
+            </xsl:call-template>
+            <xsl:apply-templates select="//exploration"/>
+            <xsl:call-template name="jupyter-cell">
+              <xsl:with-param name="source">
+                &lt;h5 style="text-align:center"&gt;Add a link to your team's notebook for this section below.&lt;/h5&gt;
+              </xsl:with-param>
+            </xsl:call-template>
+            <xsl:call-template name="jupyter-cell">
+              <xsl:with-param name="editable">true</xsl:with-param>
+            </xsl:call-template>
+            <xsl:if test="//exercises/exercise">
+              <xsl:call-template name="jupyter-cell">
+                <xsl:with-param name="source">
+                  &lt;h5 style="text-align:center"&gt;Complete these activities after class.&lt;/h5&gt;
+                </xsl:with-param>
+              </xsl:call-template>
+              <xsl:apply-templates select="//exercises/exercise"/>
+            </xsl:if>
+            <xsl:call-template name="jupyter-cell">
+              <xsl:with-param name="source">
+                &lt;h5 style="text-align:center"&gt;Upload a photograph of a satisfactory in-class quiz.&lt;/h5&gt;
+              </xsl:with-param>
+            </xsl:call-template>
+            <xsl:call-template name="jupyter-cell">
+              <xsl:with-param name="editable">true</xsl:with-param>
+            </xsl:call-template>
+            <!--<xsl:call-template name="jupyter-cell">
+              <xsl:with-param name="source">
+                &lt;h5 style="text-align:center"&gt;Upload a photograph documentating a satisfactory instructor conference.&lt;/h5&gt;
+              </xsl:with-param>
+            </xsl:call-template>
+            <xsl:call-template name="jupyter-cell">
+              <xsl:with-param name="editable">true</xsl:with-param>
+            </xsl:call-template>-->
           </xsl:otherwise>
       </xsl:choose>
       ]
@@ -188,7 +226,7 @@
 
   <!-- Supported PreTeXt elements -->
 
-  <xsl:template match="exploration|activity">
+  <xsl:template match="exploration|activity|exercise">
       <xsl:call-template name="jupyter-cell">
         <xsl:with-param name="source">
           &lt;h3&gt;<xsl:apply-templates select="." mode="name"/>&lt;/h3&gt;
@@ -211,6 +249,8 @@
   <xsl:template match="exploration|activity" mode="number"><xsl:apply-templates select="./ancestor::section" mode="number"/>.<xsl:number from="//section" level="any" count="exploration|activity"/></xsl:template>
   <xsl:template match="exploration" mode="name">Preview Activity <xsl:apply-templates select="." mode="number"/></xsl:template>
   <xsl:template match="activity" mode="name">Activity <xsl:apply-templates select="." mode="number"/></xsl:template>
+  <xsl:template match="exercise" mode="number"><xsl:apply-templates select="./ancestor::section" mode="number"/>.<xsl:number from="//section" level="any" count="exercise"/></xsl:template>
+  <xsl:template match="exercise" mode="name">Exercise <xsl:apply-templates select="." mode="number"/></xsl:template>
 
   <xsl:template match="statement|introduction">
     <xsl:apply-templates select="*"/>
@@ -256,7 +296,7 @@
   <xsl:template match="q" mode="markdown">"<xsl:apply-templates select="text()|*" mode="markdown"/>"</xsl:template>
   <xsl:template match="m" mode="markdown">\(<xsl:value-of select="normalize-space(text())"/>\)</xsl:template>
   <xsl:template match="me" mode="markdown">\[<xsl:value-of select="normalize-space(text())"/>\]</xsl:template>
-  <xsl:template match="md" mode="markdown">\[\begin{align*}<xsl:apply-templates select="mrow" mode="markdown"/>\end{align*}\]</xsl:template>
+  <xsl:template match="md" mode="markdown">\[\begin{aligned}<xsl:apply-templates select="mrow" mode="markdown"/>\end{aligned}\]</xsl:template>
   <xsl:template match="cd|input" mode="markdown">&lt;pre&gt;<xsl:value-of select="text()"/>&lt;/pre&gt;</xsl:template>
   <xsl:template match="program" mode="markdown"><xsl:apply-templates select="input" mode="markdown"/></xsl:template>
   <xsl:template match="c|kbd" mode="markdown">&lt;tt&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/tt&gt;</xsl:template>
