@@ -130,24 +130,106 @@ having finitely-many possible numbers is not ideal for data intended
 for storage on a physical computer.
 To account for this, some lower-level languages offer data types like the <term>short</term>
 that account for a useful (but finite) range of integers.
-In particular, shorts are integers that may be written using 16 binary digits.
+In particular, shorts are integers that may be written using only <m>16</m> of the binary digits <m>0</m>
+and <m>1</m>.
             </p>
         </introduction>
         <task>
             <p>
-How many different numbers can be stored using 2 binary digits?
+Only two numbers may be described using one binary digit: <m>0_2</m> and <m>1_2</m>.
+Only four numbers may be described using two binary digits: <m>00_2</m>, <m>01_2</m>, <m>10_2</m>, and <m>11_2</m>.
+            </p>
+            <p>
+Describe all the possible numbers using three binary digits.
+            </p>
+            <me>\square\square\square_2</me>
+        </task>
+        <task>
+            <p>
+What do you notice about this pattern? According to this pattern, how many numbers
+do you expect can be described using four binary digits? Five digits?
             </p>
         </task>
         <task>
             <p>
-How many different numbers can be stored using 3 binary digits?
-            </p>
-        </task>
-        <task>
-            <p>
-How many different numbers can be stored as a short?
+How many different numbers can be stored as a short data type, which uses sixteen binary digits?
             </p>
         </task>
     </activity>
+    <exercises>
+        <exercise>
+            <statement>
+            <p>
+Is <m>-1.5</m> a counting number, integer, and/or rational number?
+            </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+            <p>
+Is <m>+1.5</m> a counting number, integer, and/or rational number?
+            </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+            <p>
+Is <m>-15</m> a counting number, integer, and/or rational number?
+            </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+            <p>
+Is <m>+15</m> a counting number, integer, and/or rational number?
+            </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+            <p>
+A <term>byte</term> of computer storage is eight binary digits. How many different values of data
+can be stored in a byte?
+            </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+            <p>
+A <term>float</term> data type is one used to store fractions using binary numbers. A simple float
+might use the following two bytes of data...
+            </p>
+            <cd>01101101 11111100</cd>
+            <p>
+... to represent the following rational number.
+            </p>
+            <me>01101101_2 \times 2^{11111100_2-256}</me>
+            <p>
+Verify that this float represents the decimal value <m>6.8125</m>.
+(Remember that the value of <m>01101101_2</m> may be calculated automatically
+by running <c>int('01101101',2)</c> in either Python or SageMath.)
+            </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+            <p>
+Importantly, in the float implementation described by the previous exercise, a leading <c>1</c> in either byte
+requires subtracting the value <m>256</m> from the usual binary value (in order to support negative values).
+            </p>
+            <p>
+Use this rule to verify that this implementation might store the decimal <m>-0.265625</m> as <c>11101111 11111010</c>.
+            </p>
+            </statement>
+        </exercise>
+<!--        <exercise>
+            <statement>
+            <p>
+This float implementation is non-unique since the number <m>2</m> may be represented by both
+<c>00000010 00000000</c> and <c>00000001 00000001</c>.
+            </p>
+            </statement>
+        </exercise>-->
+    </exercises>
 </section>
 
