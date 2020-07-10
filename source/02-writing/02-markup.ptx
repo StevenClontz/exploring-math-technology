@@ -88,8 +88,14 @@ But multiplication cannot be represented by, say, <c>x</c>, since that represent
 <m>x</m>. (Instead we write <c>2 \times 3</c> to produce <m>2 \times 3</m>.)
             </p>
             <p>
-Even professionals usually know just a small subset of all the LaTeX commands available. Instead, references like
-<url href="http://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm">Dr. Burn's TeX Command Reference</url>
+Note that <c>z_123</c> produces <m>z_123</m>, so grouping in LaTeX may be accomplished
+with curly braces <c>{}</c>: <c>z_{123}</c> produces <m>z_{123}</m>. Actual curly braces
+may be displayed as follows: <c>\{1,2,3\}</c> produces <m>\{1,2,3\}</m>.
+            </p>
+            <p>
+Even professionals usually know just a small subset of all the LaTeX commands available.
+Instead, references like
+<url href="https://katex.org/docs/supported.html">KaTeX's Support Table</url>
 and tools like
 <url href="https://detexify.kirelabs.org/classify.html">DeTeXify</url>
 allow for easy lookup of LaTeX commands as needed.
@@ -98,12 +104,17 @@ allow for easy lookup of LaTeX commands as needed.
 For each of the following samples of mathematical notation, <em>don't</em> peek at
 their source markup. Instead, use the above resources to replicate the notation as
 best as possible in a Markdown cell. After you've done as well as possible on your own,
-then compare with the corresponding source markup.
+you should then compare with the original source code to improve your original work.
             </p>
         </introduction>
         <task>
             <me>
 \det(A) = x_{11}x_{22}-x_{12}x_{21}
+            </me>
+        </task>
+        <task>
+            <me>
+\mathbb{Q} = \left\{\frac{p}{q}\,\middle|\,p\in\mathbb{Z},q\in\mathbb{Z}^+\right\}
             </me>
         </task>
         <task>
@@ -185,5 +196,82 @@ then it can be linked to by entering <c>[Link to LaTeX file](example.tex)</c>.
             </p>
         </statement>
     </activity>
+    <exercises>
+        <exercise>
+            <statement>
+                <p>
+Copy the following into a Markdown cell, and then appropriately style the words
+<c>bold</c> and <c>italics</c>.
+                </p>
+                <cd>I know how to style bold and italics in Markdown.</cd>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Copy the following into a Markdown cell, and then make each sentence appear as
+                    a separate paragraph.
+                </p>
+                <cd>I know how to separate paragraphs in Markdown. See, I did it!</cd>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Copy the following into a Markdown cell, and then it link to your favorite YouTube video.
+                </p>
+                <cd>I know how to link my favorite YouTube video in Markdown.</cd>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Copy the following into a Markdown cell, and make the first few words into a heading.
+                </p>
+                <cd>An important title. I know how to make headings in Markdown.</cd>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Copy the following into a Markdown cell, and make the list appear with bullets.
+                </p>
+                <cd>Here's a few of the things I know how to format in Markdown:
+bold, italics, links, headings, lists</cd>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Replicate the following complete sentence using mathematical notation in a Markdown cell.
+                </p>
+                <blockquote>After solving the equation <m>3x=5x-6</m> for <m>x</m>, we find that <m>x=3</m>.</blockquote>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Repeat the previous exercise, but make the equation <m>3x=5x-6</m> appear as a large, centered mathematical expression
+on its own line rather than an inline mathematical expression.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Typeset the following mathematical equation in a Markdown cell.
+                </p>
+                <me>\sin(x) = \sum_{k=0}^\infty \frac{(-1)^kx^{2k+1}}{(2k+1)!}</me>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Typeset the following mathematical expression in a Markdown cell.
+                </p>
+                <me>\binom{n}{k}^2=\binom{n-1}{k-1}^2+2\binom{n-1}{k-1}\binom{n-1}{k}+\binom{n-1}{k}^2</me>
+            </statement>
+        </exercise>
+    </exercises>
 </section>
 

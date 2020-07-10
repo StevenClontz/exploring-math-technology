@@ -15,7 +15,7 @@
   <!-- stolen from PreTeXt -->
   <xsl:template name="escape-json-string">
     <xsl:param name="text"/>
-    <xsl:variable name="amp-fix"        select="str:replace($text,           '\amp',   '&amp;'     )"/>
+    <xsl:variable name="amp-fix"        select="str:replace($text,           '\amp',   '&amp;'  )"/><!-- added by clontz -->
     <xsl:variable name="sans-backslash" select="str:replace($amp-fix,        '\',      '\\'     )"/>
     <xsl:variable name="sans-slash"     select="str:replace($sans-backslash, '/',      '\/'     )"/>
     <xsl:variable name="sans-quote"     select="str:replace($sans-slash,     '&#x22;', '\&#x22;')"/>
@@ -140,7 +140,7 @@
             <xsl:if test="//exercises/exercise">
               <xsl:call-template name="jupyter-cell">
                 <xsl:with-param name="source">
-                  &lt;h5 style="text-align:center"&gt;Complete these activities after class.&lt;/h5&gt;
+                  &lt;h5 style="text-align:center"&gt;Complete these exercises after class.&lt;/h5&gt;
                 </xsl:with-param>
               </xsl:call-template>
               <xsl:apply-templates select="//exercises/exercise"/>
@@ -308,6 +308,7 @@
   <xsl:template match="li" mode="markdown">&lt;li&gt;<xsl:apply-templates select="*|text()" mode="markdown"/>&lt;/li&gt;</xsl:template>
   <xsl:template match="p" mode="markdown">&lt;span&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/span&gt;</xsl:template>
   <xsl:template match="url" mode="markdown">&lt;a href="<xsl:value-of select="@href"/>"&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/a&gt;</xsl:template>
+  <xsl:template match="blockquote" mode="markdown">&lt;blockquote&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/blockquote&gt;</xsl:template>
 
 
   <xsl:template match="table|figure|listing|definition|example" mode="number"><xsl:apply-templates select="./ancestor::section" mode="number"/>.<xsl:number from="//section" level="any" count="table|figure|listing|definition|example"/></xsl:template>
