@@ -43,11 +43,40 @@ such as <m>\{2,8,1,4\}</m>.
             <p>
 Sets may be declared in Python and SageMath using the syntax <c>{2,8,1,4}</c>.
 Use this syntax and the equality operator <c>==</c> to confirm that
-<m>\{100,101,100\}=\{101,100\}=\{100,101\}</m> are all the same set (since
-they all contain exactly the same numbers).
+<m>\{100,101,100\}</m>, <m>\{101,100\}</m>, and <m>\{100,101\}</m> are all the
+same set (since they all contain exactly the same numbers).
             </p>
         </task>
         <task>
+            <p>
+The <term>union</term> of many sets describes anything that belongs to any of the given
+sets. For example, the union of <m>\{1,2,3\}</m> with <m>\{3,4,5\}</m> may be found
+using the code <c>{1,2,3} | {3,4,5}</c>, resulting in
+<m>\{1,2,3,4,5\}</m>.
+            </p>
+            <p>
+Find the union of the three sets <m>\{1,2,4,7\}</m>, <m>\{2,5,7,9\}</m>, and
+<m>\{0,2,3,7\}</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+The <term>intersection</term> of many sets describes only the things that belong to all of the given
+sets. For example, the intersection of <m>\{1,2,3\}</m> with <m>\{3,4,5\}</m> may be found
+using the code <c>{1,2,3} &amp; {3,4,5}</c>, resulting in
+<m>\{3\}</m>.
+            </p>
+            <p>
+Find the intersection of the three sets <m>\{1,2,4,7\}</m>, <m>\{2,5,7,9\}</m>, and
+<m>\{0,2,3,7\}</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+                Sets may contain other kinds of data... (TODO strings)
+            </p>
+        </task>
+<!--        <task>
             <p>
 There are only four sets that only use the numbers <m>0</m> and <m>1</m>:
 <m>\{\},\{0\},\{1\},\{0,1\}</m>.
@@ -61,7 +90,7 @@ List all the sets that only use the numbers <m>0</m>, <m>1</m>, and <m>2</m>.
 Based on these examples, guess how many sets only use the counting
 numbers <m>0</m> through <m>7</m>. Explain your reasoning.
             </p>
-        </task>
+        </task>-->
 <!--        <task>
             <p>
 The size of a set is known as its <term>cardinality</term>, which can be
@@ -78,13 +107,31 @@ Use SageMath to confirm that <m>\{2,3,5,7,11,13,17,19\}</m> contains
         <introduction>
             <p>
 Sets are useful collections when you only care if a datum belongs to the set
-or not. But sometimes you want your data to be ordered, and sometimes you
+or not. But often you want your data to be ordered, and often you
 want to be able count the same datum multiple times in your collection.
-<!--(There are also other shortcomings, such as not being able to define a set
-containing sets itself, such as <m>\{\{0\},\{1,2\}\}</m>.)-->
 This is where <term>lists</term> are useful.
             </p>
         </introduction>
+        <task>
+            <p>
+Lists use hard brackets <c>[2,8,1,4]</c> instead of curly brackets.
+Verify that each of the lists <c>[100,101,100]</c>, <c>[101,100]</c>, and
+<c>[100,101]</c> are not considered equal to each other, since even though they contain
+the same data, it appears in different orders and frequencies.
+            </p>
+        </task>
+        <task>
+            <p>
+The <term>concatentation</term> of many sets describes anything that belongs to any of the given
+sets. For example, the union of <m>\{1,2,3\}</m> with <m>\{3,4,5\}</m> may be found
+using the code <c>{1,2,3} | {3,4,5}</c>, resulting in
+<m>\{1,2,3,4,5\}</m>.
+            </p>
+            <p>
+Find the union of the three sets <m>\{1,2,4,7\}</m>, <m>\{2,5,7,9\}</m>, and
+<m>\{0,2,3,7\}</m>.
+            </p>
+        </task>
     </activity>
     <activity>
         <introduction>
