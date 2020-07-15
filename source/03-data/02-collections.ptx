@@ -5,7 +5,29 @@
     <exploration>
         <task>
             <p>
-TODO
+Use code cells to find the squares of the counting numbers from <m>0</m> to <m>9</m>:
+<m>0^2=0</m>, <m>1^2=1</m>, <m>2^2=4</m>, <m>\cdots</m>. (Remember that <c>**</c> is
+used in Python to denote an exponent.)
+            </p>
+        </task>
+        <task>
+            <p>
+The sum of the cubes of <m>0</m> through <m>4</m> may be found by running
+<c>0**3+1**3+2**3+3**3+4**3</c>, which turns out to be <m>100</m>.
+            </p>
+            <p>
+Show that the sum of the squares of <m>0</m> through <m>9</m> is equal to <m>285</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+To avoid a lot of repetition, we may quickly produce the cubes of <m>0</m> through <m>4</m>
+as a <term>list</term> by running <c>cubes = [n**3 for n in range(5)]</c>.
+Then <c>sum(cubes)</c> also results in <m>100</m>.
+            </p>
+            <p>
+Adapt this technique to show that the sum of the squares of <m>0</m> through <m>99</m>
+is equal to <m>328{,}350</m>.
             </p>
         </task>
     </exploration>

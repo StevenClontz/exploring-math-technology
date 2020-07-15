@@ -74,29 +74,49 @@ Square rooting a counting number results in another counting number. For example
         </task>
     </activity>
     <activity>
-        <statement>
+        <introduction>
             <p>
 The <term>integers</term> <m>\mathbb Z</m> include all the counting numbers as well as their
 negatives: <m>\{\dots,-2,-1,0,1,2,\dots\}</m>.
             </p>
+        </introduction>
+        <task>
             <p>
 Explain which of the number rules from <xref ref="data-numbers-counting"/> work
 when <q>counting number</q> is replaced with <q>integer</q>, and which ones fail.
             </p>
-        </statement>
+        </task>
+        <task>
+            <p>
+Choose from the words all/some/no to make the following sentence correct.
+            </p>
+            <blockquote>
+All/some/no integers are also counting numbers, and all/some/no counting numbers are also integers.
+            </blockquote>
+        </task>
     </activity>
     <activity>
-        <statement>
+        <introduction>
             <p>
 The <term>rational numbers</term> <m>\mathbb Q</m> include all fractions of integers
 that don't divide by zero, such as <m>\frac{1}{2}</m>, <m>\frac{22}{7}</m>,
 and <m>-\frac{1234812348}{42}</m>.
             </p>
+        </introduction>
+        <task>
             <p>
 Explain which of the number rules from <xref ref="data-numbers-counting"/> work
 when <q>counting number</q> is replaced with <q>rational number</q>, and which ones fail.
             </p>
-        </statement>
+        </task>
+        <task>
+            <p>
+Choose from the words all/some/no to make the following sentence correct.
+            </p>
+            <blockquote>
+All/some/no integers are also rational numbers, and all/some/no rational numbers are also integers.
+            </blockquote>
+        </task>
     </activity>
     <activity>
         <statement>
@@ -130,8 +150,8 @@ having finitely-many possible numbers is not ideal for data intended
 for storage on a physical computer.
 To account for this, some lower-level languages offer data types like the <term>short</term>
 that account for a useful (but finite) range of integers.
-In particular, shorts are integers that may be written using only <m>16</m> of the binary digits <m>0</m>
-and <m>1</m>.
+In particular, shorts are integers that may be stored as a short finite list of the
+binary digits <m>0</m> and <m>1</m>. (Each binary digit is also known as a <term>bit</term>.)
             </p>
         </introduction>
         <task>
@@ -152,7 +172,13 @@ do you expect can be described using four binary digits? Five digits?
         </task>
         <task>
             <p>
-How many different numbers can be stored as a short data type, which uses sixteen binary digits?
+A <term>byte</term> of computer storage is eight binary digits. How many different values of data
+can be stored in a byte?
+            </p>
+        </task>
+        <task>
+            <p>
+How many different numbers can be stored as a short data type that uses two bytes?
             </p>
         </task>
     </activity>
@@ -188,8 +214,15 @@ Is <m>+15</m> a counting number, integer, and/or rational number?
         <exercise>
             <statement>
             <p>
-A <term>byte</term> of computer storage is eight binary digits. How many different values of data
-can be stored in a byte?
+A <term>nibble</term> of computer storage uses four bits (binary digits). How many different values of data
+can be stored in a nibble?
+            </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+            <p>
+How many bytes equals twelve nibbles?
             </p>
             </statement>
         </exercise>
@@ -205,7 +238,7 @@ might use the following two bytes of data...
             </p>
             <me>01101101_2 \times 2^{11111100_2-256}</me>
             <p>
-Verify that this float represents the decimal value <m>6.8125</m>.
+Show how to verify that this float represents the decimal value <m>6.8125</m>.
 (Remember that the value of <m>01101101_2</m> may be calculated automatically
 by running <c>int('01101101',2)</c> in either Python or SageMath.)
             </p>
