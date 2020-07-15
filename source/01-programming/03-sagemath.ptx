@@ -200,7 +200,7 @@ Math variables may be manipulated just like literal values or values store in CS
 they don't store specific values, these combinations of variables represent an <term>expression</term>.
             </p>
             <p>
-Use the <c>show()</c> tool to display the expression <m>x^2+4yz</m> using a Code cell. Remember that
+Use SageMath's <c>show()</c> tool to display the expression <m>x^2+4yz</m> using a Code cell. Remember that
 <m>4yz=4\times y\times z</m> requires the <c>*</c> operator to perform multiplication.
             </p>
         </task>

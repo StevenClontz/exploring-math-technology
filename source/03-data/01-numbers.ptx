@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="data-numbers" kernel="sage">
-    <title>Numbers</title>
+    <title>Numbers and Strings</title>
     <exploration>
         <introduction>
             <p>Write a sentence answering each question.</p>
         </introduction>
-        <task>
+<!--        <task>
             <p>
 Which number is bigger: <m>0.999\cdots</m> (with infinitely-many <m>9</m>s)
 or <m>1</m>? Why do you think so?
@@ -20,6 +20,16 @@ What does <m>0.999\cdots</m> mean?
         <task>
             <p>
 What does <m>1</m> mean?
+            </p>
+        </task>-->
+        <task>
+            <p>
+How would you define a <q>number</q>?
+            </p>
+        </task>
+        <task>
+            <p>
+Given your definition, are there certain numbers that cannot be understood by a computer?
             </p>
         </task>
     </exploration>
@@ -182,6 +192,64 @@ How many different numbers can be stored as a short data type that uses two byte
             </p>
         </task>
     </activity>
+    <activity>
+        <introduction>
+            <p>
+Since ultimately data is stored as bits, anything handled by a computer needs to be represented
+somehow as a (binary) number. For example, a <term>character</term> is a letter or other glyph
+(such as an emoji 😃) that has a unique representation as a counting number.
+            </p>
+        </introduction>
+        <task>
+            <p>
+To denote a character in Python or SageMath, surround it with either single quotes <c>'x'</c>
+or double quotes <c>"x"</c>. Then the code <c>ord('x')</c> (or <c>ord("x")</c>) will reveal
+the number that is used to represent it in memory (for <c>x</c>, that number is <m>120</m>),
+called a <term>Unicode value</term>.
+            </p>
+            <p>
+Find the Unicode values for the characters <c>s</c>, <c>S</c>, and <c>😊</c>.
+(For the emoji, you may wish to copy-and-paste the character if you're using a standard keyboard.)
+            </p>
+        </task>
+        <task>
+            <p>
+Given a Unicode value, Python and SageMath can return the character it represents by using
+the <c>chr()</c> tool. For example, <c>print(chr(120))</c> displays <c>x</c> as expected.
+            </p>
+            <p>
+Use <c>chr()</c> to display the charcters with these Unicode values:
+            </p>
+            <ul>
+                <li>89</li>
+                <li>97</li>
+                <li>121</li>
+                <li>13025</li>
+            </ul>
+        </task>
+        <task>
+            <p>
+<term>Strings</term> of multiple characters may be used to represent words and sentences.
+Displaying the string <c>test = "Hello World!"</c> is a common test used in setting up a new programming
+environment, done with <c>print(test)</c>.
+            </p>
+            <p>
+The value of a CS variable may be easily inserted into a string by using <term>interpolation</term>.
+In updated versions of Python 3 and SageMath, this is done by typing an <c>f</c> before the quotation marks:
+<c>print(f"It's time to say {test} now.")</c> will display <c>It's time to say Hello World! now.</c>
+(provided <c>test = "Hello World!"</c> was executed previously).
+            </p>
+            <p>
+Store the word <q>math</q> as a CS variable, then use interpolation to make it appear instead of the blank
+when running a Code cell with <c>print("My favorite class is ____.")</c>.
+            </p>
+        </task>
+        <task>
+            <p>
+Use string interpolation to replace the blank in the line <c>print("The character ___ has Unicode value 42+42.")</c>
+            </p>
+        </task>
+    </activity>
     <exercises>
         <exercise>
             <statement>
@@ -263,6 +331,16 @@ This float implementation is non-unique since the number <m>2</m> may be represe
             </p>
             </statement>
         </exercise>-->
+        <exercise>
+            <statement>
+                <p>
+Use string interpolation along with <c>chr()</c> and <c>ord()</c>
+to replace the blanks in the following lines of code with sensible output.
+                </p>
+                <cd>print("The Unicode value of the @ character is ___.")
+print("The Unicode value of the emoji ___ is 128525.")</cd>
+            </statement>
+        </exercise>
     </exercises>
 </section>
 
