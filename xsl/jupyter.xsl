@@ -36,6 +36,7 @@
   <xsl:template name="jupyter-cell">
     <xsl:param name="source"/>
     <xsl:param name="editable"/>
+    <xsl:param name="alt-bg"/>
     <xsl:param name="first-cell"/>
     <xsl:if test="not($first-cell)">,</xsl:if>
     {
@@ -50,7 +51,7 @@
         ""
       </xsl:when>
       <xsl:otherwise>
-        "&lt;div class=\"not-editable<xsl:if test="$mode='team'"> not-editable-team</xsl:if>\"&gt;<xsl:call-template name="escape-json-string"><xsl:with-param name="text" select="$source"/></xsl:call-template>&lt;/div&gt;"
+          "&lt;div class=\"not-editable<xsl:choose><xsl:when test="$mode='team'"> not-editable-team<xsl:if test="$alt-bg"> not-editable-team-alt</xsl:if></xsl:when><xsl:when test="$alt-bg"> not-editable-alt</xsl:when></xsl:choose>\"&gt;<xsl:call-template name="escape-json-string"><xsl:with-param name="text" select="$source"/></xsl:call-template>&lt;/div&gt;"
       </xsl:otherwise>
     </xsl:choose>
     }
@@ -61,7 +62,9 @@
       &lt;style&gt;
         .editable{<xsl:call-template name="css-editable"/>}
         .not-editable{<xsl:call-template name="css-not-editable"/>}
+        .not-editable-alt{<xsl:call-template name="css-not-editable-alt"/>}
         .not-editable-team{<xsl:call-template name="css-not-editable-team"/>}
+        .not-editable-alt-team{<xsl:call-template name="css-not-editable-alt-team"/>}
         .sidebyside{<xsl:call-template name="css-sidebyside"/>}
         .sidebyside > *{<xsl:call-template name="css-sidebyside-child"/>}
         .todo{<xsl:call-template name="css-todo"/>}
@@ -76,7 +79,9 @@
   </xsl:template>
   <xsl:template name="css-editable">margin:1em;color:#ccc;font-size:2em;text-align:center;</xsl:template>
   <xsl:template name="css-not-editable">background-color:#eefff8;padding:1em;border-radius:10px;box-shadow:4px 4px 3px #ddd;margin:5px;</xsl:template>
+  <xsl:template name="css-not-editable-alt">background-color:#aafff8;</xsl:template>
   <xsl:template name="css-not-editable-team">background-color:#eef8ff;</xsl:template>
+  <xsl:template name="css-not-editable-alt-team">background-color:#aaf8ff;</xsl:template>
   <xsl:template name="css-sidebyside">display:flex;justify-content:center;</xsl:template>
   <xsl:template name="css-sidebyside-child">margin-right:1em;flex:1;</xsl:template>
   <xsl:template name="css-todo">color:#f00;font-weight:bold;</xsl:template>
@@ -127,12 +132,14 @@
               <xsl:with-param name="source">
                 &lt;h5 style="text-align:center"&gt;Complete this activity before class.&lt;/h5&gt;
               </xsl:with-param>
+              <xsl:with-param name="alt-bg">true</xsl:with-param>
             </xsl:call-template>
             <xsl:apply-templates select="//exploration"/>
             <xsl:call-template name="jupyter-cell">
               <xsl:with-param name="source">
                 &lt;h5 style="text-align:center"&gt;Add a link to your team's notebook for this section below.&lt;/h5&gt;
               </xsl:with-param>
+              <xsl:with-param name="alt-bg">true</xsl:with-param>
             </xsl:call-template>
             <xsl:call-template name="jupyter-cell">
               <xsl:with-param name="editable">true</xsl:with-param>
@@ -142,6 +149,7 @@
                 <xsl:with-param name="source">
                   &lt;h5 style="text-align:center"&gt;Complete these exercises after class.&lt;/h5&gt;
                 </xsl:with-param>
+              <xsl:with-param name="alt-bg">true</xsl:with-param>
               </xsl:call-template>
               <xsl:apply-templates select="//exercises/exercise"/>
             </xsl:if>
@@ -149,6 +157,7 @@
               <xsl:with-param name="source">
                 &lt;h5 style="text-align:center"&gt;Upload a photograph of a satisfactory in-class quiz.&lt;/h5&gt;
               </xsl:with-param>
+              <xsl:with-param name="alt-bg">true</xsl:with-param>
             </xsl:call-template>
             <xsl:call-template name="jupyter-cell">
               <xsl:with-param name="editable">true</xsl:with-param>
