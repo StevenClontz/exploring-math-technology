@@ -306,8 +306,11 @@
   <xsl:template match="m" mode="markdown">\(<xsl:value-of select="normalize-space(text())"/>\)</xsl:template>
   <xsl:template match="me" mode="markdown">\[<xsl:value-of select="normalize-space(text())"/>\]</xsl:template>
   <xsl:template match="md" mode="markdown">\[\begin{aligned}<xsl:apply-templates select="mrow" mode="markdown"/>\end{aligned}\]</xsl:template>
-  <xsl:template match="cd|input" mode="markdown">&lt;pre&gt;<xsl:value-of select="text()"/>&lt;/pre&gt;</xsl:template>
-  <xsl:template match="program" mode="markdown"><xsl:apply-templates select="input" mode="markdown"/></xsl:template>
+  <xsl:template match="cd" mode="markdown">
+&lt;pre&gt;<xsl:value-of select="text()"/>&lt;/pre&gt;</xsl:template>
+  <xsl:template match="program" mode="markdown">
+&lt;pre&gt;<xsl:apply-templates select="input" mode="markdown"/>&lt;/pre&gt;</xsl:template>
+  <xsl:template match="input" mode="markdown">&lt;code&gt;<xsl:value-of select="text()"/>&lt;/code&gt;</xsl:template>
   <xsl:template match="c|kbd" mode="markdown">&lt;tt&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/tt&gt;</xsl:template>
   <xsl:template match="mrow" mode="markdown"><xsl:value-of select="normalize-space(text())"/>\\</xsl:template>
   <xsl:template match="caption|title" mode="markdown"><xsl:apply-templates select="text()|*" mode="markdown"/></xsl:template>

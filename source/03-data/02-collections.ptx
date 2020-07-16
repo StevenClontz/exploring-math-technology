@@ -73,7 +73,11 @@ Find the intersection of the three sets <m>\{1,2,4,7\}</m>, <m>\{2,5,7,9\}</m>, 
         </task>
         <task>
             <p>
-                Sets may contain other kinds of data... (TODO strings)
+Sets may contain other kinds of data, such as strings.
+            </p>
+            <p>
+Find the union and intersection of the sets <c>{1,2,3}</c> and
+<c>{1,"2","three"}</c>.
             </p>
         </task>
 <!--        <task>
@@ -115,30 +119,64 @@ This is where <term>lists</term> are useful.
         <task>
             <p>
 Lists use hard brackets <c>[2,8,1,4]</c> instead of curly brackets.
-Verify that each of the lists <c>[100,101,100]</c>, <c>[101,100]</c>, and
+Use <c>==</c> to verify that each of the lists <c>[100,101,100]</c>, <c>[101,100]</c>, and
 <c>[100,101]</c> are not considered equal to each other, since even though they contain
 the same data, it appears in different orders and frequencies.
             </p>
         </task>
         <task>
             <p>
-The <term>concatentation</term> of many sets describes anything that belongs to any of the given
-sets. For example, the union of <m>\{1,2,3\}</m> with <m>\{3,4,5\}</m> may be found
-using the code <c>{1,2,3} | {3,4,5}</c>, resulting in
-<m>\{1,2,3,4,5\}</m>.
+The <term>concatentation</term> of many lists attaches them in order from end-to-end.
+For example, the concatenation of <c>[1,2,3]</c> with <c>[3,4,5]</c> may be found
+using the code <c>[1,2,3] + [3,4,5]</c>, resulting in
+<c>[1,2,3,3,4,5]</c>. (Note that <c>3</c> is repeated since lists allow repeats.)
             </p>
             <p>
-Find the union of the three sets <m>\{1,2,4,7\}</m>, <m>\{2,5,7,9\}</m>, and
-<m>\{0,2,3,7\}</m>.
+Find the concatenation of the three lists <m>[1,2,4,7]</m>, <m>[2,5,7,9]</m>, and
+<m>[0,2,3,7]</m>.
             </p>
         </task>
-    </activity>
-    <activity>
-        <introduction>
-        <p>
-            Tuples
-        </p>
-        </introduction>
+        <task>
+            <p>
+Like sets, lists may contain data besides raw numbers, such as strings.
+            </p>
+            <p>
+Find the concatenation of the sets <c>[1,2,3]</c> and
+<c>[1,"2","three"]</c>.
+            </p>
+        </task>
+        <task>
+            <p>
+Elements of a list can be changed as shown in <xref ref="data-collections-list-mutable"/>.
+            </p>
+            <listing xml:id="data-collections-list-mutable">
+                <caption>Changing elements of a list.</caption>
+                <program language="python">
+                    <input><xi:include parse="text" href="../files/data-collections-list-mutable.py" /></input>
+                </program>
+            </listing>
+            <p>
+Let <c>favorite_things = ["raindrops", "roses", "whiskers", "kittens"]</c>, and then use the techniques
+from <xref ref="data-collections-list-mutable" /> to change
+<q>roses</q> and <q>kittens</q> into some of your favorite things (leaving "raindrops" and "whiskers" in place).
+            </p>
+        </task>
+        <task>
+            <p>
+<term>Tuples</term> are similar to lists in that they store ordered collections of data,
+but are used in different contexts. An important difference is that their elements are fixed.
+(That is, lists are <term>mutable</term> while tuples are <term>immutable</term>.)
+            </p>
+            <p>
+Copy <xref ref="data-collections-tuple-immutable" /> to a Code cell, and replace its comments appropriately.
+            </p>
+            <listing xml:id="data-collections-tuple-immutable">
+                <caption>Trying to alter a tuple.</caption>
+                <program language="python">
+                    <input><xi:include parse="text" href="../files/data-collections-tuple-immutable.py" /></input>
+                </program>
+            </listing>
+        </task>
     </activity>
     <activity>
         <introduction>
