@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="visualization-tables" kernel="python">
+    <title>Tables</title>
+    <exploration>
+        <introduction>
+            <p>TODO</p>
+            <listing>
+                <program language="python">
+                    <input>try:
+    import datascience
+    print("The module `datascience` is available to use.")
+except ModuleNotFoundError:
+    import sys
+    print("The module `datascience` is not available to use.")
+    print("To install it for your CoCalc project, use the [New] menu to open")
+    print("a Linux terminal.")
+    print("Then copy-paste the line below into the terminal and hit [Enter].")
+    print()
+    print(f"{sys.executable} -m pip install --user datascience")</input>
+                </program>
+            </listing>
+        </introduction>
+    </exploration>
+    <activity>
+        <introduction>
+            <p>
+                TODO
+            </p>
+        </introduction>
+    </activity>
+</section>
+

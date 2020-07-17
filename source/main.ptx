@@ -13,7 +13,7 @@
         <xi:include href="./01-programming/main.ptx" />
         <xi:include href="./02-writing/main.ptx" />
         <xi:include href="./03-data/main.ptx" />
-        <chapter><title>Visualization of Data</title></chapter>
+        <xi:include href="./04-visualization/main.ptx" />
         <chapter><title>Measurements of Data</title></chapter>
         <chapter><title>Making Predictions from Data</title></chapter>
         <chapter><title>Modeling Random Events</title></chapter>
