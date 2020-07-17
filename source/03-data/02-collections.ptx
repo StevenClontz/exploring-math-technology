@@ -141,7 +141,7 @@ Find the concatenation of the three lists <m>[1,2,4,7]</m>, <m>[2,5,7,9]</m>, an
 Like sets, lists may contain data besides raw numbers, such as strings.
             </p>
             <p>
-Find the concatenation of the sets <c>[1,2,3]</c> and
+Find the concatenation of the lists <c>[1,2,3]</c> and
 <c>[1,"2","three"]</c>.
             </p>
         </task>
@@ -182,9 +182,43 @@ indicated comments appropriately.
     <activity>
         <introduction>
         <p>
-            Dictionaries
+Lists are useful for organizing multiple values of data, but there's no great way to assign labels
+to each element in the list. <term>Dictionaries</term> are used to mitigate this.
         </p>
         </introduction>
+        <task>
+            <p>
+The dictionary <c>student_dict = {"name": "Jessica", "age": 19, "favorite_teacher": "Dr. Clontz"}</c> represents the student
+data given in <xref ref="data-collections-student-dictionary" /> as <term>keys</term> and <term>values</term>.
+            </p>
+            <table xml:id="data-collections-student-dictionary">
+                <title>Data stored in <c>student_dict</c>.</title>
+                <tabular>
+                    <row bottom="minor"><cell>Key</cell><cell>Value</cell></row>
+                    <row><cell><c>"name"</c></cell><cell><c>"Jessica"</c></cell></row>
+                    <row><cell><c>"age"</c></cell><cell><c>19</c></cell></row>
+                    <row><cell><c>"favorite_teacher"</c></cell><cell><c>"Dr. Clontz"</c></cell></row>
+                </tabular>
+            </table>
+            <p>
+Create a dictionary with the same keys for someone in your group.
+            </p>
+        </task>
+        <task>
+            <p>
+Values stored in a dictionary can be easy retrieved by looking them up by key. For example,
+<c>student_dict["favorite_teacher"]</c> equals <c>"Dr. Clontz"</c>, and
+<c>print(f"{student_dict['name']} is {student_dict['age']} years old.")</c> outputs
+<c>Jessica is 19 years old.</c>. (Note the switching of single and double quotes.)
+            </p>
+            <p>
+Create a code cell that outputs a sentence similar to the following, using the dictionary
+you created in the previous task.
+            </p>
+            <blockquote>
+[Student name]'s favorite teacher is [teacher name].
+            </blockquote>
+        </task>
     </activity>
     <activity>
         <introduction>

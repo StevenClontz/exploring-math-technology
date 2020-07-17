@@ -97,7 +97,7 @@ note that only a single Code cell is necessary, but each assignment should be ma
                 <table>
                     <title>Sample pen data</title>
                     <tabular>
-                        <row><cell>Name</cell><cell>Pens kept in backpack</cell></row>
+                        <row bottom="minor"><cell>Name</cell><cell>Pens kept in backpack</cell></row>
                         <row><cell>Craig</cell><cell>1</cell></row>
                         <row><cell>Laura</cell><cell>30</cell></row>
                         <row><cell>Phillip</cell><cell>18</cell></row>

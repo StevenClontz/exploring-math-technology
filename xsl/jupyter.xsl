@@ -291,15 +291,16 @@
 
   <xsl:template match="figure" mode="markdown">&lt;div&gt;&lt;figure&gt;&lt;figcaption&gt;&lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption|title" mode="markdown"/>&lt;/figcaption&gt;<xsl:apply-templates select="image" mode="markdown"/>&lt;/figure&gt;&lt;/div&gt;</xsl:template>
 
-  <xsl:template match="table" mode="markdown">&lt;div&gt;&lt;table&gt;&lt;caption&gt;&lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption|title" mode="markdown"/>&lt;/caption&gt;<xsl:apply-templates select="tabular/row" mode="markdown"/>&lt;/table&gt;&lt;/div&gt;</xsl:template>
+  <xsl:template match="table" mode="markdown">&lt;div&gt;&lt;table&gt;&lt;caption&gt;&lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption|title" mode="markdown"/>&lt;/caption&gt;<xsl:apply-templates select="tabular" mode="rows"/>&lt;/table&gt;&lt;/div&gt;</xsl:template>
 
-  <xsl:template match="tabular" mode="markdown">&lt;div&gt;&lt;table&gt;<xsl:apply-templates select="row" mode="markdown"/>&lt;/table&gt;&lt;/div&gt;</xsl:template>
+  <xsl:template match="tabular" mode="markdown">&lt;div&gt;&lt;table&gt;<xsl:apply-templates select="." mode="rows"/>&lt;/table&gt;&lt;/div&gt;</xsl:template>
+  <xsl:template match="tabular" mode="rows">&lt;thead&gt;<xsl:apply-templates select="row[@bottom]" mode="markdown"/>&lt;/thead&gt;&lt;tbody&gt;<xsl:apply-templates select="row[not(@bottom)]" mode="markdown"/>&lt;/tbody&gt;</xsl:template>
 
     <xsl:template match="listing" mode="markdown">&lt;div&gt;&lt;figure&gt;&lt;figcaption&gt;&lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption|title" mode="markdown"/>&lt;/figcaption&gt;<xsl:apply-templates select="*[not(self::caption or self::title)]" mode="markdown"/>&lt;/figure&gt;&lt;/div&gt;</xsl:template>
 
   <xsl:template match="row" mode="markdown">&lt;tr&gt;<xsl:apply-templates select="cell" mode="markdown"/>&lt;/tr&gt;</xsl:template>
 
-  <xsl:template match="cell" mode="markdown">&lt;td&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/td&gt;</xsl:template>
+  <xsl:template match="cell" mode="markdown"><xsl:choose><xsl:when test="ancestor::row[@bottom]">&lt;th&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/th&gt;</xsl:when><xsl:otherwise>&lt;td&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/th&gt;</xsl:otherwise></xsl:choose></xsl:template>
 
   <xsl:template match="fn" mode="markdown"> &lt;span class="fn"&gt;(<xsl:apply-templates select="text()|*" mode="markdown"/>)&lt;/span&gt; </xsl:template>
   <xsl:template match="q" mode="markdown">"<xsl:apply-templates select="text()|*" mode="markdown"/>"</xsl:template>
@@ -325,6 +326,7 @@
   <xsl:template match="p" mode="markdown">&lt;span&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/span&gt;</xsl:template>
   <xsl:template match="url" mode="markdown">&lt;a href="<xsl:value-of select="@href"/>"&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/a&gt;</xsl:template>
   <xsl:template match="blockquote" mode="markdown">&lt;blockquote&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/blockquote&gt;</xsl:template>
+  <xsl:template match="term" mode="markdown">&lt;b&gt;<xsl:apply-templates select="text()"/>&lt;/b&gt;</xsl:template>
 
 
   <xsl:template match="table|figure|listing|definition|example" mode="number"><xsl:apply-templates select="./ancestor::section" mode="number"/>.<xsl:number from="//section" level="any" count="table|figure|listing|definition|example"/></xsl:template>
