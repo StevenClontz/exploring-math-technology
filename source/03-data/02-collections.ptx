@@ -220,13 +220,14 @@ you created in the previous task.
             </blockquote>
         </task>
     </activity>
-    <activity>
-        <introduction>
-        <p>
-            Similar things (arrays, iterators...)
-            Note how there are less than <m>10^100</m> atoms in the universe but 
-        </p>
-        </introduction>
-    </activity>
+    <exercises>
+        <exercise>
+            <statement>
+                <p>
+TODO
+                </p>
+            </statement>
+        </exercise>
+    </exercises>
 </section>
 
