@@ -295,7 +295,7 @@
 
   <xsl:template match="tabular" mode="markdown">&lt;div&gt;&lt;table&gt;<xsl:apply-templates select="row" mode="markdown"/>&lt;/table&gt;&lt;/div&gt;</xsl:template>
 
-    <xsl:template match="listing" mode="markdown">&lt;div&gt;&lt;figure&gt;&lt;figcaption&gt;&lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption|title" mode="markdown"/>&lt;/figcaption&gt;<xsl:apply-templates select="*" mode="markdown"/>&lt;/figure&gt;&lt;/div&gt;</xsl:template>
+    <xsl:template match="listing" mode="markdown">&lt;div&gt;&lt;figure&gt;&lt;figcaption&gt;&lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption|title" mode="markdown"/>&lt;/figcaption&gt;<xsl:apply-templates select="*[not(self::caption or self::title)]" mode="markdown"/>&lt;/figure&gt;&lt;/div&gt;</xsl:template>
 
   <xsl:template match="row" mode="markdown">&lt;tr&gt;<xsl:apply-templates select="cell" mode="markdown"/>&lt;/tr&gt;</xsl:template>
 
@@ -309,8 +309,12 @@
   <xsl:template match="cd" mode="markdown">
 &lt;pre&gt;<xsl:value-of select="text()"/>&lt;/pre&gt;</xsl:template>
   <xsl:template match="program" mode="markdown">
-&lt;pre&gt;<xsl:apply-templates select="input" mode="markdown"/>&lt;/pre&gt;</xsl:template>
-  <xsl:template match="input" mode="markdown">&lt;code&gt;<xsl:value-of select="text()"/>&lt;/code&gt;</xsl:template>
+
+```
+<xsl:apply-templates select="input/text()" />
+```
+
+</xsl:template>
   <xsl:template match="c|kbd" mode="markdown">&lt;tt&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/tt&gt;</xsl:template>
   <xsl:template match="mrow" mode="markdown"><xsl:value-of select="normalize-space(text())"/>\\</xsl:template>
   <xsl:template match="caption|title" mode="markdown"><xsl:apply-templates select="text()|*" mode="markdown"/></xsl:template>

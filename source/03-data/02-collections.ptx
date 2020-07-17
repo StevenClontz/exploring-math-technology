@@ -168,7 +168,8 @@ but are used in different contexts. An important difference is that their elemen
 (That is, lists are <term>mutable</term> while tuples are <term>immutable</term>.)
             </p>
             <p>
-Copy <xref ref="data-collections-tuple-immutable" /> to a Code cell, and replace its comments appropriately.
+Copy <xref ref="data-collections-tuple-immutable" /> to a Code cell, and replace the two
+indicated comments appropriately.
             </p>
             <listing xml:id="data-collections-tuple-immutable">
                 <caption>Trying to alter a tuple.</caption>
