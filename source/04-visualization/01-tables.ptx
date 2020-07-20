@@ -4,23 +4,49 @@
     <title>Tables</title>
     <exploration>
         <introduction>
-            <p>TODO</p>
-            <listing>
+            <p>
+One of the important features of Python for programmers (and SageMath for mathematicians)
+is its extensive <q>standard library</q>: that is, a lot of features are available by
+default in the language without installing additional programs.
+            </p>
+            <p>
+However, since different people use Python for different applications, not every feature
+can be made availble by default. There are several libraries available in Python for
+data science, but we will use one specifically developed for students called, well,
+<c>datascience</c>.
+            </p>
+        </introduction>
+        <task>
+            <p>
+Copy the contents of <xref ref="visualization-tables-import-datascience" /> into a Code cell
+and follow its instructions to install <c>datascience</c> if it is not already available,
+then re-run the Code cell.
+You will only need to do this process once per project.
+            </p>
+            <listing xml:id="visualization-tables-import-datascience">
+                <caption>Install and import <c>datascience</c></caption>
                 <program language="python">
-                    <input>try:
-    import datascience
-    print("The module `datascience` is available to use.")
-except ModuleNotFoundError:
-    import sys
-    print("The module `datascience` is not available to use.")
-    print("To install it for your CoCalc project, use the [New] menu to open")
-    print("a Linux terminal.")
-    print("Then copy-paste the line below into the terminal and hit [Enter].")
-    print()
-    print(f"{sys.executable} -m pip install --user datascience")</input>
+                    <input><xi:include href="../files/visualization-tables-import-datascience.py" parse="text" /></input>
                 </program>
             </listing>
-        </introduction>
+        </task>
+        <task>
+            <p>
+To confirm that you can create <c>datascience</c> tables,
+copy-paste the contents of <xref ref="visualization-tables-test" /> into a Code cell
+to display a nicely formatted table of (incomplete) Scrabble tile data.
+            </p>
+            <listing xml:id="visualization-tables-test">
+                <caption>Try out <c>datascience</c></caption>
+                <program language="python">
+                    <input>Table().with_columns([
+    'letter', ['a', 'b', 'c', 'z'],
+    'count',  [  9,   3,   3,   1],
+    'points', [  1,   2,   2,  10],
+])</input>
+                </program>
+            </listing>
+        </task>
     </exploration>
     <activity>
         <introduction>
