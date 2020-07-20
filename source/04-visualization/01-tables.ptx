@@ -2,7 +2,7 @@
 
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="visualization-tables" kernel="python">
     <title>Tables</title>
-    <exploration>
+    <exploration xml:id="visualization-tables-preview">
         <introduction>
             <p>
 One of the important features of Python for programmers (and SageMath for mathematicians)
@@ -13,7 +13,7 @@ default in the language without installing additional programs.
 However, since different people use Python for different applications, not every feature
 can be made availble by default. There are several libraries available in Python for
 data science, but we will use one specifically developed for students called, well,
-<c>datascience</c>.
+<url href="http://data8.org/datascience/"><c>datascience</c></url>.
             </p>
         </introduction>
         <task>
@@ -51,9 +51,99 @@ to display a nicely formatted table of (incomplete) Scrabble tile data.
     <activity>
         <introduction>
             <p>
-                TODO
+As first investigated in <xref ref="data-collections" />, dictionaries can be used to describe
+complex data with many different properties. In <xref ref="visualization-tables-dictionary-list" />
+a list of dictionaries is used to describe several students in standard Python.
             </p>
+            <listing xml:id="visualization-tables-dictionary-list">
+                <caption>A list of student dictionaries</caption>
+                <program language="python">
+                    <input><xi:include href="../files/visualization-tables-dictionary-list.py" parse="text" /></input>
+                </program>
+            </listing>
         </introduction>
+        <task>
+            <p>
+Copy this list into a Code cell, and add data for a fourth student to the list.
+            </p>
+        </task>
+        <task>
+            <p>
+Data is often stored in a spreadsheet or database
+as a <term>table</term>. An illustration of this is given in <xref ref="visualization-tables-student-table" />.
+            </p>
+            <table xml:id="visualization-tables-student-table">
+                <title>Student data table</title>
+                <tabular>
+                    <row bottom="minor">
+                        <cell>Name</cell>
+                        <cell>Age</cell>
+                        <cell>Favorite Teacher</cell>
+                    </row>
+                    <row>
+                        <cell>Julia</cell>
+                        <cell>17</cell>
+                        <cell>Mr. Fullinwider</cell>
+                    </row>
+                    <row>
+                        <cell>Jessica</cell>
+                        <cell>19</cell>
+                        <cell>Dr. Clontz</cell>
+                    </row>
+                    <row>
+                        <cell>Lynn</cell>
+                        <cell>18</cell>
+                        <cell>Ms. Gilbreath</cell>
+                    </row>
+                </tabular>
+            </table>
+            <p>
+Tables can be created programmatically by using the technique from <xref ref="visualization-tables-preview" />
+or by modifying <xref ref="visualization-tables-from-rows" />.
+            </p>
+            <listing xml:id="visualization-tables-from-rows">
+                <caption>Table from rows</caption>
+                <program language="python">
+                    <input><xi:include href="../files/visualization-tables-from-rows.py" parse="text" /></input>
+                </program>
+            </listing>
+            <p>
+Copy <xref ref="visualization-tables-from-rows" /> to a Code cell and insert the student data you created
+in the previous task.
+            </p>
+        </task>
+        <task>
+            <p>
+Since data usually isn't hard-coded into a script, but instead entered by folks who may not be programmers
+into a spreadsheet or similar file, we will need a way to read external files containing data.
+            </p>
+            <p>
+Open a spreadsheet application such as Microsoft Excel or Google Sheets. Copy the table of data displayed
+in the previous task and paste it into your spreadsheet.
+            </p>
+            <p>
+Save the spreadsheet to a Comma-Separated Values file named <c>student_data.csv</c> and use the
+<kbd>(+) New</kbd> menu to upload it to CoCalc in the same folder as this Jupyter notebook.
+            </p>
+            <p>
+Finally, create a Code cell with the line
+<c>Table.read_table('student_data.csv')</c>
+to check that your CSV data can be imported into a <c>datascience</c> table.
+            </p>
+        </task>
+        <task>
+            <p>
+Visit the website <url href="https://vincentarelbundock.github.io/Rdatasets/datasets.html" /> to get a
+CSV with the transactions for a (fictional) pizza parlor for the year 2015. (Hint: Use <kbd>Ctrl</kbd>+<kbd>F</kbd>
+to search for <q>pizza</q>.) Rather than downloading it, right-click and copy the URL to the CSV file.
+            </p>
+            <p>
+Import this data directly by entering
+<c>Table.read_table("https://example.com/fix/this/url/to/point/to/your/data.csv")</c>
+into a Code cell, replacing the string with the URL you copied. (Note that while there are almost
+fifty thousand transactions in this dataset, only ten are displayed by default.)
+            </p>
+        </task>
     </activity>
 </section>
 
