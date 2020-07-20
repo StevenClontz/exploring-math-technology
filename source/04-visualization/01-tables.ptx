@@ -141,8 +141,118 @@ to search for <q>pizza</q>.) Rather than downloading it, right-click and copy th
 Import this data directly by entering
 <c>Table.read_table("https://example.com/fix/this/url/to/point/to/your/data.csv")</c>
 into a Code cell, replacing the string with the URL you copied. (Note that while there are almost
-fifty thousand transactions in this dataset, only ten are displayed by default.)
+fifty thousand transactions in this dataset, only a few are displayed by default.
+<xref ref="visualization-tables-pizza" /> gives the first three rows.)
             </p>
+<table xml:id="visualization-tables-pizza">
+  <title>The first three rows of pizza transaction data</title>
+  <tabular>
+    <row bottom="minor">
+      <cell>
+        Unnamed: 0
+      </cell>
+      <cell>
+        id
+      </cell>
+      <cell>
+        date
+      </cell>
+      <cell>
+        time
+      </cell>
+      <cell>
+        name
+      </cell>
+      <cell>
+        size
+      </cell>
+      <cell>
+        type
+      </cell>
+      <cell>
+        price
+      </cell>
+    </row>
+    <row>
+      <cell>
+        1
+      </cell>
+      <cell>
+        2015-000001
+      </cell>
+      <cell>
+        2015-01-01
+      </cell>
+      <cell>
+        11:38:36
+      </cell>
+      <cell>
+        hawaiian
+      </cell>
+      <cell>
+        M
+      </cell>
+      <cell>
+        classic
+      </cell>
+      <cell>
+        13.25
+      </cell>
+    </row>
+    <row>
+      <cell>
+        2
+      </cell>
+      <cell>
+        2015-000002
+      </cell>
+      <cell>
+        2015-01-01
+      </cell>
+      <cell>
+        11:57:40
+      </cell>
+      <cell>
+        classic_dlx
+      </cell>
+      <cell>
+        M
+      </cell>
+      <cell>
+        classic
+      </cell>
+      <cell>
+        16
+      </cell>
+    </row>
+    <row>
+      <cell>
+        3
+      </cell>
+      <cell>
+        2015-000002
+      </cell>
+      <cell>
+        2015-01-01
+      </cell>
+      <cell>
+        11:57:40
+      </cell>
+      <cell>
+        mexicana
+      </cell>
+      <cell>
+        M
+      </cell>
+      <cell>
+        veggie
+      </cell>
+      <cell>
+        16
+      </cell>
+    </row>
+  </tabular>
+</table>
         </task>
     </activity>
 </section>
