@@ -2,7 +2,7 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="visualization">
   	<title>Visualization of Data</title>
     <xi:include href="./01-tables.ptx" />
-    <section><title>Charts</title></section>
-    <section><title>Plots and Graphs</title></section>
+    <section xml:id="visualization-charts"><title>Charts</title></section>
+    <section xml:id="visualization-plots"><title>Plots and Graphs</title></section>
 </chapter>
 

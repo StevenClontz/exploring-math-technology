@@ -51,7 +51,7 @@ to display a nicely formatted table of (incomplete) Scrabble tile data.
     <activity>
         <introduction>
             <p>
-As first investigated in <xref ref="data-collections" />, dictionaries can be used to describe
+As previously investigated, dictionaries can be used to describe
 complex data with many different properties. In <xref ref="visualization-tables-dictionary-list" />
 a list of dictionaries is used to describe several students in standard Python.
             </p>

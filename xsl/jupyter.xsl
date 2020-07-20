@@ -324,7 +324,7 @@
   <xsl:template match="ul" mode="markdown">&lt;ul&gt;<xsl:apply-templates select="li" mode="markdown"/>&lt;/ul&gt;</xsl:template>
   <xsl:template match="li" mode="markdown">&lt;li&gt;<xsl:apply-templates select="*|text()" mode="markdown"/>&lt;/li&gt;</xsl:template>
   <xsl:template match="p" mode="markdown">&lt;span&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/span&gt;</xsl:template>
-  <xsl:template match="url" mode="markdown">&lt;a href="<xsl:value-of select="@href"/>"&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/a&gt;</xsl:template>
+  <xsl:template match="url" mode="markdown">&lt;a href="<xsl:value-of select="@href"/>"&gt;<xsl:choose><xsl:when test=".=''"><xsl:value-of select="@href"/></xsl:when><xsl:otherwise><xsl:apply-templates select="text()|*" mode="markdown"/></xsl:otherwise></xsl:choose>&lt;/a&gt;</xsl:template>
   <xsl:template match="blockquote" mode="markdown">&lt;blockquote&gt;<xsl:apply-templates select="text()|*" mode="markdown"/>&lt;/blockquote&gt;</xsl:template>
   <xsl:template match="term" mode="markdown">&lt;b&gt;<xsl:apply-templates select="text()"/>&lt;/b&gt;</xsl:template>
 
