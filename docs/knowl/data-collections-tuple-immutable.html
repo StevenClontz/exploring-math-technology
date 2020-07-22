@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-07-22T15:33:01Z    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<figure class="listing figure-like"><pre class="prettyprint lang-py">triple_list = ["one", "two", "three"]
+triple_tuple = ("one", "two", "three")
+
+# Attempts indented block of code that may cause an error
+try:
+    print("Trying to change 'two' to 2 in the list.")
+    # REPLACE this line to change triple_list appropriately
+# Handles possible error
+except TypeError:
+    print("This should never appear since list elements can be replaced.")
+
+# Attempts indented block of code that may cause an error
+try:
+    print("Trying to change 'three' to 3 in the tuple.")
+    # REPLACE this line to try to change triple_list appropriately
+# Handles possible error
+except TypeError:
+    print("This should appear since tuple elements cannot be replaced.")
+
+print(triple_list, triple_tuple) # outputs ['one', 2, 'three'] ('one', 'two', 'three')
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.2.2<span class="period">.</span></span><span class="space"> </span>Trying to alter a tuple.</figcaption></figure><span class="incontext"><a href="data-collections.html#data-collections-tuple-immutable">in-context</a></span>
+</body>
+</html>

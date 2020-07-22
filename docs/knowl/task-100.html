@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-07-22T15:33:01Z    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="task exercise-like"><h6 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">4.1.1.a</span><span class="period">.</span>
+</h6>
+<p>Copy the contents of <a class="xref" data-knowl="./knowl/visualization-tables-import-datascience.html" title="Listing 4.1.1">4.1.1</a> into a Code cell and follow its instructions to install <code class="code-inline tex2jax_ignore">datascience</code> if it is not already available, then re-run the Code cell. You will only need to do this process once per project.</p>
+<figure class="listing figure-like"><pre class="prettyprint lang-py">try:
+    from datascience import Table
+    print("The module `datascience` is installed on your project.")
+except ModuleNotFoundError:
+    import sys
+    print("The module `datascience` is not installed.")
+    print("To install it for your CoCalc project, use the [(+) New] menu to")
+    print("open a Linux terminal.")
+    print("Then copy-paste the line below into the terminal and hit [Enter].")
+    print()
+    print(f"{sys.executable} -m pip install --user datascience")
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.1.1<span class="period">.</span></span><span class="space"> </span>Install and import <code class="code-inline tex2jax_ignore">datascience</code></figcaption></figure></article><span class="incontext"><a href="visualization-tables.html#task-100">in-context</a></span>
+</body>
+</html>
