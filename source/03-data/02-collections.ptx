@@ -297,10 +297,12 @@ named <c>alphabet_words</c>.
             </statement>
         </exercise>
         <exercise>
+            <statement>
             <p>
 Concatentate your <c>alphabet_words</c> with the list
 <c>["kangaroo", "limbo", "mango"]</c>.
             </p>
+            </statement>
         </exercise>
         <exercise>
             <statement>
