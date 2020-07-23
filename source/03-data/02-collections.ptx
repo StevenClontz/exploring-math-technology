@@ -267,7 +267,86 @@ Use comprehension to create the dictionary
         <exercise>
             <statement>
                 <p>
-TODO
+Create a set with all the multiples of three between <m>0</m> and <m>20</m>:
+<m>\{0,3,\cdots,18\}</m>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Create a set with all the multiples of four between <m>0</m> and <m>20</m>:
+<m>\{0,4,\cdots,20\}</m>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Find the intersection and union of the sets in the previous two exercises.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Create a list with words beginning with the letters <q>A</q> through <q>J</q>,
+such as <c>["apple", "banana", ..., "jump"]</c>. Save it to a CS variable
+named <c>alphabet_words</c>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <p>
+Concatentate your <c>alphabet_words</c> with the list
+<c>["kangaroo", "limbo", "mango"]</c>.
+            </p>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Replace your word beginning with <q>F</q> in <c>alphabet_words</c> with
+the word <q>zebra</q>, leaving the others as-is.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Create a dictionary with the data in the following table, and save it
+as the CS variable <c>player_data</c>.
+                </p>
+                <tabular>
+                    <row bottom="minor"><cell>Key</cell><cell>Value</cell></row>
+                    <row><cell><c>"id"</c></cell><cell><c>1234</c></cell></row>
+                    <row><cell><c>"username"</c></cell><cell><c>"Hunter12"</c></cell></row>
+                    <row><cell><c>"score"</c></cell><cell><c>567</c></cell></row>
+                    <row><cell><c>"joined_on"</c></cell><cell><c>"2020-07-23"</c></cell></row>
+                </tabular>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Add 100 points to <c>player_data</c>'s score.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Use <c>player_data</c> to print out a sentence using the following format.
+                </p>
+                <blockquote>
+Player [user name] signed up on [date] and has earned [X] points.
+                </blockquote>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Use comprehension to create the list
+<c>['1+1=2', '2+2=4', ..., '100+100=200']</c>.
                 </p>
             </statement>
         </exercise>
