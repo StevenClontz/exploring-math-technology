@@ -220,6 +220,49 @@ you created in the previous task.
             </blockquote>
         </task>
     </activity>
+    <activity>
+        <introduction>
+            <p>
+To avoid repetition, <term>ranges</term> and <term>comprehension</term> may be used to quickly
+describe longer lists, sets, and dictionaries.
+            </p>
+        </introduction>
+        <task>
+            <p>
+Using the <c>range()</c> tool, we can quickly create lists of counting numbers. For example,
+<c>list(range(10))</c> returns the list <c>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</c>. Note that this list
+contains ten different elements, but doesn't contain the number <c>10</c> itself.
+            </p>
+            <p>
+By providing two numbers, you can specify the starting number (included) and ending number (not included).
+For example, <c>list(range(-5,5)) == [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4]</c>.
+            </p>
+            <p>
+Use a range to create the list <c>[-10, -9, ..., 9, 10]</c>.
+            </p>
+        </task>
+        <task>
+            <p>
+Comprehension allows us to use formulas when defining a list. For example,
+<c>[2*n for n in range(10)] == [0, 2, 4, ..., 18]</c>.
+            </p>
+            <p>
+Use comprehension to square each of the numbers in the list <c>[-10, -9, ..., 9, 10]</c>,
+producing <c>[100, 81, ..., 81, 100]</c>.
+            </p>
+        </task>
+        <task>
+            <p>
+Comprehension can also be used with sets and dictionaries. For example,
+<c>{f"{n} doubled": 2*n for n in range(10)}</c> creates the dictionary
+<c>{'0 doubled': 0, '1 doubled' 2, ..., '9 doubled': 18}</c>.
+            </p>
+            <p>
+Use comprehension to create the dictionary
+<c>{'-10 squared': 100, '-9 squared': 81, ..., '10 squared': 100}</c>.
+            </p>
+        </task>
+    </activity>
     <exercises>
         <exercise>
             <statement>
