@@ -14,13 +14,83 @@
         <xi:include href="./02-writing/main.ptx" />
         <xi:include href="./03-data/main.ptx" />
         <xi:include href="./04-visualization/main.ptx" />
-        <chapter><title>Measurements of Data</title></chapter>
-        <chapter><title>Making Predictions from Data</title></chapter>
-        <chapter><title>Modeling Random Events</title></chapter>
-        <chapter xml:id="complex"><title>Two-Dimensional Data and Complex Numbers</title></chapter>
-        <chapter><title>Higher-Dimensional Data and Euclidean Vectors</title></chapter>
-        <chapter><title>Transformations of Higher-Dimensional Data</title></chapter>
-        <chapter><title>Properties of Linear Transformations</title></chapter>
+        <chapter xml:id="measurements"><title>Measurements of Data</title>
+    <objectives>
+        <introduction>
+            At the end of this chapter, students will be able to...
+        </introduction>
+        <ul>
+            <li>
+                Describe the shape of data given statistical measures of center and variance, including mean, median, mode, range, and standard deviation.
+            </li>
+        </ul>
+    </objectives></chapter>
+        <chapter xml:id="predictions"><title>Making Predictions from Data</title>
+    <objectives>
+        <introduction>
+            At the end of this chapter, students will be able to...
+        </introduction>
+        <ul>
+            <li>
+                Make scientific predictions based upon given data.
+            </li>
+        </ul>
+    </objectives></chapter>
+        <chapter xml:id="random"><title>Modeling Random Events</title>
+    <objectives>
+        <introduction>
+            At the end of this chapter, students will be able to...
+        </introduction>
+        <ul>
+            <li>
+                Understand basic combinatorics as used in probability and create probabilistic models of events.
+            </li>
+        </ul>
+    </objectives></chapter>
+        <chapter xml:id="complex"><title>Two-Dimensional Data and Complex Numbers</title>
+    <objectives>
+        <introduction>
+            At the end of this chapter, students will be able to...
+        </introduction>
+        <ul>
+            <li>
+                Recognize and utilize the system of complex numbers as a model of two-dimensional data.
+            </li>
+        </ul>
+    </objectives></chapter>
+        <chapter xml:id="vectors"><title>Higher-Dimensional Data and Euclidean Vectors</title>
+    <objectives>
+        <introduction>
+            At the end of this chapter, students will be able to...
+        </introduction>
+        <ul>
+            <li>
+                Recognize and utilize spaces of Euclidean vectors as models of higher-dimensional data.
+            </li>
+        </ul>
+    </objectives></chapter>
+        <chapter><title>Transformations of Higher-Dimensional Data</title>
+    <objectives xml:id="transformations">
+        <introduction>
+            At the end of this chapter, students will be able to...
+        </introduction>
+        <ul>
+            <li>
+                Describe the equivalence of Euclidean linear transformations and matrices and be able to use them interchangeably to transform data into appropriate forms.
+            </li>
+        </ul>
+    </objectives></chapter>
+        <chapter xml:id="properties"><title>Properties of Linear Transformations</title>
+    <objectives>
+        <introduction>
+            At the end of this chapter, students will be able to...
+        </introduction>
+        <ul>
+            <li>
+                Identify the basic operations on matrices and be able to use them to analyze properties of linear transformations and data.
+            </li>
+        </ul>
+    </objectives></chapter>
 
         <xi:include href="./meta/backmatter.ptx" />
     </book>

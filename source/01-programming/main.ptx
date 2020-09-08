@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="programming">
   	<title>Programming for Data Science and Mathematics</title>
+    <objectives>
+        <introduction>
+            At the end of this chapter, students will be able to...
+        </introduction>
+        <ul>
+            <li>
+                Explain and take advantage of the differences between the Python and
+                SageMath programming languages within Jupyter notebooks,
+                as appropriate for doing mathematics and data science.
+            </li>
+        </ul>
+    </objectives>
   	<xi:include href="./01-jupyter.ptx" />
   	<xi:include href="./02-python.ptx" />
     <xi:include href="./03-sagemath.ptx" />

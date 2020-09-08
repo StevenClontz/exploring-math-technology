@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="visualization">
   	<title>Visualization of Data</title>
+    <objectives>
+        <introduction>
+            At the end of this chapter, students will be able to...
+        </introduction>
+        <ul>
+            <li>
+                Use tables and graphics to effectively communicate data.
+            </li>
+        </ul>
+    </objectives>
     <xi:include href="./01-tables.ptx" />
     <section xml:id="visualization-charts"><title>Charts</title></section>
     <section xml:id="visualization-plots"><title>Plots and Graphs</title></section>
