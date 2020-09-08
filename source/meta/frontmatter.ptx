@@ -74,6 +74,14 @@ cyber security and mathematics, I encourage you to read
 Thank you for reading this brief (?) introduction! And as I tell anyone about to dive
 into some fun puzzles, happy solving!
         </p>
+        <aside>
+            <p>
+PS: This book is open-sourced on
+<url href="https://github.com/StevenClontz/mathematics-of-data">GitHub</url>. Anyone
+(including students) is welcome to suggest improvements by opening an Issue or making
+a Pull Request.
+            </p>
+        </aside>
         <attribution>
             <line>Dr. Steven Clontz</line>
             <line>Assistant Professor of Mathematics</line>
