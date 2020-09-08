@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-09-02T21:05:30Z       *-->
+<!--*       on 2020-09-08T00:39:58Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -113,13 +113,13 @@ MathJax.Hub.Config({
 <li><a href="visualization-plots.html" data-scroll="visualization-plots">Plots and Graphs</a></li>
 </ul>
 </li>
-<li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Measurements of Data</span></a></li>
-<li class="link"><a href="chapter-6.html" data-scroll="chapter-6"><span class="codenumber">6</span> <span class="title">Making Predictions from Data</span></a></li>
-<li class="link"><a href="chapter-7.html" data-scroll="chapter-7"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a></li>
+<li class="link"><a href="measurements.html" data-scroll="measurements"><span class="codenumber">5</span> <span class="title">Measurements of Data</span></a></li>
+<li class="link"><a href="predictions.html" data-scroll="predictions"><span class="codenumber">6</span> <span class="title">Making Predictions from Data</span></a></li>
+<li class="link"><a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a></li>
 <li class="link"><a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a></li>
-<li class="link"><a href="chapter-9.html" data-scroll="chapter-9"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Vectors</span></a></li>
+<li class="link"><a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Vectors</span></a></li>
 <li class="link"><a href="chapter-10.html" data-scroll="chapter-10"><span class="codenumber">10</span> <span class="title">Transformations of Higher-Dimensional Data</span></a></li>
-<li class="link"><a href="chapter-11.html" data-scroll="chapter-11"><span class="codenumber">11</span> <span class="title">Properties of Linear Transformations</span></a></li>
+<li class="link"><a href="properties.html" data-scroll="properties"><span class="codenumber">11</span> <span class="title">Properties of Linear Transformations</span></a></li>
 <li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
 <li class="link"><a href="references.html" data-scroll="references"><span class="title">References</span></a></li>
@@ -140,7 +140,7 @@ MathJax.Hub.Config({
 <p id="p-229">Adapt this technique to show that the sum of the squares of \(0\) through \(99\) is equal to \(328{,}350\text{.}\)</p></article></article><article class="activity project-like" id="activity-21"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-22"><p id="p-230">An unordered collection of mathematical objects is known as a <dfn class="terminology">set</dfn>. Sets are written as a pair of curly braces surrounding a description of its members, such as \(\{2,8,1,4\}\text{.}\)</p></div>
+<div class="introduction" id="introduction-25"><p id="p-230">An unordered collection of mathematical objects is known as a <dfn class="terminology">set</dfn>. Sets are written as a pair of curly braces surrounding a description of its members, such as \(\{2,8,1,4\}\text{.}\)</p></div>
 <article class="task exercise-like" id="task-89"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <p id="p-231">Sets may be declared in Python and SageMath using the syntax <code class="code-inline tex2jax_ignore">{2,8,1,4}</code>. Use this syntax and the equality operator <code class="code-inline tex2jax_ignore">==</code> to confirm that \(\{100,101,100\}\text{,}\) \(\{101,100\}\text{,}\) and \(\{100,101\}\) are all the same set (since they all contain exactly the same numbers).</p></article><article class="task exercise-like" id="task-90"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <p id="p-232">The <dfn class="terminology">union</dfn> of many sets describes anything that belongs to any of the given sets. For example, the union of \(\{1,2,3\}\) with \(\{3,4,5\}\) may be found using the code <code class="code-inline tex2jax_ignore">{1,2,3} | {3,4,5}</code>, resulting in \(\{1,2,3,4,5\}\text{.}\)</p>
@@ -151,7 +151,7 @@ MathJax.Hub.Config({
 <p id="p-237">Find the union and intersection of the sets <code class="code-inline tex2jax_ignore">{1,2,3}</code> and <code class="code-inline tex2jax_ignore">{1,"2","three"}</code>.</p></article></article><article class="activity project-like" id="activity-22"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-23"><p id="p-238">Sets are useful collections when you only care if a datum belongs to the set or not. But often you want your data to be ordered, and often you want to be able count the same datum multiple times in your collection. This is where <dfn class="terminology">lists</dfn> are useful.</p></div>
+<div class="introduction" id="introduction-26"><p id="p-238">Sets are useful collections when you only care if a datum belongs to the set or not. But often you want your data to be ordered, and often you want to be able count the same datum multiple times in your collection. This is where <dfn class="terminology">lists</dfn> are useful.</p></div>
 <article class="task exercise-like" id="task-93"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <p id="p-239">Lists use hard brackets <code class="code-inline tex2jax_ignore">[2,8,1,4]</code> instead of curly brackets. Use <code class="code-inline tex2jax_ignore">==</code> to verify that each of the lists <code class="code-inline tex2jax_ignore">[100,101,100]</code>, <code class="code-inline tex2jax_ignore">[101,100]</code>, and <code class="code-inline tex2jax_ignore">[100,101]</code> are not considered equal to each other, since even though they contain the same data, it appears in different orders and frequencies.</p></article><article class="task exercise-like" id="task-94"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <p id="p-240">The <dfn class="terminology">concatentation</dfn> of many lists attaches them in order from end-to-end. For example, the concatenation of <code class="code-inline tex2jax_ignore">[1,2,3]</code> with <code class="code-inline tex2jax_ignore">[3,4,5]</code> may be found using the code <code class="code-inline tex2jax_ignore">[1,2,3] + [3,4,5]</code>, resulting in <code class="code-inline tex2jax_ignore">[1,2,3,3,4,5]</code>. (Note that <code class="code-inline tex2jax_ignore">3</code> is repeated since lists allow repeats.)</p>
@@ -193,7 +193,7 @@ print(triple_list, triple_tuple) # outputs ['one', 2, 'three'] ('one', 'two', 't
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.2.2<span class="period">.</span></span><span class="space"> </span>Trying to alter a tuple.</figcaption></figure></article></article><article class="activity project-like" id="activity-23"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-24"><p id="p-248">Lists are useful for organizing multiple values of data, but there's no great way to assign labels to each element in the list. <dfn class="terminology">Dictionaries</dfn> are used to mitigate this.</p></div>
+<div class="introduction" id="introduction-27"><p id="p-248">Lists are useful for organizing multiple values of data, but there's no great way to assign labels to each element in the list. <dfn class="terminology">Dictionaries</dfn> are used to mitigate this.</p></div>
 <article class="task exercise-like" id="task-98"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <p id="p-249">The dictionary <code class="code-inline tex2jax_ignore">student_dict = {"name": "Jessica", "age": 19, "favorite_teacher": "Dr. Clontz"}</code> represents the student data given in <a class="xref" data-knowl="./knowl/data-collections-student-dictionary.html" title="Table 3.2.3: Data stored in student_dict.">3.2.3</a> as <dfn class="terminology">keys</dfn> and <dfn class="terminology">values</dfn>.</p>
 <figure class="table table-like" id="data-collections-student-dictionary"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.2.3<span class="period">.</span></span><span class="space"> </span>Data stored in <code class="code-inline tex2jax_ignore">student_dict</code>.</figcaption><table>
@@ -219,7 +219,7 @@ print(triple_list, triple_tuple) # outputs ['one', 2, 'three'] ('one', 'two', 't
 <blockquote class="blockquote" id="blockquote-4">[Student name]'s favorite teacher is [teacher name].</blockquote></article></article><article class="activity project-like" id="activity-24"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.5</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-25"><p id="p-253">To avoid repetition, <dfn class="terminology">ranges</dfn> and <dfn class="terminology">comprehension</dfn> may be used to quickly describe longer lists, sets, and dictionaries.</p></div>
+<div class="introduction" id="introduction-28"><p id="p-253">To avoid repetition, <dfn class="terminology">ranges</dfn> and <dfn class="terminology">comprehension</dfn> may be used to quickly describe longer lists, sets, and dictionaries.</p></div>
 <article class="task exercise-like" id="task-100"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <p id="p-254">Using the <code class="code-inline tex2jax_ignore">range()</code> tool, we can quickly create lists of counting numbers. For example, <code class="code-inline tex2jax_ignore">list(range(10))</code> returns the list <code class="code-inline tex2jax_ignore">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</code>. Note that this list contains ten different elements, but doesn't contain the number <code class="code-inline tex2jax_ignore">10</code> itself.</p>
 <p id="p-255">By providing two numbers, you can specify the starting number (included) and ending number (not included). For example, <code class="code-inline tex2jax_ignore">list(range(-5,5)) == [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4]</code>.</p>
