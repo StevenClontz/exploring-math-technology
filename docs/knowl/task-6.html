@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-09-08T00:39:58Z       *-->
+<!--*       on 2020-09-08T00:47:17Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -31,7 +31,8 @@
 17:00,88
 </pre>
 <figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.1.1<span class="period">.</span></span><span class="space"> </span>Contents for <code class="code-inline tex2jax_ignore">data.csv</code></figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">Then copy-paste the text from <a class="xref" data-knowl="./knowl/programming-jupyter-use-tempdata.html" title="Listing 1.1.2">1.1.2</a> into a Code cell below to use this data in a Python 3 script to display the temperatures in Celcius.</p>
-<figure class="listing figure-like"><pre class="prettyprint lang-py">with open("data.csv", "r") as csv_file:
+<figure class="listing figure-like"><pre class="prettyprint lang-py">import csv
+with open("data.csv", "r") as csv_file:
     rows = csv.DictReader(csv_file, delimiter=',')
     for row in rows:
         time = row["Time"]
