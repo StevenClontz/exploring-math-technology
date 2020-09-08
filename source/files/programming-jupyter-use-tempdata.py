@@ -1,3 +1,4 @@
+import csv
 with open("data.csv", "r") as csv_file:
     rows = csv.DictReader(csv_file, delimiter=',')
     for row in rows:
