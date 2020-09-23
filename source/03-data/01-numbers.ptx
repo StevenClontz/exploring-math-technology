@@ -43,42 +43,42 @@ quantify whole items: <me>\{0,1,2,3,\dots,100,101,\dots,8675309,8675310,\dots\}<
             </p>
             <p>
 For each of the following possible rules for counting numbers, either decide that
-it is true, or explain when the rule might fail.
+it should be true, or find an example showing why the rule should be false.
             </p>
         </introduction>
         <task>
             <p>
-Adding one to a counting number results in another counting number. For example,
+<em>Adding one</em> to a counting number results in another counting number. For example,
 <m>6</m> is a counting number, so <m>6+1=7</m> is also a counting number.
             </p>
         </task>
         <task>
             <p>
-Subtracting one from a counting number results in another counting number. For example,
+<em>Subtracting</em> one from a counting number results in another counting number. For example,
 <m>6</m> is a counting number, so <m>6-1=5</m> is also a counting number.
             </p>
         </task>
         <task>
             <p>
-Doubling a counting number results in another counting number. For example,
+<em>Doubling</em> a counting number results in another counting number. For example,
 <m>32</m> is a counting number, so <m>32\times 2=64</m> is also a counting number.
             </p>
         </task>
         <task>
             <p>
-Halving a counting number results in another counting number. For example,
+<em>Halving</em> a counting number results in another counting number. For example,
 <m>32</m> is a counting number, so <m>32\div 2=16</m> is also a counting number.
             </p>
         </task>
         <task>
             <p>
-Squaring a counting number results in another counting number. For example,
+<em>Squaring</em> a counting number results in another counting number. For example,
 <m>9</m> is a counting number, so <m>9^2=81</m> is also a counting number.
             </p>
         </task>
         <task>
             <p>
-Square rooting a counting number results in another counting number. For example,
+<em>Square rooting</em> a counting number results in another counting number. For example,
 <m>9</m> is a counting number, so <m>\sqrt{9}=3</m> is also a counting number.
             </p>
         </task>
@@ -95,6 +95,14 @@ negatives: <m>\{\dots,-2,-1,0,1,2,\dots\}</m>.
 Explain which of the number rules from <xref ref="data-numbers-counting"/> work
 when <q>counting number</q> is replaced with <q>integer</q>, and which ones fail.
             </p>
+            <ul>
+                <li><p>Adding one</p></li>
+                <li><p>Subtracting one</p></li>
+                <li><p>Doubling</p></li>
+                <li><p>Halving</p></li>
+                <li><p>Squaring</p></li>
+                <li><p>Square rooting</p></li>
+            </ul>
         </task>
         <task>
             <p>
@@ -118,6 +126,14 @@ and <m>-\frac{1234812348}{42}</m>.
 Explain which of the number rules from <xref ref="data-numbers-counting"/> work
 when <q>counting number</q> is replaced with <q>rational number</q>, and which ones fail.
             </p>
+            <ul>
+                <li><p>Adding one</p></li>
+                <li><p>Subtracting one</p></li>
+                <li><p>Doubling</p></li>
+                <li><p>Halving</p></li>
+                <li><p>Squaring</p></li>
+                <li><p>Square rooting</p></li>
+            </ul>
         </task>
         <task>
             <p>
@@ -156,8 +172,10 @@ you forgot in your list.
             </p>
             <p>
 While SageMath does its best to hide this limitation from users,
-having finitely-many possible numbers is not ideal for data intended
-for storage on a physical computer.
+there's a limit to how many of these infinitely-many possible numerical values
+can be stored on a physical computer due to its finite storage space.
+            </p>
+            <p>
 To account for this, some lower-level languages offer data types like the <term>short</term>
 that account for a useful (but finite) range of integers.
 In particular, shorts are integers that may be stored as a short finite list of the

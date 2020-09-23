@@ -5,17 +5,24 @@
     <exploration>
         <introduction>
             <p>
-                TODO
+Consider the following code that prints out the first ten square counting numbers.
             </p>
+            <program language="python">
+                <input><xi:include parse="text" href="../files/data-programming-squaring-manually.py" /></input>
+            </program>
         </introduction>
-    </exploration>
-    <activity>
-        <introduction>
+        <task>
             <p>
-                If/Elif/Else
+Copy this program into a code cell, and modify it to print out the squares from 0 to 14.
             </p>
-        </introduction>
-    </activity>
+        </task>
+        <task>
+            <p>
+Write a sentence about what you notice about the provided code. What do you think could be improved
+to make this code more elegant?
+            </p>
+        </task>
+    </exploration>
     <activity>
         <introduction>
             <p>
@@ -26,7 +33,7 @@
     <activity>
         <introduction>
             <p>
-                Comprehension
+                If/Elif/Else
             </p>
         </introduction>
     </activity>
