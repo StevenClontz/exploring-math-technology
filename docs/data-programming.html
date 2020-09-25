@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-09-08T00:47:17Z       *-->
+<!--*       on 2020-09-25T01:48:25Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -132,19 +132,102 @@ MathJax.Hub.Config({
 <article class="exploration project-like" id="exploration-8"><h6 class="heading">
 <span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-29"><p id="p-272">TODO</p></div></article><article class="activity project-like" id="activity-25"><h6 class="heading">
+<div class="introduction" id="introduction-29">
+<p id="p-285">Consider the following code that prints out the first ten square counting numbers.</p>
+<figure class="listing figure-like" id="listing-7"><pre class="prettyprint lang-py">print(f"0^2={0**2}")
+print(f"1^2={1**2}")
+print(f"2^2={2**2}")
+print(f"3^2={3**2}")
+print(f"4^2={4**2}")
+print(f"5^2={5**2}")
+print(f"6^2={6**2}")
+print(f"7^2={7**2}")
+print(f"8^2={8**2}")
+print(f"9^2={9**2}")
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.1<span class="period">.</span></span><span class="space"> </span>Ten square counting numbers</figcaption></figure>
+</div>
+<article class="task exercise-like" id="task-103"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-286">Copy this program into a code cell, and modify it to print out the squares from 0 to 14.</p></article><article class="task exercise-like" id="task-104"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-287">Write a sentence about what you notice about the provided code. What do you think could be improved to make this code more elegant?</p></article></article><article class="activity project-like" id="activity-25"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-30"><p id="p-273">If/Elif/Else</p></div></article><article class="activity project-like" id="activity-26"><h6 class="heading">
+<div class="introduction" id="introduction-30"><p id="p-288">Usually you will want to not only store collections of data, but <em class="emphasis">do</em> something with each datum. A <dfn class="terminology">for loop</dfn> allows you to deal with data piece-by-piece.</p></div>
+<article class="task exercise-like" id="task-105"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-289">Save the following numbers as a list named <code class="code-inline tex2jax_ignore">favorite_numbers</code>.</p>
+<div class="displaymath">
+\begin{equation*}
+18, 7, -7, -\frac{7}{2}, 9, \frac{17}{4}, 0, -17, 19, 3
+\end{equation*}
+</div></article><article class="task exercise-like" id="task-106"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-290">Adapt the partial example shown in <a class="xref" data-knowl="./knowl/data-programming-favorite-loop.html" title="Listing 3.3.2">3.3.2</a> to display output similar to <a class="xref" data-knowl="./knowl/data-programming-favorite-output.html" title="Listing 3.3.3">3.3.3</a> for each number.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><figure class="listing figure-like" id="data-programming-favorite-loop"><pre class="prettyprint lang-py">for number in favorite_numbers:
+    # code indented four spaces right will run for each
+    # "number" in the list of "favorite_numbers"
+    squared = number**2
+    print(f"{number} squared is {squared}")
+    # TODO add more information about each number
+    # (don't forget to indent!)
+
+# Because we removed the indent, this only
+# happens after all numbers are looped through.
+print("All done looping!")
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.2<span class="period">.</span></span><span class="space"> </span>Looping over a list of numbers</figcaption></figure></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><figure class="listing figure-like" id="data-programming-favorite-output"><pre class="code-block tex2jax_ignore">18 squared is 324
+18 divided by two is 9
+18 plus seven is 25
+18 minus one half is 17.5
+18 times three is 54
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.3<span class="period">.</span></span><span class="space"> </span>Sample output for each number</figcaption></figure></div>
+</div></div></article><article class="task exercise-like" id="task-107"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-291">To deal with pairs of data, for loops can also be <dfn class="terminology">nested</dfn>. Adapt the code shown in <a class="xref" data-knowl="./knowl/data-programming-nested-loops.html" title="Listing 3.3.4">3.3.4</a> to create output as shown in <a class="xref" data-knowl="./knowl/data-programming-nested-output.html" title="Listing 3.3.5">3.3.5</a>.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><figure class="listing figure-like" id="data-programming-nested-loops"><pre class="prettyprint lang-py">for first in range(10):
+    for second in range(10):
+        print(f"{first} is first, and {second} is second")
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.4<span class="period">.</span></span><span class="space"> </span>Nested for loops</figcaption></figure></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><figure class="listing figure-like" id="data-programming-nested-output"><pre class="code-block tex2jax_ignore">0 times 0 is 0
+0 times 1 is 0
+[...]
+5 times 9 is 45
+6 times 0 is 0
+6 times 1 is 6
+6 times 2 is 12
+[...]</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.5<span class="period">.</span></span><span class="space"> </span>Excerpt of desired output</figcaption></figure></div>
+</div></div></article></article><article class="activity project-like" id="activity-26"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-31"><p id="p-274">For loops</p></div></article><article class="activity project-like" id="activity-27"><h6 class="heading">
+<div class="introduction" id="introduction-31"><p id="p-292">Often the way you want to deal with data is <dfn class="terminology">conditional</dfn>, that is, the code you want to run will depend on <em class="emphasis">if</em> a variable satisfies a certain condition.</p></div>
+<article class="task exercise-like" id="task-108"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-293">Paste the code in <a class="xref" data-knowl="./knowl/data-programming-conditional-money.html" title="Listing 3.3.6">3.3.6</a> into three code cells, changing the value of <code class="code-inline tex2jax_ignore">money_in_bank</code> so that each cell outputs a different response.</p>
+<figure class="listing figure-like" id="data-programming-conditional-money"><pre class="prettyprint lang-py">money_in_bank = "this probably should be a number, huh"
+
+if money_in_bank &gt; 10000:
+    print("Wow you're rich!")
+elif money_in_bank &gt; 100:
+    print("Hey, not bad.")
+else:
+    print("I should save up a bit more.")
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.6<span class="period">.</span></span><span class="space"> </span>Conditional on amount of money</figcaption></figure></article><article class="task exercise-like" id="task-109"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-294">Bugfix the code shown in <a class="xref" data-knowl="./knowl/data-programming-conditional-root.html" title="Listing 3.3.7">3.3.7</a>.</p>
+<figure class="listing figure-like" id="data-programming-conditional-root"><pre class="prettyprint lang-py">from math import sqrt # makes the square root function available in Python
+
+for number in favorite_numbers:
+    root = sqrt(number)
+    print(f"The square root of {number} is {root}")
+    # TODO add if/else statements to handle numbers when square root is not allowed
+    # print(f"Taking the square root of {number} is not allowed!")
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.7<span class="period">.</span></span><span class="space"> </span>Using conditionals inside loops</figcaption></figure></article></article><article class="activity project-like" id="activity-27"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-32"><p id="p-275">Comprehension</p></div></article><article class="activity project-like" id="activity-28"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.5</span><span class="period">.</span>
-</h6>
-<p id="p-276">A common exercise in entry-level programming interviews is known as “FizzBuzz”. Write a program that for each of the numbers \(1\) through \(100\) prints that number, the word “Fizz” if that number is divisible by \(3\text{,}\) and “Buzz” if that number is divisible by \(5\text{.}\) Example output for the numbers \(1\) through \(15\) is given in <a class="xref" data-knowl="./knowl/data-programming-fizzbuzz-example.html" title="Listing 3.3.1">3.3.1</a>.</p>
+<p id="p-295">A common exercise in entry-level programming interviews is known as “FizzBuzz”. Write a program that for each of the numbers \(1\) through \(100\) prints that number, the word “Fizz” if that number is divisible by \(3\text{,}\) and “Buzz” if that number is divisible by \(5\text{.}\) Example output for the numbers \(1\) through \(15\) is given in <a class="xref" data-knowl="./knowl/data-programming-fizzbuzz-example.html" title="Listing 3.3.8">3.3.8</a>.</p>
 <figure class="listing figure-like" id="data-programming-fizzbuzz-example"><pre class="code-block tex2jax_ignore">1
 2
 3 Fizz
@@ -160,7 +243,10 @@ MathJax.Hub.Config({
 13
 14
 15 Fizz Buzz</pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.1<span class="period">.</span></span><span class="space"> </span>Beginning FizzBuzz output.</figcaption></figure><p id="p-277">Using <code class="code-inline tex2jax_ignore">x % 3 == 0</code> and <code class="code-inline tex2jax_ignore">x % 5 == 0</code> to check if the value of <code class="code-inline tex2jax_ignore">x</code> is divisible by \(3\) or \(5\text{,}\) create a Code cell that implements Fizz Buzz for the numbers \(1\) through \(100\text{.}\)</p></article></section></div></main>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.8<span class="period">.</span></span><span class="space"> </span>Beginning FizzBuzz output.</figcaption></figure><p id="p-296">Using <code class="code-inline tex2jax_ignore">x % 3 == 0</code> and <code class="code-inline tex2jax_ignore">x % 5 == 0</code> to check if the value of <code class="code-inline tex2jax_ignore">x</code> is divisible by \(3\) or \(5\text{,}\) create a Code cell that implements Fizz Buzz for the numbers \(1\) through \(100\text{.}\)</p></article><section class="exercises" id="exercises-6"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">3.3.1</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-44"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>TODO Euler problems</article></section></section></div></main>
 </div>
 </body>
 </html>

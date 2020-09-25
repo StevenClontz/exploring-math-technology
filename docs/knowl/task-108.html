@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-09-08T00:47:19Z       *-->
+<!--*       on 2020-09-25T01:48:26Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,51 +15,18 @@
 </head>
 <body>
 <article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Task</span><span class="space"> </span><span class="codenumber">4.1.2.d</span><span class="period">.</span>
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">3.3.3.a</span><span class="period">.</span>
 </h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Visit the website <a class="external" href="https://vincentarelbundock.github.io/Rdatasets/datasets.html" target="_blank"><code class="code-inline tex2jax_ignore">https://vincentarelbundock.github.io/Rdatasets/datasets.html</code></a> to get a CSV with the transactions for a (fictional) pizza parlor for the year 2015. (Hint: Use <kbd class="kbdkey">Ctrl</kbd>+<kbd class="kbdkey">F</kbd> to search for “pizza”.) Rather than downloading it, right-click and copy the URL to the CSV file.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Import this data directly by entering <code class="code-inline tex2jax_ignore">Table.read_table("https://example.com/fix/this/url/to/point/to/your/data.csv")</code> into a Code cell, replacing the string with the URL you copied. (Note that while there are almost fifty thousand transactions in this dataset, only a few are displayed by default. <a class="xref" data-knowl="./knowl/visualization-tables-pizza.html" title="Table 4.1.6: The first three rows of pizza transaction data">4.1.6</a> gives the first three rows.)</p>
-<figure class="table table-like"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.1.6<span class="period">.</span></span><span class="space"> </span>The first three rows of pizza transaction data</figcaption><table>
-<tr>
-<td class="l m b1 r0 l0 t0 lines">Unnamed: 0</td>
-<td class="l m b1 r0 l0 t0 lines">id</td>
-<td class="l m b1 r0 l0 t0 lines">date</td>
-<td class="l m b1 r0 l0 t0 lines">time</td>
-<td class="l m b1 r0 l0 t0 lines">name</td>
-<td class="l m b1 r0 l0 t0 lines">size</td>
-<td class="l m b1 r0 l0 t0 lines">type</td>
-<td class="l m b1 r0 l0 t0 lines" data-braille="last-cell">price</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">1</td>
-<td class="l m b0 r0 l0 t0 lines">2015-000001</td>
-<td class="l m b0 r0 l0 t0 lines">2015-01-01</td>
-<td class="l m b0 r0 l0 t0 lines">11:38:36</td>
-<td class="l m b0 r0 l0 t0 lines">hawaiian</td>
-<td class="l m b0 r0 l0 t0 lines">M</td>
-<td class="l m b0 r0 l0 t0 lines">classic</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">13.25</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">2</td>
-<td class="l m b0 r0 l0 t0 lines">2015-000002</td>
-<td class="l m b0 r0 l0 t0 lines">2015-01-01</td>
-<td class="l m b0 r0 l0 t0 lines">11:57:40</td>
-<td class="l m b0 r0 l0 t0 lines">classic_dlx</td>
-<td class="l m b0 r0 l0 t0 lines">M</td>
-<td class="l m b0 r0 l0 t0 lines">classic</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">16</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">3</td>
-<td class="l m b0 r0 l0 t0 lines">2015-000002</td>
-<td class="l m b0 r0 l0 t0 lines">2015-01-01</td>
-<td class="l m b0 r0 l0 t0 lines">11:57:40</td>
-<td class="l m b0 r0 l0 t0 lines">mexicana</td>
-<td class="l m b0 r0 l0 t0 lines">M</td>
-<td class="l m b0 r0 l0 t0 lines">veggie</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">16</td>
-</tr>
-</table></figure></article><span class="incontext"><a href="visualization-tables.html#task-108">in-context</a></span>
+<p xmlns:svg="http://www.w3.org/2000/svg">Paste the code in <a class="xref" data-knowl="./knowl/data-programming-conditional-money.html" title="Listing 3.3.6">3.3.6</a> into three code cells, changing the value of <code class="code-inline tex2jax_ignore">money_in_bank</code> so that each cell outputs a different response.</p>
+<figure class="listing figure-like"><pre class="prettyprint lang-py">money_in_bank = "this probably should be a number, huh"
+
+if money_in_bank &gt; 10000:
+    print("Wow you're rich!")
+elif money_in_bank &gt; 100:
+    print("Hey, not bad.")
+else:
+    print("I should save up a bit more.")
+</pre>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.6<span class="period">.</span></span><span class="space"> </span>Conditional on amount of money</figcaption></figure></article><span class="incontext"><a href="data-programming.html#task-108">in-context</a></span>
 </body>
 </html>
