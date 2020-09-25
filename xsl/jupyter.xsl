@@ -135,15 +135,6 @@
               <xsl:with-param name="alt-bg">true</xsl:with-param>
             </xsl:call-template>
             <xsl:apply-templates select="//exploration"/>
-            <xsl:call-template name="jupyter-cell">
-              <xsl:with-param name="source">
-                &lt;h5 style="text-align:center"&gt;Add a link to your team's notebook for this section below.&lt;/h5&gt;
-              </xsl:with-param>
-              <xsl:with-param name="alt-bg">true</xsl:with-param>
-            </xsl:call-template>
-            <xsl:call-template name="jupyter-cell">
-              <xsl:with-param name="editable">true</xsl:with-param>
-            </xsl:call-template>
             <xsl:if test="//exercises/exercise">
               <xsl:call-template name="jupyter-cell">
                 <xsl:with-param name="source">
@@ -153,23 +144,6 @@
               </xsl:call-template>
               <xsl:apply-templates select="//exercises/exercise"/>
             </xsl:if>
-            <xsl:call-template name="jupyter-cell">
-              <xsl:with-param name="source">
-                &lt;h5 style="text-align:center"&gt;Upload a photograph of a satisfactory in-class quiz.&lt;/h5&gt;
-              </xsl:with-param>
-              <xsl:with-param name="alt-bg">true</xsl:with-param>
-            </xsl:call-template>
-            <xsl:call-template name="jupyter-cell">
-              <xsl:with-param name="editable">true</xsl:with-param>
-            </xsl:call-template>
-            <!--<xsl:call-template name="jupyter-cell">
-              <xsl:with-param name="source">
-                &lt;h5 style="text-align:center"&gt;Upload a photograph documentating a satisfactory instructor conference.&lt;/h5&gt;
-              </xsl:with-param>
-            </xsl:call-template>
-            <xsl:call-template name="jupyter-cell">
-              <xsl:with-param name="editable">true</xsl:with-param>
-            </xsl:call-template>-->
           </xsl:otherwise>
       </xsl:choose>
       ]

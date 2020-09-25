@@ -92,7 +92,7 @@ into three code cells, changing the value of <c>money_in_bank</c>
 so that each cell outputs a different response.
             </p>
             <listing xml:id="data-programming-conditional-money">
-                <caption>Nested for loops</caption>
+                <caption>Conditional on amount of money</caption>
                 <program language="python">
                     <input><xi:include parse="text" href="../files/data-programming-conditional-money.py" /></input>
                 </program>
@@ -103,7 +103,7 @@ so that each cell outputs a different response.
 Bugfix the code shown in <xref ref="data-programming-conditional-root"/>.
             </p>
             <listing xml:id="data-programming-conditional-root">
-                <caption>Nested for loops</caption>
+                <caption>Using conditionals inside loops</caption>
                 <program language="python">
                     <input><xi:include parse="text" href="../files/data-programming-conditional-root.py" /></input>
                 </program>
