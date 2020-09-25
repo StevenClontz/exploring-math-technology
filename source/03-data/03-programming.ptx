@@ -118,36 +118,44 @@ Write a program that for each of the numbers <m>1</m> through <m>100</m>
 prints that number, the word <q>Fizz</q> if that number is divisible by <m>3</m>,
 and <q>Buzz</q> if that number is divisible by <m>5</m>. Example output
 for the numbers <m>1</m> through <m>15</m> is given in
-<xref ref="data-programming-fizzbuzz-example"/>.
+<xref ref="data-programming-fizzbuzz-output"/>.
             </p>
-            <listing xml:id="data-programming-fizzbuzz-example">
-                <caption>Beginning FizzBuzz output.</caption>
-                <cd>1
-2
-3 Fizz
-4
-5 Buzz
-6 Fizz
-7
-8
-9 Fizz
-10 Buzz
-11
-12 Fizz
-13
-14
-15 Fizz Buzz</cd>
-            </listing>
             <p>
-Using <c>x % 3 == 0</c> and <c>x % 5 == 0</c> to check if the value of <c>x</c>
-is divisible by <m>3</m> or <m>5</m>, create a Code cell that implements Fizz Buzz
-for the numbers <m>1</m> through <m>100</m>.
+The code in <xref ref="data-programming-fizzbuzz-scrambled"/> implements FizzBuzz
+in Python, but the lines are out of order and missing indentation. Fix the code to
+correctly display output as in <xref ref="data-programming-fizzbuzz-output"/>.
             </p>
+            <sidebyside widths="45% 45%">
+                <listing xml:id="data-programming-fizzbuzz-scrambled">
+                    <caption>Scrambled FizzBuzz program</caption>
+                    <program language="python">
+                        <input><xi:include parse="text" href="../files/data-programming-fizzbuzz-scrambled.py" /></input>
+                    </program>
+                </listing>
+                <listing xml:id="data-programming-fizzbuzz-output">
+                    <caption>Beginning FizzBuzz output.</caption>
+                    <cd><xi:include parse="text" href="../files/data-programming-fizzbuzz-output.txt"/></cd>
+                </listing>
+            </sidebyside>
         </statement>
     </activity>
     <exercises>
         <exercise>
-            <statement>TODO Euler problems</statement>
+            <statement>
+                <p>
+Use the code <c>from string import ascii_lowercase; letters = list(ascii_lowercase)</c>
+to obtain a list of the lowercase English alphabet. Then <c>print(letters)</c> to display them
+as the output of your code cell.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Consider the following code and its output. Modify this code so that it runs for each
+of the lowercase English <c>letters</c>.
+                </p>
+            </statement>
         </exercise>
     </exercises>
 </section>
