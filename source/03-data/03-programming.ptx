@@ -7,9 +7,12 @@
             <p>
 Consider the following code that prints out the first ten square counting numbers.
             </p>
-            <program language="python">
-                <input><xi:include parse="text" href="../files/data-programming-squaring-manually.py" /></input>
-            </program>
+            <listing>
+                <caption>Ten square counting numbers</caption>
+                <program language="python">
+                    <input><xi:include parse="text" href="../files/data-programming-squaring-manually.py" /></input>
+                </program>
+            </listing>
         </introduction>
         <task>
             <p>
@@ -26,16 +29,86 @@ to make this code more elegant?
     <activity>
         <introduction>
             <p>
-                For loops
+Usually you will want to not only store collections of data, but <em>do</em> something with
+each datum. A <term>for loop</term> allows you to deal with data piece-by-piece.
             </p>
         </introduction>
+        <task>
+            <p>
+Save the following numbers as a list named <c>favorite_numbers</c>.
+            </p>
+            <me>18, 7, -7, -\frac{7}{2}, 9, \frac{17}{4}, 0, -17, 19, 3</me>
+        </task>
+        <task>
+            <p>
+Adapt the partial example shown in <xref ref="data-programming-favorite-loop"/> to display
+output similar to <xref ref="data-programming-favorite-output"/> for each number.
+            </p>
+            <sidebyside widths="45% 45%">
+                <listing xml:id="data-programming-favorite-loop">
+                    <caption>Looping over a list of numbers</caption>
+                    <program language="python">
+                        <input><xi:include parse="text" href="../files/data-programming-favorite-loop.py" /></input>
+                    </program>
+                </listing>
+                <listing xml:id="data-programming-favorite-output">
+                    <caption>Sample output for each number</caption>
+                    <cd><xi:include parse="text" href="../files/data-programming-favorite-output.txt" /></cd>
+                </listing>
+            </sidebyside>
+        </task>
+        <task>
+            <p>
+To deal with pairs of data, for loops can also be <term>nested</term>.
+Adapt the code shown in <xref ref="data-programming-nested-loops"/> to create output as
+shown in <xref ref="data-programming-nested-output"/>.
+            </p>
+            <sidebyside widths="45% 45%">
+                <listing xml:id="data-programming-nested-loops">
+                    <caption>Nested for loops</caption>
+                    <program language="python">
+                        <input><xi:include parse="text" href="../files/data-programming-nested-loops.py" /></input>
+                    </program>
+                </listing>
+                <listing xml:id="data-programming-nested-output">
+                    <caption>Excerpt of desired output</caption>
+                    <cd><xi:include parse="text" href="../files/data-programming-nested-output.txt" /></cd>
+                </listing>
+            </sidebyside>
+        </task>
     </activity>
     <activity>
         <introduction>
             <p>
-                If/Elif/Else
+Often the way you want to deal with data is <term>conditional</term>, that is,
+the code you want to run will depend on <em>if</em> a variable satisfies a certain
+condition.
             </p>
         </introduction>
+        <task>
+            <p>
+Paste the code in <xref ref="data-programming-conditional-money"/>
+into three code cells, changing the value of <c>money_in_bank</c>
+so that each cell outputs a different response.
+            </p>
+            <listing xml:id="data-programming-conditional-money">
+                <caption>Nested for loops</caption>
+                <program language="python">
+                    <input><xi:include parse="text" href="../files/data-programming-conditional-money.py" /></input>
+                </program>
+            </listing>
+        </task>
+        <task>
+            <p>
+Bugfix the code shown in <xref ref="data-programming-conditional-root"/>.
+            </p>
+            <listing xml:id="data-programming-conditional-root">
+                <caption>Nested for loops</caption>
+                <program language="python">
+                    <input><xi:include parse="text" href="../files/data-programming-conditional-root.py" /></input>
+                </program>
+            </listing>
+        </task>
     </activity>
     <activity>
         <statement>
@@ -72,5 +145,10 @@ for the numbers <m>1</m> through <m>100</m>.
             </p>
         </statement>
     </activity>
+    <exercises>
+        <exercise>
+            <statement>TODO Euler problems</statement>
+        </exercise>
+    </exercises>
 </section>
 

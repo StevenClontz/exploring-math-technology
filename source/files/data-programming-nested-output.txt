@@ -1,0 +1,8 @@
+0 times 0 is 0
+0 times 1 is 0
+[...]
+5 times 9 is 45
+6 times 0 is 0
+6 times 1 is 6
+6 times 2 is 12
+[...]
