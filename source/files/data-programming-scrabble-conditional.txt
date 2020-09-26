@@ -1,0 +1,6 @@
+Boo... the word aa has less than three vowels...
+Boo... the word aah has less than three vowels...
+Okay. The word aahed has exactly three vowels.
+[...]
+Wow! The word aardwolves has more than three vowels!
+[...]

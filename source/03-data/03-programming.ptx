@@ -152,9 +152,66 @@ as the output of your code cell.
         <exercise>
             <statement>
                 <p>
-Consider the following code and its output. Modify this code so that it runs for each
-of the lowercase English <c>letters</c>.
+The line <c>for count,letter in enumerate(letters):</c> allows you to loop through
+each letter in <c>letters</c> while also keeping count of where you are in the loop
+(starting with the first counting number <m>0</m>).
                 </p>
+                <p>
+Use <c>enumerate</c> to produce the output shown below.
+                </p>
+                <cd>Letter 0 is a.
+Letter 1 is b.
+[...]
+Letter 25 is z.</cd>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Copy your code from the previous exercise, and modify it using <c>ord(letter)</c>
+to display the following output instead.
+                </p>
+                <cd>Letter 0 is a, which has Unicode value 97.
+Letter 1 is b, which has Unicode value 98.
+[...]
+Letter 25 is z, which has Unicode value 122.</cd>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+<url href="https://scrabble.hasbro.com/en-us">Scrabble</url> is a
+popular crossword-style game. Like most word games, deciding on what
+word is best to play is often a mathematical exercise.
+                </p>
+                <p>
+First, save <url href="https://raw.githubusercontent.com/zeisler/scrabble/master/db/dictionary.csv"/>
+as the file <c>dictionary.csv</c> in the same folder as this notebook.
+                </p>
+                <p>
+Then unscramble the code in <xref ref="data-programming-scrabble-scrambled"/> to
+create nested loops that count the number of vowels used in each of the first
+fifty words of the Scrabble dictionary.
+                </p>
+                <listing xml:id="data-programming-scrabble-scrambled">
+                    <caption>Scrambled vowel-counting program</caption>
+                    <program language="python">
+                        <input><xi:include parse="text" href="../files/data-programming-scrabble-scrambled.py" /></input>
+                    </program>
+                </listing>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Copy your code from the previous exercise, and then replace the <c>print</c>
+line with an <c>if</c>/<c>elif</c>/<c>else</c> conditional to produce output similar to
+<xref ref="data-programming-scrabble-conditional"/>.
+                </p>
+                <listing xml:id="data-programming-scrabble-conditional">
+                    <caption>Conditional vowel-counting output</caption>
+                    <cd><xi:include parse="text" href="../files/data-programming-scrabble-conditional.txt"/></cd>
+                </listing>
             </statement>
         </exercise>
     </exercises>
