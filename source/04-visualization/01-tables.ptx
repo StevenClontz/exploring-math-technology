@@ -131,6 +131,16 @@ Finally, create a Code cell with the line
 to check that your CSV data can be imported into a <c>datascience</c> table.
             </p>
         </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+When working with data in industry, you're likely working with many more rows than can be displayed on
+your screen at a given time. In fact, so-called <q>Big Data</q> is one of the fastest-moving fields
+of mathematics and computer science. By working with <c>datascience</c> tables, you can filter data as needed for
+display and analysis.
+            </p>
+        </introduction>
         <task>
             <p>
 Visit the website <url href="https://vincentarelbundock.github.io/Rdatasets/datasets.html" /> to get a
@@ -138,14 +148,12 @@ CSV with the transactions for a (fictional) pizza parlor for the year 2015. (Hin
 to search for <q>pizza</q>.) Rather than downloading it, right-click and copy the URL to the CSV file.
             </p>
             <p>
-Import this data directly by entering
-<c>Table.read_table("https://example.com/fix/this/url/to/point/to/your/data.csv")</c>
-into a Code cell, replacing the string with the URL you copied. (Note that while there are almost
-fifty thousand transactions in this dataset, only a few are displayed by default.
-<xref ref="visualization-tables-pizza" /> gives the first three rows.)
+Save this URL to the CS variable named <c>pizza_url</c>, and then
+import this data directly by running
+<c>pizza_table = Table.read_table(pizza_url)</c> and <c>display(pizza_table)</c>.
             </p>
 <table xml:id="visualization-tables-pizza">
-  <title>The first three rows of pizza transaction data</title>
+  <title>The first three rows of <c>pizza_table</c></title>
   <tabular>
     <row bottom="minor">
       <cell>
@@ -253,6 +261,23 @@ fifty thousand transactions in this dataset, only a few are displayed by default
     </row>
   </tabular>
 </table>
+        </task>
+        <task>
+            <p>
+Note that while there are almost
+fifty thousand transactions in this dataset, only a few are displayed by default.
+You could write <c>pizza_table.show()</c> to attempt to display every row, but CoCalc will
+complain that 50,000 rows are too many.
+            </p>
+            <p>
+Insert an integer into the <c>.show()</c> tool to display exactly one hundred rows from
+the dataset.
+            </p>
+        </task>
+        <task>
+            <p>
+                TODO filter to a date
+            </p>
         </task>
     </activity>
 </section>
