@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="visualization-tables" kernel="python">
     <title>Tables</title>
     <exploration xml:id="visualization-tables-preview">
@@ -14,6 +13,10 @@ However, since different people use Python for different applications, not every
 can be made availble by default. There are several libraries available in Python for
 data science, but we will use one specifically developed for students called, well,
 <url href="http://data8.org/datascience/"><c>datascience</c></url>.
+                <aside>
+Documentation for the <c>datascience</c> library is available at
+<url href="http://data8.org/datascience/"/>.
+                </aside>
             </p>
         </introduction>
         <task>
@@ -64,7 +67,7 @@ a list of dictionaries is used to describe several students in standard Python.
         </introduction>
         <task>
             <p>
-Copy this list into a Code cell, and add data for a fourth student to the list.
+Copy this list into a Code cell, and add data for at least three more students to the list.
             </p>
         </task>
         <task>
@@ -108,8 +111,13 @@ or by modifying <xref ref="visualization-tables-from-rows" />.
                 </program>
             </listing>
             <p>
-Copy <xref ref="visualization-tables-from-rows" /> to a Code cell and insert the student data you created
+Run <c>from datascience import Table</c> in a Code cell, and then
+copy <xref ref="visualization-tables-from-rows" /> to another Code cell. Finally, append the student data you created
 in the previous task.
+                <aside>
+If importing <c>Table</c> fails, run the code from <xref ref="visualization-tables-preview"/>
+to make the <c>datascience</c> library available in your project.
+                </aside>
             </p>
         </task>
         <task>
@@ -145,12 +153,14 @@ display and analysis.
             <p>
 Visit the website <url href="https://vincentarelbundock.github.io/Rdatasets/datasets.html" /> to get a
 CSV with the transactions for a (fictional) pizza parlor for the year 2015. (Hint: Use <kbd>Ctrl</kbd>+<kbd>F</kbd>
-to search for <q>pizza</q>.) Rather than downloading it, right-click and copy the URL to the CSV file.
+to search for <q>pizza</q>.) If you like, you can download the CSV and view it in a spreadsheet program
+such as Microsoft Excel.
             </p>
             <p>
-Save this URL to the CS variable named <c>pizza_url</c>, and then
+For this activity however, you should right-click and copy the URL to the CSV file.
+In a Code cell, save this URL to the CS variable named <c>pizza_url</c>, and then
 import this data directly by running
-<c>pizza_table = Table.read_table(pizza_url)</c> and <c>display(pizza_table)</c>.
+<c>pizza_table = Table.read_table(pizza_url)</c> and <c>pizza_table.show(20)</c>.
             </p>
 <table xml:id="visualization-tables-pizza">
   <title>The first three rows of <c>pizza_table</c></title>
@@ -264,10 +274,10 @@ import this data directly by running
         </task>
         <task>
             <p>
-Note that while there are almost
-fifty thousand transactions in this dataset, only a few are displayed by default.
-You could write <c>pizza_table.show()</c> to attempt to display every row, but CoCalc will
-complain that 50,000 rows are too many.
+There are almost
+fifty thousand transactions stored in this dataset.
+You could write <c>pizza_table.show()</c> without specifying how many records to
+to try and show them all, but CoCalc will complain that 50,000 rows are too many.
             </p>
             <p>
 Insert an integer into the <c>.show()</c> tool to display exactly one hundred rows from
@@ -276,7 +286,109 @@ the dataset.
         </task>
         <task>
             <p>
-                TODO filter to a date
+The code
+<c>pizza_table.where("date","2015-02-01").show(10)</c>
+allows you to view the first ten records of a pizza purchased on Feburary 1, 2015.
+            </p>
+            <p>
+Display the first 20 pizza pies purchased on <m>\pi</m>-Day (that is, March 14, 2015).
+            </p>
+        </task>
+        <task>
+            <p>
+You can filter by any column of the table by modifying the <c>where()</c> arguments.
+Display the first 20 medium pizzas purchased in this parlor.
+            </p>
+        </task>
+        <task>
+            <p>
+Display the first 20 <q>Mexicana</q> pizzas purchased in this parlor.
+(Hint: make sure you filter the data based on how its string appears in the table.)
+            </p>
+        </task>
+        <task>
+            <p>
+Chain two <c>where()</c>s and a <c>show()</c> together to display the first 20 large-sized veggie
+pizzas purchased in this parlor.
+            </p>
+        </task>
+        <task>
+            <p>
+Running <c>pizza_table.where("date","2015-07-22").sort("size").show()</c> displays the
+large pizzas sold on July 22nd first, followed by medium, small, and extra-large
+pizzas (in that order). Write a sentence or two explaining why
+you suspect the computer orders the pizzas in this way.
+            </p>
+        </task>
+        <task>
+            <p>
+Display all the Hawaiian pizzas ordered on April 12, ordered by their prices.
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+While it's great to have data already organized in a CSV, most data is not
+already <term>parsed</term> for use directly by a data science library. Instead,
+data scientists must manually and/or programmatically convert the raw data into
+a suitable format.
+            </p>
+            <p>
+In this activity, we will convert the text of a book in order to count
+the number of times each of its main characters is mentioned in each chapter.
+            </p>
+        </introduction>
+        <task>
+            <p>
+Save a plain-text copy of <em>Peter Pan</em> by J. M. Barrie as the file
+<c>peterpan.txt</c> in the same folder as this notebook by using the link
+<url href="https://www.gutenberg.org/ebooks/16"/>. This task may be confirmed by
+running <c>f=open("peterpan.txt"); print(f.readline()); f.close()</c> in a Code cell.
+                <aside>
+This book is in the public domain, so it's perfectly legal to download a copy for free
+from the internet. (The same is not true of the Disney animiated film however!)
+                </aside>
+            </p>
+        </task>
+        <task>
+            <p>
+Open the file and manually delete the header and footer information, so the text
+file begins at the start of <q>Chapter 1</q> and ends with the words <q>THE END</q>.
+Re-run <c>print(open("peterpan.txt").readline())</c>, and you should see the line
+<c>Chapter 1 PETER BREAKS THROUGH</c>.
+            </p>
+        </task>
+        <task>
+            <p>
+Fix the code in <xref ref="visualization-tables-text-to-table"/> to save the
+chapters of the book to a <c>datascience</c> table.
+            </p>
+            <listing xml:id="visualization-tables-text-to-table">
+                <caption>Import book text to a table</caption>
+                <program language="python">
+                    <input><xi:include href="../files/visualization-tables-text-to-table.py" parse="text" /></input>
+                </program>
+            </listing>
+        </task>
+        <task>
+            <p>
+The code in <xref ref="visualization-tables-count-characters"/> counts how many
+times Peter Pan and Tinker Bell are mentioned in each chapter of the book.
+Extend this code to also count how many times the Darling siblings
+Wendy, Michael, and John are mentioned in each chapter.
+            </p>
+            <listing xml:id="visualization-tables-count-characters">
+                <caption>Counting how many times each character is mentioned</caption>
+                <program language="python">
+                    <input><xi:include href="../files/visualization-tables-count-characters.py" parse="text" /></input>
+                </program>
+            </listing>
+        </task>
+        <task>
+            <p>
+Sort this table to find the chapter where Wendy is mentioned the most, and the chapter where
+she is mentioned the least.
             </p>
         </task>
     </activity>

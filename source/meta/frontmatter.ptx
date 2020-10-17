@@ -3,9 +3,16 @@
     <xi:include href="./titlepage.ptx" />
     <acknowledgement>
         <p>
-Thanks to the Alabama School of Cyber Technology and Engineering for
-supporting the author as he developed this text to serve as the backbone
+Thanks to the
+<url href="https://ascte.org">Alabama School of Cyber Technology and Engineering</url>
+for supporting the author as he developed this text to serve as the backbone
 of their introductory mathematics course.
+        </p>
+        <p>
+Thanks also to the authors of
+<url href="https://www.inferentialthinking.com">Computational and Inferential Thinking</url>,
+whose text inspired some of the data science activities in this book, as well as
+the maintainers of the <c>datascience</c> Python module.
         </p>
     </acknowledgement>
     <preface xml:id="why">
