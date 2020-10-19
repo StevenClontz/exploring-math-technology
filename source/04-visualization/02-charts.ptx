@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="visualization-charts" kernel="python">
+    <title>Charts</title>
+    <exploration xml:id="visualization-charts-preview">
+        <statement>
+            <p>
+In 2015, the Pew Research Center conducted a survey on <q>Gaming and Gamers</q>,
+and published their results at
+<url href="https://www.pewresearch.org/internet/2015/12/15/gaming-and-gamers/"/>.
+Some of this data has been summarized in TODOcitefigure.
+            </p>
+            <p>
+All the data in the figure given is correct. Nonetheless, what do you notice about
+how these data have been visualized? What do you wonder? Write a few sentences summarizing
+your thoughts in a Markdown cell.
+            </p>
+        </statement>
+    </exploration>
+    <activity>
+        <introduction>
+            <p>
+                ToDO
+            </p>
+        </introduction>
+        <task>
+            <p>
+                TODO
+            </p>
+        </task>
+    </activity>
+</section>
+

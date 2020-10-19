@@ -12,7 +12,7 @@
         </ul>
     </objectives>
     <xi:include href="./01-tables.ptx" />
-    <section xml:id="visualization-charts"><title>Charts</title></section>
+    <xi:include href="./02-charts.ptx" />
     <section xml:id="visualization-plots"><title>Plots and Graphs</title></section>
 </chapter>
 

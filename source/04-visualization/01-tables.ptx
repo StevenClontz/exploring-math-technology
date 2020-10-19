@@ -392,5 +392,22 @@ she is mentioned the least.
             </p>
         </task>
     </activity>
+    <exercises>
+        <exercise>
+            <statement>
+                <p>
+Repeat the steps from the class activities in order to make <c>pizza_table</c>
+and <c>book_table</c> available for these exercises.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    TODO
+                </p>
+            </statement>
+        </exercise>
+    </exercises>
 </section>
 
