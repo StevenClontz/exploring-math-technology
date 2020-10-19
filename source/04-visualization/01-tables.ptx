@@ -316,13 +316,19 @@ pizzas purchased in this parlor.
             <p>
 Running <c>pizza_table.where("date","2015-07-22").sort("size").show()</c> displays the
 large pizzas sold on July 22nd first, followed by medium, small, and extra-large
-pizzas (in that order). Write a sentence or two explaining why
-you suspect the computer orders the pizzas in this way.
+pizzas (in that order).
+Running <c>pizza_table.where("date","2015-07-22").sort("size",descending=True).show()</c>
+displays them in the order extra-large, small, medium, then large.
+            </p>
+            <p>
+Write a sentence or two explaining why
+you suspect the datascience library orders the pizzas in this way.
             </p>
         </task>
         <task>
             <p>
-Display all the Hawaiian pizzas ordered on April 12, ordered by their prices.
+Display all the Hawaiian pizzas ordered on April 12, once in increasing order,
+and once in descreaing order.
             </p>
         </task>
     </activity>
@@ -374,7 +380,7 @@ chapters of the book to a <c>datascience</c> table.
         <task>
             <p>
 The code in <xref ref="visualization-tables-count-characters"/> counts how many
-times Peter Pan and Tinker Bell are mentioned in each chapter of the book.
+times Peter Pan is mentioned in each chapter of the book.
 Extend this code to also count how many times the Darling siblings
 Wendy, Michael, and John are mentioned in each chapter.
             </p>
@@ -396,15 +402,44 @@ she is mentioned the least.
         <exercise>
             <statement>
                 <p>
-Repeat the steps from the class activities in order to make <c>pizza_table</c>
-and <c>book_table</c> available for these exercises.
+Repeat the necesary steps from the class activities in order to make <c>pizza_table</c>
+and <c>book_table</c> available for these exercises. Then run <c>pizza_table.show(10)</c>
+and <c>book_table.show(10)</c> to confirm.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+How many extra-extra-large pizzas were sold by the pizzeria represented by <c>pizza_table</c>?
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Display all the <q>green garden</q> pizzas purchased on October 1st.
                 </p>
             </statement>
         </exercise>
         <exercise>
             <statement>
                 <p>
-                    TODO
+Display all the pizzas sold on February 14th, sorted from most to least expensive.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Update <c>book_table</c> to include how frequently Tinker Bell is mentioned. (Note that
+she is often referred to as simply <q>Tink</q>.)
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+DIsplay <c>book_table</c> by how frequently Tinker Bell is mentioned, and confirm that she is
+most often mentioned in Chapter 3 (<m>22</m> times).
                 </p>
             </statement>
         </exercise>
