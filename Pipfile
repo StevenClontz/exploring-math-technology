@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-pretextbook = "0.0.1"
+pretextbook = "*"
 
 [requires]
 python_version = "3.8"

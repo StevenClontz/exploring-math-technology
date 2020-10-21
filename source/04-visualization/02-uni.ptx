@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="visualization-uni" kernel="python">
+    <title>Univariate Visualizations</title>
+    <exploration xml:id="visualization-uni-preview">
+        <statement>
+            <p>
+In 2015, the Pew Research Center conducted a survey on <q>Gaming and Gamers</q>,
+and published their results at
+<url href="https://www.pewresearch.org/internet/2015/12/15/gaming-and-gamers/"/>.
+Some of this data has been summarized by the textbook author in
+<xref ref="visualization-uni-video-game"/>.
+            </p>
+            <figure xml:id="visualization-uni-video-game">
+                <caption>Pie chart of data from <q>Gaming and Gamers</q> survey</caption>
+                <image source="images/visualization-uni-video-game.png"/>
+            </figure>
+            <p>
+All the data in the figure given is correct. Nonetheless, what do you notice about
+how these data have been visualized? What do you wonder? Write a few sentences summarizing
+your thoughts in a Markdown cell.
+            </p>
+        </statement>
+    </exploration>
+    <activity>
+        <introduction>
+            <p>
+Choosing the right graphical visualization for your data depends on the kind of data you wish
+to display. <term>Univariate data</term> only considers a collection of numbers each representing
+a certain quantity, for example,
+the prices of pizzas sold from the dataset studied in <xref ref="visualization-tables"/>.
+The prices of the first twenty pizzas sold (truncated down to full-dollar amounts) on Jan 1 are shown
+in <xref ref="visualization-uni-prices-0101"/>.
+            </p>
+<table xml:id="visualization-uni-prices-0101">
+    <title>Twenty pizzas sold on Jan 01</title>
+    <tabular>
+<!--        <row bottom="minor">
+<cell>price</cell>
+<cell></cell>
+<cell></cell>
+<cell></cell>
+        </row>-->
+        <row>
+<cell>13</cell>
+<cell>16</cell>
+<cell>16</cell>
+<cell>20</cell>
+<cell>18</cell>
+        </row>
+        <row>
+<cell>20</cell>
+<cell>20</cell>
+<cell>16</cell>
+<cell>16</cell>
+<cell>16</cell>
+        </row>
+        <row>
+<cell>12</cell>
+<cell>12</cell>
+<cell>12</cell>
+<cell>12</cell>
+<cell>20</cell>
+        </row>
+        <row>
+<cell>12</cell>
+<cell>20</cell>
+<cell>20</cell>
+<cell>20</cell>
+<cell>12</cell>
+        </row>
+    </tabular>
+            </table>
+        </introduction>
+        <task>
+            <p>
+To quickly visualize a small dataset by hand, a <term>dot plot</term> may be drawn. Values of
+the dataset are represented on the horizontal axis, and each time the value appears in the dataset,
+an additional dot is drawn above the value. A dot plot representing the prices in
+<xref ref="visualization-uni-prices-0101"/> are shown in <xref ref="visualization-uni-dot-plot"/>.
+            </p>
+            <figure xml:id="visualization-uni-dot-plot">
+                <caption>Dot plot of prices from <xref ref="visualization-uni-prices-0101"/></caption>
+                <image source="images/visualization-uni-dot-plot.png"/>
+            </figure>
+            <p>
+A dot plot allows the reader to quickly scan a dataset and learn information about it.
+For example, what two prices were the most common out of the twenty pizzas sold? How do you know?
+            </p>
+        </task>
+        <task>
+            <p>
+The major feature of dot plots is that they are easy to draw by hand. On a sheet of paper or using a simple graphics
+program, draw a dot plot representing
+the prices of the first twenty pizzas sold on November 3rd, shown in <xref ref="visualization-uni-prices-1103"/>.
+            </p>
+<table xml:id="visualization-uni-prices-1103">
+    <title>Twenty pizza prices from Nov 03</title>
+            <tabular>
+        <row>
+<cell>20</cell>
+<cell>20</cell>
+<cell>20</cell>
+<cell>16</cell>
+<cell>20</cell>
+        </row>
+        <row>
+<cell>20</cell>
+<cell>11</cell>
+<cell>12</cell>
+<cell>16</cell>
+<cell>10</cell>
+        </row>
+        <row>
+<cell>20</cell>
+<cell>16</cell>
+<cell>20</cell>
+<cell>12</cell>
+<cell>20</cell>
+        </row>
+        <row>
+<cell>12</cell>
+<cell>12</cell>
+<cell>11</cell>
+<cell>20</cell>
+<cell>16</cell>
+        </row>
+    </tabular>
+            </table>
+        </task>
+        <task>
+            <p>
+What was the most common pizza price out of the first twenty sold on November 3rd?
+What was the least common price?
+            </p>
+        </task>
+        <task>
+            <p>
+A dot plot representing the prices of all pizzas sold on April 1st is shown in
+<xref ref="visualization-uni-dot-plot-large"/>. Is this a graphic you'd like to draw by hand?
+Is this a useful graphic to create by computer? Write a couple sentences summarizing your thoughts.
+            </p>
+            <figure xml:id="visualization-uni-dot-plot-large">
+                <caption>Dot plot of prices from Apr 01</caption>
+                <image source="images/visualization-uni-dot-plot-large.png"/>
+            </figure>
+        </task>
+    </activity>
+</section>
+

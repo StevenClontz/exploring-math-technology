@@ -438,7 +438,7 @@ she is often referred to as simply <q>Tink</q>.)
         <exercise>
             <statement>
                 <p>
-DIsplay <c>book_table</c> by how frequently Tinker Bell is mentioned, and confirm that she is
+DIsplay <c>book_table</c> sorted by how frequently Tinker Bell is mentioned, and confirm that she is
 most often mentioned in Chapter 3 (<m>22</m> times).
                 </p>
             </statement>
