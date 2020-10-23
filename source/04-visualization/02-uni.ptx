@@ -28,8 +28,8 @@ Choosing the right graphical visualization for your data depends on the kind of 
 to display. <term>Univariate data</term> only considers a collection of numbers each representing
 a certain quantity, for example,
 the prices of pizzas sold from the dataset studied in <xref ref="visualization-tables"/>.
-The prices of the first twenty pizzas sold (truncated down to full-dollar amounts) on Jan 1 are shown
-in <xref ref="visualization-uni-prices-0101"/>.
+The prices of the first twenty pizzas sold (truncated down to full-dollar amounts) on
+January 1st are shown in <xref ref="visualization-uni-prices-0101"/>.
             </p>
 <table xml:id="visualization-uni-prices-0101">
     <title>Twenty pizzas sold on Jan 01</title>
@@ -76,7 +76,7 @@ in <xref ref="visualization-uni-prices-0101"/>.
 To quickly visualize a small dataset by hand, a <term>dot plot</term> may be drawn. Values of
 the dataset are represented on the horizontal axis, and each time the value appears in the dataset,
 an additional dot is drawn above the value. A dot plot representing the prices in
-<xref ref="visualization-uni-prices-0101"/> are shown in <xref ref="visualization-uni-dot-plot"/>.
+<xref ref="visualization-uni-prices-0101"/> is shown in <xref ref="visualization-uni-dot-plot"/>.
             </p>
             <figure xml:id="visualization-uni-dot-plot">
                 <caption>Dot plot of prices from <xref ref="visualization-uni-prices-0101"/></caption>
@@ -135,14 +135,83 @@ What was the least common price?
         </task>
         <task>
             <p>
-A dot plot representing the prices of all pizzas sold on April 1st is shown in
+A dot plot representing the prices (truncated down to the nearest dollar) of <em>all</em> pizzas
+sold on April 1st is shown in
 <xref ref="visualization-uni-dot-plot-large"/>. Is this a graphic you'd like to draw by hand?
 Is this a useful graphic to create by computer? Write a couple sentences summarizing your thoughts.
             </p>
             <figure xml:id="visualization-uni-dot-plot-large">
-                <caption>Dot plot of prices from Apr 01</caption>
+                <caption>Dot plot of dollar prices from Apr 01</caption>
                 <image source="images/visualization-uni-dot-plot-large.png"/>
             </figure>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+The <c>datascience</c> library supports quickly generating <term>histograms</term> visualizing
+univariate data. Histograms are similar to dot plots, but measure how many values fall within
+a range rather than individual values.
+        </introduction>
+        <task>
+            <p>
+Repeat the steps from <xref ref="visualization-tables"/> to make <c>pizza_table</c> available
+in this Jupyter notebook.
+            </p>
+            <p>
+Confirm by running the code in <xref ref="visualization-uni-hist-0401"/>
+to create a histogram of prices for April 1st.
+            </p>
+            <listing xml:id="visualization-uni-hist-0401">
+                <caption>Program to generate Apr 01 price histogram</caption>
+                <program language="python">
+                    <input><xi:include href="../files/visualization-uni-hist-0401.py" parse="text" /></input>
+                </program>
+            </listing>
+            <!--<figure xml:id="visualization-uni-hist-0401">
+                <caption>Histogram of prices from Apr 01</caption>
+                <image source="images/visualization-uni-hist-0401.png"/>
+            </figure>-->
+        </task>
+        <task>
+            <p>
+Each <term>bin</term> or bar of the histogram counts how many prices fall within the range shown
+along its base. For example, seven pizzas were sold at a price of around $19.
+            </p>
+            <p>
+How many pizzas sold on April 1st had a price roughly between $12 and $13?
+            </p>
+        </task>
+        <task>
+            <p>
+Compare the result of <xref ref="visualization-uni-hist-0401"/> to
+<xref ref="visualization-uni-dot-plot-large"/>.
+What do they have in common? How do they differ? What might explain these differences? Write a few
+sentences summarizing your thoughts.
+            </p>
+        </task>
+        <task>
+            <p>
+Generate a histogram of pizza prices sold on June 19th, grouped into 15 bins.
+            </p>
+        </task>
+        <task>
+            <p>
+Run the code
+<c>pizza_table.select("size","price").hist(group="size",bins=20,normed=False)</c>.
+Write a few sentences summarizing what this graphic illustrates about the dataset.
+            </p>
+        </task>
+        <task>
+            <p>
+Create a useful visualization of the prices of pizzas sold at this restaurant throughout 2015,
+based on their type (supreme, veggie, classic, etc.).
+            </p>
+        </task>
+        <task>
+            <p>
+Write a sentence or two making an observation about the pizzas sold in 2015, based upon
+the graphic you created in the previous task.
+            </p>
         </task>
     </activity>
 </section>
