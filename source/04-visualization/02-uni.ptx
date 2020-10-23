@@ -175,10 +175,11 @@ to create a histogram of prices for April 1st.
         <task>
             <p>
 Each <term>bin</term> or bar of the histogram counts how many prices fall within the range shown
-along its base. For example, seven pizzas were sold at a price of around $19.
+along its base (including the left endpoint but excluding the right endpoint).
+For example, seven pizzas were sold at a price of around $19.
             </p>
             <p>
-How many pizzas sold on April 1st had a price roughly between $12 and $13?
+How many pizzas sold on April 1st had a price roughly between $12 andnd $13?
             </p>
         </task>
         <task>
@@ -214,5 +215,103 @@ the graphic you created in the previous task.
             </p>
         </task>
     </activity>
+    <activity>
+        <introduction>
+            <p>
+While a histogram is a useful summary of a univariate dataset, this data can often be
+further summarized by the use of a <term>box plot</term>, also known as a
+box-and-whisker plot.
+            </p>
+            <p>
+A box plot organizes numerical data into four parts, each illustrating (roughly) a quarter
+of all the data values: the left whisker, the left box half, the right box half,
+and the right whisker. (We will explore these ranges in more detail in
+<xref ref="measurements"/>.)
+            </p>
+            <listing xml:id="visualization-uni-box-plots">
+                <caption>Code for creating box plots</caption>
+                <program language="python">
+                    <input><xi:include href="../files/visualization-uni-box-plots.py" parse="text" /></input>
+                </program>
+            </listing>
+        </introduction>
+        <task>
+            <p>
+Run the first half of the code found in <xref ref="visualization-uni-box-plots"/> to compare
+a histogram to a box plot. Write a few sentences comparing how the data is presented in each graphic.
+            </p>
+        </task>
+        <task>
+            <p>
+Run the second half of the code found in <xref ref="visualization-uni-box-plots"/> to compare
+another histogram to a box plot. What do you notice about this second box plot that wasn't in
+the first? What do you expect this feature represents?
+            </p>
+        </task>
+    </activity>
+    <exercises>
+        <exercise>
+            <statement>
+                <p>
+Repeat the necesary steps from the class activities in order to make <c>pizza_table</c>
+available for these exercises. Then run <c>pizza_table.show(10)</c> to confirm.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Display a table with the thirty-four veggie pizzas sold on May 6th.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Summarize the prices in the previous table by drawing a dot plot on a sheet of paper
+or using a simple graphics program. Consider the prices in dollar amounts (ignoring cents).
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Summarize the prices in the previous table by using a Code cell to generate a histogram
+that uses ten bins. (Tip: Don't forget the two <c>matplotlib</c> lines.)
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Generate a box plot for the prices in the previous exercise.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Describe the similarities between your dot plot, histogram, and box plot. Then explain
+their differences.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Display a histogram of the prices of all large pizzas sold in 2015, grouped by
+type.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Make an observation about the prices of large pizzas based upon the graphic in the previous
+exercise.
+                </p>
+            </statement>
+        </exercise>
+    </exercises>
 </section>
 

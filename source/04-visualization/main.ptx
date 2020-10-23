@@ -13,6 +13,6 @@
     </objectives>
     <xi:include href="./01-tables.ptx" />
     <xi:include href="./02-uni.ptx" />
-    <section xml:id="visualization-plots"><title>Plots and Graphs</title></section>
+    <section xml:id="visualization-bi"><title>Bivariate Visualizations</title></section>
 </chapter>
 
