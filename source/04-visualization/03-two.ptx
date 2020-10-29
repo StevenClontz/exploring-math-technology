@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="visualization-two" kernel="python">
+    <title>Two-variable Visualizations</title>
+    <exploration xml:id="visualization-two-preview">
+        <statement>
+            <p>
+                TODO
+            </p>
+        </statement>
+    </exploration>
+    <activity>
+        <introduction>
+            <p>
+Often data scientists need to consider data where each item has two properties.
+When one property is a category, and the other is numerical, a <term>bar chart</term>
+is often the right tool for the job.
+            </p>
+        </introduction>
+        <task>
+            <p>
+Repeat the steps from previous sections to get a copy of <c>pizza_table</c> available
+for this notebook.
+            </p>
+        </task>
+    </activity>
+</section>
+

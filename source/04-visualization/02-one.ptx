@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="visualization-uni" kernel="python">
-    <title>Univariate Visualizations</title>
-    <exploration xml:id="visualization-uni-preview">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="visualization-one" kernel="python">
+    <title>Single-Variable Visualizations</title>
+    <exploration xml:id="visualization-one-preview">
         <statement>
             <p>
 In 2015, the Pew Research Center conducted a survey on <q>Gaming and Gamers</q>,
 and published their results at
 <url href="https://www.pewresearch.org/internet/2015/12/15/gaming-and-gamers/"/>.
 Some of this data has been summarized by the textbook author in
-<xref ref="visualization-uni-video-game"/>.
+<xref ref="visualization-one-video-game"/>.
             </p>
-            <figure xml:id="visualization-uni-video-game">
+            <figure xml:id="visualization-one-video-game">
                 <caption>Pie chart of data from <q>Gaming and Gamers</q> survey</caption>
-                <image source="images/visualization-uni-video-game.png"/>
+                <image source="images/visualization-one-video-game.png"/>
             </figure>
             <p>
 All the data in the figure given is correct. Nonetheless, what do you notice about
@@ -29,9 +29,9 @@ to display. <term>Univariate data</term> only considers a collection of numbers 
 a certain quantity, for example,
 the prices of pizzas sold from the dataset studied in <xref ref="visualization-tables"/>.
 The prices of the first twenty pizzas sold (truncated down to full-dollar amounts) on
-January 1st are shown in <xref ref="visualization-uni-prices-0101"/>.
+January 1st are shown in <xref ref="visualization-one-prices-0101"/>.
             </p>
-<table xml:id="visualization-uni-prices-0101">
+<table xml:id="visualization-one-prices-0101">
     <title>Twenty pizzas sold on Jan 01</title>
     <tabular>
 <!--        <row bottom="minor">
@@ -76,11 +76,11 @@ January 1st are shown in <xref ref="visualization-uni-prices-0101"/>.
 To quickly visualize a small dataset by hand, a <term>dot plot</term> may be drawn. Values of
 the dataset are represented on the horizontal axis, and each time the value appears in the dataset,
 an additional dot is drawn above the value. A dot plot representing the prices in
-<xref ref="visualization-uni-prices-0101"/> is shown in <xref ref="visualization-uni-dot-plot"/>.
+<xref ref="visualization-one-prices-0101"/> is shown in <xref ref="visualization-uni-dot-plot"/>.
             </p>
-            <figure xml:id="visualization-uni-dot-plot">
-                <caption>Dot plot of prices from <xref ref="visualization-uni-prices-0101"/></caption>
-                <image source="images/visualization-uni-dot-plot.png"/>
+            <figure xml:id="visualization-one-dot-plot">
+                <caption>Dot plot of prices from <xref ref="visualization-one-prices-0101"/></caption>
+                <image source="images/visualization-one-dot-plot.png"/>
             </figure>
             <p>
 A dot plot allows the reader to quickly scan a dataset and learn information about it.
@@ -91,9 +91,9 @@ For example, what two prices were the most common out of the twenty pizzas sold?
             <p>
 The major feature of dot plots is that they are easy to draw by hand. On a sheet of paper or using a simple graphics
 program, draw a dot plot representing
-the prices of the first twenty pizzas sold on November 3rd, shown in <xref ref="visualization-uni-prices-1103"/>.
+the prices of the first twenty pizzas sold on November 3rd, shown in <xref ref="visualization-one-prices-1103"/>.
             </p>
-<table xml:id="visualization-uni-prices-1103">
+<table xml:id="visualization-one-prices-1103">
     <title>Twenty pizza prices from Nov 03</title>
             <tabular>
         <row>
@@ -137,12 +137,12 @@ What was the least common price?
             <p>
 A dot plot representing the prices (truncated down to the nearest dollar) of <em>all</em> pizzas
 sold on April 1st is shown in
-<xref ref="visualization-uni-dot-plot-large"/>. Is this a graphic you'd like to draw by hand?
+<xref ref="visualization-one-dot-plot-large"/>. Is this a graphic you'd like to draw by hand?
 Is this a useful graphic to create by computer? Write a couple sentences summarizing your thoughts.
             </p>
-            <figure xml:id="visualization-uni-dot-plot-large">
+            <figure xml:id="visualization-one-dot-plot-large">
                 <caption>Dot plot of dollar prices from Apr 01</caption>
-                <image source="images/visualization-uni-dot-plot-large.png"/>
+                <image source="images/visualization-one-dot-plot-large.png"/>
             </figure>
         </task>
     </activity>
@@ -158,18 +158,18 @@ Repeat the steps from <xref ref="visualization-tables"/> to make <c>pizza_table<
 in this Jupyter notebook.
             </p>
             <p>
-Confirm by running the code in <xref ref="visualization-uni-hist-0401"/>
+Confirm by running the code in <xref ref="visualization-one-hist-0401"/>
 to create a histogram of prices for April 1st.
             </p>
-            <listing xml:id="visualization-uni-hist-0401">
+            <listing xml:id="visualization-one-hist-0401">
                 <caption>Program to generate Apr 01 price histogram</caption>
                 <program language="python">
-                    <input><xi:include href="../files/visualization-uni-hist-0401.py" parse="text" /></input>
+                    <input><xi:include href="../files/visualization-one-hist-0401.py" parse="text" /></input>
                 </program>
             </listing>
-            <!--<figure xml:id="visualization-uni-hist-0401">
+            <!--<figure xml:id="visualization-one-hist-0401">
                 <caption>Histogram of prices from Apr 01</caption>
-                <image source="images/visualization-uni-hist-0401.png"/>
+                <image source="images/visualization-one-hist-0401.png"/>
             </figure>-->
         </task>
         <task>
@@ -184,8 +184,8 @@ How many pizzas sold on April 1st had a price roughly between $12 andnd $13?
         </task>
         <task>
             <p>
-Compare the result of <xref ref="visualization-uni-hist-0401"/> to
-<xref ref="visualization-uni-dot-plot-large"/>.
+Compare the result of <xref ref="visualization-one-hist-0401"/> to
+<xref ref="visualization-one-dot-plot-large"/>.
 What do they have in common? How do they differ? What might explain these differences? Write a few
 sentences summarizing your thoughts.
             </p>
@@ -228,22 +228,22 @@ of all the data values: the left whisker, the left box half, the right box half,
 and the right whisker. (We will explore these ranges in more detail in
 <xref ref="measurements"/>.)
             </p>
-            <listing xml:id="visualization-uni-box-plots">
+            <listing xml:id="visualization-one-box-plots">
                 <caption>Code for creating box plots</caption>
                 <program language="python">
-                    <input><xi:include href="../files/visualization-uni-box-plots.py" parse="text" /></input>
+                    <input><xi:include href="../files/visualization-one-box-plots.py" parse="text" /></input>
                 </program>
             </listing>
         </introduction>
         <task>
             <p>
-Run the first half of the code found in <xref ref="visualization-uni-box-plots"/> to compare
+Run the first half of the code found in <xref ref="visualization-one-box-plots"/> to compare
 a histogram to a box plot. Write a few sentences comparing how the data is presented in each graphic.
             </p>
         </task>
         <task>
             <p>
-Run the second half of the code found in <xref ref="visualization-uni-box-plots"/> to compare
+Run the second half of the code found in <xref ref="visualization-one-box-plots"/> to compare
 another histogram to a box plot. What do you notice about this second box plot that wasn't in
 the first? What do you expect this feature represents?
             </p>
