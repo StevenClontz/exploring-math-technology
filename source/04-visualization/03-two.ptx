@@ -22,6 +22,134 @@ Repeat the steps from previous sections to get a copy of <c>pizza_table</c> avai
 for this notebook.
             </p>
         </task>
+        <task>
+            <p>
+The table in <xref ref="visualization-two-type-count-0620"/> describes how many pizzas
+of each type (Chicken, Classic, Supreme, Veggie) were sold on June 20th.
+            </p>
+<table xml:id="visualization-two-type-count-0620">
+    <title>Pizzas sold on Jun 20, by type</title>
+    <tabular>
+        <row bottom="minor">
+<cell>Type</cell>
+<cell>Count</cell>
+        </row>
+        <row>
+<cell>Chicken</cell>
+<cell>31</cell>
+        </row>
+        <row>
+<cell>Classic</cell>
+<cell>42</cell>
+        </row>
+        <row>
+<cell>Supreme</cell>
+<cell>28</cell>
+        </row>
+        <row>
+<cell>Veggie</cell>
+<cell>27</cell>
+        </row>
+    </tabular>
+            </table>
+            <p>
+This table was created by running
+<c>june20_pizzas = pizza_table.where("date","2015-06-20").group("type")</c>
+and <c>june20_pizzas.show()</c>. Modify this code to create the table
+<c>may18</c> for May 18th instead, and show the result.
+            </p>
+        </task>
+        <task>
+            <p>
+The bar chart in <xref ref="visualization-two-barchart-0620"/> visualizes
+the amounts of each pizza type sold on June 20. Each category (in this case, a type)
+is listed on the vertical axis, and the size of the bar in the horizontal direction
+represents each numerical value.
+            </p>
+            <figure xml:id="visualization-two-barchart-0620">
+                <caption>Dot plot of prices from <xref ref="visualization-one-prices-0101"/></caption>
+                <image source="images/visualization-one-dot-plot.png"/>
+            </figure>
+            <p>
+Create a similar bar chart by hand for the table of data for May 18th you
+displayed in the previous task.
+            </p>
+        </task>
+        <task>
+            <p>
+Python <c>datatables</c> can produce bar charts; the code <c>june20.barh("types")</c>
+was used to produce <xref ref="visualization-two-barchart-0620"/>. Adapt this line of
+code to generate a bar chart for the May 18th data instead.
+            </p>
+        </task>
+        <task>
+            <p>
+The code
+<c>pizza_table.where("date","2015-06-20").select("type","price").group("type",sum)</c>
+captures the total sales for each type of pizza sold on June 20th.
+            </p>
+            <p>
+Generate a bar chart visualizing the total sales for each type of pizza sold on May 18th.
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+The <term>line chart</term> is a useful tool to visualize how data changes over time.
+            </p>
+        </introduction>
+        <task>
+            <p>
+Right now, the <c>date</c> for each pizza sold is stored as a string of numbers and hyphens,
+such as <c>"2015-08-19"</c>.
+The code in <xref ref="visualization-two-parse-dates"/> provides a <c>datetime</c> column with
+values that Python understands better. (This is another example of <q>cleaning</q> data for
+analysis.)
+            </p>
+            <listing xml:id="visualization-two-parse-dates">
+                <caption>Script to add <c>datetime</c> values</caption>
+                <program language="python">
+                    <input><xi:include href="../files/visualization-two-parse-dates.py" parse="text" /></input>
+                </program>
+            </listing>
+            <p>
+Use this script to update your <c>pizza_table</c>.
+Show twenty rows of the resulting table below to confirm that it has both a <c>date</c> column
+(which stores strings) and a <c>datetime</c> column (which stores datetimes).
+            </p>
+        </task>
+        <task>
+            <p>
+The code in <xref ref="visualization-two-line-chart"/> displays the total number of pizzas
+sold each day of 2015 as a line chart.
+            </p>
+            <listing xml:id="visualization-two-line-chart">
+                <caption>Displaying a line chart counting pizzas sold</caption>
+                <program language="python">
+                    <input><xi:include href="../files/visualization-two-line-chart.py" parse="text" /></input>
+                </program>
+            </listing>
+            <p>
+Display this line chart, then write a sentence describing the approximate time of year when the pizza
+parlor's best day of sales occurred.
+            </p>
+        </task>
+        <task>
+            <p>
+Copy <xref ref="visualization-two-line-chart"/> into a new Code cell, but modify
+<c>.group("datetime")</c> so that instead of showing the number of pizzas sold each day,
+the total (sum) of sales for each day are shown in the line chart instead.
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+<term>Scatter plots</term> are often used to compare two numerical values throughout a dataset
+to determine if they have a relationship.
+            </p>
+        </introduction>
     </activity>
 </section>
 

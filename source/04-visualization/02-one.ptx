@@ -76,7 +76,7 @@ January 1st are shown in <xref ref="visualization-one-prices-0101"/>.
 To quickly visualize a small dataset by hand, a <term>dot plot</term> may be drawn. Values of
 the dataset are represented on the horizontal axis, and each time the value appears in the dataset,
 an additional dot is drawn above the value. A dot plot representing the prices in
-<xref ref="visualization-one-prices-0101"/> is shown in <xref ref="visualization-uni-dot-plot"/>.
+<xref ref="visualization-one-prices-0101"/> is shown in <xref ref="visualization-one-dot-plot"/>.
             </p>
             <figure xml:id="visualization-one-dot-plot">
                 <caption>Dot plot of prices from <xref ref="visualization-one-prices-0101"/></caption>
