@@ -4,7 +4,7 @@
     <exploration xml:id="visualization-two-preview">
         <statement>
             <p>
-                TODO
+                TODO plot some xy values
             </p>
         </statement>
     </exploration>
@@ -150,6 +150,32 @@ the total (sum) of sales for each day are shown in the line chart instead.
 to determine if they have a relationship.
             </p>
         </introduction>
+        <task>
+            <p>
+Create a table called <c>testing_table</c> populated with the <q>Math Placement Exam Results</q>
+dataset found at <url href="https://vincentarelbundock.github.io/Rdatasets/datasets.html"/>.
+This dataset describes the mathematics testing results from several freshmen students at a
+liberal arts college, including SAT, ACT, and local math placement exam results.
+            </p>
+            <p>
+Show the first ten rows of this table.
+            </p>
+        </task>
+        <task>
+            <p>
+You'll see many <q>Not a Number</q> <c>nan</c> values in this table. To remove them as needed
+(by only using values that are positive),
+use <c>from datascience.predicates import are</c> and <c>.where(column_name,are.above(0))</c>.
+            </p>
+            <p>
+Show the first ten rows of this table that don't have a <c>nan</c> score for SAT math scores.
+            </p>
+        </task>
+        <task>
+            <p>
+                TODO
+            </p>
+        </task>
     </activity>
 </section>
 
