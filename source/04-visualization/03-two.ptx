@@ -4,7 +4,49 @@
     <exploration xml:id="visualization-two-preview">
         <statement>
             <p>
-                TODO plot some xy values
+Plot the <m>xy</m> coordinates in the following table as points on a coordinate plane.
+            </p>
+<table>
+    <tabular>
+        <row bottom="minor">
+<cell><m>x</m></cell>
+<cell><m>y</m></cell>
+        </row>
+        <row>
+<cell>1</cell>
+<cell>10</cell>
+        </row>
+        <row>
+<cell>2</cell>
+<cell>9</cell>
+        </row>
+        <row>
+<cell>3</cell>
+<cell>7</cell>
+        </row>
+        <row>
+<cell>5</cell>
+<cell>4</cell>
+        </row>
+        <row>
+<cell>6</cell>
+<cell>6</cell>
+        </row>
+        <row>
+<cell>6</cell>
+<cell>4</cell>
+        </row>
+        <row>
+<cell>7</cell>
+<cell>3</cell>
+        </row>
+    </tabular>
+            </table>
+            <p>
+Suppose <m>x</m> measures for the number of days a student has been absent from class,
+and <m>y</m> represents their score on a quiz out of <m>10</m>. What conclusion might
+you draw from the table of data? What about the points you drew in the coordinate plane?
+Write a sentence or two summarizing your thoughts.
             </p>
         </statement>
     </exploration>
@@ -62,17 +104,19 @@ and <c>june20_pizzas.show()</c>. Modify this code to create the table
         <task>
             <p>
 The bar chart in <xref ref="visualization-two-barchart-0620"/> visualizes
-the amounts of each pizza type sold on June 20. Each category (in this case, a type)
+the amounts of each pizza type sold on June 20. Each category (in this case,
+the type of pizza)
 is listed on the vertical axis, and the size of the bar in the horizontal direction
 represents each numerical value.
             </p>
             <figure xml:id="visualization-two-barchart-0620">
-                <caption>Dot plot of prices from <xref ref="visualization-one-prices-0101"/></caption>
-                <image source="images/visualization-one-dot-plot.png"/>
+                <caption>Pizzas sold on June 20 by type</caption>
+                <image source="images/visualization-two-barchart-0620.png"/>
             </figure>
             <p>
-Create a similar bar chart by hand for the table of data for May 18th you
-displayed in the previous task.
+Create a similar bar chart by hand for the May 18th table you
+displayed in the previous task. (Note: you'll need to run <c>import matplotlib</c>
+and <c>%matplotlib inline</c> first to display any visualizations.)
             </p>
         </task>
         <task>
@@ -122,7 +166,7 @@ Show twenty rows of the resulting table below to confirm that it has both a <c>d
         <task>
             <p>
 The code in <xref ref="visualization-two-line-chart"/> displays the total number of pizzas
-sold each day of 2015 as a line chart.
+sold each day of 2015 as the line chart given in <xref ref="visualization-two-linechart-figure"/>.
             </p>
             <listing xml:id="visualization-two-line-chart">
                 <caption>Displaying a line chart counting pizzas sold</caption>
@@ -130,9 +174,13 @@ sold each day of 2015 as a line chart.
                     <input><xi:include href="../files/visualization-two-line-chart.py" parse="text" /></input>
                 </program>
             </listing>
+            <figure xml:id="visualization-two-linechart-figure">
+                <caption>Amount of pizza sold by date</caption>
+                <image source="images/visualization-two-linechart.png"/>
+            </figure>
             <p>
-Display this line chart, then write a sentence describing the approximate time of year when the pizza
-parlor's best day of sales occurred.
+Write a sentence describing the approximate time of year when the pizza
+parlor's best day of sales occurred, and how you determined this from the line chart.
             </p>
         </task>
         <task>
@@ -155,7 +203,8 @@ to determine if they have a relationship.
 Create a table called <c>testing_table</c> populated with the <q>Math Placement Exam Results</q>
 dataset found at <url href="https://vincentarelbundock.github.io/Rdatasets/datasets.html"/>.
 This dataset describes the mathematics testing results from several freshmen students at a
-liberal arts college, including SAT, ACT, and local math placement exam results.
+liberal arts college, including SAT, ACT, and the college's internal
+math placement exam results.
             </p>
             <p>
 Show the first ten rows of this table.
@@ -163,17 +212,64 @@ Show the first ten rows of this table.
         </task>
         <task>
             <p>
-You'll see many <q>Not a Number</q> <c>nan</c> values in this table. To remove them as needed
-(by only using values that are positive),
-use <c>from datascience.predicates import are</c> and <c>.where(column_name,are.above(0))</c>.
+You'll see many <q>Not a Number</q> <c>nan</c> values in this table for when data was not
+available. To clean this data for analysis, you should remove these records as needed
+by only using values that are positive.
             </p>
             <p>
-Show the first ten rows of this table that don't have a <c>nan</c> score for SAT math scores.
+Use <c>from datascience.predicates import are</c> and <c>.where(column_name,are.above(0))</c>
+to, show the first ten rows of this table that don't have a <c>nan</c> score for SAT math scores.
             </p>
         </task>
         <task>
             <p>
-                TODO
+The script in <xref ref="visualization-two-scatter"/> results in a scatter plot. Each dot represents
+a different student's SAT Math score (by its horizontal position) with their college math placement
+score (by its vertical position). Note that scores of <c>nan</c> and other non-positive results are
+ignored.
+            </p>
+            <listing xml:id="visualization-two-scatter">
+                <caption>Displaying a scatter plot of test scores.</caption>
+                <program language="python">
+                    <input><xi:include href="../files/visualization-two-scatter.py" parse="text" /></input>
+                </program>
+            </listing>
+            <figure xml:id="visualization-two-scatter-figure">
+                <caption>Scatter plot comparing SAT and math placement scores</caption>
+                <image source="images/visualization-two-scatter.png"/>
+            </figure>
+            <p>
+Run a modified copy of this script in a Code cell to display a scatter plot
+that compares ACT Math scores with college math placement scores.
+            </p>
+        </task>
+        <task>
+            <p>
+When two values of data are <term>correlated</term> (that is, possibly influenced by one another),
+this correlation is often apparent when visualized in a scatter plot.
+            </p>
+            <p>
+Do you think SAT Math scores and correlated with this college's math placement exam results?
+What about ACT Math scores? Write a few sentences explaining why or why not.
+            </p>
+        </task>
+        <task>
+            <p>
+Suppose you heard someone claim that this college's math placement score doesn't measure
+mathematical ability, but instead only reflects the size of each student's high school.
+            </p>
+            <p>
+Show a scatter plot comparing the size of each student's high school with their math placement score.
+Then write a sentence or two explaining whether you agree with this claim or not, based on
+the scatter plot.
+            </p>
+        </task>
+        <task>
+            <p>
+Suppose you heard someone claim that students shouldn't have to take a math placement test
+once they come to this college, and SAT or ACT socres should be used instead.
+Based on the scatter plots above, would you agree or disagree with that
+statement? Write a few sentences explaining your reasoning.
             </p>
         </task>
     </activity>
