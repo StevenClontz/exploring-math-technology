@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-10-31T01:01:52Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span>
+</h6>
+<div class="introduction"><p xmlns:svg="http://www.w3.org/2000/svg">The <dfn class="terminology">line chart</dfn> is a useful tool to visualize how data changes over time.</p></div>
+<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Right now, the <code class="code-inline tex2jax_ignore">date</code> for each pizza sold is stored as a string of numbers and hyphens, such as <code class="code-inline tex2jax_ignore">"2015-08-19"</code>. The code in <a class="xref" data-knowl="./knowl/visualization-two-parse-dates.html" title="Listing 4.3.4">4.3.4</a> provides a <code class="code-inline tex2jax_ignore">datetime</code> column with values that Python understands better. (This is another example of “cleaning” data for analysis.)</p>
+<figure class="listing figure-like"><pre class="prettyprint lang-py"># converts `date` string into a native datetime format
+from datetime import datetime
+pizza_table = pizza_table.with_column("datetime",pizza_table.apply(
+    lambda x:datetime.strptime(x,"%Y-%m-%d"),"date"
+))
+</pre>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.3.4<span class="period">.</span></span><span class="space"> </span>Script to add <code class="code-inline tex2jax_ignore">datetime</code> values</figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">Use this script to update your <code class="code-inline tex2jax_ignore">pizza_table</code>. Show twenty rows of the resulting table below to confirm that it has both a <code class="code-inline tex2jax_ignore">date</code> column (which stores strings) and a <code class="code-inline tex2jax_ignore">datetime</code> column (which stores datetimes).</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">The code in <a class="xref" data-knowl="./knowl/visualization-two-line-chart.html" title="Listing 4.3.5">4.3.5</a> displays the total number of pizzas sold each day of 2015 as the line chart given in <a class="xref" data-knowl="./knowl/visualization-two-linechart-figure.html" title="Figure 4.3.6">4.3.6</a>.</p>
+<figure class="listing figure-like"><pre class="prettyprint lang-py"># .plot("datetime") creates a line chart with the datetime column on the
+# horizontal axis, and other numerical columns on the vertical axis
+pizza_table.select("datetime","price").group("datetime").plot("datetime")
+</pre>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.3.5<span class="period">.</span></span><span class="space"> </span>Displaying a line chart counting pizzas sold</figcaption></figure><figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/visualization-two-linechart.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.6<span class="period">.</span></span><span class="space"> </span>Amount of pizza sold by date</figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">Write a sentence describing the approximate time of year when the pizza parlor's best day of sales occurred, and how you determined this from the line chart.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Copy <a class="xref" data-knowl="./knowl/visualization-two-line-chart.html" title="Listing 4.3.5">4.3.5</a> into a new Code cell, but modify <code class="code-inline tex2jax_ignore">.group("datetime")</code> so that instead of showing the number of pizzas sold each day, the total (sum) of sales for each day are shown in the line chart instead.</p></article></article><span class="incontext"><a href="visualization-two.html#activity-35">in-context</a></span>
+</body>
+</html>
