@@ -45,8 +45,8 @@ Plot the <m>xy</m> coordinates in the following table as points on a coordinate 
             <p>
 Suppose <m>x</m> measures for the number of days a student has been absent from class,
 and <m>y</m> represents their score on a quiz out of <m>10</m>. What conclusion might
-you draw from the table of data? What about the points you drew in the coordinate plane?
-Write a sentence or two summarizing your thoughts.
+you draw from the table of data? How do the points you drew in the coordinate plane
+illustrate this conclusion? Write a sentence or two summarizing your thoughts.
             </p>
         </statement>
     </exploration>
@@ -115,15 +115,15 @@ represents each numerical value.
             </figure>
             <p>
 Create a similar bar chart by hand for the May 18th table you
-displayed in the previous task. (Note: you'll need to run <c>import matplotlib</c>
-and <c>%matplotlib inline</c> first to display any visualizations.)
+displayed in the previous task.
             </p>
         </task>
         <task>
             <p>
-Python <c>datatables</c> can produce bar charts; the code <c>june20.barh("types")</c>
+The Python <c>datascience</c> library can produce bar charts; the code <c>june20.barh("types")</c>
 was used to produce <xref ref="visualization-two-barchart-0620"/>. Adapt this line of
-code to generate a bar chart for the May 18th data instead.
+code to generate a bar chart for the May 18th data instead. (Note: you'll need to run <c>import matplotlib</c>
+and <c>%matplotlib inline</c> first to display any visualizations.)
             </p>
         </task>
         <task>
@@ -273,5 +273,72 @@ statement? Write a few sentences explaining your reasoning.
             </p>
         </task>
     </activity>
+    <exercises>
+        <exercise>
+            <statement>
+                <p>
+Get copies of <c>pizza_table</c> and <c>testing_table</c> available in this notebook.
+Show the first ten rows of each.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Show a table counting how many pizzas of each name (BBQ Chicken, Five Cheese, etc.)
+were sold on February 28th.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Show a bar chart visualizing how many pizzas of each name were sold on February 28th.
+(Don't forget <c>import matplotlib</c> and <c>%matplotlib inline</c>.)
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+What two named pizzas were most popular on February 28th? Write a sentence or two explaining
+why the bar chart was better or worse than the table at communicating this fact.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Display a line chart visualizing the number of Spinach Fettuccine pizzas sold each day at
+this pizzeria. (Don't forget to use a <c>datetime</c> column for displaying dates.)
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+On what day (roughly) was Spinach Fettuccine most popular? How many were sold? How does the
+line chart communicate this fact more clearly than a data table?
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Show a scatter plot comparing adjusted GPA records to the <c>testing_table</c> college's
+math placement exam.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Suppose someone claimed that adjusted GPAs should be used to determine
+what math course each student takes in college. Give at least one reason to agree, and
+at least one reason to disagree. Be sure to include the scatter plot in your argument.
+                </p>
+            </statement>
+        </exercise>
+    </exercises>
 </section>
 
