@@ -328,7 +328,7 @@ you suspect the datascience library orders the pizzas in this way.
         <task>
             <p>
 Display all the Hawaiian pizzas ordered on April 12, once in increasing order,
-and once in descreaing order.
+and once in descreasing order.
             </p>
         </task>
     </activity>
@@ -410,7 +410,9 @@ and <c>book_table.show(10)</c> to confirm.
         </exercise>
         <exercise>
             <statement>
+                <p>
 How many extra-extra-large pizzas were sold by the pizzeria represented by <c>pizza_table</c>?
+                </p>
             </statement>
         </exercise>
         <exercise>

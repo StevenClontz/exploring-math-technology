@@ -8,7 +8,8 @@
 
   <xsl:output method="text" encoding="UTF-8"/>
 
-  <xsl:param name="section" select="'0.0'"/>
+  <xsl:param name="chapter" select="'0'"/>
+  <xsl:param name="section" select="'0'"/>
   <xsl:param name="mode" select="'team'"/>
 
   <!-- JSON Escaped Strings -->
@@ -201,7 +202,10 @@
   <xsl:template match="section" mode="link">
     &lt;a href="<xsl:apply-templates select="." mode="url"/>"&gt;<xsl:apply-templates select="." mode="url"/>&lt;/a&gt;
   </xsl:template>
-  <xsl:template match="section" mode="number"><xsl:value-of select="$section"/></xsl:template>
+  <xsl:template match="section" mode="number"><xsl:value-of select="$chapter"/>.<xsl:value-of select="$section"/></xsl:template>
+  <xsl:template match="section" mode="name">Section <xsl:apply-templates select="." mode="number"/></xsl:template>
+  <xsl:template match="chapter" mode="number"><xsl:value-of select="$chapter"/></xsl:template>
+  <xsl:template match="chapter" mode="name">Chapter <xsl:apply-templates select="." mode="number"/></xsl:template>
 
   <xsl:template match="subsection" mode="number"><xsl:apply-templates select="./ancestor::section" mode="number"/>.<xsl:number from="//section" level="any" count="subsection"/></xsl:template>
   <xsl:template match="subsection" mode="name">Subsection <xsl:apply-templates select="." mode="number"/></xsl:template>
@@ -261,7 +265,7 @@
 
   <xsl:template match="sidebyside" mode="markdown">&lt;div class="sidebyside"&gt;<xsl:apply-templates select="*" mode="markdown"/>&lt;/div&gt;</xsl:template>
 
-  <xsl:template match="image" mode="markdown">&lt;div&gt;&lt;img src="<xsl:value-of select="normalize-spaces(@source)"/>.svg"/&gt;&lt;/div&gt;</xsl:template>
+  <xsl:template match="image" mode="markdown">&lt;div&gt;&lt;img src="<xsl:value-of select="normalize-space(@source)"/>"/&gt;&lt;/div&gt;</xsl:template>
 
   <xsl:template match="figure" mode="markdown">&lt;div&gt;&lt;figure&gt;&lt;figcaption&gt;&lt;b&gt;<xsl:apply-templates select="." mode="name"/>.&lt;/b&gt; <xsl:apply-templates select="caption|title" mode="markdown"/>&lt;/figcaption&gt;<xsl:apply-templates select="image" mode="markdown"/>&lt;/figure&gt;&lt;/div&gt;</xsl:template>
 

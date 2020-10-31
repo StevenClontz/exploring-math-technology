@@ -30,6 +30,8 @@ def build():
             jo_directory_indv_ch = f"{jo_directory_indv}/chapter-{cindex:02d}-{chapter.xpath('@xml:id')[0]}"
             make_directory(jo_directory_team_ch)
             make_directory(jo_directory_indv_ch)
+            copytree("source/images",jo_directory_team_ch+"/images")
+            copytree("source/images",jo_directory_indv_ch+"/images")
             for sindex, section in enumerate(chapter.xpath("section"), start=1):
                 if section.xpath("@xml:id"):
                     team_section_path = f"{jo_directory_team_ch}/section-{cindex}-{sindex}-{section.xpath('@xml:id')[0]}.ipynb"
@@ -37,11 +39,13 @@ def build():
                     section_code = "'" + str(cindex) + "." + str(sindex) + "'"
                     transform(
                         section,
-                        section=section_code,
+                        chapter=str(cindex),
+                        section=str(sindex),
                         mode="'team'").write_output(team_section_path)
                     transform(
                         section,
-                        section=section_code,
+                        chapter=str(cindex),
+                        section=str(sindex),
                         mode="'individual'").write_output(indv_section_path)
     #if not os.path.exists("activities/images"):
     #  copytree("apc/src/images","activities/images")

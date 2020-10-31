@@ -69,8 +69,8 @@
             </li>
         </ul>
     </objectives></chapter>
-        <chapter><title>Transformations of Higher-Dimensional Data</title>
-    <objectives xml:id="transformations">
+        <chapter xml:id="transformations"><title>Transformations of Higher-Dimensional Data</title>
+    <objectives>
         <introduction>
             At the end of this chapter, students will be able to...
         </introduction>

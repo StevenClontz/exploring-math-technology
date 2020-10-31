@@ -148,9 +148,11 @@ Is this a useful graphic to create by computer? Write a couple sentences summari
     </activity>
     <activity>
         <introduction>
+            <p>
 The <c>datascience</c> library supports quickly generating <term>histograms</term> visualizing
 univariate data. Histograms are similar to dot plots, but measure how many values fall within
 a range rather than individual values.
+            </p>
         </introduction>
         <task>
             <p>
