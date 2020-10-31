@@ -1,4 +1,9 @@
 Messages from application of /home/user/.local/share/virtualenvs/mathematics-of-data-LmuOnOpR/lib/python3.8/site-packages/pretext/static/xsl/pretext-html.xsl:
-MBX:WARNING: There are apparent XML elements in locations that should be text only (1 times).
-MBX:WARNING: There is an apparent XML element (<include>) inside an <input> element, which should only contain text.  Using an escaped "less than" ('&lt;') might be the solution, or using a CDATA section.
-             located within: "visualization-one-hist-0401" (xml:id)
+PTX:ERROR:   a cross-reference ("xref") uses references [visualization-one-video-game] that do not point to any target.  Maybe you typed an @xml:id value wrong, maybe the target of the @xml:id is nonexistent, or maybe you temporarily removed the target from your source.  Your output will contain some placeholder text that you will not want to distribute to your readers.
+             located within: "visualization-one-preview" (xml:id)
+PTX:ERROR:   a cross-reference ("xref") uses references [visualization-one-dot-plot] that do not point to any target.  Maybe you typed an @xml:id value wrong, maybe the target of the @xml:id is nonexistent, or maybe you temporarily removed the target from your source.  Your output will contain some placeholder text that you will not want to distribute to your readers.
+             located within: "visualization-one" (xml:id), "Single-Variable Visualizations" (title)
+PTX:ERROR:   a cross-reference ("xref") uses references [visualization-one-dot-plot-large] that do not point to any target.  Maybe you typed an @xml:id value wrong, maybe the target of the @xml:id is nonexistent, or maybe you temporarily removed the target from your source.  Your output will contain some placeholder text that you will not want to distribute to your readers.
+             located within: "visualization-one" (xml:id), "Single-Variable Visualizations" (title)
+PTX:ERROR:   a cross-reference ("xref") uses references [visualization-one-dot-plot-large] that do not point to any target.  Maybe you typed an @xml:id value wrong, maybe the target of the @xml:id is nonexistent, or maybe you temporarily removed the target from your source.  Your output will contain some placeholder text that you will not want to distribute to your readers.
+             located within: "visualization-one" (xml:id), "Single-Variable Visualizations" (title)
