@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="measurement-variance" kernel="python">
+    <title>Variance in Data</title>
+    <exploration xml:id="measurement-variance-preview">
+        <statement>
+            <p>
+                asdf
+            </p>
+        </statement>
+    </exploration>
+    <activity>
+        <introduction>
+            <p>
+                asdf
+            </p>
+        </introduction>
+    </activity>
+    <exercises>
+        <exercise>
+            <statement>
+                <p>
+Repeat the necesary steps from the class activities in order to make <c>pizza_table</c>
+available for these exercises. Then run <c>pizza_table.show(10)</c> to confirm.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Display a table with the thirty-four veggie pizzas sold on May 6th.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Summarize the prices in the previous table by drawing a dot plot on a sheet of paper
+or using a simple graphics program. Consider the prices in dollar amounts (ignoring cents).
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Summarize the prices in the previous table by using a Code cell to generate a histogram
+that uses ten bins. (Tip: Don't forget the two <c>matplotlib</c> lines.)
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Generate a box plot for the prices in the previous exercise.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Describe the similarities between your dot plot, histogram, and box plot. Then explain
+their differences.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Display a histogram of the prices of all large pizzas sold in 2015, grouped by
+type.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Make an observation about the prices of large pizzas based upon the graphic in the previous
+exercise.
+                </p>
+            </statement>
+        </exercise>
+    </exercises>
+</section>
+

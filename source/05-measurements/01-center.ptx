@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="measurements-center" kernel="python">
+    <title>Centers of Data</title>
+    <exploration xml:id="measurements-center-preview">
+        <introduction>
+            <p>
+A group of seven friends decides to compare their tax returns,
+listed in <xref ref="measurements-center-returns"/>.
+            </p>
+            <table xml:id="measurements-center-returns">
+                <title>Seven tax returns</title>
+                <tabular>
+                    <row>
+                        <cell>$2,000</cell>
+                        <cell>$2,000</cell>
+                        <cell>$2,000</cell>
+                        <cell>$2,500</cell>
+                    </row>
+                    <row>
+                        <cell>$2,700</cell>
+                        <cell>$2,800</cell>
+                        <cell>$14,000</cell>
+                        <cell></cell>
+                    </row>
+                </tabular>
+            </table>
+            <p>
+For each of the given quotes, write a sentence or two explaining whether you agree or disagree
+with the speaker.
+            </p>
+        </introduction>
+        <task>
+            <p>
+<q>The most common tax return is $2,000. Therefore, the average tax return in this group is $2,000.</q>
+            </p>
+        </task>
+        <task>
+            <p>
+<q>When ordered from least to greatest, the middle tax return is $2,500.
+Therefore, the average tax return in this group is $2,500.</q>
+            </p>
+        </task>
+        <task>
+            <p>
+<q>When the seven returns are added together and divided by <m>7</m>, the result is $4,000.
+Therefore, the average tax return in this group is $4,000.</q>
+            </p>
+        </task>
+    </exploration>
+    <activity>
+        <introduction>
+            <p>
+There are several notions of <q>average</q>, that is, several ways to describe the
+center of a dataset.
+            </p>
+            <p>
+Often, <q>average</q> is used to describe the <term>mean</term> of a dataset.
+If a dataset contains the <m>n</m> values <m>\{x_0,x_1,\dots,x_{n-1}\}</m>, then the
+mean <m>\overline x</m> is defined by the following formula:
+            </p>
+            <me>
+\overline{x}=\frac{1}{n}\sum_{0\leq k&lt; n} x_k = \frac{x_0+x_1+\dots+x_{n-1}}{n}
+            </me>
+            <p>
+For example, the mean of <m>\{2,3,5,7,8\}</m> is <m>\frac{2+3+5+7+8}{5}=5</m>.
+            </p>
+        </introduction>
+        <task>
+            <p>
+Show that <m>7</m> is the mean of the dataset <m>\{3,7,8,10\}</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+Is it possible for the mean of a dataset to not belong to the dataset itself?
+If so, give an example of such a dataset. If not, explain why.
+            </p>
+        </task>
+        <task>
+            <p>
+Make a copy of the <c>pizza_table</c> used in previous sections available for this notebook
+to answer the following quesiton.
+            </p>
+            <p>
+What was the mean price of a pizza sold on Nov 09? TODO MAYBE PROVIDE MORE GUIDANCE?
+            </p>
+        </task>
+    </activity>
+    <exercises>
+        <exercise>
+            <statement>
+                <p>
+Repeat the necesary steps from the class activities in order to make <c>pizza_table</c>
+and <c>book_table</c> available for these exercises. Then run <c>pizza_table.show(10)</c>
+and <c>book_table.show(10)</c> to confirm.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+How many extra-extra-large pizzas were sold by the pizzeria represented by <c>pizza_table</c>?
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Display all the <q>green garden</q> pizzas purchased on October 1st.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Display all the pizzas sold on February 14th, sorted from most to least expensive.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Update <c>book_table</c> to include how frequently Tinker Bell is mentioned. (Note that
+she is often referred to as simply <q>Tink</q>.)
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Display <c>book_table</c> sorted by how frequently Tinker Bell is mentioned, and confirm that she is
+most often mentioned in Chapter 3 (<m>22</m> times).
+                </p>
+            </statement>
+        </exercise>
+    </exercises>
+</section>
+
