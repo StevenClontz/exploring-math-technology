@@ -12,5 +12,5 @@ Describe the shape of data given statistical measures of center and variance, in
         </ul>
     </objectives>
     <xi:include href="./01-center.ptx" />
-    <xi:include href="./02-variance.ptx" />
+    <xi:include href="./02-spread.ptx" />
 </chapter>
