@@ -4,11 +4,11 @@
     <exploration xml:id="measurements-center-preview">
         <introduction>
             <p>
-A group of seven friends decides to compare their tax returns,
-listed in <xref ref="measurements-center-returns"/>.
+A group of seven friends decides to compare their tax refunds,
+listed in <xref ref="measurements-center-refunds"/>.
             </p>
-            <table xml:id="measurements-center-returns">
-                <title>Seven tax returns</title>
+            <table xml:id="measurements-center-refunds">
+                <title>Seven tax refunds</title>
                 <tabular>
                     <row>
                         <cell>$2,000</cell>
@@ -31,19 +31,19 @@ with the speaker.
         </introduction>
         <task>
             <p>
-<q>The most common tax return is $2,000. Therefore, the average tax return in this group is $2,000.</q>
+<q>The most common tax refund is $2,000. Therefore, the average tax refund in this group is $2,000.</q>
             </p>
         </task>
         <task>
             <p>
-<q>When ordered from least to greatest, the middle tax return is $2,500.
-Therefore, the average tax return in this group is $2,500.</q>
+<q>When ordered from least to greatest, the middle tax refund is $2,500.
+Therefore, the average tax refund in this group is $2,500.</q>
             </p>
         </task>
         <task>
             <p>
-<q>When the seven returns are added together and divided by <m>7</m>, the result is $4,000.
-Therefore, the average tax return in this group is $4,000.</q>
+<q>When the seven refunds are added together and divided by <m>7</m>, the result is $4,000.
+Therefore, the average tax refund in this group is $4,000.</q>
             </p>
         </task>
     </exploration>
@@ -55,19 +55,21 @@ center of a dataset.
             </p>
             <p>
 Often, <q>average</q> is used to describe the <term>mean</term> of a dataset.
-If a dataset contains the <m>n</m> values <m>\{x_0,x_1,\dots,x_{n-1}\}</m>, then the
-mean <m>\overline x</m> is defined by the following formula:
+If a dataset contains the <m>n</m> values <m>x_0,x_1,\dots,x_{n-1}</m>, then the
+mean is defined by the following formula:
             </p>
             <me>
-\overline{x}=\frac{1}{n}\sum_{0\leq k&lt; n} x_k = \frac{x_0+x_1+\dots+x_{n-1}}{n}
+\frac{1}{n}\sum_{0\leq k&lt; n} x_k = \frac{x_0+x_1+\dots+x_{n-1}}{n}
             </me>
             <p>
-For example, the mean of <m>\{2,3,5,7,8\}</m> is <m>\frac{2+3+5+7+8}{5}=5</m>.
+For example, the mean of the counting numbers <m>2,3,5,7,18</m> is <m>\frac{2+3+5+7+18}{5}=7</m>:
+all the values in the collection are added together, and then divided by the amount of data
+in the collection.
             </p>
         </introduction>
         <task>
             <p>
-Show that <m>7</m> is the mean of the dataset <m>\{3,7,8,10\}</m>.
+Show that <m>8</m> is the mean of the counting numbers <m>4,8,9,11</m>.
             </p>
         </task>
         <task>
@@ -78,11 +80,119 @@ If so, give an example of such a dataset. If not, explain why.
         </task>
         <task>
             <p>
-Make a copy of the <c>pizza_table</c> used in previous sections available for this notebook
-to answer the following quesiton.
+First, make a copy of the <c>pizza_table</c> used in previous sections available for this notebook.
             </p>
             <p>
-What was the mean price of a pizza sold on Nov 09? TODO MAYBE PROVIDE MORE GUIDANCE?
+Then, correct the code in <xref ref="measurements-center-pizza-mean"/> to output the
+correct mean of the costs of pizza sold on Nov 10.
+            </p>
+            <listing xml:id="measurements-center-pizza-mean">
+                <caption>Broken code to calculuate mean cost of pizza</caption>
+                <program language="python">
+                    <input><xi:include href="../files/measurements-center-pizza-mean.py" parse="text" /></input>
+                </program>
+            </listing>
+        </task>
+        <task>
+            <p>
+Find the mean cost of a large pizza sold during the year of sales recorded in <c>pizza_table</c>.
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+The <term>mode</term> of a dataset is simply its most-repeated value.
+For example, the mode of the collection of values <m>4,5,5,5,8,9,9,10</m> is <m>5</m>.
+            </p>
+        </introduction>
+        <task>
+            <p>
+Find the mode of the values <m>8, 6, 1, 3, 3, 1, 9, 9, 1, 4</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+It's possible that a dataset may have many different modes. For example,
+both <m>2</m> and <m>5</m> are modes for the values in the list
+<c>[3,2,6,5,5,11,2,7]</c>.
+            </p>
+            <p>
+Make up an example of a dataset with
+seven values that has both <m>3</m> and <m>8</m> as modes.
+            </p>
+        </task>
+        <task>
+            <p>
+The Python library <c>statistics</c> provides convenient tools for computing statistical
+measures. For example, <c>from statistics import mean</c> and
+<c>mean(prices)</c> is a shortcut to compute the mean of a list of values in Python.
+            </p>
+            <p>
+Replace <c>mean</c> with <c>mode</c> to write a program that outputs
+the mode of the list <c>[3,2,6,5,5,11,2,7]</c>.
+            </p>
+        </task>
+        <task>
+            <p>
+While earlier we noted that there are two different modes for the list
+<c>[3,2,6,5,5,10,2,7]</c>, the <c>mode</c> tool only returns the mode that appears first
+in the list.
+            </p>
+            <p>
+Show how to use <c>multimode</c> in place of <c>mode</c> to return a list of all modes
+for <c>[3,2,6,5,5,11,2,7]</c>.
+            </p>
+        </task>
+        <task>
+            <p>
+Compute the mode of the pizza prices sold on Oct 09.
+            </p>
+        </task>
+        <task>
+            <p>
+Compute the mode of the prices of large pizzas sold in 2015.
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+When data is ordered from least to greatest, the middle value is called its <term>median</term>.
+For example, the median of <m>1,1,6,7,9</m> is <m>6</m>.
+            </p>
+        </introduction>
+        <task>
+            <p>
+Find the median of <m>9,12,3,0,11,9,2</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+If a dataset has two middle values, <m>a</m> and <m>b</m>, then their mean <m>\frac{a+b}{2}</m>
+is used as the median. For example, the median of <m>4,6,7,9,10,13</m> is <m>\frac{7+9}{2}=8</m>.
+            </p>
+            <p>
+Make up a collection of six numbers such that its median is <m>5.5</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+Use the <c>statistics</c> library to
+compute the median of the pizza prices sold on Oct 09.
+            </p>
+        </task>
+        <task>
+            <p>
+Compute the median of the prices of large pizzas sold in 2015.
+            </p>
+        </task>
+        <task>
+            <p>
+Create a histogram and box plot for the prices of pizzas sold on Oct 09.
+Do these visualizations effectively communicate the mean, mode, or median computed earlier?
+What might the visualizations communicate that isn't described by the mean, mode, or median?
+Write a few sentences summarizing your thoughts.
             </p>
         </task>
     </activity>
@@ -90,46 +200,63 @@ What was the mean price of a pizza sold on Nov 09? TODO MAYBE PROVIDE MORE GUIDA
         <exercise>
             <statement>
                 <p>
-Repeat the necesary steps from the class activities in order to make <c>pizza_table</c>
-and <c>book_table</c> available for these exercises. Then run <c>pizza_table.show(10)</c>
-and <c>book_table.show(10)</c> to confirm.
+Find the mean of the values in the list <c>[2, 2, 6, 6, 2, 9, 4, 2, 6]</c> by hand. Then verify
+your answer using a Code cell.
                 </p>
             </statement>
         </exercise>
         <exercise>
             <statement>
                 <p>
-How many extra-extra-large pizzas were sold by the pizzeria represented by <c>pizza_table</c>?
+Find the mode of the values in the list <c>[2, 2, 6, 6, 2, 9, 4, 2, 6]</c> by hand. Then verify
+your answer using a Code cell.
                 </p>
             </statement>
         </exercise>
         <exercise>
             <statement>
                 <p>
-Display all the <q>green garden</q> pizzas purchased on October 1st.
+Find the median of the values in the list <c>[2, 2, 6, 6, 2, 9, 4, 2, 6]</c> by hand. Then verify
+your answer using a Code cell.
                 </p>
             </statement>
         </exercise>
         <exercise>
             <statement>
                 <p>
-Display all the pizzas sold on February 14th, sorted from most to least expensive.
+If a dataset is known to contain no repeated values, which measure of center would be least useful:
+mean, mode, or median? Write a sentence or two explaining why.
                 </p>
             </statement>
         </exercise>
         <exercise>
             <statement>
                 <p>
-Update <c>book_table</c> to include how frequently Tinker Bell is mentioned. (Note that
-she is often referred to as simply <q>Tink</q>.)
+Make up a collection of five numbers such that its mode, median, and mean are all <m>9</m>.
                 </p>
             </statement>
         </exercise>
         <exercise>
             <statement>
                 <p>
-Display <c>book_table</c> sorted by how frequently Tinker Bell is mentioned, and confirm that she is
-most often mentioned in Chapter 3 (<m>22</m> times).
+Make up a collection of five <em>different</em> numbers such that its median and mean are both <m>9</m>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Make a copy of <c>pizza_table</c> available in this notebook. Find the mean, mode, and median of the
+prices of classic-type pizzas sold in 2015.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Create a histogram and box plot of the classic-type pizza price data summarized by the measures of
+center in the previous exercise. Write a few sentences comparing/contrasting the numerical
+measures of center with these visualizations.
                 </p>
             </statement>
         </exercise>
