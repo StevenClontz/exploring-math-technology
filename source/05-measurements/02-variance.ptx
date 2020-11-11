@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="measurement-variance" kernel="python">
-    <title>Variance in Data</title>
-    <exploration xml:id="measurement-variance-preview">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="measurement-spread" kernel="python">
+    <title>Spread of Data</title>
+    <exploration xml:id="measurement-spread-preview">
         <introduction>
             <p>
 Consider the data in the lists
@@ -17,19 +17,19 @@ Show that the mean, median, and mode for the data in the first list are the same
         </task>
         <task>
             <p>
-Draw a dot plot visualizing the data in each list.
+Draw a dot plot or histogram visualizing the data in each list.
             </p>
         </task>
         <task>
             <p>
-What does the dot plot tell you about the data that the measures of center do not?
+What does the visualization tell you about the data that the measures of center do not?
             </p>
         </task>
     </exploration>
     <activity>
         <introduction>
             <p>
-                asdf
+Often we are interested in the <term>spread</term> of values in a dataset.
             </p>
         </introduction>
     </activity>
