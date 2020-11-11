@@ -29,7 +29,10 @@ What does the visualization tell you about the data that the measures of center 
     <activity>
         <introduction>
             <p>
-Often we are interested in the <term>spread</term> of values in a dataset.
+Often we are interested in the <term>spread</term> of values in a dataset. The simplest
+measure of spread is the <term>range</term> of data: the difference between its largest
+and smallest value. For example, the range of the values in
+<m>3,6,7,12,16,19</m> is <m>19-3=16</m>.
             </p>
         </introduction>
     </activity>
