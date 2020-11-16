@@ -120,7 +120,7 @@ displayed in the previous task.
         </task>
         <task>
             <p>
-The Python <c>datascience</c> library can produce bar charts; the code <c>june20.barh("types")</c>
+The Python <c>datascience</c> library can produce bar charts; the code <c>june20_pizzas.barh("types")</c>
 was used to produce <xref ref="visualization-two-barchart-0620"/>. Adapt this line of
 code to generate a bar chart for the May 18th data instead. (Note: you'll need to run <c>import matplotlib</c>
 and <c>%matplotlib inline</c> first to display any visualizations.)
