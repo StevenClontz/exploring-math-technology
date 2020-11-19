@@ -84,16 +84,148 @@ Ignoring outliers, what is an approximate range of the classic pizza prices?
     <activity>
         <introduction>
             <p>
-                TODO aboslute mean deviation
+The <term>absolute mean deviation</term> measures pretty much exactly what it says:
+how far the data deviate from the dataset's mean.
             </p>
         </introduction>
+        <task>
+            <p>
+Draw dot plots for the data in <xref ref="measurements-spread-dataone"/>
+and <xref ref="measurements-spread-datatwo"/>.
+            </p>
+            <sidebyside>
+                <table xml:id="measurements-spread-dataone">
+                    <title>Dataset One</title>
+                    <tabular>
+                        <row>
+<cell>1</cell>
+<cell>5</cell>
+<cell>5</cell>
+<cell>5</cell>
+<cell>5</cell>
+                        </row>
+                        <row>
+<cell>6</cell>
+<cell>6</cell>
+<cell>6</cell>
+<cell>6</cell>
+<cell>6</cell>
+                        </row>
+                        <row>
+<cell>6</cell>
+<cell>7</cell>
+<cell>7</cell>
+<cell>7</cell>
+<cell>12</cell>
+                        </row>
+                    </tabular>
+                </table>
+                <table xml:id="measurements-spread-datatwo">
+                    <title>Dataset Two</title>
+                    <tabular>
+                        <row>
+<cell>1</cell>
+<cell>2</cell>
+<cell>3</cell>
+<cell>4</cell>
+<cell>5</cell>
+                        </row>
+                        <row>
+<cell>6</cell>
+<cell>6</cell>
+<cell>6</cell>
+<cell>6</cell>
+<cell>6</cell>
+                        </row>
+                        <row>
+<cell>7</cell>
+<cell>7</cell>
+<cell>9</cell>
+<cell>10</cell>
+<cell>12</cell>
+                        </row>
+                    </tabular>
+                </table>
+            </sidebyside>
+        </task>
+        <task>
+            <p>
+Confirm that both datasets have the same mean, median, mode, and range.
+            </p>
+        </task>
+        <task>
+            <p>
+Despite these common measurements, based on your dot plots, which dataset
+appears to have values that are spread out more than the other?
+            </p>
+        </task>
+        <task>
+            <p>
+To find a way to measure this spread numerically, flesh out the code given in
+<xref ref="measurements-spread-deviations"/> to print out lists of absolute deviations of each
+value of data from the mean.
+            </p>
+            <listing xml:id="measurements-spread-deviations">
+                <caption>Broken code to calculuate deviations of values</caption>
+                <program language="python">
+                    <input><xi:include href="../files/measurements-spread-deviations.py" parse="text" /></input>
+                </program>
+            </listing>
+        </task>
+        <task>
+            <p>
+The mean of each list is the absolute mean deviation of the original datasets.
+Confirm that the absolute mean deviation is higher for the dataset that has more
+spread-out values.
+            </p>
+        </task>
     </activity>
     <activity>
         <introduction>
             <p>
-                TODO standard deviation
+While the absolute mean deviation provides an easy-to-implement measurement
+of data spread, an alternative formula is used to compute <term>standard deviation</term>.
             </p>
         </introduction>
+        <task>
+            <p>
+Let <m>M</m> be the mean of a collection of the <m>N</m> data values <m>x_0,x_1,\dots,x_{N-1}</m>.
+Which formula measures absolute mean deviation, <xref ref="measurements-spread-formula1"/> or
+<xref ref="measurements-spread-formula2"/>?
+            </p>
+                <listing xml:id="measurements-spread-formula1">
+                    <caption>Spread formula 1</caption>
+                    <me>\frac{|x_0-M|+|x_1-M|+\dots+|x_{N-1}-M|}{N}</me>
+                </listing>
+                <listing xml:id="measurements-spread-formula2">
+                    <caption>Spread formula 2</caption>
+                    <me>\sqrt{\frac{(x_0-M)^2+(x_1-M)^2+\dots+(x_{N-1}-M)^2}{N-1}}</me>
+                </listing>
+        </task>
+        <task>
+            <p>
+The other formula shown above measures standard deviation. While the formulas have similarities,
+the standard deviation formula has several nice properties that make it more commonly used by
+data scientists.
+            </p>
+            <p>
+We wrote our own program to compute absolute mean deviations, but
+the standard deviation of a list may be computed in Python simply by using
+<c>from statistics import stdev</c>. Show that the standard deviations of the datasets studied
+in the previous activity are not exactly the same as the absolute mean deviations, but they
+still do the same job of communicating how one dataset is spread out more than the other.
+            </p>
+        </task>
+        <task>
+            <p>
+                TODO st dev of a pizza
+            </p>
+        </task>
+        <task>
+            <p>
+                TODO define outliers in terms of st dev
+            </p>
+        </task>
     </activity>
     <exercises>
         <exercise>
