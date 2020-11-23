@@ -174,8 +174,10 @@ value of data from the mean.
         </task>
         <task>
             <p>
-The mean of each list is the absolute mean deviation of the original datasets.
-Confirm that the absolute mean deviation is higher for the dataset that has more
+The mean of each list created in the previous task
+is the absolute mean deviation of the original datasets.
+Compute these values, and
+confirm that the absolute mean deviation is higher for the dataset that has more
 spread-out values.
             </p>
         </task>
@@ -205,8 +207,8 @@ Which formula measures absolute mean deviation, <xref ref="measurements-spread-f
         <task>
             <p>
 The other formula shown above measures standard deviation. While the formulas have similarities,
-the standard deviation formula has several nice properties that make it more commonly used by
-data scientists.
+the standard deviation formula has certain nice mathematical properties that make it more commonly used by
+data scientists. (We defer exploring what those advantages are exactly to more advanced statistics courses.)
             </p>
             <p>
 We wrote our own program to compute absolute mean deviations, but
@@ -218,12 +220,50 @@ still do the same job of communicating how one dataset is spread out more than t
         </task>
         <task>
             <p>
-                TODO st dev of a pizza
+Compute the standard deviation for <c>classic_prices</c>.
             </p>
         </task>
         <task>
             <p>
-                TODO define outliers in terms of st dev
+Compute the standard deviation for the prices of large pizzas sold in 2015.
+            </p>
+        </task>
+        <task>
+            <p>
+Write a few sentences explaining your intuition for why the standard deviation
+for the prices of classic pizzas was larger/smaller than the standard deviation
+for the prices of large pizzas.
+            </p>
+        </task>
+        <task>
+            <p>
+There is no hard-and-fast mathematical definition for what makes a value an outlier:
+different areas of study may allow for more or less tolerance for <q>unusual</q> values. However,
+one common assumption (known as the <term>three-sigma rule</term>) is that
+non-outlier data should be within three standard deviations of the mean, that is,
+each distance of a piece of non-outlier data from the mean should be less than
+<m>3\times\text{stdev}</m>.
+            </p>
+            <p>
+Explain why the three-sigma rule requires that the range of non-outlier data
+should be less than six standard deviations, or <m>6\times\text{stdev}</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+For example, if a dataset has a standard deviation of <m>4</m>, it's reasonable to expect
+that the range of non-outlier data is less than <m>24</m>.
+            </p>
+            <p>
+Confirm that the <c>datascience</c> library generates a box plot of large pizza prices
+that shows no outliers. Then confirm that the range of large pizza prices is less than
+six times its standard deviation.
+            </p>
+        </task>
+        <task>
+            <p>
+Use a box plot of classic pizza prices to show that the range of its non-outlier data is
+less than six standard deviations.
             </p>
         </task>
     </activity>
