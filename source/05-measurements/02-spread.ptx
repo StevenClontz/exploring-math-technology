@@ -271,7 +271,69 @@ less than six standard deviations.
         <exercise>
             <statement>
                 <p>
-                    TODO
+Find the maximum, minimum, and range for the values
+<m>12,4,9,9,4,10,803,11,5</m>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Which of the above values would you most consider to be an outlier, and why?
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Show how to find the absolute mean deviation for
+<m>12,4,9,9,4,10,803,11,5</m>, either by hand or by computer.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Show how to use technology to compute the standard deviation for
+<m>12,4,9,9,4,10,803,11,5</m>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+If you remove the outlier value from
+<m>12,4,9,9,4,10,803,11,5</m>,
+would you expect the range to increase or decrease?
+What about absolute mean deviation?
+What about standard deviation? And why?
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Confirm your expectation by computing the range,
+absolute mean deviation, and standard deviation for
+<m>12,4,9,9,4,10,803,11,5</m> with the outlier value removed.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Without using technology to check, would you expect the range and
+standard deviation to be higher for the prices of all medium sized pizzas sold
+in a year, or the prices of all veggie pizzas sold in a year?
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Confirm your intuition by getting a copy of <c>pizza_table</c> available
+in this notebook, and computing the ranges and standard deviations
+for the medium pizza prices and veggie pizza prices.
                 </p>
             </statement>
         </exercise>
