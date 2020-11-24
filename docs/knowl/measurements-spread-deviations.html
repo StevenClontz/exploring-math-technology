@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-11-24T18:16:50Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<figure class="listing figure-like"><pre class="prettyprint lang-py">data_one = [] # fill in values from first dataset
+data_two = [] # fill in this too
+
+# if means are different, data was entered incorrectly
+from statistics import mean
+assert mean(data_one) == mean(data_two), "Means should be the same"
+print("The mean for each dataset is FIXME") # print out the mean of the datasets
+
+deviations_one = [
+    abs( value - mean(data_one) ) # measure distance of value from the mean
+    for value in data_one # do this for each value of data
+]
+print(deviations_one)
+deviations_two = [] # TODO
+print(deviations_two) # prints [5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 1, 1, 3, 4, 6]
+</pre>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.2.3<span class="period">.</span></span><span class="space"> </span>Broken code to calculuate deviations of values</figcaption></figure><span class="incontext"><a href="measurement-spread.html#measurements-spread-deviations">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-11-24T18:16:45Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MoD Spread of Data</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Mathematics of Data</span></a></h1>
+<p class="byline">Dr. Steven Clontz</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="measurements-center.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="measurements.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="predictions.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="measurements-center.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="measurements.html" title="Up">Up</a><a class="next-button button toolbar-item" href="predictions.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="why.html" data-scroll="why">Why Study [the] Mathematics [of Data]?</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="programming.html" data-scroll="programming"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
+<li><a href="programming-jupyter.html" data-scroll="programming-jupyter">Jupyter Notebooks and CoCalc</a></li>
+<li><a href="programming-python.html" data-scroll="programming-python">The Python Kernel</a></li>
+<li><a href="programming-sagemath.html" data-scroll="programming-sagemath">The SageMath Kernel</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="writing.html" data-scroll="writing"><span class="codenumber">2</span> <span class="title">Writing for Mathematicians and Data Scientists</span></a><ul>
+<li><a href="writing-math.html" data-scroll="writing-math">The Importance of Writing in Mathematics and Data Science</a></li>
+<li><a href="writing-markup.html" data-scroll="writing-markup">Using Markdown and LaTeX</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="data.html" data-scroll="data"><span class="codenumber">3</span> <span class="title">Data and Collections</span></a><ul>
+<li><a href="data-numbers.html" data-scroll="data-numbers">Numbers and Strings</a></li>
+<li><a href="data-collections.html" data-scroll="data-collections">Collections of Data</a></li>
+<li><a href="data-programming.html" data-scroll="data-programming">Programming with Data</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="visualization.html" data-scroll="visualization"><span class="codenumber">4</span> <span class="title">Visualization of Data</span></a><ul>
+<li><a href="visualization-tables.html" data-scroll="visualization-tables">Tables</a></li>
+<li><a href="visualization-one.html" data-scroll="visualization-one">Single-Variable Visualizations</a></li>
+<li><a href="visualization-two.html" data-scroll="visualization-two">Two-variable Visualizations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="measurements.html" data-scroll="measurements"><span class="codenumber">5</span> <span class="title">Measurements of Data</span></a><ul>
+<li><a href="measurements-center.html" data-scroll="measurements-center">Centers of Data</a></li>
+<li><a href="measurement-spread.html" data-scroll="measurement-spread" class="active">Spread of Data</a></li>
+</ul>
+</li>
+<li class="link"><a href="predictions.html" data-scroll="predictions"><span class="codenumber">6</span> <span class="title">Making Predictions from Data</span></a></li>
+<li class="link"><a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a></li>
+<li class="link"><a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a></li>
+<li class="link"><a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Vectors</span></a></li>
+<li class="link"><a href="transformations.html" data-scroll="transformations"><span class="codenumber">10</span> <span class="title">Transformations of Higher-Dimensional Data</span></a></li>
+<li class="link"><a href="properties.html" data-scroll="properties"><span class="codenumber">11</span> <span class="title">Properties of Linear Transformations</span></a></li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link"><a href="references.html" data-scroll="references"><span class="title">References</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="measurement-spread"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.2</span> <span class="title">Spread of Data</span>
+</h2>
+<article class="exploration project-like" id="measurement-spread-preview"><h6 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-48"><p id="p-450">Consider the data in the lists <code class="code-inline tex2jax_ignore">[13, 12, 11, 10, 10, 14, 13, 10, 10, 14, 15, 11, 11, 13, 15, 15, 13, 15, 14, 11]</code> and <code class="code-inline tex2jax_ignore">[19, 12, 13, 9, 15, 5, 6, 12, 9, 14, 8, 20, 19, 15, 13, 9, 14, 14, 7, 17]</code>.</p></div>
+<article class="task exercise-like" id="task-173"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-451">Show that the mean, median, and mode for the data in the first list are the same as the second list.</p></article><article class="task exercise-like" id="task-174"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-452">Draw a dot plot or histogram visualizing the data in each list.</p></article><article class="task exercise-like" id="task-175"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-453">What does the visualization tell you about the data that the measures of center do not?</p></article></article><article class="activity project-like" id="activity-40"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-49"><p id="p-454">Often we are interested in the <dfn class="terminology">spread</dfn> of values in a dataset. The simplest measure of spread is the <dfn class="terminology">range</dfn> of data: the difference between its largest value (its <dfn class="terminology">maximum</dfn>) and its smallest value (its <dfn class="terminology">minimum</dfn>). For example, the range of the values in \(3,3,6,7,12,12,16,19\) is \(\text{max}-\text{min}=19-3=16\text{.}\)</p></div>
+<article class="task exercise-like" id="task-176"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-455">Find the maximum, minimum, and range for the values \(9, 2, 3, 5, 3, 6, 2, 7\text{.}\)</p></article><article class="task exercise-like" id="task-177"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-456">Find the maximum, minimum, and range for the values \(5, 1, 3, 998, 2, 5, 8, 2\text{.}\)</p></article><article class="task exercise-like" id="task-178"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-457">What do you notice about the previous task? How does the range relate (or not relate) to the majority of the data?</p></article><article class="task exercise-like" id="task-179"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-458">Get a copy of <code class="code-inline tex2jax_ignore">pizza_table</code> available for this notebook.</p>
+<p id="p-459">Set <code class="code-inline tex2jax_ignore">classic_prices = pizza_table.where("type","classic").column("price")</code>, and then use <code class="code-inline tex2jax_ignore">min(classic_prices)</code> and <code class="code-inline tex2jax_ignore">max(classic_prices)</code> to describe the mininum price, maximum price, and range of prices for classic pizzas sold by the pizzeria.</p></article><article class="task exercise-like" id="task-180"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-460">Display a box plot and histogram for the table of classic pizza prices <code class="code-inline tex2jax_ignore">pizza_table.where("type","classic").select("price")</code>.</p></article><article class="task exercise-like" id="task-181"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-461">Notice that the box plot displays <dfn class="terminology">outliers</dfn> in the data as dots: the values that are further away from the median than most points of data.</p>
+<p id="p-462">Ignoring outliers, what is an approximate range of the classic pizza prices?</p></article></article><article class="activity project-like" id="activity-41"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-50"><p id="p-463">The <dfn class="terminology">absolute mean deviation</dfn> measures pretty much exactly what it says: how far the data deviate from the dataset's mean.</p></div>
+<article class="task exercise-like" id="task-182"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-464">Draw dot plots for the data in <a class="xref" data-knowl="./knowl/measurements-spread-dataone.html" title="Table 5.2.1: Dataset One">5.2.1</a> and <a class="xref" data-knowl="./knowl/measurements-spread-datatwo.html" title="Table 5.2.2: Dataset Two">5.2.2</a>.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel fixed-width" style="width:50%;justify-content:flex-start;"><figure class="table table-like" id="measurements-spread-dataone"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.2.1<span class="period">.</span></span><span class="space"> </span>Dataset One</figcaption><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">5</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">6</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">12</td>
+</tr>
+</table></figure></div>
+<div class="sbspanel fixed-width" style="width:50%;justify-content:flex-start;"><figure class="table table-like" id="measurements-spread-datatwo"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.2.2<span class="period">.</span></span><span class="space"> </span>Dataset Two</figcaption><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">5</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">6</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">12</td>
+</tr>
+</table></figure></div>
+</div></div></article><article class="task exercise-like" id="task-183"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-465">Confirm that both datasets have the same mean, median, mode, and range.</p></article><article class="task exercise-like" id="task-184"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-466">Despite these common measurements, based on your dot plots, which dataset appears to have values that are spread out more than the other?</p></article><article class="task exercise-like" id="task-185"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-467">To find a way to measure this spread numerically, flesh out the code given in <a class="xref" data-knowl="./knowl/measurements-spread-deviations.html" title="Listing 5.2.3">5.2.3</a> to print out lists of absolute deviations of each value of data from the mean.</p>
+<figure class="listing figure-like" id="measurements-spread-deviations"><pre class="prettyprint lang-py">data_one = [] # fill in values from first dataset
+data_two = [] # fill in this too
+
+# if means are different, data was entered incorrectly
+from statistics import mean
+assert mean(data_one) == mean(data_two), "Means should be the same"
+print("The mean for each dataset is FIXME") # print out the mean of the datasets
+
+deviations_one = [
+    abs( value - mean(data_one) ) # measure distance of value from the mean
+    for value in data_one # do this for each value of data
+]
+print(deviations_one)
+deviations_two = [] # TODO
+print(deviations_two) # prints [5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 1, 1, 3, 4, 6]
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.2.3<span class="period">.</span></span><span class="space"> </span>Broken code to calculuate deviations of values</figcaption></figure></article><article class="task exercise-like" id="task-186"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-468">The mean of each list created in the previous task is the absolute mean deviation of the original datasets. Compute these values, and confirm that the absolute mean deviation is higher for the dataset that has more spread-out values.</p></article></article><article class="activity project-like" id="activity-42"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-51"><p id="p-469">While the absolute mean deviation provides an easy-to-implement measurement of data spread, an alternative formula is used to compute <dfn class="terminology">standard deviation</dfn>.</p></div>
+<article class="task exercise-like" id="task-187"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-470">Let \(M\) be the mean of a collection of the \(N\) data values \(x_0,x_1,\dots,x_{N-1}\text{.}\) Which formula measures absolute mean deviation, <a class="xref" data-knowl="./knowl/measurements-spread-formula1.html" title="Listing 5.2.4">5.2.4</a> or <a class="xref" data-knowl="./knowl/measurements-spread-formula2.html" title="Listing 5.2.5">5.2.5</a>?</p>
+<figure class="listing figure-like" id="measurements-spread-formula1"><div class="displaymath">
+\begin{equation*}
+\frac{|x_0-M|+|x_1-M|+\dots+|x_{N-1}-M|}{N}
+\end{equation*}
+</div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.2.4<span class="period">.</span></span><span class="space"> </span>Spread formula 1</figcaption></figure><figure class="listing figure-like" id="measurements-spread-formula2"><div class="displaymath">
+\begin{equation*}
+\sqrt{\frac{(x_0-M)^2+(x_1-M)^2+\dots+(x_{N-1}-M)^2}{N-1}}
+\end{equation*}
+</div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.2.5<span class="period">.</span></span><span class="space"> </span>Spread formula 2</figcaption></figure></article><article class="task exercise-like" id="task-188"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-471">The other formula shown above measures standard deviation. While the formulas have similarities, the standard deviation formula has certain nice mathematical properties that make it more commonly used by data scientists. (We defer exploring what those advantages are exactly to more advanced statistics courses.)</p>
+<p id="p-472">We wrote our own program to compute absolute mean deviations, but the standard deviation of a list may be computed in Python simply by using <code class="code-inline tex2jax_ignore">from statistics import stdev</code>. Show that the standard deviations of the datasets studied in the previous activity are not exactly the same as the absolute mean deviations, but they still do the same job of communicating how one dataset is spread out more than the other.</p></article><article class="task exercise-like" id="task-189"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-473">Compute the standard deviation for <code class="code-inline tex2jax_ignore">classic_prices</code>.</p></article><article class="task exercise-like" id="task-190"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-474">Compute the standard deviation for the prices of large pizzas sold in 2015.</p></article><article class="task exercise-like" id="task-191"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-475">Write a few sentences explaining your intuition for why the standard deviation for the prices of classic pizzas was larger/smaller than the standard deviation for the prices of large pizzas.</p></article><article class="task exercise-like" id="task-192"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-476">There is no hard-and-fast mathematical definition for what makes a value an outlier: different areas of study may allow for more or less tolerance for “unusual” values. However, one common assumption (known as the <dfn class="terminology">three-sigma rule</dfn>) is that non-outlier data should be within three standard deviations of the mean, that is, each distance of a piece of non-outlier data from the mean should be less than \(3\times\text{stdev}\text{.}\)</p>
+<p id="p-477">Explain why the three-sigma rule requires that the range of non-outlier data should be less than six standard deviations, or \(6\times\text{stdev}\text{.}\)</p></article><article class="task exercise-like" id="task-193"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-478">For example, if a dataset has a standard deviation of \(4\text{,}\) it's reasonable to expect that the range of non-outlier data is less than \(24\text{.}\)</p>
+<p id="p-479">Confirm that the <code class="code-inline tex2jax_ignore">datascience</code> library generates a box plot of large pizza prices that shows no outliers. Then confirm that the range of large pizza prices is less than six times its standard deviation.</p></article><article class="task exercise-like" id="task-194"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+<p id="p-480">Use a box plot of classic pizza prices to show that the range of its non-outlier data is less than six standard deviations.</p></article></article><section class="exercises" id="exercises-11"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">5.2.1</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-79"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-481">Find the maximum, minimum, and range for the values \(12,4,9,9,4,10,803,11,5\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-80"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-482">Which of the above values would you most consider to be an outlier, and why?</p></article><article class="exercise exercise-like" id="exercise-81"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-483">Show how to find the absolute mean deviation for \(12,4,9,9,4,10,803,11,5\text{,}\) either by hand or by computer.</p></article><article class="exercise exercise-like" id="exercise-82"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-484">Show how to use technology to compute the standard deviation for \(12,4,9,9,4,10,803,11,5\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-83"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-485">If you remove the outlier value from \(12,4,9,9,4,10,803,11,5\text{,}\) would you expect the range to increase or decrease? What about absolute mean deviation? What about standard deviation? And why?</p></article><article class="exercise exercise-like" id="exercise-84"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-486">Confirm your expectation by computing the range, absolute mean deviation, and standard deviation for \(12,4,9,9,4,10,803,11,5\) with the outlier value removed.</p></article><article class="exercise exercise-like" id="exercise-85"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-487">Without using technology to check, would you expect the range and standard deviation to be higher for the prices of all medium sized pizzas sold in a year, or the prices of all veggie pizzas sold in a year?</p></article><article class="exercise exercise-like" id="exercise-86"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-488">Confirm your intuition by getting a copy of <code class="code-inline tex2jax_ignore">pizza_table</code> available in this notebook, and computing the ranges and standard deviations for the medium pizza prices and veggie pizza prices.</p></article></section></section></div></main>
+</div>
+</body>
+</html>

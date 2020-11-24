@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-11-03T21:28:18Z       *-->
+<!--*       on 2020-11-24T18:16:45Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -113,7 +113,12 @@ MathJax.Hub.Config({
 <li><a href="visualization-two.html" data-scroll="visualization-two" class="active">Two-variable Visualizations</a></li>
 </ul>
 </li>
-<li class="link"><a href="measurements.html" data-scroll="measurements"><span class="codenumber">5</span> <span class="title">Measurements of Data</span></a></li>
+<li class="link">
+<a href="measurements.html" data-scroll="measurements"><span class="codenumber">5</span> <span class="title">Measurements of Data</span></a><ul>
+<li><a href="measurements-center.html" data-scroll="measurements-center">Centers of Data</a></li>
+<li><a href="measurement-spread.html" data-scroll="measurement-spread">Spread of Data</a></li>
+</ul>
+</li>
 <li class="link"><a href="predictions.html" data-scroll="predictions"><span class="codenumber">6</span> <span class="title">Making Predictions from Data</span></a></li>
 <li class="link"><a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a></li>
 <li class="link"><a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a></li>
@@ -198,7 +203,7 @@ MathJax.Hub.Config({
 <p id="p-381">The bar chart in <a class="xref" data-knowl="./knowl/visualization-two-barchart-0620.html" title="Figure 4.3.3">4.3.3</a> visualizes the amounts of each pizza type sold on June 20. Each category (in this case, the type of pizza) is listed on the vertical axis, and the size of the bar in the horizontal direction represents each numerical value.</p>
 <figure class="figure figure-like" id="visualization-two-barchart-0620"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/visualization-two-barchart-0620.png" style="width: 100%; height: auto;" alt=""></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.3<span class="period">.</span></span><span class="space"> </span>Pizzas sold on June 20 by type</figcaption></figure><p id="p-382">Create a similar bar chart by hand for the May 18th table you displayed in the previous task.</p></article><article class="task exercise-like" id="task-144"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-383">The Python <code class="code-inline tex2jax_ignore">datascience</code> library can produce bar charts; the code <code class="code-inline tex2jax_ignore">june20.barh("types")</code> was used to produce <a class="xref" data-knowl="./knowl/visualization-two-barchart-0620.html" title="Figure 4.3.3">4.3.3</a>. Adapt this line of code to generate a bar chart for the May 18th data instead. (Note: you'll need to run <code class="code-inline tex2jax_ignore">import matplotlib</code> and <code class="code-inline tex2jax_ignore">%matplotlib inline</code> first to display any visualizations.)</p></article><article class="task exercise-like" id="task-145"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-383">The Python <code class="code-inline tex2jax_ignore">datascience</code> library can produce bar charts; the code <code class="code-inline tex2jax_ignore">june20_pizzas.barh("types")</code> was used to produce <a class="xref" data-knowl="./knowl/visualization-two-barchart-0620.html" title="Figure 4.3.3">4.3.3</a>. Adapt this line of code to generate a bar chart for the May 18th data instead. (Note: you'll need to run <code class="code-inline tex2jax_ignore">import matplotlib</code> and <code class="code-inline tex2jax_ignore">%matplotlib inline</code> first to display any visualizations.)</p></article><article class="task exercise-like" id="task-145"><h6 class="heading"><span class="codenumber">(e)</span></h6>
 <p id="p-384">The code <code class="code-inline tex2jax_ignore">pizza_table.where("date","2015-06-20").select("type","price").group("type",sum)</code> captures the total sales for each type of pizza sold on June 20th.</p>
 <p id="p-385">Generate a bar chart visualizing the total sales for each type of pizza sold on May 18th.</p></article></article><article class="activity project-like" id="activity-35"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span>

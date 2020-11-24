@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-11-24T18:16:45Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MoD Centers of Data</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Mathematics of Data</span></a></h1>
+<p class="byline">Dr. Steven Clontz</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="measurements.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="measurements.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="measurement-spread.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="measurements.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="measurements.html" title="Up">Up</a><a class="next-button button toolbar-item" href="measurement-spread.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="why.html" data-scroll="why">Why Study [the] Mathematics [of Data]?</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="programming.html" data-scroll="programming"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
+<li><a href="programming-jupyter.html" data-scroll="programming-jupyter">Jupyter Notebooks and CoCalc</a></li>
+<li><a href="programming-python.html" data-scroll="programming-python">The Python Kernel</a></li>
+<li><a href="programming-sagemath.html" data-scroll="programming-sagemath">The SageMath Kernel</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="writing.html" data-scroll="writing"><span class="codenumber">2</span> <span class="title">Writing for Mathematicians and Data Scientists</span></a><ul>
+<li><a href="writing-math.html" data-scroll="writing-math">The Importance of Writing in Mathematics and Data Science</a></li>
+<li><a href="writing-markup.html" data-scroll="writing-markup">Using Markdown and LaTeX</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="data.html" data-scroll="data"><span class="codenumber">3</span> <span class="title">Data and Collections</span></a><ul>
+<li><a href="data-numbers.html" data-scroll="data-numbers">Numbers and Strings</a></li>
+<li><a href="data-collections.html" data-scroll="data-collections">Collections of Data</a></li>
+<li><a href="data-programming.html" data-scroll="data-programming">Programming with Data</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="visualization.html" data-scroll="visualization"><span class="codenumber">4</span> <span class="title">Visualization of Data</span></a><ul>
+<li><a href="visualization-tables.html" data-scroll="visualization-tables">Tables</a></li>
+<li><a href="visualization-one.html" data-scroll="visualization-one">Single-Variable Visualizations</a></li>
+<li><a href="visualization-two.html" data-scroll="visualization-two">Two-variable Visualizations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="measurements.html" data-scroll="measurements"><span class="codenumber">5</span> <span class="title">Measurements of Data</span></a><ul>
+<li><a href="measurements-center.html" data-scroll="measurements-center" class="active">Centers of Data</a></li>
+<li><a href="measurement-spread.html" data-scroll="measurement-spread">Spread of Data</a></li>
+</ul>
+</li>
+<li class="link"><a href="predictions.html" data-scroll="predictions"><span class="codenumber">6</span> <span class="title">Making Predictions from Data</span></a></li>
+<li class="link"><a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a></li>
+<li class="link"><a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a></li>
+<li class="link"><a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Vectors</span></a></li>
+<li class="link"><a href="transformations.html" data-scroll="transformations"><span class="codenumber">10</span> <span class="title">Transformations of Higher-Dimensional Data</span></a></li>
+<li class="link"><a href="properties.html" data-scroll="properties"><span class="codenumber">11</span> <span class="title">Properties of Linear Transformations</span></a></li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link"><a href="references.html" data-scroll="references"><span class="title">References</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="measurements-center"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.1</span> <span class="title">Centers of Data</span>
+</h2>
+<article class="exploration project-like" id="measurements-center-preview"><h6 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-44">
+<p id="p-412">A group of seven friends decides to compare their tax refunds, listed in <a class="xref" data-knowl="./knowl/measurements-center-refunds.html" title="Table 5.1.1: Seven tax refunds">5.1.1</a>.</p>
+<figure class="table table-like" id="measurements-center-refunds"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.1.1<span class="period">.</span></span><span class="space"> </span>Seven tax refunds</figcaption><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">$2,000</td>
+<td class="l m b0 r0 l0 t0 lines">$2,000</td>
+<td class="l m b0 r0 l0 t0 lines">$2,000</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">$2,500</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">$2,700</td>
+<td class="l m b0 r0 l0 t0 lines">$2,800</td>
+<td class="l m b0 r0 l0 t0 lines">$14,000</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+</table></figure><p id="p-413">For each of the given quotes, write a sentence or two explaining whether you agree or disagree with the speaker.</p>
+</div>
+<article class="task exercise-like" id="task-155"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-414">“The most common tax refund is $2,000. Therefore, the average tax refund in this group is $2,000.”</p></article><article class="task exercise-like" id="task-156"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-415">“When ordered from least to greatest, the middle tax refund is $2,500. Therefore, the average tax refund in this group is $2,500.”</p></article><article class="task exercise-like" id="task-157"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-416">“When the seven refunds are added together and divided by \(7\text{,}\) the result is $4,000. Therefore, the average tax refund in this group is $4,000.”</p></article></article><article class="activity project-like" id="activity-37"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-45">
+<p id="p-417">There are several notions of “average”, that is, several ways to describe the center of a dataset.</p>
+<p id="p-418">Often, “average” is used to describe the <dfn class="terminology">mean</dfn> of a dataset. If a dataset contains the \(n\) values \(x_0,x_1,\dots,x_{n-1}\text{,}\) then the mean is defined by the following formula:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{n}\sum_{0\leq k&lt; n} x_k = \frac{x_0+x_1+\dots+x_{n-1}}{n}
+\end{equation*}
+</div>
+<p id="p-419">For example, the mean of the counting numbers \(2,3,5,7,18\) is \(\frac{2+3+5+7+18}{5}=7\text{:}\) all the values in the collection are added together, and then divided by the amount of data in the collection.</p>
+</div>
+<article class="task exercise-like" id="task-158"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-420">Show that \(8\) is the mean of the counting numbers \(4,8,9,11\text{.}\)</p></article><article class="task exercise-like" id="task-159"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-421">Is it possible for the mean of a dataset to not belong to the dataset itself? If so, give an example of such a dataset. If not, explain why.</p></article><article class="task exercise-like" id="task-160"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-422">First, make a copy of the <code class="code-inline tex2jax_ignore">pizza_table</code> used in previous sections available for this notebook.</p>
+<p id="p-423">Then, correct the code in <a class="xref" data-knowl="./knowl/measurements-center-pizza-mean.html" title="Listing 5.1.2">5.1.2</a> to output the correct mean of the costs of pizza sold on Nov 10.</p>
+<figure class="listing figure-like" id="measurements-center-pizza-mean"><pre class="prettyprint lang-py"># FIXME
+# this code says the mean cost of a pizza is less than a dollar!
+prices = pizza_table.where("date","2015-10-09").column("price")
+len(prices)/sum(prices)
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.1.2<span class="period">.</span></span><span class="space"> </span>Broken code to calculuate mean cost of pizza</figcaption></figure></article><article class="task exercise-like" id="task-161"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-424">Find the mean cost of a large pizza sold during the year of sales recorded in <code class="code-inline tex2jax_ignore">pizza_table</code>.</p></article></article><article class="activity project-like" id="activity-38"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.3</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-46"><p id="p-425">The <dfn class="terminology">mode</dfn> of a dataset is simply its most-repeated value. For example, the mode of the collection of values \(4,5,5,5,8,9,9,10\) is \(5\text{.}\)</p></div>
+<article class="task exercise-like" id="task-162"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-426">Find the mode of the values \(8, 6, 1, 3, 3, 1, 9, 9, 1, 4\text{.}\)</p></article><article class="task exercise-like" id="task-163"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-427">It's possible that a dataset may have many different modes. For example, both \(2\) and \(5\) are modes for the values in the list <code class="code-inline tex2jax_ignore">[3,2,6,5,5,11,2,7]</code>.</p>
+<p id="p-428">Make up an example of a dataset with seven values that has both \(3\) and \(8\) as modes.</p></article><article class="task exercise-like" id="task-164"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-429">The Python library <code class="code-inline tex2jax_ignore">statistics</code> provides convenient tools for computing statistical measures. For example, <code class="code-inline tex2jax_ignore">from statistics import mean</code> and <code class="code-inline tex2jax_ignore">mean(prices)</code> is a shortcut to compute the mean of a list of values in Python.</p>
+<p id="p-430">Replace <code class="code-inline tex2jax_ignore">mean</code> with <code class="code-inline tex2jax_ignore">mode</code> to write a program that outputs the mode of the list <code class="code-inline tex2jax_ignore">[3,2,6,5,5,11,2,7]</code>.</p></article><article class="task exercise-like" id="task-165"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-431">While earlier we noted that there are two different modes for the list <code class="code-inline tex2jax_ignore">[3,2,6,5,5,10,2,7]</code>, the <code class="code-inline tex2jax_ignore">mode</code> tool only returns the mode that appears first in the list.</p>
+<p id="p-432">Show how to use <code class="code-inline tex2jax_ignore">multimode</code> in place of <code class="code-inline tex2jax_ignore">mode</code> to return a list of all modes for <code class="code-inline tex2jax_ignore">[3,2,6,5,5,11,2,7]</code>.</p></article><article class="task exercise-like" id="task-166"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-433">Compute the mode of the pizza prices sold on Oct 09.</p></article><article class="task exercise-like" id="task-167"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-434">Compute the mode of the prices of large pizzas sold in 2015.</p></article></article><article class="activity project-like" id="activity-39"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-47"><p id="p-435">When data is ordered from least to greatest, the middle value is called its <dfn class="terminology">median</dfn>. For example, the median of \(1,1,6,7,9\) is \(6\text{.}\)</p></div>
+<article class="task exercise-like" id="task-168"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-436">Find the median of \(9,12,3,0,11,9,2\text{.}\)</p></article><article class="task exercise-like" id="task-169"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-437">If a dataset has two middle values, \(a\) and \(b\text{,}\) then their mean \(\frac{a+b}{2}\) is used as the median. For example, the median of \(4,6,7,9,10,13\) is \(\frac{7+9}{2}=8\text{.}\)</p>
+<p id="p-438">Make up a collection of six numbers such that its median is \(5.5\text{.}\)</p></article><article class="task exercise-like" id="task-170"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-439">Use the <code class="code-inline tex2jax_ignore">statistics</code> library to compute the median of the pizza prices sold on Oct 09.</p></article><article class="task exercise-like" id="task-171"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-440">Compute the median of the prices of large pizzas sold in 2015.</p></article><article class="task exercise-like" id="task-172"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-441">Create a histogram and box plot for the prices of pizzas sold on Oct 09. Do these visualizations effectively communicate the mean, mode, or median computed earlier? What might the visualizations communicate that isn't described by the mean, mode, or median? Write a few sentences summarizing your thoughts.</p></article></article><section class="exercises" id="exercises-10"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">5.1.1</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-71"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-442">Find the mean of the values in the list <code class="code-inline tex2jax_ignore">[2, 2, 6, 6, 2, 9, 4, 2, 6]</code> by hand. Then verify your answer using a Code cell.</p></article><article class="exercise exercise-like" id="exercise-72"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-443">Find the mode of the values in the list <code class="code-inline tex2jax_ignore">[2, 2, 6, 6, 2, 9, 4, 2, 6]</code> by hand. Then verify your answer using a Code cell.</p></article><article class="exercise exercise-like" id="exercise-73"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-444">Find the median of the values in the list <code class="code-inline tex2jax_ignore">[2, 2, 6, 6, 2, 9, 4, 2, 6]</code> by hand. Then verify your answer using a Code cell.</p></article><article class="exercise exercise-like" id="exercise-74"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-445">If a dataset is known to contain no repeated values, which measure of center would be least useful: mean, mode, or median? Write a sentence or two explaining why.</p></article><article class="exercise exercise-like" id="exercise-75"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-446">Make up a collection of five numbers such that its mode, median, and mean are all \(9\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-76"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-447">Make up a collection of five <em class="emphasis">different</em> numbers such that its median and mean are both \(9\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-77"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-448">Make a copy of <code class="code-inline tex2jax_ignore">pizza_table</code> available in this notebook. Find the mean, mode, and median of the prices of classic-type pizzas sold in 2015.</p></article><article class="exercise exercise-like" id="exercise-78"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-449">Create a histogram and box plot of the classic-type pizza price data summarized by the measures of center in the previous exercise. Write a few sentences comparing/contrasting the numerical measures of center with these visualizations.</p></article></section></section></div></main>
+</div>
+</body>
+</html>
