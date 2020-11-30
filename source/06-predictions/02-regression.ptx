@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="predictions-regression" kernel="python">
+    <title>The Regression Line</title>
+    <exploration xml:id="predictions-regression-preview">
+        <introduction>
+            <p>
+Consider the following scatter plot of math placement exam scores to SAT math exam scores.
+            </p>
+            <figure xml:id="predictions-regression-preview-scattered">
+                <caption>Scatter plot comparing SAT and math placement scores</caption>
+                <image source="images/visualization-two-scatter.png"/>
+            </figure>
+        </introduction>
+        <task>
+            <p>
+What were the maximum and minimum placement scores earned by students who scored 60
+on the SAT math exam?
+            </p>
+        </task>
+        <task>
+            <p>
+Suppose a student was unable to take the placement exam, but scored 60 on the SAT math exam?
+What would be a <q>fair</q> placement exam score to assign to that student based upon this data?
+            </p>
+        </task>
+    </exploration>
+    <activity>
+        <introduction>
+            <p>
+todo
+            </p>
+        </introduction>
+        <task>
+            <p>
+                todo
+            </p>
+        </task>
+    </activity>
+    <exercises>
+        <exercise>
+            <statement>
+                <p>
+                    asdf
+                </p>
+            </statement>
+        </exercise>
+    </exercises>
+</section>
+

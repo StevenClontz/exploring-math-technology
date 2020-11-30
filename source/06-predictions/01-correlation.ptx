@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="predictions-correlation" kernel="python">
+    <title>Measuring Correlation</title>
+    <exploration xml:id="predictions-correlation-preview">
+        <introduction>
+            <p>
+Consider the following scatter plots comparing college math placement exam scores to SAT math exam scores
+and the size of each student's high school.
+            </p>
+            <sidebyside>
+            <figure xml:id="predictions-correlation-preview-correlated">
+                <caption>Scatter plot comparing SAT and math placement scores</caption>
+                <image source="images/visualization-two-scatter.png"/>
+            </figure>
+            <figure xml:id="predictions-correlation-preview-uncorrelated">
+                <caption>Scatter plot comparing school size and math placement scores</caption>
+                <image source="images/predictions-correlation-uncorrelated.png"/>
+            </figure>
+            </sidebyside>
+            <p>
+Historically, the college placed students who recieved higher placement exam scores into more
+advanced math courses.
+But suppose this college decided to save money and time by no longer offering a math placement exam.
+            </p>
+        </introduction>
+        <task>
+            <p>
+Should the college place students who come from larger schools into more advanced math courses?
+Write a few sentences on why you agree or disagree, based on both the scatter plot and your intuition.
+            </p>
+        </task>
+        <task>
+            <p>
+Should the college place students who scored higher on the math SAT into more advanced math courses?
+Write a few sentences on why you agree or disagree, based on both the scatter plot and your intuition.
+            </p>
+        </task>
+    </exploration>
+    <activity>
+        <introduction>
+            <p>
+            asdf
+            </p>
+        </introduction>
+    </activity>
+</section>
+
