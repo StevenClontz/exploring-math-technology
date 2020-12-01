@@ -8,13 +8,13 @@ Consider the following scatter plots comparing college math placement exam score
 and the size of each student's high school.
             </p>
             <sidebyside>
-            <figure xml:id="predictions-correlation-preview-correlated">
-                <caption>Scatter plot comparing SAT and math placement scores</caption>
-                <image source="images/visualization-two-scatter.png"/>
-            </figure>
             <figure xml:id="predictions-correlation-preview-uncorrelated">
                 <caption>Scatter plot comparing school size and math placement scores</caption>
                 <image source="images/predictions-correlation-uncorrelated.png"/>
+            </figure>
+            <figure xml:id="predictions-correlation-preview-correlated">
+                <caption>Scatter plot comparing SAT and math placement scores</caption>
+                <image source="images/visualization-two-scatter.png"/>
             </figure>
             </sidebyside>
             <p>
@@ -39,9 +39,173 @@ Write a few sentences on why you agree or disagree, based on both the scatter pl
     <activity>
         <introduction>
             <p>
-            asdf
+When pairs of data values tend to fall along a line, that data is said to be linearly
+<term>correlated</term>. The <term>correlation coefficient</term> of these pairs of values is a
+number between <m>-1</m> and <m>1</m> that describes the strength of this correlation, known
+briefly as <m>r</m>.
+            </p>
+            <p>
+A value of <m>r=1</m> means that the points of data fall exactly along an upward line, that is,
+one value tends to increase as the other value increases. On the other hand, <m>r=-1</m>
+means that the points of data fall exactly along a downward line, that is,
+one value tends to increase as the otehr value decreases.
+A value of <m>r=0</m> means there's no recognizable linear relationship between the pairs of data values.
+            </p>
+            <p>
+However, most real datasets will have a fractional <m>r</m> value. Nonetheless, the closer this value is to
+<m>1</m> or <m>-1</m>, the stronger the correlation, while the closer this value is to <m>0</m>,
+the weaker the correlation. This is illustrated in <xref ref="predictions-correlation-coefficients"/>
+(obtained from <url href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient">Wikipedia</url>).
+            </p>
+            <figure xml:id="predictions-correlation-coefficients">
+                <caption>Illustrations of correlation coefficients</caption>
+                <image source="images/predictions-correlation-coefficients.svg"/>
+            </figure>
+            <p>
+The mathematics used to compute <m>r</m> are outside the scope of this course, so we will focus on
+understanding what <m>r</m> communicates about a dataset and how to compute <m>r</m> using technology.
             </p>
         </introduction>
+        <task>
+            <p>
+Unfortunately, the <c>datascience</c> library doesn't provide a great out-of-the-box mechanism for computing
+<m>r</m>. Fortunately, we can add two features to our <c>datascience</c> tables by copy-pasting
+the snippet given in <xref ref="predictions-correlation-features"/> into a Code cell. (This will need to be
+done in every notebook that uses these features.)
+            </p>
+            <listing xml:id="predictions-correlation-features">
+                <caption>Correlation features for <c>datascience</c></caption>
+                <program language="python">
+                    <input><xi:include href="../files/predictions-correlation-features.py" parse="text" /></input>
+                </program>
+            </listing>
+            <p>
+While we won't go into detail on how correlation is measured, it is related to the measures of center and spread studied
+in the previous chapter. Inspect the code shown in <xref ref="predictions-correlation-features"/>; what measure
+of center and what measure of spread appear to be used to compute correlation?
+            </p>
+        </task>
+        <task>
+            <p>
+When <xref ref="predictions-correlation-features"/> is run successfully, no output will be shown. However, you should now be
+able to create a table by running <c>ctable = Table().with_correlated_columns()</c>. (Note that this table is generated
+somewhat randomly, so re-running that line will create a slightly different table.)
+            </p>
+            <p>
+Show ten rows and a scatter plot for this <c>ctable</c>.
+            </p>
+        </task>
+        <task>
+            <p>
+Based on the definition of the correlation coefficient <m>r</m> and the illustration given in
+<xref ref="predictions-correlation-coefficients"/>, would you expect the correlation of these pairs
+of data to be closer to <m>-1</m>, <m>0</m>, or <m>1</m>?
+            </p>
+        </task>
+        <task>
+            <p>
+Run <c>ctable.correlation("x","y")</c> to confirm your intuition.
+            </p>
+        </task>
+        <task>
+            <p>
+Show a scatter plot for <c>ctable2 = Table().with_correlated_columns(slope=3)</c>. Guess a value for <c>r</c> based
+on the scatter plot, and then confirm your guess using technology.
+            </p>
+        </task>
+        <task>
+            <p>
+Show a scatter plot for <c>ctable3 = Table().with_correlated_columns(x_range=10,slope=-2)</c>. Guess a value for <c>r</c> based
+on the scatter plot, and then confirm your guess using technology.
+            </p>
+        </task>
+        <task>
+            <p>
+Show a scatter plot for <c>ctable4 = Table().with_correlated_columns(noise=5,slope=2)</c>. Guess a value for <c>r</c> based
+on the scatter plot, and then confirm your guess using technology.
+            </p>
+        </task>
+        <task>
+            <p>
+Show a scatter plot for <c>ctable5 = Table().with_correlated_columns(noise=100,slope=-4)</c>. Guess a value for <c>r</c> based
+on the scatter plot, and then confirm your guess using technology.
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+It's important to remember that <m>r</m> measures <em>linear</em> correlation.
+            </p>
+        </introduction>
+        <task>
+            <p>
+Display a scatter plot visualizing the table generated by the code given in <xref ref="predictions-correlation-cosine"/>.
+            </p>
+            <listing xml:id="predictions-correlation-cosine">
+                <caption>Randomly(?)-generated table of data</caption>
+                <program language="python">
+                    <input><xi:include href="../files/predictions-correlation-cosine.py" parse="text" /></input>
+                </program>
+            </listing>
+        </task>
+        <task>
+            <p>
+Based on the definition of the correlation coefficient <m>r</m> and the illustration given in
+<xref ref="predictions-correlation-coefficients"/>, would you expect the correlation of these pairs
+of data to be closer to <m>-1</m>, <m>0</m>, or <m>1</m>?
+            </p>
+        </task>
+        <task>
+            <p>
+Confirm your guess using technology.
+            </p>
+        </task>
+        <task>
+            <p>
+Regardless of the value of <m>r</m>, give one or more reasons based on the scatter plot for why it'd be
+fair to say that these data points are <q>related</q>.
+            </p>
+            <p>
+In general, why might data be related even when <m>r</m> is close to zero?
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+Let's return to the question of math placement scores discussed in <xref ref="predictions-correlation-preview"/>.
+            </p>
+        </introduction>
+        <task>
+            <p>
+Get a copy of <c>testing_table</c> from 4.3 available for use in this notebook, and use code cells
+to produce the scatter plots shown in
+<xref ref="predictions-correlation-preview-uncorrelated"/> and
+<xref ref="predictions-correlation-preview-correlated"/>.
+            </p>
+            <p>
+Don't forget to use <c>import matplotlib</c>, <c>%matplotlib inline</c>, and
+<c>.where("column_name",are.above(0))</c> appropriately.
+            </p>
+        </task>
+        <task>
+            <p>
+Describe your intuition for why or why not SAT math scores, college math placement exam scores,
+and high school sizes may or may not be correlated based upon the scatter plots.
+            </p>
+        </task>
+        <task>
+            <p>
+Use technology to compute values of <m>r</m> that confirm your intuition.
+            </p>
+        </task>
+        <task>
+            <p>
+Is it true to say that SAT math scores are <em>perfect</em> predictors of college math placement exam scores?
+Give reasons why or why not based upon the scatter plot, the value of <m>r</m> found, and your intuition.
+            </p>
+        </task>
     </activity>
 </section>
 
