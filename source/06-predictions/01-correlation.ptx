@@ -191,13 +191,14 @@ Don't forget to use <c>import matplotlib</c>, <c>%matplotlib inline</c>, and
         </task>
         <task>
             <p>
-Describe your intuition for why or why not SAT math scores, college math placement exam scores,
-and high school sizes may or may not be correlated based upon the scatter plots.
+Describe your intuition for why SAT math scores, college math placement exam scores,
+and high school sizes may or may not be correlated with each other based upon the scatter plots.
             </p>
         </task>
         <task>
             <p>
-Use technology to compute values of <m>r</m> that confirm your intuition.
+Test your intuition by using technology to compute appropriate correlation coefficients.
+Explain why those values confirm or contradict your intuition.
             </p>
         </task>
         <task>
@@ -207,5 +208,14 @@ Give reasons why or why not based upon the scatter plot, the value of <m>r</m> f
             </p>
         </task>
     </activity>
+    <exercises>
+        <exercise>
+            <statement>
+                <p>
+                    TBA
+                </p>
+            </statement>
+        </exercise>
+    </exercises>
 </section>
 

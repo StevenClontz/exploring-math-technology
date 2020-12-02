@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="predictions-regression" kernel="python">
-    <title>The Regression Line</title>
+    <title>The Fit Line</title>
     <exploration xml:id="predictions-regression-preview">
         <introduction>
             <p>
@@ -27,12 +27,97 @@ What would be a <q>fair</q> placement exam score to assign to that student based
     <activity>
         <introduction>
             <p>
-todo
+When a scatter plot indicates a linear relationship,
+a <term>regression line</term> or <term>fit line</term> is often added to the plot to illustrate
+this linear behavior.
             </p>
         </introduction>
         <task>
             <p>
-                todo
+Add the <c>with_correlated_columns</c> and <c>correlation</c> features from the previous section
+to this notebook.
+            </p>
+        </task>
+        <task>
+            <p>
+Create three tables with correlated columns: <c>clean_table</c>, <c>noisy_table</c>, and <c>noisiest_table</c>.
+Let all tables have a slope of <m>3</m>, but set the noise values as <m>1,10,30</m> respectively.
+            </p>
+            <p>
+Display their scatter plots below, and compute the correlation for each table.
+            </p>
+        </task>
+        <task>
+            <p>
+Display their scatter plots again, but this time use <c>.scatter("x",fit_line=True)</c> to
+display the fit line for each plot.
+            </p>
+        </task>
+        <task>
+            <p>
+Write some observations about the slopes of each fit line (the vertical rise divided by horizontal
+run), the how the data is spread out from each fit line, the correlation coefficients you found,
+and how you generated these datasets. (Be sure to look at the vertical axis of each plot, since
+each plot scales this axis differently.)
+            </p>
+        </task>
+        <task>
+            <p>
+Describe the general rule that describes the relationship between the correlation coefficient <m>r</m> and when a fit line
+appears to accurately describe the behavior of data.
+            </p>
+        </task>
+        <task>
+            <p>
+Generate a scatter plot for correlated columns with a noise of <m>2</m> and a slope of <m>-5</m>.
+Show its fit line, and compute its correlation coefficient.
+            </p>
+        </task>
+        <task>
+            <p>
+Does this demonstrate how the rule you made above should be fixed? If so, fix it to account for this
+new example.
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+When appropriate, a fit line based on sample data can be used to predict the value of unsampled data.
+            </p>
+        </introduction>
+        <task>
+            <p>
+Get a copy of <c>testing_table</c> from 4.3 available for use in this notebook, and use code cells
+to produce the scatter plot shown in
+<xref ref="predictions-regression-preview-scattered"/>.
+            </p>
+            <p>
+Don't forget to use <c>import matplotlib</c>, <c>%matplotlib inline</c>, and
+<c>.where("column_name",are.above(0))</c> appropriately.
+            </p>
+        </task>
+        <task>
+            <p>
+Add a fit line to this plot.
+            </p>
+        </task>
+        <task>
+            <p>
+This table has historical data for a full range of SAT scores. But what if historical data only existed
+for SAT math scores of 60 or greater? Emulate this by showing a scatter plot with a fit line that only considers
+records with an SAT math score that <c>are.above(60)</c>.
+            </p>
+        </task>
+        <task>
+            <p>
+If you were to extend this fit line left to where an SAT math score of <m>40</m> would go, about what score
+for the math placement score would the fit line predict?
+            </p>
+        </task>
+        <task>
+            <p>
+How does this compare to the actual data?
             </p>
         </task>
     </activity>
@@ -40,7 +125,7 @@ todo
         <exercise>
             <statement>
                 <p>
-                    asdf
+                    TBA
                 </p>
             </statement>
         </exercise>
