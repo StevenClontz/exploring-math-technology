@@ -212,7 +212,73 @@ Give reasons why or why not based upon the scatter plot, the value of <m>r</m> f
         <exercise>
             <statement>
                 <p>
-                    TBA
+What does it mean when a collection of data pairs has a correlation coefficient <m>r</m> close to
+<m>1</m>?
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+What does it mean when a collection of data pairs has a correlation coefficient <m>r</m> close to
+<m>-1</m>?
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Does a correlation coefficient <m>r</m> close to <m>0</m> mean that the pairs of values
+have no relationship at all? Describe an example from class that supports your answer.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+For each of the following three scatter plots, estimate the value for the
+correlation coefficient, and explain why you chose your estimation.
+                </p>
+                <sidebyside>
+                    <figure xml:id="predictions-correlation-exercise-a">
+                        <caption>Scatter plot A</caption>
+                        <image source="images/predictions-correlation-exercise-a.png"/>
+                    </figure>
+                    <figure xml:id="predictions-correlation-exercise-b">
+                        <caption>Scatter plot B</caption>
+                        <image source="images/predictions-correlation-exercise-b.png"/>
+                    </figure>
+                    <figure xml:id="predictions-correlation-exercise-c">
+                        <caption>Scatter plot C</caption>
+                        <image source="images/predictions-correlation-exercise-c.png"/>
+                    </figure>
+                </sidebyside>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Get a copy of <c>testing_table</c> available in this notebook, as well as the
+correlation computational features given in <xref ref="predictions-correlation-features"/>.
+                </p>
+                <p>
+Compute the correlation coefficient between SAT math exam scores and ACT math exam scores.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Write a sentence explaining what this correlation coefficient describes about SAT and
+ACT math exam scores.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Show a scatter plot comparing SAT and ACT math exam scores. Explain how the scatter plot
+illustrates the correlation you found numerically.
                 </p>
             </statement>
         </exercise>
