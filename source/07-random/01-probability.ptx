@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="random-probability" kernel="sage">
+    <title>Introduction to Probability</title>
+    <exploration xml:id="random-probability-preview">
+        <introduction>
+            <p>
+When flipping a fair coin, it's equally likely to land on Heads or Tails.
+Consider the following scenarios and their likelihoods of occuring.
+            </p>
+        </introduction>
+        <task>
+            <p>
+If a coin is flipped twice, is it more likely to be the same result both times,
+or different both times? Why do you think so?
+            </p>
+        </task>
+        <task>
+        <p>
+What if the coin is flipped three times? Is it more likely to be the same result on
+all tosses, or sometime different?
+        </p>
+        </task>
+        <task>
+            <p>
+If a coin was flipped one hundred times, would you be surprised if the
+result was the same on all tosses? Why?
+            </p>
+        </task>
+        <task>
+            <p>
+Is it possible to flip a fair coin ten thousand times and always get
+the same result?
+            </p>
+        </task>
+    </exploration>
+    <activity>
+        <introduction>
+            <p>
+In probability, an <term>experiment</term> is an action with a measurable result.
+Taking this action is called a <term>trial</term>, and each possible result of a trial
+are called an <term>outcome</term>.
+The set of all possible outcomes for an experiment is known as the
+<term>sample space</term> for that experiment.
+            </p>
+            <p>
+Flipping a coin is an example of an experiment. Tossing the coin is a trial for
+that experiment, with the possible outcomes of <m>H</m> (Heads) or <m>T</m> (Tails).
+Therefore the sample space for flipping a coin is the set <m>\left\{H,T\right\}</m>.
+We say the coin is <term>fair</term> because the results of Heads and Tails are
+equally likely to happen during a trial.
+            </p>
+            <p>
+Consider the experiment of rolling a six-sided die, with sides labeled by the
+positive counting numbers one through six. (For short, such dice are known
+as D6.)
+            </p>
+        </introduction>
+        <task>
+            <p>
+What action would constitute a trial of this experiment?
+            </p>
+        </task>
+        <task>
+            <p>
+What are the possible outcomes of such a trial?
+            </p>
+        </task>
+        <task>
+            <p>
+What is the sample space for this experiment?
+            </p>
+        </task>
+        <task>
+            <p>
+What word might you use to describe the die if each possible outcome of the trial
+is equally likely?
+            </p>
+        </task>
+        <task>
+            <p>
+How might you decide that each possible outcome of a trial is equally likely?
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+Suppose a fair coin is flipped twice. The sample space for such an experiment could be
+described as <m>\left\{HH,HT,TH,TT\right\}</m>.
+            </p>
+        </introduction>
+        <task>
+            <p>
+Describe the sample space for an experiment where a fair coin is tossed three times.
+(Hint: there are eight possible outcomes.)
+            </p>
+        </task>
+        <task>
+            <p>
+Describe the sample space for an experiment where a fair D6 is rolled twice.
+            </p>
+        </task>
+        <task>
+            <p>
+Describe the sample space for an experiment where a fair coin is flipped, and then
+a fair D6 is rolled.
+            </p>
+        </task>
+        <task>
+            <p>
+How might this sample space change if the D6 was rolled before flipping the coin?
+What if both actions occurred at the same time?
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+The <term>cardinality</term> or <term>size</term> <m>|A|</m> of a set <m>A</m> counts the
+number of items inside the set.
+            </p>
+            <p>
+An <term>event</term> <m>E</m> is a subset of outcomes taken from a sample space <m>S</m>.
+Assuming each outcome in the sample space is equally likely,
+the <term>probability</term> of an event is given by the formula:
+            </p>
+            <me>
+P(E) = \frac{\text{# outcomes in }E}{\text{# outcomes in }S} = \frac{|E|}{|S|}
+            </me>
+            <p>
+For example, consider flipping a fair coin twice, and the event <q>at least one flip
+lands on Heads</q>. Then <m>E=\left\{HH,HT,TH\right\}</m>, and the probability of this
+event is:
+            </p>
+            <me>
+P(E) = \frac{|\{HH,HT,TH\}|}{|\{HH,HT,TH,TT\}|}=\frac{3}{4}
+            </me>
+            <p>
+Put another way, the probability of this event occurring is three out of four.
+            </p>
+        </introduction>
+        <task>
+            <p>
+Write this probability <m>\frac{3}{4}</m> as a decimal number <m>0.\square\square</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+When placed after a number,
+the percentage sign <m>\%</m> says to divide that number by <m>100</m>. (Literally,
+<q>per-cent</q> means <q>per one hundred</q>.) Write the probabilty <m>\frac{3}{4}</m>
+using a percentage sign.
+            </p>
+        </task>
+        <task>
+            <p>
+Consider the rolling of a fair D6, and the event
+<q>an even number is rolled</q>. Write this event as a set of possible outcomes.
+            </p>
+        </task>
+        <task>
+            <p>
+Show how to compute the probability of rolling an even number on a fair D6.
+Give this probability as an unsimplified fraction, a simplified fraction, a decimal, and percentage.
+            </p>
+        </task>
+        <task>
+            <p>
+What are some different ways to communicate this probability as an English sentence? Give at least
+three examples.
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+While probability measures the ratio of event outcomes over all possible outcomes,
+an <term>experimental probability</term> is obtained by actually running the experiment several times,
+and calculating the number of trials that fit the event divided by the total number of trails run.
+That is, it follows the following formula:
+            </p>
+            <me>
+\hat P(E) = \frac{\text{# trials that belong to }E}{\text{# trials run}}
+            </me>
+            <p>
+For example, to compute experimental probabilities from flipping a fair coin,
+one might flip that coin five times. If the results were H-T-T-H-H, then the experimental
+probability for obtaining Heads would be <m>\frac{3}{5}=60\%</m>, and obtaining Tails
+would be <m>\frac{2}{5}=40\%</m>.
+            </p>
+        </introduction>
+        <task>
+            <p>
+Flip a fair coin ten times and record the results of each trial. Then give the experimental
+probabilities for obtaining Heads and Tails respectively.
+            </p>
+        </task>
+        <task>
+            <p>
+Do it again. Did you obtain the same results? Should you have? Explain your reasoning.
+            </p>
+        </task>
+        <task>
+            <p>
+Find all possible experimental probabilities of
+flipping Heads using five trials. (Hint: there are six of them, including the <m>\frac{3}{5}</m> mentioned
+above.) Explain your reasoning, and explain which of these probabilities you'd expect to
+see most often in actual experiments.
+            </p>
+        </task>
+        <task>
+            <p>
+Bugfix the SageMath for-loop in <xref ref="random-probability-flips"/> to see how the experimental
+probability of flipping Heads can change as 1000 coinflips are simulated.
+            </p>
+            <listing xml:id="random-probability-flips">
+                <caption>Buggy code to simulate flipping coin 1000 times</caption>
+                <program language="sage">
+                    <input><xi:include href="../files/random-probability-flips.sage" parse="text" /></input>
+                </program>
+            </listing>
+        </task>
+        <task>
+            <p>
+Create a few copies of that same Code cell to run additional experiments. What do these graphs mean,
+and how do they illustrate the fairness of the simulated coin flips?
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+Consider the experiment of rolling two fair D6, and the events <m>E_6</m> <q>The sum of the dice is six</q>
+and <m>E_{11}</m> <q>The sum of the dice is eleven</q>.
+            </p>
+        </introduction>
+        <task>
+            <p>
+Do you expect these events have equal or different probabilities? Explain your reasoning.
+            </p>
+        </task>
+        <task>
+            <p>
+Modify the simulated experiment from the previous activity to illustrate experimental probabilities for
+<m>E_6</m> and <m>E_{11}</m> over 1000 trials, using <c>roll_a = randrange(1,7)</c> and
+<c>roll_b = randrange(1,7)</c> to obtain two random D6 rolls.
+            </p>
+        </task>
+        <task>
+            <p>
+Do these simulations confirm or contradict your earlier guess? Explain why.
+            </p>
+        </task>
+        <task>
+            <p>
+Find the (non-experimental) probabilities for <m>E_6</m> and <m>E_{11}</m> by listing and
+counting all the possible outcomes matching each event, and computing
+<m>|E_6|/|S|</m> and <m>|E_{11}|/|S|</m>. (Hint: Rolling a <m>4</m> and <m>2</m>
+is a different outcome than rolling a <m>2</m> and <m>4</m>.)
+            </p>
+        </task>
+        <task>
+            <p>
+Explain how these probabilities match your simulations.
+            </p>
+        </task>
+    </activity>
+    <exercises>
+        <exercise>
+            <statement>
+                <p>
+Consider the experiment of rolling an eight-sided die with sides labeled one through eight,
+also known as a D8. Describe a trial of this experiment, all the possible outcomes,
+and the sample space.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Consider the event <q>the D8 rolls a number more than <m>3</m></q>. Describe
+this event as a set of outcomes.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Show how to compute the probability of this event. Give this value as a fraction,
+decimal, and percentage.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Modify the code used in class to simulate similar experiments to illustrate
+the experimental probability of this event over 1000 trials.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Consider the experiment of both flipping a fair coin and rolling a fair D6. Show how to
+find the probability that the coin is Tails and the D6 isn't four.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Verify this probability experimentally by modifying your simulation code.
+                </p>
+            </statement>
+        </exercise>
+    </exercises>
+</section>
+
