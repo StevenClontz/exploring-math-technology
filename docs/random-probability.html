@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-01-07T20:59:23Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MoD Introduction to Probability</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Mathematics of Data</span></a></h1>
+<p class="byline">Dr. Steven Clontz</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="random.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="random.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="complex.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="random.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="random.html" title="Up">Up</a><a class="next-button button toolbar-item" href="complex.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="why.html" data-scroll="why">Why Study [the] Mathematics [of Data]?</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="programming.html" data-scroll="programming"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
+<li><a href="programming-jupyter.html" data-scroll="programming-jupyter">Jupyter Notebooks and CoCalc</a></li>
+<li><a href="programming-python.html" data-scroll="programming-python">The Python Kernel</a></li>
+<li><a href="programming-sagemath.html" data-scroll="programming-sagemath">The SageMath Kernel</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="writing.html" data-scroll="writing"><span class="codenumber">2</span> <span class="title">Writing for Mathematicians and Data Scientists</span></a><ul>
+<li><a href="writing-math.html" data-scroll="writing-math">The Importance of Writing in Mathematics and Data Science</a></li>
+<li><a href="writing-markup.html" data-scroll="writing-markup">Using Markdown and LaTeX</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="data.html" data-scroll="data"><span class="codenumber">3</span> <span class="title">Data and Collections</span></a><ul>
+<li><a href="data-numbers.html" data-scroll="data-numbers">Numbers and Strings</a></li>
+<li><a href="data-collections.html" data-scroll="data-collections">Collections of Data</a></li>
+<li><a href="data-programming.html" data-scroll="data-programming">Programming with Data</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="visualization.html" data-scroll="visualization"><span class="codenumber">4</span> <span class="title">Visualization of Data</span></a><ul>
+<li><a href="visualization-tables.html" data-scroll="visualization-tables">Tables</a></li>
+<li><a href="visualization-one.html" data-scroll="visualization-one">Single-Variable Visualizations</a></li>
+<li><a href="visualization-two.html" data-scroll="visualization-two">Two-variable Visualizations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="measurements.html" data-scroll="measurements"><span class="codenumber">5</span> <span class="title">Measurements of Data</span></a><ul>
+<li><a href="measurements-center.html" data-scroll="measurements-center">Centers of Data</a></li>
+<li><a href="measurement-spread.html" data-scroll="measurement-spread">Spread of Data</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="predictions.html" data-scroll="predictions"><span class="codenumber">6</span> <span class="title">Making Predictions from Data</span></a><ul>
+<li><a href="predictions-correlation.html" data-scroll="predictions-correlation">Measuring Correlation</a></li>
+<li><a href="predictions-regression.html" data-scroll="predictions-regression">The Fit Line</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a><ul><li><a href="random-probability.html" data-scroll="random-probability" class="active">Introduction to Probability</a></li></ul>
+</li>
+<li class="link"><a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a></li>
+<li class="link"><a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Vectors</span></a></li>
+<li class="link"><a href="transformations.html" data-scroll="transformations"><span class="codenumber">10</span> <span class="title">Transformations of Higher-Dimensional Data</span></a></li>
+<li class="link"><a href="properties.html" data-scroll="properties"><span class="codenumber">11</span> <span class="title">Properties of Linear Transformations</span></a></li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link"><a href="references.html" data-scroll="references"><span class="title">References</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="random-probability"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">7.1</span> <span class="title">Introduction to Probability</span>
+</h2>
+<article class="exploration project-like" id="random-probability-preview"><h6 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">7.1.1</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-61"><p id="p-553">When flipping a fair coin, it's equally likely to land on Heads or Tails. Consider the following scenarios and their likelihoods of occuring.</p></div>
+<article class="task exercise-like" id="task-227"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-554">If a coin is flipped twice, is it more likely to be the same result both times, or different both times? Why do you think so?</p></article><article class="task exercise-like" id="task-228"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-555">What if the coin is flipped three times? Is it more likely to be the same result on all tosses, or sometime different?</p></article><article class="task exercise-like" id="task-229"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-556">If a coin was flipped one hundred times, would you be surprised if the result was the same on all tosses? Why?</p></article><article class="task exercise-like" id="task-230"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-557">Is it possible to flip a fair coin ten thousand times and always get the same result?</p></article></article><article class="activity project-like" id="activity-48"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.1.2</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-62">
+<p id="p-558">In probability, an <dfn class="terminology">experiment</dfn> is an action with a measurable result. Taking this action is called a <dfn class="terminology">trial</dfn>, and each possible result of a trial are called an <dfn class="terminology">outcome</dfn>. The set of all possible outcomes for an experiment is known as the <dfn class="terminology">sample space</dfn> for that experiment.</p>
+<p id="p-559">Flipping a coin is an example of an experiment. Tossing the coin is a trial for that experiment, with the possible outcomes of \(H\) (Heads) or \(T\) (Tails). Therefore the sample space for flipping a coin is the set \(\left\{H,T\right\}\text{.}\) We say the coin is <dfn class="terminology">fair</dfn> because the results of Heads and Tails are equally likely to happen during a trial.</p>
+<p id="p-560">Consider the experiment of rolling a six-sided die, with sides labeled by the positive counting numbers one through six. (For short, such dice are known as D6.)</p>
+</div>
+<article class="task exercise-like" id="task-231"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-561">What action would constitute a trial of this experiment?</p></article><article class="task exercise-like" id="task-232"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-562">What are the possible outcomes of such a trial?</p></article><article class="task exercise-like" id="task-233"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-563">What is the sample space for this experiment?</p></article><article class="task exercise-like" id="task-234"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-564">What word might you use to describe the die if each possible outcome of the trial is equally likely?</p></article><article class="task exercise-like" id="task-235"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-565">How might you decide that each possible outcome of a trial is equally likely?</p></article></article><article class="activity project-like" id="activity-49"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.1.3</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-63"><p id="p-566">Suppose a fair coin is flipped twice. The sample space for such an experiment could be described as \(\left\{HH,HT,TH,TT\right\}\text{.}\)</p></div>
+<article class="task exercise-like" id="task-236"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-567">Describe the sample space for an experiment where a fair coin is tossed three times. (Hint: there are eight possible outcomes.)</p></article><article class="task exercise-like" id="task-237"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-568">Describe the sample space for an experiment where a fair D6 is rolled twice.</p></article><article class="task exercise-like" id="task-238"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-569">Describe the sample space for an experiment where a fair coin is flipped, and then a fair D6 is rolled.</p></article><article class="task exercise-like" id="task-239"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-570">How might this sample space change if the D6 was rolled before flipping the coin? What if both actions occurred at the same time?</p></article></article><article class="activity project-like" id="activity-50"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.1.4</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-64">
+<p id="p-571">The <dfn class="terminology">cardinality</dfn> or <dfn class="terminology">size</dfn> \(|A|\) of a set \(A\) counts the number of items inside the set.</p>
+<p id="p-572">An <dfn class="terminology">event</dfn> \(E\) is a subset of outcomes taken from a sample space \(S\text{.}\) Assuming each outcome in the sample space is equally likely, the <dfn class="terminology">probability</dfn> of an event is given by the formula:</p>
+<div class="displaymath">
+\begin{equation*}
+P(E) = \frac{\text{# outcomes in }E}{\text{# outcomes in }S} = \frac{|E|}{|S|}
+\end{equation*}
+</div>
+<p id="p-573">For example, consider flipping a fair coin twice, and the event “at least one flip lands on Heads”. Then \(E=\left\{HH,HT,TH\right\}\text{,}\) and the probability of this event is:</p>
+<div class="displaymath">
+\begin{equation*}
+P(E) = \frac{|\{HH,HT,TH\}|}{|\{HH,HT,TH,TT\}|}=\frac{3}{4}
+\end{equation*}
+</div>
+<p id="p-574">Put another way, the probability of this event occurring is three out of four.</p>
+</div>
+<article class="task exercise-like" id="task-240"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-575">Write this probability \(\frac{3}{4}\) as a decimal number \(0.\square\square\text{.}\)</p></article><article class="task exercise-like" id="task-241"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-576">When placed after a number, the percentage sign \(\%\) says to divide that number by \(100\text{.}\) (Literally, “per-cent” means “per one hundred”.) Write the probabilty \(\frac{3}{4}\) using a percentage sign.</p></article><article class="task exercise-like" id="task-242"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-577">Consider the rolling of a fair D6, and the event “an even number is rolled”. Write this event as a set of possible outcomes.</p></article><article class="task exercise-like" id="task-243"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-578">Show how to compute the probability of rolling an even number on a fair D6. Give this probability as an unsimplified fraction, a simplified fraction, a decimal, and percentage.</p></article><article class="task exercise-like" id="task-244"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-579">What are some different ways to communicate this probability as an English sentence? Give at least three examples.</p></article></article><article class="activity project-like" id="activity-51"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.1.5</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-65">
+<p id="p-580">While probability measures the ratio of event outcomes over all possible outcomes, an <dfn class="terminology">experimental probability</dfn> is obtained by actually running the experiment several times, and calculating the number of trials that fit the event divided by the total number of trails run. That is, it follows the following formula:</p>
+<div class="displaymath">
+\begin{equation*}
+\hat P(E) = \frac{\text{# trials that belong to }E}{\text{# trials run}}
+\end{equation*}
+</div>
+<p id="p-581">For example, to compute experimental probabilities from flipping a fair coin, one might flip that coin five times. If the results were H-T-T-H-H, then the experimental probability for obtaining Heads would be \(\frac{3}{5}=60\%\text{,}\) and obtaining Tails would be \(\frac{2}{5}=40\%\text{.}\)</p>
+</div>
+<article class="task exercise-like" id="task-245"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-582">Flip a fair coin ten times and record the results of each trial. Then give the experimental probabilities for obtaining Heads and Tails respectively.</p></article><article class="task exercise-like" id="task-246"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-583">Do it again. Did you obtain the same results? Should you have? Explain your reasoning.</p></article><article class="task exercise-like" id="task-247"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-584">Find all possible experimental probabilities of flipping Heads using five trials. (Hint: there are six of them, including the \(\frac{3}{5}\) mentioned above.) Explain your reasoning, and explain which of these probabilities you'd expect to see most often in actual experiments.</p></article><article class="task exercise-like" id="task-248"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-585">Bugfix the SageMath for-loop in <a class="xref" data-knowl="./knowl/random-probability-flips.html" title="Listing 7.1.1">7.1.1</a> to see how the experimental probability of flipping Heads can change as 1000 coinflips are simulated.</p>
+<figure class="listing figure-like" id="random-probability-flips"><pre class="prettyprint lang-py">heads = 0
+total = 0
+points = []
+
+for _ in range(1000):
+    # re-arrange the following lines, fixing indentation as needed
+    heads = heads + 1
+    points.append( (total,ex_prob) )
+    if flip == "H":
+        ex_prob = heads/total
+    total = total + 1
+    flip = choice(['H','T'])
+
+show(
+    line(points, color="blue")+line([(1,0.5),(1000,0.5)], color="red"),
+    axes_labels=["Trials","Exp. Prob."],
+    ymin=0,
+    ymax=1
+)
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">7.1.1<span class="period">.</span></span><span class="space"> </span>Buggy code to simulate flipping coin 1000 times</figcaption></figure></article><article class="task exercise-like" id="task-249"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-586">Create a few copies of that same Code cell to run additional experiments. What do these graphs mean, and how do they illustrate the fairness of the simulated coin flips?</p></article></article><article class="activity project-like" id="activity-52"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.1.6</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-66"><p id="p-587">Consider the experiment of rolling two fair D6, and the events \(E_6\) “The sum of the dice is six” and \(E_{11}\) “The sum of the dice is eleven”.</p></div>
+<article class="task exercise-like" id="task-250"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-588">Do you expect these events have equal or different probabilities? Explain your reasoning.</p></article><article class="task exercise-like" id="task-251"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-589">Modify the simulated experiment from the previous activity to illustrate experimental probabilities for \(E_6\) and \(E_{11}\) over 1000 trials, using <code class="code-inline tex2jax_ignore">roll_a = randrange(1,7)</code> and <code class="code-inline tex2jax_ignore">roll_b = randrange(1,7)</code> to obtain two random D6 rolls.</p></article><article class="task exercise-like" id="task-252"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-590">Do these simulations confirm or contradict your earlier guess? Explain why.</p></article><article class="task exercise-like" id="task-253"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-591">Find the (non-experimental) probabilities for \(E_6\) and \(E_{11}\) by listing and counting all the possible outcomes matching each event, and computing \(|E_6|/|S|\) and \(|E_{11}|/|S|\text{.}\) (Hint: Rolling a \(4\) and \(2\) is a different outcome than rolling a \(2\) and \(4\text{.}\))</p></article><article class="task exercise-like" id="task-254"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-592">Explain how these probabilities match your simulations.</p></article></article><section class="exercises" id="exercises-14"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">7.1.1</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-100"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-593">Consider the experiment of rolling an eight-sided die with sides labeled one through eight, also known as a D8. Describe a trial of this experiment, all the possible outcomes, and the sample space.</p></article><article class="exercise exercise-like" id="exercise-101"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-594">Consider the event “the D8 rolls a number more than \(3\)”. Describe this event as a set of outcomes.</p></article><article class="exercise exercise-like" id="exercise-102"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-595">Show how to compute the probability of this event. Give this value as a fraction, decimal, and percentage.</p></article><article class="exercise exercise-like" id="exercise-103"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-596">Modify the code used in class to simulate similar experiments to illustrate the experimental probability of this event over 1000 trials.</p></article><article class="exercise exercise-like" id="exercise-104"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-597">Consider the experiment of both flipping a fair coin and rolling a fair D6. Show how to find the probability that the coin is Tails and the D6 isn't four.</p></article><article class="exercise exercise-like" id="exercise-105"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-598">Verify this probability experimentally by modifying your simulation code.</p></article></section></section></div></main>
+</div>
+</body>
+</html>
