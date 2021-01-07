@@ -3,17 +3,30 @@
     <xi:include href="./titlepage.ptx" />
     <acknowledgement>
         <p>
-Thanks to the
-<url href="https://ascte.org">Alabama School of Cyber Technology and Engineering</url>
+The author's heartfelt thanks go out to the following people and organizations.
+        </p>
+        <ul>
+            <li>
+        <p>
+The <url href="https://ascte.org">Alabama School of Cyber Technology and Engineering</url>
 for supporting the author as he developed this text to serve as the backbone
 of their introductory mathematics course.
         </p>
+            </li>
+            <li>
         <p>
-Thanks also to the authors of
-<url href="https://www.inferentialthinking.com">Computational and Inferential Thinking</url>,
+The authors of
+<url href="https://www.inferentialthinking.com"><pubtitle>Computational and Inferential Thinking</pubtitle></url>,
 whose text inspired some of the data science activities in this book, as well as
-the maintainers of the <c>datascience</c> Python module.
+the maintainers of the <c>datascience</c> Python module used in several chapters.
         </p>
+            </li>
+            <li>
+Dr. Tien Chih, whose book
+<url href="https://tienchih.github.io/"><pubtitle>Finite Mathematics: A Tour</pubtitle></url>
+helped inspire <xref ref="random"/>, and for discussions as that chapter was developed.
+            </li>
+        </ul>
     </acknowledgement>
     <preface xml:id="why">
         <title>Why Study [the] Mathematics [of Data]?</title>

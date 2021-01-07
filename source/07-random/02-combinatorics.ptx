@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="random-combinatorics" kernel="sage">
+    <title>Combinatorics</title>
+    <exploration xml:id="random-combinatorics-preview">
+        <introduction>
+            <p>
+While counting seems like a very basic mathematical task, <term>combinatorics</term> is the
+mathematics of counting quantities that are difficult to manage by hand (or even by computer).
+            </p>
+        </introduction>
+        <task>
+            <p>
+Explain how you'd help a five-year-old count how many numbers in the set <m>\{3,4,5,\dots,24,25\}</m> end with
+a <m>2</m>, <m>7</m>, or <m>9</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+How many of the counting numbers in the set <m>\{3,4,5,\dots,2024,2025\}</m> end with
+a <m>2</m>, <m>7</m>, or <m>9</m>? You probably don't want deal with over two thousand
+numbers by hand, so first fix the list comprehension
+<c>[x for x in range(21,50) if x%10 in [3,8,9]]</c> to produce a list of all such numbers.
+Then use the <c>len()</c> tool to count them.
+            </p>
+        </task>
+        <task>
+            <p>
+Without using technology, how many numbers in the set <m>\{1,2,\dots,10\}</m> end with
+a <m>2</m>, <m>7</m>, or <m>9</m>? How can you use that result to find how many numbers
+in the set <m>\{1,2,\dots,100\}</m> end with those digits? What about the set
+<m>\{1,2,\dots,1000\}</m>?
+            </p>
+        </task>
+        <task>
+            <p>
+Use the ideas from the previous task to count the numbers in the set <m>\{11,12,\dots,1008\}</m>
+that end with a <m>2</m>, <m>7</m>, or <m>9</m>. Then confirm your result using technology.
+            </p>
+        </task>
+    </exploration>
+    <activity>
+        <introduction>
+            <p>
+                Multipliation Principle TODO
+            </p>
+        </introduction>
+        <task>
+            <p>
+                TODO
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+                Permutations TODO
+            </p>
+        </introduction>
+        <task>
+            <p>
+                TODO
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+                Password Probability TODO
+            </p>
+        </introduction>
+        <task>
+            <p>
+                TODO
+            </p>
+        </task>
+    </activity>
+    <exercises>
+        <exercise>
+            <statement>
+                <p>
+                    TODO
+                </p>
+            </statement>
+        </exercise>
+    </exercises>
+</section>
+

@@ -12,4 +12,5 @@
         </ul>
     </objectives>
     <xi:include href="./01-probability.ptx" />
+    <xi:include href="./02-combinatorics.ptx" />
 </chapter>
