@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-07T20:59:21Z       *-->
+<!--*       on 2021-01-09T01:34:50Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -126,7 +126,10 @@ MathJax.Hub.Config({
 </ul>
 </li>
 <li class="link">
-<a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a><ul><li><a href="random-probability.html" data-scroll="random-probability">Introduction to Probability</a></li></ul>
+<a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a><ul>
+<li><a href="random-probability.html" data-scroll="random-probability">Introduction to Probability</a></li>
+<li><a href="random-combinatorics.html" data-scroll="random-combinatorics">Combinatorics</a></li>
+</ul>
 </li>
 <li class="link"><a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a></li>
 <li class="link"><a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Vectors</span></a></li>
@@ -144,36 +147,36 @@ MathJax.Hub.Config({
 <article class="exploration project-like" id="exploration-5"><h6 class="heading">
 <span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span>
 </h6>
-<p id="p-143">Like many online platforms, Jupyter notebooks use <dfn class="terminology">Markdown</dfn> syntax for formatting text. The <a class="external" href="https://www.markdowntutorial.com/" target="_blank">Markdown Tutorial</a> provides an excellent walkthrough on its basics.</p>
-<p id="p-144">Complete the <a class="external" href="https://www.markdowntutorial.com/" target="_blank">Markdown Tutorial</a> and upload a screenshot of its “Congratulations” page below when you are done.</p></article><article class="activity project-like" id="activity-12"><h6 class="heading">
+<p id="p-144">Like many online platforms, Jupyter notebooks use <dfn class="terminology">Markdown</dfn> syntax for formatting text. The <a class="external" href="https://www.markdowntutorial.com/" target="_blank">Markdown Tutorial</a> provides an excellent walkthrough on its basics.</p>
+<p id="p-145">Complete the <a class="external" href="https://www.markdowntutorial.com/" target="_blank">Markdown Tutorial</a> and upload a screenshot of its “Congratulations” page below when you are done.</p></article><article class="activity project-like" id="activity-12"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span>
 </h6>
 <div class="introduction" id="introduction-16">
-<p id="p-145">Markdown has many features for writing formatted documents using plain text, but it does not provide much support for mathematical notation out-of-the-box.</p>
-<p id="p-146">Fortunately, many platforms that support Markdown also support <dfn class="terminology">LaTeX</dfn> (pronounced “lay-tek” or “lah-tek”, and stylized as \(\LaTeX{}\)) markup for mathematical notation.</p>
+<p id="p-146">Markdown has many features for writing formatted documents using plain text, but it does not provide much support for mathematical notation out-of-the-box.</p>
+<p id="p-147">Fortunately, many platforms that support Markdown also support <dfn class="terminology">LaTeX</dfn> (pronounced “lay-tek” or “lah-tek”, and stylized as \(\LaTeX{}\)) markup for mathematical notation.</p>
 </div>
 <article class="task exercise-like" id="task-57"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-147">To denote part of your writing as mathematical notation in a Markdown cell, use <code class="code-inline tex2jax_ignore">\(</code> and <code class="code-inline tex2jax_ignore">\)</code> to surround your mathematics.</p>
-<p id="p-148">Create two Markdown cells with the text <code class="code-inline tex2jax_ignore">The solution to x+1=7 is x=6.</code>. Then use <code class="code-inline tex2jax_ignore">\(</code> and <code class="code-inline tex2jax_ignore">\)</code> to surround the mathematical notation in one of those cells to observe the difference. (Don't forget to use <kbd class="kbdkey">Shift</kbd>+<kbd class="kbdkey">Enter</kbd> to display the formatted text.)</p></article><article class="task exercise-like" id="task-58"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-149">Now create two Markdown cells with the text <code class="code-inline tex2jax_ignore">The solutions to x^2-1=0 are x=-1 and x=1.</code>, and use <code class="code-inline tex2jax_ignore">\(</code> and <code class="code-inline tex2jax_ignore">\)</code> to surround the mathematics in one cell.</p></article><article class="task exercise-like" id="task-59"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-150">When typesetting longer mathematical notation, <code class="code-inline tex2jax_ignore">\[</code> and <code class="code-inline tex2jax_ignore">\]</code> may be used instead to center the mathematics on a new line.</p>
-<p id="p-151">Copy <code class="code-inline tex2jax_ignore">The only solution to x^4-4x^3+6x^2-4x+1=0 is x=1.</code> into a Markdown cell and appropriately format the long equation and short solution.</p></article><article class="task exercise-like" id="task-60"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-152">One of the best ways to learn \(\LaTeX{}\) notation is to view the source written by other authors. Consider the following formula:</p>
+<p id="p-148">To denote part of your writing as mathematical notation in a Markdown cell, use <code class="code-inline tex2jax_ignore">\(</code> and <code class="code-inline tex2jax_ignore">\)</code> to surround your mathematics.</p>
+<p id="p-149">Create two Markdown cells with the text <code class="code-inline tex2jax_ignore">The solution to x+1=7 is x=6.</code>. Then use <code class="code-inline tex2jax_ignore">\(</code> and <code class="code-inline tex2jax_ignore">\)</code> to surround the mathematical notation in one of those cells to observe the difference. (Don't forget to use <kbd class="kbdkey">Shift</kbd>+<kbd class="kbdkey">Enter</kbd> to display the formatted text.)</p></article><article class="task exercise-like" id="task-58"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-150">Now create two Markdown cells with the text <code class="code-inline tex2jax_ignore">The solutions to x^2-1=0 are x=-1 and x=1.</code>, and use <code class="code-inline tex2jax_ignore">\(</code> and <code class="code-inline tex2jax_ignore">\)</code> to surround the mathematics in one cell.</p></article><article class="task exercise-like" id="task-59"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-151">When typesetting longer mathematical notation, <code class="code-inline tex2jax_ignore">\[</code> and <code class="code-inline tex2jax_ignore">\]</code> may be used instead to center the mathematics on a new line.</p>
+<p id="p-152">Copy <code class="code-inline tex2jax_ignore">The only solution to x^4-4x^3+6x^2-4x+1=0 is x=1.</code> into a Markdown cell and appropriately format the long equation and short solution.</p></article><article class="task exercise-like" id="task-60"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-153">One of the best ways to learn \(\LaTeX{}\) notation is to view the source written by other authors. Consider the following formula:</p>
 <div class="displaymath">
 \begin{equation*}
 ax^2+bx+c=0 \Leftrightarrow x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
 \end{equation*}
 </div>
-<p id="p-153">To view the source markup for the above formula while in a Jupyter notebook on CoCalc, you can select the cell, and then use the <kbd class="kbdkey">Edit</kbd> &gt; <kbd class="kbdkey">Edit protect</kbd> menu option to make the cell editable. If you accidentally delete something, you can use CoCalc's Time Travel feature to restore it. (To view the LaTeX source of any mathematical notation in the HTML verison of this book, you can simply right-click the equation and use the menu that appears.)</p>
-<p id="p-154">Get the source for the formula above, and paste it into a Markdown cell below.</p></article></article><article class="activity project-like" id="activity-13"><h6 class="heading">
+<p id="p-154">To view the source markup for the above formula while in a Jupyter notebook on CoCalc, you can select the cell, and then use the <kbd class="kbdkey">Edit</kbd> &gt; <kbd class="kbdkey">Edit protect</kbd> menu option to make the cell editable. If you accidentally delete something, you can use CoCalc's Time Travel feature to restore it. (To view the LaTeX source of any mathematical notation in the HTML verison of this book, you can simply right-click the equation and use the menu that appears.)</p>
+<p id="p-155">Get the source for the formula above, and paste it into a Markdown cell below.</p></article></article><article class="activity project-like" id="activity-13"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
 </h6>
 <div class="introduction" id="introduction-17">
-<p id="p-155">Some LaTeX notation is rather straight-forward, with literal notation such as <code class="code-inline tex2jax_ignore">+</code> and <code class="code-inline tex2jax_ignore">-</code>, and intuitive notation such as <code class="code-inline tex2jax_ignore">^</code> for superscripts and <code class="code-inline tex2jax_ignore">_</code> for subscripts: <code class="code-inline tex2jax_ignore">a_0+a_1^2=-a_2^3</code> produces \(a_0+a_1^2=-a_2^3\text{.}\)</p>
-<p id="p-156">But multiplication cannot be represented by, say, <code class="code-inline tex2jax_ignore">x</code>, since that represents the variable \(x\text{.}\) (Instead we write <code class="code-inline tex2jax_ignore">2 \times 3</code> to produce \(2 \times 3\text{.}\))</p>
-<p id="p-157">Note that <code class="code-inline tex2jax_ignore">z_123</code> produces \(z_123\text{,}\) so grouping in LaTeX may be accomplished with curly braces <code class="code-inline tex2jax_ignore">{}</code>: <code class="code-inline tex2jax_ignore">z_{123}</code> produces \(z_{123}\text{.}\) Actual curly braces may be displayed as follows: <code class="code-inline tex2jax_ignore">\{1,2,3\}</code> produces \(\{1,2,3\}\text{.}\)</p>
-<p id="p-158">Even professionals usually know just a small subset of all the LaTeX commands available. Instead, references like <a class="external" href="https://katex.org/docs/supported.html" target="_blank">KaTeX's Support Table</a> and tools like <a class="external" href="https://detexify.kirelabs.org/classify.html" target="_blank">DeTeXify</a> allow for easy lookup of LaTeX commands as needed.</p>
-<p id="p-159">For each of the following samples of mathematical notation, <em class="emphasis">don't</em> peek at their source markup. Instead, use the above resources to replicate the notation as best as possible in a Markdown cell. After you've done as well as possible on your own, you should then compare with the original source code to improve your original work.</p>
+<p id="p-156">Some LaTeX notation is rather straight-forward, with literal notation such as <code class="code-inline tex2jax_ignore">+</code> and <code class="code-inline tex2jax_ignore">-</code>, and intuitive notation such as <code class="code-inline tex2jax_ignore">^</code> for superscripts and <code class="code-inline tex2jax_ignore">_</code> for subscripts: <code class="code-inline tex2jax_ignore">a_0+a_1^2=-a_2^3</code> produces \(a_0+a_1^2=-a_2^3\text{.}\)</p>
+<p id="p-157">But multiplication cannot be represented by, say, <code class="code-inline tex2jax_ignore">x</code>, since that represents the variable \(x\text{.}\) (Instead we write <code class="code-inline tex2jax_ignore">2 \times 3</code> to produce \(2 \times 3\text{.}\))</p>
+<p id="p-158">Note that <code class="code-inline tex2jax_ignore">z_123</code> produces \(z_123\text{,}\) so grouping in LaTeX may be accomplished with curly braces <code class="code-inline tex2jax_ignore">{}</code>: <code class="code-inline tex2jax_ignore">z_{123}</code> produces \(z_{123}\text{.}\) Actual curly braces may be displayed as follows: <code class="code-inline tex2jax_ignore">\{1,2,3\}</code> produces \(\{1,2,3\}\text{.}\)</p>
+<p id="p-159">Even professionals usually know just a small subset of all the LaTeX commands available. Instead, references like <a class="external" href="https://katex.org/docs/supported.html" target="_blank">KaTeX's Support Table</a> and tools like <a class="external" href="https://detexify.kirelabs.org/classify.html" target="_blank">DeTeXify</a> allow for easy lookup of LaTeX commands as needed.</p>
+<p id="p-160">For each of the following samples of mathematical notation, <em class="emphasis">don't</em> peek at their source markup. Instead, use the above resources to replicate the notation as best as possible in a Markdown cell. After you've done as well as possible on your own, you should then compare with the original source code to improve your original work.</p>
 </div>
 <article class="task exercise-like" id="task-61"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <div class="displaymath">
@@ -203,43 +206,43 @@ ax^2+bx+c=0 \Leftrightarrow x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
 </div></article></article><article class="activity project-like" id="activity-14"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
 </h6>
-<p id="p-160">LaTeX markup is used by many applications for typesetting mathematical notation. But it's also possible to write entire documents in LaTeX, that can be distributed as PDFs. Since it's very easy to write mathematics, manage bibliographies, and integrate a LaTeX document with computer code, it's very common for STEM researchers to author documents in LaTeX.</p>
-<p id="p-161">CoCalc provides a convenient LaTeX editor that you can use from your web browser. Try it out by following these steps.</p>
-<ul id="p-162" class="disc">
-<li id="li-7"><p id="p-163">From the <kbd class="kbdkey">+ New</kbd> menu option, create a new LaTeX document in the same folder as this notebook. A default document will appear on the left, and its PDF output appears on the right.</p></li>
-<li id="li-8"><p id="p-164">The top part of the code is the <dfn class="terminology">preamble</dfn> with various configurations, most of which you don't need to worry about. There is a place to define the title and author of the paper. Change the title of the paper to match your favorite TV show, and change the author to be named after a character on that show.</p></li>
-<li id="li-9"><p id="p-165">By default the produced PDF will include today's date. This can be configured by inserting the command <code class="code-inline tex2jax_ignore">\date{Month Day, Year}</code> in the preamble. Use this to change the date to be one week from today instead.</p></li>
-<li id="li-10">
-<p id="p-166">The <dfn class="terminology">body</dfn> of the document is between the <code class="code-inline tex2jax_ignore">\begin{document}</code> and <code class="code-inline tex2jax_ignore">\end{document}</code> commands. The <code class="code-inline tex2jax_ignore">\maketitle</code> command tells LaTeX to show the title, author, and date.</p>
-<p id="p-167">Add some text two lines below the <code class="code-inline tex2jax_ignore">\maketitle</code> command, quoting a character from your favorite show.</p>
+<p id="p-161">LaTeX markup is used by many applications for typesetting mathematical notation. But it's also possible to write entire documents in LaTeX, that can be distributed as PDFs. Since it's very easy to write mathematics, manage bibliographies, and integrate a LaTeX document with computer code, it's very common for STEM researchers to author documents in LaTeX.</p>
+<p id="p-162">CoCalc provides a convenient LaTeX editor that you can use from your web browser. Try it out by following these steps.</p>
+<ul id="p-163" class="disc">
+<li id="li-10"><p id="p-164">From the <kbd class="kbdkey">+ New</kbd> menu option, create a new LaTeX document in the same folder as this notebook. A default document will appear on the left, and its PDF output appears on the right.</p></li>
+<li id="li-11"><p id="p-165">The top part of the code is the <dfn class="terminology">preamble</dfn> with various configurations, most of which you don't need to worry about. There is a place to define the title and author of the paper. Change the title of the paper to match your favorite TV show, and change the author to be named after a character on that show.</p></li>
+<li id="li-12"><p id="p-166">By default the produced PDF will include today's date. This can be configured by inserting the command <code class="code-inline tex2jax_ignore">\date{Month Day, Year}</code> in the preamble. Use this to change the date to be one week from today instead.</p></li>
+<li id="li-13">
+<p id="p-167">The <dfn class="terminology">body</dfn> of the document is between the <code class="code-inline tex2jax_ignore">\begin{document}</code> and <code class="code-inline tex2jax_ignore">\end{document}</code> commands. The <code class="code-inline tex2jax_ignore">\maketitle</code> command tells LaTeX to show the title, author, and date.</p>
+<p id="p-168">Add some text two lines below the <code class="code-inline tex2jax_ignore">\maketitle</code> command, quoting a character from your favorite show.</p>
 </li>
-<li id="li-11"><p id="p-168">Finally, copy-paste some mathematical notation from the previous activities so it appears below the quote in your LaTeX-produced PDF.</p></li>
+<li id="li-14"><p id="p-169">Finally, copy-paste some mathematical notation from the previous activities so it appears below the quote in your LaTeX-produced PDF.</p></li>
 </ul>
-<p id="p-169">When you're done, put a link to your LaTeX source file in a Markdown cell below. Since it's located in the same folder, if your file was named <code class="code-inline tex2jax_ignore">example.tex</code>, then it can be linked to by entering <code class="code-inline tex2jax_ignore">[Link to LaTeX file](example.tex)</code>.</p></article><section class="exercises" id="exercises-3"><h3 class="heading hide-type">
+<p id="p-170">When you're done, put a link to your LaTeX source file in a Markdown cell below. Since it's located in the same folder, if your file was named <code class="code-inline tex2jax_ignore">example.tex</code>, then it can be linked to by entering <code class="code-inline tex2jax_ignore">[Link to LaTeX file](example.tex)</code>.</p></article><section class="exercises" id="exercises-3"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">2.2.1</span> <span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-16"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-170">Copy the following into a Markdown cell, and then appropriately style the words <code class="code-inline tex2jax_ignore">bold</code> and <code class="code-inline tex2jax_ignore">italics</code>.</p>
+<p id="p-171">Copy the following into a Markdown cell, and then appropriately style the words <code class="code-inline tex2jax_ignore">bold</code> and <code class="code-inline tex2jax_ignore">italics</code>.</p>
 <pre class="code-block tex2jax_ignore">I know how to style bold and italics in Markdown.</pre></article><article class="exercise exercise-like" id="exercise-17"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-171">Copy the following into a Markdown cell, and then make each sentence appear as a separate paragraph.</p>
+<p id="p-172">Copy the following into a Markdown cell, and then make each sentence appear as a separate paragraph.</p>
 <pre class="code-block tex2jax_ignore">I know how to separate paragraphs in Markdown. See, I did it!</pre></article><article class="exercise exercise-like" id="exercise-18"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-172">Copy the following into a Markdown cell, and then it link to your favorite YouTube video.</p>
+<p id="p-173">Copy the following into a Markdown cell, and then it link to your favorite YouTube video.</p>
 <pre class="code-block tex2jax_ignore">I know how to link my favorite YouTube video in Markdown.</pre></article><article class="exercise exercise-like" id="exercise-19"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-173">Copy the following into a Markdown cell, and make the first few words into a heading.</p>
+<p id="p-174">Copy the following into a Markdown cell, and make the first few words into a heading.</p>
 <pre class="code-block tex2jax_ignore">An important title. I know how to make headings in Markdown.</pre></article><article class="exercise exercise-like" id="exercise-20"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-174">Copy the following into a Markdown cell, and make the list appear with bullets.</p>
+<p id="p-175">Copy the following into a Markdown cell, and make the list appear with bullets.</p>
 <pre class="code-block tex2jax_ignore">Here's a few of the things I know how to format in Markdown:
 bold, italics, links, headings, lists</pre></article><article class="exercise exercise-like" id="exercise-21"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-175">Replicate the following complete sentence using mathematical notation in a Markdown cell.</p>
+<p id="p-176">Replicate the following complete sentence using mathematical notation in a Markdown cell.</p>
 <blockquote class="blockquote" id="blockquote-1">After solving the equation \(3x=5x-6\) for \(x\text{,}\) we find that \(x=3\text{.}\)</blockquote></article><article class="exercise exercise-like" id="exercise-22"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
-<p id="p-176">Repeat the previous exercise, but make the equation \(3x=5x-6\) appear as a large, centered mathematical expression on its own line rather than an inline mathematical expression.</p></article><article class="exercise exercise-like" id="exercise-23"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
-<p id="p-177">Typeset the following mathematical equation in a Markdown cell.</p>
+<p id="p-177">Repeat the previous exercise, but make the equation \(3x=5x-6\) appear as a large, centered mathematical expression on its own line rather than an inline mathematical expression.</p></article><article class="exercise exercise-like" id="exercise-23"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-178">Typeset the following mathematical equation in a Markdown cell.</p>
 <div class="displaymath">
 \begin{equation*}
 \sin(x) = \sum_{k=0}^\infty \frac{(-1)^kx^{2k+1}}{(2k+1)!}
 \end{equation*}
 </div></article><article class="exercise exercise-like" id="exercise-24"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
-<p id="p-178">Typeset the following mathematical expression in a Markdown cell.</p>
+<p id="p-179">Typeset the following mathematical expression in a Markdown cell.</p>
 <div class="displaymath">
 \begin{equation*}
 \binom{n}{k}^2=\binom{n-1}{k-1}^2+2\binom{n-1}{k-1}\binom{n-1}{k}+\binom{n-1}{k}^2

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-07T20:59:22Z       *-->
+<!--*       on 2021-01-09T01:34:51Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -126,7 +126,10 @@ MathJax.Hub.Config({
 </ul>
 </li>
 <li class="link">
-<a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a><ul><li><a href="random-probability.html" data-scroll="random-probability">Introduction to Probability</a></li></ul>
+<a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a><ul>
+<li><a href="random-probability.html" data-scroll="random-probability">Introduction to Probability</a></li>
+<li><a href="random-combinatorics.html" data-scroll="random-combinatorics">Combinatorics</a></li>
+</ul>
 </li>
 <li class="link"><a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a></li>
 <li class="link"><a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Vectors</span></a></li>
@@ -144,28 +147,28 @@ MathJax.Hub.Config({
 <article class="exploration project-like" id="measurement-spread-preview"><h6 class="heading">
 <span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-48"><p id="p-450">Consider the data in the lists <code class="code-inline tex2jax_ignore">[13, 13, 12, 10, 10, 14, 12, 11, 10, 14, 15, 10, 11, 13, 14, 14, 14, 15, 14, 11]</code> and <code class="code-inline tex2jax_ignore">[19, 12, 13, 9, 15, 5, 7, 12, 9, 14, 8, 20, 19, 15, 13, 8, 14, 14, 7, 17]</code>.</p></div>
+<div class="introduction" id="introduction-48"><p id="p-451">Consider the data in the lists <code class="code-inline tex2jax_ignore">[13, 13, 12, 10, 10, 14, 12, 11, 10, 14, 15, 10, 11, 13, 14, 14, 14, 15, 14, 11]</code> and <code class="code-inline tex2jax_ignore">[19, 12, 13, 9, 15, 5, 7, 12, 9, 14, 8, 20, 19, 15, 13, 8, 14, 14, 7, 17]</code>.</p></div>
 <article class="task exercise-like" id="task-173"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-451">Show that the mean, median, and mode for the data in the first list are the same as the second list.</p></article><article class="task exercise-like" id="task-174"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-452">Draw a dot plot or histogram visualizing the data in each list.</p></article><article class="task exercise-like" id="task-175"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-453">What does the visualization tell you about the data that the measures of center do not?</p></article></article><article class="activity project-like" id="activity-40"><h6 class="heading">
+<p id="p-452">Show that the mean, median, and mode for the data in the first list are the same as the second list.</p></article><article class="task exercise-like" id="task-174"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-453">Draw a dot plot or histogram visualizing the data in each list.</p></article><article class="task exercise-like" id="task-175"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-454">What does the visualization tell you about the data that the measures of center do not?</p></article></article><article class="activity project-like" id="activity-40"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-49"><p id="p-454">Often we are interested in the <dfn class="terminology">spread</dfn> of values in a dataset. The simplest measure of spread is the <dfn class="terminology">range</dfn> of data: the difference between its largest value (its <dfn class="terminology">maximum</dfn>) and its smallest value (its <dfn class="terminology">minimum</dfn>). For example, the range of the values in \(3,3,6,7,12,12,16,19\) is \(\text{max}-\text{min}=19-3=16\text{.}\)</p></div>
+<div class="introduction" id="introduction-49"><p id="p-455">Often we are interested in the <dfn class="terminology">spread</dfn> of values in a dataset. The simplest measure of spread is the <dfn class="terminology">range</dfn> of data: the difference between its largest value (its <dfn class="terminology">maximum</dfn>) and its smallest value (its <dfn class="terminology">minimum</dfn>). For example, the range of the values in \(3,3,6,7,12,12,16,19\) is \(\text{max}-\text{min}=19-3=16\text{.}\)</p></div>
 <article class="task exercise-like" id="task-176"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-455">Find the maximum, minimum, and range for the values \(9, 2, 3, 5, 3, 6, 2, 7\text{.}\)</p></article><article class="task exercise-like" id="task-177"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-456">Find the maximum, minimum, and range for the values \(5, 1, 3, 998, 2, 5, 8, 2\text{.}\)</p></article><article class="task exercise-like" id="task-178"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-457">What do you notice about the previous task? How does the range relate (or not relate) to the majority of the data?</p></article><article class="task exercise-like" id="task-179"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-458">Get a copy of <code class="code-inline tex2jax_ignore">pizza_table</code> available for this notebook.</p>
-<p id="p-459">Set <code class="code-inline tex2jax_ignore">classic_prices = pizza_table.where("type","classic").column("price")</code>, and then use <code class="code-inline tex2jax_ignore">min(classic_prices)</code> and <code class="code-inline tex2jax_ignore">max(classic_prices)</code> to describe the mininum price, maximum price, and range of prices for classic pizzas sold by the pizzeria.</p></article><article class="task exercise-like" id="task-180"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-460">Display a box plot and histogram for the table of classic pizza prices <code class="code-inline tex2jax_ignore">pizza_table.where("type","classic").select("price")</code>.</p></article><article class="task exercise-like" id="task-181"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-461">Notice that the box plot displays <dfn class="terminology">outliers</dfn> in the data as dots: the values that are further away from the median than most points of data.</p>
-<p id="p-462">Ignoring outliers, what is an approximate range of the classic pizza prices?</p></article></article><article class="activity project-like" id="activity-41"><h6 class="heading">
+<p id="p-456">Find the maximum, minimum, and range for the values \(9, 2, 3, 5, 3, 6, 2, 7\text{.}\)</p></article><article class="task exercise-like" id="task-177"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-457">Find the maximum, minimum, and range for the values \(5, 1, 3, 998, 2, 5, 8, 2\text{.}\)</p></article><article class="task exercise-like" id="task-178"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-458">What do you notice about the previous task? How does the range relate (or not relate) to the majority of the data?</p></article><article class="task exercise-like" id="task-179"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-459">Get a copy of <code class="code-inline tex2jax_ignore">pizza_table</code> available for this notebook.</p>
+<p id="p-460">Set <code class="code-inline tex2jax_ignore">classic_prices = pizza_table.where("type","classic").column("price")</code>, and then use <code class="code-inline tex2jax_ignore">min(classic_prices)</code> and <code class="code-inline tex2jax_ignore">max(classic_prices)</code> to describe the mininum price, maximum price, and range of prices for classic pizzas sold by the pizzeria.</p></article><article class="task exercise-like" id="task-180"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-461">Display a box plot and histogram for the table of classic pizza prices <code class="code-inline tex2jax_ignore">pizza_table.where("type","classic").select("price")</code>.</p></article><article class="task exercise-like" id="task-181"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-462">Notice that the box plot displays <dfn class="terminology">outliers</dfn> in the data as dots: the values that are further away from the median than most points of data.</p>
+<p id="p-463">Ignoring outliers, what is an approximate range of the classic pizza prices?</p></article></article><article class="activity project-like" id="activity-41"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-50"><p id="p-463">The <dfn class="terminology">absolute mean deviation</dfn> measures pretty much exactly what it says: how far the data deviate from the dataset's mean.</p></div>
+<div class="introduction" id="introduction-50"><p id="p-464">The <dfn class="terminology">absolute mean deviation</dfn> measures pretty much exactly what it says: how far the data deviate from the dataset's mean.</p></div>
 <article class="task exercise-like" id="task-182"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-464">Draw dot plots for the data in <a class="xref" data-knowl="./knowl/measurements-spread-dataone.html" title="Table 5.2.1: Dataset One">5.2.1</a> and <a class="xref" data-knowl="./knowl/measurements-spread-datatwo.html" title="Table 5.2.2: Dataset Two">5.2.2</a>.</p>
+<p id="p-465">Draw dot plots for the data in <a class="xref" data-knowl="./knowl/measurements-spread-dataone.html" title="Table 5.2.1: Dataset One">5.2.1</a> and <a class="xref" data-knowl="./knowl/measurements-spread-datatwo.html" title="Table 5.2.2: Dataset Two">5.2.2</a>.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel fixed-width" style="width:50%;justify-content:flex-start;"><figure class="table table-like" id="measurements-spread-dataone"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.2.1<span class="period">.</span></span><span class="space"> </span>Dataset One</figcaption><table>
 <tr>
@@ -214,9 +217,9 @@ MathJax.Hub.Config({
 </tr>
 </table></figure></div>
 </div></div></article><article class="task exercise-like" id="task-183"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-465">Confirm that both datasets have the same mean, median, mode, and range.</p></article><article class="task exercise-like" id="task-184"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-466">Despite these common measurements, based on your dot plots, which dataset appears to have values that are spread out more than the other?</p></article><article class="task exercise-like" id="task-185"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-467">To find a way to measure this spread numerically, flesh out the code given in <a class="xref" data-knowl="./knowl/measurements-spread-deviations.html" title="Listing 5.2.3">5.2.3</a> to print out lists of absolute deviations of each value of data from the mean.</p>
+<p id="p-466">Confirm that both datasets have the same mean, median, mode, and range.</p></article><article class="task exercise-like" id="task-184"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-467">Despite these common measurements, based on your dot plots, which dataset appears to have values that are spread out more than the other?</p></article><article class="task exercise-like" id="task-185"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-468">To find a way to measure this spread numerically, flesh out the code given in <a class="xref" data-knowl="./knowl/measurements-spread-deviations.html" title="Listing 5.2.3">5.2.3</a> to print out lists of absolute deviations of each value of data from the mean.</p>
 <figure class="listing figure-like" id="measurements-spread-deviations"><pre class="prettyprint lang-py">data_one = [] # fill in values from first dataset
 data_two = [] # fill in this too
 
@@ -234,12 +237,12 @@ deviations_two = [] # TODO
 print(deviations_two) # prints [5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 1, 1, 3, 4, 6]
 </pre>
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.2.3<span class="period">.</span></span><span class="space"> </span>Broken code to calculuate deviations of values</figcaption></figure></article><article class="task exercise-like" id="task-186"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-468">The mean of each list created in the previous task is the absolute mean deviation of the original datasets. Compute these values, and confirm that the absolute mean deviation is higher for the dataset that has more spread-out values.</p></article></article><article class="activity project-like" id="activity-42"><h6 class="heading">
+<p id="p-469">The mean of each list created in the previous task is the absolute mean deviation of the original datasets. Compute these values, and confirm that the absolute mean deviation is higher for the dataset that has more spread-out values.</p></article></article><article class="activity project-like" id="activity-42"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-51"><p id="p-469">While the absolute mean deviation provides an easy-to-implement measurement of data spread, an alternative formula is used to compute <dfn class="terminology">standard deviation</dfn>.</p></div>
+<div class="introduction" id="introduction-51"><p id="p-470">While the absolute mean deviation provides an easy-to-implement measurement of data spread, an alternative formula is used to compute <dfn class="terminology">standard deviation</dfn>.</p></div>
 <article class="task exercise-like" id="task-187"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-470">Let \(M\) be the mean of a collection of the \(N\) data values \(x_0,x_1,\dots,x_{N-1}\text{.}\) Which formula measures absolute mean deviation, <a class="xref" data-knowl="./knowl/measurements-spread-formula1.html" title="Listing 5.2.4">5.2.4</a> or <a class="xref" data-knowl="./knowl/measurements-spread-formula2.html" title="Listing 5.2.5">5.2.5</a>?</p>
+<p id="p-471">Let \(M\) be the mean of a collection of the \(N\) data values \(x_0,x_1,\dots,x_{N-1}\text{.}\) Which formula measures absolute mean deviation, <a class="xref" data-knowl="./knowl/measurements-spread-formula1.html" title="Listing 5.2.4">5.2.4</a> or <a class="xref" data-knowl="./knowl/measurements-spread-formula2.html" title="Listing 5.2.5">5.2.5</a>?</p>
 <figure class="listing figure-like" id="measurements-spread-formula1"><div class="displaymath">
 \begin{equation*}
 \frac{|x_0-M|+|x_1-M|+\dots+|x_{N-1}-M|}{N}
@@ -251,27 +254,27 @@ print(deviations_two) # prints [5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 1, 1, 3, 4, 6]
 \end{equation*}
 </div>
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.2.5<span class="period">.</span></span><span class="space"> </span>Spread formula 2</figcaption></figure></article><article class="task exercise-like" id="task-188"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-471">The other formula shown above measures standard deviation. While the formulas have similarities, the standard deviation formula has certain nice mathematical properties that make it more commonly used by data scientists. (We defer exploring what those advantages are exactly to more advanced statistics courses.)</p>
-<p id="p-472">We wrote our own program to compute absolute mean deviations, but the standard deviation of a list may be computed in Python simply by using <code class="code-inline tex2jax_ignore">from statistics import stdev</code>. Show that the standard deviations of the datasets studied in the previous activity are not exactly the same as the absolute mean deviations, but they still do the same job of communicating how one dataset is spread out more than the other.</p></article><article class="task exercise-like" id="task-189"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-473">Compute the standard deviation for <code class="code-inline tex2jax_ignore">classic_prices</code>.</p></article><article class="task exercise-like" id="task-190"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-474">Compute the standard deviation for the prices of large pizzas sold in 2015.</p></article><article class="task exercise-like" id="task-191"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-475">Write a few sentences explaining your intuition for why the standard deviation for the prices of classic pizzas was larger/smaller than the standard deviation for the prices of large pizzas.</p></article><article class="task exercise-like" id="task-192"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-476">There is no hard-and-fast mathematical definition for what makes a value an outlier: different areas of study may allow for more or less tolerance for “unusual” values. However, one common assumption (known as the <dfn class="terminology">three-sigma rule</dfn>) is that non-outlier data should be within three standard deviations of the mean, that is, each distance of a piece of non-outlier data from the mean should be less than \(3\times\text{stdev}\text{.}\)</p>
-<p id="p-477">Explain why the three-sigma rule requires that the range of non-outlier data should be less than six standard deviations, or \(6\times\text{stdev}\text{.}\)</p></article><article class="task exercise-like" id="task-193"><h6 class="heading"><span class="codenumber">(g)</span></h6>
-<p id="p-478">For example, if a dataset has a standard deviation of \(4\text{,}\) it's reasonable to expect that the range of non-outlier data is less than \(24\text{.}\)</p>
-<p id="p-479">Confirm that the <code class="code-inline tex2jax_ignore">datascience</code> library generates a box plot of large pizza prices that shows no outliers. Then confirm that the range of large pizza prices is less than six times its standard deviation.</p></article><article class="task exercise-like" id="task-194"><h6 class="heading"><span class="codenumber">(h)</span></h6>
-<p id="p-480">Use a box plot of classic pizza prices to show that the range of its non-outlier data is less than six standard deviations.</p></article></article><section class="exercises" id="exercises-11"><h3 class="heading hide-type">
+<p id="p-472">The other formula shown above measures standard deviation. While the formulas have similarities, the standard deviation formula has certain nice mathematical properties that make it more commonly used by data scientists. (We defer exploring what those advantages are exactly to more advanced statistics courses.)</p>
+<p id="p-473">We wrote our own program to compute absolute mean deviations, but the standard deviation of a list may be computed in Python simply by using <code class="code-inline tex2jax_ignore">from statistics import stdev</code>. Show that the standard deviations of the datasets studied in the previous activity are not exactly the same as the absolute mean deviations, but they still do the same job of communicating how one dataset is spread out more than the other.</p></article><article class="task exercise-like" id="task-189"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-474">Compute the standard deviation for <code class="code-inline tex2jax_ignore">classic_prices</code>.</p></article><article class="task exercise-like" id="task-190"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-475">Compute the standard deviation for the prices of large pizzas sold in 2015.</p></article><article class="task exercise-like" id="task-191"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-476">Write a few sentences explaining your intuition for why the standard deviation for the prices of classic pizzas was larger/smaller than the standard deviation for the prices of large pizzas.</p></article><article class="task exercise-like" id="task-192"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-477">There is no hard-and-fast mathematical definition for what makes a value an outlier: different areas of study may allow for more or less tolerance for “unusual” values. However, one common assumption (known as the <dfn class="terminology">three-sigma rule</dfn>) is that non-outlier data should be within three standard deviations of the mean, that is, each distance of a piece of non-outlier data from the mean should be less than \(3\times\text{stdev}\text{.}\)</p>
+<p id="p-478">Explain why the three-sigma rule requires that the range of non-outlier data should be less than six standard deviations, or \(6\times\text{stdev}\text{.}\)</p></article><article class="task exercise-like" id="task-193"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-479">For example, if a dataset has a standard deviation of \(4\text{,}\) it's reasonable to expect that the range of non-outlier data is less than \(24\text{.}\)</p>
+<p id="p-480">Confirm that the <code class="code-inline tex2jax_ignore">datascience</code> library generates a box plot of large pizza prices that shows no outliers. Then confirm that the range of large pizza prices is less than six times its standard deviation.</p></article><article class="task exercise-like" id="task-194"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+<p id="p-481">Use a box plot of classic pizza prices to show that the range of its non-outlier data is less than six standard deviations.</p></article></article><section class="exercises" id="exercises-11"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">5.2.1</span> <span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-79"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-481">Find the maximum, minimum, and range for the values \(12,4,9,9,4,10,803,11,5\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-80"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-482">Which of the above values would you most consider to be an outlier, and why?</p></article><article class="exercise exercise-like" id="exercise-81"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-483">Show how to find the absolute mean deviation for \(12,4,9,9,4,10,803,11,5\text{,}\) either by hand or by computer.</p></article><article class="exercise exercise-like" id="exercise-82"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-484">Show how to use technology to compute the standard deviation for \(12,4,9,9,4,10,803,11,5\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-83"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-485">If you remove the outlier value from \(12,4,9,9,4,10,803,11,5\text{,}\) would you expect the range to increase or decrease? What about absolute mean deviation? What about standard deviation? And why?</p></article><article class="exercise exercise-like" id="exercise-84"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-486">Confirm your expectation by computing the range, absolute mean deviation, and standard deviation for \(12,4,9,9,4,10,803,11,5\) with the outlier value removed.</p></article><article class="exercise exercise-like" id="exercise-85"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
-<p id="p-487">Without using technology to check, would you expect the range and standard deviation to be higher for the prices of all medium sized pizzas sold in a year, or the prices of all veggie pizzas sold in a year?</p></article><article class="exercise exercise-like" id="exercise-86"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
-<p id="p-488">Confirm your intuition by getting a copy of <code class="code-inline tex2jax_ignore">pizza_table</code> available in this notebook, and computing the ranges and standard deviations for the medium pizza prices and veggie pizza prices.</p></article></section></section></div></main>
+<p id="p-482">Find the maximum, minimum, and range for the values \(12,4,9,9,4,10,803,11,5\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-80"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-483">Which of the above values would you most consider to be an outlier, and why?</p></article><article class="exercise exercise-like" id="exercise-81"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-484">Show how to find the absolute mean deviation for \(12,4,9,9,4,10,803,11,5\text{,}\) either by hand or by computer.</p></article><article class="exercise exercise-like" id="exercise-82"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-485">Show how to use technology to compute the standard deviation for \(12,4,9,9,4,10,803,11,5\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-83"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-486">If you remove the outlier value from \(12,4,9,9,4,10,803,11,5\text{,}\) would you expect the range to increase or decrease? What about absolute mean deviation? What about standard deviation? And why?</p></article><article class="exercise exercise-like" id="exercise-84"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-487">Confirm your expectation by computing the range, absolute mean deviation, and standard deviation for \(12,4,9,9,4,10,803,11,5\) with the outlier value removed.</p></article><article class="exercise exercise-like" id="exercise-85"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-488">Without using technology to check, would you expect the range and standard deviation to be higher for the prices of all medium sized pizzas sold in a year, or the prices of all veggie pizzas sold in a year?</p></article><article class="exercise exercise-like" id="exercise-86"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-489">Confirm your intuition by getting a copy of <code class="code-inline tex2jax_ignore">pizza_table</code> available in this notebook, and computing the ranges and standard deviations for the medium pizza prices and veggie pizza prices.</p></article></section></section></div></main>
 </div>
 </body>
 </html>

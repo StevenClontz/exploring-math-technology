@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-07T20:59:22Z       *-->
+<!--*       on 2021-01-09T01:34:51Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -126,7 +126,10 @@ MathJax.Hub.Config({
 </ul>
 </li>
 <li class="link">
-<a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a><ul><li><a href="random-probability.html" data-scroll="random-probability">Introduction to Probability</a></li></ul>
+<a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a><ul>
+<li><a href="random-probability.html" data-scroll="random-probability">Introduction to Probability</a></li>
+<li><a href="random-combinatorics.html" data-scroll="random-combinatorics">Combinatorics</a></li>
+</ul>
 </li>
 <li class="link"><a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a></li>
 <li class="link"><a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Vectors</span></a></li>
@@ -145,7 +148,7 @@ MathJax.Hub.Config({
 <span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="period">.</span>
 </h6>
 <div class="introduction" id="introduction-44">
-<p id="p-412">A group of seven friends decides to compare their tax refunds, listed in <a class="xref" data-knowl="./knowl/measurements-center-refunds.html" title="Table 5.1.1: Seven tax refunds">5.1.1</a>.</p>
+<p id="p-413">A group of seven friends decides to compare their tax refunds, listed in <a class="xref" data-knowl="./knowl/measurements-center-refunds.html" title="Table 5.1.1: Seven tax refunds">5.1.1</a>.</p>
 <figure class="table table-like" id="measurements-center-refunds"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.1.1<span class="period">.</span></span><span class="space"> </span>Seven tax refunds</figcaption><table>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">$2,000</td>
@@ -159,70 +162,70 @@ MathJax.Hub.Config({
 <td class="l m b0 r0 l0 t0 lines">$14,000</td>
 <td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
 </tr>
-</table></figure><p id="p-413">For each of the given quotes, write a sentence or two explaining whether you agree or disagree with the speaker.</p>
+</table></figure><p id="p-414">For each of the given quotes, write a sentence or two explaining whether you agree or disagree with the speaker.</p>
 </div>
 <article class="task exercise-like" id="task-155"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-414">“The most common tax refund is $2,000. Therefore, the average tax refund in this group is $2,000.”</p></article><article class="task exercise-like" id="task-156"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-415">“When ordered from least to greatest, the middle tax refund is $2,500. Therefore, the average tax refund in this group is $2,500.”</p></article><article class="task exercise-like" id="task-157"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-416">“When the seven refunds are added together and divided by \(7\text{,}\) the result is $4,000. Therefore, the average tax refund in this group is $4,000.”</p></article></article><article class="activity project-like" id="activity-37"><h6 class="heading">
+<p id="p-415">“The most common tax refund is $2,000. Therefore, the average tax refund in this group is $2,000.”</p></article><article class="task exercise-like" id="task-156"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-416">“When ordered from least to greatest, the middle tax refund is $2,500. Therefore, the average tax refund in this group is $2,500.”</p></article><article class="task exercise-like" id="task-157"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-417">“When the seven refunds are added together and divided by \(7\text{,}\) the result is $4,000. Therefore, the average tax refund in this group is $4,000.”</p></article></article><article class="activity project-like" id="activity-37"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="period">.</span>
 </h6>
 <div class="introduction" id="introduction-45">
-<p id="p-417">There are several notions of “average”, that is, several ways to describe the center of a dataset.</p>
-<p id="p-418">Often, “average” is used to describe the <dfn class="terminology">mean</dfn> of a dataset. If a dataset contains the \(n\) values \(x_0,x_1,\dots,x_{n-1}\text{,}\) then the mean is defined by the following formula:</p>
+<p id="p-418">There are several notions of “average”, that is, several ways to describe the center of a dataset.</p>
+<p id="p-419">Often, “average” is used to describe the <dfn class="terminology">mean</dfn> of a dataset. If a dataset contains the \(n\) values \(x_0,x_1,\dots,x_{n-1}\text{,}\) then the mean is defined by the following formula:</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{1}{n}\sum_{0\leq k&lt; n} x_k = \frac{x_0+x_1+\dots+x_{n-1}}{n}
 \end{equation*}
 </div>
-<p id="p-419">For example, the mean of the counting numbers \(2,3,5,7,18\) is \(\frac{2+3+5+7+18}{5}=7\text{:}\) all the values in the collection are added together, and then divided by the amount of data in the collection.</p>
+<p id="p-420">For example, the mean of the counting numbers \(2,3,5,7,18\) is \(\frac{2+3+5+7+18}{5}=7\text{:}\) all the values in the collection are added together, and then divided by the amount of data in the collection.</p>
 </div>
 <article class="task exercise-like" id="task-158"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-420">Show that \(8\) is the mean of the counting numbers \(4,8,9,11\text{.}\)</p></article><article class="task exercise-like" id="task-159"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-421">Is it possible for the mean of a dataset to not belong to the dataset itself? If so, give an example of such a dataset. If not, explain why.</p></article><article class="task exercise-like" id="task-160"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-422">First, make a copy of the <code class="code-inline tex2jax_ignore">pizza_table</code> used in previous sections available for this notebook.</p>
-<p id="p-423">Then, correct the code in <a class="xref" data-knowl="./knowl/measurements-center-pizza-mean.html" title="Listing 5.1.2">5.1.2</a> to output the correct mean of the costs of pizza sold on Nov 10.</p>
+<p id="p-421">Show that \(8\) is the mean of the counting numbers \(4,8,9,11\text{.}\)</p></article><article class="task exercise-like" id="task-159"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-422">Is it possible for the mean of a dataset to not belong to the dataset itself? If so, give an example of such a dataset. If not, explain why.</p></article><article class="task exercise-like" id="task-160"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-423">First, make a copy of the <code class="code-inline tex2jax_ignore">pizza_table</code> used in previous sections available for this notebook.</p>
+<p id="p-424">Then, correct the code in <a class="xref" data-knowl="./knowl/measurements-center-pizza-mean.html" title="Listing 5.1.2">5.1.2</a> to output the correct mean of the costs of pizza sold on Nov 10.</p>
 <figure class="listing figure-like" id="measurements-center-pizza-mean"><pre class="prettyprint lang-py"># FIXME
 # this code says the mean cost of a pizza is less than a dollar!
 prices = pizza_table.where("date","2015-10-09").column("price")
 len(prices)/sum(prices)
 </pre>
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.1.2<span class="period">.</span></span><span class="space"> </span>Broken code to calculuate mean cost of pizza</figcaption></figure></article><article class="task exercise-like" id="task-161"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-424">Find the mean cost of a large pizza sold during the year of sales recorded in <code class="code-inline tex2jax_ignore">pizza_table</code>.</p></article></article><article class="activity project-like" id="activity-38"><h6 class="heading">
+<p id="p-425">Find the mean cost of a large pizza sold during the year of sales recorded in <code class="code-inline tex2jax_ignore">pizza_table</code>.</p></article></article><article class="activity project-like" id="activity-38"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.3</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-46"><p id="p-425">The <dfn class="terminology">mode</dfn> of a dataset is simply its most-repeated value. For example, the mode of the collection of values \(4,5,5,5,8,9,9,10\) is \(5\text{.}\)</p></div>
+<div class="introduction" id="introduction-46"><p id="p-426">The <dfn class="terminology">mode</dfn> of a dataset is simply its most-repeated value. For example, the mode of the collection of values \(4,5,5,5,8,9,9,10\) is \(5\text{.}\)</p></div>
 <article class="task exercise-like" id="task-162"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-426">Find the mode of the values \(8, 6, 1, 3, 3, 1, 9, 9, 1, 4\text{.}\)</p></article><article class="task exercise-like" id="task-163"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-427">It's possible that a dataset may have many different modes. For example, both \(2\) and \(5\) are modes for the values in the list <code class="code-inline tex2jax_ignore">[3,2,6,5,5,11,2,7]</code>.</p>
-<p id="p-428">Make up an example of a dataset with seven values that has both \(3\) and \(8\) as modes.</p></article><article class="task exercise-like" id="task-164"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-429">The Python library <code class="code-inline tex2jax_ignore">statistics</code> provides convenient tools for computing statistical measures. For example, <code class="code-inline tex2jax_ignore">from statistics import mean</code> and <code class="code-inline tex2jax_ignore">mean(prices)</code> is a shortcut to compute the mean of a list of values in Python.</p>
-<p id="p-430">Replace <code class="code-inline tex2jax_ignore">mean</code> with <code class="code-inline tex2jax_ignore">mode</code> to write a program that outputs the mode of the list <code class="code-inline tex2jax_ignore">[3,2,6,5,5,11,2,7]</code>.</p></article><article class="task exercise-like" id="task-165"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-431">While earlier we noted that there are two different modes for the list <code class="code-inline tex2jax_ignore">[3,2,6,5,5,10,2,7]</code>, the <code class="code-inline tex2jax_ignore">mode</code> tool only returns the mode that appears first in the list.</p>
-<p id="p-432">Show how to use <code class="code-inline tex2jax_ignore">multimode</code> in place of <code class="code-inline tex2jax_ignore">mode</code> to return a list of all modes for <code class="code-inline tex2jax_ignore">[3,2,6,5,5,11,2,7]</code>.</p></article><article class="task exercise-like" id="task-166"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-433">Compute the mode of the pizza prices sold on Oct 09.</p></article><article class="task exercise-like" id="task-167"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-434">Compute the mode of the prices of large pizzas sold in 2015.</p></article></article><article class="activity project-like" id="activity-39"><h6 class="heading">
+<p id="p-427">Find the mode of the values \(8, 6, 1, 3, 3, 1, 9, 9, 1, 4\text{.}\)</p></article><article class="task exercise-like" id="task-163"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-428">It's possible that a dataset may have many different modes. For example, both \(2\) and \(5\) are modes for the values in the list <code class="code-inline tex2jax_ignore">[3,2,6,5,5,11,2,7]</code>.</p>
+<p id="p-429">Make up an example of a dataset with seven values that has both \(3\) and \(8\) as modes.</p></article><article class="task exercise-like" id="task-164"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-430">The Python library <code class="code-inline tex2jax_ignore">statistics</code> provides convenient tools for computing statistical measures. For example, <code class="code-inline tex2jax_ignore">from statistics import mean</code> and <code class="code-inline tex2jax_ignore">mean(prices)</code> is a shortcut to compute the mean of a list of values in Python.</p>
+<p id="p-431">Replace <code class="code-inline tex2jax_ignore">mean</code> with <code class="code-inline tex2jax_ignore">mode</code> to write a program that outputs the mode of the list <code class="code-inline tex2jax_ignore">[3,2,6,5,5,11,2,7]</code>.</p></article><article class="task exercise-like" id="task-165"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-432">While earlier we noted that there are two different modes for the list <code class="code-inline tex2jax_ignore">[3,2,6,5,5,10,2,7]</code>, the <code class="code-inline tex2jax_ignore">mode</code> tool only returns the mode that appears first in the list.</p>
+<p id="p-433">Show how to use <code class="code-inline tex2jax_ignore">multimode</code> in place of <code class="code-inline tex2jax_ignore">mode</code> to return a list of all modes for <code class="code-inline tex2jax_ignore">[3,2,6,5,5,11,2,7]</code>.</p></article><article class="task exercise-like" id="task-166"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-434">Compute the mode of the pizza prices sold on Oct 09.</p></article><article class="task exercise-like" id="task-167"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-435">Compute the mode of the prices of large pizzas sold in 2015.</p></article></article><article class="activity project-like" id="activity-39"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-47"><p id="p-435">When data is ordered from least to greatest, the middle value is called its <dfn class="terminology">median</dfn>. For example, the median of \(1,1,6,7,9\) is \(6\text{.}\)</p></div>
+<div class="introduction" id="introduction-47"><p id="p-436">When data is ordered from least to greatest, the middle value is called its <dfn class="terminology">median</dfn>. For example, the median of \(1,1,6,7,9\) is \(6\text{.}\)</p></div>
 <article class="task exercise-like" id="task-168"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-436">Find the median of \(9,12,3,0,11,9,2\text{.}\)</p></article><article class="task exercise-like" id="task-169"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-437">If a dataset has two middle values, \(a\) and \(b\text{,}\) then their mean \(\frac{a+b}{2}\) is used as the median. For example, the median of \(4,6,7,9,10,13\) is \(\frac{7+9}{2}=8\text{.}\)</p>
-<p id="p-438">Make up a collection of six numbers such that its median is \(5.5\text{.}\)</p></article><article class="task exercise-like" id="task-170"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-439">Use the <code class="code-inline tex2jax_ignore">statistics</code> library to compute the median of the pizza prices sold on Oct 09.</p></article><article class="task exercise-like" id="task-171"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-440">Compute the median of the prices of large pizzas sold in 2015.</p></article><article class="task exercise-like" id="task-172"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-441">Create a histogram and box plot for the prices of pizzas sold on Oct 09. Do these visualizations effectively communicate the mean, mode, or median computed earlier? What might the visualizations communicate that isn't described by the mean, mode, or median? Write a few sentences summarizing your thoughts.</p></article></article><section class="exercises" id="exercises-10"><h3 class="heading hide-type">
+<p id="p-437">Find the median of \(9,12,3,0,11,9,2\text{.}\)</p></article><article class="task exercise-like" id="task-169"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-438">If a dataset has two middle values, \(a\) and \(b\text{,}\) then their mean \(\frac{a+b}{2}\) is used as the median. For example, the median of \(4,6,7,9,10,13\) is \(\frac{7+9}{2}=8\text{.}\)</p>
+<p id="p-439">Make up a collection of six numbers such that its median is \(5.5\text{.}\)</p></article><article class="task exercise-like" id="task-170"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-440">Use the <code class="code-inline tex2jax_ignore">statistics</code> library to compute the median of the pizza prices sold on Oct 09.</p></article><article class="task exercise-like" id="task-171"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-441">Compute the median of the prices of large pizzas sold in 2015.</p></article><article class="task exercise-like" id="task-172"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-442">Create a histogram and box plot for the prices of pizzas sold on Oct 09. Do these visualizations effectively communicate the mean, mode, or median computed earlier? What might the visualizations communicate that isn't described by the mean, mode, or median? Write a few sentences summarizing your thoughts.</p></article></article><section class="exercises" id="exercises-10"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">5.1.1</span> <span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-71"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-442">Find the mean of the values in the list <code class="code-inline tex2jax_ignore">[2, 2, 6, 6, 2, 9, 4, 2, 6]</code> by hand. Then verify your answer using a Code cell.</p></article><article class="exercise exercise-like" id="exercise-72"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-443">Find the mode of the values in the list <code class="code-inline tex2jax_ignore">[2, 2, 6, 6, 2, 9, 4, 2, 6]</code> by hand. Then verify your answer using a Code cell.</p></article><article class="exercise exercise-like" id="exercise-73"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-444">Find the median of the values in the list <code class="code-inline tex2jax_ignore">[2, 2, 6, 6, 2, 9, 4, 2, 6]</code> by hand. Then verify your answer using a Code cell.</p></article><article class="exercise exercise-like" id="exercise-74"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-445">If a dataset is known to contain no repeated values, which measure of center would be least useful: mean, mode, or median? Write a sentence or two explaining why.</p></article><article class="exercise exercise-like" id="exercise-75"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-446">Make up a collection of five numbers such that its mode, median, and mean are all \(9\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-76"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-447">Make up a collection of five <em class="emphasis">different</em> numbers such that its median and mean are both \(9\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-77"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
-<p id="p-448">Make a copy of <code class="code-inline tex2jax_ignore">pizza_table</code> available in this notebook. Find the mean, mode, and median of the prices of classic-type pizzas sold in 2015.</p></article><article class="exercise exercise-like" id="exercise-78"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
-<p id="p-449">Create a histogram and box plot of the classic-type pizza price data summarized by the measures of center in the previous exercise. Write a few sentences comparing/contrasting the numerical measures of center with these visualizations.</p></article></section></section></div></main>
+<p id="p-443">Find the mean of the values in the list <code class="code-inline tex2jax_ignore">[2, 2, 6, 6, 2, 9, 4, 2, 6]</code> by hand. Then verify your answer using a Code cell.</p></article><article class="exercise exercise-like" id="exercise-72"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-444">Find the mode of the values in the list <code class="code-inline tex2jax_ignore">[2, 2, 6, 6, 2, 9, 4, 2, 6]</code> by hand. Then verify your answer using a Code cell.</p></article><article class="exercise exercise-like" id="exercise-73"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-445">Find the median of the values in the list <code class="code-inline tex2jax_ignore">[2, 2, 6, 6, 2, 9, 4, 2, 6]</code> by hand. Then verify your answer using a Code cell.</p></article><article class="exercise exercise-like" id="exercise-74"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-446">If a dataset is known to contain no repeated values, which measure of center would be least useful: mean, mode, or median? Write a sentence or two explaining why.</p></article><article class="exercise exercise-like" id="exercise-75"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-447">Make up a collection of five numbers such that its mode, median, and mean are all \(9\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-76"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-448">Make up a collection of five <em class="emphasis">different</em> numbers such that its median and mean are both \(9\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-77"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-449">Make a copy of <code class="code-inline tex2jax_ignore">pizza_table</code> available in this notebook. Find the mean, mode, and median of the prices of classic-type pizzas sold in 2015.</p></article><article class="exercise exercise-like" id="exercise-78"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-450">Create a histogram and box plot of the classic-type pizza price data summarized by the measures of center in the previous exercise. Write a few sentences comparing/contrasting the numerical measures of center with these visualizations.</p></article></section></section></div></main>
 </div>
 </body>
 </html>

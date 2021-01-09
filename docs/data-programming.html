@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-07T20:59:21Z       *-->
+<!--*       on 2021-01-09T01:34:50Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -126,7 +126,10 @@ MathJax.Hub.Config({
 </ul>
 </li>
 <li class="link">
-<a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a><ul><li><a href="random-probability.html" data-scroll="random-probability">Introduction to Probability</a></li></ul>
+<a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a><ul>
+<li><a href="random-probability.html" data-scroll="random-probability">Introduction to Probability</a></li>
+<li><a href="random-combinatorics.html" data-scroll="random-combinatorics">Combinatorics</a></li>
+</ul>
 </li>
 <li class="link"><a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a></li>
 <li class="link"><a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Vectors</span></a></li>
@@ -145,7 +148,7 @@ MathJax.Hub.Config({
 <span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span>
 </h6>
 <div class="introduction" id="introduction-29">
-<p id="p-286">Consider the following code that prints out the first ten square counting numbers.</p>
+<p id="p-287">Consider the following code that prints out the first ten square counting numbers.</p>
 <figure class="listing figure-like" id="listing-7"><pre class="prettyprint lang-py">print(f"0^2={0**2}")
 print(f"1^2={1**2}")
 print(f"2^2={2**2}")
@@ -160,19 +163,19 @@ print(f"9^2={9**2}")
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.1<span class="period">.</span></span><span class="space"> </span>Ten square counting numbers</figcaption></figure>
 </div>
 <article class="task exercise-like" id="task-103"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-287">Copy this program into a code cell, and modify it to print out the squares from 0 to 14.</p></article><article class="task exercise-like" id="task-104"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-288">Write a sentence about what you notice about the provided code. What do you think could be improved to make this code more elegant?</p></article></article><article class="activity project-like" id="activity-25"><h6 class="heading">
+<p id="p-288">Copy this program into a code cell, and modify it to print out the squares from 0 to 14.</p></article><article class="task exercise-like" id="task-104"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-289">Write a sentence about what you notice about the provided code. What do you think could be improved to make this code more elegant?</p></article></article><article class="activity project-like" id="activity-25"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-30"><p id="p-289">Usually you will want to not only store collections of data, but <em class="emphasis">do</em> something with each datum. A <dfn class="terminology">for loop</dfn> allows you to deal with data piece-by-piece.</p></div>
+<div class="introduction" id="introduction-30"><p id="p-290">Usually you will want to not only store collections of data, but <em class="emphasis">do</em> something with each datum. A <dfn class="terminology">for loop</dfn> allows you to deal with data piece-by-piece.</p></div>
 <article class="task exercise-like" id="task-105"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-290">Save the following numbers as a list named <code class="code-inline tex2jax_ignore">favorite_numbers</code>.</p>
+<p id="p-291">Save the following numbers as a list named <code class="code-inline tex2jax_ignore">favorite_numbers</code>.</p>
 <div class="displaymath">
 \begin{equation*}
 18, 7, -7, -\frac{7}{2}, 9, \frac{17}{4}, 0, -17, 19, 3
 \end{equation*}
 </div></article><article class="task exercise-like" id="task-106"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-291">Adapt the partial example shown in <a class="xref" data-knowl="./knowl/data-programming-favorite-loop.html" title="Listing 3.3.2">3.3.2</a> to display output similar to <a class="xref" data-knowl="./knowl/data-programming-favorite-output.html" title="Listing 3.3.3">3.3.3</a> for each number.</p>
+<p id="p-292">Adapt the partial example shown in <a class="xref" data-knowl="./knowl/data-programming-favorite-loop.html" title="Listing 3.3.2">3.3.2</a> to display output similar to <a class="xref" data-knowl="./knowl/data-programming-favorite-output.html" title="Listing 3.3.3">3.3.3</a> for each number.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
 <div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><figure class="listing figure-like" id="data-programming-favorite-loop"><pre class="prettyprint lang-py">for number in favorite_numbers:
     # code indented four spaces right will run for each
@@ -195,7 +198,7 @@ print("All done looping!")
 </pre>
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.3<span class="period">.</span></span><span class="space"> </span>Sample output for each number</figcaption></figure></div>
 </div></div></article><article class="task exercise-like" id="task-107"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-292">To deal with pairs of data, for loops can also be <dfn class="terminology">nested</dfn>. Adapt the code shown in <a class="xref" data-knowl="./knowl/data-programming-nested-loops.html" title="Listing 3.3.4">3.3.4</a> to create output as shown in <a class="xref" data-knowl="./knowl/data-programming-nested-output.html" title="Listing 3.3.5">3.3.5</a>.</p>
+<p id="p-293">To deal with pairs of data, for loops can also be <dfn class="terminology">nested</dfn>. Adapt the code shown in <a class="xref" data-knowl="./knowl/data-programming-nested-loops.html" title="Listing 3.3.4">3.3.4</a> to create output as shown in <a class="xref" data-knowl="./knowl/data-programming-nested-output.html" title="Listing 3.3.5">3.3.5</a>.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
 <div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><figure class="listing figure-like" id="data-programming-nested-loops"><pre class="prettyprint lang-py">for first in range(10):
     for second in range(10):
@@ -214,9 +217,9 @@ print("All done looping!")
 </div></div></article></article><article class="activity project-like" id="activity-26"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-31"><p id="p-293">Often the way you want to deal with data is <dfn class="terminology">conditional</dfn>, that is, the code you want to run will depend on <em class="emphasis">if</em> a variable satisfies a certain condition.</p></div>
+<div class="introduction" id="introduction-31"><p id="p-294">Often the way you want to deal with data is <dfn class="terminology">conditional</dfn>, that is, the code you want to run will depend on <em class="emphasis">if</em> a variable satisfies a certain condition.</p></div>
 <article class="task exercise-like" id="task-108"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-294">Paste the code in <a class="xref" data-knowl="./knowl/data-programming-conditional-money.html" title="Listing 3.3.6">3.3.6</a> into three code cells, changing the value of <code class="code-inline tex2jax_ignore">money_in_bank</code> so that each cell outputs a different response.</p>
+<p id="p-295">Paste the code in <a class="xref" data-knowl="./knowl/data-programming-conditional-money.html" title="Listing 3.3.6">3.3.6</a> into three code cells, changing the value of <code class="code-inline tex2jax_ignore">money_in_bank</code> so that each cell outputs a different response.</p>
 <figure class="listing figure-like" id="data-programming-conditional-money"><pre class="prettyprint lang-py">money_in_bank = "this probably should be a number, huh"
 
 if money_in_bank &gt; 10000:
@@ -227,7 +230,7 @@ else:
     print("I should save up a bit more.")
 </pre>
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.6<span class="period">.</span></span><span class="space"> </span>Conditional on amount of money</figcaption></figure></article><article class="task exercise-like" id="task-109"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-295">Bugfix the code shown in <a class="xref" data-knowl="./knowl/data-programming-conditional-root.html" title="Listing 3.3.7">3.3.7</a>.</p>
+<p id="p-296">Bugfix the code shown in <a class="xref" data-knowl="./knowl/data-programming-conditional-root.html" title="Listing 3.3.7">3.3.7</a>.</p>
 <figure class="listing figure-like" id="data-programming-conditional-root"><pre class="prettyprint lang-py">from math import sqrt # makes the square root function available in Python
 
 for number in favorite_numbers:
@@ -239,8 +242,8 @@ for number in favorite_numbers:
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.7<span class="period">.</span></span><span class="space"> </span>Using conditionals inside loops</figcaption></figure></article></article><article class="activity project-like" id="activity-27"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span>
 </h6>
-<p id="p-296">A common exercise in entry-level programming interviews is known as “FizzBuzz”. Write a program that for each of the numbers \(1\) through \(100\) prints that number, the word “Fizz” if that number is divisible by \(3\text{,}\) and “Buzz” if that number is divisible by \(5\text{.}\) Example output for the numbers \(1\) through \(15\) is given in <a class="xref" data-knowl="./knowl/data-programming-fizzbuzz-output.html" title="Listing 3.3.9">3.3.9</a>.</p>
-<p id="p-297">The code in <a class="xref" data-knowl="./knowl/data-programming-fizzbuzz-scrambled.html" title="Listing 3.3.8">3.3.8</a> implements FizzBuzz in Python, but the lines are out of order and missing indentation. Fix the code to correctly display output as in <a class="xref" data-knowl="./knowl/data-programming-fizzbuzz-output.html" title="Listing 3.3.9">3.3.9</a>.</p>
+<p id="p-297">A common exercise in entry-level programming interviews is known as “FizzBuzz”. Write a program that for each of the numbers \(1\) through \(100\) prints that number, the word “Fizz” if that number is divisible by \(3\text{,}\) and “Buzz” if that number is divisible by \(5\text{.}\) Example output for the numbers \(1\) through \(15\) is given in <a class="xref" data-knowl="./knowl/data-programming-fizzbuzz-output.html" title="Listing 3.3.9">3.3.9</a>.</p>
+<p id="p-298">The code in <a class="xref" data-knowl="./knowl/data-programming-fizzbuzz-scrambled.html" title="Listing 3.3.8">3.3.8</a> implements FizzBuzz in Python, but the lines are out of order and missing indentation. Fix the code to correctly display output as in <a class="xref" data-knowl="./knowl/data-programming-fizzbuzz-output.html" title="Listing 3.3.9">3.3.9</a>.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
 <div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><figure class="listing figure-like" id="data-programming-fizzbuzz-scrambled"><pre class="prettyprint lang-py">fizz = ""
 print(f"{number}{fizz}{buzz}")
@@ -275,21 +278,21 @@ if number % 5 == 0:
 <span class="type">Exercises</span> <span class="codenumber">3.3.1</span> <span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-44"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-298">Use the code <code class="code-inline tex2jax_ignore">from string import ascii_lowercase; letters = list(ascii_lowercase)</code> to obtain a list of the lowercase English alphabet. Then <code class="code-inline tex2jax_ignore">print(letters)</code> to display them as the output of your code cell.</p></article><article class="exercise exercise-like" id="exercise-45"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-299">The line <code class="code-inline tex2jax_ignore">for count,letter in enumerate(letters):</code> allows you to loop through each letter in <code class="code-inline tex2jax_ignore">letters</code> while also keeping count of where you are in the loop (starting with the first counting number \(0\)).</p>
-<p id="p-300">Use <code class="code-inline tex2jax_ignore">enumerate</code> to produce the output shown below.</p>
+<p id="p-299">Use the code <code class="code-inline tex2jax_ignore">from string import ascii_lowercase; letters = list(ascii_lowercase)</code> to obtain a list of the lowercase English alphabet. Then <code class="code-inline tex2jax_ignore">print(letters)</code> to display them as the output of your code cell.</p></article><article class="exercise exercise-like" id="exercise-45"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-300">The line <code class="code-inline tex2jax_ignore">for count,letter in enumerate(letters):</code> allows you to loop through each letter in <code class="code-inline tex2jax_ignore">letters</code> while also keeping count of where you are in the loop (starting with the first counting number \(0\)).</p>
+<p id="p-301">Use <code class="code-inline tex2jax_ignore">enumerate</code> to produce the output shown below.</p>
 <pre class="code-block tex2jax_ignore">Letter 0 is a.
 Letter 1 is b.
 [...]
 Letter 25 is z.</pre></article><article class="exercise exercise-like" id="exercise-46"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-301">Copy your code from the previous exercise, and modify it using <code class="code-inline tex2jax_ignore">ord(letter)</code> to display the following output instead.</p>
+<p id="p-302">Copy your code from the previous exercise, and modify it using <code class="code-inline tex2jax_ignore">ord(letter)</code> to display the following output instead.</p>
 <pre class="code-block tex2jax_ignore">Letter 0 is a, which has Unicode value 97.
 Letter 1 is b, which has Unicode value 98.
 [...]
 Letter 25 is z, which has Unicode value 122.</pre></article><article class="exercise exercise-like" id="exercise-47"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-302"><a class="external" href="https://scrabble.hasbro.com/en-us" target="_blank">Scrabble</a> is a popular crossword-style game. Like most word games, deciding on what word is best to play is often a mathematical exercise.</p>
-<p id="p-303">First, save <a class="external" href="https://raw.githubusercontent.com/zeisler/scrabble/master/db/dictionary.csv" target="_blank"><code class="code-inline tex2jax_ignore">https://raw.githubusercontent.com/zeisler/scrabble/master/db/dictionary.csv</code></a> as the file <code class="code-inline tex2jax_ignore">dictionary.csv</code> in the same folder as this notebook.</p>
-<p id="p-304">Then unscramble the code in <a class="xref" data-knowl="./knowl/data-programming-scrabble-scrambled.html" title="Listing 3.3.10">3.3.10</a> to create nested loops that count the number of vowels used in each of the first fifty words of the Scrabble dictionary.</p>
+<p id="p-303"><a class="external" href="https://scrabble.hasbro.com/en-us" target="_blank">Scrabble</a> is a popular crossword-style game. Like most word games, deciding on what word is best to play is often a mathematical exercise.</p>
+<p id="p-304">First, save <a class="external" href="https://raw.githubusercontent.com/zeisler/scrabble/master/db/dictionary.csv" target="_blank"><code class="code-inline tex2jax_ignore">https://raw.githubusercontent.com/zeisler/scrabble/master/db/dictionary.csv</code></a> as the file <code class="code-inline tex2jax_ignore">dictionary.csv</code> in the same folder as this notebook.</p>
+<p id="p-305">Then unscramble the code in <a class="xref" data-knowl="./knowl/data-programming-scrabble-scrambled.html" title="Listing 3.3.10">3.3.10</a> to create nested loops that count the number of vowels used in each of the first fifty words of the Scrabble dictionary.</p>
 <figure class="listing figure-like" id="data-programming-scrabble-scrambled"><pre class="prettyprint lang-py">## LEAVE THIS FIRST
 with open("dictionary.csv", "r") as words_file:
     words = [word[:-1] for word in words_file.readlines()[:50]]
@@ -302,7 +305,7 @@ for vowel in ["a","e","i","o","u"]:
 num_of_vowels = 0
 </pre>
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.10<span class="period">.</span></span><span class="space"> </span>Scrambled vowel-counting program</figcaption></figure></article><article class="exercise exercise-like" id="exercise-48"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-305">Copy your code from the previous exercise, and then replace the <code class="code-inline tex2jax_ignore">print</code> line with an <code class="code-inline tex2jax_ignore">if</code>/<code class="code-inline tex2jax_ignore">elif</code>/<code class="code-inline tex2jax_ignore">else</code> conditional to produce output similar to <a class="xref" data-knowl="./knowl/data-programming-scrabble-conditional.html" title="Listing 3.3.11">3.3.11</a>.</p>
+<p id="p-306">Copy your code from the previous exercise, and then replace the <code class="code-inline tex2jax_ignore">print</code> line with an <code class="code-inline tex2jax_ignore">if</code>/<code class="code-inline tex2jax_ignore">elif</code>/<code class="code-inline tex2jax_ignore">else</code> conditional to produce output similar to <a class="xref" data-knowl="./knowl/data-programming-scrabble-conditional.html" title="Listing 3.3.11">3.3.11</a>.</p>
 <figure class="listing figure-like" id="data-programming-scrabble-conditional"><pre class="code-block tex2jax_ignore">Boo... the word aa has less than three vowels...
 Boo... the word aah has less than three vowels...
 Okay. The word aahed has exactly three vowels.

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-01-09T01:34:59Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">7.2.4.f</span><span class="period">.</span>
+</h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">The code in <a class="xref" data-knowl="./knowl/random-combinatorics-passwords.html" title="Listing 7.2.1">7.2.1</a> simulates generating 100 thousand passwords and checking if the password contains all uppercase letters. Run the code as-is to confirm that it illustrates what you found in the previous task. Then annotate the code with <code class="code-inline tex2jax_ignore"># comments</code> that explain how it works.</p>
+<figure class="listing figure-like"><pre class="prettyprint lang-py"># Add comments like this throughout that explain how this code works.
+points = []
+all_upper_count = 0
+for trial in range(1,100001):
+    all_upper = True
+    for _ in range(5):
+        next_character = randrange(62)
+        if next_character &gt;= 26:
+            all_upper = False
+    if all_upper:
+        all_upper_count += 1
+    ex_prob = all_upper_count/trial
+    points.append( (trial,ex_prob) )
+
+show(
+    line(points, color="blue")+line([(1,0.012969),(100000,0.012969)], color="red"),
+    axes_labels=["Trials","Exp. Prob."],
+)
+</pre>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">7.2.1<span class="period">.</span></span><span class="space"> </span>Simulate choosing random passwords 100K times</figcaption></figure></article><span class="incontext"><a href="random-combinatorics.html#task-272">in-context</a></span>
+</body>
+</html>
