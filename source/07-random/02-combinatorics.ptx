@@ -41,44 +41,237 @@ that end with a <m>2</m>, <m>7</m>, or <m>9</m>. Then confirm your result using 
     <activity>
         <introduction>
             <p>
-                Multipliation Principle TODO
+One of the most useful counting tools in mathematics is the <term>multiplication principle</term>.
+This principle is used when all the items to be counted come from a sequence of choices.
+If each item is made by making a choice from <m>a</m> things, then a choice from <m>b</m> things,
+then a choice from <m>c</m> things, and so on, then the total number of items is given by the product:
+            </p>
+            <me>
+a\times b\times c\times \cdots
+            </me>
+            <p>
+For example, suppose that a breakfast must include either eggs <m>E</m>, sausage <m>S</m>, or pancakes
+<m>P</m> to eat, and either coffee <m>c</m> or juice <m>j</m> to drink. Then this six possible
+breakfasts are eggs/coffee, eggs/juice, sausage/coffee, sausage/juice, pancakes/coffee, and pancakes/juice.
+Symbolically, these choices are:
+            </p>
+            <me>
+Ec,Ej,Sc,Sj,Pc,Pj
+            </me>
+            <p>
+However, this number six can be computed without listing out every choice.
+This is because there are <m>3</m> choices for food and <m>2</m>
+choices for drink, yielding <m>3\times 2=6</m>.
             </p>
         </introduction>
         <task>
             <p>
-                TODO
+Suppose for a fancy dinner you are given four options as an appetizer, six options as an entree,
+three options as a beverage, and two options as a dessert. How many different dinners are possible?
+            </p>
+        </task>
+        <task>
+            <p>
+Suppose you could choose an appetizer or a dessert, but not both. How many different dinners
+are possible in that scenario?
+            </p>
+        </task>
+        <task>
+            <p>
+What if instead you consider the choice to skip any part of the meal, holding the appetizer, entree,
+beverage, and/or dessert. How many dinners are possible in that case?
+            </p>
+        </task>
+        <task>
+            <p>
+What is the size of the sample space for the experiment of rolling
+a D6, then flipping a coin, then drawing a card from a shuffled 52-card deck?
             </p>
         </task>
     </activity>
     <activity>
         <introduction>
             <p>
-                Permutations TODO
+The multiplication principle is used to count <term>permutations</term>: different arragements
+of symbols. For example, there are six permutations of the letters <m>A,B,C</m>:
+            </p>
+            <me>
+ABC,ACB,BAC,BCA,CAB,CBA
+            </me>
+            <p>
+The multiplication principle counts these six as follows: there are <m>3</m> choices for
+the first letter, then <m>2</m> remaining choices for the second letter, and finally only <m>1</m>
+choice for the final letter, which results in <m>3\times 2\times 1=6</m>.
             </p>
         </introduction>
         <task>
             <p>
-                TODO
+How many permutations are there for the letters <m>W,X,Y,Z</m>?
+            </p>
+        </task>
+        <task>
+            <p>
+A list of permutations of the letters <m>A,B,C</m> may be obtained in SageMath (and Python)
+by writing <c>import itertools</c> and
+<c>abcs = ["".join(p) for p in itertools.permutations(["A", "B", "C"])]</c>. Then
+<c>len(abcs)</c> would equal <c>6</c>.
+            </p>
+            <p>
+Create a list of all strings that are formed by the letters in
+<c>["w","x","y","z"]</c>. Print out these strings, and count them using <c>len()</c>
+to confirm your calculation in the previous task.
+            </p>
+        </task>
+        <task>
+            <p>
+Expressions such as <m>5\times 4\times 3\times 2\times 1</m> are commonplace in mathematics,
+so we use the <term>factorial</term> operation as a shorthand:
+            </p>
+            <me>
+N! = N\times \cdots\times 3\times 2\times 1
+            </me>
+            <p>
+In SageMath, <c>factorial(5)</c> may be used to compute <m>5\times 4\times 3\times 2\times 1=120</m>.
+            </p>
+            <p>
+Use a Code cell to count how many permutations are there for the letters of the alphabet <m>A</m> to <m>Z</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+Attempting to check this by computer by actually listing out every permutation
+as you did for <c>["w","x","y","z"]</c> would be difficult. (Try it!)
+What causes this difficulty?
+What does that suggest about the relationship between mathematics and computer science?
             </p>
         </task>
     </activity>
     <activity>
         <introduction>
             <p>
-                Password Probability TODO
+The multiplication principle is useful when considering password security.
+Often, administrators make certain requirements for users' passwords. These requirements
+affect the number of different possible passwords, as well as the probability that a randomly
+chosen password would match a password that meets these requirements.
             </p>
         </introduction>
         <task>
             <p>
-                TODO
+How many five-character passwords use only uppercase letters?
             </p>
+        </task>
+        <task>
+            <p>
+How many five-character passwords use only alphanumeric characters? That is, uppercase letters,
+lowercase letters, or digits, where <c>htr12</c> is considered different than the password
+<c>HtR12</c>.
+            </p>
+        </task>
+        <task>
+            <p>
+How many five-character passwords use only alphanumeric characters, when repeated characters
+are not allowed? (That is, both <c>aabcd</c> and <c>abacd</c> are both not allowed.)
+            </p>
+        </task>
+        <task>
+            <p>
+How many five-character passwords use only alphanumeric characters, when consecutive
+repeated characters are not allowed? (That is, <c>aabcd</c> is not allowed, but
+<c>abacd</c> is okay.)
+            </p>
+        </task>
+        <task>
+            <p>
+Consider the experiment where a five-character password is generated using alphanumeric characters
+(with repeated characters allowed).
+What's the probability that such a password would only have uppercase letters? Use the <c>n()</c>
+tool to obtain a decimal approximation.
+            </p>
+        </task>
+        <task>
+            <p>
+The code in <xref ref="random-combinatorics-passwords"/> simulates generating 100 thousand passwords
+and checking if the password contains all uppercase letters. Run the code as-is to confirm that it
+illustrates what you found in the previous task. Then annotate the code with <c># comments</c> that explain
+how it works.
+            </p>
+            <listing xml:id="random-combinatorics-passwords">
+                <caption>Simulate choosing random passwords 100K times</caption>
+                <program language="sage">
+                    <input><xi:include href="../files/random-combinatorics-passwords.sage" parse="text" /></input>
+                </program>
+            </listing>
         </task>
     </activity>
     <exercises>
         <exercise>
             <statement>
                 <p>
-                    TODO
+Suppose than an ice cream shop offers single-scoop ice cream cones with a choice
+of fifty-seven flavors of ice cream, and the choice of a sugar cone, a dipped cone,
+or a waffle cone. How many different single-scoop ice cream cones does this shop offer?
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+How many double-scoop cones does this shop offer?
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+What is the size of the sample space for rolling three D8 dice (dice with eight different sides)?
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Create a Code cell that displays all the permutations of the letters <m>A,E,I,O,U</m>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+How many permutations are there for the letters <m>A,E,I,O,U</m>? Show how to answer this
+question mathematically, and using technology.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+How many six-character passwords use only lowercase letters, digits, and the symbols
+<c>!</c>, <c>?</c>, and <c>#</c>?
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+How many six-character passwords use only lowercase letters, digits, and the symbols
+<c>!</c>, <c>?</c>, and <c>#</c>, assuming no character is allowed to be repeated?
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+What is the probability that a password generated to use six
+letters only uses consonants (for example, <c>CbxYYt</c>)?
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+What is the probability that a password generated to use six
+letters never repeats a character? (For example, <c>abCDeA</c>
+doesn't repeat a character, but <c>abCDea</c> does.)
                 </p>
             </statement>
         </exercise>

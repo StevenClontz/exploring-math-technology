@@ -152,7 +152,7 @@
       <xsl:when test="@jupyter-kernel = 'sage'">
  ,"metadata": {
   "kernelspec": {
-   "display_name": "SageMath 9.1",
+   "display_name": "SageMath 9.2",
    "language": "sagemath",
    "metadata": {
     "cocalc": {
@@ -161,7 +161,7 @@
      "url": "https://www.sagemath.org/"
     }
    },
-   "name": "sage-9.1"
+   "name": "sage-9.2"
   }
  }
       </xsl:when>
