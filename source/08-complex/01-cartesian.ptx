@@ -4,7 +4,7 @@
     <exploration xml:id="complex-cartesian-preview">
         <introduction>
             <p>
-To describe <term>points</term> in a two-dimensional plane, we may use either
+To describe <term>points</term> in a two-dimensional <term>Cartesian plane</term>, we may use either
 <term>ordered pairs</term> <m>(x,y)</m> or <term>complex numbers</term> <m>x+yi</m>.
 These are simply two different ways to describe the same positional data. For example, both <m>(-1,5)</m>
 and <m>-1+5i</m> describe the same point in the illustration found in
@@ -56,38 +56,163 @@ complex numbers.
     <activity>
         <introduction>
             <p>
-                TODO plot complex points with Sage
+Both ordered pairs <m>(x,y)</m> and complex numbers <m>x+yi</m>
+can be used to describe points in the plane.
+Ordered pairs are a kind of vector, which we'll discuss in the next chapter.
+For now, let's explore how SageMath can be used to handle complex numbers.
             </p>
         </introduction>
         <task>
             <p>
-                TODO
+In SageMath, there are a few ways to describe complex numbers. We will use
+the symbol <c>CDF()</c> tool along with the arithmetic operators
+<c>+</c>,<c>-</c>,<c>*</c>,<c>/</c>. For example,
+<m>4-5i</m> can be displayed by a Code cell by running <c>show(4-5*CDF(I))</c>.
+            </p>
+            <p>
+Display the complex number <m>-5+2i</m> using a Code cell. (Note that by default,
+SageMath will use decimal expressions for whole values in a complex number; that's okay.)
+            </p>
+        </task>
+        <task>
+            <p>
+A useful shortcut is to assign <c>i=CDF(I)</c>. Then <c>show(4-5*CDF(I))</c> can
+be shortened to <c>show(4-5*i)</c>. (Pay attention to capitalization, though!)
+            </p>
+            <p>
+Use this shortcut to display <m>3+4i</m> from a Code cell.
+            </p>
+        </task>
+        <task>
+            <p>
+Another shortcut to work with complex numbers in SageMath is to describe the
+equivalent ordered pair:
+<c>show(CDF(4,-5))</c> again produces <m>4-5i</m>.
+            </p>
+            <p>
+Use this shortcut to display <m>-6-i</m> from a code cell.
+            </p>
+        </task>
+        <task>
+            <p>
+Run <c>show(3*i-5-7*i+3)</c> and <c>show(4*(i-2))</c> in a Code cell.
+Then write a couple sentences explaining how you think these results were obtained.
+            </p>
+        </task>
+        <task>
+            <p>
+Show how to compute <m>7+4i-6i-5</m> and <m>3(2-3i)</m> by hand. Then
+confirm your results using Code cells.
             </p>
         </task>
     </activity>
     <activity>
         <introduction>
             <p>
-                TODO arithmetic of complex points
+SageMath provides the <c>points()</c> tool to plot points in the Cartesian plane,
+demonstrated in <xref ref="complex-cartesian-plotting"/>.
             </p>
+            <listing xml:id="complex-cartesian-plotting">
+                <caption>Example for plotting complex numbers with SageMath</caption>
+                <program language="sage">
+                    <input><xi:include parse="text" href="../files/complex-cartesian-plotting.sage" /></input>
+                </program>
+            </listing>
         </introduction>
         <task>
             <p>
-                TODO
+Modify and run <xref ref="complex-cartesian-plotting"/> in a Code cell to plot the following complex numbers.
             </p>
+            <ul>
+                <li><m>3-5i</m></li>
+                <li><m>4i</m></li>
+                <li><m>-2</m></li>
+                <li><m>-4+3i</m></li>
+            </ul>
+        </task>
+        <task>
+            <p>
+Modify and run <xref ref="complex-cartesian-plotting"/> in a Code cell to plot the following complex numbers.
+(You'll need to figure out how to resize the visible portion of the plane.)
+            </p>
+            <ul>
+                <li><m>10+i</m></li>
+                <li><m>9</m></li>
+                <li><m>-4+8i</m></li>
+            </ul>
         </task>
     </activity>
     <activity>
         <introduction>
             <p>
-                TODO translation of complex points
+The usefulness of complex numbers comes from their ability to describe movement of points in the plane.
             </p>
         </introduction>
         <task>
             <p>
-                TODO
+Use a Code cell to plot the following complex numbers:
+            </p>
+            <ul>
+                <li><p>The origin, that is, <m>0+0i</m></p></li>
+                <li><m>-2+3i</m></li>
+                <li><m>4-i</m></li>
+                <li><p>The complex number that is two units left and three units up from <m>4-i</m>.</p></li>
+                <li><m>(4-i)+(-2+3i)</m></li>
+            </ul>
+        </task>
+        <task>
+            <p>
+Write a sentence or two explaining what the illustration
+in <xref ref="complex-cartesian-parallelogram"/> says about your plot in the previous task.
+            </p>
+            <figure xml:id="complex-cartesian-parallelogram">
+                <caption>Illustrating a few complex numbers</caption>
+                <image source="images/complex-cartesian-parallelogram.png" />
+            </figure>
+        </task>
+        <task>
+            <p>
+Use a Code cell to show the following complex numbers in a new plot.
+            </p>
+            <ul>
+                <li><m>0+0i</m></li>
+                <li><m>1+4i</m></li>
+                <li><m>2-i</m></li>
+                <li><m>(1+4i)+(2-i)</m></li>
+                <li><m>3+3i</m></li>
+            </ul>
+        </task>
+        <task>
+            <p>
+Write a sentence or two describing the <q>purpose</q> for adding a pair of complex numbers
+like <m>(1+4i)+(2-i)</m>.
             </p>
         </task>
+        <task>
+            <p>
+Use a Code cell to show the following complex numbers in a new plot.
+            </p>
+            <ul>
+                <li><m>2+3i</m></li>
+                <li><m>2(2+3i)</m></li>
+            </ul>
+        </task>
+        <task>
+            <p>
+Use a Code cell to show the following complex numbers in a new plot.
+            </p>
+            <ul>
+                <li><m>-1+2i</m></li>
+                <li><m>3(-1+2i)</m></li>
+            </ul>
+        </task>
+        <task>
+            <p>
+Write a sentence or two describing the <q>purpose</q> for multiplying a complex number by a real number
+like <m>2(2+3i)</m> or <m>3(-1+2i)</m>.
+            </p>
+        </task>
+        <!-- TODO someday add activity to translate/scale all the points in the plane -->
     </activity>
     <exercises>
         <exercise>
