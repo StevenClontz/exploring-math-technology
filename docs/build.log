@@ -1,3 +1,3 @@
-Messages from application of /home/user/.local/share/virtualenvs/mathematics-of-data-LmuOnOpR/lib/python3.8/site-packages/pretext/static/xsl/pretext-html.xsl:
-PTX:ERROR:   a cross-reference ("xref") uses references [predictions-correlation-cosine] that do not point to any target.  Maybe you typed an @xml:id value wrong, maybe the target of the @xml:id is nonexistent, or maybe you temporarily removed the target from your source.  Your output will contain some placeholder text that you will not want to distribute to your readers.
-             located within: "predictions-correlation" (xml:id), "Measuring Correlation" (title)
+Messages from application of /home/user/.local/lib/python3.8/site-packages/pretext/static/xsl/pretext-html.xsl:
+PTX:ERROR:   a cross-reference ("xref") uses references [complex-caresian-preview-figure] that do not point to any target.  Maybe you typed an @xml:id value wrong, maybe the target of the @xml:id is nonexistent, or maybe you temporarily removed the target from your source.  Your output will contain some placeholder text that you will not want to distribute to your readers.
+             located within: "complex-cartesian-preview" (xml:id)

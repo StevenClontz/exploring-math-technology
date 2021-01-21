@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-01-21T19:50:27Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MoD Cartesian Coordinates</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Mathematics of Data</span></a></h1>
+<p class="byline">Dr. Steven Clontz</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="complex.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="complex.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="vectors.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="complex.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="complex.html" title="Up">Up</a><a class="next-button button toolbar-item" href="vectors.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="why.html" data-scroll="why">Why Study [the] Mathematics [of Data]?</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="programming.html" data-scroll="programming"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
+<li><a href="programming-jupyter.html" data-scroll="programming-jupyter">Jupyter Notebooks and CoCalc</a></li>
+<li><a href="programming-python.html" data-scroll="programming-python">The Python Kernel</a></li>
+<li><a href="programming-sagemath.html" data-scroll="programming-sagemath">The SageMath Kernel</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="writing.html" data-scroll="writing"><span class="codenumber">2</span> <span class="title">Writing for Mathematicians and Data Scientists</span></a><ul>
+<li><a href="writing-math.html" data-scroll="writing-math">The Importance of Writing in Mathematics and Data Science</a></li>
+<li><a href="writing-markup.html" data-scroll="writing-markup">Using Markdown and LaTeX</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="data.html" data-scroll="data"><span class="codenumber">3</span> <span class="title">Data and Collections</span></a><ul>
+<li><a href="data-numbers.html" data-scroll="data-numbers">Numbers and Strings</a></li>
+<li><a href="data-collections.html" data-scroll="data-collections">Collections of Data</a></li>
+<li><a href="data-programming.html" data-scroll="data-programming">Programming with Data</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="visualization.html" data-scroll="visualization"><span class="codenumber">4</span> <span class="title">Visualization of Data</span></a><ul>
+<li><a href="visualization-tables.html" data-scroll="visualization-tables">Tables</a></li>
+<li><a href="visualization-one.html" data-scroll="visualization-one">Single-Variable Visualizations</a></li>
+<li><a href="visualization-two.html" data-scroll="visualization-two">Two-variable Visualizations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="measurements.html" data-scroll="measurements"><span class="codenumber">5</span> <span class="title">Measurements of Data</span></a><ul>
+<li><a href="measurements-center.html" data-scroll="measurements-center">Centers of Data</a></li>
+<li><a href="measurement-spread.html" data-scroll="measurement-spread">Spread of Data</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="predictions.html" data-scroll="predictions"><span class="codenumber">6</span> <span class="title">Making Predictions from Data</span></a><ul>
+<li><a href="predictions-correlation.html" data-scroll="predictions-correlation">Measuring Correlation</a></li>
+<li><a href="predictions-regression.html" data-scroll="predictions-regression">The Fit Line</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a><ul>
+<li><a href="random-probability.html" data-scroll="random-probability">Introduction to Probability</a></li>
+<li><a href="random-combinatorics.html" data-scroll="random-combinatorics">Combinatorics</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a><ul><li><a href="complex-cartesian.html" data-scroll="complex-cartesian" class="active">Cartesian Coordinates</a></li></ul>
+</li>
+<li class="link"><a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Vectors</span></a></li>
+<li class="link"><a href="transformations.html" data-scroll="transformations"><span class="codenumber">10</span> <span class="title">Transformations of Higher-Dimensional Data</span></a></li>
+<li class="link"><a href="properties.html" data-scroll="properties"><span class="codenumber">11</span> <span class="title">Properties of Linear Transformations</span></a></li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link"><a href="references.html" data-scroll="references"><span class="title">References</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="complex-cartesian"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">8.1</span> <span class="title">Cartesian Coordinates</span>
+</h2>
+<article class="exploration project-like" id="complex-cartesian-preview"><h6 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">8.1.1</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-72">
+<p id="p-637">To describe <dfn class="terminology">points</dfn> in a two-dimensional <dfn class="terminology">Cartesian plane</dfn>, we may use either <dfn class="terminology">ordered pairs</dfn> \((x,y)\) or <dfn class="terminology">complex numbers</dfn> \(x+yi\text{.}\) These are simply two different ways to describe the same positional data. For example, both \((-1,5)\) and \(-1+5i\) describe the same point in the illustration found in <a class="xref" data-knowl="./knowl/complex-cartesian-preview-figure.html" title="Figure 8.1.1">8.1.1</a>.</p>
+<figure class="figure figure-like" id="complex-cartesian-preview-figure"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/complex-cartesian-preview.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.1.1<span class="period">.</span></span><span class="space"> </span>Several points in the plane</figcaption></figure><p id="p-638">The <dfn class="terminology">origin</dfn> is the point \((0,0)=0+0i\) at the “center” of the plane. The \(x\)-value of any point (the first number in the pair, and the value without an \(i\) in the complex number) describes its horizontal distance from the origin, moving right for positive numbers, and left for negative numbers. Likewise the \(y\)-value of any point (the second number in the pair, and the value with an \(i\) in the complex number) describes its vertical distance from the origin, where positive is up and negative is down.</p>
+</div>
+<article class="task exercise-like" id="task-273"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-639">Draw <a class="xref" data-knowl="./knowl/complex-cartesian-preview-figure.html" title="Figure 8.1.1">8.1.1</a> by hand, or copy it into a graphics program. Then label the following points with both ordered pairs and complex numbers.</p>
+<ul class="disc">
+<li id="li-37">\(\displaystyle (-5,-3)\)</li>
+<li id="li-38">\(\displaystyle 5+3i\)</li>
+<li id="li-39">\(\displaystyle 4-1i\)</li>
+</ul></article><article class="task exercise-like" id="task-274"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-640">Note that \(4-1i\) is often written as \(4-i\text{,}\) since we think of \(1i\) as multiplication. How might \(0-5i\) be more simply written? What about \(-1+0i\text{?}\)</p></article><article class="task exercise-like" id="task-275"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-641">Label \(0-5i\) and \(-1+0i\) in your drawing with both ordered pairs and simplified complex numbers.</p></article></article><article class="activity project-like" id="activity-56"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.1.2</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-73"><p id="p-642">Both ordered pairs \((x,y)\) and complex numbers \(x+yi\) can be used to describe points in the plane. Ordered pairs are a kind of vector, which we'll discuss in the next chapter. For now, let's explore how SageMath can be used to handle complex numbers.</p></div>
+<article class="task exercise-like" id="task-276"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-643">In SageMath, there are a few ways to describe complex numbers. We will use the symbol <code class="code-inline tex2jax_ignore">CDF()</code> tool along with the arithmetic operators <code class="code-inline tex2jax_ignore">+</code>,<code class="code-inline tex2jax_ignore">-</code>,<code class="code-inline tex2jax_ignore">*</code>,<code class="code-inline tex2jax_ignore">/</code>. For example, \(4-5i\) can be displayed by a Code cell by running <code class="code-inline tex2jax_ignore">show(4-5*CDF(I))</code>.</p>
+<p id="p-644">Display the complex number \(-5+2i\) using a Code cell. (Note that by default, SageMath will use decimal expressions for whole values in a complex number; that's okay.)</p></article><article class="task exercise-like" id="task-277"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-645">A useful shortcut is to assign <code class="code-inline tex2jax_ignore">i=CDF(I)</code>. Then <code class="code-inline tex2jax_ignore">show(4-5*CDF(I))</code> can be shortened to <code class="code-inline tex2jax_ignore">show(4-5*i)</code>. (Pay attention to capitalization, though!)</p>
+<p id="p-646">Use this shortcut to display \(3+4i\) from a Code cell.</p></article><article class="task exercise-like" id="task-278"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-647">Another shortcut to work with complex numbers in SageMath is to describe the equivalent ordered pair: <code class="code-inline tex2jax_ignore">show(CDF(4,-5))</code> again produces \(4-5i\text{.}\)</p>
+<p id="p-648">Use this shortcut to display \(-6-i\) from a code cell.</p></article><article class="task exercise-like" id="task-279"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-649">Run <code class="code-inline tex2jax_ignore">show(3*i-5-7*i+3)</code> and <code class="code-inline tex2jax_ignore">show(4*(i-2))</code> in a Code cell. Then write a couple sentences explaining how you think these results were obtained.</p></article><article class="task exercise-like" id="task-280"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-650">Show how to compute \(7+4i-6i-5\) and \(3(2-3i)\) by hand. Then confirm your results using Code cells.</p></article></article><article class="activity project-like" id="activity-57"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.1.3</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-74">
+<p id="p-651">SageMath provides the <code class="code-inline tex2jax_ignore">points()</code> tool to plot points in the Cartesian plane, demonstrated in <a class="xref" data-knowl="./knowl/complex-cartesian-plotting.html" title="Listing 8.1.2">8.1.2</a>.</p>
+<figure class="listing figure-like" id="complex-cartesian-plotting"><pre class="prettyprint lang-py"># Example list of complex numbers
+complex_list = [3, 4-2*CDF(I), CDF(-1,5)]
+
+# Plot complex_list in the plane
+points(
+    [CDF(x) for x in complex_list],
+    xmin=-6,ymin=-6,xmax=6,ymax=6,
+    aspect_ratio=1,
+    pointsize=30
+)
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">8.1.2<span class="period">.</span></span><span class="space"> </span>Example for plotting complex numbers with SageMath</figcaption></figure>
+</div>
+<article class="task exercise-like" id="task-281"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-652">Modify and run <a class="xref" data-knowl="./knowl/complex-cartesian-plotting.html" title="Listing 8.1.2">8.1.2</a> in a Code cell to plot the following complex numbers.</p>
+<ul class="disc">
+<li id="li-40">\(\displaystyle 3-5i\)</li>
+<li id="li-41">\(\displaystyle 4i\)</li>
+<li id="li-42">\(\displaystyle -2\)</li>
+<li id="li-43">\(\displaystyle -4+3i\)</li>
+</ul></article><article class="task exercise-like" id="task-282"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-653">Modify and run <a class="xref" data-knowl="./knowl/complex-cartesian-plotting.html" title="Listing 8.1.2">8.1.2</a> in a Code cell to plot the following complex numbers. (You'll need to figure out how to resize the visible portion of the plane.)</p>
+<ul class="disc">
+<li id="li-44">\(\displaystyle 10+i\)</li>
+<li id="li-45">\(\displaystyle 9\)</li>
+<li id="li-46">\(\displaystyle -4+8i\)</li>
+</ul></article></article><article class="activity project-like" id="activity-58"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.1.4</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-75"><p id="p-654">The usefulness of complex numbers comes from their ability to describe movement of points in the plane.</p></div>
+<article class="task exercise-like" id="task-283"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-655">Use a Code cell to plot the following complex numbers:</p>
+<ul class="disc">
+<li id="li-47"><p id="p-656">The origin, that is, \(0+0i\)</p></li>
+<li id="li-48">\(\displaystyle -2+3i\)</li>
+<li id="li-49">\(\displaystyle 4-i\)</li>
+<li id="li-50"><p id="p-657">The complex number that is two units left and three units up from \(4-i\text{.}\)</p></li>
+<li id="li-51">\(\displaystyle (4-i)+(-2+3i)\)</li>
+</ul></article><article class="task exercise-like" id="task-284"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-658">Write a sentence or two explaining what the illustration in <a class="xref" data-knowl="./knowl/complex-cartesian-parallelogram.html" title="Figure 8.1.3">8.1.3</a> says about your plot in the previous task.</p>
+<figure class="figure figure-like" id="complex-cartesian-parallelogram"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/complex-cartesian-parallelogram.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.1.3<span class="period">.</span></span><span class="space"> </span>Illustrating a few complex numbers</figcaption></figure></article><article class="task exercise-like" id="task-285"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-659">Use a Code cell to show the following complex numbers in a new plot.</p>
+<ul class="disc">
+<li id="li-52">\(\displaystyle 0+0i\)</li>
+<li id="li-53">\(\displaystyle 1+4i\)</li>
+<li id="li-54">\(\displaystyle 2-i\)</li>
+<li id="li-55">\(\displaystyle (1+4i)+(2-i)\)</li>
+<li id="li-56">\(\displaystyle 3+3i\)</li>
+</ul></article><article class="task exercise-like" id="task-286"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-660">Write a sentence or two describing the “purpose” for adding a pair of complex numbers like \((1+4i)+(2-i)\text{.}\)</p></article><article class="task exercise-like" id="task-287"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-661">Use a Code cell to show the following complex numbers in a new plot.</p>
+<ul class="disc">
+<li id="li-57">\(\displaystyle 2+3i\)</li>
+<li id="li-58">\(\displaystyle 2(2+3i)\)</li>
+</ul></article><article class="task exercise-like" id="task-288"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-662">Use a Code cell to show the following complex numbers in a new plot.</p>
+<ul class="disc">
+<li id="li-59">\(\displaystyle -1+2i\)</li>
+<li id="li-60">\(\displaystyle 3(-1+2i)\)</li>
+</ul></article><article class="task exercise-like" id="task-289"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-663">Write a sentence or two describing the “purpose” for multiplying a complex number by a real number like \(2(2+3i)\) or \(3(-1+2i)\text{.}\)</p></article></article><section class="exercises" id="exercises-16"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">8.1.1</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-115"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-664">TODO</p></article></section></section></div></main>
+</div>
+</body>
+</html>
