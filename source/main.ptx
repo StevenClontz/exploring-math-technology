@@ -17,17 +17,7 @@
         <xi:include href="./05-measurements/main.ptx" />
         <xi:include href="./06-predictions/main.ptx" />
         <xi:include href="./07-random/main.ptx" />
-        <chapter xml:id="complex"><title>Two-Dimensional Data and Complex Numbers</title>
-    <objectives>
-        <introduction>
-            At the end of this chapter, students will be able to...
-        </introduction>
-        <ul>
-            <li>
-                Recognize and utilize the system of complex numbers as a model of two-dimensional data.
-            </li>
-        </ul>
-    </objectives></chapter>
+        <xi:include href="./08-complex/main.ptx" />
         <chapter xml:id="vectors"><title>Higher-Dimensional Data and Euclidean Vectors</title>
     <objectives>
         <introduction>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="complex-cartesian" kernel="sage">
+    <title>Cartesian Coordinates</title>
+    <exploration xml:id="complex-cartesian-preview">
+        <introduction>
+            <p>
+To describe <term>points</term> in a two-dimensional plane, we may use either
+<term>ordered pairs</term> <m>(x,y)</m> or <term>complex numbers</term> <m>x+yi</m>.
+These are simply two different ways to describe the same positional data. For example, both <m>(-1,5)</m>
+and <m>-1+5i</m> describe the same point in the illustration found in
+<xref ref="complex-cartesian-preview-figure"/>.
+            </p>
+            <figure xml:id="complex-cartesian-preview-figure">
+                <caption>Several points in the plane</caption>
+                <image source="images/complex-cartesian-preview.png"/>
+            </figure>
+            <p>
+The <term>origin</term> is the point <m>(0,0)=0+0i</m> at the <q>center</q> of the plane.
+The <m>x</m>-value of any point (the first number in the pair, and the value without an <m>i</m>
+in the complex number) describes its horizontal distance from the origin, moving right for
+positive numbers, and left for negative numbers. Likewise the <m>y</m>-value of any point
+(the second number in the pair, and the value with an <m>i</m> in the complex number)
+describes its vertical distance from the origin, where positive is up and negative is down.
+            </p>
+        </introduction>
+        <task>
+            <p>
+Draw <xref ref="complex-cartesian-preview-figure"/> by hand, or copy it into a graphics program.
+Then label the following points with both ordered pairs and complex numbers.
+            </p>
+            <ul>
+                <li>
+                    <m>(-5,-3)</m>
+                </li>
+                <li>
+                    <m>5+3i</m>
+                </li>
+                <li>
+                    <m>4-1i</m>
+                </li>
+            </ul>
+        </task>
+        <task>
+        <p>
+Note that <m>4-1i</m> is often written as <m>4-i</m>, since we think of <m>1i</m> as multiplication.
+How might <m>0-5i</m> be more simply written? What about <m>-1+0i</m>?
+        </p>
+        </task>
+        <task>
+            <p>
+Label <m>0-5i</m> and <m>-1+0i</m> in your drawing with both ordered pairs and simplified
+complex numbers.
+            </p>
+        </task>
+    </exploration>
+    <activity>
+        <introduction>
+            <p>
+                TODO plot complex points with Sage
+            </p>
+        </introduction>
+        <task>
+            <p>
+                TODO
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+                TODO arithmetic of complex points
+            </p>
+        </introduction>
+        <task>
+            <p>
+                TODO
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+                TODO translation of complex points
+            </p>
+        </introduction>
+        <task>
+            <p>
+                TODO
+            </p>
+        </task>
+    </activity>
+    <exercises>
+        <exercise>
+            <statement>
+                <p>
+                    TODO
+                </p>
+            </statement>
+        </exercise>
+    </exercises>
+</section>
+
