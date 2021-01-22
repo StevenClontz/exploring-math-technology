@@ -132,6 +132,13 @@ Modify and run <xref ref="complex-cartesian-plotting"/> in a Code cell to plot t
         </task>
         <task>
             <p>
+Write a sentence explaining where you'd expect the numbers <m>-5i+3</m> and <m>3i-4</m> to be located
+in the plane. Then use technology to confirm your intuition. (If you were mistaken, add a sentence
+explaining why you think they ended up where they did instead.)
+            </p>
+        </task>
+        <task>
+            <p>
 Modify and run <xref ref="complex-cartesian-plotting"/> in a Code cell to plot the following complex numbers.
 (You'll need to figure out how to resize the visible portion of the plane.)
             </p>
