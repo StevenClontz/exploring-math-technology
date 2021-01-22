@@ -218,7 +218,57 @@ like <m>2(2+3i)</m> or <m>3(-1+2i)</m>.
         <exercise>
             <statement>
                 <p>
-                    TODO
+Illustrate how to plot the position of the complex number <m>3-4i</m> in the plane
+by hand. Label it with its complex number and the equivalent ordered pair.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Use a Code cell to plot all of the following complex numbers in the plane.
+                </p>
+                <ul>
+                    <li><m>3+i</m></li>
+                    <li><m>-5</m></li>
+                    <li><m>-2+4i</m></li>
+                    <li><m>2i</m></li>
+                    <li><m>-3-5i</m></li>
+                    <li><m>1-i</m></li>
+                </ul>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Write a sentence explaining where the complex number
+<m>(3+2i)+(-4+i)</m> is positioned when compared to <m>3+2i</m>.
+Then illustrate your sentence by hand or using technology.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Show how to calculuate the value of <m>(3+2i)+(-4+i)</m> by hand
+and using technology.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Write a sentence explaining where the complex number
+<m>2(1-3i)</m> is positioned when compared to <m>1-3i</m>.
+Then illustrate your sentence by hand or using technology.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Show how to calculuate the value of <m>2(1-3i)</m>
+by hand and using technology.
                 </p>
             </statement>
         </exercise>
