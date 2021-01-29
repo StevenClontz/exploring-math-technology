@@ -1,277 +1,260 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="random-combinatorics" kernel="sage">
-    <title>Combinatorics</title>
-    <exploration xml:id="random-combinatorics-preview">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="complex-polar" kernel="sage">
+    <title>Polar Form</title>
+    <exploration xml:id="complex-polar-preview">
         <introduction>
             <p>
-While counting seems like a very basic mathematical task, <term>combinatorics</term> is the
-mathematics of counting quantities that are difficult to manage by hand (or even by computer).
+The code in <xref ref="complex-polar-preview-listing"/> plots the complex numbers
+<m>(1+i)^0,(1+i)^1,(1+i)^2,(1+i)^3</m>, along with a line connecting to each number
+from the origin.
             </p>
+            <listing xml:id="complex-polar-preview-listing">
+                <caption>Plotting powers of complex numbers</caption>
+                <program language="sage">
+                    <input><xi:include href="../files/complex-polar-preview.sage" parse="text" /></input>
+                </program>
+            </listing>
         </introduction>
         <task>
             <p>
-Explain how you'd help a five-year-old count how many numbers in the set <m>\{3,4,5,\dots,24,25\}</m> end with
-a <m>2</m>, <m>7</m>, or <m>9</m>.
+Run <xref ref="complex-polar-preview-listing"/>. Then copy this code into three other code cells,
+modifying <c>complex_number</c> to be <m>2i</m>, <m>\sqrt{3}-i</m>, and <m>-0.7+1.8i</m>.
             </p>
         </task>
         <task>
             <p>
-How many of the counting numbers in the set <m>\{3,4,5,\dots,2024,2025\}</m> end with
-a <m>2</m>, <m>7</m>, or <m>9</m>? You probably don't want deal with over two thousand
-numbers by hand, so first fix the list comprehension
-<c>[x for x in range(21,50) if x%10 in [3,8,9]]</c> to produce a list of all such numbers.
-Then use the <c>len()</c> tool to count them.
+What do you notice? (Write a sentence.)
             </p>
         </task>
         <task>
             <p>
-Without using technology, how many numbers in the set <m>\{1,2,\dots,10\}</m> end with
-a <m>2</m>, <m>7</m>, or <m>9</m>? How can you use that result to find how many numbers
-in the set <m>\{1,2,\dots,100\}</m> end with those digits? What about the set
-<m>\{1,2,\dots,1000\}</m>?
-            </p>
-        </task>
-        <task>
-            <p>
-Use the ideas from the previous task to count the numbers in the set <m>\{11,12,\dots,1008\}</m>
-that end with a <m>2</m>, <m>7</m>, or <m>9</m>. Then confirm your result using technology.
+What do you wonder? (Write a sentence.)
             </p>
         </task>
     </exploration>
     <activity>
         <introduction>
             <p>
-One of the most useful counting tools in mathematics is the <term>multiplication principle</term>.
-This principle is used when all the items to be counted come from a sequence of choices.
-If each item is made by making a choice from <m>a</m> things, then a choice from <m>b</m> things,
-then a choice from <m>c</m> things, and so on, then the total number of items is given by the product:
+One important property for a complex number is its <term>modulus</term> or
+<term>absolute value</term>, which measures
+the distance between that number and the origin <m>0+0i</m>. For example, the modulus <m>|4-3i|</m>
+of <m>4-3i</m> happens to be <m>5</m>, illustrated in <xref ref="complex-polar-modulus"/>.
             </p>
-            <me>
-a\times b\times c\times \cdots
-            </me>
-            <p>
-For example, suppose that a breakfast must include either eggs <m>E</m>, sausage <m>S</m>, or pancakes
-<m>P</m> to eat, and either coffee <m>c</m> or juice <m>j</m> to drink. Then this six possible
-breakfasts are eggs/coffee, eggs/juice, sausage/coffee, sausage/juice, pancakes/coffee, and pancakes/juice.
-Symbolically, these choices are:
-            </p>
-            <me>
-Ec,Ej,Sc,Sj,Pc,Pj
-            </me>
-            <p>
-However, this number six can be computed without listing out every choice.
-This is because there are <m>3</m> choices for food and <m>2</m>
-choices for drink, yielding <m>3\times 2=6</m>.
-            </p>
+            <figure xml:id="complex-polar-modulus">
+                <caption>Modulus of <m>4-3i</m></caption>
+                <image source="images/complex-polar-modulus.png"/>
+            </figure>
         </introduction>
         <task>
             <p>
-Suppose for a fancy dinner you are given four options as an appetizer, six options as an entree,
-three options as a beverage, and two options as a dessert. How many different dinners are possible?
+Plot each of the following complex numbers in the plane. Then describe the modulus for
+each number.
+            </p>
+            <ul>
+                <li><m>3</m></li>
+                <li><m>2i</m></li>
+                <li><m>-4i</m></li>
+                <li><m>-1</m></li>
+            </ul>
+        </task>
+        <task>
+            <p>
+SageMath confirms that the modulus of <m>4-3i</m> is <m>5</m> by running
+the following code: <c>abs(CDF(4,-3))</c>.
+            </p>
+            <p>
+Use Code cells to confirm your modulus calculations from the previous task.
             </p>
         </task>
         <task>
             <p>
-Suppose you could choose an appetizer or a dessert, but not both. How many different dinners
-are possible in that scenario?
+Modify <xref ref="complex-polar-preview-listing"/> to plot the following complex numbers.
+Then calculate their moduli using technology, to confirm that
+the largest modulus belongs to the number furthest from the origin,
+and the smallest modulus belongs to the number closest to the origin.
+            </p>
+            <ul>
+                <li><m>12+5i</m></li>
+                <li><m>-6+8i</m></li>
+                <li><m>\sqrt{3}-i</m></li>
+                <li><m>-3-3i</m></li>
+            </ul>
+        </task>
+        <task>
+            <p>
+The formula to compute the modulus of <m>a+bi</m> is
+<me>|a+bi|=\sqrt{a^2+b^2}</me>. Calculate the four moduli from
+the previous task using this formula.
             </p>
         </task>
         <task>
             <p>
-What if instead you consider the choice to skip any part of the meal, holding the appetizer, entree,
-beverage, and/or dessert. How many dinners are possible in that case?
+The <term>Pythagorean Theorem</term> says that <m>a^2+b^2=c^2</m>,
+where <m>a,b</m> are the leg lengths of a right triangle, and <c>c</c>
+is the length of its hypotenuse, illustrated in
+<xref ref="complex-polar-pythagorean"/>.
             </p>
-        </task>
-        <task>
+            <figure xml:id="complex-polar-pythagorean">
+                <caption>Illustration of the Pythagorean Theorem</caption>
+                <image source="images/complex-polar-pythagorean.png"/>
+            </figure>
             <p>
-What is the size of the sample space for the experiment of rolling
-a D6, then flipping a coin, then drawing a card from a shuffled 52-card deck?
+Write a sentence or two explaining why this theorem is related to the
+formula for the modulus of a complex number.
             </p>
         </task>
     </activity>
     <activity>
         <introduction>
             <p>
-The multiplication principle is used to count <term>permutations</term>: different arragements
-of symbols. For example, there are six permutations of the letters <m>A,B,C</m>:
+Another important property of complex numbers is their <term>argument</term>.
+An argument of <m>0</m> means that the complex number is on the right half of the horizontal axis,
+a positive argument means that the complex number is rotated counter-clockwise above
+the horizontal axis, and a negative argument means that the complex number is rotated
+clockwise below the horizontal axis.
             </p>
-            <me>
-ABC,ACB,BAC,BCA,CAB,CBA
-            </me>
             <p>
-The multiplication principle counts these six as follows: there are <m>3</m> choices for
-the first letter, then <m>2</m> remaining choices for the second letter, and finally only <m>1</m>
-choice for the final letter, which results in <m>3\times 2\times 1=6</m>.
+SageMath can calculate the argument of a complex numbers as follows: <c>arg(CDF(4,-3))</c>,
+returning approximately <m>-0.6435</m>. (We often use approximations because arguments
+are usually irrational numbers; why this is so requires trigonometry, so we leave that
+for another day.)
             </p>
         </introduction>
         <task>
             <p>
-How many permutations are there for the letters <m>W,X,Y,Z</m>?
+Use SageMath to find the arguments for each of the following numbers you plotted earlier.
             </p>
+            <ul>
+                <li><m>12+5i</m></li>
+                <li><m>-6+8i</m></li>
+                <li><m>\sqrt{3}-i</m></li>
+                <li><m>-3-3i</m></li>
+            </ul>
         </task>
         <task>
             <p>
-A list of permutations of the letters <m>A,B,C</m> may be obtained in SageMath (and Python)
-by writing <c>import itertools</c> and
-<c>abcs = ["".join(p) for p in itertools.permutations(["A", "B", "C"])]</c>. Then
-<c>len(abcs)</c> would equal <c>6</c>.
-            </p>
-            <p>
-Create a list of all strings that are formed by the letters in
-<c>["w","x","y","z"]</c>. Print out these strings, and count them using <c>len()</c>
-to confirm your calculation in the previous task.
-            </p>
-        </task>
-        <task>
-            <p>
-Expressions such as <m>5\times 4\times 3\times 2\times 1</m> are commonplace in mathematics,
-so we use the <term>factorial</term> operation as a shorthand:
-            </p>
-            <me>
-N! = N\times \cdots\times 3\times 2\times 1
-            </me>
-            <p>
-In SageMath, <c>factorial(5)</c> may be used to compute <m>5\times 4\times 3\times 2\times 1=120</m>.
-            </p>
-            <p>
-Use a Code cell to count how many permutations are there for the letters of the alphabet <m>A</m> to <m>Z</m>.
-            </p>
-        </task>
-        <task>
-            <p>
-Attempting to check this by computer by actually listing out every permutation
-as you did for <c>["w","x","y","z"]</c> would be difficult. (Try it!)
-What causes this difficulty?
-What does that suggest about the relationship between mathematics and computer science?
+Make up several other complex numbers and find their arguments. What values does it seem
+that an argument is allowed to have? Do you notice anything special or familiar about this range?
             </p>
         </task>
     </activity>
     <activity>
         <introduction>
             <p>
-The multiplication principle is useful when considering password security.
-Often, administrators make certain requirements for users' passwords. These requirements
-affect the number of different possible passwords, as well as the probability that a randomly
-chosen password would match a password that meets these requirements.
+Complex numbers are often written in <term>polar form</term>, where <m>r</m> describes the modulus
+and <m>\theta</m> describes the argument:
+            </p>
+            <me>r\exp(\theta i)</me>
+            <p>
+For example, the polar form of <m>4-3i</m> is (approximately) <m>5\exp(-0.6435i)</m>,
+which may be confirmed by running <c>5*exp(-0.6435*CDF(I))</c> in a Code cell.
             </p>
         </introduction>
         <task>
             <p>
-How many five-character passwords use only uppercase letters?
+Write each of the following complex numbers in their polar forms, using their moduli
+and an approximation of their arguments found earlier:
+            </p>
+            <ul>
+                <li><m>12+5i</m></li>
+                <li><m>-6+8i</m></li>
+                <li><m>\sqrt{3}-i</m></li>
+                <li><m>-3-3i</m></li>
+            </ul>
+        </task>
+        <task>
+            <p>
+Use SageMath to confirm each of the (approximate) polar forms you found in the previous
+task.
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+Adding complex numbers combines their horizontal and vertical components.
+Multiplying a complex number by a real number scales its distance from the origin.
+But what does it mean to multiply two complex numbers?
+            </p>
+        </introduction>
+        <task>
+            <p>
+Describe the modulus, argument, and polar form for each complex number:
+            </p>
+            <ul>
+                <li><m>\frac{9}{5}+\frac{12}{5}i</m></li>
+                <li><m>\frac{24}{13}+\frac{10}{13}i</m></li>
+                <li><m>(\frac{9}{5}+\frac{12}{5}i)\cdot(\frac{24}{13}+\frac{10}{13}i)</m> (use SageMath to multiply these)</li>
+            </ul>
+        </task>
+        <task>
+            <p>
+Compare the moduli of the product with the moduli of each factor. What relationship do you notice?
             </p>
         </task>
         <task>
             <p>
-How many five-character passwords use only alphanumeric characters? That is, uppercase letters,
-lowercase letters, or digits, where <c>htr12</c> is considered different than the password
-<c>HtR12</c>.
+Compare the argument of the product with the arguments of each factor. What relationship do you notice?
             </p>
         </task>
         <task>
             <p>
-How many five-character passwords use only alphanumeric characters, when repeated characters
-are not allowed? (That is, both <c>aabcd</c> and <c>abacd</c> are both not allowed.)
+Write a few sentences conjecturing what you think multiplying complex numbers does with their
+moduli and arguments. Then make up several examples to try and support your conjecture.
             </p>
         </task>
-        <task>
+    </activity>
+    <activity>
+        <statement>
             <p>
-How many five-character passwords use only alphanumeric characters, when consecutive
-repeated characters are not allowed? (That is, <c>aabcd</c> is not allowed, but
-<c>abacd</c> is okay.)
+Use a Code cell to confirm <m>i\cdot i=-1</m>, that is, <m>i^2=-1</m>. Then write a few
+sentences defending this
+result using what you've discovered about how multiplication affects moduli and arguments.
             </p>
-        </task>
-        <task>
-            <p>
-Consider the experiment where a five-character password is generated using alphanumeric characters
-(with repeated characters allowed).
-What's the probability that such a password would only have uppercase letters? Use the <c>n()</c>
-tool to obtain a decimal approximation.
-            </p>
-        </task>
-        <task>
-            <p>
-The code in <xref ref="random-combinatorics-passwords"/> simulates generating 100 thousand passwords
-and checking if the password contains all uppercase letters. Run the code as-is to confirm that it
-illustrates what you found in the previous task. Then annotate the code with <c># comments</c> that explain
-how it works.
-            </p>
-            <listing xml:id="random-combinatorics-passwords">
-                <caption>Simulate choosing random passwords 100K times</caption>
-                <program language="sage">
-                    <input><xi:include href="../files/random-combinatorics-passwords.sage" parse="text" /></input>
-                </program>
-            </listing>
-        </task>
+        </statement>
     </activity>
     <exercises>
         <exercise>
             <statement>
                 <p>
-Suppose than an ice cream shop offers single-scoop ice cream cones with a choice
-of fifty-seven flavors of ice cream, and the choice of a sugar cone, a dipped cone,
-or a waffle cone. How many different single-scoop ice cream cones does this shop offer?
+Write a sentence describing why the modulus of <m>-5i</m> is <m>5</m>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+            <p>
+Show how to find the modulus of <m>-6+8i</m> using both SageMath and a formula.
+            </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Find the arguments for <m>3+2i</m> and <m>3-2i</m>. Then write a sentence explaining
+why these arguments are negatives of each other.
                 </p>
             </statement>
         </exercise>
         <exercise>
             <statement>
                 <p>
-How many double-scoop cones does this shop offer?
+Find the polar form of <m>(2-i)\cdot(1+3i)</m> by using the moduli and arguments of
+<m>2-i</m> and <m>1+3i</m>.
                 </p>
             </statement>
         </exercise>
         <exercise>
             <statement>
                 <p>
-What is the size of the sample space for rolling three D8 dice (dice with eight different sides)?
+Use SageMath to compute <m>(2-i)\cdot(1+3i)</m> from its polar form found in the previous exercise.
                 </p>
             </statement>
         </exercise>
         <exercise>
             <statement>
                 <p>
-Create a Code cell that displays all the permutations of the letters <m>A,E,I,O,U</m>.
-                </p>
-            </statement>
-        </exercise>
-        <exercise>
-            <statement>
-                <p>
-How many permutations are there for the letters <m>A,E,I,O,U</m>? Show how to answer this
-question mathematically, and using technology.
-                </p>
-            </statement>
-        </exercise>
-        <exercise>
-            <statement>
-                <p>
-How many six-character passwords use only lowercase letters, digits, and the symbols
-<c>!</c>, <c>?</c>, and <c>#</c>?
-                </p>
-            </statement>
-        </exercise>
-        <exercise>
-            <statement>
-                <p>
-How many six-character passwords use only lowercase letters, digits, and the symbols
-<c>!</c>, <c>?</c>, and <c>#</c>, assuming no character is allowed to be repeated?
-                </p>
-            </statement>
-        </exercise>
-        <exercise>
-            <statement>
-                <p>
-What is the probability that a password generated to use six
-letters only uses consonants (for example, <c>CbxYYt</c>)?
-                </p>
-            </statement>
-        </exercise>
-        <exercise>
-            <statement>
-                <p>
-What is the probability that a password generated to use six
-letters never repeats a character? (For example, <c>abCDeA</c>
-doesn't repeat a character, but <c>abCDea</c> does.)
+Use SageMath to multiply <m>(2-i)\cdot(1+3i)</m> directly.
                 </p>
             </statement>
         </exercise>

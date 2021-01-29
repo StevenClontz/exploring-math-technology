@@ -12,5 +12,5 @@
         </ul>
     </objectives>
     <xi:include href="./01-cartesian.ptx" />
-    <!--<xi:include href="./02-polar.ptx" />-->
+    <xi:include href="./02-polar.ptx" />
 </chapter>
