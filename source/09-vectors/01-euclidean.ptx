@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="vectors-euclidean" kernel="sage">
+    <title>Euclidean Vectors</title>
+    <exploration xml:id="vectors-euclidean-preview">
+        <introduction>
+            <p>
+Consider the following table of meal cost data <xref ref="vectors-euclidean-meals"/>.
+            </p>
+<table xml:id="vectors-euclidean-meals">
+  <title>Meal costs for four people</title>
+  <tabular>
+    <row bottom="minor">
+      <cell>
+        Breakfast
+      </cell>
+      <cell>
+        Lunch
+      </cell>
+      <cell>
+        Dinner
+      </cell>
+    </row>
+    <row>
+      <cell>
+        $6.90
+      </cell>
+      <cell>
+        $8.75
+      </cell>
+      <cell>
+        $9.05
+      </cell>
+    </row>
+    <row>
+      <cell>
+        $11.00
+      </cell>
+      <cell>
+        $0.00
+      </cell>
+      <cell>
+        $12.95
+      </cell>
+    </row>
+    <row>
+      <cell>
+        $10.25
+      </cell>
+      <cell>
+        $10.50
+      </cell>
+      <cell>
+        $13.70
+      </cell>
+    </row>
+    <row>
+      <cell>
+        $8.20
+      </cell>
+      <cell>
+        $14.50
+      </cell>
+      <cell>
+        $11.15
+      </cell>
+    </row>
+  </tabular>
+</table>
+        </introduction>
+        <task>
+            <p>
+Combine this data to find the total each person paid for food on this day.
+            </p>
+        </task>
+        <task>
+            <p>
+Combine this data to find the total cost of each meal.
+            </p>
+        </task>
+        <task>
+            <p>
+Run the SageMath code in <xref ref="vectors-euclidean-meals-code"/>. Then write
+a sentence explaining how it answers to one of the above questions.
+            </p>
+            <listing xml:id="vectors-euclidean-meals-code">
+                <caption>SageMath code using vectors</caption>
+                <program language="sage">
+                    <input><xi:include parse="text" href="../files/vectors-euclidean-meals.sage" /></input>
+                </program>
+            </listing>
+        </task>
+        <task>
+            <p>
+Modify <xref ref="vectors-euclidean-meals-code"/> to answer the other question.
+            </p>
+        </task>
+    </exploration>
+    <activity>
+        <introduction>
+            <p>
+A <term>Euclidean vector</term> is a finite list of real numbers. (We'll just call them
+vectors, although there are other kinds of vectors as well.) They are usually written in a
+vertical column or as an ordered tuple:
+            </p>
+            <me>
+\left(\begin{array}{r}
+1 \\
+2 \\
+3
+\end{array}\right)=
+\left(1,\,2,\,3\right)
+            </me>
+            <p>
+The <term>dimension</term> of a vector counts how many numbers it lists. Note that two-dimensional
+vectors store the same information as complex numbers:
+            </p>
+            <me>
+\left(\begin{array}{r}
+4 \\
+-3
+\end{array}\right)=
+\left(4,-3\right)=
+4-3i
+            </me>
+        </introduction>
+        <task>
+            <p>
+Addition is defined in the same way for complex numbers and two-dimensional vectors.
+Find <m>(5-12i)+(-3-4i)</m> and <m>(5,-12)+(-3,-4)</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+Write a sentence explaining how you can add the two-dimensional vectors
+<m>(a,b)+(c,d)</m> directly.
+            </p>
+        </task>
+        <task>
+            <p>
+Assuming this pattern continues, what would you expect to be the value of
+<m>(1,2,3)+(10,20,30)</m>?
+            </p>
+        </task>
+        <task>
+            <p>
+Trying to add vectors in SageMath with <c>(5,-12)+(-3,4)</c> gives the
+incorrect result of <c>(5,-12,-3,4)</c>. (These are considered tuples, and
+the <c>+</c> operator concatenates tuples together.)
+Instead, we must convert them to vectors first: <c>vector([5,-12])+vector([-3,4])</c>.
+            </p>
+            <p>
+Use this technique to add <m>(1,2,3)+(10,20,30)</m> in SageMath.
+            </p>
+        </task>
+    </activity>
+    <exercises>
+        <exercise>
+            <statement>
+                <p>
+                    FOO
+                </p>
+            </statement>
+        </exercise>
+    </exercises>
+</section>
+

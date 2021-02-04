@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="vectors">
+    <title>Higher-Dimensional Data and Euclidean Vectors</title>
+    <objectives>
+        <introduction>
+            At the end of this chapter, students will be able to...
+        </introduction>
+        <ul>
+            <li>
+                Recognize and utilize spaces of Euclidean vectors as models of higher-dimensional data.
+            </li>
+        </ul>
+    </objectives>
+        <xi:include href="./01-euclidean.ptx" />
+</chapter>
