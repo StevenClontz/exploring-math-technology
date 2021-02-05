@@ -98,7 +98,7 @@ Modify <xref ref="vectors-euclidean-meals-code"/> to answer the other question.
     <activity>
         <introduction>
             <p>
-A <term>Euclidean vector</term> is a finite list of real numbers. (We'll just call them
+A <term>Euclidean vector</term> is an ordered list of real numbers. (We'll just call them
 vectors, although there are other kinds of vectors as well.) They are usually written in a
 vertical column or as an ordered tuple:
             </p>
@@ -126,19 +126,19 @@ vectors store the same information as complex numbers:
         <task>
             <p>
 Addition is defined in the same way for complex numbers and two-dimensional vectors.
-Find <m>(5-12i)+(-3-4i)</m> and <m>(5,-12)+(-3,-4)</m>.
+Find <m>(5-12i)+(-3-4i)</m> and <m>(5,-12)+(-3,-4)</m> without using technnology.
             </p>
         </task>
         <task>
             <p>
-Write a sentence explaining how you can add the two-dimensional vectors
-<m>(a,b)+(c,d)</m> directly.
+Write a sentence explaining the rule for adding two-dimensional vectors
+<m>(a,b)+(c,d)</m>.
             </p>
         </task>
         <task>
             <p>
-Assuming this pattern continues, what would you expect to be the value of
-<m>(1,2,3)+(10,20,30)</m>?
+Assuming this pattern continues, what should be the value of
+<m>(1,2,3,4,5)+(10,20,30,40,50)</m>?
             </p>
         </task>
         <task>
@@ -149,7 +149,104 @@ the <c>+</c> operator concatenates tuples together.)
 Instead, we must convert them to vectors first: <c>vector([5,-12])+vector([-3,4])</c>.
             </p>
             <p>
-Use this technique to add <m>(1,2,3)+(10,20,30)</m> in SageMath.
+Use this technique to add <m>(1,2,3,4,5)+(10,20,30,40,50)</m> in SageMath.
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+Like complex numbers, two-dimensional and three-dimensional vectors are often used
+to represent positional data, compared with an origin <term>zero vector</term>
+<m>(0,0)</m> or <m>(0,0,0)</m>.
+            </p>
+        </introduction>
+        <task>
+            <p>
+The position two units up/north and three units left/west from the origin
+is given by the complex number <m>-3+2i</m>. What vector represents that
+same point?
+            </p>
+        </task>
+        <task>
+            <p>
+Give a vector representing four units right/east and one unit down/south
+from the origin.
+            </p>
+        </task>
+        <task>
+            <p>
+Describe the point reached by moving two units up and three units left,
+followed by four units right and one unit down, as the addition of two vectors.
+Then compute that sum of vectors.
+            </p>
+        </task>
+        <task>
+            <p>
+The SageMath code in <xref ref="vectors-euclidean-addition"/> visualizes
+the vector sum <m>(5,-12)+(-3,-4)</m>.
+            </p>
+            <listing xml:id="vectors-euclidean-addition">
+                <caption>Visualizing vector addition</caption>
+                <program language="sage">
+                    <input><xi:include parse="text" href="../files/vectors-euclidean-addition.sage" /></input>
+                </program>
+            </listing>
+            <p>
+Run <xref ref="vectors-euclidean-addition"/>, and then modify a copy of it
+to visualize the vectors from the previous three tasks.
+            </p>
+        </task>
+        <task>
+            <p>
+Modify another copy of <xref ref="vectors-euclidean-addition"/> to visualize the three-dimensional
+vector sum <m>(1,-2,4)+(0,3,-2)</m>. (You can rotate, drag, and zoom this visualization to see it
+from different perspectives.)
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+Like complex numbers, vectors can be multiplied by real numbers to manipulate them.
+            </p>
+        </introduction>
+        <task>
+            <p>
+Run <c>3*vector([1,2,3])</c> to compute the product
+<m>3\left(\begin{array}{r}1 \\2 \\3\end{array}\right)</m>. Then write a sentence explaining
+the rule you think SageMath followed to compute this product.
+            </p>
+        </task>
+        <task>
+            <p>
+Visualize <m>\left(\begin{array}{r}1 \\2 \\3\end{array}\right)</m> and
+<m>3\left(\begin{array}{r}1 \\2 \\3\end{array}\right)</m> by using the <c>plot()</c> SageMath tool.
+            </p>
+        </task>
+        <task>
+            <p>
+Write a sentence explaining how multiplying the vector by three changed the shape of the vector.
+            </p>
+        </task>
+        <task>
+            <p>
+Put your intuition to the test! Simplify
+<m>2\left(\begin{array}{r}3 \\-2 \\5\end{array}\right)</m> by hand, and then using a Code cell.
+Then compare it with
+<m>\left(\begin{array}{r}3 \\-2 \\5\end{array}\right)</m> using a <c>plot()</c> visualization.
+            </p>
+        </task>
+        <task>
+            <p>
+Rewrite the sum <m>(-2,6,-4)+(-2,6,-4)</m> as a product <m>\Box(-2,6,4)</m>. Then confirm
+with SageMath that they are indeed the same thing.
+            </p>
+        </task>
+        <task>
+            <p>
+Give an example of multiplying a vector by a negative number. Then write a sentence explaining
+what happens to the direction of the vector arrow.
             </p>
         </task>
     </activity>
@@ -157,8 +254,71 @@ Use this technique to add <m>(1,2,3)+(10,20,30)</m> in SageMath.
         <exercise>
             <statement>
                 <p>
-                    FOO
+Describe the dimension of the vector <m>(5,-1)</m>. What about the vector <m>(3,0,-4)</m>?
+What about the complex number <m>5-i</m>?
                 </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Compute the following sums.
+                </p>
+                <ul>
+                    <li>
+                        <m>
+\left(\begin{array}{r}
+-2 \\
+3
+\end{array}\right)+
+\left(\begin{array}{r}
+-5 \\
+2
+\end{array}\right)
+                        </m>
+                    </li>
+                    <li>
+                        <m>
+\left(7,\,-7\right)+\left(5,\,3\right)
+                        </m>
+                    </li>
+                    <li>
+                        <m>
+\left(\begin{array}{r}
+8 \\
+-3 \\
+-8
+\end{array}\right)+
+\left(\begin{array}{r}
+3 \\
+-5 \\
+-1
+\end{array}\right)
+                        </m>
+                    </li>
+                </ul>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+            <p>
+Visualize the sums from the previous exercise.
+            </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+            <p>
+Compute <m>4\,(3,-1,4)</m>.
+            </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+            <p>
+Visualize <m>4\,(3,-1,4)</m>, and explain what multiplying by four
+did to the vector arrow for <m>(3,-1,4)</m>.
+            </p>
             </statement>
         </exercise>
     </exercises>
