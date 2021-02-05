@@ -296,6 +296,11 @@ Compute the following sums.
 \end{array}\right)
                         </m>
                     </li>
+                    <li>
+                        <m>
+\left(1,2,4,8,16\right)+\left(1,3,5,7,9\right)
+                        </m>
+                    </li>
                 </ul>
             </statement>
         </exercise>
