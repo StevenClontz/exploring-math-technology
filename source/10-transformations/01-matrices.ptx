@@ -38,48 +38,209 @@ Describe a form of entertainment where three-dimensional data is displayed in on
     <activity>
         <introduction>
             <p>
-                TODO basic vectors i,j,k.
+Every two-dimensional vector can be decomposed into two <term>standard basic vectors</term>:
+<m>\hat\imath=(1,0)</m> and <m>\hat\jmath=(0,1)</m>.
             </p>
         </introduction>
         <task>
             <p>
-                TODO
+Let <c>veci=vector([1,0])</c> and <c>vecj=vector([0,1])</c>. Use a Code cell to verify
+that <m>(3,-4)=3\hat\imath-4\hat\jmath</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+Rewrite the vector <m>(-12,5)</m> using standard basic vectors <m>\hat\imath</m>
+and <m>\hat\jmath</m>, and confirm your result with a code cell.
+            </p>
+        </task>
+        <task>
+            <p>
+Rewrite the complex number <m>-6-5i</m> using the standard basic vectors <m>\hat\imath</m>
+and <m>\hat\jmath</m>. Then write a sentence or two explaining why many engineers prefer to write
+complex numbers in <m>a+bj</m> form instead of <m>a+bi</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+Explain how to define <m>\hat\imath,\hat\jmath,\hat{k}</m> such that the vector <m>(2,3,4)</m> may be
+rewritten as <m>2\hat\imath+3\hat\jmath+4\hat{k}</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+Write code defining <c>veci_3d</c>, <c>vecj_3d</c>, <c>veck_3d</c>, and then confirm that
+<c>vector([2,3,4])==2*veci_3d+3*vecj_3d+4*veck_3d</c> returns <c>True</c>.
             </p>
         </task>
     </activity>
     <activity>
         <introduction>
             <p>
-                TODO Manually transforming base
+While <m>\hat\imath,\hat\jmath,\hat{k}</m> form the <q>standard</q> bases for 2D and 3D space,
+there are also non-standard bases. That is, a <term>basis</term> for 2D or 3D space is any collection
+of vectors that can describe all other vectors.
             </p>
         </introduction>
         <task>
             <p>
-                TODO
+Modify the code in <xref ref="transformations-matrices-coordinates"/> so that it visualizes
+how the vectors <m>-\hat\imath+3\hat\jmath</m>, <m>3\hat\imath+4\hat\jmath</m>,
+and <m>-2\hat\imath-5\hat\jmath</m> appear
+in the standard 2D coordinate system.
+            </p>
+            <listing xml:id="transformations-matrices-coordinates">
+                <caption>Drawing a coordinate system</caption>
+                <program language="sage">
+                    <input><xi:include parse="text" href="../files/transformations-matrices-coordinates.sage" /></input>
+                </program>
+            </listing>
+        </task>
+        <task>
+            <p>
+Any pair of vectors forms a basis, provided they don't point in exactly the same (or opposite) directions.
+            </p>
+            <p>
+Modify <xref ref="transformations-matrices-coordinates"/> to set <c>basic1</c> and <c>basic2</c> equal to the
+non-standard pair of basis vectors <m>\vec b_1=(1,2)</m> and <m>\vec b_2=(-1,1)</m>, and then visualize
+how the vectors <m>-\vec b_1+3\vec b_2</m>, <m>3\vec b_1+4\vec b_2</m>,
+and <m>-2\vec b_1-5\vec b_2</m> appear in this modified coordinate system.
+            </p>
+        </task>
+        <task>
+            <p>
+Use the standard coordinate axes in visualization from the previous task to describe
+the vectors <m>-\vec b_1+3\vec b_2</m>, <m>3\vec b_1+4\vec b_2</m>,
+and <m>-2\vec b_1-5\vec b_2</m> using standard basic vectors/coordinates.
+            </p>
+        </task>
+        <task>
+            <p>
+Use SageMath to calculuate standard coordinates for
+the vectors <m>-\vec b_1+3\vec b_2</m>, <m>3\vec b_1+4\vec b_2</m>,
+and <m>-2\vec b_1-5\vec b_2</m> directly, confirming the result you found from the illustration.
             </p>
         </task>
     </activity>
     <activity>
         <introduction>
             <p>
-                TODO Use matrix to change base.
+The process of converting vectors from one basis to another is called a <term>transformation</term>.
+For example, the transformation of the vectors
+<m>\hat\imath,\hat\jmath</m> into the vectors <m>\vec b_1,\vec b_2</m> results in the vector
+<m>(-1,3)=-\hat\imath+3\hat\jmath</m>
+in standard coordinates transforming into the vector <m>-\vec b_1+3\vec b_2</m> described with
+non-standard coordinates.
             </p>
+            <p>
+The transformation of the standard basis <m>\hat\imath,\hat\jmath</m> into the non-standard basis
+<m>\vec b_1,\vec b_2</m> is described by the <term>matrix</term>
+<m>\left[\vec b_1\hspace{1em}\vec b_2\right]</m> where the values of <m>\vec b_1,\vec b_2</m> are written
+vertically as columns. For example, the transformation of
+<m>\hat\imath</m> and <m>\hat\jmath</m> into <m>\vec b_1=(1,2)</m> and
+<m>\vec b_2=(-1,1)</m> is described by the matrix:
+            </p>
+            <me>
+\left[
+    \begin{matrix}
+        1 &amp; -1 \\
+        2 &amp; 1
+    \end{matrix}
+\right]
+            </me>
         </introduction>
         <task>
             <p>
-                TODO
+Show <c>matrix([basic1,basic2])</c>. Explain why this isn't exactly
+the matrix described above.
+            </p>
+        </task>
+        <task>
+            <p>
+Use <c>transpose()</c> to save the matrix we actually want to the CS variable <c>B</c>.
+            </p>
+        </task>
+        <task>
+            <p>
+The <term>matrix multiplication</term> described by
+                <m>\left[\vec b_1\hspace{1em}\vec b_2\right](-1,3)=
+\left[
+    \begin{matrix}
+        1 &amp; -1 \\
+        2 &amp; 1
+    \end{matrix}
+\right]
+\left[
+    \begin{matrix}
+        -1 \\
+        3
+    \end{matrix}
+\right]
+                </m>
+computes the transformation of <m>(-1,3)=-\hat\imath+3\hat\jmath</m> into <m>-\vec b_1+3\vec b_2</m>.
+SageMath can compute this transformation by running <c>B*vector([-1,3])</c>.
+            </p>
+            <p>
+Show how to use matrix multiplication to compute
+<m>-\vec b_1+3\vec b_2</m>, <m>3\vec b_1+4\vec b_2</m>,
+and <m>-2\vec b_1-5\vec b_2</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+Extend this idea to define a <m>3\times 3</m> matrix that transforms the
+3D standard basic vectors <m>\hat\imath,\hat\jmath,\hat{k}</m> into the
+vectors <m>\vec c_1=(1,2,3)</m>, <m>\vec c_2=(-2,0,3)</m>, and <m>\vec c_3=(-1,0,-1)</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+Show how to compute <m>4\vec c_1-3\vec c_2+2\vec c_3</m> in SageMath using two different ways:
+one with matrix multiplication and one without.
             </p>
         </task>
     </activity>
     <activity>
         <introduction>
             <p>
-                TODO Use matrix to transform 3d to 2d
+Matrices can also be used to transform 3D data into 2D data. For example, the matrix <m>
+\left[
+    \begin{matrix}
+        1 &amp; -1 &amp; 0 \\
+        2 &amp; 1 &amp; 1
+    \end{matrix}
+\right]
+</m> defined by <c>A=matrix([[1,-1,0],[2,1,1]])</c> transforms the 3D standard basic vectors
+3D standard basic vectors <m>\hat\imath,\hat\jmath,\hat{k}</m> into the 2D vectors
+<m>(1,2)</m>, <m>(-1,1)</m>, and <m>(0,1)</m>.
             </p>
         </introduction>
         <task>
             <p>
-                TODO
+In computer animation, objects can be represented by piecing together triangles of various colors.
+The SageMath code <c>polygon([v1,v2,v3])</c> represents the triangle whose corners are pointed
+to by the vectors stored as the CS variables <c>v1</c>, <c>v2</c>, and <c>v3</c>.
+            </p>
+            <p>
+Display the triangle whose corners are pointed to by the vectors <m>(1,2,3)</m>,
+<m>(3,0,-1)</m>, and <m>(-1,1,2)</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+Use multiplication with the matrix <m>
+\left[
+    \begin{matrix}
+        1 &amp; -1 &amp; 0 \\
+        2 &amp; 1 &amp; 1
+    \end{matrix}
+\right]
+</m> to transform this triangle within 3D space into a triangle in 2D space.
+            </p>
+        </task>
+        <task>
+            <p>
+Create more matrices and show how they transform the same triangle into different triangles in 2D space.
             </p>
         </task>
     </activity>
@@ -87,7 +248,85 @@ Describe a form of entertainment where three-dimensional data is displayed in on
         <exercise>
             <statement>
                 <p>
-                    TODO
+Describe the vector <m>(3,-2)</m> using the
+2D standard basic vectors <m>\hat\imath,\hat\jmath</m>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Describe the vector <m>(-5,1,2)</m> using the
+3D standard basic vectors <m>\hat\imath,\hat\jmath,\hat{k}</m>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Write SageMath code to define <c>veci</c> (in 2D), <c>vecj</c> (in 2D),
+<c>veci_3d</c>, <c>vecj_3d</c>, and <c>veck_3d</c>. Then use those
+to confirm your answer to the previous exercises.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Let <m>\vec w_1=(1,3)</m> and <m>\vec w_2=(3,-1)</m>.
+Define a matrix in SageMath that can be used to transform <m>\hat\imath</m> to
+<m>\vec w_1</m> and <m>\hat\jmath</m> to <m>\vec w_2</m>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Use this matrix to compute each of the following:
+                </p>
+                <ul>
+<li><m>3\vec w_1+\vec w_2</m></li>
+<li><m>2\vec w_1-4\vec w_2</m></li>
+<li><m>-4\vec w_1</m></li>
+<li><m>-\vec w_1-5\vec w_2</m></li>
+                </ul>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Compute each of the vector expressions in the previous exercise without using a matrix.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Show how to compute the vector expression <m>3(1,2,3)-5(0,1,1)+(4,0,3)</m> with and without
+matrix multiplication in SageMath.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Display the parallelogram with corners at the 3D coordinates <m>(1,2,3)</m>,
+<m>(4,3,7)</m>, <m>(0,2,6)</m>, and <m>(3,3,10)</m>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Display the transformation of this shape into 2D space according to the matrix
+<m>
+\left[
+    \begin{matrix}
+        -1 &amp; 0 &amp; 2 \\
+        3 &amp; -1 &amp; -2
+    \end{matrix}
+\right]
+                    </m>.
                 </p>
             </statement>
         </exercise>
