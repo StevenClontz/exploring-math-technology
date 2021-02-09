@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="transformations-matrices" kernel="sage">
+    <title>Matrices</title>
+    <exploration xml:id="transformations-matrices-preview">
+        <introduction>
+            <p>
+Consider the following code generating a visualization of several vectors.
+            </p>
+            <listing xml:id="transformations-matrices-pair">
+                <caption>Visualizing a pair of vectors</caption>
+                <program language="sage">
+                    <input><xi:include parse="text" href="../files/transformations-matrices-pair.sage" /></input>
+                </program>
+            </listing>
+        </introduction>
+        <task>
+            <p>
+Run <xref ref="transformations-matrices-pair"/> in a Code cell. Use your mouse to move the
+visualization around.
+            </p>
+        </task>
+        <task>
+            <p>
+Are the vectors in the generated visualization two-dimensional or three-dimensional? Explain your reasoning.
+            </p>
+        </task>
+        <task>
+            <p>
+Is your screen displaying this visualization two-dimensional or three-dimensional? Explain your reasoning.
+            </p>
+        </task>
+        <task>
+            <p>
+Describe a form of entertainment where three-dimensional data is displayed in only two dimensions.
+            </p>
+        </task>
+    </exploration>
+    <activity>
+        <introduction>
+            <p>
+                TODO basic vectors i,j,k.
+            </p>
+        </introduction>
+        <task>
+            <p>
+                TODO
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+                TODO Manually transforming base
+            </p>
+        </introduction>
+        <task>
+            <p>
+                TODO
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+                TODO Use matrix to change base.
+            </p>
+        </introduction>
+        <task>
+            <p>
+                TODO
+            </p>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+                TODO Use matrix to transform 3d to 2d
+            </p>
+        </introduction>
+        <task>
+            <p>
+                TODO
+            </p>
+        </task>
+    </activity>
+    <exercises>
+        <exercise>
+            <statement>
+                <p>
+                    TODO
+                </p>
+            </statement>
+        </exercise>
+    </exercises>
+</section>
+

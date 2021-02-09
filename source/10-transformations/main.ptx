@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="transformations">
+    <title>Transformations of Higher-Dimensional Data</title>
+    <objectives>
+        <introduction>
+            At the end of this chapter, students will be able to...
+        </introduction>
+        <ul>
+            <li>
+                Describe the equivalence of Euclidean linear transformations and matrices and be able to use them interchangeably to transform data into appropriate forms.
+            </li>
+        </ul>
+    </objectives>
+    <xi:include href="./01-matrices.ptx" />
+</chapter>
