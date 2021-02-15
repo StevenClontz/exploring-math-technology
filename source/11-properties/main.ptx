@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter xml:id="properties" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Properties of Linear Transformations</title>
+    <objectives>
+        <introduction>
+            At the end of this chapter, students will be able to...
+        </introduction>
+        <ul>
+            <li>
+                Identify the basic operations on matrices and be able to use them to analyze properties of linear transformations and data.
+            </li>
+        </ul>
+    </objectives>
+    <xi:include href="./01-determinants.ptx" />
+</chapter>

@@ -20,17 +20,7 @@
         <xi:include href="./08-complex/main.ptx" />
         <xi:include href="./09-vectors/main.ptx" />
         <xi:include href="./10-transformations/main.ptx" />
-        <chapter xml:id="properties"><title>Properties of Linear Transformations</title>
-    <objectives>
-        <introduction>
-            At the end of this chapter, students will be able to...
-        </introduction>
-        <ul>
-            <li>
-                Identify the basic operations on matrices and be able to use them to analyze properties of linear transformations and data.
-            </li>
-        </ul>
-    </objectives></chapter>
+        <xi:include href="./11-properties/main.ptx" />
 
         <xi:include href="./meta/backmatter.ptx" />
     </book>
