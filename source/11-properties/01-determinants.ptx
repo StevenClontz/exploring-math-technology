@@ -147,16 +147,22 @@ directly: <c>det(A)</c>.
 Use this to check your work from the previous task.
             </p>
         </task>
-        <task>
-            <p>
-Visualize the transformations caused by the matrices
+    </activity>
+    <activity>
+        <introduction>
+Consider the transformations caused by the matrices
 <m>\left(\begin{array}{rr}
 1 &amp; 2 \\
 3 &amp; 4
 \end{array}\right)</m> and <m>\left(\begin{array}{rr}
 2 &amp; 1 \\
 4 &amp; 3
-\end{array}\right)</m>. Then compute their determinants.
+\end{array}\right)</m>.
+        </introduction>
+        <task>
+            <p>
+Write Code cells that visualize how these matrices
+transform areas and compute their determinants.
             </p>
         </task>
         <task>
@@ -196,7 +202,80 @@ for three-dimensional data.
         <exercise>
             <statement>
                 <p>
-                    TODO
+Use Code cells to create visualizations of how the following matrices
+transform areas.
+                </p>
+                <ul>
+                    <li>
+                        <m>A=\left(\begin{array}{rr}
+-5 &amp; 4 \\
+3 &amp; -3
+\end{array}\right)</m>
+                    </li>
+                    <li>
+                        <m>B=\left(\begin{array}{rr}
+3 &amp; 5 \\
+-1 &amp; 5
+\end{array}\right)</m>
+                    </li>
+                    <li>
+                        <m>C=\left(\begin{array}{rr}
+-2 &amp; 4 \\
+4 &amp; -8
+\end{array}\right)</m>
+                    </li>
+                    <li>
+                        <m>D=\left(\begin{array}{rr}
+-3 &amp; -1 \\
+4 &amp; 3
+\end{array}\right)</m>
+                    </li>
+                </ul>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Use these visualizations to explain which matrices have positive
+determinants, which ones have negative determinants, and which ones
+have a determinant of zero.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Use these visualizations to explain which matrix has the smallest
+nonzero determinant and which has the largest determinant.
+(When comparing the size of determinants, ignore
+<m>\pm</m> signs, so a determinant of <m>-10</m> is considered larger
+than a determinant of <m>+3</m>.)
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Show how to use the diagonal formula to compute each determinant by hand.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Show how to use SageMath to compute each determinant.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+Use SageMath to compute the determinant of <m>\left(\begin{array}{rrr}
+1 &amp; 3 &amp; -2 \\
+-1 &amp; -5 &amp; -1 \\
+-2 &amp; 1 &amp; 0
+\end{array}\right)</m>. Then write a sentence explaining what this
+value represents.
                 </p>
             </statement>
         </exercise>
