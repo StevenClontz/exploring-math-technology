@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-16T18:35:39Z       *-->
+<!--*       on 2021-02-16T19:37:46Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -259,20 +259,20 @@ polygon([
 <p id="p-783">SageMath can also compute the determinant of a matrix <code class="code-inline tex2jax_ignore">A</code> directly: <code class="code-inline tex2jax_ignore">det(A)</code>. Use this to check your work from the previous task.</p></article></article><article class="activity project-like" id="activity-73"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">11.1.4</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-96">Consider the transformations caused by the matrices \(\left(\begin{array}{rr}
+<div class="introduction" id="introduction-96"><p id="p-784">Consider the transformations caused by the matrices \(\left(\begin{array}{rr}
 1 &amp; 2 \\
 3 &amp; 4
 \end{array}\right)\) and \(\left(\begin{array}{rr}
 2 &amp; 1 \\
 4 &amp; 3
-\end{array}\right)\text{.}\)</div>
+\end{array}\right)\text{.}\)</p></div>
 <article class="task exercise-like" id="task-355"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-784">Write Code cells that visualize how these matrices transform areas and compute their determinants.</p></article><article class="task exercise-like" id="task-356"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-785">Write a sentence explaining why you think one determinant was positive and one was negative.</p></article><article class="task exercise-like" id="task-357"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-786">Confirm your guess by making up two new matrices, visualizing them, and then computing their determinants.</p></article></article><article class="activity project-like" id="activity-74"><h6 class="heading">
+<p id="p-785">Write Code cells that visualize how these matrices transform areas and compute their determinants.</p></article><article class="task exercise-like" id="task-356"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-786">Write a sentence explaining why you think one determinant was positive and one was negative.</p></article><article class="task exercise-like" id="task-357"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-787">Confirm your guess by making up two new matrices, visualizing them, and then computing their determinants.</p></article></article><article class="activity project-like" id="activity-74"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">11.1.5</span><span class="period">.</span>
 </h6>
-<p id="p-787">The code in <a class="xref" data-knowl="./knowl/properties-determinants-3d.html" title="Listing 11.1.2">11.1.2</a> visualizes the transformation of the <dfn class="terminology">standard unit cube</dfn> by a \(3\times 3\) matrix, as well as computing its determinant.</p>
+<p id="p-788">The code in <a class="xref" data-knowl="./knowl/properties-determinants-3d.html" title="Listing 11.1.2">11.1.2</a> visualizes the transformation of the <dfn class="terminology">standard unit cube</dfn> by a \(3\times 3\) matrix, as well as computing its determinant.</p>
 <figure class="listing figure-like" id="properties-determinants-3d"><pre class="prettyprint lang-py">A = matrix([
     [3,0,-2],
     [1,-1,3],
@@ -295,11 +295,11 @@ corners = [
 plot(Polyhedron(vertices=corners)) + \
 plot(Polyhedron(vertices=[A*c for c in corners]))
 </pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">11.1.2<span class="period">.</span></span><span class="space"> </span>Transforming a cube</figcaption></figure><p id="p-788">Create a few Code cells with modified values for the matrix. Then write a sentence explaining what you think the determinant measures for three-dimensional data.</p></article><section class="exercises" id="exercises-20"><h3 class="heading hide-type">
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">11.1.2<span class="period">.</span></span><span class="space"> </span>Transforming a cube</figcaption></figure><p id="p-789">Create a few Code cells with modified values for the matrix. Then write a sentence explaining what you think the determinant measures for three-dimensional data.</p></article><section class="exercises" id="exercises-20"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">11.1.1</span> <span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-141"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-789">Use Code cells to create visualizations of how the following matrices transform areas.</p>
+<p id="p-790">Use Code cells to create visualizations of how the following matrices transform areas.</p>
 <ul class="disc">
 <li id="li-106">\(\displaystyle A=\left(\begin{array}{rr}
 -5 &amp; 4 \\
@@ -318,11 +318,11 @@ plot(Polyhedron(vertices=[A*c for c in corners]))
 4 &amp; 3
 \end{array}\right)\)</li>
 </ul></article><article class="exercise exercise-like" id="exercise-142"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-790">Use these visualizations to explain which matrices have positive determinants, which ones have negative determinants, and which ones have a determinant of zero.</p></article><article class="exercise exercise-like" id="exercise-143"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-791">Use these visualizations to explain which matrix has the smallest nonzero determinant and which has the largest determinant. (When comparing the size of determinants, ignore \(\pm\) signs, so a determinant of \(-10\) is considered larger than a determinant of \(+3\text{.}\))</p></article><article class="exercise exercise-like" id="exercise-144"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-792">Show how to use the diagonal formula to compute each determinant by hand.</p></article><article class="exercise exercise-like" id="exercise-145"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-793">Show how to use SageMath to compute each determinant.</p></article><article class="exercise exercise-like" id="exercise-146"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-794">Use SageMath to compute the determinant of \(\left(\begin{array}{rrr}
+<p id="p-791">Use these visualizations to explain which matrices have positive determinants, which ones have negative determinants, and which ones have a determinant of zero.</p></article><article class="exercise exercise-like" id="exercise-143"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-792">Use these visualizations to explain which matrix has the smallest nonzero determinant and which has the largest determinant. (When comparing the size of determinants, ignore \(\pm\) signs, so a determinant of \(-10\) is considered larger than a determinant of \(+3\text{.}\))</p></article><article class="exercise exercise-like" id="exercise-144"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-793">Show how to use the diagonal formula to compute each determinant by hand.</p></article><article class="exercise exercise-like" id="exercise-145"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-794">Show how to use SageMath to compute each determinant.</p></article><article class="exercise exercise-like" id="exercise-146"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-795">Use SageMath to compute the determinant of \(\left(\begin{array}{rrr}
 1 &amp; 3 &amp; -2 \\
 -1 &amp; -5 &amp; -1 \\
 -2 &amp; 1 &amp; 0
