@@ -150,6 +150,7 @@ Use this to check your work from the previous task.
     </activity>
     <activity>
         <introduction>
+            <p>
 Consider the transformations caused by the matrices
 <m>\left(\begin{array}{rr}
 1 &amp; 2 \\
@@ -158,6 +159,7 @@ Consider the transformations caused by the matrices
 2 &amp; 1 \\
 4 &amp; 3
 \end{array}\right)</m>.
+            </p>
         </introduction>
         <task>
             <p>
