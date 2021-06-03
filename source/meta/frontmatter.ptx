@@ -9,8 +9,9 @@ The author's heartfelt thanks go out to the following people and organizations.
             <li>
         <p>
 The <url href="https://ascte.org">Alabama School of Cyber Technology and Engineering</url>
-for supporting the author as he developed this text to serve as the backbone
-of their introductory mathematics course.
+for hiring the author as a consultant to design this book in service
+of their introductory mathematics course, and for allowing the author to
+open-source this curriculum under free licensing.
         </p>
             </li>
             <li>
@@ -29,7 +30,7 @@ helped inspire <xref ref="random"/>, and for discussions as that chapter was dev
         </ul>
     </acknowledgement>
     <preface xml:id="why">
-        <title>Why Study [the] Mathematics [of Data]?</title>
+        <title>Why Study Mathematics?</title>
         <p>
 It's a common complaint by mathematicians that students aren't interested in
 mathematics for its own sake. And I (that is, me, the author, hello!)
@@ -61,7 +62,8 @@ With that knowledge, either you'll be ready to do the work beyond the scope of a
 or you'll be the one automating the work!
         </p>
         <p>
-Now this book focuses specifically on the Mathematics of Data. Of course, <term>data</term>
+Now this book focuses specifically on using technology for mathematics
+and data science. Of course, <term>data</term>
 are all around us. This book may be thought of as a sequence of written words,
 but it was written on a computer, it can also be thought of as a seqeunce of <m>0</m>s and
 <m>1</m>s on a hard disk. While computers do this kind of serialization of data from
@@ -97,8 +99,8 @@ into some fun puzzles, happy solving!
         <aside>
             <p>
 PS: This book is open-sourced on
-<url href="https://github.com/StevenClontz/mathematics-of-data">GitHub</url>. Anyone
-(including students) is welcome to suggest improvements by opening an Issue or making
+<url href="https://github.com/StevenClontz/exploring-math-technology">GitHub</url>. Anyone
+(including any student) is welcome to suggest improvements by opening an Issue or making
 a Pull Request.
             </p>
         </aside>
@@ -106,7 +108,6 @@ a Pull Request.
             <line>Dr. Steven Clontz</line>
             <line>Assistant Professor of Mathematics</line>
             <line>University of South Alabama</line>
-            <line>August 2020</line>
             <line>
                 <email>steven.clontz@gmail.com</email>
             </line>
