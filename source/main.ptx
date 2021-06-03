@@ -5,7 +5,7 @@
     <xi:include href="./meta/bookinfo.ptx" />
 
     <book>
-        <title>Mathematics of Data</title>
+        <title>Exploring Mathematics and Data Science with Technology</title>
 
         <xi:include href="./meta/frontmatter.ptx" />
 
