@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-16T19:37:44Z       *-->
+<!--*       on 2021-06-03T17:49:51Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -11,39 +11,33 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>MoD Single-Variable Visualizations</title>
+<title>EMDST Single-Variable Visualizations</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
-    },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://unpkg.com/prismjs@v1.22.0/themes/prism.css" rel="stylesheet">
+<script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -57,14 +51,14 @@ MathJax.Hub.Config({
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="book-1.html"><span class="title">Mathematics of Data</span></a></h1>
+<h1 class="heading"><a href="book-1.html"><span class="title">Exploring Mathematics and Data Science with Technology</span></a></h1>
 <p class="byline">Dr. Steven Clontz</p>
 </div>
 </div></div>
@@ -83,7 +77,7 @@ MathJax.Hub.Config({
 <li class="link frontmatter">
 <a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
 <li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
-<li><a href="why.html" data-scroll="why">Why Study [the] Mathematics [of Data]?</a></li>
+<li><a href="why.html" data-scroll="why">Why Study Mathematics?</a></li>
 </ul>
 </li>
 <li class="link">
@@ -138,13 +132,11 @@ MathJax.Hub.Config({
 </ul>
 </li>
 <li class="link">
-<a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Vectors</span></a><ul><li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean">Euclidean Vectors</a></li></ul>
-</li>
-<li class="link">
-<a href="transformations.html" data-scroll="transformations"><span class="codenumber">10</span> <span class="title">Transformations of Higher-Dimensional Data</span></a><ul><li><a href="transformations-matrices.html" data-scroll="transformations-matrices">Matrices</a></li></ul>
-</li>
-<li class="link">
-<a href="properties.html" data-scroll="properties"><span class="codenumber">11</span> <span class="title">Properties of Linear Transformations</span></a><ul><li><a href="properties-determinants.html" data-scroll="properties-determinants">Determinants</a></li></ul>
+<a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Space</span></a><ul>
+<li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean">Euclidean Vectors</a></li>
+<li><a href="vectors-matrices.html" data-scroll="vectors-matrices">Matrices</a></li>
+<li><a href="vectors-determinants.html" data-scroll="vectors-determinants">Determinants</a></li>
+</ul>
 </li>
 <li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
@@ -159,81 +151,81 @@ MathJax.Hub.Config({
 <span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span>
 </h6>
 <p id="p-346">In 2015, the Pew Research Center conducted a survey on “Gaming and Gamers”, and published their results at <a class="external" href="https://www.pewresearch.org/internet/2015/12/15/gaming-and-gamers/" target="_blank"><code class="code-inline tex2jax_ignore">https://www.pewresearch.org/internet/2015/12/15/gaming-and-gamers/</code></a>. Some of this data has been summarized by the textbook author in <a class="xref" data-knowl="./knowl/visualization-one-video-game.html" title="Figure 4.2.1">4.2.1</a>.</p>
-<figure class="figure figure-like" id="visualization-one-video-game"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/visualization-one-video-game.png" style="width: 100%; height: auto;" alt=""></div>
+<figure class="figure figure-like" id="visualization-one-video-game"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/visualization-one-video-game.png" class="contained" alt=""></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.1<span class="period">.</span></span><span class="space"> </span>Pie chart of data from “Gaming and Gamers” survey</figcaption></figure><p id="p-347">All the data in the figure given is correct. Nonetheless, what do you notice about how these data have been visualized? What do you wonder? Write a few sentences summarizing your thoughts in a Markdown cell.</p></article><article class="activity project-like" id="activity-31"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
 </h6>
 <div class="introduction" id="introduction-37">
 <p id="p-348">Choosing the right graphical visualization for your data depends on the kind of data you wish to display. <dfn class="terminology">Univariate data</dfn> only considers a collection of numbers each representing a certain quantity, for example, the prices of pizzas sold from the dataset studied in <a href="visualization-tables.html" class="internal" title="Section 4.1: Tables">4.1</a>. The prices of the first twenty pizzas sold (truncated down to full-dollar amounts) on January 1st are shown in <a class="xref" data-knowl="./knowl/visualization-one-prices-0101.html" title="Table 4.2.2: Twenty pizzas sold on Jan 01">4.2.2</a>.</p>
-<figure class="table table-like" id="visualization-one-prices-0101"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.2.2<span class="period">.</span></span><span class="space"> </span>Twenty pizzas sold on Jan 01</figcaption><table>
+<figure class="table table-like" id="visualization-one-prices-0101"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.2.2<span class="period">.</span></span><span class="space"> </span>Twenty pizzas sold on Jan 01</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines">13</td>
 <td class="l m b0 r0 l0 t0 lines">16</td>
 <td class="l m b0 r0 l0 t0 lines">16</td>
 <td class="l m b0 r0 l0 t0 lines">20</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">18</td>
+<td class="l m b0 r0 l0 t0 lines">18</td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">20</td>
 <td class="l m b0 r0 l0 t0 lines">20</td>
 <td class="l m b0 r0 l0 t0 lines">16</td>
 <td class="l m b0 r0 l0 t0 lines">16</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">16</td>
+<td class="l m b0 r0 l0 t0 lines">16</td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">12</td>
 <td class="l m b0 r0 l0 t0 lines">12</td>
 <td class="l m b0 r0 l0 t0 lines">12</td>
 <td class="l m b0 r0 l0 t0 lines">12</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">20</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">12</td>
 <td class="l m b0 r0 l0 t0 lines">20</td>
 <td class="l m b0 r0 l0 t0 lines">20</td>
 <td class="l m b0 r0 l0 t0 lines">20</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">12</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
 </tr>
-</table></figure>
+</table></div></figure>
 </div>
 <article class="task exercise-like" id="task-128"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <p id="p-349">To quickly visualize a small dataset by hand, a <dfn class="terminology">dot plot</dfn> may be drawn. Values of the dataset are represented on the horizontal axis, and each time the value appears in the dataset, an additional dot is drawn above the value. A dot plot representing the prices in <a class="xref" data-knowl="./knowl/visualization-one-prices-0101.html" title="Table 4.2.2: Twenty pizzas sold on Jan 01">4.2.2</a> is shown in <a class="xref" data-knowl="./knowl/visualization-one-dot-plot.html" title="Figure 4.2.3">4.2.3</a>.</p>
-<figure class="figure figure-like" id="visualization-one-dot-plot"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/visualization-one-dot-plot.png" style="width: 100%; height: auto;" alt=""></div>
+<figure class="figure figure-like" id="visualization-one-dot-plot"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/visualization-one-dot-plot.png" class="contained" alt=""></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.3<span class="period">.</span></span><span class="space"> </span>Dot plot of prices from <a class="xref" data-knowl="./knowl/visualization-one-prices-0101.html" title="Table 4.2.2: Twenty pizzas sold on Jan 01">4.2.2</a></figcaption></figure><p id="p-350">A dot plot allows the reader to quickly scan a dataset and learn information about it. For example, what two prices were the most common out of the twenty pizzas sold? How do you know?</p></article><article class="task exercise-like" id="task-129"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <p id="p-351">The major feature of dot plots is that they are easy to draw by hand. On a sheet of paper or using a simple graphics program, draw a dot plot representing the prices of the first twenty pizzas sold on November 3rd, shown in <a class="xref" data-knowl="./knowl/visualization-one-prices-1103.html" title="Table 4.2.4: Twenty pizza prices from Nov 03">4.2.4</a>.</p>
-<figure class="table table-like" id="visualization-one-prices-1103"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.2.4<span class="period">.</span></span><span class="space"> </span>Twenty pizza prices from Nov 03</figcaption><table>
+<figure class="table table-like" id="visualization-one-prices-1103"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.2.4<span class="period">.</span></span><span class="space"> </span>Twenty pizza prices from Nov 03</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines">20</td>
 <td class="l m b0 r0 l0 t0 lines">20</td>
 <td class="l m b0 r0 l0 t0 lines">20</td>
 <td class="l m b0 r0 l0 t0 lines">16</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">20</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">20</td>
 <td class="l m b0 r0 l0 t0 lines">11</td>
 <td class="l m b0 r0 l0 t0 lines">12</td>
 <td class="l m b0 r0 l0 t0 lines">16</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">10</td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">20</td>
 <td class="l m b0 r0 l0 t0 lines">16</td>
 <td class="l m b0 r0 l0 t0 lines">20</td>
 <td class="l m b0 r0 l0 t0 lines">12</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">20</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">12</td>
 <td class="l m b0 r0 l0 t0 lines">12</td>
 <td class="l m b0 r0 l0 t0 lines">11</td>
 <td class="l m b0 r0 l0 t0 lines">20</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">16</td>
+<td class="l m b0 r0 l0 t0 lines">16</td>
 </tr>
-</table></figure></article><article class="task exercise-like" id="task-130"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+</table></div></figure></article><article class="task exercise-like" id="task-130"><h6 class="heading"><span class="codenumber">(c)</span></h6>
 <p id="p-352">What was the most common pizza price out of the first twenty sold on November 3rd? What was the least common price?</p></article><article class="task exercise-like" id="task-131"><h6 class="heading"><span class="codenumber">(d)</span></h6>
 <p id="p-353">A dot plot representing the prices (truncated down to the nearest dollar) of <em class="emphasis">all</em> pizzas sold on April 1st is shown in <a class="xref" data-knowl="./knowl/visualization-one-dot-plot-large.html" title="Figure 4.2.5">4.2.5</a>. Is this a graphic you'd like to draw by hand? Is this a useful graphic to create by computer? Write a couple sentences summarizing your thoughts.</p>
-<figure class="figure figure-like" id="visualization-one-dot-plot-large"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/visualization-one-dot-plot-large.png" style="width: 100%; height: auto;" alt=""></div>
+<figure class="figure figure-like" id="visualization-one-dot-plot-large"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/visualization-one-dot-plot-large.png" class="contained" alt=""></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.5<span class="period">.</span></span><span class="space"> </span>Dot plot of dollar prices from Apr 01</figcaption></figure></article></article><article class="activity project-like" id="activity-32"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span>
 </h6>
@@ -241,7 +233,7 @@ MathJax.Hub.Config({
 <article class="task exercise-like" id="task-132"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <p id="p-355">Repeat the steps from <a href="visualization-tables.html" class="internal" title="Section 4.1: Tables">4.1</a> to make <code class="code-inline tex2jax_ignore">pizza_table</code> available in this Jupyter notebook.</p>
 <p id="p-356">Confirm by running the code in <a class="xref" data-knowl="./knowl/visualization-one-hist-0401.html" title="Listing 4.2.6">4.2.6</a> to create a histogram of prices for April 1st.</p>
-<figure class="listing figure-like" id="visualization-one-hist-0401"><pre class="prettyprint lang-py"># The following two lines only need to be run once per notebook
+<figure class="listing figure-like" id="visualization-one-hist-0401"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py"># The following two lines only need to be run once per notebook
 # that generates datascience graphics
 import matplotlib
 %matplotlib inline
@@ -249,7 +241,7 @@ import matplotlib
 # Generate histogram for April 1st
 # (Always leave normed=False to measure counts of data values)
 pizza_table.where("date","2015-04-01").select("price").hist(bins=20,normed=False)
-</pre>
+</code></pre></div>
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.2.6<span class="period">.</span></span><span class="space"> </span>Program to generate Apr 01 price histogram</figcaption></figure></article><article class="task exercise-like" id="task-133"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <p id="p-357">Each <dfn class="terminology">bin</dfn> or bar of the histogram counts how many prices fall within the range shown along its base (including the left endpoint but excluding the right endpoint). For example, seven pizzas were sold at a price of around $19.</p>
 <p id="p-358">How many pizzas sold on April 1st had a price roughly between $12 and $13?</p></article><article class="task exercise-like" id="task-134"><h6 class="heading"><span class="codenumber">(c)</span></h6>
@@ -263,7 +255,7 @@ pizza_table.where("date","2015-04-01").select("price").hist(bins=20,normed=False
 <div class="introduction" id="introduction-39">
 <p id="p-364">While a histogram is a useful summary of a univariate dataset, this data can often be further summarized by the use of a <dfn class="terminology">box plot</dfn>, also known as a box-and-whisker plot.</p>
 <p id="p-365">A box plot organizes numerical data into four parts, each illustrating (roughly) a quarter of all the data values: the left whisker, the left box half, the right box half, and the right whisker. (We will explore these ranges in more detail in <a href="measurements.html" class="internal" title="Chapter 5: Measurements of Data">5</a>.)</p>
-<figure class="listing figure-like" id="visualization-one-box-plots"><pre class="prettyprint lang-py"># First code cell
+<figure class="listing figure-like" id="visualization-one-box-plots"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py"># First code cell
 print("Oct 09 Pizza Prices")
 pizza_table.where("date","2015-10-09").select("price").hist(normed=False)
 pizza_table.where("date","2015-10-09").select("price").boxplot(vert=False)
@@ -272,13 +264,13 @@ pizza_table.where("date","2015-10-09").select("price").boxplot(vert=False)
 print("Oct 10 Pizza Prices")
 pizza_table.where("date","2015-10-10").select("price").hist(normed=False)
 pizza_table.where("date","2015-10-10").select("price").boxplot(vert=False)
-</pre>
+</code></pre></div>
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.2.7<span class="period">.</span></span><span class="space"> </span>Code for creating box plots</figcaption></figure>
 </div>
 <article class="task exercise-like" id="task-139"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <p id="p-366">Run the first half of the code found in <a class="xref" data-knowl="./knowl/visualization-one-box-plots.html" title="Listing 4.2.7">4.2.7</a> to compare a histogram to a box plot. Write a few sentences comparing how the data is presented in each graphic.</p></article><article class="task exercise-like" id="task-140"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <p id="p-367">Run the second half of the code found in <a class="xref" data-knowl="./knowl/visualization-one-box-plots.html" title="Listing 4.2.7">4.2.7</a> to compare another histogram to a box plot. What do you notice about this second box plot that wasn't in the first? What do you expect this feature represents?</p></article></article><section class="exercises" id="exercises-8"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber">4.2.1</span> <span class="title">Exercises</span>
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-55"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-368">Repeat the necesary steps from the class activities in order to make <code class="code-inline tex2jax_ignore">pizza_table</code> available for these exercises. Then run <code class="code-inline tex2jax_ignore">pizza_table.show(10)</code> to confirm.</p></article><article class="exercise exercise-like" id="exercise-56"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
@@ -290,5 +282,6 @@ pizza_table.where("date","2015-10-10").select("price").boxplot(vert=False)
 <p id="p-374">Display a histogram of the prices of all large pizzas sold in 2015, grouped by type.</p></article><article class="exercise exercise-like" id="exercise-62"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
 <p id="p-375">Make an observation about the prices of large pizzas based upon the graphic in the previous exercise.</p></article></section></section></div></main>
 </div>
+<script src="https://unpkg.com/prismjs@v1.22.0/components/prism-core.min.js"></script><script src="https://unpkg.com/prismjs@v1.22.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 </html>

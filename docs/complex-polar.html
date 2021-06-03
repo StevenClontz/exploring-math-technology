@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-16T19:37:46Z       *-->
+<!--*       on 2021-06-03T17:49:52Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -11,39 +11,33 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>MoD Polar Form</title>
+<title>EMDST Polar Form</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
-    },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://unpkg.com/prismjs@v1.22.0/themes/prism.css" rel="stylesheet">
+<script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -57,14 +51,14 @@ MathJax.Hub.Config({
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="book-1.html"><span class="title">Mathematics of Data</span></a></h1>
+<h1 class="heading"><a href="book-1.html"><span class="title">Exploring Mathematics and Data Science with Technology</span></a></h1>
 <p class="byline">Dr. Steven Clontz</p>
 </div>
 </div></div>
@@ -83,7 +77,7 @@ MathJax.Hub.Config({
 <li class="link frontmatter">
 <a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
 <li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
-<li><a href="why.html" data-scroll="why">Why Study [the] Mathematics [of Data]?</a></li>
+<li><a href="why.html" data-scroll="why">Why Study Mathematics?</a></li>
 </ul>
 </li>
 <li class="link">
@@ -138,13 +132,11 @@ MathJax.Hub.Config({
 </ul>
 </li>
 <li class="link">
-<a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Vectors</span></a><ul><li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean">Euclidean Vectors</a></li></ul>
-</li>
-<li class="link">
-<a href="transformations.html" data-scroll="transformations"><span class="codenumber">10</span> <span class="title">Transformations of Higher-Dimensional Data</span></a><ul><li><a href="transformations-matrices.html" data-scroll="transformations-matrices">Matrices</a></li></ul>
-</li>
-<li class="link">
-<a href="properties.html" data-scroll="properties"><span class="codenumber">11</span> <span class="title">Properties of Linear Transformations</span></a><ul><li><a href="properties-determinants.html" data-scroll="properties-determinants">Determinants</a></li></ul>
+<a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Space</span></a><ul>
+<li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean">Euclidean Vectors</a></li>
+<li><a href="vectors-matrices.html" data-scroll="vectors-matrices">Matrices</a></li>
+<li><a href="vectors-determinants.html" data-scroll="vectors-determinants">Determinants</a></li>
+</ul>
 </li>
 <li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
@@ -160,7 +152,7 @@ MathJax.Hub.Config({
 </h6>
 <div class="introduction" id="introduction-76">
 <p id="p-671">The code in <a class="xref" data-knowl="./knowl/complex-polar-preview-listing.html" title="Listing 8.2.1">8.2.1</a> plots the complex numbers \((1+i)^0,(1+i)^1,(1+i)^2,(1+i)^3\text{,}\) along with a line connecting to each number from the origin.</p>
-<figure class="listing figure-like" id="complex-polar-preview-listing"><pre class="prettyprint lang-py">complex_number = CDF(1,1)
+<figure class="listing figure-like" id="complex-polar-preview-listing"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">complex_number = CDF(1,1)
 
 graph = points(
     [CDF(complex_number^power) for power in range(4)],
@@ -173,7 +165,7 @@ for power in range(4):
     graph+=line([CDF(0),CDF(complex_number^power)])
 
 graph
-</pre>
+</code></pre></div>
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">8.2.1<span class="period">.</span></span><span class="space"> </span>Plotting powers of complex numbers</figcaption></figure>
 </div>
 <article class="task exercise-like" id="task-291"><h6 class="heading"><span class="codenumber">(a)</span></h6>
@@ -184,7 +176,7 @@ graph
 </h6>
 <div class="introduction" id="introduction-77">
 <p id="p-675">One important property for a complex number is its <dfn class="terminology">modulus</dfn> or <dfn class="terminology">absolute value</dfn>, which measures the distance between that number and the origin \(0+0i\text{.}\) For example, the modulus \(|4-3i|\) of \(4-3i\) happens to be \(5\text{,}\) illustrated in <a class="xref" data-knowl="./knowl/complex-polar-modulus.html" title="Figure 8.2.2">8.2.2</a>.</p>
-<figure class="figure figure-like" id="complex-polar-modulus"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/complex-polar-modulus.png" style="width: 100%; height: auto;" alt=""></div>
+<figure class="figure figure-like" id="complex-polar-modulus"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/complex-polar-modulus.png" class="contained" alt=""></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.2.2<span class="period">.</span></span><span class="space"> </span>Modulus of \(4-3i\)</figcaption></figure>
 </div>
 <article class="task exercise-like" id="task-294"><h6 class="heading"><span class="codenumber">(a)</span></h6>
@@ -210,9 +202,9 @@ graph
 |a+bi|=\sqrt{a^2+b^2}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Calculate the four moduli from the previous task using this formula.</p></article><article class="task exercise-like" id="task-298"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p class="continuation">Calculate the four moduli from the previous task using this formula.</p></article><article class="task exercise-like" id="task-298"><h6 class="heading"><span class="codenumber">(e)</span></h6>
 <p id="p-681">The <dfn class="terminology">Pythagorean Theorem</dfn> says that \(a^2+b^2=c^2\text{,}\) where \(a,b\) are the leg lengths of a right triangle, and <code class="code-inline tex2jax_ignore">c</code> is the length of its hypotenuse, illustrated in <a class="xref" data-knowl="./knowl/complex-polar-pythagorean.html" title="Figure 8.2.3">8.2.3</a>.</p>
-<figure class="figure figure-like" id="complex-polar-pythagorean"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/complex-polar-pythagorean.png" style="width: 100%; height: auto;" alt=""></div>
+<figure class="figure figure-like" id="complex-polar-pythagorean"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/complex-polar-pythagorean.png" class="contained" alt=""></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.2.3<span class="period">.</span></span><span class="space"> </span>Illustration of the Pythagorean Theorem</figcaption></figure><p id="p-682">Write a sentence or two explaining why this theorem is related to the formula for the modulus of a complex number.</p></article></article><article class="activity project-like" id="activity-60"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.2.3</span><span class="period">.</span>
 </h6>
@@ -265,7 +257,7 @@ r\exp(\theta i)
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.2.6</span><span class="period">.</span>
 </h6>
 <p id="p-696">Use a Code cell to confirm \(i\cdot i=-1\text{,}\) that is, \(i^2=-1\text{.}\) Then write a few sentences defending this result using what you've discovered about how multiplication affects moduli and arguments.</p></article><section class="exercises" id="exercises-17"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber">8.2.1</span> <span class="title">Exercises</span>
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-121"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-697">Write a sentence describing why the modulus of \(-5i\) is \(5\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-122"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
@@ -275,5 +267,6 @@ r\exp(\theta i)
 <p id="p-701">Use SageMath to compute \((2-i)\cdot(1+3i)\) from its polar form found in the previous exercise.</p></article><article class="exercise exercise-like" id="exercise-126"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
 <p id="p-702">Use SageMath to multiply \((2-i)\cdot(1+3i)\) directly.</p></article></section></section></div></main>
 </div>
+<script src="https://unpkg.com/prismjs@v1.22.0/components/prism-core.min.js"></script><script src="https://unpkg.com/prismjs@v1.22.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 </html>

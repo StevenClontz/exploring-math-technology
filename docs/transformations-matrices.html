@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-16T19:37:46Z       *-->
+<!--*       on 2021-06-03T17:32:57Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -11,39 +11,33 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>MoD Matrices</title>
+<title>EMDST Matrices</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
-    },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://unpkg.com/prismjs@v1.22.0/themes/prism.css" rel="stylesheet">
+<script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -57,14 +51,14 @@ MathJax.Hub.Config({
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="book-1.html"><span class="title">Mathematics of Data</span></a></h1>
+<h1 class="heading"><a href="book-1.html"><span class="title">Exploring Mathematics and Data Science with Technology</span></a></h1>
 <p class="byline">Dr. Steven Clontz</p>
 </div>
 </div></div>
@@ -83,7 +77,7 @@ MathJax.Hub.Config({
 <li class="link frontmatter">
 <a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
 <li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
-<li><a href="why.html" data-scroll="why">Why Study [the] Mathematics [of Data]?</a></li>
+<li><a href="why.html" data-scroll="why">Why Study Mathematics?</a></li>
 </ul>
 </li>
 <li class="link">
@@ -160,7 +154,7 @@ MathJax.Hub.Config({
 </h6>
 <div class="introduction" id="introduction-87">
 <p id="p-734">Consider the following code generating a visualization of several vectors.</p>
-<figure class="listing figure-like" id="transformations-matrices-pair"><pre class="prettyprint lang-py">a = vector([1,-3,5])
+<figure class="listing figure-like" id="transformations-matrices-pair"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">a = vector([1,-3,5])
 b = vector([-4,2,3])
 c = vector([3,0,4])
 
@@ -168,7 +162,7 @@ sum([plot(t/50*a+(50-t)/50*b,color='blue') for t in range(50+1)]) + \
     line([a,b],color='purple') + \
     sum([plot(t/50*b+(50-t)/50*c,color='red') for t in range(50+1)]) + \
     line([b,c],color='purple')
-</pre>
+</code></pre></div>
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">10.1.1<span class="period">.</span></span><span class="space"> </span>Visualizing a pair of vectors</figcaption></figure>
 </div>
 <article class="task exercise-like" id="task-326"><h6 class="heading"><span class="codenumber">(a)</span></h6>
@@ -190,7 +184,7 @@ sum([plot(t/50*a+(50-t)/50*b,color='blue') for t in range(50+1)]) + \
 <div class="introduction" id="introduction-89"><p id="p-745">While \(\hat\imath,\hat\jmath,\hat{k}\) form the “standard” bases for 2D and 3D space, there are also non-standard bases. That is, a <dfn class="terminology">basis</dfn> for 2D or 3D space is any collection of vectors that can describe all other vectors.</p></div>
 <article class="task exercise-like" id="task-335"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <p id="p-746">Modify the code in <a class="xref" data-knowl="./knowl/transformations-matrices-coordinates.html" title="Listing 10.1.2">10.1.2</a> so that it visualizes how the vectors \(-\hat\imath+3\hat\jmath\text{,}\) \(3\hat\imath+4\hat\jmath\text{,}\) and \(-2\hat\imath-5\hat\jmath\) appear in the standard 2D coordinate system.</p>
-<figure class="listing figure-like" id="transformations-matrices-coordinates"><pre class="prettyprint lang-py">basic1 = veci # first basic vector
+<figure class="listing figure-like" id="transformations-matrices-coordinates"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">basic1 = veci # first basic vector
 basic2 = vecj # second basic vector
 
 # draws part of coordinate system based on chosen basis
@@ -201,7 +195,7 @@ sum(
     [line([-size*basic2,size*basic2],color="#88f"),line([-size*basic1,size*basic1],color="#88f")]
 ) + plot(basic1,color="#f88") + plot(basic2,color="#f88") + \
     plot(vector([-1,3]))
-</pre>
+</code></pre></div>
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">10.1.2<span class="period">.</span></span><span class="space"> </span>Drawing a coordinate system</figcaption></figure></article><article class="task exercise-like" id="task-336"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <p id="p-747">Any pair of vectors forms a basis, provided they don't point in exactly the same (or opposite) directions.</p>
 <p id="p-748">Modify <a class="xref" data-knowl="./knowl/transformations-matrices-coordinates.html" title="Listing 10.1.2">10.1.2</a> to set <code class="code-inline tex2jax_ignore">basic1</code> and <code class="code-inline tex2jax_ignore">basic2</code> equal to the non-standard pair of basis vectors \(\vec b_1=(1,2)\) and \(\vec b_2=(-1,1)\text{,}\) and then visualize how the vectors \(-\vec b_1+3\vec b_2\text{,}\) \(3\vec b_1+4\vec b_2\text{,}\) and \(-2\vec b_1-5\vec b_2\) appear in this modified coordinate system.</p></article><article class="task exercise-like" id="task-337"><h6 class="heading"><span class="codenumber">(c)</span></h6>
@@ -260,7 +254,7 @@ sum(
 \end{matrix}
 \right)\) to transform this triangle within 3D space into a triangle in 2D space.</p></article><article class="task exercise-like" id="task-346"><h6 class="heading"><span class="codenumber">(c)</span></h6>
 <p id="p-763">Create more matrices and show how they transform the same triangle into different triangles in 2D space.</p></article></article><section class="exercises" id="exercises-19"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber">10.1.1</span> <span class="title">Exercises</span>
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-132"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-764">Describe the vector \((3,-2)\) using the 2D standard basic vectors \(\hat\imath,\hat\jmath\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-133"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
@@ -285,5 +279,6 @@ sum(
 \right)
 \text{.}\)</p></article></section></section></div></main>
 </div>
+<script src="https://unpkg.com/prismjs@v1.22.0/components/prism-core.min.js"></script><script src="https://unpkg.com/prismjs@v1.22.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 </html>

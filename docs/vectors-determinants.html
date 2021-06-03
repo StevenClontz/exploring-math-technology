@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-06-03T17:49:53Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EMDST Determinants</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://unpkg.com/prismjs@v1.22.0/themes/prism.css" rel="stylesheet">
+<script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Exploring Mathematics and Data Science with Technology</span></a></h1>
+<p class="byline">Dr. Steven Clontz</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="vectors-matrices.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="vectors.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="vectors-matrices.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="vectors.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="why.html" data-scroll="why">Why Study Mathematics?</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="programming.html" data-scroll="programming"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
+<li><a href="programming-jupyter.html" data-scroll="programming-jupyter">Jupyter Notebooks and CoCalc</a></li>
+<li><a href="programming-python.html" data-scroll="programming-python">The Python Kernel</a></li>
+<li><a href="programming-sagemath.html" data-scroll="programming-sagemath">The SageMath Kernel</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="writing.html" data-scroll="writing"><span class="codenumber">2</span> <span class="title">Writing for Mathematicians and Data Scientists</span></a><ul>
+<li><a href="writing-math.html" data-scroll="writing-math">The Importance of Writing in Mathematics and Data Science</a></li>
+<li><a href="writing-markup.html" data-scroll="writing-markup">Using Markdown and LaTeX</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="data.html" data-scroll="data"><span class="codenumber">3</span> <span class="title">Data and Collections</span></a><ul>
+<li><a href="data-numbers.html" data-scroll="data-numbers">Numbers and Strings</a></li>
+<li><a href="data-collections.html" data-scroll="data-collections">Collections of Data</a></li>
+<li><a href="data-programming.html" data-scroll="data-programming">Programming with Data</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="visualization.html" data-scroll="visualization"><span class="codenumber">4</span> <span class="title">Visualization of Data</span></a><ul>
+<li><a href="visualization-tables.html" data-scroll="visualization-tables">Tables</a></li>
+<li><a href="visualization-one.html" data-scroll="visualization-one">Single-Variable Visualizations</a></li>
+<li><a href="visualization-two.html" data-scroll="visualization-two">Two-variable Visualizations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="measurements.html" data-scroll="measurements"><span class="codenumber">5</span> <span class="title">Measurements of Data</span></a><ul>
+<li><a href="measurements-center.html" data-scroll="measurements-center">Centers of Data</a></li>
+<li><a href="measurement-spread.html" data-scroll="measurement-spread">Spread of Data</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="predictions.html" data-scroll="predictions"><span class="codenumber">6</span> <span class="title">Making Predictions from Data</span></a><ul>
+<li><a href="predictions-correlation.html" data-scroll="predictions-correlation">Measuring Correlation</a></li>
+<li><a href="predictions-regression.html" data-scroll="predictions-regression">The Fit Line</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a><ul>
+<li><a href="random-probability.html" data-scroll="random-probability">Introduction to Probability</a></li>
+<li><a href="random-combinatorics.html" data-scroll="random-combinatorics">Combinatorics</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a><ul>
+<li><a href="complex-cartesian.html" data-scroll="complex-cartesian">Cartesian Coordinates</a></li>
+<li><a href="complex-polar.html" data-scroll="complex-polar">Polar Form</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Space</span></a><ul>
+<li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean">Euclidean Vectors</a></li>
+<li><a href="vectors-matrices.html" data-scroll="vectors-matrices">Matrices</a></li>
+<li><a href="vectors-determinants.html" data-scroll="vectors-determinants" class="active">Determinants</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link"><a href="references.html" data-scroll="references"><span class="title">References</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="vectors-determinants"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">9.3</span> <span class="title">Determinants</span>
+</h2>
+<article class="exploration project-like" id="vectors-determinants-preview"><h6 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">9.3.1</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-91">
+<p id="p-773">The code in <a class="xref" data-knowl="./knowl/vectors-determinants-listing.html" title="Listing 9.3.1">9.3.1</a> demonstrates how a given matrix transforms the shape of the <dfn class="terminology">standard unit square</dfn> with corners at \((0,0),(1,0),(1,1),(0,1)\text{.}\)</p>
+<figure class="listing figure-like" id="vectors-determinants-listing"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">A = matrix([[1,2],[3,4]])
+
+print("The transformation caused by:")
+show(A)
+plot(vector([1,0]), color="#f88") + \
+plot(vector([0,1]), color="#88f") + \
+plot(A*vector([1,0]), color="#f00") + \
+plot(A*vector([0,1]), color="#00f") + \
+polygon([
+    vector([0,0]),
+    vector([1,0]),
+    vector([1,1]),
+    vector([0,1]),
+    ], color="#fbf"
+)+ \
+polygon([
+    A*vector([0,0]),
+    A*vector([1,0]),
+    A*vector([1,1]),
+    A*vector([0,1]),
+    ], color="#f0f"
+)
+</code></pre></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">9.3.1<span class="period">.</span></span><span class="space"> </span>Transforming a square</figcaption></figure>
+</div>
+<article class="task exercise-like" id="task-347"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-774">Create several Code cells that modify <a class="xref" data-knowl="./knowl/vectors-determinants-listing.html" title="Listing 9.3.1">9.3.1</a> in order to show how each of the following matrices transforms the standard unit square.</p>
+<ul class="disc">
+<li id="li-95">\(\displaystyle \left(\begin{array}{rr}
+3 &amp; 1 \\
+2 &amp; 2
+\end{array}\right)\)</li>
+<li id="li-96">\(\displaystyle \left(\begin{array}{rr}
+0 &amp; -1 \\
+1 &amp; 0
+\end{array}\right)\)</li>
+<li id="li-97">\(\displaystyle \left(\begin{array}{rr}
+-1 &amp; -2 \\
+-2 &amp; 1
+\end{array}\right)\)</li>
+<li id="li-98">\(\displaystyle \left(\begin{array}{rr}
+\frac{1}{10} &amp; \frac{3}{10} \\
+-\frac{3}{10} &amp; -\frac{1}{2}
+\end{array}\right)\)</li>
+</ul></article><article class="task exercise-like" id="task-348"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-775">Write a sentence pointing out a difference or two among these transformations.</p></article><article class="task exercise-like" id="task-349"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-776">Write a sentence pointing out a similarity or two among these transformations.</p></article></article><article class="activity project-like" id="activity-71"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.3.2</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-92"><p id="p-777">The <dfn class="terminology">determinant</dfn> of a matrix measures the factor by which it transforms areas.</p></div>
+<article class="task exercise-like" id="task-350"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-778">One of the following matrices has a determinant equal to \(2\text{,}\) that is, it doubles areas. The other matrix has a determinant equal to \(1/2\text{,}\) that is, it halves areas. Modify the visualization code in <a class="xref" data-knowl="./knowl/vectors-determinants-preview.html" title="Preview Activity 9.3.1">9.3.1</a> to figure out which is which.</p>
+<ul class="disc">
+<li id="li-99">\(\displaystyle \left(\begin{array}{rr}
+\frac{1}{2} &amp; 1 \\
+-1 &amp; 2
+\end{array}\right)\)</li>
+<li id="li-100">\(\displaystyle \left(\begin{array}{rr}
+0 &amp; -\frac{1}{2} \\
+1 &amp; -3
+\end{array}\right)\)</li>
+</ul></article><article class="task exercise-like" id="task-351"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-779">Use visualizations to determine which of the following matrices you think has the biggest determinant, thie middle determinant, and the smallest determinant.</p>
+<ul class="disc">
+<li id="li-101">\(\displaystyle \left(\begin{array}{rr}
+3 &amp; 2 \\
+-3 &amp; 4
+\end{array}\right)\)</li>
+<li id="li-102">\(\displaystyle \left(\begin{array}{rr}
+-1 &amp; -2 \\
+3 &amp; 5
+\end{array}\right)\)</li>
+<li id="li-103">\(\displaystyle \left(\begin{array}{rr}
+3 &amp; 1 \\
+3 &amp; 2
+\end{array}\right)\)</li>
+</ul></article><article class="task exercise-like" id="task-352"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-780">Visualize the transformation given by \(\left(\begin{array}{rr}
+2 &amp; 5 \\
+2 &amp; 5
+\end{array}\right)\text{.}\) What would you expect the value of its determinant to be?</p></article></article><article class="activity project-like" id="activity-72"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.3.3</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-93">
+<p id="p-781">It turns out that the determinant of a \(2\times 2\) matrix can be computed by multiplying its diagonals and subtracting:</p>
+<div class="displaymath">
+\begin{equation*}
+\operatorname{det}\left(\begin{array}{rr}
+2 &amp; 3 \\
+1 &amp; 5
+\end{array}\right) = (2)(5)-(3)(1) = 10-3=7
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-353"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-782">Use this technique to confirm your work from the previous activity.</p></article><article class="task exercise-like" id="task-354"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-783">SageMath can also compute the determinant of a matrix <code class="code-inline tex2jax_ignore">A</code> directly: <code class="code-inline tex2jax_ignore">det(A)</code>. Use this to check your work from the previous task.</p></article></article><article class="activity project-like" id="activity-73"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.3.4</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-94"><p id="p-784">Consider the transformations caused by the matrices \(\left(\begin{array}{rr}
+1 &amp; 2 \\
+3 &amp; 4
+\end{array}\right)\) and \(\left(\begin{array}{rr}
+2 &amp; 1 \\
+4 &amp; 3
+\end{array}\right)\text{.}\)</p></div>
+<article class="task exercise-like" id="task-355"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-785">Write Code cells that visualize how these matrices transform areas and compute their determinants.</p></article><article class="task exercise-like" id="task-356"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-786">Write a sentence explaining why you think one determinant was positive and one was negative.</p></article><article class="task exercise-like" id="task-357"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-787">Confirm your guess by making up two new matrices, visualizing them, and then computing their determinants.</p></article></article><article class="activity project-like" id="activity-74"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.3.5</span><span class="period">.</span>
+</h6>
+<p id="p-788">The code in <a class="xref" data-knowl="./knowl/vectors-determinants-3d.html" title="Listing 9.3.2">9.3.2</a> visualizes the transformation of the <dfn class="terminology">standard unit cube</dfn> by a \(3\times 3\) matrix, as well as computing its determinant.</p>
+<figure class="listing figure-like" id="vectors-determinants-3d"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">A = matrix([
+    [3,0,-2],
+    [1,-1,3],
+    [0,-1,1],
+])
+print("The determinant of")
+show(A)
+print("is")
+show(det(A))
+corners = [
+    vector([0,0,0]),
+    vector([0,0,1]),
+    vector([0,1,0]),
+    vector([0,1,1]),
+    vector([1,0,0]),
+    vector([1,0,1]),
+    vector([1,1,0]),
+    vector([1,1,1]),
+]
+plot(Polyhedron(vertices=corners)) + \
+plot(Polyhedron(vertices=[A*c for c in corners]))
+</code></pre></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">9.3.2<span class="period">.</span></span><span class="space"> </span>Transforming a cube</figcaption></figure><p id="p-789">Create a few Code cells with modified values for the matrix. Then write a sentence explaining what you think the determinant measures for three-dimensional data.</p></article><section class="exercises" id="exercises-20"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-141"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-790">Use Code cells to create visualizations of how the following matrices transform areas.</p>
+<ul class="disc">
+<li id="li-104">\(\displaystyle A=\left(\begin{array}{rr}
+-5 &amp; 4 \\
+3 &amp; -3
+\end{array}\right)\)</li>
+<li id="li-105">\(\displaystyle B=\left(\begin{array}{rr}
+3 &amp; 5 \\
+-1 &amp; 5
+\end{array}\right)\)</li>
+<li id="li-106">\(\displaystyle C=\left(\begin{array}{rr}
+-2 &amp; 4 \\
+4 &amp; -8
+\end{array}\right)\)</li>
+<li id="li-107">\(\displaystyle D=\left(\begin{array}{rr}
+-3 &amp; -1 \\
+4 &amp; 3
+\end{array}\right)\)</li>
+</ul></article><article class="exercise exercise-like" id="exercise-142"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-791">Use these visualizations to explain which matrices have positive determinants, which ones have negative determinants, and which ones have a determinant of zero.</p></article><article class="exercise exercise-like" id="exercise-143"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-792">Use these visualizations to explain which matrix has the smallest nonzero determinant and which has the largest determinant. (When comparing the size of determinants, ignore \(\pm\) signs, so a determinant of \(-10\) is considered larger than a determinant of \(+3\text{.}\))</p></article><article class="exercise exercise-like" id="exercise-144"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-793">Show how to use the diagonal formula to compute each determinant by hand.</p></article><article class="exercise exercise-like" id="exercise-145"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-794">Show how to use SageMath to compute each determinant.</p></article><article class="exercise exercise-like" id="exercise-146"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-795">Use SageMath to compute the determinant of \(\left(\begin{array}{rrr}
+1 &amp; 3 &amp; -2 \\
+-1 &amp; -5 &amp; -1 \\
+-2 &amp; 1 &amp; 0
+\end{array}\right)\text{.}\) Then write a sentence explaining what this value represents.</p></article></section></section></div></main>
+</div>
+<script src="https://unpkg.com/prismjs@v1.22.0/components/prism-core.min.js"></script><script src="https://unpkg.com/prismjs@v1.22.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

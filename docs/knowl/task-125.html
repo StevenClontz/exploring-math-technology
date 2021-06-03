@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-16T19:37:49Z       *-->
+<!--*       on 2021-06-03T17:49:56Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -18,13 +18,13 @@
 <span class="type">Task</span><span class="space"> </span><span class="codenumber">4.1.4.c</span><span class="period">.</span>
 </h6>
 <p xmlns:svg="http://www.w3.org/2000/svg">Fix the code in <a class="xref" data-knowl="./knowl/visualization-tables-text-to-table.html" title="Listing 4.1.7">4.1.7</a> to save the chapters of the book to a <code class="code-inline tex2jax_ignore">datascience</code> table.</p>
-<figure class="listing figure-like"><pre class="prettyprint lang-py">with open("peterpan.txt") as book_file:
+<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">with open("peterpan.txt") as book_file:
     # Fix the order of the following lines
     book_table = Table().with_column("Chapter", book_chapters) # creates table of chapters
     book_chapters = book_string.split("Chapter ")[1:] # makes list of strings for each chapter
     book_table.show() # displays table
     book_string = book_file.read() # saves contents of the text file to a string
-</pre>
+</code></pre></div>
 <figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.1.7<span class="period">.</span></span><span class="space"> </span>Import book text to a table</figcaption></figure></article><span class="incontext"><a href="visualization-tables.html#task-125">in-context</a></span>
 </body>
 </html>

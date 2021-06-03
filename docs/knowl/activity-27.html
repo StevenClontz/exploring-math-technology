@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-16T19:37:49Z       *-->
+<!--*       on 2021-06-03T17:49:55Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -20,7 +20,7 @@
 <p xmlns:svg="http://www.w3.org/2000/svg">A common exercise in entry-level programming interviews is known as “FizzBuzz”. Write a program that for each of the numbers \(1\) through \(100\) prints that number, the word “Fizz” if that number is divisible by \(3\text{,}\) and “Buzz” if that number is divisible by \(5\text{.}\) Example output for the numbers \(1\) through \(15\) is given in <a class="xref" data-knowl="./knowl/data-programming-fizzbuzz-output.html" title="Listing 3.3.9">3.3.9</a>.</p>
 <p xmlns:svg="http://www.w3.org/2000/svg">The code in <a class="xref" data-knowl="./knowl/data-programming-fizzbuzz-scrambled.html" title="Listing 3.3.8">3.3.8</a> implements FizzBuzz in Python, but the lines are out of order and missing indentation. Fix the code to correctly display output as in <a class="xref" data-knowl="./knowl/data-programming-fizzbuzz-output.html" title="Listing 3.3.9">3.3.9</a>.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-py">fizz = ""
+<div class="sbspanel top" style="width:47.3684210526316%;"><figure class="listing figure-like"><pre class="program"><code class="language-py">fizz = ""
 print(f"{number}{fizz}{buzz}")
 fizz = " Fizz"
 if number % 3 == 0: # if number is divisible by three
@@ -31,9 +31,9 @@ max_number = 100
 else:
 for number in range(1,max_number+1):
 if number % 5 == 0:
-</pre>
+</code></pre>
 <figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.8<span class="period">.</span></span><span class="space"> </span>Scrambled FizzBuzz program</figcaption></figure></div>
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="code-block tex2jax_ignore">1
+<div class="sbspanel top" style="width:47.3684210526316%;"><figure class="listing figure-like"><pre class="code-display tex2jax_ignore">1
 2
 3 Fizz
 4

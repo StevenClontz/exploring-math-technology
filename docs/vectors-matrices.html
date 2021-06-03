@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-06-03T17:49:53Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EMDST Matrices</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://unpkg.com/prismjs@v1.22.0/themes/prism.css" rel="stylesheet">
+<script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Exploring Mathematics and Data Science with Technology</span></a></h1>
+<p class="byline">Dr. Steven Clontz</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="vectors-euclidean.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="vectors.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="vectors-determinants.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="vectors-euclidean.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="vectors.html" title="Up">Up</a><a class="next-button button toolbar-item" href="vectors-determinants.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="why.html" data-scroll="why">Why Study Mathematics?</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="programming.html" data-scroll="programming"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
+<li><a href="programming-jupyter.html" data-scroll="programming-jupyter">Jupyter Notebooks and CoCalc</a></li>
+<li><a href="programming-python.html" data-scroll="programming-python">The Python Kernel</a></li>
+<li><a href="programming-sagemath.html" data-scroll="programming-sagemath">The SageMath Kernel</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="writing.html" data-scroll="writing"><span class="codenumber">2</span> <span class="title">Writing for Mathematicians and Data Scientists</span></a><ul>
+<li><a href="writing-math.html" data-scroll="writing-math">The Importance of Writing in Mathematics and Data Science</a></li>
+<li><a href="writing-markup.html" data-scroll="writing-markup">Using Markdown and LaTeX</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="data.html" data-scroll="data"><span class="codenumber">3</span> <span class="title">Data and Collections</span></a><ul>
+<li><a href="data-numbers.html" data-scroll="data-numbers">Numbers and Strings</a></li>
+<li><a href="data-collections.html" data-scroll="data-collections">Collections of Data</a></li>
+<li><a href="data-programming.html" data-scroll="data-programming">Programming with Data</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="visualization.html" data-scroll="visualization"><span class="codenumber">4</span> <span class="title">Visualization of Data</span></a><ul>
+<li><a href="visualization-tables.html" data-scroll="visualization-tables">Tables</a></li>
+<li><a href="visualization-one.html" data-scroll="visualization-one">Single-Variable Visualizations</a></li>
+<li><a href="visualization-two.html" data-scroll="visualization-two">Two-variable Visualizations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="measurements.html" data-scroll="measurements"><span class="codenumber">5</span> <span class="title">Measurements of Data</span></a><ul>
+<li><a href="measurements-center.html" data-scroll="measurements-center">Centers of Data</a></li>
+<li><a href="measurement-spread.html" data-scroll="measurement-spread">Spread of Data</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="predictions.html" data-scroll="predictions"><span class="codenumber">6</span> <span class="title">Making Predictions from Data</span></a><ul>
+<li><a href="predictions-correlation.html" data-scroll="predictions-correlation">Measuring Correlation</a></li>
+<li><a href="predictions-regression.html" data-scroll="predictions-regression">The Fit Line</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a><ul>
+<li><a href="random-probability.html" data-scroll="random-probability">Introduction to Probability</a></li>
+<li><a href="random-combinatorics.html" data-scroll="random-combinatorics">Combinatorics</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a><ul>
+<li><a href="complex-cartesian.html" data-scroll="complex-cartesian">Cartesian Coordinates</a></li>
+<li><a href="complex-polar.html" data-scroll="complex-polar">Polar Form</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Space</span></a><ul>
+<li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean">Euclidean Vectors</a></li>
+<li><a href="vectors-matrices.html" data-scroll="vectors-matrices" class="active">Matrices</a></li>
+<li><a href="vectors-determinants.html" data-scroll="vectors-determinants">Determinants</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link"><a href="references.html" data-scroll="references"><span class="title">References</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="vectors-matrices"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">9.2</span> <span class="title">Matrices</span>
+</h2>
+<article class="exploration project-like" id="vectors-matrices-preview"><h6 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">9.2.1</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-86">
+<p id="p-734">Consider the following code generating a visualization of several vectors.</p>
+<figure class="listing figure-like" id="vectors-matrices-pair"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">a = vector([1,-3,5])
+b = vector([-4,2,3])
+c = vector([3,0,4])
+
+sum([plot(t/50*a+(50-t)/50*b,color='blue') for t in range(50+1)]) + \
+    line([a,b],color='purple') + \
+    sum([plot(t/50*b+(50-t)/50*c,color='red') for t in range(50+1)]) + \
+    line([b,c],color='purple')
+</code></pre></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">9.2.1<span class="period">.</span></span><span class="space"> </span>Visualizing a pair of vectors</figcaption></figure>
+</div>
+<article class="task exercise-like" id="task-326"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-735">Run <a class="xref" data-knowl="./knowl/vectors-matrices-pair.html" title="Listing 9.2.1">9.2.1</a> in a Code cell. Use your mouse to move the visualization around.</p></article><article class="task exercise-like" id="task-327"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-736">Are the vectors in the generated visualization two-dimensional or three-dimensional? Explain your reasoning.</p></article><article class="task exercise-like" id="task-328"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-737">Is your screen displaying this visualization two-dimensional or three-dimensional? Explain your reasoning.</p></article><article class="task exercise-like" id="task-329"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-738">Describe a form of entertainment where three-dimensional data is displayed in only two dimensions.</p></article></article><article class="activity project-like" id="activity-67"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.2.2</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-87"><p id="p-739">Every two-dimensional vector can be decomposed into two <dfn class="terminology">standard basic vectors</dfn>: \(\hat\imath=(1,0)\) and \(\hat\jmath=(0,1)\text{.}\)</p></div>
+<article class="task exercise-like" id="task-330"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-740">Let <code class="code-inline tex2jax_ignore">veci=vector([1,0])</code> and <code class="code-inline tex2jax_ignore">vecj=vector([0,1])</code>. Use a Code cell to verify that \((3,-4)=3\hat\imath-4\hat\jmath\text{.}\)</p></article><article class="task exercise-like" id="task-331"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-741">Rewrite the vector \((-12,5)\) using standard basic vectors \(\hat\imath\) and \(\hat\jmath\text{,}\) and confirm your result with a code cell.</p></article><article class="task exercise-like" id="task-332"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-742">Rewrite the complex number \(-6-5i\) using the standard basic vectors \(\hat\imath\) and \(\hat\jmath\text{.}\) Then write a sentence or two explaining why many engineers prefer to write complex numbers in \(a+bj\) form instead of \(a+bi\text{.}\)</p></article><article class="task exercise-like" id="task-333"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-743">Explain how to define \(\hat\imath,\hat\jmath,\hat{k}\) such that the vector \((2,3,4)\) may be rewritten as \(2\hat\imath+3\hat\jmath+4\hat{k}\text{.}\)</p></article><article class="task exercise-like" id="task-334"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-744">Write code defining <code class="code-inline tex2jax_ignore">veci_3d</code>, <code class="code-inline tex2jax_ignore">vecj_3d</code>, <code class="code-inline tex2jax_ignore">veck_3d</code>, and then confirm that <code class="code-inline tex2jax_ignore">vector([2,3,4])==2*veci_3d+3*vecj_3d+4*veck_3d</code> returns <code class="code-inline tex2jax_ignore">True</code>.</p></article></article><article class="activity project-like" id="activity-68"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.2.3</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-88"><p id="p-745">While \(\hat\imath,\hat\jmath,\hat{k}\) form the “standard” bases for 2D and 3D space, there are also non-standard bases. That is, a <dfn class="terminology">basis</dfn> for 2D or 3D space is any collection of vectors that can describe all other vectors.</p></div>
+<article class="task exercise-like" id="task-335"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-746">Modify the code in <a class="xref" data-knowl="./knowl/vectors-matrices-coordinates.html" title="Listing 9.2.2">9.2.2</a> so that it visualizes how the vectors \(-\hat\imath+3\hat\jmath\text{,}\) \(3\hat\imath+4\hat\jmath\text{,}\) and \(-2\hat\imath-5\hat\jmath\) appear in the standard 2D coordinate system.</p>
+<figure class="listing figure-like" id="vectors-matrices-coordinates"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">basic1 = veci # first basic vector
+basic2 = vecj # second basic vector
+
+# draws part of coordinate system based on chosen basis
+size = 6
+sum(
+    [line([n*basic1-size*basic2,n*basic1+size*basic2],color="#ddf") for n in range(-size,size+1)] + \
+    [line([n*basic2-size*basic1,n*basic2+size*basic1],color="#ddf") for n in range(-size,size+1)] + \
+    [line([-size*basic2,size*basic2],color="#88f"),line([-size*basic1,size*basic1],color="#88f")]
+) + plot(basic1,color="#f88") + plot(basic2,color="#f88") + \
+    plot(vector([-1,3]))
+</code></pre></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">9.2.2<span class="period">.</span></span><span class="space"> </span>Drawing a coordinate system</figcaption></figure></article><article class="task exercise-like" id="task-336"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-747">Any pair of vectors forms a basis, provided they don't point in exactly the same (or opposite) directions.</p>
+<p id="p-748">Modify <a class="xref" data-knowl="./knowl/vectors-matrices-coordinates.html" title="Listing 9.2.2">9.2.2</a> to set <code class="code-inline tex2jax_ignore">basic1</code> and <code class="code-inline tex2jax_ignore">basic2</code> equal to the non-standard pair of basis vectors \(\vec b_1=(1,2)\) and \(\vec b_2=(-1,1)\text{,}\) and then visualize how the vectors \(-\vec b_1+3\vec b_2\text{,}\) \(3\vec b_1+4\vec b_2\text{,}\) and \(-2\vec b_1-5\vec b_2\) appear in this modified coordinate system.</p></article><article class="task exercise-like" id="task-337"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-749">Use the standard coordinate axes in visualization from the previous task to describe the vectors \(-\vec b_1+3\vec b_2\text{,}\) \(3\vec b_1+4\vec b_2\text{,}\) and \(-2\vec b_1-5\vec b_2\) using standard basic vectors/coordinates.</p></article><article class="task exercise-like" id="task-338"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-750">Use SageMath to calculuate standard coordinates for the vectors \(-\vec b_1+3\vec b_2\text{,}\) \(3\vec b_1+4\vec b_2\text{,}\) and \(-2\vec b_1-5\vec b_2\) directly, confirming the result you found from the illustration.</p></article></article><article class="activity project-like" id="activity-69"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.2.4</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-89">
+<p id="p-751">The process of converting vectors from one basis to another is called a <dfn class="terminology">transformation</dfn>. For example, the transformation of the vectors \(\hat\imath,\hat\jmath\) into the vectors \(\vec b_1,\vec b_2\) results in the vector \((-1,3)=-\hat\imath+3\hat\jmath\) in standard coordinates transforming into the vector \(-\vec b_1+3\vec b_2\) described with non-standard coordinates.</p>
+<p id="p-752">The transformation of the standard basis \(\hat\imath,\hat\jmath\) into the non-standard basis \(\vec b_1,\vec b_2\) is described by the <dfn class="terminology">matrix</dfn> \(\left(\vec b_1\hspace{1em}\vec b_2\right)\) where the values of \(\vec b_1,\vec b_2\) are written vertically as columns. For example, the transformation of \(\hat\imath\) and \(\hat\jmath\) into \(\vec b_1=(1,2)\) and \(\vec b_2=(-1,1)\) is described by the matrix:</p>
+<div class="displaymath">
+\begin{equation*}
+\left(
+\begin{matrix}
+1 &amp; -1 \\
+2 &amp; 1
+\end{matrix}
+\right)
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-339"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-753">Show <code class="code-inline tex2jax_ignore">matrix([basic1,basic2])</code>. Explain why this isn't exactly the matrix described above.</p></article><article class="task exercise-like" id="task-340"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-754">Use <code class="code-inline tex2jax_ignore">transpose()</code> to save the matrix we actually want to the CS variable <code class="code-inline tex2jax_ignore">B</code>.</p></article><article class="task exercise-like" id="task-341"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-755">The <dfn class="terminology">matrix multiplication</dfn> described by \(\left(\vec b_1\hspace{1em}\vec b_2\right)(-1,3)=
+\left(
+\begin{matrix}
+1 &amp; -1 \\
+2 &amp; 1
+\end{matrix}
+\right)
+\left(
+\begin{matrix}
+-1 \\
+3
+\end{matrix}
+\right)\) computes the transformation of \((-1,3)=-\hat\imath+3\hat\jmath\) into \(-\vec b_1+3\vec b_2\text{.}\) SageMath can compute this transformation by running <code class="code-inline tex2jax_ignore">B*vector([-1,3])</code>.</p>
+<p id="p-756">Show how to use matrix multiplication to compute \(-\vec b_1+3\vec b_2\text{,}\) \(3\vec b_1+4\vec b_2\text{,}\) and \(-2\vec b_1-5\vec b_2\text{.}\)</p></article><article class="task exercise-like" id="task-342"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-757">Extend this idea to define a \(3\times 3\) matrix that transforms the 3D standard basic vectors \(\hat\imath,\hat\jmath,\hat{k}\) into the vectors \(\vec c_1=(1,2,3)\text{,}\) \(\vec c_2=(-2,0,3)\text{,}\) and \(\vec c_3=(-1,0,-1)\text{.}\)</p></article><article class="task exercise-like" id="task-343"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-758">Show how to compute \(4\vec c_1-3\vec c_2+2\vec c_3\) in SageMath using two different ways: one with matrix multiplication and one without.</p></article></article><article class="activity project-like" id="activity-70"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.2.5</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-90"><p id="p-759">Matrices can also be used to transform 3D data into 2D data. For example, the matrix \(\left(
+\begin{matrix}
+1 &amp; -1 &amp; 0 \\
+2 &amp; 1 &amp; 1
+\end{matrix}
+\right)\) defined by <code class="code-inline tex2jax_ignore">A=matrix([[1,-1,0],[2,1,1]])</code> transforms the 3D standard basic vectors 3D standard basic vectors \(\hat\imath,\hat\jmath,\hat{k}\) into the 2D vectors \((1,2)\text{,}\) \((-1,1)\text{,}\) and \((0,1)\text{.}\)</p></div>
+<article class="task exercise-like" id="task-344"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-760">In computer animation, objects can be represented by piecing together triangles of various colors. The SageMath code <code class="code-inline tex2jax_ignore">polygon([v1,v2,v3])</code> represents the triangle whose corners are pointed to by the vectors stored as the CS variables <code class="code-inline tex2jax_ignore">v1</code>, <code class="code-inline tex2jax_ignore">v2</code>, and <code class="code-inline tex2jax_ignore">v3</code>.</p>
+<p id="p-761">Display the triangle whose corners are pointed to by the vectors \((1,2,3)\text{,}\) \((3,0,-1)\text{,}\) and \((-1,1,2)\text{.}\)</p></article><article class="task exercise-like" id="task-345"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-762">Use multiplication with the matrix \(\left(
+\begin{matrix}
+1 &amp; -1 &amp; 0 \\
+2 &amp; 1 &amp; 1
+\end{matrix}
+\right)\) to transform this triangle within 3D space into a triangle in 2D space.</p></article><article class="task exercise-like" id="task-346"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-763">Create more matrices and show how they transform the same triangle into different triangles in 2D space.</p></article></article><section class="exercises" id="exercises-19"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-132"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-764">Describe the vector \((3,-2)\) using the 2D standard basic vectors \(\hat\imath,\hat\jmath\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-133"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-765">Describe the vector \((-5,1,2)\) using the 3D standard basic vectors \(\hat\imath,\hat\jmath,\hat{k}\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-134"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-766">Write SageMath code to define <code class="code-inline tex2jax_ignore">veci</code> (in 2D), <code class="code-inline tex2jax_ignore">vecj</code> (in 2D), <code class="code-inline tex2jax_ignore">veci_3d</code>, <code class="code-inline tex2jax_ignore">vecj_3d</code>, and <code class="code-inline tex2jax_ignore">veck_3d</code>. Then use those to confirm your answer to the previous exercises.</p></article><article class="exercise exercise-like" id="exercise-135"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-767">Let \(\vec w_1=(1,3)\) and \(\vec w_2=(5,-1)\text{.}\) Define a matrix in SageMath that can be used to transform \(\hat\imath\) to \(\vec w_1\) and \(\hat\jmath\) to \(\vec w_2\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-136"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-768">Use this matrix to compute each of the following:</p>
+<ul class="disc">
+<li id="li-91">\(\displaystyle 3\vec w_1+\vec w_2\)</li>
+<li id="li-92">\(\displaystyle 2\vec w_1-4\vec w_2\)</li>
+<li id="li-93">\(\displaystyle -4\vec w_1\)</li>
+<li id="li-94">\(\displaystyle -\vec w_1-5\vec w_2\)</li>
+</ul></article><article class="exercise exercise-like" id="exercise-137"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-769">Compute each of the vector expressions in the previous exercise without using a matrix.</p></article><article class="exercise exercise-like" id="exercise-138"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-770">Show how to compute the vector expression \(3(1,2,3)-5(0,1,1)+(4,0,3)\) with and without matrix multiplication in SageMath.</p></article><article class="exercise exercise-like" id="exercise-139"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-771">Display the triangle with corners at the 3D coordinates \((1,2,3)\text{,}\) \((4,3,7)\text{,}\) and \((0,2,6)\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-140"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-772">Display the transformation of this shape into 2D space according to the matrix \(\left(
+\begin{matrix}
+-1 &amp; 0 &amp; 2 \\
+3 &amp; -1 &amp; -2
+\end{matrix}
+\right)
+\text{.}\)</p></article></section></section></div></main>
+</div>
+<script src="https://unpkg.com/prismjs@v1.22.0/components/prism-core.min.js"></script><script src="https://unpkg.com/prismjs@v1.22.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

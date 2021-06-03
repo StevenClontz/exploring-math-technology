@@ -1,4 +1,3 @@
-Messages from application of /home/user/.local/lib/python3.8/site-packages/pretext/static/xsl/pretext-html.xsl:
-MBX:WARNING: There are apparent XML elements in locations that should be text only (1 times).
-MBX:WARNING: There is an apparent XML element (<include>) inside an <input> element, which should only contain text.  Using an escaped "less than" ('&lt;') might be the solution, or using a CDATA section.
-             located within: "properties-determinants-preview" (xml:id)
+Messages from application of /home/user/.local/share/virtualenvs/mathematics-of-data-LmuOnOpR/lib/python3.9/site-packages/pretext/static/xsl/pretext-html.xsl:
+PTX:ERROR:   the identifier "properties-determinants-preview" is repeated 2 times (and this message also repeats)
+PTX:ERROR:   the identifier "properties-determinants-preview" is repeated 2 times (and this message also repeats)

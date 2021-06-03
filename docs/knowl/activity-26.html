@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-16T19:37:49Z       *-->
+<!--*       on 2021-06-03T17:49:55Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -20,7 +20,7 @@
 <div class="introduction"><p xmlns:svg="http://www.w3.org/2000/svg">Often the way you want to deal with data is <dfn class="terminology">conditional</dfn>, that is, the code you want to run will depend on <em class="emphasis">if</em> a variable satisfies a certain condition.</p></div>
 <article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
 <p xmlns:svg="http://www.w3.org/2000/svg">Paste the code in <a class="xref" data-knowl="./knowl/data-programming-conditional-money.html" title="Listing 3.3.6">3.3.6</a> into three code cells, changing the value of <code class="code-inline tex2jax_ignore">money_in_bank</code> so that each cell outputs a different response.</p>
-<figure class="listing figure-like"><pre class="prettyprint lang-py">money_in_bank = "this probably should be a number, huh"
+<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">money_in_bank = "this probably should be a number, huh"
 
 if money_in_bank &gt; 10000:
     print("Wow you're rich!")
@@ -28,17 +28,17 @@ elif money_in_bank &gt; 100:
     print("Hey, not bad.")
 else:
     print("I should save up a bit more.")
-</pre>
+</code></pre></div>
 <figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.6<span class="period">.</span></span><span class="space"> </span>Conditional on amount of money</figcaption></figure></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
 <p xmlns:svg="http://www.w3.org/2000/svg">Bugfix the code shown in <a class="xref" data-knowl="./knowl/data-programming-conditional-root.html" title="Listing 3.3.7">3.3.7</a>.</p>
-<figure class="listing figure-like"><pre class="prettyprint lang-py">from math import sqrt # makes the square root function available in Python
+<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">from math import sqrt # makes the square root function available in Python
 
 for number in favorite_numbers:
     root = sqrt(number)
     print(f"The square root of {number} is {root}")
     # TODO add if/else statements to handle numbers when square root is not allowed
     # print(f"Taking the square root of {number} is not allowed!")
-</pre>
+</code></pre></div>
 <figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.7<span class="period">.</span></span><span class="space"> </span>Using conditionals inside loops</figcaption></figure></article></article><span class="incontext"><a href="data-programming.html#activity-26">in-context</a></span>
 </body>
 </html>
