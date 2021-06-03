@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="properties-determinants" kernel="sage">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="vectors-determinants" kernel="sage">
     <title>Determinants</title>
-    <exploration xml:id="properties-determinants-preview">
+    <exploration xml:id="vectors-determinants-preview">
         <introduction>
             <p>
-The code in <xref ref="properties-determinants-listing"/> demonstrates how a given matrix
+The code in <xref ref="vectors-determinants-listing"/> demonstrates how a given matrix
 transforms the shape of the <term>standard unit square</term> with corners at <m>(0,0),(1,0),(1,1),(0,1)</m>.
             </p>
-            <listing xml:id="properties-determinants-listing">
+            <listing xml:id="vectors-determinants-listing">
                 <caption>Transforming a square</caption>
                 <program language="sage">
                     <input><xi:include parse="text" href="../files/properties-determinants-preview.sage" /></input>
@@ -16,7 +16,7 @@ transforms the shape of the <term>standard unit square</term> with corners at <m
         </introduction>
         <task>
             <p>
-Create several Code cells that modify <xref ref="properties-determinants-listing"/> in order
+Create several Code cells that modify <xref ref="vectors-determinants-listing"/> in order
 to show how each of the following matrices transforms the standard unit square.
             </p>
             <ul>
@@ -68,7 +68,7 @@ it transforms areas.
             <p>
 One of the following matrices has a determinant equal to <m>2</m>, that is,
 it doubles areas. The other matrix has a determinant equal to <m>1/2</m>, that is,
-it halves areas. Modify the visualization code in <xref ref="properties-determinants-preview"/>
+it halves areas. Modify the visualization code in <xref ref="vectors-determinants-preview"/>
 to figure out which is which.
             </p>
             <ul>
@@ -183,11 +183,11 @@ and then computing their determinants.
     <activity>
         <statement>
             <p>
-The code in <xref ref="properties-determinants-3d"/> visualizes
+The code in <xref ref="vectors-determinants-3d"/> visualizes
 the transformation of the <term>standard unit cube</term> by a
 <m>3\times 3</m> matrix, as well as computing its determinant.
             </p>
-            <listing xml:id="properties-determinants-3d">
+            <listing xml:id="vectors-determinants-3d">
                 <caption>Transforming a cube</caption>
                 <program language="sage">
                     <input><xi:include parse="text" href="../files/properties-determinants-3d.sage" /></input>

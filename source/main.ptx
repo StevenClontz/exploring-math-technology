@@ -19,8 +19,6 @@
         <xi:include href="./07-random/main.ptx" />
         <xi:include href="./08-complex/main.ptx" />
         <xi:include href="./09-vectors/main.ptx" />
-        <xi:include href="./10-transformations/main.ptx" />
-        <xi:include href="./11-properties/main.ptx" />
 
         <xi:include href="./meta/backmatter.ptx" />
     </book>
