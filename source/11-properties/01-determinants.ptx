@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="properties-determinants" kernel="sage">
     <title>Determinants</title>
-    <exploration xml:id="transformations-matrices-preview">
+    <exploration xml:id="properties-determinants-preview">
         <introduction>
             <p>
-The code in <xref ref="properties-determinants-preview"/> demonstrates how a given matrix
+The code in <xref ref="properties-determinants-listing"/> demonstrates how a given matrix
 transforms the shape of the <term>standard unit square</term> with corners at <m>(0,0),(1,0),(1,1),(0,1)</m>.
             </p>
-            <listing xml:id="properties-determinants-preview">
+            <listing xml:id="properties-determinants-listing">
                 <caption>Transforming a square</caption>
                 <program language="sage">
                     <input><xi:include parse="text" href="../files/properties-determinants-preview.sage" /></input>
@@ -16,7 +16,7 @@ transforms the shape of the <term>standard unit square</term> with corners at <m
         </introduction>
         <task>
             <p>
-Create several Code cells that modify <xref ref="properties-determinants-preview"/> in order
+Create several Code cells that modify <xref ref="properties-determinants-listing"/> in order
 to show how each of the following matrices transforms the standard unit square.
             </p>
             <ul>
