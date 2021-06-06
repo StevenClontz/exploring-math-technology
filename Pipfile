@@ -7,6 +7,7 @@ verify_ssl = true
 
 [packages]
 pretextbook = "0.2rc1"
+htmlmin = "*"
 
 [requires]
 python_version = "3.9"
