@@ -290,9 +290,9 @@ Equations can be manipulated by SageMath similarly to how you manipulate them by
             </p>
             <p>
                 <md>
-                    <mrow>x+7\amp=11</mrow>
-                    <mrow>\scriptsize{-7}\amp\phantom{=}\scriptsize{-7}</mrow>
-                    <mrow>x\amp=4</mrow>
+                    <mrow>x+7&amp;=11</mrow>
+                    <mrow>\scriptsize{-7}&amp;\phantom{=}\scriptsize{-7}</mrow>
+                    <mrow>x&amp;=4</mrow>
                 </md>
             </p>
             <p>

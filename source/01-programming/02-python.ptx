@@ -105,19 +105,19 @@ ten, binary numbers describe values using powers of two.
             <p>
                 <md>
                     <mrow>
-125 \amp= 1\times 100 + 2\times 10 + 5\times 1
+125 &amp;= 1\times 100 + 2\times 10 + 5\times 1
                     </mrow>
                     <mrow>
-\amp= 1\times 10^2 + 2\times 10^1+ 5\times 10^0
+&amp;= 1\times 10^2 + 2\times 10^1+ 5\times 10^0
                     </mrow>
                     <mrow>
-\amp= 1\times 64 + 1\times 32 + 1\times 16 + 1\times 8 + 1\times 4 + 0\times 2 + 1\times 1
+&amp;= 1\times 64 + 1\times 32 + 1\times 16 + 1\times 8 + 1\times 4 + 0\times 2 + 1\times 1
                     </mrow>
                     <mrow>
-\amp= 1\times 2^6 + 1\times 2^5 + 1\times 2^4 + 1\times 2^3 + 1\times 2^2 + 0\times 2^1 + 1\times 2^0
+&amp;= 1\times 2^6 + 1\times 2^5 + 1\times 2^4 + 1\times 2^3 + 1\times 2^2 + 0\times 2^1 + 1\times 2^0
                     </mrow>
                     <mrow>
-\amp= 1111101_2
+&amp;= 1111101_2
                     </mrow>
                 </md>
             </p>
