@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-08-23T18:27:24Z       *-->
+<!--*       on 2021-09-13T17:44:23Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -18,11 +18,11 @@
 <span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span>
 </h6>
 <div class="introduction">
-<p xmlns:svg="http://www.w3.org/2000/svg">One of the important features of Python for programmers (and SageMath for mathematicians) is its extensive “standard library”: that is, a lot of features are available by default in the language without installing additional programs.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">However, since different people use Python for different applications, not every feature can be made availble by default. There are several libraries available in Python for data science, but we will use one specifically developed for students called, well, <a class="external" href="http://data8.org/datascience/" target="_blank"><code class="code-inline tex2jax_ignore">datascience</code></a>. <aside class="aside aside-like">Documentation for the <code class="code-inline tex2jax_ignore">datascience</code> library is available at <a class="external" href="http://data8.org/datascience/" target="_blank"><code class="code-inline tex2jax_ignore">http://data8.org/datascience/</code></a>.</aside></p>
+<p>One of the important features of Python for programmers (and SageMath for mathematicians) is its extensive “standard library”: that is, a lot of features are available by default in the language without installing additional programs.</p>
+<p>However, since different people use Python for different applications, not every feature can be made availble by default. There are several libraries available in Python for data science, but we will use one specifically developed for students called, well, <a class="external" href="http://data8.org/datascience/" target="_blank"><code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">datascience</code></a>. <aside class="aside aside-like"></aside></p>
 </div>
 <article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Copy the contents of <a class="xref" data-knowl="./knowl/visualization-tables-import-datascience.html" title="Listing 4.1.1">4.1.1</a> into a Code cell and follow its instructions to install <code class="code-inline tex2jax_ignore">datascience</code> if it is not already available, then re-run the Code cell. You will only need to do this process once per project.</p>
+<p>Copy the contents of <a class="xref" data-knowl="./knowl/visualization-tables-import-datascience.html" title="Listing 4.1.1">4.1.1</a> into a Code cell and follow its instructions to install <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">datascience</code> if it is not already available, then re-run the Code cell. You will only need to do this process once per project.</p>
 <figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">try:
     from datascience import Table
     print("The module `datascience` is installed on your project.")
@@ -39,7 +39,7 @@ except ModuleNotFoundError:
     print("4. Re-run this Code cell.")
 </code></pre></div>
 <figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.1.1<span class="period">.</span></span><span class="space"> </span>Install and import <code class="code-inline tex2jax_ignore">datascience</code></figcaption></figure></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">To confirm that you can create <code class="code-inline tex2jax_ignore">datascience</code> tables, copy-paste the contents of <a class="xref" data-knowl="./knowl/visualization-tables-test.html" title="Listing 4.1.2">4.1.2</a> into a Code cell to display a nicely formatted table of (incomplete) Scrabble tile data.</p>
+<p>To confirm that you can create <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">datascience</code> tables, copy-paste the contents of <a class="xref" data-knowl="./knowl/visualization-tables-test.html" title="Listing 4.1.2">4.1.2</a> into a Code cell to display a nicely formatted table of (incomplete) Scrabble tile data.</p>
 <figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">Table().with_columns([
     'letter', ['a', 'b', 'c', 'z'],
     'count',  [  9,   3,   3,   1],
