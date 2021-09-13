@@ -104,9 +104,9 @@ def build():
                 with open(f'{file_path}.{ext}', 'w', encoding='utf-8') as f:
                     json.dump(data, f, ensure_ascii=False, indent=4)
     if not os.path.exists("activities/team/images"):
-        copytree("source/images","activities/team/images")
+        copytree("assets/images","activities/team/images")
     if not os.path.exists("activities/individual/images"):
-        copytree("source/images","activities/individual/images")
+        copytree("assets/images","activities/individual/images")
 
 if __name__ == '__main__':
     build()
