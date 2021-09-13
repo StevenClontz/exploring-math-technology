@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-pretextbook = "0.2rc1"
+pretextbook = "0.5"
 htmlmin = "*"
 
 [requires]
