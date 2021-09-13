@@ -30,11 +30,11 @@ and stylized as <m>\LaTeX{}</m>) markup for mathematical notation.
         <task>
             <p>
 To denote part of your writing as mathematical notation in a Markdown cell,
-use <c>\(</c> and <c>\)</c> to surround your mathematics.
+use <c>$</c> and <c>$</c> to surround your mathematics.
             </p>
             <p>
 Create two Markdown cells with the text <c>The solution to x+1=7 is x=6.</c>.
-Then use <c>\(</c> and <c>\)</c> to surround the mathematical notation in one of those cells
+Then use <c>$</c> and <c>$</c> to surround the mathematical notation in one of those cells
 to observe the difference. (Don't forget to use <kbd>Shift</kbd>+<kbd>Enter</kbd> to
 display the formatted text.)
             </p>
@@ -42,12 +42,12 @@ display the formatted text.)
         <task>
             <p>
 Now create two Markdown cells with the text <c>The solutions to x^2-1=0 are x=-1 and x=1.</c>,
-and use <c>\(</c> and <c>\)</c> to surround the mathematics in one cell.
+and use <c>$</c> and <c>$</c> to surround the mathematics in one cell.
             </p>
         </task>
         <task>
             <p>
-When typesetting longer mathematical notation, <c>\[</c> and <c>\]</c> may be used instead
+When typesetting longer mathematical notation, <c>$$</c> and <c>$$</c> may be used instead
 to center the mathematics on a new line.
             </p>
             <p>
