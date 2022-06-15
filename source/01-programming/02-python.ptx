@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="programming-python" jupyter-kernel="python">
-    <title>The Python Kernel</title>
+    <title>Using Python</title>
 <!--    <objectives>
         <ul>
             <li>
@@ -14,49 +14,80 @@ TODO
     <exploration>
         <introduction>
             <p>
-Be sure to use a <c>Python 3</c> kernel for these tasks. (Remember, the kernel is displayed
-in the upper-right corner of your notebook.)
+Throughout this book, we will use <term>Code cells</term> to run code within
+a web browser. This activity will help you start to learn how to translate
+several mathematical operations into simple Python code and execute this
+code in using a cell.
             </p>
         </introduction>
         <task>
             <p>
-Use a Code cell to compute <m>95+87</m>.
+Run the below Code cell to compute <m>95+87</m>.
             </p>
+            <sage language="python">
+                <input>
+result = 95+87
+print(result)
+                </input>
+            </sage>
         </task>
         <task>
             <p>
-Use a Code cell to compute <m>11(12)</m>.
+Attempting to run the below Code cell to compute <m>11(12)</m> will result
+in something called a <c>TypeError</c>. Try modifying the line <c>result = 11(12)</c>
+to use Python's <c>*</c> multiplication operator and re-run the cell.
             </p>
-            <p>
-If you get an error like <c>TypeError</c>, use the <c>*</c> operator to do
-the multiplication instead.
-            </p>
+<aside><p>The <c># FIX ME!</c> in this task's code cell is a <term>comment</term> ignored by the computer. Comments
+are VERY useful for leaving notes to help other humans who will read your code later.</p></aside> 
+            <sage language="python">
+                <input>
+result = 11(12) # FIX ME!
+print(result)
+                </input>
+            </sage>
         </task>
         <task>
             <p>
-Use two Code cells to evaulate <c>7/3</c> and <c>7//3</c>.
-            </p>
-            <p>
-Try using <c>/</c>
+Compare the results from evaluating both <c>7/3</c> and <c>7//3</c>.
+Then try using <c>/</c>
 and <c>//</c> with other numbers to explore.
-Then use a Markdown cell to write a sentence or two explaining
-how these results are different.
+            </p>
+            <sage language="python">
+                <input>
+result = 7/3
+print(result)
+                </input>
+            </sage>
+            <sage language="python">
+                <input>
+result = 7//3
+print(result)
+                </input>
+            </sage>
+            <p>
+Write a sentence or two explaining your guess as to
+why and how these results are different.
             </p>
         </task>
         <task>
             <p>
-Evaluate the expressions <c>6**2</c> and <c>6^2</c>.
-            </p>
-            <p>
+Copy code from previous cells to evaluate and print the result of
+computing the expressions <c>6**2</c> and <c>6^2</c>.
 Experiment using <c>**</c> and <c>^</c> with other numbers as well.
+            </p>
+            <sage language="python"/>
+            <p>
 Then write a sentence or two explaining how these expressions might
-have been interpreted by the computer.
+have been interpreted by the computer. (Tip: the <c>^</c> behaves
+pretty unexpectedly - don't worry if you don't figure out quite what
+it's doing on your own!)
             </p>
         </task>
         <task>
             <p>
-Evaluate the expression <c>1/10 + 1/5</c>.
+Use a code cell to print out the value of how Python computes <c>1/10 + 1/5</c>.
             </p>
+            <sage language="python"/>
             <p>
 Write a sentence explaining why this result might be surprising.
             </p>
@@ -65,31 +96,55 @@ Write a sentence explaining why this result might be surprising.
     <activity>
         <introduction>
             <p>
-While using a <c>Python 3</c> kernel, use
+In the Python 3 programming language, we may use
 the addition <c>+</c>, subtraction <c>-</c>, multiplication <c>*</c>,
 division <c>/</c>, and exponentiation <c>**</c> operators to evaluate
-the following mathematical expressions. Then check your result by computing
-each expression's value by hand.
+the following mathematical expressions, save their values to a <c>result</c>
+variable by using the assignment operator <c>=</c> (not <q>equals</q>!),
+and then <c>print(result)</c> to output their values.
+            </p>
+            <p>
+Do this for each, and then check each result by computing
+each expression's value by hand or using a traditional calculator.
             </p>
         </introduction>
         <task>
             <p>
                 <me>4-3(7)</me>
             </p>
+            <sage language="python">
+                <input>
+result = 0
+print(result)
+                </input>
+            </sage>
          </task>
         <task>
             <p>
                 <me>3^2+4^2</me>
             </p>
+            <sage language="python">
+                <input>
+result = 0
+print(result)
+                </input>
+            </sage>
         </task>
         <task>
             <p>
 Use parentheses, <c>(</c> and <c>)</c>, to group expressions within
-more complicated expressions as necessary.
+more complicated expressions as necessary. Use a code cell to verify
+the value of the following expression is roughly <m>0.733</m>.
             </p>
             <p>
                 <me>\frac{2^{7-5}+7}{3\times(1+4)}</me>
             </p>
+            <sage language="python">
+                <input>
+result = 0
+print(result)
+                </input>
+            </sage>
         </task>
     </activity>
     <activity>
@@ -99,22 +154,23 @@ Computers generally store numerical data using <term>binary</term>
 or <term>base-2</term>: sequences of <m>0</m>s and <m>1</m>s.
             </p>
             <p>
-Just like <term>base-10</term> numbers describe values in terms of powers of
-ten, binary numbers describe values using powers of two.
+Just like the <term>base-10</term> expressions we usually write
+describe values in terms of powers of ten, binary numbers
+describe values using powers of two.
             </p>
             <p>
                 <md>
                     <mrow>
-125 &amp;= 1\times 100 + 2\times 10 + 5\times 1
+125 &amp;= (1\times 100) + (2\times 10) + (5\times 1)
                     </mrow>
                     <mrow>
-&amp;= 1\times 10^2 + 2\times 10^1+ 5\times 10^0
+&amp;= (1\times 10^2) + (2\times 10^1)+ (5\times 10^0)
                     </mrow>
                     <mrow>
-&amp;= 1\times 64 + 1\times 32 + 1\times 16 + 1\times 8 + 1\times 4 + 0\times 2 + 1\times 1
+&amp;= (1\times 64) + (1\times 32) + (1\times 16) + (1\times 8) + (1\times 4) + (0\times 2) + (1\times 1)
                     </mrow>
                     <mrow>
-&amp;= 1\times 2^6 + 1\times 2^5 + 1\times 2^4 + 1\times 2^3 + 1\times 2^2 + 0\times 2^1 + 1\times 2^0
+&amp;= (1\times 2^6) + (1\times 2^5) + (1\times 2^4) + (1\times 2^3) + (1\times 2^2) +( 0\times 2^1) + (1\times 2^0)
                     </mrow>
                     <mrow>
 &amp;= 1111101_2
@@ -123,7 +179,15 @@ ten, binary numbers describe values using powers of two.
             </p>
             <p>
 The Python tool <c>format(125,"b")</c> displays the binary form of <m>125</m> automatically:
-<c>1111101</c>. Use this tool to find
+            </p>
+            <sage language="python">
+                <input>
+result = format(125,"b")
+print(result)
+                </input>
+            </sage>
+            <p>
+Modify this code to find
 the binary form for each of the following numbers. Then check that the result
 is valid by adding up appropriate powers of two as shown above.
             </p>
@@ -132,28 +196,38 @@ is valid by adding up appropriate powers of two as shown above.
             <p>
                 <m>28</m>
             </p>
+            <sage language="python"/>
         </task>
         <task>
             <p>
                 <m>63</m>
             </p>
+            <sage language="python"/>
         </task>
         <task>
             <p>
                 <m>493</m>
             </p>
+            <sage language="python"/>
         </task>
         <task>
             <p>
                 <m>1000</m>
             </p>
+            <sage language="python"/>
         </task>
         <task>
             <p>
 Python can also automatically convert a binary string to its decimal form using
-the tool <c>int("1111101",2)</c> (returning <m>125</m>). Use this tool to programmatically
+the tool <c>int("1111101",2)</c>. Use this tool to programmatically
 check that each of the binary expressions you found above is correct.
             </p>
+            <sage language="python">
+                <input>
+result = int("1111101",2)
+print(result)
+                </input>
+            </sage>
         </task>
         <task>
             <p>
@@ -187,8 +261,18 @@ binary form of each number.
                 </me>
             </p>
             <p>
-Therefore <m>10\verb|^| 3=1001_2=9</m>.
+Since <m>1001_2=9</m>, we may now understand the result of the following code cell.
             </p>
+            <sage language="python">
+                <input>
+result = 10^3
+print("10^3 in base ten:")
+print(result)
+new_result = format(result,"b")
+print("10^3 in binary:")
+print(new_result)
+                </input>
+            </sage>
         </introduction>
         <task>
             <p>
@@ -199,15 +283,37 @@ Based on the above example, write a sentence guessing how the
         <task>
             <p>
 Test your rule by using it with a few combinations of small numbers (less than 16),
-using <c>format(n,'b')</c> and <c>x^y</c> in Code cells to help you as needed.
+using <c>format(n,'b')</c> and <c>x^y</c> in the below Code cell to help you as needed.
 If necessary, correct your guess above based upon this experiementation.
+            </p>
+            <sage language="python"/>
+        </task>
+        <task>
+            <p>
+Notice what happens to <c>42</c> if you apply <c>^11</c> to it twice: 
+            </p>
+            <sage language="python">
+                <input>
+result = 42^11^11
+print(result)
+                </input>
+            </sage>
+            <p>
+Is there anything special about the numbers <m>42</m> or <m>11</m> that made this happen?
+Try different combinations of numbers.
             </p>
         </task>
         <task>
             <p>
-What happens to <c>42</c> if you apply <c>^11</c> to it twice, as in <c>42^11^11</c>?
-Is there anything special about the numbers <m>42</m> or <m>11</m> that made this happen?
-Write a short paragraph on how this effect might be used to create a simple encryption.
+Alice and Bob both have a common favorite number <m>5421483</m> that only they know.
+Alice wants to be pass Bob notes containing other numbers, but doesn't
+want their nosy friend Eve to find out what those numbers are if she
+intercepts the note.
+            </p>
+            <p>
+Write a short paragraph on how the bitwise XOR operator <c>^</c> might
+be used along with their favorite number to <term>encrypt</term> Alice's
+notes to Bob.
             </p>
         </task>
     </activity>
@@ -222,6 +328,13 @@ Let's investigate why
             <p>
 Explain why <m>0.33</m> is the best approximation of <m>\frac{1}{3}</m> using two decimal places, and
 why <m>0.67</m> is the best approximation of <m>\frac{2}{3}</m> using two decimal places.
+            </p>
+        </task>
+        <task>
+            <p>
+Without using technology, compare the result of adding <m>\frac{1}{3}+\frac{1}{3}</m> directly and
+approximating the resulting fraction with a decimal, with replacing each <m>\frac{1}{3}</m> with <m>0.33</m>
+before adding instead.
             </p>
         </task>
         <task>
@@ -295,6 +408,7 @@ Find the value of the following expression by hand.
             <p>
 Check your work in the previous exercise using a Code cell.
             </p>
+            <sage language="python"/>
             </statement>
         </exercise>
         <exercise>
@@ -309,6 +423,7 @@ Use powers of two to verify that <m>217=11011001_2</m> by hand.
             <p>
 Show how to use both the <c>int</c> and <c>format</c> Python tools to verify that <m>217=11011001_2</m> programmatically.
             </p>
+            <sage language="python"/>
             </statement>
         </exercise>
         <exercise>
@@ -323,6 +438,7 @@ Find an approximation of <m>\frac{1}{7}</m> to three decimal places.
             <p>
 What is the value of your approximation when multiplied by <m>7{,}000{,}000</m>? Why isn't the result exactly <m>1{,}000{,}000</m>?
             </p>
+            <sage language="python"/>
             </statement>
         </exercise>
         <exercise>

@@ -1,32 +1,56 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="programming-sagemath" jupyter-kernel="sage">
-    <title>The SageMath Kernel</title>
+    <title>Using SageMath</title>
     <exploration xml:id="programming-sagemath-preview">
         <introduction>
             <p>
-Many of the features of the Python language/kernel are optimized for computational
+Many of the features of the Python language are optimized for computational
 efficiency, such as using binary approximations of fractions. This is valuable for
 applications like data science, but for studying mathematics itself we will
-find it useful to have another kernel available to more precisely model things,
-namely, <term>SageMath</term>.
+find it useful to have another language that more closely models mathematics,
+namely, <term>SageMath</term> (or <q>Sage</q> for short).
             </p>
         </introduction>
         <task>
             <p>
 Confirm that <c>6^2</c> and
-<c>6**2</c> both represent <m>6^2=36</m> in SageMath.
+<c>6**2</c> both represent <m>6^2=36</m> in SageMath code cells
+(note the buttons include <q>(Sage)</q>, and we prefer to use <c>show()</c>
+in place of <c>print()</c> when using SageMath.).
             </p>
+            <sage language="sage">
+                <input>
+result = 6^2
+show(result)
+                </input>
+            </sage>
+            <sage language="sage">
+                <input>
+result = # FIX ME!
+show(result)
+                </input>
+            </sage>
         </task>
         <task>
             <p>
 Confirm that <c>1/10+1/5</c> equals exactly <m>\frac{3}{10}</m> in SageMath.
             </p>
+            <sage language="sage"/>
         </task>
         <task>
             <p>
-Finally, use <c>show( (x+1)^3 == ((x+1)^3).full_simplify() )</c> to display the
+Run the following code cell to display the
 algebraic formula <m>(x+1)^3=x^3+3x^2+3x+1</m>.
+            </p>
+            <sage language="sage">
+                <input>
+equation = ( (x+1)^3 == ((x+1)^3).full_simplify() )
+show(equation)
+                </input>
+            </sage>
+            <p>
+Then modify the above cell to find a formula for <m>(x+1)^4</m>.
             </p>
         </task>
     </exploration>
@@ -45,27 +69,52 @@ and <c>i</c> for the imaginary unit <m>i</m>. (Don't worry if you aren't familia
 with these yet.)
             </p>
             <p>
-Check to see what SageMath gives as the value of <m>e^{i\pi}+1</m>.
+Modify the below cell to see what SageMath gives as the value of <m>e^{i\pi}+1</m>
+(you might be surprised to see that it's a very simple number!).
+            </p>
+            <sage language="sage">
+                <input>
+result = 2^(3*4)-1
+show(result)
+                </input>
+            </sage>
+         </task>
+        <task>
+            <p>
+SageMath won't approximate any values unless asked. You can check this by running
+the following cell.
+            </p>
+            <sage language="sage">
+                <input>
+result = pi^2
+show(result)
+                </input>
+            </sage>
+            <p>
+Modify this cell using <c>sqrt(e)</c> to display <m>\sqrt{e}</m>.
             </p>
          </task>
         <task>
             <p>
-SageMath won't approximate any values unless asked. You can check this by typing <c>pi^2</c>
-and <c>e^3</c>. To make them appear with mathematical formatting as <m>\pi^2</m>
-and <m>e^3</m>, use the <c>show()</c> syntax
-like you did in <xref ref="programming-sagemath-preview"/>.
+If an approximation is desired, results may be rounded to four decimal places by running
+code as follows.
             </p>
+            <sage language="sage">
+                <input>
+result = round(pi^2,4)
+show(result)
+                </input>
+            </sage>
+            <p>
+Find an approximate value for <m>\sqrt{e}</m> with five decimal places.
+            </p>
+            <sage language="sage"/>
          </task>
         <task>
             <p>
-If an approximation is desired, the numerical approximation tool <c>n</c> may be used.
-Find an approximate value for <m>\sqrt{2}</m> by using <c>sqrt(2).n(digits=10)</c>.
+Use a code cell to decide which is bigger: <m>\pi^e</m> or <m>e^\pi</m>?
             </p>
-         </task>
-        <task>
-            <p>
-Which is bigger: <m>\pi^e</m> or <m>e^\pi</m>?
-            </p>
+            <sage language="sage"/>
          </task>
     </activity>
     <activity xml:id="programming-sagemath-csvars">
@@ -81,137 +130,142 @@ These two concepts are related, but not exactly the same. Since SageMath is buil
 it provides support for both <term>CS variables</term> and <term>math variables</term>.
             </p>
         </introduction>
-        <task>
+        <task xml:id="programming-sagemath-pens">
             <p>
 To assign a value to a CS variable, the <term>assignment operator</term> <c>=</c> is used.
 It's considered best practice to give CS variables <term>semantic</term>, that is, descriptive
 names such as <c>temperature_in_room</c>, using lowercase letters and underscore <c>_</c> characters.
             </p>
-            <p>
-For each member of your group, use a code cell to assign a CS variable storing the number of pens
-(or pencils, or any object you'd like) each person has with them.
-An example is given in <xref ref="programming-sagemath-pens"/>;
-note that only a single Code cell is necessary, but each assignment should be made on a separate line.
-            </p>
-            <sidebyside>
-                <table>
-                    <title>Sample pen data</title>
-                    <tabular>
-                        <row bottom="minor"><cell>Name</cell><cell>Pens kept in backpack</cell></row>
-                        <row><cell>Craig</cell><cell>1</cell></row>
-                        <row><cell>Laura</cell><cell>30</cell></row>
-                        <row><cell>Phillip</cell><cell>18</cell></row>
-                        <row><cell>Sherill</cell><cell>03</cell></row>
-                        <row><cell>Steven</cell><cell>22</cell></row>
-                    </tabular>
-                </table>
-                <listing xml:id="programming-sagemath-pens">
-                    <caption>Corresponding variable assignments</caption>
-                    <program language="sage">
-                        <input>craig_pens = 1
+            <table>
+                <title>Sample pen data</title>
+                <tabular>
+                    <row bottom="minor"><cell>Name</cell><cell>Pens kept in backpack</cell></row>
+                    <row><cell>Craig</cell><cell>1</cell></row>
+                    <row><cell>Laura</cell><cell>30</cell></row>
+                    <row><cell>Phillip</cell><cell>18</cell></row>
+                    <row><cell>Sherill</cell><cell>03</cell></row>
+                    <row><cell>Steven</cell><cell>22</cell></row>
+                </tabular>
+            </table>
+            <sage language="sage">
+                <input>
+craig_pens = 1
 laura_pens = 30
 phillip_pens = 18
 sherill_pens = 3
-steven_pens = 22</input>
-                    </program>
-                </listing>
-            </sidebyside>
+steven_pens = 22
+# We aren't printing or showing anything
+# so nothing will appear when you run this!
+                </input>
+            </sage>
+            <p>
+For each member of your group, adapt the above code cell to assign a CS variable storing the number of pens
+(or pencils, or any object you'd like) each person has with them.
+            </p>
+            <sage language="sage"/>
         </task>
         <task>
             <p>
 The value stored in a CS variable may be reused later by using the variable name. For example,
-<c>craig_pens+laura_pens+phillip_pens+sherill_pens+steven_pens</c>
-would return the result <c>74</c>.
+the following code cell will return the result <c>74</c> after the previous cell is run.
             </p>
+            <sage language="sage">
+                <input>
+show(craig_pens+laura_pens+phillip_pens+sherill_pens+steven_pens)
+                </input>
+            </sage>
             <p>
-Use a code cell to find the sum of the pens in your group by writing the sum of the variable names.
+Use the below code cell to find the sum of the pens in your group by writing the sum of the variable names
+you chose.
 (Later we will learn much more elegant patterns for storing and using lists of data while still
 using long descriptive variable names as recommended.)
             </p>
+            <sage language="sage"/>
         </task>
         <task>
             <p>
-Variables can be overwritten. In a Jupyter notebook, you can go to a previous cell and edit the assignment,
-and you can also create a new Code cell and write the assignment.
+CS variables can be overwritten. You can go to a previous cell and edit the assignment,
+but you can also create a new Code cell and reassign the variables value.
             </p>
             <p>
-Try editing the assignment of one group member's pens in the previous Code cell, and try overwriting
-another group member's pens value by creating a Code cell below. For example, in
-<xref ref="programming-sagemath-pens-1"/> the original assignment for <c>craig_pens</c> is amended,
-but you could also amend the value of <c>phillip_pens</c> by creating a new Code cell below
-with the line <c>phillip_pens = 42</c>.
+Try editing the assignment of Phillip's pens in the Code cell from <xref ref="programming-sagemath-pens"/>,
+and try overwriting Laura's pens value by In Code cell below. Re-run both cells.
             </p>
-            <listing xml:id="programming-sagemath-pens-1">
-                <caption>Amended variable assignments</caption>
-                <program language="sage">
-                    <input>craig_pens = 100
-laura_pens = 30
-phillip_pens = 18
-sherill_pens = 3
-steven_pens = 22</input>
-                </program>
-            </listing>
+            <sage language="sage"/>
         </task>
         <task>
             <p>
-Before doing anything further, write a sentence about what you notice about the result of your existing code cell
-adding the variables together.
+Run the Code cell below.
+Write a sentence explaining why you get a different result even though this cell is exactly the same
+as a previous cell.
             </p>
         </task>
-        <task>
-            <p>
-Now use the <kbd>Kernel</kbd> &gt; <kbd>Run All</kbd> menu option in CoCalc.
-Write a sentence or two explaining how the sum changed, and why.
-            </p>
-        </task>
-        <task>
-            <p>
-Copy the line of code summing your variables into a new Code cell below
-(e.g. <c>craig_pens+laura_pens+phillip_pens+sherill_pens+steven_pens</c>).
-Write a sentence explaining why you get a different result even though the Code cells are exactly the same.
-            </p>
-        </task>
+            <sage language="sage">
+                <input>
+show(craig_pens+laura_pens+phillip_pens+sherill_pens+steven_pens)
+                </input>
+            </sage>
     </activity>
     <activity>
         <introduction>
             <p>
-We now will explore mathematical variables.
+We now will explore math variables.
             </p>
         </introduction>
         <task>
             <p>
-Unlike CS variables, mathematical variables represent an unknown value or arbitrary value, rather than
+Unlike CS variables, math variables represent an unknown value or arbitrary value, rather than
 storing a specific piece of data. These variables are often represented by single letters rather than the
 long semantic names used for CS variables. For example, SageMath always assumes <c>x</c> is
-a mathematical variable named <m>x</m>.
+a math variable named <m>x</m>.
             </p>
             <p>
-Other math variables are declared using by using the <c>var()</c> tool. For example,
-<c>a = var("a")</c> declares <c>a</c> to be the variable named <m>a</m>, and <c>b,c = var("b c")</c>
-declares both <c>b</c> and <c>c</c> to be variables.
+Before running the below cell, guess what you will see.
             </p>
-            <p>
-Use a Code cell to declare <m>y</m> and <m>z</m> to be variables.
-            </p>
+            <sage language="sage">
+                <input>
+show(x+x)
+                </input>
+            </sage>
         </task>
         <task>
             <p>
-Math variables may be manipulated just like literal values or values store in CS variables. But since
-they don't store specific values, these combinations of variables represent an <term>expression</term>.
+Other math variables are declared using by using the <c>var()</c> tool. For example,
+the below code cell assigns the CS variables <c>a</c>, <c>b</c>, <c>c</c> to the math variables
+named <m>a,b,c</m>,
+and then shows one particular <term>expression</term> with the result of
+adding/multiplying these math variables.
             </p>
+            <sage language="sage">
+                <input>
+a = var("a")
+b,c = var("b c")
+show(a+b*c)
+                </input>
+            </sage>
             <p>
-Use SageMath's <c>show()</c> tool to display the expression <m>x^2+4yz</m> using a Code cell. Remember that
-<m>4yz=4\times y\times z</m> requires the <c>*</c> operator to perform multiplication.
+Use the below Code cell to declare <m>y</m> and <m>z</m> to be variables,
+and then show <m>y</m> raised to the <m>z</m> power, that is, <m>y^z</m>.
             </p>
+            <sage language="sage"/>
         </task>
         <task>
             <p>
 An expression can itself be stored in a CS variable using the assignment operator <c>=</c>;
-for example, <c>quadratic = x^2-4*x+4</c> saves the expression <m>x^2-4x+4</m> using the name <c>quadratic</c>.
+for example, the below cell saves the expression <m>x^2-4x+4</m> to a CS variable with the name <c>quadratic</c>
+and then <c>show()</c>s it.
             </p>
+            <sage language="sage">
+                <input>
+quadratic = x^2-4*x+4
+show(quadratic)
+                </input>
+            </sage>
             <p>
-Assign the expression <m>x^2+4yz</m> to a CS variable with the name <c>my_expression</c>.
+Assign the expression <m>-5x^2+4yz</m> to a CS variable with the name <c>my_expression</c>,
+then <c>show()</c> it.
             </p>
+            <sage language="sage"/>
         </task>
         <task>
             <p>
@@ -220,15 +274,20 @@ values of those data are known.
             </p>
             <p>
 For example, suppose we now want to assume <m>x=6,y=0,z=-3</m> and compute the corresponding value
-for the expression <m>x^2+4yz</m> saved as <c>my_expression</c>. You can check that
-<m>6^2+4(0)(-3)=36</m>, either by hand or evaluating <c>6^2+4*0*(-3)</c>.
-But to have SageMath compute this for you immediately, you could use the following syntax:
-<c>my_expression(x=6,y=0,z=-3)</c>.
+for the expression <m>-5x^2+4yz</m> saved as <c>my_expression</c>. You can check that
+<m>-5\times 6^2+4(0)(-3)=-180</m>, either by hand or evaluating <c>-5*6^2+4*0*(-3)</c>.
+But to have SageMath compute this for you immediately, you could run the following cell:
             </p>
+            <sage language="sage">
+                <input>
+show(my_expression(x=6,y=0,z=-3))
+                </input>
+            </sage>
             <p>
-Use a Code cell to substitute the values <m>x=1,y=2,z=3</m> into the expression <m>x^2+4yz</m>,
-and confirm that the resulting value is equal to <m>1^2+4(2)(3)</m>.
+Use a Code cell to substitute the values <m>x=1,y=2,z=3</m> into the expression <m>-5x^2+4yz</m>
+instead, and confirm that the resulting value is equal to <m>-5\times 1^2+4(2)(3)</m>.
             </p>
+            <sage language="sage"/>
         </task>
         <task>
             <p>
@@ -237,8 +296,9 @@ For example, <c>show( ((x+1)^3).full_simplify() )</c> returns the equivalent exp
 <m>x^3+3x^2+3x+1</m>.
             </p>
             <p>
-Use <c>full_simplify()</c> to find an equivalent expression for <m>(x+y)^4</m>.
+Use <c>full_simplify()</c> to find an equivalent expression for <m>(x+y+z)^2</m>.
             </p>
+            <sage language="sage"/>
         </task>
     </activity>
     <activity>
@@ -250,39 +310,57 @@ SageMath also supports studying <term>equations</term> that set two expressions 
         </introduction>
         <task>
             <p>
-Since the equal sign <kbd>=</kbd> is already used as the assignment operator <c>=</c>,
+Since the equal sign is already used as the assignment operator <c>=</c>,
 two equal signs are used to represent the equality operator <c>==</c>.
             </p>
             <p>
 When only simple numerical values are present, the equality operator behaves similarly in both Python
 and SageMath: it evaluates both sides of the equation and returns a <term>Boolean value</term>
-of <c>True</c> or <c>False</c>. For example, <c>3*2==6</c> returns <c>True</c> while
-<c>3^2==6</c> returns <c>False</c>.
+of <c>True</c> or <c>False</c>. For example, the following code cell verifies that
+<m>3(2)=6</m> but <m>3^2\not= 6</m> since it returns <c>True</c> then <c>False</c>.
             </p>
+            <sage language="sage">
+                <input>
+show(3*2==6)
+show(3^2==6)
+                </input>
+            </sage>
             <p>
-Use the equality operator to verify that <m>1+2+3+4+5+6</m> has the same value as
-<m>\frac{6\times 7}{2}</m>.
+Use the equality operator to verify that <m>1+2+3+4+5+6=\frac{6\times 7}{2}</m>.
             </p>
+            <sage language="sage"/>
         </task>
         <task>
             <p>
-When mathematical variables or more advanced values are present, the equality operator
+When math variables or more advanced values are present, the equality operator
 will return an equation, but won't immediately reveal whether this equation is true or false.
             </p>
+            <sage language="sage">
+                <input>
+show( x^2+2*x+1==(x+1)^2 )
+                </input>
+            </sage>
             <p>
-Check this by entering <c>x==sqrt(x^2)</c> into a Code cell below. (Remember, you can use
-the <c>show()</c> tool to make it appear as <m>x=\sqrt{x^2}</m>.)
+Try <c>show()</c>ing the equation <m>x=\sqrt{x^2}</m> in the cell below.
             </p>
+            <sage language="sage"/>
         </task>
         <task>
             <p>
 SageMath is able to verify the truth of simple equations by using the <c>bool()</c> tool.
-For example, <c>bool(x==sqrt(x^2))</c> will return <c>False</c>, since it fails when <m>x=-4</m>.
+For example, the below cell will return <c>False</c>, since <m>x\not=\sqrt{x^2}</m> when <m>-4</m>
+is plugged into <m>x</m>.
             </p>
+            <sage language="sage">
+                <input>
+show( bool(x==sqrt(x^2)) )
+                </input>
+            </sage>
             <p>
-Use the <c>bool()</c> tool to verify that <m>3e^{1-\frac{1}{2}i\pi}</m> has the same value
+Use <c>bool()</c> to verify that <m>3e^{1-\frac{1}{2}i\pi}</m> has the same value
 as <m>-3ei</m>.
             </p>
+            <sage language="sage"/>
         </task>
         <task>
             <p>
@@ -296,25 +374,39 @@ Equations can be manipulated by SageMath similarly to how you manipulate them by
                 </md>
             </p>
             <p>
-This may be verified by entering <c>(x+7==11)-7</c> into a Code cell.
+This may be verified by running the following Code cell.
             </p>
+            <sage language="sage">
+                <input>
+show( (x+7==11)-7 )
+                </input>
+            </sage>
             <p>
-Solve the equation <m>2x+5=x-7</m> by subtracting <m>x</m> and <m>5</m> from both sides of the equation.
+Solve the equation <m>2x+5=x-7</m> by subtracting <m>x</m> and <m>5</m> from the equation
+using a Code cell.
+            <sage language="sage"/>
             </p>
         </task>
         <task>
             <p>
 SageMath can automatically solve many equations for you using the <c>solve()</c> tool.
-For example, <c>solve(x+7==11,x)</c> reveals the solution <m>x=4</m> immediately.
+For example, the following code cell reveals the solution <m>x=4</m> immediately.
             </p>
+            <sage language="sage">
+                <input>
+show( solve(x+7==11,x) )
+                </input>
+            </sage>
             <p>
 Use the <c>solve()</c> tool to solve <m>2x+5=x-7</m> automatically.
             </p>
+            <sage language="sage"/>
         </task>
         <task>
             <p>
 Use the <c>solve()</c> tool to find both solutions to <m>x^2+3x+7=4-x</m>.
             </p>
+            <sage language="sage"/>
         </task>
     </activity>
     <exercises>
@@ -323,6 +415,7 @@ Use the <c>solve()</c> tool to find both solutions to <m>x^2+3x+7=4-x</m>.
             <p>
 Use a SageMath code cell to find the simplified value of <m>i^{\ln(e^4)}</m>.
             </p>
+            <sage language="sage"/>
             </statement>
         </exercise>
         <exercise>
@@ -333,12 +426,13 @@ Save the mathematical expression
 to a CS variable named <c>fancy_math</c>. Then (since the <q>trigonometric functions</q> <m>\sin,\cos</m>
 aren't immediately simplified by SageMath) use <c>fancy_math.trig_reduce()</c> to find its exact value.
             </p>
+            <sage language="sage"/>
             </statement>
         </exercise>
         <exercise>
             <statement>
             <p>
-Are you satisfied with the above results? Write a sentence or two explaining why or why not.
+Are you satisfied with the above calculations? Write a sentence or two explaining why or why not.
             </p>
             </statement>
         </exercise>
@@ -349,12 +443,13 @@ Many mathematicians believe (but no one has been able to prove) that
 the circular constant <m>\pi=3.14159\cdots</m> is a
 <q>normal</q> number, which means that every finite sequence of digits will appear eventually
 in its decimal expression.
-For example, the SageMath code <c>pi.n(digits=10)</c> reveals that <m>65</m> appears as the 7th and
-8th decimal digits of <m>\pi</m>.
+For example, the SageMath code <c>show(round(pi,10))</c> reveals that <m>65</m> appears as the 7th and
+8th decimal digits of <m>\pi</m>: <m>3.141592\mathbf{65}36</m>.
             </p>
             <p>
 Use SageMath to show that <m>42</m> appears somewhere in the decimal expression of <m>\pi</m>.
             </p>
+            <sage language="sage"/>
             </statement>
         </exercise>
         <exercise>
@@ -365,6 +460,7 @@ Use the <c>var()</c> tool to declare the CS variables <c>m</c> and <c>n</c> to r
 expression <m>\frac{m+1}{n^2-3n+2}</m>, and use <c>show()</c> to display
 <c>quotient_expression</c> with mathematical formatting.
             </p>
+            <sage language="sage"/>
             </statement>
         </exercise>
         <exercise>
@@ -373,6 +469,7 @@ expression <m>\frac{m+1}{n^2-3n+2}</m>, and use <c>show()</c> to display
 Compute the value of <m>\frac{7+1}{(-3)^2-3(-3)+2}</m> by substituting <m>m=7</m> and <m>n=-3</m>
 into <c>quotient_expression</c>.
             </p>
+            <sage language="sage"/>
             </statement>
         </exercise>
         <exercise>
@@ -381,14 +478,16 @@ into <c>quotient_expression</c>.
 Save the mathematical equation <m>x^3+1=(x+1)(x^2-x+1)</m> to the CS variable <c>sum_of_cubes</c>.
 Use the <c>bool()</c> tool to verify that <c>sum_of_cubes</c> represents a valid mathematical identity.
             </p>
+            <sage language="sage"/>
             </statement>
         </exercise>
         <exercise>
             <statement>
             <p>
-Show how to solve the equation <m>17-2x=3x+2</m> by hand (by uploading a photograph of your written work).
+Show how to solve the equation <m>17-2x=3x+2</m> by hand.
 Then show how to use SageMath to solve it automatically.
             </p>
+            <sage language="sage"/>
             </statement>
         </exercise>
     </exercises>

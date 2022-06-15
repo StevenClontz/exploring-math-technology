@@ -11,7 +11,7 @@
 
         <!-- chapters -->
         <xi:include href="./01-programming/main.ptx" />
-        <xi:include href="./02-writing/main.ptx" />
+        <!-- <xi:include href="./02-writing/main.ptx" /> -->
         <xi:include href="./03-data/main.ptx" />
         <xi:include href="./04-visualization/main.ptx" />
         <xi:include href="./05-measurements/main.ptx" />
