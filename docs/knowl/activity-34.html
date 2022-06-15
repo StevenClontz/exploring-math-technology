@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:24Z       *-->
+<!--*       on 2022-06-15T21:02:35Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,41 +13,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
-</h6>
-<div class="introduction"><p>Often data scientists need to consider data where each item has two properties. When one property is a category, and the other is numerical, a <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">bar chart</dfn> is often the right tool for the job.</p></div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p>Repeat the steps from previous sections to get a copy of <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">pizza_table</code> available for this notebook.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p>The table in <a class="xref" data-knowl="./knowl/visualization-two-type-count-0620.html" title="Table 4.3.2: Pizzas sold on Jun 20, by type">4.3.2</a> describes how many pizzas of each type (Chicken, Classic, Supreme, Veggie) were sold on June 20th.</p>
-<figure class="table table-like"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.3.2<span class="period">.</span></span><span class="space"> </span>Pizzas sold on Jun 20, by type</figcaption><div class="tabular-box natural-width"><table xmlns:svg="http://www.w3.org/2000/svg" class="tabular">
-<tr>
-<td class="l m b1 r0 l0 t0 lines">Type</td>
-<td class="l m b1 r0 l0 t0 lines">Count</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Chicken</td>
-<td class="l m b0 r0 l0 t0 lines">31</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Classic</td>
-<td class="l m b0 r0 l0 t0 lines">42</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Supreme</td>
-<td class="l m b0 r0 l0 t0 lines">28</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">Veggie</td>
-<td class="l m b0 r0 l0 t0 lines">27</td>
-</tr>
-</table></div></figure><p>This table was created by running <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">june20_pizzas = pizza_table.where("date","2015-06-20").group("type")</code> and <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">june20_pizzas.show()</code>. Modify this code to create the table <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">may18</code> for May 18th instead, and show the result.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p>The bar chart in <a class="xref" data-knowl="./knowl/visualization-two-barchart-0620.html" title="Figure 4.3.3">4.3.3</a> visualizes the amounts of each pizza type sold on June 20. Each category (in this case, the type of pizza) is listed on the vertical axis, and the size of the bar in the horizontal direction represents each numerical value.</p>
-<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/visualization-two-barchart-0620.png" class="contained" alt=""></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.3<span class="period">.</span></span><span class="space"> </span>Pizzas sold on June 20 by type</figcaption></figure><p>Create a similar bar chart by hand for the May 18th table you displayed in the previous task.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p>The Python <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">datascience</code> library can produce bar charts; the code <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">june20_pizzas.barh("types")</code> was used to produce <a class="xref" data-knowl="./knowl/visualization-two-barchart-0620.html" title="Figure 4.3.3">4.3.3</a>. Adapt this line of code to generate a bar chart for the May 18th data instead. (Note: you'll need to run <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">import matplotlib</code> and <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">%matplotlib inline</code> first to display any visualizations.)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
-<p>The code <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">pizza_table.where("date","2015-06-20").select("type","price").group("type",sum)</code> captures the total sales for each type of pizza sold on June 20th.</p>
-<p>Generate a bar chart visualizing the total sales for each type of pizza sold on May 18th.</p></article></article><span class="incontext"><a href="visualization-two.html#activity-34">in-context</a></span>
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
+</h3>
+<div class="introduction"><p>Often we are interested in the <dfn class="terminology">spread</dfn> of values in a dataset. The simplest measure of spread is the <dfn class="terminology">range</dfn> of data: the difference between its largest value (its <dfn class="terminology">maximum</dfn>) and its smallest value (its <dfn class="terminology">minimum</dfn>). For example, the range of the values in <span class="process-math">\(3,3,6,7,12,12,16,19\)</span> is <span class="process-math">\(\text{max}-\text{min}=19-3=16\text{.}\)</span></p></div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Find the maximum, minimum, and range for the values <span class="process-math">\(9, 2, 3, 5, 3, 6, 2, 7\text{.}\)</span></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Find the maximum, minimum, and range for the values <span class="process-math">\(5, 1, 3, 998, 2, 5, 8, 2\text{.}\)</span></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>What do you notice about the previous task? How does the range relate (or not relate) to the majority of the data?</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p>Get a copy of <code class="code-inline tex2jax_ignore">pizza_table</code> available for this notebook.</p>
+<p>Set <code class="code-inline tex2jax_ignore">classic_prices = pizza_table.where("type","classic").column("price")</code>, and then use <code class="code-inline tex2jax_ignore">min(classic_prices)</code> and <code class="code-inline tex2jax_ignore">max(classic_prices)</code> to describe the mininum price, maximum price, and range of prices for classic pizzas sold by the pizzeria.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p>Display a box plot and histogram for the table of classic pizza prices <code class="code-inline tex2jax_ignore">pizza_table.where("type","classic").select("price")</code>.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<p>Notice that the box plot displays <dfn class="terminology">outliers</dfn> in the data as dots: the values that are further away from the median than most points of data.</p>
+<p>Ignoring outliers, what is an approximate range of the classic pizza prices?</p></article></article><span class="incontext"><a href="measurement-spread.html#activity-34" class="internal">in-context</a></span>
 </body>
 </html>

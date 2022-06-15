@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:23Z       *-->
+<!--*       on 2022-06-15T21:02:35Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,57 +13,81 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span>
-</h6>
-<div class="introduction"><p>Usually you will want to not only store collections of data, but <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">do</em> something with each datum. A <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">for loop</dfn> allows you to deal with data piece-by-piece.</p></div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p>Save the following numbers as a list named <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">favorite_numbers</code>.</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-18, 7, -7, -\frac{7}{2}, 9, \frac{17}{4}, 0, -17, 19, 3
-\end{equation*}
-</div></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p>Adapt the partial example shown in <a class="xref" data-knowl="./knowl/data-programming-favorite-loop.html" title="Listing 3.3.2">3.3.2</a> to display output similar to <a class="xref" data-knowl="./knowl/data-programming-favorite-output.html" title="Listing 3.3.3">3.3.3</a> for each number.</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel top" style="width:47.3684210526316%;"><figure class="listing figure-like"><pre class="program"><code class="language-py">for number in favorite_numbers:
-    # code indented four spaces right will run for each
-    # "number" in the list of "favorite_numbers"
-    squared = number**2
-    print(f"{number} squared is {squared}")
-    # TODO add more information about each number
-    # (don't forget to indent!)
-
-# Because we removed the indent, this only
-# happens after all numbers are looped through.
-print("All done looping!")
-</code></pre>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.2<span class="period">.</span></span><span class="space"> </span>Looping over a list of numbers</figcaption></figure></div>
-<div class="sbspanel top" style="width:47.3684210526316%;"><figure class="listing figure-like"><pre class="code-display tex2jax_ignore">18 squared is 324
-18 divided by two is 9
-18 plus seven is 25
-18 minus one half is 17.5
-18 times three is 54
-</pre>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.3<span class="period">.</span></span><span class="space"> </span>Sample output for each number</figcaption></figure></div>
-</div></div></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p>To deal with pairs of data, for loops can also be <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">nested</dfn>. Adapt the code shown in <a class="xref" data-knowl="./knowl/data-programming-nested-loops.html" title="Listing 3.3.4">3.3.4</a> to create output as shown in <a class="xref" data-knowl="./knowl/data-programming-nested-output.html" title="Listing 3.3.5">3.3.5</a>.</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel top" style="width:47.3684210526316%;"><figure class="listing figure-like"><pre class="program"><code class="language-py">for first in range(10):
-    for second in range(10):
-        print(f"{first} is first, and {second} is second")
-</code></pre>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.4<span class="period">.</span></span><span class="space"> </span>Nested for loops</figcaption></figure></div>
-<div class="sbspanel top" style="width:47.3684210526316%;"><figure class="listing figure-like"><pre class="code-display tex2jax_ignore">0 times 0 is 0
-0 times 1 is 0
-[...]
-5 times 9 is 45
-6 times 0 is 0
-6 times 1 is 6
-6 times 2 is 12
-[...]</pre>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.5<span class="period">.</span></span><span class="space"> </span>Excerpt of desired output</figcaption></figure></div>
-</div></div></article></article><span class="incontext"><a href="data-programming.html#activity-25">in-context</a></span>
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span>
+</h3>
+<div class="introduction">
+<p>Choosing the right graphical visualization for your data depends on the kind of data you wish to display. <dfn class="terminology">Univariate data</dfn> only considers a collection of numbers each representing a certain quantity, for example, the prices of pizzas sold from the dataset studied in <a href="visualization-tables.html" class="internal" title="Section 3.1: Tables">3.1</a>. The prices of the first twenty pizzas sold (truncated down to full-dollar amounts) on January 1st are shown in <a href="" class="xref" data-knowl="./knowl/visualization-one-prices-0101.html" title="Table 3.2.2: Twenty pizzas sold on Jan 01">3.2.2</a>.</p>
+<figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.2.2<span class="period">.</span></span><span class="space"> </span>Twenty pizzas sold on Jan 01</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">13</td>
+<td class="l m b0 r0 l0 t0 lines">16</td>
+<td class="l m b0 r0 l0 t0 lines">16</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+<td class="l m b0 r0 l0 t0 lines">18</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+<td class="l m b0 r0 l0 t0 lines">16</td>
+<td class="l m b0 r0 l0 t0 lines">16</td>
+<td class="l m b0 r0 l0 t0 lines">16</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+</tr>
+</table></div></figure>
+</div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>To quickly visualize a small dataset by hand, a <dfn class="terminology">dot plot</dfn> may be drawn. Values of the dataset are represented on the horizontal axis, and each time the value appears in the dataset, an additional dot is drawn above the value. A dot plot representing the prices in <a href="" class="xref" data-knowl="./knowl/visualization-one-prices-0101.html" title="Table 3.2.2: Twenty pizzas sold on Jan 01">3.2.2</a> is shown in <a href="" class="xref" data-knowl="./knowl/visualization-one-dot-plot.html" title="Figure 3.2.3">3.2.3</a>.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/visualization-one-dot-plot.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.3<span class="period">.</span></span><span class="space"> </span>Dot plot of prices from <a href="" class="xref" data-knowl="./knowl/visualization-one-prices-0101.html" title="Table 3.2.2: Twenty pizzas sold on Jan 01">3.2.2</a></figcaption></figure><p>A dot plot allows the reader to quickly scan a dataset and learn information about it. For example, what two prices were the most common out of the twenty pizzas sold? How do you know?</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>The major feature of dot plots is that they are easy to draw by hand. On a sheet of paper or using a simple graphics program, draw a dot plot representing the prices of the first twenty pizzas sold on November 3rd, shown in <a href="" class="xref" data-knowl="./knowl/visualization-one-prices-1103.html" title="Table 3.2.4: Twenty pizza prices from Nov 03">3.2.4</a>.</p>
+<figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.2.4<span class="period">.</span></span><span class="space"> </span>Twenty pizza prices from Nov 03</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+<td class="l m b0 r0 l0 t0 lines">16</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">16</td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+<td class="l m b0 r0 l0 t0 lines">16</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+<td class="l m b0 r0 l0 t0 lines">16</td>
+</tr>
+</table></div></figure></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>What was the most common pizza price out of the first twenty sold on November 3rd? What was the least common price?</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p>A dot plot representing the prices (truncated down to the nearest dollar) of <em class="emphasis">all</em> pizzas sold on April 1st is shown in <a href="" class="xref" data-knowl="./knowl/visualization-one-dot-plot-large.html" title="Figure 3.2.5">3.2.5</a>. Is this a graphic you'd like to draw by hand? Is this a useful graphic to create by computer? Write a couple sentences summarizing your thoughts.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/visualization-one-dot-plot-large.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.5<span class="period">.</span></span><span class="space"> </span>Dot plot of dollar prices from Apr 01</figcaption></figure></article></article><span class="incontext"><a href="visualization-one.html#activity-25" class="internal">in-context</a></span>
 </body>
 </html>

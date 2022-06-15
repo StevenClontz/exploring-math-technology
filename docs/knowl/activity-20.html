@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:22Z       *-->
+<!--*       on 2022-06-15T21:02:35Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,25 +13,32 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.7</span><span class="period">.</span>
-</h6>
-<div class="introduction"><p>Since ultimately data is stored as bits, anything handled by a computer needs to be represented somehow as a (binary) number. For example, a <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">character</dfn> is a letter or other glyph (such as an emoji 😃) that has a unique representation as a counting number.</p></div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p>To denote a character in Python or SageMath, surround it with either single quotes <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">'x'</code> or double quotes <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">"x"</code>. Then the code <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">ord('x')</code> (or <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">ord("x")</code>) will reveal the number that is used to represent it in memory (for <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">x</code>, that number is \(120\)), called a <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">Unicode value</dfn>.</p>
-<p>Find the Unicode values for the characters <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">s</code>, <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">S</code>, and <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">😊</code>. (For the emoji, you may wish to copy-and-paste the character if you're using a standard keyboard.)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p>Given a Unicode value, Python and SageMath can return the character it represents by using the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">chr()</code> tool. For example, <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">print(chr(120))</code> displays <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">x</code> as expected.</p>
-<p>Use <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">chr()</code> to display the charcters with these Unicode values:</p>
-<ul class="disc">
-<li><p>89</p></li>
-<li><p>97</p></li>
-<li><p>121</p></li>
-<li><p>13025</p></li>
-</ul></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">Strings</dfn> of multiple characters may be used to represent words and sentences. Displaying the string <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">test = "Hello World!"</code> is a common test used in setting up a new programming environment, done with <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">print(test)</code>.</p>
-<p>The value of a CS variable may be easily inserted into a string by using <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">interpolation</dfn>. In updated versions of Python 3 and SageMath, this is done by typing an <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">f</code> before the quotation marks: <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">print(f"It's time to say {test} now.")</code> will display <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">It's time to say Hello World! now.</code> (provided <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">test = "Hello World!"</code> was executed previously).</p>
-<p>Store the word “math” as a CS variable, then use interpolation to make it appear instead of the blank when running a Code cell with <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">print("My favorite class is ____.")</code>.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p>Use string interpolation to replace the blank in the line <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">print("The character ___ has Unicode value 42+42.")</code></p></article></article><span class="incontext"><a href="data-numbers.html#activity-20">in-context</a></span>
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span>
+</h3>
+<div class="introduction"><p>Often the way you want to deal with data is <dfn class="terminology">conditional</dfn>, that is, the code you want to run will depend on <em class="emphasis">if</em> a variable satisfies a certain condition.</p></div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Paste the code in <a href="" class="xref" data-knowl="./knowl/data-programming-conditional-money.html" title="Listing 2.3.6">2.3.6</a> into three code cells, changing the value of <code class="code-inline tex2jax_ignore">money_in_bank</code> so that each cell outputs a different response.</p>
+<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">money_in_bank = "this probably should be a number, huh"
+
+if money_in_bank &gt; 10000:
+    print("Wow you're rich!")
+elif money_in_bank &gt; 100:
+    print("Hey, not bad.")
+else:
+    print("I should save up a bit more.")
+</code></pre></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.3.6<span class="period">.</span></span><span class="space"> </span>Conditional on amount of money</figcaption></figure></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Bugfix the code shown in <a href="" class="xref" data-knowl="./knowl/data-programming-conditional-root.html" title="Listing 2.3.7">2.3.7</a>.</p>
+<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">from math import sqrt # makes the square root function available in Python
+
+for number in favorite_numbers:
+    root = sqrt(number)
+    print(f"The square root of {number} is {root}")
+    # TODO add if/else statements to handle numbers when square root is not allowed
+    # print(f"Taking the square root of {number} is not allowed!")
+</code></pre></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.3.7<span class="period">.</span></span><span class="space"> </span>Using conditionals inside loops</figcaption></figure></article></article><span class="incontext"><a href="data-programming.html#activity-20" class="internal">in-context</a></span>
 </body>
 </html>

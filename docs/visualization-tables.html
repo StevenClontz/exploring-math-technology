@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:18Z       *-->
+<!--*       on 2022-06-15T21:02:33Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -9,23 +9,38 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>EMDST Tables</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>window.MathJax = {
+<meta property="og:type" content="book">
+<meta property="book:title" content="Exploring Mathematics and Data Science with Technology">
+<meta property="book:author" content="Dr. Steven Clontz">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.88,
@@ -36,33 +51,66 @@
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://unpkg.com/prismjs@v1.22.0/themes/prism.css" rel="stylesheet">
-<script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="book-1.html"><span class="title">Exploring Mathematics and Data Science with Technology</span></a></h1>
 <p class="byline">Dr. Steven Clontz</p>
 </div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
 <a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="visualization.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="visualization.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="visualization-one.html" title="Next">Next</a></span>
@@ -72,90 +120,84 @@
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="visualization.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="visualization.html" title="Up">Up</a><a class="next-button button toolbar-item" href="visualization-one.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
-<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
-<li><a href="why.html" data-scroll="why">Why Study Mathematics?</a></li>
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="why.html" data-scroll="why" class="internal">Why Study Mathematics?</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="programming.html" data-scroll="programming"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
-<li><a href="programming-jupyter.html" data-scroll="programming-jupyter">Jupyter Notebooks and CoCalc</a></li>
-<li><a href="programming-python.html" data-scroll="programming-python">The Python Kernel</a></li>
-<li><a href="programming-sagemath.html" data-scroll="programming-sagemath">The SageMath Kernel</a></li>
+<a href="programming.html" data-scroll="programming" class="internal"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
+<li><a href="programming-python.html" data-scroll="programming-python" class="internal">Using Python</a></li>
+<li><a href="programming-sagemath.html" data-scroll="programming-sagemath" class="internal">Using SageMath</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="writing.html" data-scroll="writing"><span class="codenumber">2</span> <span class="title">Writing for Mathematicians and Data Scientists</span></a><ul>
-<li><a href="writing-math.html" data-scroll="writing-math">The Importance of Writing in Mathematics and Data Science</a></li>
-<li><a href="writing-markup.html" data-scroll="writing-markup">Using Markdown and LaTeX</a></li>
+<a href="data.html" data-scroll="data" class="internal"><span class="codenumber">2</span> <span class="title">Data and Collections</span></a><ul>
+<li><a href="data-numbers.html" data-scroll="data-numbers" class="internal">Numbers and Strings</a></li>
+<li><a href="data-collections.html" data-scroll="data-collections" class="internal">Collections of Data</a></li>
+<li><a href="data-programming.html" data-scroll="data-programming" class="internal">Programming with Data</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="data.html" data-scroll="data"><span class="codenumber">3</span> <span class="title">Data and Collections</span></a><ul>
-<li><a href="data-numbers.html" data-scroll="data-numbers">Numbers and Strings</a></li>
-<li><a href="data-collections.html" data-scroll="data-collections">Collections of Data</a></li>
-<li><a href="data-programming.html" data-scroll="data-programming">Programming with Data</a></li>
-</ul>
-</li>
-<li class="link">
-<a href="visualization.html" data-scroll="visualization"><span class="codenumber">4</span> <span class="title">Visualization of Data</span></a><ul>
+<a href="visualization.html" data-scroll="visualization" class="internal"><span class="codenumber">3</span> <span class="title">Visualization of Data</span></a><ul>
 <li><a href="visualization-tables.html" data-scroll="visualization-tables" class="active">Tables</a></li>
-<li><a href="visualization-one.html" data-scroll="visualization-one">Single-Variable Visualizations</a></li>
-<li><a href="visualization-two.html" data-scroll="visualization-two">Two-variable Visualizations</a></li>
+<li><a href="visualization-one.html" data-scroll="visualization-one" class="internal">Single-Variable Visualizations</a></li>
+<li><a href="visualization-two.html" data-scroll="visualization-two" class="internal">Two-variable Visualizations</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="measurements.html" data-scroll="measurements"><span class="codenumber">5</span> <span class="title">Measurements of Data</span></a><ul>
-<li><a href="measurements-center.html" data-scroll="measurements-center">Centers of Data</a></li>
-<li><a href="measurement-spread.html" data-scroll="measurement-spread">Spread of Data</a></li>
+<a href="measurements.html" data-scroll="measurements" class="internal"><span class="codenumber">4</span> <span class="title">Measurements of Data</span></a><ul>
+<li><a href="measurements-center.html" data-scroll="measurements-center" class="internal">Centers of Data</a></li>
+<li><a href="measurement-spread.html" data-scroll="measurement-spread" class="internal">Spread of Data</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="predictions.html" data-scroll="predictions"><span class="codenumber">6</span> <span class="title">Making Predictions from Data</span></a><ul>
-<li><a href="predictions-correlation.html" data-scroll="predictions-correlation">Measuring Correlation</a></li>
-<li><a href="predictions-regression.html" data-scroll="predictions-regression">The Fit Line</a></li>
+<a href="predictions.html" data-scroll="predictions" class="internal"><span class="codenumber">5</span> <span class="title">Making Predictions from Data</span></a><ul>
+<li><a href="predictions-correlation.html" data-scroll="predictions-correlation" class="internal">Measuring Correlation</a></li>
+<li><a href="predictions-regression.html" data-scroll="predictions-regression" class="internal">The Fit Line</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a><ul>
-<li><a href="random-probability.html" data-scroll="random-probability">Introduction to Probability</a></li>
-<li><a href="random-combinatorics.html" data-scroll="random-combinatorics">Combinatorics</a></li>
+<a href="random.html" data-scroll="random" class="internal"><span class="codenumber">6</span> <span class="title">Modeling Random Events</span></a><ul>
+<li><a href="random-probability.html" data-scroll="random-probability" class="internal">Introduction to Probability</a></li>
+<li><a href="random-combinatorics.html" data-scroll="random-combinatorics" class="internal">Combinatorics</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a><ul>
-<li><a href="complex-cartesian.html" data-scroll="complex-cartesian">Cartesian Coordinates</a></li>
-<li><a href="complex-polar.html" data-scroll="complex-polar">Polar Form</a></li>
+<a href="complex.html" data-scroll="complex" class="internal"><span class="codenumber">7</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a><ul>
+<li><a href="complex-cartesian.html" data-scroll="complex-cartesian" class="internal">Cartesian Coordinates</a></li>
+<li><a href="complex-polar.html" data-scroll="complex-polar" class="internal">Polar Form</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Space</span></a><ul>
-<li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean">Euclidean Vectors</a></li>
-<li><a href="vectors-matrices.html" data-scroll="vectors-matrices">Matrices</a></li>
-<li><a href="vectors-determinants.html" data-scroll="vectors-determinants">Determinants</a></li>
+<a href="vectors.html" data-scroll="vectors" class="internal"><span class="codenumber">8</span> <span class="title">Higher-Dimensional Data and Euclidean Space</span></a><ul>
+<li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean" class="internal">Euclidean Vectors</a></li>
+<li><a href="vectors-matrices.html" data-scroll="vectors-matrices" class="internal">Matrices</a></li>
+<li><a href="vectors-determinants.html" data-scroll="vectors-determinants" class="internal">Determinants</a></li>
 </ul>
 </li>
-<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
-<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
-<li class="link"><a href="references.html" data-scroll="references"><span class="title">References</span></a></li>
-<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="references.html" data-scroll="references" class="internal"><span class="title">References</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="visualization-tables"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">Tables</span>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="visualization-tables"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Tables</span>
 </h2>
-<article class="exploration project-like" id="visualization-tables-preview"><h6 class="heading">
-<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-33">
-<p id="p-307">One of the important features of Python for programmers (and SageMath for mathematicians) is its extensive “standard library”: that is, a lot of features are available by default in the language without installing additional programs.</p>
-<p id="p-308">However, since different people use Python for different applications, not every feature can be made availble by default. There are several libraries available in Python for data science, but we will use one specifically developed for students called, well, <a class="external" href="http://data8.org/datascience/" target="_blank"><code class="code-inline tex2jax_ignore">datascience</code></a>. <aside class="aside aside-like" id="aside-2"></aside></p>
+<article class="exploration project-like" id="visualization-tables-preview"><h3 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-27">
+<p id="p-251">One of the important features of Python for programmers (and SageMath for mathematicians) is its extensive “standard library”: that is, a lot of features are available by default in the language without installing additional programs.</p>
+<p id="p-252">However, since different people use Python for different applications, not every feature can be made availble by default. There are several libraries available in Python for data science, but we will use one specifically developed for students called, well, <a class="external" href="http://data8.org/datascience/" target="_blank"><code class="code-inline tex2jax_ignore">datascience</code></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-9" id="fn-9"><sup> 1 </sup></a>. <aside class="aside aside-like" id="aside-3"></aside></p>
 </div>
-<article class="task exercise-like" id="task-110"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-309">Copy the contents of <a class="xref" data-knowl="./knowl/visualization-tables-import-datascience.html" title="Listing 4.1.1">4.1.1</a> into a Code cell and follow its instructions to install <code class="code-inline tex2jax_ignore">datascience</code> if it is not already available, then re-run the Code cell. You will only need to do this process once per project.</p>
+<article class="task exercise-like" id="task-90"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-253">Copy the contents of <a href="" class="xref" data-knowl="./knowl/visualization-tables-import-datascience.html" title="Listing 3.1.1">3.1.1</a> into a Code cell and follow its instructions to install <code class="code-inline tex2jax_ignore">datascience</code> if it is not already available, then re-run the Code cell. You will only need to do this process once per project.</p>
 <figure class="listing figure-like" id="visualization-tables-import-datascience"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">try:
     from datascience import Table
     print("The module `datascience` is installed on your project.")
@@ -171,19 +213,19 @@ except ModuleNotFoundError:
     print("3. Return to this notebook and \"Restart Kernel\".")
     print("4. Re-run this Code cell.")
 </code></pre></div>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.1.1<span class="period">.</span></span><span class="space"> </span>Install and import <code class="code-inline tex2jax_ignore">datascience</code></figcaption></figure></article><article class="task exercise-like" id="task-111"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-310">To confirm that you can create <code class="code-inline tex2jax_ignore">datascience</code> tables, copy-paste the contents of <a class="xref" data-knowl="./knowl/visualization-tables-test.html" title="Listing 4.1.2">4.1.2</a> into a Code cell to display a nicely formatted table of (incomplete) Scrabble tile data.</p>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.1.1<span class="period">.</span></span><span class="space"> </span>Install and import <code class="code-inline tex2jax_ignore">datascience</code></figcaption></figure></article><article class="task exercise-like" id="task-91"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-254">To confirm that you can create <code class="code-inline tex2jax_ignore">datascience</code> tables, copy-paste the contents of <a href="" class="xref" data-knowl="./knowl/visualization-tables-test.html" title="Listing 3.1.2">3.1.2</a> into a Code cell to display a nicely formatted table of (incomplete) Scrabble tile data.</p>
 <figure class="listing figure-like" id="visualization-tables-test"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">Table().with_columns([
     'letter', ['a', 'b', 'c', 'z'],
     'count',  [  9,   3,   3,   1],
     'points', [  1,   2,   2,  10],
 ])
 </code></pre></div>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.1.2<span class="period">.</span></span><span class="space"> </span>Try out <code class="code-inline tex2jax_ignore">datascience</code></figcaption></figure></article></article><article class="activity project-like" id="activity-28"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-34">
-<p id="p-311">As previously investigated, dictionaries can be used to describe complex data with many different properties. In <a class="xref" data-knowl="./knowl/visualization-tables-dictionary-list.html" title="Listing 4.1.3">4.1.3</a> a list of dictionaries is used to describe several students in standard Python.</p>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.1.2<span class="period">.</span></span><span class="space"> </span>Try out <code class="code-inline tex2jax_ignore">datascience</code></figcaption></figure></article></article><article class="activity project-like" id="activity-22"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-28">
+<p id="p-255">As previously investigated, dictionaries can be used to describe complex data with many different properties. In <a href="" class="xref" data-knowl="./knowl/visualization-tables-dictionary-list.html" title="Listing 3.1.3">3.1.3</a> a list of dictionaries is used to describe several students in standard Python.</p>
 <figure class="listing figure-like" id="visualization-tables-dictionary-list"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">[
     {
         "name":             "Jessica",
@@ -202,12 +244,12 @@ except ModuleNotFoundError:
     },
 ]
 </code></pre></div>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.1.3<span class="period">.</span></span><span class="space"> </span>A list of student dictionaries</figcaption></figure>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.1.3<span class="period">.</span></span><span class="space"> </span>A list of student dictionaries</figcaption></figure>
 </div>
-<article class="task exercise-like" id="task-112"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-312">Copy this list into a Code cell, and add data for at least three more students to the list.</p></article><article class="task exercise-like" id="task-113"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-313">Data is often stored in a spreadsheet or database as a <dfn class="terminology">table</dfn>. An illustration of this is given in <a class="xref" data-knowl="./knowl/visualization-tables-student-table.html" title="Table 4.1.4: Student data table">4.1.4</a>.</p>
-<figure class="table table-like" id="visualization-tables-student-table"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.1.4<span class="period">.</span></span><span class="space"> </span>Student data table</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<article class="task exercise-like" id="task-92"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-256">Copy this list into a Code cell, and add data for at least three more students to the list.</p></article><article class="task exercise-like" id="task-93"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-257">Data is often stored in a spreadsheet or database as a <dfn class="terminology">table</dfn>. An illustration of this is given in <a href="" class="xref" data-knowl="./knowl/visualization-tables-student-table.html" title="Table 3.1.4: Student data table">3.1.4</a>.</p>
+<figure class="table table-like" id="visualization-tables-student-table"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.4<span class="period">.</span></span><span class="space"> </span>Student data table</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines">Name</td>
 <td class="l m b1 r0 l0 t0 lines">Age</td>
@@ -228,25 +270,25 @@ except ModuleNotFoundError:
 <td class="l m b0 r0 l0 t0 lines">18</td>
 <td class="l m b0 r0 l0 t0 lines">Ms. Gilbreath</td>
 </tr>
-</table></div></figure><p id="p-314">Tables can be created programmatically by using the technique from <a class="xref" data-knowl="./knowl/visualization-tables-preview.html" title="Preview Activity 4.1.1">4.1.1</a> or by modifying <a class="xref" data-knowl="./knowl/visualization-tables-from-rows.html" title="Listing 4.1.5">4.1.5</a>.</p>
+</table></div></figure><p id="p-258">Tables can be created programmatically by using the technique from <a href="" class="xref" data-knowl="./knowl/visualization-tables-preview.html" title="Preview Activity 3.1.1">3.1.1</a> or by modifying <a href="" class="xref" data-knowl="./knowl/visualization-tables-from-rows.html" title="Listing 3.1.5">3.1.5</a>.</p>
 <figure class="listing figure-like" id="visualization-tables-from-rows"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">Table(labels=["Name", "Age", "Favorite Teacher"]).with_rows([
     ["Jessica", 19, "Dr. Clontz"],
     ["Lynn", 18, "Ms. Gilbreath"],
     ["Julia", 17, "Mr. Fullinwider"],
 ])
 </code></pre></div>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.1.5<span class="period">.</span></span><span class="space"> </span>Table from rows</figcaption></figure><p id="p-315">Run <code class="code-inline tex2jax_ignore">from datascience import Table</code> in a Code cell, and then copy <a class="xref" data-knowl="./knowl/visualization-tables-from-rows.html" title="Listing 4.1.5">4.1.5</a> to another Code cell. Finally, append the student data you created in the previous task. <aside class="aside aside-like" id="aside-3"></aside></p></article><article class="task exercise-like" id="task-114"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-316">Since data usually isn't hard-coded into a script, but instead entered by folks who may not be programmers into a spreadsheet or similar file, we will need a way to read external files containing data.</p>
-<p id="p-317">Open a spreadsheet application such as Microsoft Excel or Google Sheets. Copy the table of data displayed in the previous task and paste it into your spreadsheet.</p>
-<p id="p-318">Save the spreadsheet to a Comma-Separated Values file named <code class="code-inline tex2jax_ignore">student_data.csv</code> and use the <kbd class="kbdkey">(+) New</kbd> menu to upload it to CoCalc in the same folder as this Jupyter notebook.</p>
-<p id="p-319">Finally, create a Code cell with the line <code class="code-inline tex2jax_ignore">Table.read_table('student_data.csv')</code> to check that your CSV data can be imported into a <code class="code-inline tex2jax_ignore">datascience</code> table.</p></article></article><article class="activity project-like" id="activity-29"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-35"><p id="p-320">When working with data in industry, you're likely working with many more rows than can be displayed on your screen at a given time. In fact, so-called “Big Data” is one of the fastest-moving fields of mathematics and computer science. By working with <code class="code-inline tex2jax_ignore">datascience</code> tables, you can filter data as needed for display and analysis.</p></div>
-<article class="task exercise-like" id="task-115"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-321">Visit the website <a class="external" href="https://vincentarelbundock.github.io/Rdatasets/datasets.html" target="_blank"><code class="code-inline tex2jax_ignore">https://vincentarelbundock.github.io/Rdatasets/datasets.html</code></a> to get a CSV with the transactions for a (fictional) pizza parlor for the year 2015. (Hint: Use <kbd class="kbdkey">Ctrl</kbd>+<kbd class="kbdkey">F</kbd> to search for “pizza”.) If you like, you can download the CSV and view it in a spreadsheet program such as Microsoft Excel.</p>
-<p id="p-322">For this activity however, you should right-click and copy the URL to the CSV file. In a Code cell, save this URL to the CS variable named <code class="code-inline tex2jax_ignore">pizza_url</code>, and then import this data directly by running <code class="code-inline tex2jax_ignore">pizza_table = Table.read_table(pizza_url)</code> and <code class="code-inline tex2jax_ignore">pizza_table.show(20)</code>.</p>
-<figure class="table table-like" id="visualization-tables-pizza"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.1.6<span class="period">.</span></span><span class="space"> </span>The first three rows of <code class="code-inline tex2jax_ignore">pizza_table</code></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.1.5<span class="period">.</span></span><span class="space"> </span>Table from rows</figcaption></figure><p id="p-259">Run <code class="code-inline tex2jax_ignore">from datascience import Table</code> in a Code cell, and then copy <a href="" class="xref" data-knowl="./knowl/visualization-tables-from-rows.html" title="Listing 3.1.5">3.1.5</a> to another Code cell. Finally, append the student data you created in the previous task. <aside class="aside aside-like" id="aside-4"></aside></p></article><article class="task exercise-like" id="task-94"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-260">Since data usually isn't hard-coded into a script, but instead entered by folks who may not be programmers into a spreadsheet or similar file, we will need a way to read external files containing data.</p>
+<p id="p-261">Open a spreadsheet application such as Microsoft Excel or Google Sheets. Copy the table of data displayed in the previous task and paste it into your spreadsheet.</p>
+<p id="p-262">Save the spreadsheet to a Comma-Separated Values file named <code class="code-inline tex2jax_ignore">student_data.csv</code> and use the <kbd class="kbdkey">(+) New</kbd> menu to upload it to CoCalc in the same folder as this Jupyter notebook.</p>
+<p id="p-263">Finally, create a Code cell with the line <code class="code-inline tex2jax_ignore">Table.read_table('student_data.csv')</code> to check that your CSV data can be imported into a <code class="code-inline tex2jax_ignore">datascience</code> table.</p></article></article><article class="activity project-like" id="activity-23"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-29"><p id="p-264">When working with data in industry, you're likely working with many more rows than can be displayed on your screen at a given time. In fact, so-called “Big Data” is one of the fastest-moving fields of mathematics and computer science. By working with <code class="code-inline tex2jax_ignore">datascience</code> tables, you can filter data as needed for display and analysis.</p></div>
+<article class="task exercise-like" id="task-95"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-265">Visit the website <a class="external" href="https://vincentarelbundock.github.io/Rdatasets/datasets.html" target="_blank"><code class="code-inline tex2jax_ignore">https://vincentarelbundock.github.io/Rdatasets/datasets.html</code></a> to get a CSV with the transactions for a (fictional) pizza parlor for the year 2015. (Hint: Use <kbd class="kbdkey">Ctrl</kbd>+<kbd class="kbdkey">F</kbd> to search for “pizza”.) If you like, you can download the CSV and view it in a spreadsheet program such as Microsoft Excel.</p>
+<p id="p-266">For this activity however, you should right-click and copy the URL to the CSV file. In a Code cell, save this URL to the CS variable named <code class="code-inline tex2jax_ignore">pizza_url</code>, and then import this data directly by running <code class="code-inline tex2jax_ignore">pizza_table = Table.read_table(pizza_url)</code> and <code class="code-inline tex2jax_ignore">pizza_table.show(20)</code>.</p>
+<figure class="table table-like" id="visualization-tables-pizza"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.6<span class="period">.</span></span><span class="space"> </span>The first three rows of <code class="code-inline tex2jax_ignore">pizza_table</code></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines">Unnamed: 0</td>
 <td class="l m b1 r0 l0 t0 lines">id</td>
@@ -287,27 +329,27 @@ except ModuleNotFoundError:
 <td class="l m b0 r0 l0 t0 lines">veggie</td>
 <td class="l m b0 r0 l0 t0 lines">16</td>
 </tr>
-</table></div></figure></article><article class="task exercise-like" id="task-116"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-323">There are almost fifty thousand transactions stored in this dataset. You could write <code class="code-inline tex2jax_ignore">pizza_table.show()</code> without specifying how many records to to try and show them all, but CoCalc will complain that 50,000 rows are too many.</p>
-<p id="p-324">Insert an integer into the <code class="code-inline tex2jax_ignore">.show()</code> tool to display exactly one hundred rows from the dataset.</p></article><article class="task exercise-like" id="task-117"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-325">The code <code class="code-inline tex2jax_ignore">pizza_table.where("date","2015-02-01").show(10)</code> allows you to view the first ten records of a pizza purchased on Feburary 1, 2015.</p>
-<p id="p-326">Display the first 20 pizza pies purchased on \(\pi\)-Day (that is, March 14, 2015).</p></article><article class="task exercise-like" id="task-118"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-327">You can filter by any column of the table by modifying the <code class="code-inline tex2jax_ignore">where()</code> arguments. Display the first 20 medium pizzas purchased in this parlor.</p></article><article class="task exercise-like" id="task-119"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-328">Display the first 20 “Mexicana” pizzas purchased in this parlor. (Hint: make sure you filter the data based on how its string appears in the table.)</p></article><article class="task exercise-like" id="task-120"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-329">Chain two <code class="code-inline tex2jax_ignore">where()</code>s and a <code class="code-inline tex2jax_ignore">show()</code> together to display the first 20 large-sized veggie pizzas purchased in this parlor.</p></article><article class="task exercise-like" id="task-121"><h6 class="heading"><span class="codenumber">(g)</span></h6>
-<p id="p-330">Running <code class="code-inline tex2jax_ignore">pizza_table.where("date","2015-07-22").sort("size").show()</code> displays the large pizzas sold on July 22nd first, followed by medium, small, and extra-large pizzas (in that order). Running <code class="code-inline tex2jax_ignore">pizza_table.where("date","2015-07-22").sort("size",descending=True).show()</code> displays them in the order extra-large, small, medium, then large.</p>
-<p id="p-331">Write a sentence or two explaining why you suspect the datascience library orders the pizzas in this way.</p></article><article class="task exercise-like" id="task-122"><h6 class="heading"><span class="codenumber">(h)</span></h6>
-<p id="p-332">Display all the Hawaiian pizzas ordered on April 12, once in increasing order, and once in descreasing order.</p></article></article><article class="activity project-like" id="activity-30"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-36">
-<p id="p-333">While it's great to have data already organized in a CSV, most data is not already <dfn class="terminology">parsed</dfn> for use directly by a data science library. Instead, data scientists must manually and/or programmatically convert the raw data into a suitable format.</p>
-<p id="p-334">In this activity, we will convert the text of a book in order to count the number of times each of its main characters is mentioned in each chapter.</p>
+</table></div></figure></article><article class="task exercise-like" id="task-96"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-267">There are almost fifty thousand transactions stored in this dataset. You could write <code class="code-inline tex2jax_ignore">pizza_table.show()</code> without specifying how many records to to try and show them all, but CoCalc will complain that 50,000 rows are too many.</p>
+<p id="p-268">Insert an integer into the <code class="code-inline tex2jax_ignore">.show()</code> tool to display exactly one hundred rows from the dataset.</p></article><article class="task exercise-like" id="task-97"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-269">The code <code class="code-inline tex2jax_ignore">pizza_table.where("date","2015-02-01").show(10)</code> allows you to view the first ten records of a pizza purchased on Feburary 1, 2015.</p>
+<p id="p-270">Display the first 20 pizza pies purchased on <span class="process-math">\(\pi\)</span>-Day (that is, March 14, 2015).</p></article><article class="task exercise-like" id="task-98"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-271">You can filter by any column of the table by modifying the <code class="code-inline tex2jax_ignore">where()</code> arguments. Display the first 20 medium pizzas purchased in this parlor.</p></article><article class="task exercise-like" id="task-99"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-272">Display the first 20 “Mexicana” pizzas purchased in this parlor. (Hint: make sure you filter the data based on how its string appears in the table.)</p></article><article class="task exercise-like" id="task-100"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<p id="p-273">Chain two <code class="code-inline tex2jax_ignore">where()</code>s and a <code class="code-inline tex2jax_ignore">show()</code> together to display the first 20 large-sized veggie pizzas purchased in this parlor.</p></article><article class="task exercise-like" id="task-101"><h4 class="heading"><span class="codenumber">(g)</span></h4>
+<p id="p-274">Running <code class="code-inline tex2jax_ignore">pizza_table.where("date","2015-07-22").sort("size").show()</code> displays the large pizzas sold on July 22nd first, followed by medium, small, and extra-large pizzas (in that order). Running <code class="code-inline tex2jax_ignore">pizza_table.where("date","2015-07-22").sort("size",descending=True).show()</code> displays them in the order extra-large, small, medium, then large.</p>
+<p id="p-275">Write a sentence or two explaining why you suspect the datascience library orders the pizzas in this way.</p></article><article class="task exercise-like" id="task-102"><h4 class="heading"><span class="codenumber">(h)</span></h4>
+<p id="p-276">Display all the Hawaiian pizzas ordered on April 12, once in increasing order, and once in descreasing order.</p></article></article><article class="activity project-like" id="activity-24"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-30">
+<p id="p-277">While it's great to have data already organized in a CSV, most data is not already <dfn class="terminology">parsed</dfn> for use directly by a data science library. Instead, data scientists must manually and/or programmatically convert the raw data into a suitable format.</p>
+<p id="p-278">In this activity, we will convert the text of a book in order to count the number of times each of its main characters is mentioned in each chapter.</p>
 </div>
-<article class="task exercise-like" id="task-123"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-335">Save a plain-text copy of <em class="emphasis">Peter Pan</em> by J. M. Barrie as the file <code class="code-inline tex2jax_ignore">peterpan.txt</code> in the same folder as this notebook by using the link <a class="external" href="https://www.gutenberg.org/ebooks/16" target="_blank"><code class="code-inline tex2jax_ignore">https://www.gutenberg.org/ebooks/16</code></a>. This task may be confirmed by running <code class="code-inline tex2jax_ignore">f=open("peterpan.txt"); print(f.readline()); f.close()</code> in a Code cell. <aside class="aside aside-like" id="aside-4"></aside></p></article><article class="task exercise-like" id="task-124"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-336">Open the file and manually delete the header and footer information, so the text file begins at the start of “Chapter 1” and ends with the words “THE END”. Re-run <code class="code-inline tex2jax_ignore">print(open("peterpan.txt").readline())</code>, and you should see the line <code class="code-inline tex2jax_ignore">Chapter 1 PETER BREAKS THROUGH</code>.</p></article><article class="task exercise-like" id="task-125"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-337">Fix the code in <a class="xref" data-knowl="./knowl/visualization-tables-text-to-table.html" title="Listing 4.1.7">4.1.7</a> to save the chapters of the book to a <code class="code-inline tex2jax_ignore">datascience</code> table.</p>
+<article class="task exercise-like" id="task-103"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-279">Save a plain-text copy of <em class="emphasis">Peter Pan</em> by J. M. Barrie as the file <code class="code-inline tex2jax_ignore">peterpan.txt</code> in the same folder as this notebook by using the link <a class="external" href="https://www.gutenberg.org/ebooks/16" target="_blank"><code class="code-inline tex2jax_ignore">https://www.gutenberg.org/ebooks/16</code></a>. This task may be confirmed by running <code class="code-inline tex2jax_ignore">f=open("peterpan.txt"); print(f.readline()); f.close()</code> in a Code cell. <aside class="aside aside-like" id="aside-5"></aside></p></article><article class="task exercise-like" id="task-104"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-280">Open the file and manually delete the header and footer information, so the text file begins at the start of “Chapter 1” and ends with the words “THE END”. Re-run <code class="code-inline tex2jax_ignore">print(open("peterpan.txt").readline())</code>, and you should see the line <code class="code-inline tex2jax_ignore">Chapter 1 PETER BREAKS THROUGH</code>.</p></article><article class="task exercise-like" id="task-105"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-281">Fix the code in <a href="" class="xref" data-knowl="./knowl/visualization-tables-text-to-table.html" title="Listing 3.1.7">3.1.7</a> to save the chapters of the book to a <code class="code-inline tex2jax_ignore">datascience</code> table.</p>
 <figure class="listing figure-like" id="visualization-tables-text-to-table"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">with open("peterpan.txt") as book_file:
     # Fix the order of the following lines
     book_table = Table().with_column("Chapter", book_chapters) # creates table of chapters
@@ -315,25 +357,26 @@ except ModuleNotFoundError:
     book_table.show() # displays table
     book_string = book_file.read() # saves contents of the text file to a string
 </code></pre></div>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.1.7<span class="period">.</span></span><span class="space"> </span>Import book text to a table</figcaption></figure></article><article class="task exercise-like" id="task-126"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-338">The code in <a class="xref" data-knowl="./knowl/visualization-tables-count-characters.html" title="Listing 4.1.8">4.1.8</a> counts how many times Peter Pan is mentioned in each chapter of the book. Extend this code to also count how many times the Darling siblings Wendy, Michael, and John are mentioned in each chapter.</p>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.1.7<span class="period">.</span></span><span class="space"> </span>Import book text to a table</figcaption></figure></article><article class="task exercise-like" id="task-106"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-282">The code in <a href="" class="xref" data-knowl="./knowl/visualization-tables-count-characters.html" title="Listing 3.1.8">3.1.8</a> counts how many times Peter Pan is mentioned in each chapter of the book. Extend this code to also count how many times the Darling siblings Wendy, Michael, and John are mentioned in each chapter.</p>
 <figure class="listing figure-like" id="visualization-tables-count-characters"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">book_table = book_table.with_columns([
     "Peter", [c.count("Peter") for c in book_chapters],
 ])
 book_table.show()
 </code></pre></div>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.1.8<span class="period">.</span></span><span class="space"> </span>Counting how many times each character is mentioned</figcaption></figure></article><article class="task exercise-like" id="task-127"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-339">Sort this table to find the chapter where Wendy is mentioned the most, and the chapter where she is mentioned the least.</p></article></article><section class="exercises" id="exercises-7"><h3 class="heading hide-type">
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.1.8<span class="period">.</span></span><span class="space"> </span>Counting how many times each character is mentioned</figcaption></figure></article><article class="task exercise-like" id="task-107"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-283">Sort this table to find the chapter where Wendy is mentioned the most, and the chapter where she is mentioned the least.</p></article></article><section class="exercises" id="exercises-6"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-49"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-340">Repeat the necesary steps from the class activities in order to make <code class="code-inline tex2jax_ignore">pizza_table</code> and <code class="code-inline tex2jax_ignore">book_table</code> available for these exercises. Then run <code class="code-inline tex2jax_ignore">pizza_table.show(10)</code> and <code class="code-inline tex2jax_ignore">book_table.show(10)</code> to confirm.</p></article><article class="exercise exercise-like" id="exercise-50"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-341">How many extra-extra-large pizzas were sold by the pizzeria represented by <code class="code-inline tex2jax_ignore">pizza_table</code>?</p></article><article class="exercise exercise-like" id="exercise-51"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-342">Display all the “green garden” pizzas purchased on October 1st.</p></article><article class="exercise exercise-like" id="exercise-52"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-343">Display all the pizzas sold on February 14th, sorted from most to least expensive.</p></article><article class="exercise exercise-like" id="exercise-53"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-344">Update <code class="code-inline tex2jax_ignore">book_table</code> to include how frequently Tinker Bell is mentioned. (Note that she is often referred to as simply “Tink”.)</p></article><article class="exercise exercise-like" id="exercise-54"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-345">Display <code class="code-inline tex2jax_ignore">book_table</code> sorted by how frequently Tinker Bell is mentioned, and confirm that she is most often mentioned in Chapter 3 (\(22\) times).</p></article></section></section></div></main>
+<article class="exercise exercise-like" id="exercise-40"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<p id="p-284">Repeat the necesary steps from the class activities in order to make <code class="code-inline tex2jax_ignore">pizza_table</code> and <code class="code-inline tex2jax_ignore">book_table</code> available for these exercises. Then run <code class="code-inline tex2jax_ignore">pizza_table.show(10)</code> and <code class="code-inline tex2jax_ignore">book_table.show(10)</code> to confirm.</p></article><article class="exercise exercise-like" id="exercise-41"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<p id="p-285">How many extra-extra-large pizzas were sold by the pizzeria represented by <code class="code-inline tex2jax_ignore">pizza_table</code>?</p></article><article class="exercise exercise-like" id="exercise-42"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<p id="p-286">Display all the “green garden” pizzas purchased on October 1st.</p></article><article class="exercise exercise-like" id="exercise-43"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<p id="p-287">Display all the pizzas sold on February 14th, sorted from most to least expensive.</p></article><article class="exercise exercise-like" id="exercise-44"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<p id="p-288">Update <code class="code-inline tex2jax_ignore">book_table</code> to include how frequently Tinker Bell is mentioned. (Note that she is often referred to as simply “Tink”.)</p></article><article class="exercise exercise-like" id="exercise-45"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<p id="p-289">Display <code class="code-inline tex2jax_ignore">book_table</code> sorted by how frequently Tinker Bell is mentioned, and confirm that she is most often mentioned in Chapter 3 (<span class="process-math">\(22\)</span> times).</p></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-9"><div class="fn"><code class="code-inline tex2jax_ignore">http://data8.org/datascience/</code></div></div>
+</div></main>
 </div>
-<script src="https://unpkg.com/prismjs@v1.22.0/components/prism-core.min.js"></script><script src="https://unpkg.com/prismjs@v1.22.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 </html>

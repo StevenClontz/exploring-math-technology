@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:24Z       *-->
+<!--*       on 2022-06-15T21:02:36Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,31 +13,50 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="period">.</span>
-</h6>
+</h3>
 <div class="introduction">
-<p>There are several notions of “average”, that is, several ways to describe the center of a dataset.</p>
-<p>Often, “average” is used to describe the <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">mean</dfn> of a dataset. If a dataset contains the \(n\) values \(x_0,x_1,\dots,x_{n-1}\text{,}\) then the mean is defined by the following formula:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{1}{n}\sum_{0\leq k&lt; n} x_k = \frac{x_0+x_1+\dots+x_{n-1}}{n}
-\end{equation*}
+<p>When pairs of data values tend to fall along a line, that data is said to be linearly <dfn class="terminology">correlated</dfn>. The <dfn class="terminology">correlation coefficient</dfn> of these pairs of values is a number between <span class="process-math">\(-1\)</span> and <span class="process-math">\(1\)</span> that describes the strength of this correlation, known briefly as <span class="process-math">\(r\text{.}\)</span></p>
+<p>A value of <span class="process-math">\(r=1\)</span> means that the points of data fall exactly along an upward line, that is, one value tends to increase as the other value increases. On the other hand, <span class="process-math">\(r=-1\)</span> means that the points of data fall exactly along a downward line, that is, one value tends to increase as the otehr value decreases. A value of <span class="process-math">\(r=0\)</span> means there's no recognizable linear relationship between the pairs of data values.</p>
+<p>However, most real datasets will have a fractional <span class="process-math">\(r\)</span> value. Nonetheless, the closer this value is to <span class="process-math">\(1\)</span> or <span class="process-math">\(-1\text{,}\)</span> the stronger the correlation, while the closer this value is to <span class="process-math">\(0\text{,}\)</span> the weaker the correlation. This is illustrated in <a href="" class="xref" data-knowl="./knowl/predictions-correlation-coefficients.html" title="Figure 5.1.3">5.1.3</a> (obtained from <a class="external" href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient" target="_blank">Wikipedia</a><a href="" class="fn-knowl original" data-knowl="./knowl/fn-10-hidden.html" title="Footnote 5.1.1"><sup> 1 </sup></a>).</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/predictions-correlation-coefficients.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.3<span class="period">.</span></span><span class="space"> </span>Illustrations of correlation coefficients</figcaption></figure><p>The mathematics used to compute <span class="process-math">\(r\)</span> are outside the scope of this course, so we will focus on understanding what <span class="process-math">\(r\)</span> communicates about a dataset and how to compute <span class="process-math">\(r\)</span> using technology.</p>
 </div>
-<p>For example, the mean of the counting numbers \(2,3,5,7,18\) is \(\frac{2+3+5+7+18}{5}=7\text{:}\) all the values in the collection are added together, and then divided by the amount of data in the collection.</p>
-</div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p>Show that \(8\) is the mean of the counting numbers \(4,8,9,11\text{.}\)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p>Is it possible for the mean of a dataset to not belong to the dataset itself? If so, give an example of such a dataset. If not, explain why.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p>First, make a copy of the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">pizza_table</code> used in previous sections available for this notebook.</p>
-<p>Then, correct the code in <a class="xref" data-knowl="./knowl/measurements-center-pizza-mean.html" title="Listing 5.1.2">5.1.2</a> to output the correct mean of the costs of pizza sold on Nov 10.</p>
-<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py"># FIXME
-# this code says the mean cost of a pizza is less than a dollar!
-prices = pizza_table.where("date","2015-10-09").column("price")
-len(prices)/sum(prices)
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Unfortunately, the <code class="code-inline tex2jax_ignore">datascience</code> library doesn't provide a great out-of-the-box mechanism for computing <span class="process-math">\(r\text{.}\)</span> Fortunately, we can add two features to our <code class="code-inline tex2jax_ignore">datascience</code> tables by copy-pasting the snippet given in <a href="" class="xref" data-knowl="./knowl/predictions-correlation-features.html" title="Listing 5.1.4">5.1.4</a> into a Code cell. (This will need to be done in every notebook that uses these features.)</p>
+<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">def with_correlated_columns(self,num_rows=100,x_range=5,slope=1,noise=1):
+    from random import random
+    table = self.select().with_columns("x",[],"y",[])
+    for _ in range(num_rows):
+        seed = random()
+        x = seed*x_range
+        y = seed*x_range*slope
+        y = y + (-1+2*random())*noise
+        table = table.with_row([x,y])
+    return table
+def correlation(self,col1_name,col2_name):
+    import statistics
+    # get column arrays
+    col1 = self.column(col1_name)
+    col2 = self.column(col2_name)
+    # standardize units
+    col1_s = (col1 - statistics.mean(col1))/statistics.stdev(col1)
+    col2_s = (col2 - statistics.mean(col2))/statistics.stdev(col2)
+    # correlation is the mean product of standard units
+    return statistics.mean(col1_s*col2_s)
+setattr(Table,"with_correlated_columns",with_correlated_columns)
+setattr(Table,"correlation",correlation)
 </code></pre></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.1.2<span class="period">.</span></span><span class="space"> </span>Broken code to calculuate mean cost of pizza</figcaption></figure></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p>Find the mean cost of a large pizza sold during the year of sales recorded in <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">pizza_table</code>.</p></article></article><span class="incontext"><a href="measurements-center.html#activity-37">in-context</a></span>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.1.4<span class="period">.</span></span><span class="space"> </span>Correlation features for <code class="code-inline tex2jax_ignore">datascience</code></figcaption></figure><p>While we won't go into detail on how correlation is measured, it is related to the measures of center and spread studied in the previous chapter. Inspect the code shown in <a href="" class="xref" data-knowl="./knowl/predictions-correlation-features.html" title="Listing 5.1.4">5.1.4</a>; what measure of center and what measure of spread appear to be used to compute correlation?</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>When <a href="" class="xref" data-knowl="./knowl/predictions-correlation-features.html" title="Listing 5.1.4">5.1.4</a> is run successfully, no output will be shown. However, you should now be able to create a table by running <code class="code-inline tex2jax_ignore">ctable = Table().with_correlated_columns()</code>. (Note that this table is generated somewhat randomly, so re-running that line will create a slightly different table.)</p>
+<p>Show ten rows and a scatter plot for this <code class="code-inline tex2jax_ignore">ctable</code>.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>Based on the definition of the correlation coefficient <span class="process-math">\(r\)</span> and the illustration given in <a href="" class="xref" data-knowl="./knowl/predictions-correlation-coefficients.html" title="Figure 5.1.3">5.1.3</a>, would you expect the correlation of these pairs of data to be closer to <span class="process-math">\(-1\text{,}\)</span> <span class="process-math">\(0\text{,}\)</span> or <span class="process-math">\(1\text{?}\)</span></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p>Run <code class="code-inline tex2jax_ignore">ctable.correlation("x","y")</code> to confirm your intuition.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p>Show a scatter plot for <code class="code-inline tex2jax_ignore">ctable2 = Table().with_correlated_columns(slope=3)</code>. Guess a value for <code class="code-inline tex2jax_ignore">r</code> based on the scatter plot, and then confirm your guess using technology.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<p>Show a scatter plot for <code class="code-inline tex2jax_ignore">ctable3 = Table().with_correlated_columns(x_range=10,slope=-2)</code>. Guess a value for <code class="code-inline tex2jax_ignore">r</code> based on the scatter plot, and then confirm your guess using technology.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(g)</span></h4>
+<p>Show a scatter plot for <code class="code-inline tex2jax_ignore">ctable4 = Table().with_correlated_columns(noise=5,slope=2)</code>. Guess a value for <code class="code-inline tex2jax_ignore">r</code> based on the scatter plot, and then confirm your guess using technology.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(h)</span></h4>
+<p>Show a scatter plot for <code class="code-inline tex2jax_ignore">ctable5 = Table().with_correlated_columns(noise=100,slope=-4)</code>. Guess a value for <code class="code-inline tex2jax_ignore">r</code> based on the scatter plot, and then confirm your guess using technology.</p></article></article><span class="incontext"><a href="predictions-correlation.html#activity-37" class="internal">in-context</a></span>
 </body>
 </html>

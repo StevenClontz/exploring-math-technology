@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:23Z       *-->
+<!--*       on 2022-06-15T21:02:35Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,32 +13,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Task</span><span class="space"> </span><span class="codenumber">3.3.2.b</span><span class="period">.</span>
-</h6>
-<p>Adapt the partial example shown in <a class="xref" data-knowl="./knowl/data-programming-favorite-loop.html" title="Listing 3.3.2">3.3.2</a> to display output similar to <a class="xref" data-knowl="./knowl/data-programming-favorite-output.html" title="Listing 3.3.3">3.3.3</a> for each number.</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel top" style="width:47.3684210526316%;"><figure class="listing figure-like"><pre class="program"><code class="language-py">for number in favorite_numbers:
-    # code indented four spaces right will run for each
-    # "number" in the list of "favorite_numbers"
-    squared = number**2
-    print(f"{number} squared is {squared}")
-    # TODO add more information about each number
-    # (don't forget to indent!)
-
-# Because we removed the indent, this only
-# happens after all numbers are looped through.
-print("All done looping!")
-</code></pre>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.2<span class="period">.</span></span><span class="space"> </span>Looping over a list of numbers</figcaption></figure></div>
-<div class="sbspanel top" style="width:47.3684210526316%;"><figure class="listing figure-like"><pre class="code-display tex2jax_ignore">18 squared is 324
-18 divided by two is 9
-18 plus seven is 25
-18 minus one half is 17.5
-18 times three is 54
-</pre>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.3<span class="period">.</span></span><span class="space"> </span>Sample output for each number</figcaption></figure></div>
-</div></div></article><span class="incontext"><a href="data-programming.html#task-106">in-context</a></span>
+<body class="ignore-math">
+<article class="task exercise-like"><h4 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">3.1.4.d</span><span class="period">.</span>
+</h4>
+<p>The code in <a href="" class="xref" data-knowl="./knowl/visualization-tables-count-characters.html" title="Listing 3.1.8">3.1.8</a> counts how many times Peter Pan is mentioned in each chapter of the book. Extend this code to also count how many times the Darling siblings Wendy, Michael, and John are mentioned in each chapter.</p>
+<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">book_table = book_table.with_columns([
+    "Peter", [c.count("Peter") for c in book_chapters],
+])
+book_table.show()
+</code></pre></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.1.8<span class="period">.</span></span><span class="space"> </span>Counting how many times each character is mentioned</figcaption></figure></article><span class="incontext"><a href="visualization-tables.html#task-106" class="internal">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:23Z       *-->
+<!--*       on 2022-06-15T21:02:35Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,65 +13,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span>
-</h6>
-<div class="introduction"><p>When working with data in industry, you're likely working with many more rows than can be displayed on your screen at a given time. In fact, so-called “Big Data” is one of the fastest-moving fields of mathematics and computer science. By working with <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">datascience</code> tables, you can filter data as needed for display and analysis.</p></div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p>Visit the website <a class="external" href="https://vincentarelbundock.github.io/Rdatasets/datasets.html" target="_blank"><code class="code-inline tex2jax_ignore">https://vincentarelbundock.github.io/Rdatasets/datasets.html</code></a> to get a CSV with the transactions for a (fictional) pizza parlor for the year 2015. (Hint: Use <kbd xmlns:svg="http://www.w3.org/2000/svg" class="kbdkey">Ctrl</kbd>+<kbd xmlns:svg="http://www.w3.org/2000/svg" class="kbdkey">F</kbd> to search for “pizza”.) If you like, you can download the CSV and view it in a spreadsheet program such as Microsoft Excel.</p>
-<p>For this activity however, you should right-click and copy the URL to the CSV file. In a Code cell, save this URL to the CS variable named <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">pizza_url</code>, and then import this data directly by running <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">pizza_table = Table.read_table(pizza_url)</code> and <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">pizza_table.show(20)</code>.</p>
-<figure class="table table-like"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.1.6<span class="period">.</span></span><span class="space"> </span>The first three rows of <code class="code-inline tex2jax_ignore">pizza_table</code></figcaption><div class="tabular-box natural-width"><table xmlns:svg="http://www.w3.org/2000/svg" class="tabular">
-<tr>
-<td class="l m b1 r0 l0 t0 lines">Unnamed: 0</td>
-<td class="l m b1 r0 l0 t0 lines">id</td>
-<td class="l m b1 r0 l0 t0 lines">date</td>
-<td class="l m b1 r0 l0 t0 lines">time</td>
-<td class="l m b1 r0 l0 t0 lines">name</td>
-<td class="l m b1 r0 l0 t0 lines">size</td>
-<td class="l m b1 r0 l0 t0 lines">type</td>
-<td class="l m b1 r0 l0 t0 lines">price</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">1</td>
-<td class="l m b0 r0 l0 t0 lines">2015-000001</td>
-<td class="l m b0 r0 l0 t0 lines">2015-01-01</td>
-<td class="l m b0 r0 l0 t0 lines">11:38:36</td>
-<td class="l m b0 r0 l0 t0 lines">hawaiian</td>
-<td class="l m b0 r0 l0 t0 lines">M</td>
-<td class="l m b0 r0 l0 t0 lines">classic</td>
-<td class="l m b0 r0 l0 t0 lines">13.25</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">2</td>
-<td class="l m b0 r0 l0 t0 lines">2015-000002</td>
-<td class="l m b0 r0 l0 t0 lines">2015-01-01</td>
-<td class="l m b0 r0 l0 t0 lines">11:57:40</td>
-<td class="l m b0 r0 l0 t0 lines">classic_dlx</td>
-<td class="l m b0 r0 l0 t0 lines">M</td>
-<td class="l m b0 r0 l0 t0 lines">classic</td>
-<td class="l m b0 r0 l0 t0 lines">16</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">3</td>
-<td class="l m b0 r0 l0 t0 lines">2015-000002</td>
-<td class="l m b0 r0 l0 t0 lines">2015-01-01</td>
-<td class="l m b0 r0 l0 t0 lines">11:57:40</td>
-<td class="l m b0 r0 l0 t0 lines">mexicana</td>
-<td class="l m b0 r0 l0 t0 lines">M</td>
-<td class="l m b0 r0 l0 t0 lines">veggie</td>
-<td class="l m b0 r0 l0 t0 lines">16</td>
-</tr>
-</table></div></figure></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p>There are almost fifty thousand transactions stored in this dataset. You could write <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">pizza_table.show()</code> without specifying how many records to to try and show them all, but CoCalc will complain that 50,000 rows are too many.</p>
-<p>Insert an integer into the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">.show()</code> tool to display exactly one hundred rows from the dataset.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p>The code <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">pizza_table.where("date","2015-02-01").show(10)</code> allows you to view the first ten records of a pizza purchased on Feburary 1, 2015.</p>
-<p>Display the first 20 pizza pies purchased on \(\pi\)-Day (that is, March 14, 2015).</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p>You can filter by any column of the table by modifying the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">where()</code> arguments. Display the first 20 medium pizzas purchased in this parlor.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
-<p>Display the first 20 “Mexicana” pizzas purchased in this parlor. (Hint: make sure you filter the data based on how its string appears in the table.)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(f)</span></h6>
-<p>Chain two <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">where()</code>s and a <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">show()</code> together to display the first 20 large-sized veggie pizzas purchased in this parlor.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(g)</span></h6>
-<p>Running <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">pizza_table.where("date","2015-07-22").sort("size").show()</code> displays the large pizzas sold on July 22nd first, followed by medium, small, and extra-large pizzas (in that order). Running <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">pizza_table.where("date","2015-07-22").sort("size",descending=True).show()</code> displays them in the order extra-large, small, medium, then large.</p>
-<p>Write a sentence or two explaining why you suspect the datascience library orders the pizzas in this way.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(h)</span></h6>
-<p>Display all the Hawaiian pizzas ordered on April 12, once in increasing order, and once in descreasing order.</p></article></article><span class="incontext"><a href="visualization-tables.html#activity-29">in-context</a></span>
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span>
+</h3>
+<div class="introduction"><p>The <dfn class="terminology">line chart</dfn> is a useful tool to visualize how data changes over time.</p></div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Right now, the <code class="code-inline tex2jax_ignore">date</code> for each pizza sold is stored as a string of numbers and hyphens, such as <code class="code-inline tex2jax_ignore">"2015-08-19"</code>. The code in <a href="" class="xref" data-knowl="./knowl/visualization-two-parse-dates.html" title="Listing 3.3.4">3.3.4</a> provides a <code class="code-inline tex2jax_ignore">datetime</code> column with values that Python understands better. (This is another example of “cleaning” data for analysis.)</p>
+<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py"># converts `date` string into a native datetime format
+from datetime import datetime
+pizza_table = pizza_table.with_column("datetime",pizza_table.apply(
+    lambda x:datetime.strptime(x,"%Y-%m-%d"),"date"
+))
+</code></pre></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.4<span class="period">.</span></span><span class="space"> </span>Script to add <code class="code-inline tex2jax_ignore">datetime</code> values</figcaption></figure><p>Use this script to update your <code class="code-inline tex2jax_ignore">pizza_table</code>. Show twenty rows of the resulting table below to confirm that it has both a <code class="code-inline tex2jax_ignore">date</code> column (which stores strings) and a <code class="code-inline tex2jax_ignore">datetime</code> column (which stores datetimes).</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>The code in <a href="" class="xref" data-knowl="./knowl/visualization-two-line-chart.html" title="Listing 3.3.5">3.3.5</a> displays the total number of pizzas sold each day of 2015 as the line chart given in <a href="" class="xref" data-knowl="./knowl/visualization-two-linechart-figure.html" title="Figure 3.3.6">3.3.6</a>.</p>
+<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py"># .plot("datetime") creates a line chart with the datetime column on the
+# horizontal axis, and other numerical columns on the vertical axis
+pizza_table.select("datetime","price").group("datetime").plot("datetime")
+</code></pre></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.5<span class="period">.</span></span><span class="space"> </span>Displaying a line chart counting pizzas sold</figcaption></figure><figure class="figure figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/visualization-two-linechart.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.6<span class="period">.</span></span><span class="space"> </span>Amount of pizza sold by date</figcaption></figure><p>Write a sentence describing the approximate time of year when the pizza parlor's best day of sales occurred, and how you determined this from the line chart.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>Copy <a href="" class="xref" data-knowl="./knowl/visualization-two-line-chart.html" title="Listing 3.3.5">3.3.5</a> into a new Code cell, but modify <code class="code-inline tex2jax_ignore">.group("datetime")</code> so that instead of showing the number of pizzas sold each day, the total (sum) of sales for each day are shown in the line chart instead.</p></article></article><span class="incontext"><a href="visualization-two.html#activity-29" class="internal">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:22Z       *-->
+<!--*       on 2022-06-15T21:02:35Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,25 +13,57 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span>
-</h6>
-<div class="introduction">
-<p>Something all these sets of numbers described above is that they are <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">infinite</dfn>: if you had a finite list of them, take the biggest and add one, and you'll have something you forgot in your list.</p>
-<p>While SageMath does its best to hide this limitation from users, there's a limit to how many of these infinitely-many possible numerical values can be stored on a physical computer due to its finite storage space.</p>
-<p>To account for this, some lower-level languages offer data types like the <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">short</dfn> that account for a useful (but finite) range of integers. In particular, shorts are integers that may be stored as a short finite list of the binary digits \(0\) and \(1\text{.}\) (Each binary digit is also known as a <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">bit</dfn>.)</p>
-</div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p>Only two numbers may be described using one binary digit: \(0_2\) and \(1_2\text{.}\) Only four numbers may be described using two binary digits: \(00_2\text{,}\) \(01_2\text{,}\) \(10_2\text{,}\) and \(11_2\text{.}\)</p>
-<p>Describe all the possible numbers using three binary digits.</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
+</h3>
+<div class="introduction"><p>Usually you will want to not only store collections of data, but <em class="emphasis">do</em> something with each datum. A <dfn class="terminology">for loop</dfn> allows you to deal with data piece-by-piece.</p></div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Save the following numbers as a list named <code class="code-inline tex2jax_ignore">favorite_numbers</code>.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\square\square\square_2
+18, 7, -7, -\frac{7}{2}, 9, \frac{17}{4}, 0, -17, 19, 3
 \end{equation*}
-</div></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p>What do you notice about this pattern? According to this pattern, how many numbers do you expect can be described using four binary digits? Five digits?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p>A <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">byte</dfn> of computer storage is eight binary digits. How many different values of data can be stored in a byte?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p>How many different numbers can be stored as a short data type that uses two bytes?</p></article></article><span class="incontext"><a href="data-numbers.html#activity-19">in-context</a></span>
+</div></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Adapt the partial example shown in <a href="" class="xref" data-knowl="./knowl/data-programming-favorite-loop.html" title="Listing 2.3.2">2.3.2</a> to display output similar to <a href="" class="xref" data-knowl="./knowl/data-programming-favorite-output.html" title="Listing 2.3.3">2.3.3</a> for each number.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel top" style="width:47.3684210526316%;"><figure class="listing figure-like"><pre class="program"><code class="language-py">for number in favorite_numbers:
+    # code indented four spaces right will run for each
+    # "number" in the list of "favorite_numbers"
+    squared = number**2
+    print(f"{number} squared is {squared}")
+    # TODO add more information about each number
+    # (don't forget to indent!)
+
+# Because we removed the indent, this only
+# happens after all numbers are looped through.
+print("All done looping!")
+</code></pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.3.2<span class="period">.</span></span><span class="space"> </span>Looping over a list of numbers</figcaption></figure></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><figure class="listing figure-like"><pre class="code-display tex2jax_ignore">18 squared is 324
+18 divided by two is 9
+18 plus seven is 25
+18 minus one half is 17.5
+18 times three is 54
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.3.3<span class="period">.</span></span><span class="space"> </span>Sample output for each number</figcaption></figure></div>
+</div></div></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>To deal with pairs of data, for loops can also be <dfn class="terminology">nested</dfn>. Adapt the code shown in <a href="" class="xref" data-knowl="./knowl/data-programming-nested-loops.html" title="Listing 2.3.4">2.3.4</a> to create output as shown in <a href="" class="xref" data-knowl="./knowl/data-programming-nested-output.html" title="Listing 2.3.5">2.3.5</a>.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel top" style="width:47.3684210526316%;"><figure class="listing figure-like"><pre class="program"><code class="language-py">for first in range(10):
+    for second in range(10):
+        print(f"{first} is first, and {second} is second")
+</code></pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.3.4<span class="period">.</span></span><span class="space"> </span>Nested for loops</figcaption></figure></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><figure class="listing figure-like"><pre class="code-display tex2jax_ignore">0 times 0 is 0
+0 times 1 is 0
+[...]
+5 times 9 is 45
+6 times 0 is 0
+6 times 1 is 6
+6 times 2 is 12
+[...]</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.3.5<span class="period">.</span></span><span class="space"> </span>Excerpt of desired output</figcaption></figure></div>
+</div></div></article></article><span class="incontext"><a href="data-programming.html#activity-19" class="internal">in-context</a></span>
 </body>
 </html>

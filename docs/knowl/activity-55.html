@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:26Z       *-->
+<!--*       on 2022-06-15T21:02:36Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,37 +13,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.2.4</span><span class="period">.</span>
-</h6>
-<div class="introduction"><p>The multiplication principle is useful when considering password security. Often, administrators make certain requirements for users' passwords. These requirements affect the number of different possible passwords, as well as the probability that a randomly chosen password would match a password that meets these requirements.</p></div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p>How many five-character passwords use only uppercase letters?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p>How many five-character passwords use only alphanumeric characters? That is, uppercase letters, lowercase letters, or digits, where <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">htr12</code> is considered different than the password <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">HtR12</code>.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p>How many five-character passwords use only alphanumeric characters, when repeated characters are not allowed? (That is, both <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">aabcd</code> and <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">abacd</code> are both not allowed.)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p>How many five-character passwords use only alphanumeric characters, when consecutive repeated characters are not allowed? (That is, <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">aabcd</code> is not allowed, but <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">abacd</code> is okay.)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
-<p>Consider the experiment where a five-character password is generated using alphanumeric characters (with repeated characters allowed). What's the probability that such a password would only have uppercase letters? Use the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">n()</code> tool to obtain a decimal approximation.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(f)</span></h6>
-<p>The code in <a class="xref" data-knowl="./knowl/random-combinatorics-passwords.html" title="Listing 7.2.1">7.2.1</a> simulates generating 100 thousand passwords and checking if the password contains all uppercase letters. Run the code as-is to confirm that it illustrates what you found in the previous task. Then annotate the code with <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore"># comments</code> that explain how it works.</p>
-<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py"># Add comments like this throughout that explain how this code works.
-points = []
-all_upper_count = 0
-for trial in range(1,100001):
-    all_upper = True
-    for _ in range(5):
-        next_character = randrange(62)
-        if next_character &gt;= 26:
-            all_upper = False
-    if all_upper:
-        all_upper_count += 1
-    ex_prob = all_upper_count/trial
-    points.append( (trial,ex_prob) )
-
-show(
-    line(points, color="blue")+line([(1,0.012969),(100000,0.012969)], color="red"),
-    axes_labels=["Trials","Exp. Prob."],
-)
-</code></pre></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">7.2.1<span class="period">.</span></span><span class="space"> </span>Simulate choosing random passwords 100K times</figcaption></figure></article></article><span class="incontext"><a href="random-combinatorics.html#activity-55">in-context</a></span>
+</h3>
+<div class="introduction">
+<p>Complex numbers are often written in <dfn class="terminology">polar form</dfn>, where <span class="process-math">\(r\)</span> describes the modulus and <span class="process-math">\(\theta\)</span> describes the argument:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+r\exp(\theta i)
+\end{equation*}
+</div>
+<p>For example, the polar form of <span class="process-math">\(4-3i\)</span> is (approximately) <span class="process-math">\(5\exp(-0.6435i)\text{,}\)</span> which may be confirmed by running <code class="code-inline tex2jax_ignore">5*exp(-0.6435*CDF(I))</code> in a Code cell.</p>
+</div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Write each of the following complex numbers in their polar forms, using their moduli and an approximation of their arguments found earlier:</p>
+<ul class="disc">
+<li><p><span class="process-math">\(\displaystyle 12+5i\)</span></p></li>
+<li><p><span class="process-math">\(\displaystyle -6+8i\)</span></p></li>
+<li><p><span class="process-math">\(\displaystyle \sqrt{3}-i\)</span></p></li>
+<li><p><span class="process-math">\(\displaystyle -3-3i\)</span></p></li>
+</ul></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Use SageMath to confirm each of the (approximate) polar forms you found in the previous task.</p></article></article><span class="incontext"><a href="complex-polar.html#activity-55" class="internal">in-context</a></span>
 </body>
 </html>

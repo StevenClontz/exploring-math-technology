@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:26Z       *-->
+<!--*       on 2022-06-15T21:02:36Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,29 +13,41 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.2.2</span><span class="period">.</span>
-</h6>
+</h3>
 <div class="introduction">
-<p>One of the most useful counting tools in mathematics is the <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">multiplication principle</dfn>. This principle is used when all the items to be counted come from a sequence of choices. If each item is made by making a choice from \(a\) things, then a choice from \(b\) things, then a choice from \(c\) things, and so on, then the total number of items is given by the product:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p>One important property for a complex number is its <dfn class="terminology">modulus</dfn> or <dfn class="terminology">absolute value</dfn>, which measures the distance between that number and the origin <span class="process-math">\(0+0i\text{.}\)</span> For example, the modulus <span class="process-math">\(|4-3i|\)</span> of <span class="process-math">\(4-3i\)</span> happens to be <span class="process-math">\(5\text{,}\)</span> illustrated in <a href="" class="xref" data-knowl="./knowl/complex-polar-modulus.html" title="Figure 7.2.2">7.2.2</a>.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/complex-polar-modulus.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.2.2<span class="period">.</span></span><span class="space"> </span>Modulus of <span class="process-math">\(4-3i\)</span></figcaption></figure>
+</div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Plot each of the following complex numbers in the plane. Then describe the modulus for each number.</p>
+<ul class="disc">
+<li><p><span class="process-math">\(\displaystyle 3\)</span></p></li>
+<li><p><span class="process-math">\(\displaystyle 2i\)</span></p></li>
+<li><p><span class="process-math">\(\displaystyle -4i\)</span></p></li>
+<li><p><span class="process-math">\(\displaystyle -1\)</span></p></li>
+</ul></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>SageMath confirms that the modulus of <span class="process-math">\(4-3i\)</span> is <span class="process-math">\(5\)</span> by running the following code: <code class="code-inline tex2jax_ignore">abs(CDF(4,-3))</code>.</p>
+<p>Use Code cells to confirm your modulus calculations from the previous task.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>Modify <a href="" class="xref" data-knowl="./knowl/complex-polar-preview-listing.html" title="Listing 7.2.1">7.2.1</a> to plot the following complex numbers. Then calculate their moduli using technology, to confirm that the largest modulus belongs to the number furthest from the origin, and the smallest modulus belongs to the number closest to the origin.</p>
+<ul class="disc">
+<li><p><span class="process-math">\(\displaystyle 12+5i\)</span></p></li>
+<li><p><span class="process-math">\(\displaystyle -6+8i\)</span></p></li>
+<li><p><span class="process-math">\(\displaystyle \sqrt{3}-i\)</span></p></li>
+<li><p><span class="process-math">\(\displaystyle -3-3i\)</span></p></li>
+</ul></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p>The formula to compute the modulus of <span class="process-math">\(a+bi\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-a\times b\times c\times \cdots
+|a+bi|=\sqrt{a^2+b^2}\text{.}
 \end{equation*}
 </div>
-<p>For example, suppose that a breakfast must include either eggs \(E\text{,}\) sausage \(S\text{,}\) or pancakes \(P\) to eat, and either coffee \(c\) or juice \(j\) to drink. Then this six possible breakfasts are eggs/coffee, eggs/juice, sausage/coffee, sausage/juice, pancakes/coffee, and pancakes/juice. Symbolically, these choices are:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-Ec,Ej,Sc,Sj,Pc,Pj
-\end{equation*}
-</div>
-<p>However, this number six can be computed without listing out every choice. This is because there are \(3\) choices for food and \(2\) choices for drink, yielding \(3\times 2=6\text{.}\)</p>
-</div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p>Suppose for a fancy dinner you are given four options as an appetizer, six options as an entree, three options as a beverage, and two options as a dessert. How many different dinners are possible?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p>Suppose you could choose an appetizer or a dessert, but not both. How many different dinners are possible in that scenario?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p>What if instead you consider the choice to skip any part of the meal, holding the appetizer, entree, beverage, and/or dessert. How many dinners are possible in that case?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p>What is the size of the sample space for the experiment of rolling a D6, then flipping a coin, then drawing a card from a shuffled 52-card deck?</p></article></article><span class="incontext"><a href="random-combinatorics.html#activity-53">in-context</a></span>
+<p class="continuation">Calculate the four moduli from the previous task using this formula.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p>The <dfn class="terminology">Pythagorean Theorem</dfn> says that <span class="process-math">\(a^2+b^2=c^2\text{,}\)</span> where <span class="process-math">\(a,b\)</span> are the leg lengths of a right triangle, and <code class="code-inline tex2jax_ignore">c</code> is the length of its hypotenuse, illustrated in <a href="" class="xref" data-knowl="./knowl/complex-polar-pythagorean.html" title="Figure 7.2.3">7.2.3</a>.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/complex-polar-pythagorean.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.2.3<span class="period">.</span></span><span class="space"> </span>Illustration of the Pythagorean Theorem</figcaption></figure><p>Write a sentence or two explaining why this theorem is related to the formula for the modulus of a complex number.</p></article></article><span class="incontext"><a href="complex-polar.html#activity-53" class="internal">in-context</a></span>
 </body>
 </html>

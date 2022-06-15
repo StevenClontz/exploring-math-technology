@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:21Z       *-->
+<!--*       on 2022-06-15T21:02:34Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,20 +12,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span>
-</h6>
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span>
+</h3>
 <div class="introduction">
-<p>The term <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">variable</dfn> means slightly different things in computer science and mathematics. In computer science, variables are used to store and retrieve data within an application. In mathematics, variables are used to represent an arbitrary or unknown value of data within a statement.</p>
-<p>These two concepts are related, but not exactly the same. Since SageMath is built upon Python, it provides support for both <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">CS variables</dfn> and <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">math variables</dfn>.</p>
+<p>The term <dfn class="terminology">variable</dfn> means slightly different things in computer science and mathematics. In computer science, variables are used to store and retrieve data within an application. In mathematics, variables are used to represent an arbitrary or unknown value of data within a statement.</p>
+<p>These two concepts are related, but not exactly the same. Since SageMath is built upon Python, it provides support for both <dfn class="terminology">CS variables</dfn> and <dfn class="terminology">math variables</dfn>.</p>
 </div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p>To assign a value to a CS variable, the <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">assignment operator</dfn> <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">=</code> is used. It's considered best practice to give CS variables <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">semantic</dfn>, that is, descriptive names such as <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">temperature_in_room</code>, using lowercase letters and underscore <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">_</code> characters.</p>
-<p>For each member of your group, use a code cell to assign a CS variable storing the number of pens (or pencils, or any object you'd like) each person has with them. An example is given in <a class="xref" data-knowl="./knowl/programming-sagemath-pens.html" title="Listing 1.3.2">1.3.2</a>; note that only a single Code cell is necessary, but each assignment should be made on a separate line.</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel fixed-width top" style="width:50%;"><figure class="table table-like"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.3.1<span class="period">.</span></span><span class="space"> </span>Sample pen data</figcaption><table xmlns:svg="http://www.w3.org/2000/svg" class="tabular">
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>To assign a value to a CS variable, the <dfn class="terminology">assignment operator</dfn> <code class="code-inline tex2jax_ignore">=</code> is used. It's considered best practice to give CS variables <dfn class="terminology">semantic</dfn>, that is, descriptive names such as <code class="code-inline tex2jax_ignore">temperature_in_room</code>, using lowercase letters and underscore <code class="code-inline tex2jax_ignore">_</code> characters.</p>
+<figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.2.1<span class="period">.</span></span><span class="space"> </span>Sample pen data</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines">Name</td>
 <td class="l m b1 r0 l0 t0 lines">Pens kept in backpack</td>
@@ -50,28 +55,24 @@
 <td class="l m b0 r0 l0 t0 lines">Steven</td>
 <td class="l m b0 r0 l0 t0 lines">22</td>
 </tr>
-</table></figure></div>
-<div class="sbspanel top" style="width:50%;"><figure class="listing figure-like"><pre class="program"><code class="language-py">craig_pens = 1
+</table></div></figure><pre class="ptx-sagecell sagecell-sage" id="sage-31"><script type="text/x-sage">craig_pens = 1
 laura_pens = 30
 phillip_pens = 18
 sherill_pens = 3
 steven_pens = 22
-</code></pre>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.3.2<span class="period">.</span></span><span class="space"> </span>Corresponding variable assignments</figcaption></figure></div>
-</div></div></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p>The value stored in a CS variable may be reused later by using the variable name. For example, <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">craig_pens+laura_pens+phillip_pens+sherill_pens+steven_pens</code> would return the result <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">74</code>.</p>
-<p>Use a code cell to find the sum of the pens in your group by writing the sum of the variable names. (Later we will learn much more elegant patterns for storing and using lists of data while still using long descriptive variable names as recommended.)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p>Variables can be overwritten. In a Jupyter notebook, you can go to a previous cell and edit the assignment, and you can also create a new Code cell and write the assignment.</p>
-<p>Try editing the assignment of one group member's pens in the previous Code cell, and try overwriting another group member's pens value by creating a Code cell below. For example, in <a class="xref" data-knowl="./knowl/programming-sagemath-pens-1.html" title="Listing 1.3.3">1.3.3</a> the original assignment for <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">craig_pens</code> is amended, but you could also amend the value of <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">phillip_pens</code> by creating a new Code cell below with the line <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">phillip_pens = 42</code>.</p>
-<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">craig_pens = 100
-laura_pens = 30
-phillip_pens = 18
-sherill_pens = 3
-steven_pens = 22
-</code></pre></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.3.3<span class="period">.</span></span><span class="space"> </span>Amended variable assignments</figcaption></figure></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p>Before doing anything further, write a sentence about what you notice about the result of your existing code cell adding the variables together.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
-<p>Now use the <kbd xmlns:svg="http://www.w3.org/2000/svg" class="kbdkey">Kernel</kbd> &gt; <kbd xmlns:svg="http://www.w3.org/2000/svg" class="kbdkey">Run All</kbd> menu option in CoCalc. Write a sentence or two explaining how the sum changed, and why.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(f)</span></h6>
-<p>Copy the line of code summing your variables into a new Code cell below (e.g. <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">craig_pens+laura_pens+phillip_pens+sherill_pens+steven_pens</code>). Write a sentence explaining why you get a different result even though the Code cells are exactly the same.</p></article></article><span class="incontext"><a href="programming-sagemath.html#programming-sagemath-csvars">in-context</a></span>
+# We aren't printing or showing anything
+# so nothing will appear when you run this!
+</script></pre>
+<p>For each member of your group, adapt the above code cell to assign a CS variable storing the number of pens (or pencils, or any object you'd like) each person has with them.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-32"><script type="text/x-sage"></script></pre></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>The value stored in a CS variable may be reused later by using the variable name. For example, the following code cell will return the result <code class="code-inline tex2jax_ignore">74</code> after the previous cell is run.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-33"><script type="text/x-sage">show(craig_pens+laura_pens+phillip_pens+sherill_pens+steven_pens)
+</script></pre>
+<p>Use the below code cell to find the sum of the pens in your group by writing the sum of the variable names you chose. (Later we will learn much more elegant patterns for storing and using lists of data while still using long descriptive variable names as recommended.)</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-34"><script type="text/x-sage"></script></pre></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>CS variables can be overwritten. You can go to a previous cell and edit the assignment, but you can also create a new Code cell and reassign the variables value.</p>
+<p>Try editing the assignment of Phillip's pens in the Code cell from <a href="" class="xref" data-knowl="./knowl/programming-sagemath-pens.html" title="Task 1.2.3.a">1.2.3.a</a>, and try overwriting Laura's pens value by In Code cell below. Re-run both cells.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-35"><script type="text/x-sage"></script></pre></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p>Run the Code cell below. Write a sentence explaining why you get a different result even though this cell is exactly the same as a previous cell.</p></article></article><span class="incontext"><a href="programming-sagemath.html#programming-sagemath-csvars" class="internal">in-context</a></span>
 </body>
 </html>

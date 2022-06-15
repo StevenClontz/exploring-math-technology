@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:26Z       *-->
+<!--*       on 2022-06-15T21:02:36Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,10 +13,31 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Task</span><span class="space"> </span><span class="codenumber">7.1.1.b</span><span class="period">.</span>
-</h6>
-<p>What if the coin is flipped three times? Is it more likely to be the same result on all tosses, or sometime different?</p></article><span class="incontext"><a href="random-probability.html#task-228">in-context</a></span>
+<body class="ignore-math">
+<article class="task exercise-like"><h4 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">6.1.5.d</span><span class="period">.</span>
+</h4>
+<p>Bugfix the SageMath for-loop in <a href="" class="xref" data-knowl="./knowl/random-probability-flips.html" title="Listing 6.1.1">6.1.1</a> to see how the experimental probability of flipping Heads can change as 1000 coinflips are simulated.</p>
+<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">heads = 0
+total = 0
+points = []
+
+for _ in range(1000):
+    # re-arrange the following lines, fixing indentation as needed
+    heads = heads + 1
+    points.append( (total,ex_prob) )
+    if flip == "H":
+        ex_prob = heads/total
+    total = total + 1
+    flip = choice(['H','T'])
+
+show(
+    line(points, color="blue")+line([(1,0.5),(1000,0.5)], color="red"),
+    axes_labels=["Trials","Exp. Prob."],
+    ymin=0,
+    ymax=1
+)
+</code></pre></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">6.1.1<span class="period">.</span></span><span class="space"> </span>Buggy code to simulate flipping coin 1000 times</figcaption></figure></article><span class="incontext"><a href="random-probability.html#task-228" class="internal">in-context</a></span>
 </body>
 </html>

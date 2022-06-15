@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:17Z       *-->
+<!--*       on 2022-06-15T17:35:20Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -9,23 +9,25 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>EMDST Using Markdown and LaTeX</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Exploring Mathematics and Data Science with Technology">
+<meta property="book:author" content="Dr. Steven Clontz">
 <script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
   },
   chtml: {
     scale: 0.88,
@@ -36,33 +38,66 @@
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://unpkg.com/prismjs@v1.22.0/themes/prism.css" rel="stylesheet">
-<script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="book-1.html"><span class="title">Exploring Mathematics and Data Science with Technology</span></a></h1>
 <p class="byline">Dr. Steven Clontz</p>
 </div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
 <a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="writing-math.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="writing.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="data.html" title="Next">Next</a></span>
@@ -72,143 +107,144 @@
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="writing-math.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="writing.html" title="Up">Up</a><a class="next-button button toolbar-item" href="data.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
-<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
-<li><a href="why.html" data-scroll="why">Why Study Mathematics?</a></li>
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="why.html" data-scroll="why" class="internal">Why Study Mathematics?</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="programming.html" data-scroll="programming"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
-<li><a href="programming-jupyter.html" data-scroll="programming-jupyter">Jupyter Notebooks and CoCalc</a></li>
-<li><a href="programming-python.html" data-scroll="programming-python">The Python Kernel</a></li>
-<li><a href="programming-sagemath.html" data-scroll="programming-sagemath">The SageMath Kernel</a></li>
+<a href="programming.html" data-scroll="programming" class="internal"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
+<li><a href="programming-jupyter.html" data-scroll="programming-jupyter" class="internal">Jupyter Notebooks and CoCalc</a></li>
+<li><a href="programming-python.html" data-scroll="programming-python" class="internal">The Python Kernel</a></li>
+<li><a href="programming-sagemath.html" data-scroll="programming-sagemath" class="internal">The SageMath Kernel</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="writing.html" data-scroll="writing"><span class="codenumber">2</span> <span class="title">Writing for Mathematicians and Data Scientists</span></a><ul>
-<li><a href="writing-math.html" data-scroll="writing-math">The Importance of Writing in Mathematics and Data Science</a></li>
+<a href="writing.html" data-scroll="writing" class="internal"><span class="codenumber">2</span> <span class="title">Writing for Mathematicians and Data Scientists</span></a><ul>
+<li><a href="writing-math.html" data-scroll="writing-math" class="internal">The Importance of Writing in Mathematics and Data Science</a></li>
 <li><a href="writing-markup.html" data-scroll="writing-markup" class="active">Using Markdown and LaTeX</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="data.html" data-scroll="data"><span class="codenumber">3</span> <span class="title">Data and Collections</span></a><ul>
-<li><a href="data-numbers.html" data-scroll="data-numbers">Numbers and Strings</a></li>
-<li><a href="data-collections.html" data-scroll="data-collections">Collections of Data</a></li>
-<li><a href="data-programming.html" data-scroll="data-programming">Programming with Data</a></li>
+<a href="data.html" data-scroll="data" class="internal"><span class="codenumber">3</span> <span class="title">Data and Collections</span></a><ul>
+<li><a href="data-numbers.html" data-scroll="data-numbers" class="internal">Numbers and Strings</a></li>
+<li><a href="data-collections.html" data-scroll="data-collections" class="internal">Collections of Data</a></li>
+<li><a href="data-programming.html" data-scroll="data-programming" class="internal">Programming with Data</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="visualization.html" data-scroll="visualization"><span class="codenumber">4</span> <span class="title">Visualization of Data</span></a><ul>
-<li><a href="visualization-tables.html" data-scroll="visualization-tables">Tables</a></li>
-<li><a href="visualization-one.html" data-scroll="visualization-one">Single-Variable Visualizations</a></li>
-<li><a href="visualization-two.html" data-scroll="visualization-two">Two-variable Visualizations</a></li>
+<a href="visualization.html" data-scroll="visualization" class="internal"><span class="codenumber">4</span> <span class="title">Visualization of Data</span></a><ul>
+<li><a href="visualization-tables.html" data-scroll="visualization-tables" class="internal">Tables</a></li>
+<li><a href="visualization-one.html" data-scroll="visualization-one" class="internal">Single-Variable Visualizations</a></li>
+<li><a href="visualization-two.html" data-scroll="visualization-two" class="internal">Two-variable Visualizations</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="measurements.html" data-scroll="measurements"><span class="codenumber">5</span> <span class="title">Measurements of Data</span></a><ul>
-<li><a href="measurements-center.html" data-scroll="measurements-center">Centers of Data</a></li>
-<li><a href="measurement-spread.html" data-scroll="measurement-spread">Spread of Data</a></li>
+<a href="measurements.html" data-scroll="measurements" class="internal"><span class="codenumber">5</span> <span class="title">Measurements of Data</span></a><ul>
+<li><a href="measurements-center.html" data-scroll="measurements-center" class="internal">Centers of Data</a></li>
+<li><a href="measurement-spread.html" data-scroll="measurement-spread" class="internal">Spread of Data</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="predictions.html" data-scroll="predictions"><span class="codenumber">6</span> <span class="title">Making Predictions from Data</span></a><ul>
-<li><a href="predictions-correlation.html" data-scroll="predictions-correlation">Measuring Correlation</a></li>
-<li><a href="predictions-regression.html" data-scroll="predictions-regression">The Fit Line</a></li>
+<a href="predictions.html" data-scroll="predictions" class="internal"><span class="codenumber">6</span> <span class="title">Making Predictions from Data</span></a><ul>
+<li><a href="predictions-correlation.html" data-scroll="predictions-correlation" class="internal">Measuring Correlation</a></li>
+<li><a href="predictions-regression.html" data-scroll="predictions-regression" class="internal">The Fit Line</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a><ul>
-<li><a href="random-probability.html" data-scroll="random-probability">Introduction to Probability</a></li>
-<li><a href="random-combinatorics.html" data-scroll="random-combinatorics">Combinatorics</a></li>
+<a href="random.html" data-scroll="random" class="internal"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a><ul>
+<li><a href="random-probability.html" data-scroll="random-probability" class="internal">Introduction to Probability</a></li>
+<li><a href="random-combinatorics.html" data-scroll="random-combinatorics" class="internal">Combinatorics</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a><ul>
-<li><a href="complex-cartesian.html" data-scroll="complex-cartesian">Cartesian Coordinates</a></li>
-<li><a href="complex-polar.html" data-scroll="complex-polar">Polar Form</a></li>
+<a href="complex.html" data-scroll="complex" class="internal"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a><ul>
+<li><a href="complex-cartesian.html" data-scroll="complex-cartesian" class="internal">Cartesian Coordinates</a></li>
+<li><a href="complex-polar.html" data-scroll="complex-polar" class="internal">Polar Form</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Space</span></a><ul>
-<li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean">Euclidean Vectors</a></li>
-<li><a href="vectors-matrices.html" data-scroll="vectors-matrices">Matrices</a></li>
-<li><a href="vectors-determinants.html" data-scroll="vectors-determinants">Determinants</a></li>
+<a href="vectors.html" data-scroll="vectors" class="internal"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Space</span></a><ul>
+<li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean" class="internal">Euclidean Vectors</a></li>
+<li><a href="vectors-matrices.html" data-scroll="vectors-matrices" class="internal">Matrices</a></li>
+<li><a href="vectors-determinants.html" data-scroll="vectors-determinants" class="internal">Determinants</a></li>
 </ul>
 </li>
-<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
-<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
-<li class="link"><a href="references.html" data-scroll="references"><span class="title">References</span></a></li>
-<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="references.html" data-scroll="references" class="internal"><span class="title">References</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="writing-markup"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="writing-markup"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Using Markdown and LaTeX</span>
 </h2>
-<article class="exploration project-like" id="exploration-5"><h6 class="heading">
+<article class="exploration project-like" id="exploration-5"><h3 class="heading">
 <span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span>
-</h6>
-<p id="p-144">Like many online platforms, Jupyter notebooks use <dfn class="terminology">Markdown</dfn> syntax for formatting text. The <a class="external" href="https://www.markdowntutorial.com/" target="_blank">Markdown Tutorial</a> provides an excellent walkthrough on its basics.</p>
-<p id="p-145">Complete the <a class="external" href="https://www.markdowntutorial.com/" target="_blank">Markdown Tutorial</a> and upload a screenshot of its “Congratulations” page below when you are done.</p></article><article class="activity project-like" id="activity-12"><h6 class="heading">
+</h3>
+<p id="p-144">Like many online platforms, Jupyter notebooks use <dfn class="terminology">Markdown</dfn> syntax for formatting text. The <a class="external" href="https://www.markdowntutorial.com/" target="_blank">Markdown Tutorial</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-11" id="fn-11"><sup> 1 </sup></a> provides an excellent walkthrough on its basics.</p>
+<p id="p-145">Complete the <a class="external" href="https://www.markdowntutorial.com/" target="_blank">Markdown Tutorial</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-12" id="fn-12"><sup> 2 </sup></a> and upload a screenshot of its “Congratulations” page below when you are done.</p></article><article class="activity project-like" id="activity-12"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span>
-</h6>
+</h3>
 <div class="introduction" id="introduction-16">
 <p id="p-146">Markdown has many features for writing formatted documents using plain text, but it does not provide much support for mathematical notation out-of-the-box.</p>
-<p id="p-147">Fortunately, many platforms that support Markdown also support <dfn class="terminology">LaTeX</dfn> (pronounced “lay-tek” or “lah-tek”, and stylized as \(\LaTeX{}\)) markup for mathematical notation.</p>
+<p id="p-147">Fortunately, many platforms that support Markdown also support <dfn class="terminology">LaTeX</dfn> (pronounced “lay-tek” or “lah-tek”, and stylized as <span class="process-math">\(\LaTeX{}\)</span>) markup for mathematical notation.</p>
 </div>
-<article class="task exercise-like" id="task-57"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<article class="task exercise-like" id="task-57"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <p id="p-148">To denote part of your writing as mathematical notation in a Markdown cell, use <code class="code-inline tex2jax_ignore">$</code> and <code class="code-inline tex2jax_ignore">$</code> to surround your mathematics.</p>
-<p id="p-149">Create two Markdown cells with the text <code class="code-inline tex2jax_ignore">The solution to x+1=7 is x=6.</code>. Then use <code class="code-inline tex2jax_ignore">$</code> and <code class="code-inline tex2jax_ignore">$</code> to surround the mathematical notation in one of those cells to observe the difference. (Don't forget to use <kbd class="kbdkey">Shift</kbd>+<kbd class="kbdkey">Enter</kbd> to display the formatted text.)</p></article><article class="task exercise-like" id="task-58"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-150">Now create two Markdown cells with the text <code class="code-inline tex2jax_ignore">The solutions to x^2-1=0 are x=-1 and x=1.</code>, and use <code class="code-inline tex2jax_ignore">$</code> and <code class="code-inline tex2jax_ignore">$</code> to surround the mathematics in one cell.</p></article><article class="task exercise-like" id="task-59"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-149">Create two Markdown cells with the text <code class="code-inline tex2jax_ignore">The solution to x+1=7 is x=6.</code>. Then use <code class="code-inline tex2jax_ignore">$</code> and <code class="code-inline tex2jax_ignore">$</code> to surround the mathematical notation in one of those cells to observe the difference. (Don't forget to use <kbd class="kbdkey">Shift</kbd>+<kbd class="kbdkey">Enter</kbd> to display the formatted text.)</p></article><article class="task exercise-like" id="task-58"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-150">Now create two Markdown cells with the text <code class="code-inline tex2jax_ignore">The solutions to x^2-1=0 are x=-1 and x=1.</code>, and use <code class="code-inline tex2jax_ignore">$</code> and <code class="code-inline tex2jax_ignore">$</code> to surround the mathematics in one cell.</p></article><article class="task exercise-like" id="task-59"><h4 class="heading"><span class="codenumber">(c)</span></h4>
 <p id="p-151">When typesetting longer mathematical notation, <code class="code-inline tex2jax_ignore">$$</code> and <code class="code-inline tex2jax_ignore">$$</code> may be used instead to center the mathematics on a new line.</p>
-<p id="p-152">Copy <code class="code-inline tex2jax_ignore">The only solution to x^4-4x^3+6x^2-4x+1=0 is x=1.</code> into a Markdown cell and appropriately format the long equation and short solution.</p></article><article class="task exercise-like" id="task-60"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-153">One of the best ways to learn \(\LaTeX{}\) notation is to view the source written by other authors. Consider the following formula:</p>
-<div class="displaymath">
+<p id="p-152">Copy <code class="code-inline tex2jax_ignore">The only solution to x^4-4x^3+6x^2-4x+1=0 is x=1.</code> into a Markdown cell and appropriately format the long equation and short solution.</p></article><article class="task exercise-like" id="task-60"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-153">One of the best ways to learn <span class="process-math">\(\LaTeX{}\)</span> notation is to view the source written by other authors. Consider the following formula:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 ax^2+bx+c=0 \Leftrightarrow x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
 \end{equation*}
 </div>
 <p id="p-154">To view the source markup for the above formula while in a Jupyter notebook on CoCalc, you can select the cell, and then use the <kbd class="kbdkey">Edit</kbd> &gt; <kbd class="kbdkey">Edit protect</kbd> menu option to make the cell editable. If you accidentally delete something, you can use CoCalc's Time Travel feature to restore it. (To view the LaTeX source of any mathematical notation in the HTML verison of this book, you can simply right-click the equation and use the menu that appears.)</p>
-<p id="p-155">Get the source for the formula above, and paste it into a Markdown cell below.</p></article></article><article class="activity project-like" id="activity-13"><h6 class="heading">
+<p id="p-155">Get the source for the formula above, and paste it into a Markdown cell below.</p></article></article><article class="activity project-like" id="activity-13"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
-</h6>
+</h3>
 <div class="introduction" id="introduction-17">
-<p id="p-156">Some LaTeX notation is rather straight-forward, with literal notation such as <code class="code-inline tex2jax_ignore">+</code> and <code class="code-inline tex2jax_ignore">-</code>, and intuitive notation such as <code class="code-inline tex2jax_ignore">^</code> for superscripts and <code class="code-inline tex2jax_ignore">_</code> for subscripts: <code class="code-inline tex2jax_ignore">a_0+a_1^2=-a_2^3</code> produces \(a_0+a_1^2=-a_2^3\text{.}\)</p>
-<p id="p-157">But multiplication cannot be represented by, say, <code class="code-inline tex2jax_ignore">x</code>, since that represents the variable \(x\text{.}\) (Instead we write <code class="code-inline tex2jax_ignore">2 \times 3</code> to produce \(2 \times 3\text{.}\))</p>
-<p id="p-158">Note that <code class="code-inline tex2jax_ignore">z_123</code> produces \(z_123\text{,}\) so grouping in LaTeX may be accomplished with curly braces <code class="code-inline tex2jax_ignore">{}</code>: <code class="code-inline tex2jax_ignore">z_{123}</code> produces \(z_{123}\text{.}\) Actual curly braces may be displayed as follows: <code class="code-inline tex2jax_ignore">\{1,2,3\}</code> produces \(\{1,2,3\}\text{.}\)</p>
-<p id="p-159">Even professionals usually know just a small subset of all the LaTeX commands available. Instead, references like <a class="external" href="https://katex.org/docs/supported.html" target="_blank">KaTeX's Support Table</a> and tools like <a class="external" href="https://detexify.kirelabs.org/classify.html" target="_blank">DeTeXify</a> allow for easy lookup of LaTeX commands as needed.</p>
+<p id="p-156">Some LaTeX notation is rather straight-forward, with literal notation such as <code class="code-inline tex2jax_ignore">+</code> and <code class="code-inline tex2jax_ignore">-</code>, and intuitive notation such as <code class="code-inline tex2jax_ignore">^</code> for superscripts and <code class="code-inline tex2jax_ignore">_</code> for subscripts: <code class="code-inline tex2jax_ignore">a_0+a_1^2=-a_2^3</code> produces <span class="process-math">\(a_0+a_1^2=-a_2^3\text{.}\)</span></p>
+<p id="p-157">But multiplication cannot be represented by, say, <code class="code-inline tex2jax_ignore">x</code>, since that represents the variable <span class="process-math">\(x\text{.}\)</span> (Instead we write <code class="code-inline tex2jax_ignore">2 \times 3</code> to produce <span class="process-math">\(2 \times 3\text{.}\)</span>)</p>
+<p id="p-158">Note that <code class="code-inline tex2jax_ignore">z_123</code> produces <span class="process-math">\(z_123\text{,}\)</span> so grouping in LaTeX may be accomplished with curly braces <code class="code-inline tex2jax_ignore">{}</code>: <code class="code-inline tex2jax_ignore">z_{123}</code> produces <span class="process-math">\(z_{123}\text{.}\)</span> Actual curly braces may be displayed as follows: <code class="code-inline tex2jax_ignore">\{1,2,3\}</code> produces <span class="process-math">\(\{1,2,3\}\text{.}\)</span></p>
+<p id="p-159">Even professionals usually know just a small subset of all the LaTeX commands available. Instead, references like <a class="external" href="https://katex.org/docs/supported.html" target="_blank">KaTeX's Support Table</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-13" id="fn-13"><sup> 3 </sup></a> and tools like <a class="external" href="https://detexify.kirelabs.org/classify.html" target="_blank">DeTeXify</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-14" id="fn-14"><sup> 4 </sup></a> allow for easy lookup of LaTeX commands as needed.</p>
 <p id="p-160">For each of the following samples of mathematical notation, <em class="emphasis">don't</em> peek at their source markup. Instead, use the above resources to replicate the notation as best as possible in a Markdown cell. After you've done as well as possible on your own, you should then compare with the original source code to improve your original work.</p>
 </div>
-<article class="task exercise-like" id="task-61"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<div class="displaymath">
+<article class="task exercise-like" id="task-61"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \det(A) = x_{11}x_{22}-x_{12}x_{21}
 \end{equation*}
-</div></article><article class="task exercise-like" id="task-62"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<div class="displaymath">
+</div></article><article class="task exercise-like" id="task-62"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \mathbb{Q} = \left\{\frac{p}{q}\,\middle|\,p\in\mathbb{Z},q\in\mathbb{Z}^+\right\}
 \end{equation*}
-</div></article><article class="task exercise-like" id="task-63"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<div class="displaymath">
+</div></article><article class="task exercise-like" id="task-63"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \sin(\alpha+\beta) = \sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta)
 \end{equation*}
-</div></article><article class="task exercise-like" id="task-64"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<div class="displaymath">
+</div></article><article class="task exercise-like" id="task-64"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \sigma(t) = \langle 0,t_1,2t_2,\dots,nt_n \rangle
 \end{equation*}
-</div></article><article class="task exercise-like" id="task-65"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<div class="displaymath">
+</div></article><article class="task exercise-like" id="task-65"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \overline{x} = \frac{1}{n}\left(\sum_{0\leq i\lt n}x_i\right)
 \end{equation*}
-</div></article></article><article class="activity project-like" id="activity-14"><h6 class="heading">
+</div></article></article><article class="activity project-like" id="activity-14"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
-</h6>
+</h3>
 <p id="p-161">LaTeX markup is used by many applications for typesetting mathematical notation. But it's also possible to write entire documents in LaTeX, that can be distributed as PDFs. Since it's very easy to write mathematics, manage bibliographies, and integrate a LaTeX document with computer code, it's very common for STEM researchers to author documents in LaTeX.</p>
 <p id="p-162">CoCalc provides a convenient LaTeX editor that you can use from your web browser. Try it out by following these steps.</p>
 <ul id="p-163" class="disc">
@@ -224,34 +260,39 @@ ax^2+bx+c=0 \Leftrightarrow x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
 <p id="p-170">When you're done, put a link to your LaTeX source file in a Markdown cell below. Since it's located in the same folder, if your file was named <code class="code-inline tex2jax_ignore">example.tex</code>, then it can be linked to by entering <code class="code-inline tex2jax_ignore">[Link to LaTeX file](example.tex)</code>.</p></article><section class="exercises" id="exercises-3"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-16"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<article class="exercise exercise-like" id="exercise-16"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
 <p id="p-171">Copy the following into a Markdown cell, and then appropriately style the words <code class="code-inline tex2jax_ignore">bold</code> and <code class="code-inline tex2jax_ignore">italics</code>.</p>
-<pre class="code-display tex2jax_ignore">I know how to style bold and italics in Markdown.</pre></article><article class="exercise exercise-like" id="exercise-17"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<pre class="code-display tex2jax_ignore">I know how to style bold and italics in Markdown.</pre></article><article class="exercise exercise-like" id="exercise-17"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
 <p id="p-172">Copy the following into a Markdown cell, and then make each sentence appear as a separate paragraph.</p>
-<pre class="code-display tex2jax_ignore">I know how to separate paragraphs in Markdown. See, I did it!</pre></article><article class="exercise exercise-like" id="exercise-18"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<pre class="code-display tex2jax_ignore">I know how to separate paragraphs in Markdown. See, I did it!</pre></article><article class="exercise exercise-like" id="exercise-18"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <p id="p-173">Copy the following into a Markdown cell, and then it link to your favorite YouTube video.</p>
-<pre class="code-display tex2jax_ignore">I know how to link my favorite YouTube video in Markdown.</pre></article><article class="exercise exercise-like" id="exercise-19"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<pre class="code-display tex2jax_ignore">I know how to link my favorite YouTube video in Markdown.</pre></article><article class="exercise exercise-like" id="exercise-19"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
 <p id="p-174">Copy the following into a Markdown cell, and make the first few words into a heading.</p>
-<pre class="code-display tex2jax_ignore">An important title. I know how to make headings in Markdown.</pre></article><article class="exercise exercise-like" id="exercise-20"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<pre class="code-display tex2jax_ignore">An important title. I know how to make headings in Markdown.</pre></article><article class="exercise exercise-like" id="exercise-20"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <p id="p-175">Copy the following into a Markdown cell, and make the list appear with bullets.</p>
 <pre class="code-display tex2jax_ignore">Here's a few of the things I know how to format in Markdown:
-bold, italics, links, headings, lists</pre></article><article class="exercise exercise-like" id="exercise-21"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+bold, italics, links, headings, lists</pre></article><article class="exercise exercise-like" id="exercise-21"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
 <p id="p-176">Replicate the following complete sentence using mathematical notation in a Markdown cell.</p>
-<blockquote class="blockquote" id="blockquote-1">After solving the equation \(3x=5x-6\) for \(x\text{,}\) we find that \(x=3\text{.}\)</blockquote></article><article class="exercise exercise-like" id="exercise-22"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
-<p id="p-177">Repeat the previous exercise, but make the equation \(3x=5x-6\) appear as a large, centered mathematical expression on its own line rather than an inline mathematical expression.</p></article><article class="exercise exercise-like" id="exercise-23"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<blockquote class="blockquote" id="blockquote-1">After solving the equation <span class="process-math">\(3x=5x-6\)</span> for <span class="process-math">\(x\text{,}\)</span> we find that <span class="process-math">\(x=3\text{.}\)</span>
+</blockquote></article><article class="exercise exercise-like" id="exercise-22"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<p id="p-177">Repeat the previous exercise, but make the equation <span class="process-math">\(3x=5x-6\)</span> appear as a large, centered mathematical expression on its own line rather than an inline mathematical expression.</p></article><article class="exercise exercise-like" id="exercise-23"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
 <p id="p-178">Typeset the following mathematical equation in a Markdown cell.</p>
-<div class="displaymath">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \sin(x) = \sum_{k=0}^\infty \frac{(-1)^kx^{2k+1}}{(2k+1)!}
 \end{equation*}
-</div></article><article class="exercise exercise-like" id="exercise-24"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+</div></article><article class="exercise exercise-like" id="exercise-24"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
 <p id="p-179">Typeset the following mathematical expression in a Markdown cell.</p>
-<div class="displaymath">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \binom{n}{k}^2=\binom{n-1}{k-1}^2+2\binom{n-1}{k-1}\binom{n-1}{k}+\binom{n-1}{k}^2
 \end{equation*}
-</div></article></section></section></div></main>
+</div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-11"><div class="fn"><code class="code-inline tex2jax_ignore">https://www.markdowntutorial.com/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-12"><div class="fn"><code class="code-inline tex2jax_ignore">https://www.markdowntutorial.com/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-13"><div class="fn"><code class="code-inline tex2jax_ignore">https://katex.org/docs/supported.html</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-14"><div class="fn"><code class="code-inline tex2jax_ignore">https://detexify.kirelabs.org/classify.html</code></div></div>
+</div></main>
 </div>
-<script src="https://unpkg.com/prismjs@v1.22.0/components/prism-core.min.js"></script><script src="https://unpkg.com/prismjs@v1.22.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 </html>

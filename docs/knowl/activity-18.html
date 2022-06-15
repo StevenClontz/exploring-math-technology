@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:22Z       *-->
+<!--*       on 2022-06-15T21:02:34Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,12 +13,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span>
-</h6>
-<p>There are other kinds of <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">real numbers</dfn>, such as \(e\) and \(\pi\text{,}\) that aren't rational. (The technical definition of the system of real numbers requires experience with calculus, so we won't get into that here.) There are other kinds of numbers as well, such as the <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">complex numbers</dfn> explorered in <a href="complex.html" class="internal" title="Chapter 8: Two-Dimensional Data and Complex Numbers">8</a>.</p>
-<p>Since SageMath tries to model mathematics as authentically as possible, it will try to recognize when you are working with integers or rational numbers. For example, <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">type(-17/3)</code> display that it is a “<code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">sage.rings.rational.Rational</code>”</p>
-<p>Use the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">type()</code> tool to help explain why \(-\frac{1234812348}{42}\) is an integer or rational number.</p></article><span class="incontext"><a href="data-numbers.html#activity-18">in-context</a></span>
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="period">.</span>
+</h3>
+<div class="introduction"><p>To avoid repetition, <dfn class="terminology">ranges</dfn> and <dfn class="terminology">comprehension</dfn> may be used to quickly describe longer lists, sets, and dictionaries.</p></div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Using the <code class="code-inline tex2jax_ignore">range()</code> tool, we can quickly create lists of counting numbers. For example, <code class="code-inline tex2jax_ignore">list(range(10))</code> returns the list <code class="code-inline tex2jax_ignore">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</code>. Note that this list contains ten different elements, but doesn't contain the number <code class="code-inline tex2jax_ignore">10</code> itself.</p>
+<p>By providing two numbers, you can specify the starting number (included) and ending number (not included). For example, <code class="code-inline tex2jax_ignore">list(range(-5,5)) == [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4]</code>.</p>
+<p>Use a range to create the list <code class="code-inline tex2jax_ignore">[-10, -9, ..., 9, 10]</code>.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Comprehension allows us to use formulas when defining a list. For example, <code class="code-inline tex2jax_ignore">[2*n for n in range(10)] == [0, 2, 4, ..., 18]</code>.</p>
+<p>Use comprehension to square each of the numbers in the list <code class="code-inline tex2jax_ignore">[-10, -9, ..., 9, 10]</code>, producing <code class="code-inline tex2jax_ignore">[100, 81, ..., 81, 100]</code>.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>Comprehension can also be used with sets and dictionaries. For example, <code class="code-inline tex2jax_ignore">{f"{n} doubled": 2*n for n in range(10)}</code> creates the dictionary <code class="code-inline tex2jax_ignore">{'0 doubled': 0, '1 doubled' 2, ..., '9 doubled': 18}</code>.</p>
+<p>Use comprehension to create the dictionary <code class="code-inline tex2jax_ignore">{'-10 squared': 100, '-9 squared': 81, ..., '10 squared': 100}</code>.</p></article></article><span class="incontext"><a href="data-collections.html#activity-18" class="internal">in-context</a></span>
 </body>
 </html>

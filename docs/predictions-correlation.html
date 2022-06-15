@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:19Z       *-->
+<!--*       on 2022-06-15T21:02:33Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -9,23 +9,38 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>EMDST Measuring Correlation</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>window.MathJax = {
+<meta property="og:type" content="book">
+<meta property="book:title" content="Exploring Mathematics and Data Science with Technology">
+<meta property="book:author" content="Dr. Steven Clontz">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.88,
@@ -36,33 +51,66 @@
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://unpkg.com/prismjs@v1.22.0/themes/prism.css" rel="stylesheet">
-<script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="book-1.html"><span class="title">Exploring Mathematics and Data Science with Technology</span></a></h1>
 <p class="byline">Dr. Steven Clontz</p>
 </div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
 <a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="predictions.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="predictions.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="predictions-regression.html" title="Next">Next</a></span>
@@ -72,106 +120,100 @@
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="predictions.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="predictions.html" title="Up">Up</a><a class="next-button button toolbar-item" href="predictions-regression.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
-<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
-<li><a href="why.html" data-scroll="why">Why Study Mathematics?</a></li>
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="why.html" data-scroll="why" class="internal">Why Study Mathematics?</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="programming.html" data-scroll="programming"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
-<li><a href="programming-jupyter.html" data-scroll="programming-jupyter">Jupyter Notebooks and CoCalc</a></li>
-<li><a href="programming-python.html" data-scroll="programming-python">The Python Kernel</a></li>
-<li><a href="programming-sagemath.html" data-scroll="programming-sagemath">The SageMath Kernel</a></li>
+<a href="programming.html" data-scroll="programming" class="internal"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
+<li><a href="programming-python.html" data-scroll="programming-python" class="internal">Using Python</a></li>
+<li><a href="programming-sagemath.html" data-scroll="programming-sagemath" class="internal">Using SageMath</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="writing.html" data-scroll="writing"><span class="codenumber">2</span> <span class="title">Writing for Mathematicians and Data Scientists</span></a><ul>
-<li><a href="writing-math.html" data-scroll="writing-math">The Importance of Writing in Mathematics and Data Science</a></li>
-<li><a href="writing-markup.html" data-scroll="writing-markup">Using Markdown and LaTeX</a></li>
+<a href="data.html" data-scroll="data" class="internal"><span class="codenumber">2</span> <span class="title">Data and Collections</span></a><ul>
+<li><a href="data-numbers.html" data-scroll="data-numbers" class="internal">Numbers and Strings</a></li>
+<li><a href="data-collections.html" data-scroll="data-collections" class="internal">Collections of Data</a></li>
+<li><a href="data-programming.html" data-scroll="data-programming" class="internal">Programming with Data</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="data.html" data-scroll="data"><span class="codenumber">3</span> <span class="title">Data and Collections</span></a><ul>
-<li><a href="data-numbers.html" data-scroll="data-numbers">Numbers and Strings</a></li>
-<li><a href="data-collections.html" data-scroll="data-collections">Collections of Data</a></li>
-<li><a href="data-programming.html" data-scroll="data-programming">Programming with Data</a></li>
+<a href="visualization.html" data-scroll="visualization" class="internal"><span class="codenumber">3</span> <span class="title">Visualization of Data</span></a><ul>
+<li><a href="visualization-tables.html" data-scroll="visualization-tables" class="internal">Tables</a></li>
+<li><a href="visualization-one.html" data-scroll="visualization-one" class="internal">Single-Variable Visualizations</a></li>
+<li><a href="visualization-two.html" data-scroll="visualization-two" class="internal">Two-variable Visualizations</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="visualization.html" data-scroll="visualization"><span class="codenumber">4</span> <span class="title">Visualization of Data</span></a><ul>
-<li><a href="visualization-tables.html" data-scroll="visualization-tables">Tables</a></li>
-<li><a href="visualization-one.html" data-scroll="visualization-one">Single-Variable Visualizations</a></li>
-<li><a href="visualization-two.html" data-scroll="visualization-two">Two-variable Visualizations</a></li>
+<a href="measurements.html" data-scroll="measurements" class="internal"><span class="codenumber">4</span> <span class="title">Measurements of Data</span></a><ul>
+<li><a href="measurements-center.html" data-scroll="measurements-center" class="internal">Centers of Data</a></li>
+<li><a href="measurement-spread.html" data-scroll="measurement-spread" class="internal">Spread of Data</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="measurements.html" data-scroll="measurements"><span class="codenumber">5</span> <span class="title">Measurements of Data</span></a><ul>
-<li><a href="measurements-center.html" data-scroll="measurements-center">Centers of Data</a></li>
-<li><a href="measurement-spread.html" data-scroll="measurement-spread">Spread of Data</a></li>
-</ul>
-</li>
-<li class="link">
-<a href="predictions.html" data-scroll="predictions"><span class="codenumber">6</span> <span class="title">Making Predictions from Data</span></a><ul>
+<a href="predictions.html" data-scroll="predictions" class="internal"><span class="codenumber">5</span> <span class="title">Making Predictions from Data</span></a><ul>
 <li><a href="predictions-correlation.html" data-scroll="predictions-correlation" class="active">Measuring Correlation</a></li>
-<li><a href="predictions-regression.html" data-scroll="predictions-regression">The Fit Line</a></li>
+<li><a href="predictions-regression.html" data-scroll="predictions-regression" class="internal">The Fit Line</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a><ul>
-<li><a href="random-probability.html" data-scroll="random-probability">Introduction to Probability</a></li>
-<li><a href="random-combinatorics.html" data-scroll="random-combinatorics">Combinatorics</a></li>
+<a href="random.html" data-scroll="random" class="internal"><span class="codenumber">6</span> <span class="title">Modeling Random Events</span></a><ul>
+<li><a href="random-probability.html" data-scroll="random-probability" class="internal">Introduction to Probability</a></li>
+<li><a href="random-combinatorics.html" data-scroll="random-combinatorics" class="internal">Combinatorics</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a><ul>
-<li><a href="complex-cartesian.html" data-scroll="complex-cartesian">Cartesian Coordinates</a></li>
-<li><a href="complex-polar.html" data-scroll="complex-polar">Polar Form</a></li>
+<a href="complex.html" data-scroll="complex" class="internal"><span class="codenumber">7</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a><ul>
+<li><a href="complex-cartesian.html" data-scroll="complex-cartesian" class="internal">Cartesian Coordinates</a></li>
+<li><a href="complex-polar.html" data-scroll="complex-polar" class="internal">Polar Form</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Space</span></a><ul>
-<li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean">Euclidean Vectors</a></li>
-<li><a href="vectors-matrices.html" data-scroll="vectors-matrices">Matrices</a></li>
-<li><a href="vectors-determinants.html" data-scroll="vectors-determinants">Determinants</a></li>
+<a href="vectors.html" data-scroll="vectors" class="internal"><span class="codenumber">8</span> <span class="title">Higher-Dimensional Data and Euclidean Space</span></a><ul>
+<li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean" class="internal">Euclidean Vectors</a></li>
+<li><a href="vectors-matrices.html" data-scroll="vectors-matrices" class="internal">Matrices</a></li>
+<li><a href="vectors-determinants.html" data-scroll="vectors-determinants" class="internal">Determinants</a></li>
 </ul>
 </li>
-<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
-<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
-<li class="link"><a href="references.html" data-scroll="references"><span class="title">References</span></a></li>
-<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="references.html" data-scroll="references" class="internal"><span class="title">References</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="predictions-correlation"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">6.1</span> <span class="title">Measuring Correlation</span>
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="predictions-correlation"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.1</span> <span class="title">Measuring Correlation</span>
 </h2>
-<article class="exploration project-like" id="predictions-correlation-preview"><h6 class="heading">
-<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">6.1.1</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-53">
-<p id="p-490">Consider the following scatter plots comparing college math placement exam scores to SAT math exam scores and the size of each student's high school.</p>
+<article class="exploration project-like" id="predictions-correlation-preview"><h3 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-47">
+<p id="p-434">Consider the following scatter plots comparing college math placement exam scores to SAT math exam scores and the size of each student's high school.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel top" style="width:50%;"><figure class="figure figure-like" id="predictions-correlation-preview-uncorrelated"><img src="external/images/predictions-correlation-uncorrelated.png" class="contained" alt=""><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.1<span class="period">.</span></span><span class="space"> </span>Scatter plot comparing school size and math placement scores</figcaption></figure></div>
-<div class="sbspanel top" style="width:50%;"><figure class="figure figure-like" id="predictions-correlation-preview-correlated"><img src="external/images/visualization-two-scatter.png" class="contained" alt=""><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.2<span class="period">.</span></span><span class="space"> </span>Scatter plot comparing SAT and math placement scores</figcaption></figure></div>
+<div class="sbspanel top" style="width:50%;"><figure class="figure figure-like" id="predictions-correlation-preview-uncorrelated"><img src="external/images/predictions-correlation-uncorrelated.png" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.1<span class="period">.</span></span><span class="space"> </span>Scatter plot comparing school size and math placement scores</figcaption></figure></div>
+<div class="sbspanel top" style="width:50%;"><figure class="figure figure-like" id="predictions-correlation-preview-correlated"><img src="external/images/visualization-two-scatter.png" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.2<span class="period">.</span></span><span class="space"> </span>Scatter plot comparing SAT and math placement scores</figcaption></figure></div>
 </div></div>
-<p id="p-491">Historically, the college placed students who recieved higher placement exam scores into more advanced math courses. But suppose this college decided to save money and time by no longer offering a math placement exam.</p>
+<p id="p-435">Historically, the college placed students who recieved higher placement exam scores into more advanced math courses. But suppose this college decided to save money and time by no longer offering a math placement exam.</p>
 </div>
-<article class="task exercise-like" id="task-195"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-492">Should the college place students who come from larger schools into more advanced math courses? Write a few sentences on why you agree or disagree, based on both the scatter plot and your intuition.</p></article><article class="task exercise-like" id="task-196"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-493">Should the college place students who scored higher on the math SAT into more advanced math courses? Write a few sentences on why you agree or disagree, based on both the scatter plot and your intuition.</p></article></article><article class="activity project-like" id="activity-43"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.2</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-54">
-<p id="p-494">When pairs of data values tend to fall along a line, that data is said to be linearly <dfn class="terminology">correlated</dfn>. The <dfn class="terminology">correlation coefficient</dfn> of these pairs of values is a number between \(-1\) and \(1\) that describes the strength of this correlation, known briefly as \(r\text{.}\)</p>
-<p id="p-495">A value of \(r=1\) means that the points of data fall exactly along an upward line, that is, one value tends to increase as the other value increases. On the other hand, \(r=-1\) means that the points of data fall exactly along a downward line, that is, one value tends to increase as the otehr value decreases. A value of \(r=0\) means there's no recognizable linear relationship between the pairs of data values.</p>
-<p id="p-496">However, most real datasets will have a fractional \(r\) value. Nonetheless, the closer this value is to \(1\) or \(-1\text{,}\) the stronger the correlation, while the closer this value is to \(0\text{,}\) the weaker the correlation. This is illustrated in <a class="xref" data-knowl="./knowl/predictions-correlation-coefficients.html" title="Figure 6.1.3">6.1.3</a> (obtained from <a class="external" href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient" target="_blank">Wikipedia</a>).</p>
-<figure class="figure figure-like" id="predictions-correlation-coefficients"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/predictions-correlation-coefficients.svg" class="contained" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.3<span class="period">.</span></span><span class="space"> </span>Illustrations of correlation coefficients</figcaption></figure><p id="p-497">The mathematics used to compute \(r\) are outside the scope of this course, so we will focus on understanding what \(r\) communicates about a dataset and how to compute \(r\) using technology.</p>
+<article class="task exercise-like" id="task-175"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-436">Should the college place students who come from larger schools into more advanced math courses? Write a few sentences on why you agree or disagree, based on both the scatter plot and your intuition.</p></article><article class="task exercise-like" id="task-176"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-437">Should the college place students who scored higher on the math SAT into more advanced math courses? Write a few sentences on why you agree or disagree, based on both the scatter plot and your intuition.</p></article></article><article class="activity project-like" id="activity-37"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-48">
+<p id="p-438">When pairs of data values tend to fall along a line, that data is said to be linearly <dfn class="terminology">correlated</dfn>. The <dfn class="terminology">correlation coefficient</dfn> of these pairs of values is a number between <span class="process-math">\(-1\)</span> and <span class="process-math">\(1\)</span> that describes the strength of this correlation, known briefly as <span class="process-math">\(r\text{.}\)</span></p>
+<p id="p-439">A value of <span class="process-math">\(r=1\)</span> means that the points of data fall exactly along an upward line, that is, one value tends to increase as the other value increases. On the other hand, <span class="process-math">\(r=-1\)</span> means that the points of data fall exactly along a downward line, that is, one value tends to increase as the otehr value decreases. A value of <span class="process-math">\(r=0\)</span> means there's no recognizable linear relationship between the pairs of data values.</p>
+<p id="p-440">However, most real datasets will have a fractional <span class="process-math">\(r\)</span> value. Nonetheless, the closer this value is to <span class="process-math">\(1\)</span> or <span class="process-math">\(-1\text{,}\)</span> the stronger the correlation, while the closer this value is to <span class="process-math">\(0\text{,}\)</span> the weaker the correlation. This is illustrated in <a href="" class="xref" data-knowl="./knowl/predictions-correlation-coefficients.html" title="Figure 5.1.3">5.1.3</a> (obtained from <a class="external" href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient" target="_blank">Wikipedia</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-10" id="fn-10"><sup> 1 </sup></a>).</p>
+<figure class="figure figure-like" id="predictions-correlation-coefficients"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/predictions-correlation-coefficients.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.3<span class="period">.</span></span><span class="space"> </span>Illustrations of correlation coefficients</figcaption></figure><p id="p-441">The mathematics used to compute <span class="process-math">\(r\)</span> are outside the scope of this course, so we will focus on understanding what <span class="process-math">\(r\)</span> communicates about a dataset and how to compute <span class="process-math">\(r\)</span> using technology.</p>
 </div>
-<article class="task exercise-like" id="task-197"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-498">Unfortunately, the <code class="code-inline tex2jax_ignore">datascience</code> library doesn't provide a great out-of-the-box mechanism for computing \(r\text{.}\) Fortunately, we can add two features to our <code class="code-inline tex2jax_ignore">datascience</code> tables by copy-pasting the snippet given in <a class="xref" data-knowl="./knowl/predictions-correlation-features.html" title="Listing 6.1.4">6.1.4</a> into a Code cell. (This will need to be done in every notebook that uses these features.)</p>
+<article class="task exercise-like" id="task-177"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-442">Unfortunately, the <code class="code-inline tex2jax_ignore">datascience</code> library doesn't provide a great out-of-the-box mechanism for computing <span class="process-math">\(r\text{.}\)</span> Fortunately, we can add two features to our <code class="code-inline tex2jax_ignore">datascience</code> tables by copy-pasting the snippet given in <a href="" class="xref" data-knowl="./knowl/predictions-correlation-features.html" title="Listing 5.1.4">5.1.4</a> into a Code cell. (This will need to be done in every notebook that uses these features.)</p>
 <figure class="listing figure-like" id="predictions-correlation-features"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">def with_correlated_columns(self,num_rows=100,x_range=5,slope=1,noise=1):
     from random import random
     table = self.select().with_columns("x",[],"y",[])
@@ -195,20 +237,20 @@ def correlation(self,col1_name,col2_name):
 setattr(Table,"with_correlated_columns",with_correlated_columns)
 setattr(Table,"correlation",correlation)
 </code></pre></div>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">6.1.4<span class="period">.</span></span><span class="space"> </span>Correlation features for <code class="code-inline tex2jax_ignore">datascience</code></figcaption></figure><p id="p-499">While we won't go into detail on how correlation is measured, it is related to the measures of center and spread studied in the previous chapter. Inspect the code shown in <a class="xref" data-knowl="./knowl/predictions-correlation-features.html" title="Listing 6.1.4">6.1.4</a>; what measure of center and what measure of spread appear to be used to compute correlation?</p></article><article class="task exercise-like" id="task-198"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-500">When <a class="xref" data-knowl="./knowl/predictions-correlation-features.html" title="Listing 6.1.4">6.1.4</a> is run successfully, no output will be shown. However, you should now be able to create a table by running <code class="code-inline tex2jax_ignore">ctable = Table().with_correlated_columns()</code>. (Note that this table is generated somewhat randomly, so re-running that line will create a slightly different table.)</p>
-<p id="p-501">Show ten rows and a scatter plot for this <code class="code-inline tex2jax_ignore">ctable</code>.</p></article><article class="task exercise-like" id="task-199"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-502">Based on the definition of the correlation coefficient \(r\) and the illustration given in <a class="xref" data-knowl="./knowl/predictions-correlation-coefficients.html" title="Figure 6.1.3">6.1.3</a>, would you expect the correlation of these pairs of data to be closer to \(-1\text{,}\) \(0\text{,}\) or \(1\text{?}\)</p></article><article class="task exercise-like" id="task-200"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-503">Run <code class="code-inline tex2jax_ignore">ctable.correlation("x","y")</code> to confirm your intuition.</p></article><article class="task exercise-like" id="task-201"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-504">Show a scatter plot for <code class="code-inline tex2jax_ignore">ctable2 = Table().with_correlated_columns(slope=3)</code>. Guess a value for <code class="code-inline tex2jax_ignore">r</code> based on the scatter plot, and then confirm your guess using technology.</p></article><article class="task exercise-like" id="task-202"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-505">Show a scatter plot for <code class="code-inline tex2jax_ignore">ctable3 = Table().with_correlated_columns(x_range=10,slope=-2)</code>. Guess a value for <code class="code-inline tex2jax_ignore">r</code> based on the scatter plot, and then confirm your guess using technology.</p></article><article class="task exercise-like" id="task-203"><h6 class="heading"><span class="codenumber">(g)</span></h6>
-<p id="p-506">Show a scatter plot for <code class="code-inline tex2jax_ignore">ctable4 = Table().with_correlated_columns(noise=5,slope=2)</code>. Guess a value for <code class="code-inline tex2jax_ignore">r</code> based on the scatter plot, and then confirm your guess using technology.</p></article><article class="task exercise-like" id="task-204"><h6 class="heading"><span class="codenumber">(h)</span></h6>
-<p id="p-507">Show a scatter plot for <code class="code-inline tex2jax_ignore">ctable5 = Table().with_correlated_columns(noise=100,slope=-4)</code>. Guess a value for <code class="code-inline tex2jax_ignore">r</code> based on the scatter plot, and then confirm your guess using technology.</p></article></article><article class="activity project-like" id="activity-44"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.3</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-55"><p id="p-508">It's important to remember that \(r\) measures <em class="emphasis">linear</em> correlation.</p></div>
-<article class="task exercise-like" id="task-205"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-509">Display a scatter plot visualizing the table generated by the code given in <a class="xref" data-knowl="./knowl/predictions-correlation-cosine.html" title="Listing 6.1.5">6.1.5</a>.</p>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.1.4<span class="period">.</span></span><span class="space"> </span>Correlation features for <code class="code-inline tex2jax_ignore">datascience</code></figcaption></figure><p id="p-443">While we won't go into detail on how correlation is measured, it is related to the measures of center and spread studied in the previous chapter. Inspect the code shown in <a href="" class="xref" data-knowl="./knowl/predictions-correlation-features.html" title="Listing 5.1.4">5.1.4</a>; what measure of center and what measure of spread appear to be used to compute correlation?</p></article><article class="task exercise-like" id="task-178"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-444">When <a href="" class="xref" data-knowl="./knowl/predictions-correlation-features.html" title="Listing 5.1.4">5.1.4</a> is run successfully, no output will be shown. However, you should now be able to create a table by running <code class="code-inline tex2jax_ignore">ctable = Table().with_correlated_columns()</code>. (Note that this table is generated somewhat randomly, so re-running that line will create a slightly different table.)</p>
+<p id="p-445">Show ten rows and a scatter plot for this <code class="code-inline tex2jax_ignore">ctable</code>.</p></article><article class="task exercise-like" id="task-179"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-446">Based on the definition of the correlation coefficient <span class="process-math">\(r\)</span> and the illustration given in <a href="" class="xref" data-knowl="./knowl/predictions-correlation-coefficients.html" title="Figure 5.1.3">5.1.3</a>, would you expect the correlation of these pairs of data to be closer to <span class="process-math">\(-1\text{,}\)</span> <span class="process-math">\(0\text{,}\)</span> or <span class="process-math">\(1\text{?}\)</span></p></article><article class="task exercise-like" id="task-180"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-447">Run <code class="code-inline tex2jax_ignore">ctable.correlation("x","y")</code> to confirm your intuition.</p></article><article class="task exercise-like" id="task-181"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-448">Show a scatter plot for <code class="code-inline tex2jax_ignore">ctable2 = Table().with_correlated_columns(slope=3)</code>. Guess a value for <code class="code-inline tex2jax_ignore">r</code> based on the scatter plot, and then confirm your guess using technology.</p></article><article class="task exercise-like" id="task-182"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<p id="p-449">Show a scatter plot for <code class="code-inline tex2jax_ignore">ctable3 = Table().with_correlated_columns(x_range=10,slope=-2)</code>. Guess a value for <code class="code-inline tex2jax_ignore">r</code> based on the scatter plot, and then confirm your guess using technology.</p></article><article class="task exercise-like" id="task-183"><h4 class="heading"><span class="codenumber">(g)</span></h4>
+<p id="p-450">Show a scatter plot for <code class="code-inline tex2jax_ignore">ctable4 = Table().with_correlated_columns(noise=5,slope=2)</code>. Guess a value for <code class="code-inline tex2jax_ignore">r</code> based on the scatter plot, and then confirm your guess using technology.</p></article><article class="task exercise-like" id="task-184"><h4 class="heading"><span class="codenumber">(h)</span></h4>
+<p id="p-451">Show a scatter plot for <code class="code-inline tex2jax_ignore">ctable5 = Table().with_correlated_columns(noise=100,slope=-4)</code>. Guess a value for <code class="code-inline tex2jax_ignore">r</code> based on the scatter plot, and then confirm your guess using technology.</p></article></article><article class="activity project-like" id="activity-38"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.3</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-49"><p id="p-452">It's important to remember that <span class="process-math">\(r\)</span> measures <em class="emphasis">linear</em> correlation.</p></div>
+<article class="task exercise-like" id="task-185"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-453">Display a scatter plot visualizing the table generated by the code given in <a href="" class="xref" data-knowl="./knowl/predictions-correlation-cosine.html" title="Listing 5.1.5">5.1.5</a>.</p>
 <figure class="listing figure-like" id="predictions-correlation-cosine"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">cos_table = Table(["x","y"])
 for _ in range(200):
     from random import random
@@ -216,37 +258,38 @@ for _ in range(200):
     seed = random()
     cos_table = cos_table.with_row([seed,cos(12.6*seed)])
 </code></pre></div>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">6.1.5<span class="period">.</span></span><span class="space"> </span>Randomly(?)-generated table of data</figcaption></figure></article><article class="task exercise-like" id="task-206"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-510">Based on the definition of the correlation coefficient \(r\) and the illustration given in <a class="xref" data-knowl="./knowl/predictions-correlation-coefficients.html" title="Figure 6.1.3">6.1.3</a>, would you expect the correlation of these pairs of data to be closer to \(-1\text{,}\) \(0\text{,}\) or \(1\text{?}\)</p></article><article class="task exercise-like" id="task-207"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-511">Confirm your guess using technology.</p></article><article class="task exercise-like" id="task-208"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-512">Regardless of the value of \(r\text{,}\) give one or more reasons based on the scatter plot for why it'd be fair to say that these data points are “related”.</p>
-<p id="p-513">In general, why might data be related even when \(r\) is close to zero?</p></article></article><article class="activity project-like" id="activity-45"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.4</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-56"><p id="p-514">Let's return to the question of math placement scores discussed in <a class="xref" data-knowl="./knowl/predictions-correlation-preview.html" title="Preview Activity 6.1.1">6.1.1</a>.</p></div>
-<article class="task exercise-like" id="task-209"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-515">Get a copy of <code class="code-inline tex2jax_ignore">testing_table</code> from 4.3 available for use in this notebook, and use code cells to produce the scatter plots shown in <a class="xref" data-knowl="./knowl/predictions-correlation-preview-uncorrelated.html" title="Figure 6.1.1">6.1.1</a> and <a class="xref" data-knowl="./knowl/predictions-correlation-preview-correlated.html" title="Figure 6.1.2">6.1.2</a>.</p>
-<p id="p-516">Don't forget to use <code class="code-inline tex2jax_ignore">import matplotlib</code>, <code class="code-inline tex2jax_ignore">%matplotlib inline</code>, and <code class="code-inline tex2jax_ignore">.where("column_name",are.above(0))</code> appropriately.</p></article><article class="task exercise-like" id="task-210"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-517">Describe your intuition for why SAT math scores, college math placement exam scores, and high school sizes may or may not be correlated with each other based upon the scatter plots.</p></article><article class="task exercise-like" id="task-211"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-518">Test your intuition by using technology to compute appropriate correlation coefficients. Explain why those values confirm or contradict your intuition.</p></article><article class="task exercise-like" id="task-212"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-519">Is it true to say that SAT math scores are <em class="emphasis">perfect</em> predictors of college math placement exam scores? Give reasons why or why not based upon the scatter plot, the value of \(r\) found, and your intuition.</p></article></article><section class="exercises" id="exercises-12"><h3 class="heading hide-type">
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.1.5<span class="period">.</span></span><span class="space"> </span>Randomly(?)-generated table of data</figcaption></figure></article><article class="task exercise-like" id="task-186"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-454">Based on the definition of the correlation coefficient <span class="process-math">\(r\)</span> and the illustration given in <a href="" class="xref" data-knowl="./knowl/predictions-correlation-coefficients.html" title="Figure 5.1.3">5.1.3</a>, would you expect the correlation of these pairs of data to be closer to <span class="process-math">\(-1\text{,}\)</span> <span class="process-math">\(0\text{,}\)</span> or <span class="process-math">\(1\text{?}\)</span></p></article><article class="task exercise-like" id="task-187"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-455">Confirm your guess using technology.</p></article><article class="task exercise-like" id="task-188"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-456">Regardless of the value of <span class="process-math">\(r\text{,}\)</span> give one or more reasons based on the scatter plot for why it'd be fair to say that these data points are “related”.</p>
+<p id="p-457">In general, why might data be related even when <span class="process-math">\(r\)</span> is close to zero?</p></article></article><article class="activity project-like" id="activity-39"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-50"><p id="p-458">Let's return to the question of math placement scores discussed in <a href="" class="xref" data-knowl="./knowl/predictions-correlation-preview.html" title="Preview Activity 5.1.1">5.1.1</a>.</p></div>
+<article class="task exercise-like" id="task-189"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-459">Get a copy of <code class="code-inline tex2jax_ignore">testing_table</code> from 4.3 available for use in this notebook, and use code cells to produce the scatter plots shown in <a href="" class="xref" data-knowl="./knowl/predictions-correlation-preview-uncorrelated.html" title="Figure 5.1.1">5.1.1</a> and <a href="" class="xref" data-knowl="./knowl/predictions-correlation-preview-correlated.html" title="Figure 5.1.2">5.1.2</a>.</p>
+<p id="p-460">Don't forget to use <code class="code-inline tex2jax_ignore">import matplotlib</code>, <code class="code-inline tex2jax_ignore">%matplotlib inline</code>, and <code class="code-inline tex2jax_ignore">.where("column_name",are.above(0))</code> appropriately.</p></article><article class="task exercise-like" id="task-190"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-461">Describe your intuition for why SAT math scores, college math placement exam scores, and high school sizes may or may not be correlated with each other based upon the scatter plots.</p></article><article class="task exercise-like" id="task-191"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-462">Test your intuition by using technology to compute appropriate correlation coefficients. Explain why those values confirm or contradict your intuition.</p></article><article class="task exercise-like" id="task-192"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-463">Is it true to say that SAT math scores are <em class="emphasis">perfect</em> predictors of college math placement exam scores? Give reasons why or why not based upon the scatter plot, the value of <span class="process-math">\(r\)</span> found, and your intuition.</p></article></article><section class="exercises" id="exercises-11"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-87"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-520">What does it mean when a collection of data pairs has a correlation coefficient \(r\) close to \(1\text{?}\)</p></article><article class="exercise exercise-like" id="exercise-88"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-521">What does it mean when a collection of data pairs has a correlation coefficient \(r\) close to \(-1\text{?}\)</p></article><article class="exercise exercise-like" id="exercise-89"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-522">Does a correlation coefficient \(r\) close to \(0\) mean that the pairs of values have no relationship at all? Describe an example from class that supports your answer.</p></article><article class="exercise exercise-like" id="exercise-90"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-523">For each of the following three scatter plots, estimate the value for the correlation coefficient, and explain why you chose your estimation.</p>
+<article class="exercise exercise-like" id="exercise-78"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<p id="p-464">What does it mean when a collection of data pairs has a correlation coefficient <span class="process-math">\(r\)</span> close to <span class="process-math">\(1\text{?}\)</span></p></article><article class="exercise exercise-like" id="exercise-79"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<p id="p-465">What does it mean when a collection of data pairs has a correlation coefficient <span class="process-math">\(r\)</span> close to <span class="process-math">\(-1\text{?}\)</span></p></article><article class="exercise exercise-like" id="exercise-80"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<p id="p-466">Does a correlation coefficient <span class="process-math">\(r\)</span> close to <span class="process-math">\(0\)</span> mean that the pairs of values have no relationship at all? Describe an example from class that supports your answer.</p></article><article class="exercise exercise-like" id="exercise-81"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<p id="p-467">For each of the following three scatter plots, estimate the value for the correlation coefficient, and explain why you chose your estimation.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel top" style="width:33.3333333333333%;"><figure class="figure figure-like" id="predictions-correlation-exercise-a"><img src="external/images/predictions-correlation-exercise-a.png" class="contained" alt=""><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.6<span class="period">.</span></span><span class="space"> </span>Scatter plot A</figcaption></figure></div>
-<div class="sbspanel top" style="width:33.3333333333333%;"><figure class="figure figure-like" id="predictions-correlation-exercise-b"><img src="external/images/predictions-correlation-exercise-b.png" class="contained" alt=""><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.7<span class="period">.</span></span><span class="space"> </span>Scatter plot B</figcaption></figure></div>
-<div class="sbspanel top" style="width:33.3333333333333%;"><figure class="figure figure-like" id="predictions-correlation-exercise-c"><img src="external/images/predictions-correlation-exercise-c.png" class="contained" alt=""><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.8<span class="period">.</span></span><span class="space"> </span>Scatter plot C</figcaption></figure></div>
-</div></div></article><article class="exercise exercise-like" id="exercise-91"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-524">Get a copy of <code class="code-inline tex2jax_ignore">testing_table</code> available in this notebook, as well as the correlation computational features given in <a class="xref" data-knowl="./knowl/predictions-correlation-features.html" title="Listing 6.1.4">6.1.4</a>.</p>
-<p id="p-525">Compute the correlation coefficient between SAT math exam scores and ACT math exam scores.</p></article><article class="exercise exercise-like" id="exercise-92"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-526">Write a sentence explaining what this correlation coefficient describes about SAT and ACT math exam scores.</p></article><article class="exercise exercise-like" id="exercise-93"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
-<p id="p-527">Show a scatter plot comparing SAT and ACT math exam scores. Explain how the scatter plot illustrates the correlation you found numerically.</p></article></section></section></div></main>
+<div class="sbspanel top" style="width:33.3333333333333%;"><figure class="figure figure-like" id="predictions-correlation-exercise-a"><img src="external/images/predictions-correlation-exercise-a.png" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.6<span class="period">.</span></span><span class="space"> </span>Scatter plot A</figcaption></figure></div>
+<div class="sbspanel top" style="width:33.3333333333333%;"><figure class="figure figure-like" id="predictions-correlation-exercise-b"><img src="external/images/predictions-correlation-exercise-b.png" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.7<span class="period">.</span></span><span class="space"> </span>Scatter plot B</figcaption></figure></div>
+<div class="sbspanel top" style="width:33.3333333333333%;"><figure class="figure figure-like" id="predictions-correlation-exercise-c"><img src="external/images/predictions-correlation-exercise-c.png" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.8<span class="period">.</span></span><span class="space"> </span>Scatter plot C</figcaption></figure></div>
+</div></div></article><article class="exercise exercise-like" id="exercise-82"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<p id="p-468">Get a copy of <code class="code-inline tex2jax_ignore">testing_table</code> available in this notebook, as well as the correlation computational features given in <a href="" class="xref" data-knowl="./knowl/predictions-correlation-features.html" title="Listing 5.1.4">5.1.4</a>.</p>
+<p id="p-469">Compute the correlation coefficient between SAT math exam scores and ACT math exam scores.</p></article><article class="exercise exercise-like" id="exercise-83"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<p id="p-470">Write a sentence explaining what this correlation coefficient describes about SAT and ACT math exam scores.</p></article><article class="exercise exercise-like" id="exercise-84"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<p id="p-471">Show a scatter plot comparing SAT and ACT math exam scores. Explain how the scatter plot illustrates the correlation you found numerically.</p></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-10"><div class="fn"><code class="code-inline tex2jax_ignore">https://en.wikipedia.org/wiki/Pearson_correlation_coefficient</code></div></div>
+</div></main>
 </div>
-<script src="https://unpkg.com/prismjs@v1.22.0/components/prism-core.min.js"></script><script src="https://unpkg.com/prismjs@v1.22.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 </html>

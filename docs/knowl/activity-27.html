@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:23Z       *-->
+<!--*       on 2022-06-15T21:02:35Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,42 +13,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span>
-</h6>
-<p>A common exercise in entry-level programming interviews is known as “FizzBuzz”. Write a program that for each of the numbers \(1\) through \(100\) prints that number, the word “Fizz” if that number is divisible by \(3\text{,}\) and “Buzz” if that number is divisible by \(5\text{.}\) Example output for the numbers \(1\) through \(15\) is given in <a class="xref" data-knowl="./knowl/data-programming-fizzbuzz-output.html" title="Listing 3.3.9">3.3.9</a>.</p>
-<p>The code in <a class="xref" data-knowl="./knowl/data-programming-fizzbuzz-scrambled.html" title="Listing 3.3.8">3.3.8</a> implements FizzBuzz in Python, but the lines are out of order and missing indentation. Fix the code to correctly display output as in <a class="xref" data-knowl="./knowl/data-programming-fizzbuzz-output.html" title="Listing 3.3.9">3.3.9</a>.</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel top" style="width:47.3684210526316%;"><figure class="listing figure-like"><pre class="program"><code class="language-py">fizz = ""
-print(f"{number}{fizz}{buzz}")
-fizz = " Fizz"
-if number % 3 == 0: # if number is divisible by three
-buzz = ""
-else:
-buzz = " Buzz"
-max_number = 100
-else:
-for number in range(1,max_number+1):
-if number % 5 == 0:
-</code></pre>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.8<span class="period">.</span></span><span class="space"> </span>Scrambled FizzBuzz program</figcaption></figure></div>
-<div class="sbspanel top" style="width:47.3684210526316%;"><figure class="listing figure-like"><pre class="code-display tex2jax_ignore">1
-2
-3 Fizz
-4
-5 Buzz
-6 Fizz
-7
-8
-9 Fizz
-10 Buzz
-11
-12 Fizz
-13
-14
-15 Fizz Buzz</pre>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.9<span class="period">.</span></span><span class="space"> </span>Beginning FizzBuzz output.</figcaption></figure></div>
-</div></div></article><span class="incontext"><a href="data-programming.html#activity-27">in-context</a></span>
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span>
+</h3>
+<div class="introduction">
+<p>While a histogram is a useful summary of a univariate dataset, this data can often be further summarized by the use of a <dfn class="terminology">box plot</dfn>, also known as a box-and-whisker plot.</p>
+<p>A box plot organizes numerical data into four parts, each illustrating (roughly) a quarter of all the data values: the left whisker, the left box half, the right box half, and the right whisker. (We will explore these ranges in more detail in <a href="measurements.html" class="internal" title="Chapter 4: Measurements of Data">4</a>.)</p>
+<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py"># First code cell
+print("Oct 09 Pizza Prices")
+pizza_table.where("date","2015-10-09").select("price").hist(normed=False)
+pizza_table.where("date","2015-10-09").select("price").boxplot(vert=False)
+
+# Second code cell
+print("Oct 10 Pizza Prices")
+pizza_table.where("date","2015-10-10").select("price").hist(normed=False)
+pizza_table.where("date","2015-10-10").select("price").boxplot(vert=False)
+</code></pre></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.2.7<span class="period">.</span></span><span class="space"> </span>Code for creating box plots</figcaption></figure>
+</div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Run the first half of the code found in <a href="" class="xref" data-knowl="./knowl/visualization-one-box-plots.html" title="Listing 3.2.7">3.2.7</a> to compare a histogram to a box plot. Write a few sentences comparing how the data is presented in each graphic.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Run the second half of the code found in <a href="" class="xref" data-knowl="./knowl/visualization-one-box-plots.html" title="Listing 3.2.7">3.2.7</a> to compare another histogram to a box plot. What do you notice about this second box plot that wasn't in the first? What do you expect this feature represents?</p></article></article><span class="incontext"><a href="visualization-one.html#activity-27" class="internal">in-context</a></span>
 </body>
 </html>

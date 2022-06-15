@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:17Z       *-->
+<!--*       on 2022-06-15T21:02:33Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -9,23 +9,38 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>EMDST The SageMath Kernel</title>
+<title>EMDST Using SageMath</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>window.MathJax = {
+<meta property="og:type" content="book">
+<meta property="book:title" content="Exploring Mathematics and Data Science with Technology">
+<meta property="book:author" content="Dr. Steven Clontz">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.88,
@@ -36,145 +51,199 @@
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://unpkg.com/prismjs@v1.22.0/themes/prism.css" rel="stylesheet">
-<script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="book-1.html"><span class="title">Exploring Mathematics and Data Science with Technology</span></a></h1>
 <p class="byline">Dr. Steven Clontz</p>
 </div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="programming-python.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="programming.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="writing.html" title="Next">Next</a></span>
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="programming-python.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="programming.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="data.html" title="Next">Next</a></span>
 </div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="programming-python.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="programming.html" title="Up">Up</a><a class="next-button button toolbar-item" href="writing.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="programming-python.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="programming.html" title="Up">Up</a><a class="next-button button toolbar-item" href="data.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
-<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
-<li><a href="why.html" data-scroll="why">Why Study Mathematics?</a></li>
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="why.html" data-scroll="why" class="internal">Why Study Mathematics?</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="programming.html" data-scroll="programming"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
-<li><a href="programming-jupyter.html" data-scroll="programming-jupyter">Jupyter Notebooks and CoCalc</a></li>
-<li><a href="programming-python.html" data-scroll="programming-python">The Python Kernel</a></li>
-<li><a href="programming-sagemath.html" data-scroll="programming-sagemath" class="active">The SageMath Kernel</a></li>
+<a href="programming.html" data-scroll="programming" class="internal"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
+<li><a href="programming-python.html" data-scroll="programming-python" class="internal">Using Python</a></li>
+<li><a href="programming-sagemath.html" data-scroll="programming-sagemath" class="active">Using SageMath</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="writing.html" data-scroll="writing"><span class="codenumber">2</span> <span class="title">Writing for Mathematicians and Data Scientists</span></a><ul>
-<li><a href="writing-math.html" data-scroll="writing-math">The Importance of Writing in Mathematics and Data Science</a></li>
-<li><a href="writing-markup.html" data-scroll="writing-markup">Using Markdown and LaTeX</a></li>
+<a href="data.html" data-scroll="data" class="internal"><span class="codenumber">2</span> <span class="title">Data and Collections</span></a><ul>
+<li><a href="data-numbers.html" data-scroll="data-numbers" class="internal">Numbers and Strings</a></li>
+<li><a href="data-collections.html" data-scroll="data-collections" class="internal">Collections of Data</a></li>
+<li><a href="data-programming.html" data-scroll="data-programming" class="internal">Programming with Data</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="data.html" data-scroll="data"><span class="codenumber">3</span> <span class="title">Data and Collections</span></a><ul>
-<li><a href="data-numbers.html" data-scroll="data-numbers">Numbers and Strings</a></li>
-<li><a href="data-collections.html" data-scroll="data-collections">Collections of Data</a></li>
-<li><a href="data-programming.html" data-scroll="data-programming">Programming with Data</a></li>
+<a href="visualization.html" data-scroll="visualization" class="internal"><span class="codenumber">3</span> <span class="title">Visualization of Data</span></a><ul>
+<li><a href="visualization-tables.html" data-scroll="visualization-tables" class="internal">Tables</a></li>
+<li><a href="visualization-one.html" data-scroll="visualization-one" class="internal">Single-Variable Visualizations</a></li>
+<li><a href="visualization-two.html" data-scroll="visualization-two" class="internal">Two-variable Visualizations</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="visualization.html" data-scroll="visualization"><span class="codenumber">4</span> <span class="title">Visualization of Data</span></a><ul>
-<li><a href="visualization-tables.html" data-scroll="visualization-tables">Tables</a></li>
-<li><a href="visualization-one.html" data-scroll="visualization-one">Single-Variable Visualizations</a></li>
-<li><a href="visualization-two.html" data-scroll="visualization-two">Two-variable Visualizations</a></li>
+<a href="measurements.html" data-scroll="measurements" class="internal"><span class="codenumber">4</span> <span class="title">Measurements of Data</span></a><ul>
+<li><a href="measurements-center.html" data-scroll="measurements-center" class="internal">Centers of Data</a></li>
+<li><a href="measurement-spread.html" data-scroll="measurement-spread" class="internal">Spread of Data</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="measurements.html" data-scroll="measurements"><span class="codenumber">5</span> <span class="title">Measurements of Data</span></a><ul>
-<li><a href="measurements-center.html" data-scroll="measurements-center">Centers of Data</a></li>
-<li><a href="measurement-spread.html" data-scroll="measurement-spread">Spread of Data</a></li>
+<a href="predictions.html" data-scroll="predictions" class="internal"><span class="codenumber">5</span> <span class="title">Making Predictions from Data</span></a><ul>
+<li><a href="predictions-correlation.html" data-scroll="predictions-correlation" class="internal">Measuring Correlation</a></li>
+<li><a href="predictions-regression.html" data-scroll="predictions-regression" class="internal">The Fit Line</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="predictions.html" data-scroll="predictions"><span class="codenumber">6</span> <span class="title">Making Predictions from Data</span></a><ul>
-<li><a href="predictions-correlation.html" data-scroll="predictions-correlation">Measuring Correlation</a></li>
-<li><a href="predictions-regression.html" data-scroll="predictions-regression">The Fit Line</a></li>
+<a href="random.html" data-scroll="random" class="internal"><span class="codenumber">6</span> <span class="title">Modeling Random Events</span></a><ul>
+<li><a href="random-probability.html" data-scroll="random-probability" class="internal">Introduction to Probability</a></li>
+<li><a href="random-combinatorics.html" data-scroll="random-combinatorics" class="internal">Combinatorics</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a><ul>
-<li><a href="random-probability.html" data-scroll="random-probability">Introduction to Probability</a></li>
-<li><a href="random-combinatorics.html" data-scroll="random-combinatorics">Combinatorics</a></li>
+<a href="complex.html" data-scroll="complex" class="internal"><span class="codenumber">7</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a><ul>
+<li><a href="complex-cartesian.html" data-scroll="complex-cartesian" class="internal">Cartesian Coordinates</a></li>
+<li><a href="complex-polar.html" data-scroll="complex-polar" class="internal">Polar Form</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a><ul>
-<li><a href="complex-cartesian.html" data-scroll="complex-cartesian">Cartesian Coordinates</a></li>
-<li><a href="complex-polar.html" data-scroll="complex-polar">Polar Form</a></li>
+<a href="vectors.html" data-scroll="vectors" class="internal"><span class="codenumber">8</span> <span class="title">Higher-Dimensional Data and Euclidean Space</span></a><ul>
+<li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean" class="internal">Euclidean Vectors</a></li>
+<li><a href="vectors-matrices.html" data-scroll="vectors-matrices" class="internal">Matrices</a></li>
+<li><a href="vectors-determinants.html" data-scroll="vectors-determinants" class="internal">Determinants</a></li>
 </ul>
 </li>
-<li class="link">
-<a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Space</span></a><ul>
-<li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean">Euclidean Vectors</a></li>
-<li><a href="vectors-matrices.html" data-scroll="vectors-matrices">Matrices</a></li>
-<li><a href="vectors-determinants.html" data-scroll="vectors-determinants">Determinants</a></li>
-</ul>
-</li>
-<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
-<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
-<li class="link"><a href="references.html" data-scroll="references"><span class="title">References</span></a></li>
-<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="references.html" data-scroll="references" class="internal"><span class="title">References</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="programming-sagemath"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">The SageMath Kernel</span>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="programming-sagemath"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.2</span> <span class="title">Using SageMath</span>
 </h2>
-<article class="exploration project-like" id="programming-sagemath-preview"><h6 class="heading">
-<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-9"><p id="p-78">Many of the features of the Python language/kernel are optimized for computational efficiency, such as using binary approximations of fractions. This is valuable for applications like data science, but for studying mathematics itself we will find it useful to have another kernel available to more precisely model things, namely, <dfn class="terminology">SageMath</dfn>.</p></div>
-<article class="task exercise-like" id="task-28"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-79">Confirm that <code class="code-inline tex2jax_ignore">6^2</code> and <code class="code-inline tex2jax_ignore">6**2</code> both represent \(6^2=36\) in SageMath.</p></article><article class="task exercise-like" id="task-29"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-80">Confirm that <code class="code-inline tex2jax_ignore">1/10+1/5</code> equals exactly \(\frac{3}{10}\) in SageMath.</p></article><article class="task exercise-like" id="task-30"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-81">Finally, use <code class="code-inline tex2jax_ignore">show( (x+1)^3 == ((x+1)^3).full_simplify() )</code> to display the algebraic formula \((x+1)^3=x^3+3x^2+3x+1\text{.}\)</p></article></article><article class="activity project-like" id="activity-7"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-10"><p id="p-82">SageMath is a mathematical software system designed for representing ideas from mathematics as faithfully as possible.</p></div>
-<article class="task exercise-like" id="task-31"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-83">Several important numbers in mathematics may be used in SageMath with <code class="code-inline tex2jax_ignore">pi</code> for the circular constant \(\pi\text{,}\) <code class="code-inline tex2jax_ignore">e</code> for the natural number \(e\text{,}\) and <code class="code-inline tex2jax_ignore">i</code> for the imaginary unit \(i\text{.}\) (Don't worry if you aren't familiar with these yet.)</p>
-<p id="p-84">Check to see what SageMath gives as the value of \(e^{i\pi}+1\text{.}\)</p></article><article class="task exercise-like" id="task-32"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-85">SageMath won't approximate any values unless asked. You can check this by typing <code class="code-inline tex2jax_ignore">pi^2</code> and <code class="code-inline tex2jax_ignore">e^3</code>. To make them appear with mathematical formatting as \(\pi^2\) and \(e^3\text{,}\) use the <code class="code-inline tex2jax_ignore">show()</code> syntax like you did in <a class="xref" data-knowl="./knowl/programming-sagemath-preview.html" title="Preview Activity 1.3.1">1.3.1</a>.</p></article><article class="task exercise-like" id="task-33"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-86">If an approximation is desired, the numerical approximation tool <code class="code-inline tex2jax_ignore">n</code> may be used. Find an approximate value for \(\sqrt{2}\) by using <code class="code-inline tex2jax_ignore">sqrt(2).n(digits=10)</code>.</p></article><article class="task exercise-like" id="task-34"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-87">Which is bigger: \(\pi^e\) or \(e^\pi\text{?}\)</p></article></article><article class="activity project-like" id="programming-sagemath-csvars"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-11">
-<p id="p-88">The term <dfn class="terminology">variable</dfn> means slightly different things in computer science and mathematics. In computer science, variables are used to store and retrieve data within an application. In mathematics, variables are used to represent an arbitrary or unknown value of data within a statement.</p>
-<p id="p-89">These two concepts are related, but not exactly the same. Since SageMath is built upon Python, it provides support for both <dfn class="terminology">CS variables</dfn> and <dfn class="terminology">math variables</dfn>.</p>
+<article class="exploration project-like" id="programming-sagemath-preview"><h3 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-7"><p id="p-66">Many of the features of the Python language are optimized for computational efficiency, such as using binary approximations of fractions. This is valuable for applications like data science, but for studying mathematics itself we will find it useful to have another language that more closely models mathematics, namely, <dfn class="terminology">SageMath</dfn> (or “Sage” for short).</p></div>
+<article class="task exercise-like" id="task-24"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-67">Confirm that <code class="code-inline tex2jax_ignore">6^2</code> and <code class="code-inline tex2jax_ignore">6**2</code> both represent <span class="process-math">\(6^2=36\)</span> in SageMath code cells (note the buttons include “(Sage)”, and we prefer to use <code class="code-inline tex2jax_ignore">show()</code> in place of <code class="code-inline tex2jax_ignore">print()</code> when using SageMath.).</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-22"><script type="text/x-sage">result = 6^2
+show(result)
+</script></pre>
+<pre class="ptx-sagecell sagecell-sage" id="sage-23"><script type="text/x-sage">result = # FIX ME!
+show(result)
+</script></pre></article><article class="task exercise-like" id="task-25"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-68">Confirm that <code class="code-inline tex2jax_ignore">1/10+1/5</code> equals exactly <span class="process-math">\(\frac{3}{10}\)</span> in SageMath.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-24"><script type="text/x-sage"></script></pre></article><article class="task exercise-like" id="task-26"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-69">Run the following code cell to display the algebraic formula <span class="process-math">\((x+1)^3=x^3+3x^2+3x+1\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-25"><script type="text/x-sage">equation = ( (x+1)^3 == ((x+1)^3).full_simplify() )
+show(equation)
+</script></pre>
+<p id="p-70">Then modify the above cell to find a formula for <span class="process-math">\((x+1)^4\text{.}\)</span></p></article></article><article class="activity project-like" id="activity-5"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-8"><p id="p-71">SageMath is a mathematical software system designed for representing ideas from mathematics as faithfully as possible.</p></div>
+<article class="task exercise-like" id="task-27"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-72">Several important numbers in mathematics may be used in SageMath with <code class="code-inline tex2jax_ignore">pi</code> for the circular constant <span class="process-math">\(\pi\text{,}\)</span> <code class="code-inline tex2jax_ignore">e</code> for the natural number <span class="process-math">\(e\text{,}\)</span> and <code class="code-inline tex2jax_ignore">i</code> for the imaginary unit <span class="process-math">\(i\text{.}\)</span> (Don't worry if you aren't familiar with these yet.)</p>
+<p id="p-73">Modify the below cell to see what SageMath gives as the value of <span class="process-math">\(e^{i\pi}+1\)</span> (you might be surprised to see that it's a very simple number!).</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-26"><script type="text/x-sage">result = 2^(3*4)-1
+show(result)
+</script></pre></article><article class="task exercise-like" id="task-28"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-74">SageMath won't approximate any values unless asked. You can check this by running the following cell.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-27"><script type="text/x-sage">result = pi^2
+show(result)
+</script></pre>
+<p id="p-75">Modify this cell using <code class="code-inline tex2jax_ignore">sqrt(e)</code> to display <span class="process-math">\(\sqrt{e}\text{.}\)</span></p></article><article class="task exercise-like" id="task-29"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-76">If an approximation is desired, results may be rounded to four decimal places by running code as follows.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-28"><script type="text/x-sage">result = round(pi^2,4)
+show(result)
+</script></pre>
+<p id="p-77">Find an approximate value for <span class="process-math">\(\sqrt{e}\)</span> with five decimal places.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-29"><script type="text/x-sage"></script></pre></article><article class="task exercise-like" id="task-30"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-78">Use a code cell to decide which is bigger: <span class="process-math">\(\pi^e\)</span> or <span class="process-math">\(e^\pi\text{?}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-30"><script type="text/x-sage"></script></pre></article></article><article class="activity project-like" id="programming-sagemath-csvars"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-9">
+<p id="p-79">The term <dfn class="terminology">variable</dfn> means slightly different things in computer science and mathematics. In computer science, variables are used to store and retrieve data within an application. In mathematics, variables are used to represent an arbitrary or unknown value of data within a statement.</p>
+<p id="p-80">These two concepts are related, but not exactly the same. Since SageMath is built upon Python, it provides support for both <dfn class="terminology">CS variables</dfn> and <dfn class="terminology">math variables</dfn>.</p>
 </div>
-<article class="task exercise-like" id="task-35"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-90">To assign a value to a CS variable, the <dfn class="terminology">assignment operator</dfn> <code class="code-inline tex2jax_ignore">=</code> is used. It's considered best practice to give CS variables <dfn class="terminology">semantic</dfn>, that is, descriptive names such as <code class="code-inline tex2jax_ignore">temperature_in_room</code>, using lowercase letters and underscore <code class="code-inline tex2jax_ignore">_</code> characters.</p>
-<p id="p-91">For each member of your group, use a code cell to assign a CS variable storing the number of pens (or pencils, or any object you'd like) each person has with them. An example is given in <a class="xref" data-knowl="./knowl/programming-sagemath-pens.html" title="Listing 1.3.2">1.3.2</a>; note that only a single Code cell is necessary, but each assignment should be made on a separate line.</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel fixed-width top" style="width:50%;"><figure class="table table-like" id="table-1"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.3.1<span class="period">.</span></span><span class="space"> </span>Sample pen data</figcaption><table class="tabular">
+<article class="task exercise-like" id="programming-sagemath-pens"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-81">To assign a value to a CS variable, the <dfn class="terminology">assignment operator</dfn> <code class="code-inline tex2jax_ignore">=</code> is used. It's considered best practice to give CS variables <dfn class="terminology">semantic</dfn>, that is, descriptive names such as <code class="code-inline tex2jax_ignore">temperature_in_room</code>, using lowercase letters and underscore <code class="code-inline tex2jax_ignore">_</code> characters.</p>
+<figure class="table table-like" id="table-1"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.2.1<span class="period">.</span></span><span class="space"> </span>Sample pen data</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines">Name</td>
 <td class="l m b1 r0 l0 t0 lines">Pens kept in backpack</td>
@@ -199,82 +268,115 @@
 <td class="l m b0 r0 l0 t0 lines">Steven</td>
 <td class="l m b0 r0 l0 t0 lines">22</td>
 </tr>
-</table></figure></div>
-<div class="sbspanel top" style="width:50%;"><figure class="listing figure-like" id="programming-sagemath-pens"><pre class="program"><code class="language-py">craig_pens = 1
+</table></div></figure><pre class="ptx-sagecell sagecell-sage" id="sage-31"><script type="text/x-sage">craig_pens = 1
 laura_pens = 30
 phillip_pens = 18
 sherill_pens = 3
 steven_pens = 22
-</code></pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.3.2<span class="period">.</span></span><span class="space"> </span>Corresponding variable assignments</figcaption></figure></div>
-</div></div></article><article class="task exercise-like" id="task-36"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-92">The value stored in a CS variable may be reused later by using the variable name. For example, <code class="code-inline tex2jax_ignore">craig_pens+laura_pens+phillip_pens+sherill_pens+steven_pens</code> would return the result <code class="code-inline tex2jax_ignore">74</code>.</p>
-<p id="p-93">Use a code cell to find the sum of the pens in your group by writing the sum of the variable names. (Later we will learn much more elegant patterns for storing and using lists of data while still using long descriptive variable names as recommended.)</p></article><article class="task exercise-like" id="task-37"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-94">Variables can be overwritten. In a Jupyter notebook, you can go to a previous cell and edit the assignment, and you can also create a new Code cell and write the assignment.</p>
-<p id="p-95">Try editing the assignment of one group member's pens in the previous Code cell, and try overwriting another group member's pens value by creating a Code cell below. For example, in <a class="xref" data-knowl="./knowl/programming-sagemath-pens-1.html" title="Listing 1.3.3">1.3.3</a> the original assignment for <code class="code-inline tex2jax_ignore">craig_pens</code> is amended, but you could also amend the value of <code class="code-inline tex2jax_ignore">phillip_pens</code> by creating a new Code cell below with the line <code class="code-inline tex2jax_ignore">phillip_pens = 42</code>.</p>
-<figure class="listing figure-like" id="programming-sagemath-pens-1"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">craig_pens = 100
-laura_pens = 30
-phillip_pens = 18
-sherill_pens = 3
-steven_pens = 22
-</code></pre></div>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.3.3<span class="period">.</span></span><span class="space"> </span>Amended variable assignments</figcaption></figure></article><article class="task exercise-like" id="task-38"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-96">Before doing anything further, write a sentence about what you notice about the result of your existing code cell adding the variables together.</p></article><article class="task exercise-like" id="task-39"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-97">Now use the <kbd class="kbdkey">Kernel</kbd> &gt; <kbd class="kbdkey">Run All</kbd> menu option in CoCalc. Write a sentence or two explaining how the sum changed, and why.</p></article><article class="task exercise-like" id="task-40"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-98">Copy the line of code summing your variables into a new Code cell below (e.g. <code class="code-inline tex2jax_ignore">craig_pens+laura_pens+phillip_pens+sherill_pens+steven_pens</code>). Write a sentence explaining why you get a different result even though the Code cells are exactly the same.</p></article></article><article class="activity project-like" id="activity-9"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-12"><p id="p-99">We now will explore mathematical variables.</p></div>
-<article class="task exercise-like" id="task-41"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-100">Unlike CS variables, mathematical variables represent an unknown value or arbitrary value, rather than storing a specific piece of data. These variables are often represented by single letters rather than the long semantic names used for CS variables. For example, SageMath always assumes <code class="code-inline tex2jax_ignore">x</code> is a mathematical variable named \(x\text{.}\)</p>
-<p id="p-101">Other math variables are declared using by using the <code class="code-inline tex2jax_ignore">var()</code> tool. For example, <code class="code-inline tex2jax_ignore">a = var("a")</code> declares <code class="code-inline tex2jax_ignore">a</code> to be the variable named \(a\text{,}\) and <code class="code-inline tex2jax_ignore">b,c = var("b c")</code> declares both <code class="code-inline tex2jax_ignore">b</code> and <code class="code-inline tex2jax_ignore">c</code> to be variables.</p>
-<p id="p-102">Use a Code cell to declare \(y\) and \(z\) to be variables.</p></article><article class="task exercise-like" id="task-42"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-103">Math variables may be manipulated just like literal values or values store in CS variables. But since they don't store specific values, these combinations of variables represent an <dfn class="terminology">expression</dfn>.</p>
-<p id="p-104">Use SageMath's <code class="code-inline tex2jax_ignore">show()</code> tool to display the expression \(x^2+4yz\) using a Code cell. Remember that \(4yz=4\times y\times z\) requires the <code class="code-inline tex2jax_ignore">*</code> operator to perform multiplication.</p></article><article class="task exercise-like" id="task-43"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-105">An expression can itself be stored in a CS variable using the assignment operator <code class="code-inline tex2jax_ignore">=</code>; for example, <code class="code-inline tex2jax_ignore">quadratic = x^2-4*x+4</code> saves the expression \(x^2-4x+4\) using the name <code class="code-inline tex2jax_ignore">quadratic</code>.</p>
-<p id="p-106">Assign the expression \(x^2+4yz\) to a CS variable with the name <code class="code-inline tex2jax_ignore">my_expression</code>.</p></article><article class="task exercise-like" id="task-44"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-107">Math variables and expressions are useful for describing how data should be manipulated before the values of those data are known.</p>
-<p id="p-108">For example, suppose we now want to assume \(x=6,y=0,z=-3\) and compute the corresponding value for the expression \(x^2+4yz\) saved as <code class="code-inline tex2jax_ignore">my_expression</code>. You can check that \(6^2+4(0)(-3)=36\text{,}\) either by hand or evaluating <code class="code-inline tex2jax_ignore">6^2+4*0*(-3)</code>. But to have SageMath compute this for you immediately, you could use the following syntax: <code class="code-inline tex2jax_ignore">my_expression(x=6,y=0,z=-3)</code>.</p>
-<p id="p-109">Use a Code cell to substitute the values \(x=1,y=2,z=3\) into the expression \(x^2+4yz\text{,}\) and confirm that the resulting value is equal to \(1^2+4(2)(3)\text{.}\)</p></article><article class="task exercise-like" id="task-45"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-110">SageMath also supports common simplifications of expressions with the <code class="code-inline tex2jax_ignore">full_simplify()</code> tool. For example, <code class="code-inline tex2jax_ignore">show( ((x+1)^3).full_simplify() )</code> returns the equivalent expression \(x^3+3x^2+3x+1\text{.}\)</p>
-<p id="p-111">Use <code class="code-inline tex2jax_ignore">full_simplify()</code> to find an equivalent expression for \((x+y)^4\text{.}\)</p></article></article><article class="activity project-like" id="activity-10"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-13"><p id="p-112">In addition to storing and manipulating expressions of mathematical variables, SageMath also supports studying <dfn class="terminology">equations</dfn> that set two expressions equal to one another.</p></div>
-<article class="task exercise-like" id="task-46"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-113">Since the equal sign <kbd class="kbdkey">=</kbd> is already used as the assignment operator <code class="code-inline tex2jax_ignore">=</code>, two equal signs are used to represent the equality operator <code class="code-inline tex2jax_ignore">==</code>.</p>
-<p id="p-114">When only simple numerical values are present, the equality operator behaves similarly in both Python and SageMath: it evaluates both sides of the equation and returns a <dfn class="terminology">Boolean value</dfn> of <code class="code-inline tex2jax_ignore">True</code> or <code class="code-inline tex2jax_ignore">False</code>. For example, <code class="code-inline tex2jax_ignore">3*2==6</code> returns <code class="code-inline tex2jax_ignore">True</code> while <code class="code-inline tex2jax_ignore">3^2==6</code> returns <code class="code-inline tex2jax_ignore">False</code>.</p>
-<p id="p-115">Use the equality operator to verify that \(1+2+3+4+5+6\) has the same value as \(\frac{6\times 7}{2}\text{.}\)</p></article><article class="task exercise-like" id="task-47"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-116">When mathematical variables or more advanced values are present, the equality operator will return an equation, but won't immediately reveal whether this equation is true or false.</p>
-<p id="p-117">Check this by entering <code class="code-inline tex2jax_ignore">x==sqrt(x^2)</code> into a Code cell below. (Remember, you can use the <code class="code-inline tex2jax_ignore">show()</code> tool to make it appear as \(x=\sqrt{x^2}\text{.}\))</p></article><article class="task exercise-like" id="task-48"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-118">SageMath is able to verify the truth of simple equations by using the <code class="code-inline tex2jax_ignore">bool()</code> tool. For example, <code class="code-inline tex2jax_ignore">bool(x==sqrt(x^2))</code> will return <code class="code-inline tex2jax_ignore">False</code>, since it fails when \(x=-4\text{.}\)</p>
-<p id="p-119">Use the <code class="code-inline tex2jax_ignore">bool()</code> tool to verify that \(3e^{1-\frac{1}{2}i\pi}\) has the same value as \(-3ei\text{.}\)</p></article><article class="task exercise-like" id="task-49"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-120">Equations can be manipulated by SageMath similarly to how you manipulate them by hand. For example:</p>
-<div class="displaymath" id="p-121">
+# We aren't printing or showing anything
+# so nothing will appear when you run this!
+</script></pre>
+<p id="p-82">For each member of your group, adapt the above code cell to assign a CS variable storing the number of pens (or pencils, or any object you'd like) each person has with them.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-32"><script type="text/x-sage"></script></pre></article><article class="task exercise-like" id="task-32"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-83">The value stored in a CS variable may be reused later by using the variable name. For example, the following code cell will return the result <code class="code-inline tex2jax_ignore">74</code> after the previous cell is run.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-33"><script type="text/x-sage">show(craig_pens+laura_pens+phillip_pens+sherill_pens+steven_pens)
+</script></pre>
+<p id="p-84">Use the below code cell to find the sum of the pens in your group by writing the sum of the variable names you chose. (Later we will learn much more elegant patterns for storing and using lists of data while still using long descriptive variable names as recommended.)</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-34"><script type="text/x-sage"></script></pre></article><article class="task exercise-like" id="task-33"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-85">CS variables can be overwritten. You can go to a previous cell and edit the assignment, but you can also create a new Code cell and reassign the variables value.</p>
+<p id="p-86">Try editing the assignment of Phillip's pens in the Code cell from <a href="" class="xref" data-knowl="./knowl/programming-sagemath-pens.html" title="Task 1.2.3.a">1.2.3.a</a>, and try overwriting Laura's pens value by In Code cell below. Re-run both cells.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-35"><script type="text/x-sage"></script></pre></article><article class="task exercise-like" id="task-34"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-87">Run the Code cell below. Write a sentence explaining why you get a different result even though this cell is exactly the same as a previous cell.</p></article></article><article class="activity project-like" id="activity-7"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-10"><p id="p-88">We now will explore math variables.</p></div>
+<article class="task exercise-like" id="task-35"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-89">Unlike CS variables, math variables represent an unknown value or arbitrary value, rather than storing a specific piece of data. These variables are often represented by single letters rather than the long semantic names used for CS variables. For example, SageMath always assumes <code class="code-inline tex2jax_ignore">x</code> is a math variable named <span class="process-math">\(x\text{.}\)</span></p>
+<p id="p-90">Before running the below cell, guess what you will see.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-37"><script type="text/x-sage">show(x+x)
+</script></pre></article><article class="task exercise-like" id="task-36"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-91">Other math variables are declared using by using the <code class="code-inline tex2jax_ignore">var()</code> tool. For example, the below code cell assigns the CS variables <code class="code-inline tex2jax_ignore">a</code>, <code class="code-inline tex2jax_ignore">b</code>, <code class="code-inline tex2jax_ignore">c</code> to the math variables named <span class="process-math">\(a,b,c\text{,}\)</span> and then shows one particular <dfn class="terminology">expression</dfn> with the result of adding/multiplying these math variables.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-38"><script type="text/x-sage">a = var("a")
+b,c = var("b c")
+show(a+b*c)
+</script></pre>
+<p id="p-92">Use the below Code cell to declare <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> to be variables, and then show <span class="process-math">\(y\)</span> raised to the <span class="process-math">\(z\)</span> power, that is, <span class="process-math">\(y^z\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-39"><script type="text/x-sage"></script></pre></article><article class="task exercise-like" id="task-37"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-93">An expression can itself be stored in a CS variable using the assignment operator <code class="code-inline tex2jax_ignore">=</code>; for example, the below cell saves the expression <span class="process-math">\(x^2-4x+4\)</span> to a CS variable with the name <code class="code-inline tex2jax_ignore">quadratic</code> and then <code class="code-inline tex2jax_ignore">show()</code>s it.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-40"><script type="text/x-sage">quadratic = x^2-4*x+4
+show(quadratic)
+</script></pre>
+<p id="p-94">Assign the expression <span class="process-math">\(-5x^2+4yz\)</span> to a CS variable with the name <code class="code-inline tex2jax_ignore">my_expression</code>, then <code class="code-inline tex2jax_ignore">show()</code> it.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-41"><script type="text/x-sage"></script></pre></article><article class="task exercise-like" id="task-38"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-95">Math variables and expressions are useful for describing how data should be manipulated before the values of those data are known.</p>
+<p id="p-96">For example, suppose we now want to assume <span class="process-math">\(x=6,y=0,z=-3\)</span> and compute the corresponding value for the expression <span class="process-math">\(-5x^2+4yz\)</span> saved as <code class="code-inline tex2jax_ignore">my_expression</code>. You can check that <span class="process-math">\(-5\times 6^2+4(0)(-3)=-180\text{,}\)</span> either by hand or evaluating <code class="code-inline tex2jax_ignore">-5*6^2+4*0*(-3)</code>. But to have SageMath compute this for you immediately, you could run the following cell:</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-42"><script type="text/x-sage">show(my_expression(x=6,y=0,z=-3))
+</script></pre>
+<p id="p-97">Use a Code cell to substitute the values <span class="process-math">\(x=1,y=2,z=3\)</span> into the expression <span class="process-math">\(-5x^2+4yz\)</span> instead, and confirm that the resulting value is equal to <span class="process-math">\(-5\times 1^2+4(2)(3)\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-43"><script type="text/x-sage"></script></pre></article><article class="task exercise-like" id="task-39"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-98">SageMath also supports common simplifications of expressions with the <code class="code-inline tex2jax_ignore">full_simplify()</code> tool. For example, <code class="code-inline tex2jax_ignore">show( ((x+1)^3).full_simplify() )</code> returns the equivalent expression <span class="process-math">\(x^3+3x^2+3x+1\text{.}\)</span></p>
+<p id="p-99">Use <code class="code-inline tex2jax_ignore">full_simplify()</code> to find an equivalent expression for <span class="process-math">\((x+y+z)^2\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-44"><script type="text/x-sage"></script></pre></article></article><article class="activity project-like" id="activity-8"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-11"><p id="p-100">In addition to storing and manipulating expressions of mathematical variables, SageMath also supports studying <dfn class="terminology">equations</dfn> that set two expressions equal to one another.</p></div>
+<article class="task exercise-like" id="task-40"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-101">Since the equal sign is already used as the assignment operator <code class="code-inline tex2jax_ignore">=</code>, two equal signs are used to represent the equality operator <code class="code-inline tex2jax_ignore">==</code>.</p>
+<p id="p-102">When only simple numerical values are present, the equality operator behaves similarly in both Python and SageMath: it evaluates both sides of the equation and returns a <dfn class="terminology">Boolean value</dfn> of <code class="code-inline tex2jax_ignore">True</code> or <code class="code-inline tex2jax_ignore">False</code>. For example, the following code cell verifies that <span class="process-math">\(3(2)=6\)</span> but <span class="process-math">\(3^2\not= 6\)</span> since it returns <code class="code-inline tex2jax_ignore">True</code> then <code class="code-inline tex2jax_ignore">False</code>.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-45"><script type="text/x-sage">show(3*2==6)
+show(3^2==6)
+</script></pre>
+<p id="p-103">Use the equality operator to verify that <span class="process-math">\(1+2+3+4+5+6=\frac{6\times 7}{2}\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-46"><script type="text/x-sage"></script></pre></article><article class="task exercise-like" id="task-41"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-104">When math variables or more advanced values are present, the equality operator will return an equation, but won't immediately reveal whether this equation is true or false.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-47"><script type="text/x-sage">show( x^2+2*x+1==(x+1)^2 )
+</script></pre>
+<p id="p-105">Try <code class="code-inline tex2jax_ignore">show()</code>ing the equation <span class="process-math">\(x=\sqrt{x^2}\)</span> in the cell below.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-48"><script type="text/x-sage"></script></pre></article><article class="task exercise-like" id="task-42"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-106">SageMath is able to verify the truth of simple equations by using the <code class="code-inline tex2jax_ignore">bool()</code> tool. For example, the below cell will return <code class="code-inline tex2jax_ignore">False</code>, since <span class="process-math">\(x\not=\sqrt{x^2}\)</span> when <span class="process-math">\(-4\)</span> is plugged into <span class="process-math">\(x\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-49"><script type="text/x-sage">show( bool(x==sqrt(x^2)) )
+</script></pre>
+<p id="p-107">Use <code class="code-inline tex2jax_ignore">bool()</code> to verify that <span class="process-math">\(3e^{1-\frac{1}{2}i\pi}\)</span> has the same value as <span class="process-math">\(-3ei\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-50"><script type="text/x-sage"></script></pre></article><article class="task exercise-like" id="task-43"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-108">Equations can be manipulated by SageMath similarly to how you manipulate them by hand. For example:</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-4">
 \begin{align*}
 x+7&amp;=11\\
 \scriptsize{-7}&amp;\phantom{=}\scriptsize{-7}\\
 x&amp;=4
 \end{align*}
 </div>
-<p id="p-122">This may be verified by entering <code class="code-inline tex2jax_ignore">(x+7==11)-7</code> into a Code cell.</p>
-<p id="p-123">Solve the equation \(2x+5=x-7\) by subtracting \(x\) and \(5\) from both sides of the equation.</p></article><article class="task exercise-like" id="task-50"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-124">SageMath can automatically solve many equations for you using the <code class="code-inline tex2jax_ignore">solve()</code> tool. For example, <code class="code-inline tex2jax_ignore">solve(x+7==11,x)</code> reveals the solution \(x=4\) immediately.</p>
-<p id="p-125">Use the <code class="code-inline tex2jax_ignore">solve()</code> tool to solve \(2x+5=x-7\) automatically.</p></article><article class="task exercise-like" id="task-51"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-126">Use the <code class="code-inline tex2jax_ignore">solve()</code> tool to find both solutions to \(x^2+3x+7=4-x\text{.}\)</p></article></article><section class="exercises" id="exercises-2"><h3 class="heading hide-type">
+<p id="p-110">This may be verified by running the following Code cell.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-51"><script type="text/x-sage">show( (x+7==11)-7 )
+</script></pre>
+<p id="p-111">Solve the equation <span class="process-math">\(2x+5=x-7\)</span> by subtracting <span class="process-math">\(x\)</span> and <span class="process-math">\(5\)</span> from the equation using a Code cell. <pre class="ptx-sagecell sagecell-sage" id="sage-52"><script type="text/x-sage"></script></pre></p></article><article class="task exercise-like" id="task-44"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-112">SageMath can automatically solve many equations for you using the <code class="code-inline tex2jax_ignore">solve()</code> tool. For example, the following code cell reveals the solution <span class="process-math">\(x=4\)</span> immediately.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-53"><script type="text/x-sage">show( solve(x+7==11,x) )
+</script></pre>
+<p id="p-113">Use the <code class="code-inline tex2jax_ignore">solve()</code> tool to solve <span class="process-math">\(2x+5=x-7\)</span> automatically.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-54"><script type="text/x-sage"></script></pre></article><article class="task exercise-like" id="task-45"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<p id="p-114">Use the <code class="code-inline tex2jax_ignore">solve()</code> tool to find both solutions to <span class="process-math">\(x^2+3x+7=4-x\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-55"><script type="text/x-sage"></script></pre></article></article><section class="exercises" id="exercises-2"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-8"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-127">Use a SageMath code cell to find the simplified value of \(i^{\ln(e^4)}\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-9"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-128">Save the mathematical expression \(\sin(\frac{\pi}{7})\cos(\frac{5\pi}{14})+\sin(\frac{5\pi}{14})\cos(\frac{\pi}{7})\) to a CS variable named <code class="code-inline tex2jax_ignore">fancy_math</code>. Then (since the “trigonometric functions” \(\sin,\cos\) aren't immediately simplified by SageMath) use <code class="code-inline tex2jax_ignore">fancy_math.trig_reduce()</code> to find its exact value.</p></article><article class="exercise exercise-like" id="exercise-10"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-129">Are you satisfied with the above results? Write a sentence or two explaining why or why not.</p></article><article class="exercise exercise-like" id="exercise-11"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-130">Many mathematicians believe (but no one has been able to prove) that the circular constant \(\pi=3.14159\cdots\) is a “normal” number, which means that every finite sequence of digits will appear eventually in its decimal expression. For example, the SageMath code <code class="code-inline tex2jax_ignore">pi.n(digits=10)</code> reveals that \(65\) appears as the 7th and 8th decimal digits of \(\pi\text{.}\)</p>
-<p id="p-131">Use SageMath to show that \(42\) appears somewhere in the decimal expression of \(\pi\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-12"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-132">Use the <code class="code-inline tex2jax_ignore">var()</code> tool to declare the CS variables <code class="code-inline tex2jax_ignore">m</code> and <code class="code-inline tex2jax_ignore">n</code> to represent the math variables \(m\) and \(n\text{.}\) Then have the CS variable <code class="code-inline tex2jax_ignore">quotient_expression</code> represent the mathematical expression \(\frac{m+1}{n^2-3n+2}\text{,}\) and use <code class="code-inline tex2jax_ignore">show()</code> to display <code class="code-inline tex2jax_ignore">quotient_expression</code> with mathematical formatting.</p></article><article class="exercise exercise-like" id="exercise-13"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-133">Compute the value of \(\frac{7+1}{(-3)^2-3(-3)+2}\) by substituting \(m=7\) and \(n=-3\) into <code class="code-inline tex2jax_ignore">quotient_expression</code>.</p></article><article class="exercise exercise-like" id="exercise-14"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
-<p id="p-134">Save the mathematical equation \(x^3+1=(x+1)(x^2-x+1)\) to the CS variable <code class="code-inline tex2jax_ignore">sum_of_cubes</code>. Use the <code class="code-inline tex2jax_ignore">bool()</code> tool to verify that <code class="code-inline tex2jax_ignore">sum_of_cubes</code> represents a valid mathematical identity.</p></article><article class="exercise exercise-like" id="exercise-15"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
-<p id="p-135">Show how to solve the equation \(17-2x=3x+2\) by hand (by uploading a photograph of your written work). Then show how to use SageMath to solve it automatically.</p></article></section></section></div></main>
+<article class="exercise exercise-like" id="exercise-8"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<p id="p-115">Use a SageMath code cell to find the simplified value of <span class="process-math">\(i^{\ln(e^4)}\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-56"><script type="text/x-sage"></script></pre></article><article class="exercise exercise-like" id="exercise-9"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<p id="p-116">Save the mathematical expression <span class="process-math">\(\sin(\frac{\pi}{7})\cos(\frac{5\pi}{14})+\sin(\frac{5\pi}{14})\cos(\frac{\pi}{7})\)</span> to a CS variable named <code class="code-inline tex2jax_ignore">fancy_math</code>. Then (since the “trigonometric functions” <span class="process-math">\(\sin,\cos\)</span> aren't immediately simplified by SageMath) use <code class="code-inline tex2jax_ignore">fancy_math.trig_reduce()</code> to find its exact value.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-57"><script type="text/x-sage"></script></pre></article><article class="exercise exercise-like" id="exercise-10"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<p id="p-117">Are you satisfied with the above calculations? Write a sentence or two explaining why or why not.</p></article><article class="exercise exercise-like" id="exercise-11"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<p id="p-118">Many mathematicians believe (but no one has been able to prove) that the circular constant <span class="process-math">\(\pi=3.14159\cdots\)</span> is a “normal” number, which means that every finite sequence of digits will appear eventually in its decimal expression. For example, the SageMath code <code class="code-inline tex2jax_ignore">show(round(pi,10))</code> reveals that <span class="process-math">\(65\)</span> appears as the 7th and 8th decimal digits of <span class="process-math">\(\pi\text{:}\)</span> <span class="process-math">\(3.141592\mathbf{65}36\text{.}\)</span></p>
+<p id="p-119">Use SageMath to show that <span class="process-math">\(42\)</span> appears somewhere in the decimal expression of <span class="process-math">\(\pi\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-58"><script type="text/x-sage"></script></pre></article><article class="exercise exercise-like" id="exercise-12"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<p id="p-120">Use the <code class="code-inline tex2jax_ignore">var()</code> tool to declare the CS variables <code class="code-inline tex2jax_ignore">m</code> and <code class="code-inline tex2jax_ignore">n</code> to represent the math variables <span class="process-math">\(m\)</span> and <span class="process-math">\(n\text{.}\)</span> Then have the CS variable <code class="code-inline tex2jax_ignore">quotient_expression</code> represent the mathematical expression <span class="process-math">\(\frac{m+1}{n^2-3n+2}\text{,}\)</span> and use <code class="code-inline tex2jax_ignore">show()</code> to display <code class="code-inline tex2jax_ignore">quotient_expression</code> with mathematical formatting.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-59"><script type="text/x-sage"></script></pre></article><article class="exercise exercise-like" id="exercise-13"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<p id="p-121">Compute the value of <span class="process-math">\(\frac{7+1}{(-3)^2-3(-3)+2}\)</span> by substituting <span class="process-math">\(m=7\)</span> and <span class="process-math">\(n=-3\)</span> into <code class="code-inline tex2jax_ignore">quotient_expression</code>.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-60"><script type="text/x-sage"></script></pre></article><article class="exercise exercise-like" id="exercise-14"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<p id="p-122">Save the mathematical equation <span class="process-math">\(x^3+1=(x+1)(x^2-x+1)\)</span> to the CS variable <code class="code-inline tex2jax_ignore">sum_of_cubes</code>. Use the <code class="code-inline tex2jax_ignore">bool()</code> tool to verify that <code class="code-inline tex2jax_ignore">sum_of_cubes</code> represents a valid mathematical identity.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-61"><script type="text/x-sage"></script></pre></article><article class="exercise exercise-like" id="exercise-15"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<p id="p-123">Show how to solve the equation <span class="process-math">\(17-2x=3x+2\)</span> by hand. Then show how to use SageMath to solve it automatically.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-62"><script type="text/x-sage"></script></pre></article></section></section></div></main>
 </div>
-<script src="https://unpkg.com/prismjs@v1.22.0/components/prism-core.min.js"></script><script src="https://unpkg.com/prismjs@v1.22.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 </html>

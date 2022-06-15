@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:25Z       *-->
+<!--*       on 2022-06-15T21:02:36Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,34 +13,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Task</span><span class="space"> </span><span class="codenumber">6.1.2.a</span><span class="period">.</span>
-</h6>
-<p>Unfortunately, the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">datascience</code> library doesn't provide a great out-of-the-box mechanism for computing \(r\text{.}\) Fortunately, we can add two features to our <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">datascience</code> tables by copy-pasting the snippet given in <a class="xref" data-knowl="./knowl/predictions-correlation-features.html" title="Listing 6.1.4">6.1.4</a> into a Code cell. (This will need to be done in every notebook that uses these features.)</p>
-<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">def with_correlated_columns(self,num_rows=100,x_range=5,slope=1,noise=1):
-    from random import random
-    table = self.select().with_columns("x",[],"y",[])
-    for _ in range(num_rows):
-        seed = random()
-        x = seed*x_range
-        y = seed*x_range*slope
-        y = y + (-1+2*random())*noise
-        table = table.with_row([x,y])
-    return table
-def correlation(self,col1_name,col2_name):
-    import statistics
-    # get column arrays
-    col1 = self.column(col1_name)
-    col2 = self.column(col2_name)
-    # standardize units
-    col1_s = (col1 - statistics.mean(col1))/statistics.stdev(col1)
-    col2_s = (col2 - statistics.mean(col2))/statistics.stdev(col2)
-    # correlation is the mean product of standard units
-    return statistics.mean(col1_s*col2_s)
-setattr(Table,"with_correlated_columns",with_correlated_columns)
-setattr(Table,"correlation",correlation)
-</code></pre></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">6.1.4<span class="period">.</span></span><span class="space"> </span>Correlation features for <code class="code-inline tex2jax_ignore">datascience</code></figcaption></figure><p>While we won't go into detail on how correlation is measured, it is related to the measures of center and spread studied in the previous chapter. Inspect the code shown in <a class="xref" data-knowl="./knowl/predictions-correlation-features.html" title="Listing 6.1.4">6.1.4</a>; what measure of center and what measure of spread appear to be used to compute correlation?</p></article><span class="incontext"><a href="predictions-correlation.html#task-197">in-context</a></span>
+<body class="ignore-math">
+<article class="task exercise-like"><h4 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">5.2.2.c</span><span class="period">.</span>
+</h4>
+<p>Display their scatter plots again, but this time use <code class="code-inline tex2jax_ignore">.scatter("x",fit_line=True)</code> to display the fit line for each plot.</p></article><span class="incontext"><a href="predictions-regression.html#task-197" class="internal">in-context</a></span>
 </body>
 </html>

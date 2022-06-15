@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:22Z       *-->
+<!--*       on 2022-06-15T21:02:34Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,22 +13,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
-</h6>
-<p>LaTeX markup is used by many applications for typesetting mathematical notation. But it's also possible to write entire documents in LaTeX, that can be distributed as PDFs. Since it's very easy to write mathematics, manage bibliographies, and integrate a LaTeX document with computer code, it's very common for STEM researchers to author documents in LaTeX.</p>
-<p>CoCalc provides a convenient LaTeX editor that you can use from your web browser. Try it out by following these steps.</p>
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.7</span><span class="period">.</span>
+</h3>
+<div class="introduction"><p>Since ultimately data is stored as bits, anything handled by a computer needs to be represented somehow as a (binary) number. For example, a <dfn class="terminology">character</dfn> is a letter or other glyph (such as an emoji 😃) that has a unique representation as a counting number.</p></div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>To denote a character in Python or SageMath, surround it with either single quotes <code class="code-inline tex2jax_ignore">'x'</code> or double quotes <code class="code-inline tex2jax_ignore">"x"</code>. Then the code <code class="code-inline tex2jax_ignore">ord('x')</code> (or <code class="code-inline tex2jax_ignore">ord("x")</code>) will reveal the number that is used to represent it in memory (for <code class="code-inline tex2jax_ignore">x</code>, that number is <span class="process-math">\(120\)</span>), called a <dfn class="terminology">Unicode value</dfn>.</p>
+<p>Find the Unicode values for the characters <code class="code-inline tex2jax_ignore">s</code>, <code class="code-inline tex2jax_ignore">S</code>, and <code class="code-inline tex2jax_ignore">😊</code>. (For the emoji, you may wish to copy-and-paste the character if you're using a standard keyboard.)</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Given a Unicode value, Python and SageMath can return the character it represents by using the <code class="code-inline tex2jax_ignore">chr()</code> tool. For example, <code class="code-inline tex2jax_ignore">print(chr(120))</code> displays <code class="code-inline tex2jax_ignore">x</code> as expected.</p>
+<p>Use <code class="code-inline tex2jax_ignore">chr()</code> to display the charcters with these Unicode values:</p>
 <ul class="disc">
-<li><p>From the <kbd xmlns:svg="http://www.w3.org/2000/svg" class="kbdkey">+ New</kbd> menu option, create a new LaTeX document in the same folder as this notebook. A default document will appear on the left, and its PDF output appears on the right.</p></li>
-<li><p>The top part of the code is the <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">preamble</dfn> with various configurations, most of which you don't need to worry about. There is a place to define the title and author of the paper. Change the title of the paper to match your favorite TV show, and change the author to be named after a character on that show.</p></li>
-<li><p>By default the produced PDF will include today's date. This can be configured by inserting the command <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">\date{Month Day, Year}</code> in the preamble. Use this to change the date to be one week from today instead.</p></li>
-<li>
-<p>The <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">body</dfn> of the document is between the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">\begin{document}</code> and <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">\end{document}</code> commands. The <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">\maketitle</code> command tells LaTeX to show the title, author, and date.</p>
-<p>Add some text two lines below the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">\maketitle</code> command, quoting a character from your favorite show.</p>
-</li>
-<li><p>Finally, copy-paste some mathematical notation from the previous activities so it appears below the quote in your LaTeX-produced PDF.</p></li>
-</ul>
-<p>When you're done, put a link to your LaTeX source file in a Markdown cell below. Since it's located in the same folder, if your file was named <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">example.tex</code>, then it can be linked to by entering <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">[Link to LaTeX file](example.tex)</code>.</p></article><span class="incontext"><a href="writing-markup.html#activity-14">in-context</a></span>
+<li><p>89</p></li>
+<li><p>97</p></li>
+<li><p>121</p></li>
+<li><p>13025</p></li>
+</ul></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p><dfn class="terminology">Strings</dfn> of multiple characters may be used to represent words and sentences. Displaying the string <code class="code-inline tex2jax_ignore">test = "Hello World!"</code> is a common test used in setting up a new programming environment, done with <code class="code-inline tex2jax_ignore">print(test)</code>.</p>
+<p>The value of a CS variable may be easily inserted into a string by using <dfn class="terminology">interpolation</dfn>. In updated versions of Python 3 and SageMath, this is done by typing an <code class="code-inline tex2jax_ignore">f</code> before the quotation marks: <code class="code-inline tex2jax_ignore">print(f"It's time to say {test} now.")</code> will display <code class="code-inline tex2jax_ignore">It's time to say Hello World! now.</code> (provided <code class="code-inline tex2jax_ignore">test = "Hello World!"</code> was executed previously).</p>
+<p>Store the word “math” as a CS variable, then use interpolation to make it appear instead of the blank when running a Code cell with <code class="code-inline tex2jax_ignore">print("My favorite class is ____.")</code>.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p>Use string interpolation to replace the blank in the line <code class="code-inline tex2jax_ignore">print("The character ___ has Unicode value 42+42.")</code></p></article></article><span class="incontext"><a href="data-numbers.html#activity-14" class="internal">in-context</a></span>
 </body>
 </html>

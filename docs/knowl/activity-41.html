@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:25Z       *-->
+<!--*       on 2022-06-15T21:02:36Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,81 +13,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span>
-</h6>
-<div class="introduction"><p>The <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">absolute mean deviation</dfn> measures pretty much exactly what it says: how far the data deviate from the dataset's mean.</p></div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p>Draw dot plots for the data in <a class="xref" data-knowl="./knowl/measurements-spread-dataone.html" title="Table 5.2.1: Dataset One">5.2.1</a> and <a class="xref" data-knowl="./knowl/measurements-spread-datatwo.html" title="Table 5.2.2: Dataset Two">5.2.2</a>.</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel fixed-width top" style="width:50%;"><figure class="table table-like"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.2.1<span class="period">.</span></span><span class="space"> </span>Dataset One</figcaption><table xmlns:svg="http://www.w3.org/2000/svg" class="tabular">
-<tr>
-<td class="l m b0 r0 l0 t0 lines">1</td>
-<td class="l m b0 r0 l0 t0 lines">5</td>
-<td class="l m b0 r0 l0 t0 lines">5</td>
-<td class="l m b0 r0 l0 t0 lines">5</td>
-<td class="l m b0 r0 l0 t0 lines">5</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">6</td>
-<td class="l m b0 r0 l0 t0 lines">6</td>
-<td class="l m b0 r0 l0 t0 lines">6</td>
-<td class="l m b0 r0 l0 t0 lines">6</td>
-<td class="l m b0 r0 l0 t0 lines">6</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">6</td>
-<td class="l m b0 r0 l0 t0 lines">7</td>
-<td class="l m b0 r0 l0 t0 lines">7</td>
-<td class="l m b0 r0 l0 t0 lines">7</td>
-<td class="l m b0 r0 l0 t0 lines">12</td>
-</tr>
-</table></figure></div>
-<div class="sbspanel fixed-width top" style="width:50%;"><figure class="table table-like"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.2.2<span class="period">.</span></span><span class="space"> </span>Dataset Two</figcaption><table xmlns:svg="http://www.w3.org/2000/svg" class="tabular">
-<tr>
-<td class="l m b0 r0 l0 t0 lines">1</td>
-<td class="l m b0 r0 l0 t0 lines">2</td>
-<td class="l m b0 r0 l0 t0 lines">3</td>
-<td class="l m b0 r0 l0 t0 lines">4</td>
-<td class="l m b0 r0 l0 t0 lines">5</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">6</td>
-<td class="l m b0 r0 l0 t0 lines">6</td>
-<td class="l m b0 r0 l0 t0 lines">6</td>
-<td class="l m b0 r0 l0 t0 lines">6</td>
-<td class="l m b0 r0 l0 t0 lines">6</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">7</td>
-<td class="l m b0 r0 l0 t0 lines">7</td>
-<td class="l m b0 r0 l0 t0 lines">9</td>
-<td class="l m b0 r0 l0 t0 lines">10</td>
-<td class="l m b0 r0 l0 t0 lines">12</td>
-</tr>
-</table></figure></div>
-</div></div></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p>Confirm that both datasets have the same mean, median, mode, and range.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p>Despite these common measurements, based on your dot plots, which dataset appears to have values that are spread out more than the other?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p>To find a way to measure this spread numerically, flesh out the code given in <a class="xref" data-knowl="./knowl/measurements-spread-deviations.html" title="Listing 5.2.3">5.2.3</a> to print out lists of absolute deviations of each value of data from the mean.</p>
-<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">data_one = [] # fill in values from first dataset
-data_two = [] # fill in this too
-
-# if means are different, data was entered incorrectly
-from statistics import mean
-assert mean(data_one) == mean(data_two), "Means should be the same"
-print("The mean for each dataset is FIXME") # print out the mean of the datasets
-
-deviations_one = [
-    abs( value - mean(data_one) ) # measure distance of value from the mean
-    for value in data_one # do this for each value of data
-]
-print(deviations_one)
-deviations_two = [] # TODO
-print(deviations_two) # prints [5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 1, 1, 3, 4, 6]
-</code></pre></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.2.3<span class="period">.</span></span><span class="space"> </span>Broken code to calculuate deviations of values</figcaption></figure></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
-<p>The mean of each list created in the previous task is the absolute mean deviation of the original datasets. Compute these values, and confirm that the absolute mean deviation is higher for the dataset that has more spread-out values.</p></article></article><span class="incontext"><a href="measurement-spread.html#activity-41">in-context</a></span>
+</h3>
+<div class="introduction"><p>When appropriate, a fit line based on sample data can be used to predict the value of unsampled data.</p></div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Get a copy of <code class="code-inline tex2jax_ignore">testing_table</code> from 4.3 available for use in this notebook, and use code cells to produce the scatter plot shown in <a href="" class="xref" data-knowl="./knowl/predictions-regression-preview-scattered.html" title="Figure 5.2.1">5.2.1</a>.</p>
+<p>Don't forget to use <code class="code-inline tex2jax_ignore">import matplotlib</code>, <code class="code-inline tex2jax_ignore">%matplotlib inline</code>, and <code class="code-inline tex2jax_ignore">.where("column_name",are.above(0))</code> appropriately.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Add a fit line to this plot.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>This table has historical data for a full range of SAT scores. But what if historical data only existed for SAT math scores of 60 or greater? Emulate this by showing a scatter plot with a fit line that only considers records with an SAT math score that <code class="code-inline tex2jax_ignore">are.above(60)</code>.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p>If you were to extend this fit line left to where an SAT math score of <span class="process-math">\(40\)</span> would go, about what score for the math placement score would the fit line predict?</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p>How does this compare to the actual data?</p></article></article><span class="incontext"><a href="predictions-regression.html#activity-41" class="internal">in-context</a></span>
 </body>
 </html>

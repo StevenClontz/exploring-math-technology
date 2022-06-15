@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:23Z       *-->
+<!--*       on 2022-06-15T21:02:35Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,67 +13,41 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span>
-</h6>
-<div class="introduction">
-<p>As previously investigated, dictionaries can be used to describe complex data with many different properties. In <a class="xref" data-knowl="./knowl/visualization-tables-dictionary-list.html" title="Listing 4.1.3">4.1.3</a> a list of dictionaries is used to describe several students in standard Python.</p>
-<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">[
-    {
-        "name":             "Jessica",
-        "age":              19,
-        "favorite_teacher": "Dr. Clontz",
-    },
-    {
-        "name":             "Lynn",
-        "age":              18,
-        "favorite_teacher": "Ms. Gilbreath",
-    },
-    {
-        "name":             "Julia",
-        "age":              17,
-        "favorite_teacher": "Mr. Fullinwider",
-    },
-]
-</code></pre></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.1.3<span class="period">.</span></span><span class="space"> </span>A list of student dictionaries</figcaption></figure>
-</div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p>Copy this list into a Code cell, and add data for at least three more students to the list.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p>Data is often stored in a spreadsheet or database as a <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">table</dfn>. An illustration of this is given in <a class="xref" data-knowl="./knowl/visualization-tables-student-table.html" title="Table 4.1.4: Student data table">4.1.4</a>.</p>
-<figure class="table table-like"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.1.4<span class="period">.</span></span><span class="space"> </span>Student data table</figcaption><div class="tabular-box natural-width"><table xmlns:svg="http://www.w3.org/2000/svg" class="tabular">
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span>
+</h3>
+<div class="introduction"><p>Often data scientists need to consider data where each item has two properties. When one property is a category, and the other is numerical, a <dfn class="terminology">bar chart</dfn> is often the right tool for the job.</p></div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Repeat the steps from previous sections to get a copy of <code class="code-inline tex2jax_ignore">pizza_table</code> available for this notebook.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>The table in <a href="" class="xref" data-knowl="./knowl/visualization-two-type-count-0620.html" title="Table 3.3.2: Pizzas sold on Jun 20, by type">3.3.2</a> describes how many pizzas of each type (Chicken, Classic, Supreme, Veggie) were sold on June 20th.</p>
+<figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.3.2<span class="period">.</span></span><span class="space"> </span>Pizzas sold on Jun 20, by type</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
-<td class="l m b1 r0 l0 t0 lines">Name</td>
-<td class="l m b1 r0 l0 t0 lines">Age</td>
-<td class="l m b1 r0 l0 t0 lines">Favorite Teacher</td>
+<td class="l m b1 r0 l0 t0 lines">Type</td>
+<td class="l m b1 r0 l0 t0 lines">Count</td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines">Julia</td>
-<td class="l m b0 r0 l0 t0 lines">17</td>
-<td class="l m b0 r0 l0 t0 lines">Mr. Fullinwider</td>
+<td class="l m b0 r0 l0 t0 lines">Chicken</td>
+<td class="l m b0 r0 l0 t0 lines">31</td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines">Jessica</td>
-<td class="l m b0 r0 l0 t0 lines">19</td>
-<td class="l m b0 r0 l0 t0 lines">Dr. Clontz</td>
+<td class="l m b0 r0 l0 t0 lines">Classic</td>
+<td class="l m b0 r0 l0 t0 lines">42</td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines">Lynn</td>
-<td class="l m b0 r0 l0 t0 lines">18</td>
-<td class="l m b0 r0 l0 t0 lines">Ms. Gilbreath</td>
+<td class="l m b0 r0 l0 t0 lines">Supreme</td>
+<td class="l m b0 r0 l0 t0 lines">28</td>
 </tr>
-</table></div></figure><p>Tables can be created programmatically by using the technique from <a class="xref" data-knowl="./knowl/visualization-tables-preview.html" title="Preview Activity 4.1.1">4.1.1</a> or by modifying <a class="xref" data-knowl="./knowl/visualization-tables-from-rows.html" title="Listing 4.1.5">4.1.5</a>.</p>
-<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">Table(labels=["Name", "Age", "Favorite Teacher"]).with_rows([
-    ["Jessica", 19, "Dr. Clontz"],
-    ["Lynn", 18, "Ms. Gilbreath"],
-    ["Julia", 17, "Mr. Fullinwider"],
-])
-</code></pre></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.1.5<span class="period">.</span></span><span class="space"> </span>Table from rows</figcaption></figure><p>Run <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">from datascience import Table</code> in a Code cell, and then copy <a class="xref" data-knowl="./knowl/visualization-tables-from-rows.html" title="Listing 4.1.5">4.1.5</a> to another Code cell. Finally, append the student data you created in the previous task. <aside class="aside aside-like"></aside></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p>Since data usually isn't hard-coded into a script, but instead entered by folks who may not be programmers into a spreadsheet or similar file, we will need a way to read external files containing data.</p>
-<p>Open a spreadsheet application such as Microsoft Excel or Google Sheets. Copy the table of data displayed in the previous task and paste it into your spreadsheet.</p>
-<p>Save the spreadsheet to a Comma-Separated Values file named <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">student_data.csv</code> and use the <kbd xmlns:svg="http://www.w3.org/2000/svg" class="kbdkey">(+) New</kbd> menu to upload it to CoCalc in the same folder as this Jupyter notebook.</p>
-<p>Finally, create a Code cell with the line <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">Table.read_table('student_data.csv')</code> to check that your CSV data can be imported into a <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">datascience</code> table.</p></article></article><span class="incontext"><a href="visualization-tables.html#activity-28">in-context</a></span>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Veggie</td>
+<td class="l m b0 r0 l0 t0 lines">27</td>
+</tr>
+</table></div></figure><p>This table was created by running <code class="code-inline tex2jax_ignore">june20_pizzas = pizza_table.where("date","2015-06-20").group("type")</code> and <code class="code-inline tex2jax_ignore">june20_pizzas.show()</code>. Modify this code to create the table <code class="code-inline tex2jax_ignore">may18</code> for May 18th instead, and show the result.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>The bar chart in <a href="" class="xref" data-knowl="./knowl/visualization-two-barchart-0620.html" title="Figure 3.3.3">3.3.3</a> visualizes the amounts of each pizza type sold on June 20. Each category (in this case, the type of pizza) is listed on the vertical axis, and the size of the bar in the horizontal direction represents each numerical value.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/visualization-two-barchart-0620.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.3<span class="period">.</span></span><span class="space"> </span>Pizzas sold on June 20 by type</figcaption></figure><p>Create a similar bar chart by hand for the May 18th table you displayed in the previous task.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p>The Python <code class="code-inline tex2jax_ignore">datascience</code> library can produce bar charts; the code <code class="code-inline tex2jax_ignore">june20_pizzas.barh("types")</code> was used to produce <a href="" class="xref" data-knowl="./knowl/visualization-two-barchart-0620.html" title="Figure 3.3.3">3.3.3</a>. Adapt this line of code to generate a bar chart for the May 18th data instead. (Note: you'll need to run <code class="code-inline tex2jax_ignore">import matplotlib</code> and <code class="code-inline tex2jax_ignore">%matplotlib inline</code> first to display any visualizations.)</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p>The code <code class="code-inline tex2jax_ignore">pizza_table.where("date","2015-06-20").select("type","price").group("type",sum)</code> captures the total sales for each type of pizza sold on June 20th.</p>
+<p>Generate a bar chart visualizing the total sales for each type of pizza sold on May 18th.</p></article></article><span class="incontext"><a href="visualization-two.html#activity-28" class="internal">in-context</a></span>
 </body>
 </html>

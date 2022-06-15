@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:20Z       *-->
+<!--*       on 2022-06-15T21:02:34Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -9,23 +9,38 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>EMDST Euclidean Vectors</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>window.MathJax = {
+<meta property="og:type" content="book">
+<meta property="book:title" content="Exploring Mathematics and Data Science with Technology">
+<meta property="book:author" content="Dr. Steven Clontz">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.88,
@@ -36,33 +51,66 @@
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://unpkg.com/prismjs@v1.22.0/themes/prism.css" rel="stylesheet">
-<script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="book-1.html"><span class="title">Exploring Mathematics and Data Science with Technology</span></a></h1>
 <p class="byline">Dr. Steven Clontz</p>
 </div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
 <a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="vectors.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="vectors.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="vectors-matrices.html" title="Next">Next</a></span>
@@ -72,87 +120,80 @@
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="vectors.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="vectors.html" title="Up">Up</a><a class="next-button button toolbar-item" href="vectors-matrices.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
-<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
-<li><a href="why.html" data-scroll="why">Why Study Mathematics?</a></li>
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="why.html" data-scroll="why" class="internal">Why Study Mathematics?</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="programming.html" data-scroll="programming"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
-<li><a href="programming-jupyter.html" data-scroll="programming-jupyter">Jupyter Notebooks and CoCalc</a></li>
-<li><a href="programming-python.html" data-scroll="programming-python">The Python Kernel</a></li>
-<li><a href="programming-sagemath.html" data-scroll="programming-sagemath">The SageMath Kernel</a></li>
+<a href="programming.html" data-scroll="programming" class="internal"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
+<li><a href="programming-python.html" data-scroll="programming-python" class="internal">Using Python</a></li>
+<li><a href="programming-sagemath.html" data-scroll="programming-sagemath" class="internal">Using SageMath</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="writing.html" data-scroll="writing"><span class="codenumber">2</span> <span class="title">Writing for Mathematicians and Data Scientists</span></a><ul>
-<li><a href="writing-math.html" data-scroll="writing-math">The Importance of Writing in Mathematics and Data Science</a></li>
-<li><a href="writing-markup.html" data-scroll="writing-markup">Using Markdown and LaTeX</a></li>
+<a href="data.html" data-scroll="data" class="internal"><span class="codenumber">2</span> <span class="title">Data and Collections</span></a><ul>
+<li><a href="data-numbers.html" data-scroll="data-numbers" class="internal">Numbers and Strings</a></li>
+<li><a href="data-collections.html" data-scroll="data-collections" class="internal">Collections of Data</a></li>
+<li><a href="data-programming.html" data-scroll="data-programming" class="internal">Programming with Data</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="data.html" data-scroll="data"><span class="codenumber">3</span> <span class="title">Data and Collections</span></a><ul>
-<li><a href="data-numbers.html" data-scroll="data-numbers">Numbers and Strings</a></li>
-<li><a href="data-collections.html" data-scroll="data-collections">Collections of Data</a></li>
-<li><a href="data-programming.html" data-scroll="data-programming">Programming with Data</a></li>
+<a href="visualization.html" data-scroll="visualization" class="internal"><span class="codenumber">3</span> <span class="title">Visualization of Data</span></a><ul>
+<li><a href="visualization-tables.html" data-scroll="visualization-tables" class="internal">Tables</a></li>
+<li><a href="visualization-one.html" data-scroll="visualization-one" class="internal">Single-Variable Visualizations</a></li>
+<li><a href="visualization-two.html" data-scroll="visualization-two" class="internal">Two-variable Visualizations</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="visualization.html" data-scroll="visualization"><span class="codenumber">4</span> <span class="title">Visualization of Data</span></a><ul>
-<li><a href="visualization-tables.html" data-scroll="visualization-tables">Tables</a></li>
-<li><a href="visualization-one.html" data-scroll="visualization-one">Single-Variable Visualizations</a></li>
-<li><a href="visualization-two.html" data-scroll="visualization-two">Two-variable Visualizations</a></li>
+<a href="measurements.html" data-scroll="measurements" class="internal"><span class="codenumber">4</span> <span class="title">Measurements of Data</span></a><ul>
+<li><a href="measurements-center.html" data-scroll="measurements-center" class="internal">Centers of Data</a></li>
+<li><a href="measurement-spread.html" data-scroll="measurement-spread" class="internal">Spread of Data</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="measurements.html" data-scroll="measurements"><span class="codenumber">5</span> <span class="title">Measurements of Data</span></a><ul>
-<li><a href="measurements-center.html" data-scroll="measurements-center">Centers of Data</a></li>
-<li><a href="measurement-spread.html" data-scroll="measurement-spread">Spread of Data</a></li>
+<a href="predictions.html" data-scroll="predictions" class="internal"><span class="codenumber">5</span> <span class="title">Making Predictions from Data</span></a><ul>
+<li><a href="predictions-correlation.html" data-scroll="predictions-correlation" class="internal">Measuring Correlation</a></li>
+<li><a href="predictions-regression.html" data-scroll="predictions-regression" class="internal">The Fit Line</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="predictions.html" data-scroll="predictions"><span class="codenumber">6</span> <span class="title">Making Predictions from Data</span></a><ul>
-<li><a href="predictions-correlation.html" data-scroll="predictions-correlation">Measuring Correlation</a></li>
-<li><a href="predictions-regression.html" data-scroll="predictions-regression">The Fit Line</a></li>
+<a href="random.html" data-scroll="random" class="internal"><span class="codenumber">6</span> <span class="title">Modeling Random Events</span></a><ul>
+<li><a href="random-probability.html" data-scroll="random-probability" class="internal">Introduction to Probability</a></li>
+<li><a href="random-combinatorics.html" data-scroll="random-combinatorics" class="internal">Combinatorics</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a><ul>
-<li><a href="random-probability.html" data-scroll="random-probability">Introduction to Probability</a></li>
-<li><a href="random-combinatorics.html" data-scroll="random-combinatorics">Combinatorics</a></li>
+<a href="complex.html" data-scroll="complex" class="internal"><span class="codenumber">7</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a><ul>
+<li><a href="complex-cartesian.html" data-scroll="complex-cartesian" class="internal">Cartesian Coordinates</a></li>
+<li><a href="complex-polar.html" data-scroll="complex-polar" class="internal">Polar Form</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a><ul>
-<li><a href="complex-cartesian.html" data-scroll="complex-cartesian">Cartesian Coordinates</a></li>
-<li><a href="complex-polar.html" data-scroll="complex-polar">Polar Form</a></li>
-</ul>
-</li>
-<li class="link">
-<a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Space</span></a><ul>
+<a href="vectors.html" data-scroll="vectors" class="internal"><span class="codenumber">8</span> <span class="title">Higher-Dimensional Data and Euclidean Space</span></a><ul>
 <li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean" class="active">Euclidean Vectors</a></li>
-<li><a href="vectors-matrices.html" data-scroll="vectors-matrices">Matrices</a></li>
-<li><a href="vectors-determinants.html" data-scroll="vectors-determinants">Determinants</a></li>
+<li><a href="vectors-matrices.html" data-scroll="vectors-matrices" class="internal">Matrices</a></li>
+<li><a href="vectors-determinants.html" data-scroll="vectors-determinants" class="internal">Determinants</a></li>
 </ul>
 </li>
-<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
-<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
-<li class="link"><a href="references.html" data-scroll="references"><span class="title">References</span></a></li>
-<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="references.html" data-scroll="references" class="internal"><span class="title">References</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="vectors-euclidean"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">9.1</span> <span class="title">Euclidean Vectors</span>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="vectors-euclidean"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">8.1</span> <span class="title">Euclidean Vectors</span>
 </h2>
-<article class="exploration project-like" id="vectors-euclidean-preview"><h6 class="heading">
-<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">9.1.1</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-82">
-<p id="p-703">Consider the following table of meal cost data <a class="xref" data-knowl="./knowl/vectors-euclidean-meals.html" title="Table 9.1.1: Meal costs for four people">9.1.1</a>.</p>
-<figure class="table table-like" id="vectors-euclidean-meals"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">9.1.1<span class="period">.</span></span><span class="space"> </span>Meal costs for four people</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<article class="exploration project-like" id="vectors-euclidean-preview"><h3 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">8.1.1</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-76">
+<p id="p-647">Consider the following table of meal cost data <a href="" class="xref" data-knowl="./knowl/vectors-euclidean-meals.html" title="Table 8.1.1: Meal costs for four people">8.1.1</a>.</p>
+<figure class="table table-like" id="vectors-euclidean-meals"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">8.1.1<span class="period">.</span></span><span class="space"> </span>Meal costs for four people</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines">Breakfast</td>
 <td class="l m b1 r0 l0 t0 lines">Lunch</td>
@@ -180,22 +221,22 @@
 </tr>
 </table></div></figure>
 </div>
-<article class="task exercise-like" id="task-307"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-704">Combine this data to find the total each person paid for food on this day.</p></article><article class="task exercise-like" id="task-308"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-705">Combine this data to find the total cost of each meal.</p></article><article class="task exercise-like" id="task-309"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-706">Run the SageMath code in <a class="xref" data-knowl="./knowl/vectors-euclidean-meals-code.html" title="Listing 9.1.2">9.1.2</a>. Then write a sentence explaining how it answers to one of the above questions.</p>
+<article class="task exercise-like" id="task-287"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-648">Combine this data to find the total each person paid for food on this day.</p></article><article class="task exercise-like" id="task-288"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-649">Combine this data to find the total cost of each meal.</p></article><article class="task exercise-like" id="task-289"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-650">Run the SageMath code in <a href="" class="xref" data-knowl="./knowl/vectors-euclidean-meals-code.html" title="Listing 8.1.2">8.1.2</a>. Then write a sentence explaining how it answers to one of the above questions.</p>
 <figure class="listing figure-like" id="vectors-euclidean-meals-code"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">breakfasts = vector([6.9,11.00,10.25,8.20])
 lunches = vector([8.75,0.00,10.50,14.50])
 dinners = vector([9.05,12.95,13.70,11.15])
 breakfasts+lunches+dinners
 </code></pre></div>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">9.1.2<span class="period">.</span></span><span class="space"> </span>SageMath code using vectors</figcaption></figure></article><article class="task exercise-like" id="task-310"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-707">Modify <a class="xref" data-knowl="./knowl/vectors-euclidean-meals-code.html" title="Listing 9.1.2">9.1.2</a> to answer the other question.</p></article></article><article class="activity project-like" id="activity-64"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.1.2</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-83">
-<p id="p-708">A <dfn class="terminology">Euclidean vector</dfn> is an ordered list of real numbers. (We'll just call them vectors, although there are other kinds of vectors as well.) They are usually written in a vertical column or as an ordered tuple:</p>
-<div class="displaymath">
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">8.1.2<span class="period">.</span></span><span class="space"> </span>SageMath code using vectors</figcaption></figure></article><article class="task exercise-like" id="task-290"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-651">Modify <a href="" class="xref" data-knowl="./knowl/vectors-euclidean-meals-code.html" title="Listing 8.1.2">8.1.2</a> to answer the other question.</p></article></article><article class="activity project-like" id="activity-58"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.1.2</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-77">
+<p id="p-652">A <dfn class="terminology">Euclidean vector</dfn> is an ordered list of real numbers. (We'll just call them vectors, although there are other kinds of vectors as well.) They are usually written in a vertical column or as an ordered tuple:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left(\begin{array}{r}
 1 \\
@@ -205,8 +246,8 @@ breakfasts+lunches+dinners
 \left(1,\,2,\,3\right)
 \end{equation*}
 </div>
-<p id="p-709">The <dfn class="terminology">dimension</dfn> of a vector counts how many numbers it lists. Note that two-dimensional vectors store the same information as complex numbers:</p>
-<div class="displaymath">
+<p id="p-653">The <dfn class="terminology">dimension</dfn> of a vector counts how many numbers it lists. Note that two-dimensional vectors store the same information as complex numbers:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left(\begin{array}{r}
 4 \\
@@ -217,20 +258,20 @@ breakfasts+lunches+dinners
 \end{equation*}
 </div>
 </div>
-<article class="task exercise-like" id="task-311"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-710">Addition is defined in the same way for complex numbers and two-dimensional vectors. Find \((5-12i)+(-3-4i)\) and \((5,-12)+(-3,-4)\) without using technnology.</p></article><article class="task exercise-like" id="task-312"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-711">Write a sentence explaining the rule for adding two-dimensional vectors \((a,b)+(c,d)\text{.}\)</p></article><article class="task exercise-like" id="task-313"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-712">Assuming this pattern continues, what should be the value of \((1,2,3,4,5)+(10,20,30,40,50)\text{?}\)</p></article><article class="task exercise-like" id="task-314"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-713">Trying to add vectors in SageMath with <code class="code-inline tex2jax_ignore">(5,-12)+(-3,4)</code> gives the incorrect result of <code class="code-inline tex2jax_ignore">(5,-12,-3,4)</code>. (These are considered tuples, and the <code class="code-inline tex2jax_ignore">+</code> operator concatenates tuples together.) Instead, we must convert them to vectors first: <code class="code-inline tex2jax_ignore">vector([5,-12])+vector([-3,4])</code>.</p>
-<p id="p-714">Use this technique to add \((1,2,3,4,5)+(10,20,30,40,50)\) in SageMath.</p></article></article><article class="activity project-like" id="activity-65"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.1.3</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-84"><p id="p-715">Like complex numbers, two-dimensional and three-dimensional vectors are often used to represent positional data, compared with an origin <dfn class="terminology">zero vector</dfn> \((0,0)\) or \((0,0,0)\text{.}\)</p></div>
-<article class="task exercise-like" id="task-315"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-716">The position two units up/north and three units left/west from the origin is given by the complex number \(-3+2i\text{.}\) What vector represents that same point?</p></article><article class="task exercise-like" id="task-316"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-717">Give a vector representing four units right/east and one unit down/south from the origin.</p></article><article class="task exercise-like" id="task-317"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-718">Describe the point reached by moving two units up and three units left, followed by four units right and one unit down, as the addition of two vectors. Then compute that sum of vectors.</p></article><article class="task exercise-like" id="task-318"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-719">The SageMath code in <a class="xref" data-knowl="./knowl/vectors-euclidean-addition.html" title="Listing 9.1.3">9.1.3</a> visualizes the vector sum \((5,-12)+(-3,-4)\text{.}\)</p>
+<article class="task exercise-like" id="task-291"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-654">Addition is defined in the same way for complex numbers and two-dimensional vectors. Find <span class="process-math">\((5-12i)+(-3-4i)\)</span> and <span class="process-math">\((5,-12)+(-3,-4)\)</span> without using technnology.</p></article><article class="task exercise-like" id="task-292"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-655">Write a sentence explaining the rule for adding two-dimensional vectors <span class="process-math">\((a,b)+(c,d)\text{.}\)</span></p></article><article class="task exercise-like" id="task-293"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-656">Assuming this pattern continues, what should be the value of <span class="process-math">\((1,2,3,4,5)+(10,20,30,40,50)\text{?}\)</span></p></article><article class="task exercise-like" id="task-294"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-657">Trying to add vectors in SageMath with <code class="code-inline tex2jax_ignore">(5,-12)+(-3,4)</code> gives the incorrect result of <code class="code-inline tex2jax_ignore">(5,-12,-3,4)</code>. (These are considered tuples, and the <code class="code-inline tex2jax_ignore">+</code> operator concatenates tuples together.) Instead, we must convert them to vectors first: <code class="code-inline tex2jax_ignore">vector([5,-12])+vector([-3,4])</code>.</p>
+<p id="p-658">Use this technique to add <span class="process-math">\((1,2,3,4,5)+(10,20,30,40,50)\)</span> in SageMath.</p></article></article><article class="activity project-like" id="activity-59"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.1.3</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-78"><p id="p-659">Like complex numbers, two-dimensional and three-dimensional vectors are often used to represent positional data, compared with an origin <dfn class="terminology">zero vector</dfn> <span class="process-math">\((0,0)\)</span> or <span class="process-math">\((0,0,0)\text{.}\)</span></p></div>
+<article class="task exercise-like" id="task-295"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-660">The position two units up/north and three units left/west from the origin is given by the complex number <span class="process-math">\(-3+2i\text{.}\)</span> What vector represents that same point?</p></article><article class="task exercise-like" id="task-296"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-661">Give a vector representing four units right/east and one unit down/south from the origin.</p></article><article class="task exercise-like" id="task-297"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-662">Describe the point reached by moving two units up and three units left, followed by four units right and one unit down, as the addition of two vectors. Then compute that sum of vectors.</p></article><article class="task exercise-like" id="task-298"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-663">The SageMath code in <a href="" class="xref" data-knowl="./knowl/vectors-euclidean-addition.html" title="Listing 8.1.3">8.1.3</a> visualizes the vector sum <span class="process-math">\((5,-12)+(-3,-4)\text{.}\)</span></p>
 <figure class="listing figure-like" id="vectors-euclidean-addition"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">a = vector([5,-12])
 b = vector([-3,4])
 
@@ -238,34 +279,34 @@ plot(a,color='blue') + \
     arrow(a,a+b,color='red') + \
     plot(a+b,color='purple')
 </code></pre></div>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">9.1.3<span class="period">.</span></span><span class="space"> </span>Visualizing vector addition</figcaption></figure><p id="p-720">Run <a class="xref" data-knowl="./knowl/vectors-euclidean-addition.html" title="Listing 9.1.3">9.1.3</a>, and then modify a copy of it to visualize the vectors from the previous three tasks.</p></article><article class="task exercise-like" id="task-319"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-721">Modify another copy of <a class="xref" data-knowl="./knowl/vectors-euclidean-addition.html" title="Listing 9.1.3">9.1.3</a> to visualize the three-dimensional vector sum \((1,-2,4)+(0,3,-2)\text{.}\) (You can rotate, drag, and zoom this visualization to see it from different perspectives.)</p></article></article><article class="activity project-like" id="activity-66"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.1.4</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-85"><p id="p-722">Like complex numbers, vectors can be multiplied by real numbers to manipulate them.</p></div>
-<article class="task exercise-like" id="task-320"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-723">Run <code class="code-inline tex2jax_ignore">3*vector([1,2,3])</code> to compute the product \(3\left(\begin{array}{r}1 \\2 \\3\end{array}\right)\text{.}\) Then write a sentence explaining the rule you think SageMath followed to compute this product.</p></article><article class="task exercise-like" id="task-321"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-724">Visualize \(\left(\begin{array}{r}1 \\2 \\3\end{array}\right)\) and \(3\left(\begin{array}{r}1 \\2 \\3\end{array}\right)\) by using the <code class="code-inline tex2jax_ignore">plot()</code> SageMath tool.</p></article><article class="task exercise-like" id="task-322"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-725">Write a sentence explaining how multiplying the vector by three changed the shape of the vector.</p></article><article class="task exercise-like" id="task-323"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-726">Put your intuition to the test! Simplify \(2\left(\begin{array}{r}3 \\-2 \\5\end{array}\right)\) by hand, and then using a Code cell. Then compare it with \(\left(\begin{array}{r}3 \\-2 \\5\end{array}\right)\) using a <code class="code-inline tex2jax_ignore">plot()</code> visualization.</p></article><article class="task exercise-like" id="task-324"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-727">Rewrite the sum \((-2,6,-4)+(-2,6,-4)\) as a product \(\Box(-2,6,4)\text{.}\) Then confirm with SageMath that they are indeed the same thing.</p></article><article class="task exercise-like" id="task-325"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-728">Give an example of multiplying a vector by a negative number. Then write a sentence explaining what happens to the direction of the vector arrow.</p></article></article><section class="exercises" id="exercises-18"><h3 class="heading hide-type">
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">8.1.3<span class="period">.</span></span><span class="space"> </span>Visualizing vector addition</figcaption></figure><p id="p-664">Run <a href="" class="xref" data-knowl="./knowl/vectors-euclidean-addition.html" title="Listing 8.1.3">8.1.3</a>, and then modify a copy of it to visualize the vectors from the previous three tasks.</p></article><article class="task exercise-like" id="task-299"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-665">Modify another copy of <a href="" class="xref" data-knowl="./knowl/vectors-euclidean-addition.html" title="Listing 8.1.3">8.1.3</a> to visualize the three-dimensional vector sum <span class="process-math">\((1,-2,4)+(0,3,-2)\text{.}\)</span> (You can rotate, drag, and zoom this visualization to see it from different perspectives.)</p></article></article><article class="activity project-like" id="activity-60"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.1.4</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-79"><p id="p-666">Like complex numbers, vectors can be multiplied by real numbers to manipulate them.</p></div>
+<article class="task exercise-like" id="task-300"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-667">Run <code class="code-inline tex2jax_ignore">3*vector([1,2,3])</code> to compute the product <span class="process-math">\(3\left(\begin{array}{r}1 \\2 \\3\end{array}\right)\text{.}\)</span> Then write a sentence explaining the rule you think SageMath followed to compute this product.</p></article><article class="task exercise-like" id="task-301"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-668">Visualize <span class="process-math">\(\left(\begin{array}{r}1 \\2 \\3\end{array}\right)\)</span> and <span class="process-math">\(3\left(\begin{array}{r}1 \\2 \\3\end{array}\right)\)</span> by using the <code class="code-inline tex2jax_ignore">plot()</code> SageMath tool.</p></article><article class="task exercise-like" id="task-302"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-669">Write a sentence explaining how multiplying the vector by three changed the shape of the vector.</p></article><article class="task exercise-like" id="task-303"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-670">Put your intuition to the test! Simplify <span class="process-math">\(2\left(\begin{array}{r}3 \\-2 \\5\end{array}\right)\)</span> by hand, and then using a Code cell. Then compare it with <span class="process-math">\(\left(\begin{array}{r}3 \\-2 \\5\end{array}\right)\)</span> using a <code class="code-inline tex2jax_ignore">plot()</code> visualization.</p></article><article class="task exercise-like" id="task-304"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-671">Rewrite the sum <span class="process-math">\((-2,6,-4)+(-2,6,-4)\)</span> as a product <span class="process-math">\(\Box(-2,6,4)\text{.}\)</span> Then confirm with SageMath that they are indeed the same thing.</p></article><article class="task exercise-like" id="task-305"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<p id="p-672">Give an example of multiplying a vector by a negative number. Then write a sentence explaining what happens to the direction of the vector arrow.</p></article></article><section class="exercises" id="exercises-17"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-127"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-729">Describe the dimension of the vector \((5,-1)\text{.}\) What about the vector \((3,0,-4)\text{?}\) What about the complex number \(5-i\text{?}\)</p></article><article class="exercise exercise-like" id="exercise-128"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-730">Compute the following sums.</p>
+<article class="exercise exercise-like" id="exercise-118"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<p id="p-673">Describe the dimension of the vector <span class="process-math">\((5,-1)\text{.}\)</span> What about the vector <span class="process-math">\((3,0,-4)\text{?}\)</span> What about the complex number <span class="process-math">\(5-i\text{?}\)</span></p></article><article class="exercise exercise-like" id="exercise-119"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<p id="p-674">Compute the following sums.</p>
 <ul class="disc">
-<li id="li-87"><p id="p-derived-li-87">\(\displaystyle \left(\begin{array}{r}
+<li id="li-77"><p id="p-derived-li-77"><span class="process-math">\(\displaystyle \left(\begin{array}{r}
 -2 \\
 3
 \end{array}\right)+
 \left(\begin{array}{r}
 -5 \\
 2
-\end{array}\right)\)</p></li>
-<li id="li-88"><p id="p-derived-li-88">\(\displaystyle \left(7,\,-7\right)+\left(5,\,3\right)\)</p></li>
-<li id="li-89"><p id="p-derived-li-89">\(\displaystyle \left(\begin{array}{r}
+\end{array}\right)\)</span></p></li>
+<li id="li-78"><p id="p-derived-li-78"><span class="process-math">\(\displaystyle \left(7,\,-7\right)+\left(5,\,3\right)\)</span></p></li>
+<li id="li-79"><p id="p-derived-li-79"><span class="process-math">\(\displaystyle \left(\begin{array}{r}
 8 \\
 -3 \\
 -8
@@ -274,13 +315,13 @@ plot(a,color='blue') + \
 3 \\
 -5 \\
 -1
-\end{array}\right)\)</p></li>
-<li id="li-90"><p id="p-derived-li-90">\(\displaystyle \left(1,2,4,8,16\right)+\left(1,3,5,7,9\right)\)</p></li>
-</ul></article><article class="exercise exercise-like" id="exercise-129"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-731">Visualize the sums from the previous exercise.</p></article><article class="exercise exercise-like" id="exercise-130"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-732">Compute \(4\,(3,-1,4)\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-131"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-733">Visualize \(4\,(3,-1,4)\text{,}\) and explain what multiplying by four did to the vector arrow for \((3,-1,4)\text{.}\)</p></article></section></section></div></main>
+\end{array}\right)\)</span></p></li>
+<li id="li-80"><p id="p-derived-li-80"><span class="process-math">\(\displaystyle \left(1,2,4,8,16\right)+\left(1,3,5,7,9\right)\)</span></p></li>
+</ul></article><article class="exercise exercise-like" id="exercise-120"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<p id="p-675">Visualize the sums from the previous exercise.</p></article><article class="exercise exercise-like" id="exercise-121"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<p id="p-676">Compute <span class="process-math">\(4\,(3,-1,4)\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-122"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<p id="p-677">Visualize <span class="process-math">\(4\,(3,-1,4)\text{,}\)</span> and explain what multiplying by four did to the vector arrow for <span class="process-math">\((3,-1,4)\text{.}\)</span></p></article></section></section></div></main>
 </div>
-<script src="https://unpkg.com/prismjs@v1.22.0/components/prism-core.min.js"></script><script src="https://unpkg.com/prismjs@v1.22.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 </html>

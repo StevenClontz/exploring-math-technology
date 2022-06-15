@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:25Z       *-->
+<!--*       on 2022-06-15T21:02:36Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,16 +13,45 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.4</span><span class="period">.</span>
-</h6>
-<div class="introduction"><p>Let's return to the question of math placement scores discussed in <a class="xref" data-knowl="./knowl/predictions-correlation-preview.html" title="Preview Activity 6.1.1">6.1.1</a>.</p></div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p>Get a copy of <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">testing_table</code> from 4.3 available for use in this notebook, and use code cells to produce the scatter plots shown in <a class="xref" data-knowl="./knowl/predictions-correlation-preview-uncorrelated.html" title="Figure 6.1.1">6.1.1</a> and <a class="xref" data-knowl="./knowl/predictions-correlation-preview-correlated.html" title="Figure 6.1.2">6.1.2</a>.</p>
-<p>Don't forget to use <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">import matplotlib</code>, <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">%matplotlib inline</code>, and <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">.where("column_name",are.above(0))</code> appropriately.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p>Describe your intuition for why SAT math scores, college math placement exam scores, and high school sizes may or may not be correlated with each other based upon the scatter plots.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p>Test your intuition by using technology to compute appropriate correlation coefficients. Explain why those values confirm or contradict your intuition.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p>Is it true to say that SAT math scores are <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">perfect</em> predictors of college math placement exam scores? Give reasons why or why not based upon the scatter plot, the value of \(r\) found, and your intuition.</p></article></article><span class="incontext"><a href="predictions-correlation.html#activity-45">in-context</a></span>
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.5</span><span class="period">.</span>
+</h3>
+<div class="introduction">
+<p>While probability measures the ratio of event outcomes over all possible outcomes, an <dfn class="terminology">experimental probability</dfn> is obtained by actually running the experiment several times, and calculating the number of trials that fit the event divided by the total number of trails run. That is, it follows the following formula:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\hat P(E) = \frac{\text{# trials that belong to }E}{\text{# trials run}}
+\end{equation*}
+</div>
+<p>For example, to compute experimental probabilities from flipping a fair coin, one might flip that coin five times. If the results were H-T-T-H-H, then the experimental probability for obtaining Heads would be <span class="process-math">\(\frac{3}{5}=60\%\text{,}\)</span> and obtaining Tails would be <span class="process-math">\(\frac{2}{5}=40\%\text{.}\)</span></p>
+</div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Flip a fair coin ten times and record the results of each trial. Then give the experimental probabilities for obtaining Heads and Tails respectively.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Do it again. Did you obtain the same results? Should you have? Explain your reasoning.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>Find all possible experimental probabilities of flipping Heads using five trials. (Hint: there are six of them, including the <span class="process-math">\(\frac{3}{5}\)</span> mentioned above.) Explain your reasoning, and explain which of these probabilities you'd expect to see most often in actual experiments.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p>Bugfix the SageMath for-loop in <a href="" class="xref" data-knowl="./knowl/random-probability-flips.html" title="Listing 6.1.1">6.1.1</a> to see how the experimental probability of flipping Heads can change as 1000 coinflips are simulated.</p>
+<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">heads = 0
+total = 0
+points = []
+
+for _ in range(1000):
+    # re-arrange the following lines, fixing indentation as needed
+    heads = heads + 1
+    points.append( (total,ex_prob) )
+    if flip == "H":
+        ex_prob = heads/total
+    total = total + 1
+    flip = choice(['H','T'])
+
+show(
+    line(points, color="blue")+line([(1,0.5),(1000,0.5)], color="red"),
+    axes_labels=["Trials","Exp. Prob."],
+    ymin=0,
+    ymax=1
+)
+</code></pre></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">6.1.1<span class="period">.</span></span><span class="space"> </span>Buggy code to simulate flipping coin 1000 times</figcaption></figure></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p>Create a few copies of that same Code cell to run additional experiments. What do these graphs mean, and how do they illustrate the fairness of the simulated coin flips?</p></article></article><span class="incontext"><a href="random-probability.html#activity-45" class="internal">in-context</a></span>
 </body>
 </html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-06-15T21:02:34Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span>
+</h3>
+<div class="introduction"><p>In addition to storing and manipulating expressions of mathematical variables, SageMath also supports studying <dfn class="terminology">equations</dfn> that set two expressions equal to one another.</p></div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Since the equal sign is already used as the assignment operator <code class="code-inline tex2jax_ignore">=</code>, two equal signs are used to represent the equality operator <code class="code-inline tex2jax_ignore">==</code>.</p>
+<p>When only simple numerical values are present, the equality operator behaves similarly in both Python and SageMath: it evaluates both sides of the equation and returns a <dfn class="terminology">Boolean value</dfn> of <code class="code-inline tex2jax_ignore">True</code> or <code class="code-inline tex2jax_ignore">False</code>. For example, the following code cell verifies that <span class="process-math">\(3(2)=6\)</span> but <span class="process-math">\(3^2\not= 6\)</span> since it returns <code class="code-inline tex2jax_ignore">True</code> then <code class="code-inline tex2jax_ignore">False</code>.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-45"><script type="text/x-sage">show(3*2==6)
+show(3^2==6)
+</script></pre>
+<p>Use the equality operator to verify that <span class="process-math">\(1+2+3+4+5+6=\frac{6\times 7}{2}\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-46"><script type="text/x-sage"></script></pre></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>When math variables or more advanced values are present, the equality operator will return an equation, but won't immediately reveal whether this equation is true or false.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-47"><script type="text/x-sage">show( x^2+2*x+1==(x+1)^2 )
+</script></pre>
+<p>Try <code class="code-inline tex2jax_ignore">show()</code>ing the equation <span class="process-math">\(x=\sqrt{x^2}\)</span> in the cell below.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-48"><script type="text/x-sage"></script></pre></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>SageMath is able to verify the truth of simple equations by using the <code class="code-inline tex2jax_ignore">bool()</code> tool. For example, the below cell will return <code class="code-inline tex2jax_ignore">False</code>, since <span class="process-math">\(x\not=\sqrt{x^2}\)</span> when <span class="process-math">\(-4\)</span> is plugged into <span class="process-math">\(x\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-49"><script type="text/x-sage">show( bool(x==sqrt(x^2)) )
+</script></pre>
+<p>Use <code class="code-inline tex2jax_ignore">bool()</code> to verify that <span class="process-math">\(3e^{1-\frac{1}{2}i\pi}\)</span> has the same value as <span class="process-math">\(-3ei\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-50"><script type="text/x-sage"></script></pre></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p>Equations can be manipulated by SageMath similarly to how you manipulate them by hand. For example:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+x+7&amp;=11\\
+\scriptsize{-7}&amp;\phantom{=}\scriptsize{-7}\\
+x&amp;=4
+\end{align*}
+</div>
+<p>This may be verified by running the following Code cell.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-51"><script type="text/x-sage">show( (x+7==11)-7 )
+</script></pre>
+<p>Solve the equation <span class="process-math">\(2x+5=x-7\)</span> by subtracting <span class="process-math">\(x\)</span> and <span class="process-math">\(5\)</span> from the equation using a Code cell. <pre class="ptx-sagecell sagecell-sage" id="sage-52"><script type="text/x-sage"></script></pre></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p>SageMath can automatically solve many equations for you using the <code class="code-inline tex2jax_ignore">solve()</code> tool. For example, the following code cell reveals the solution <span class="process-math">\(x=4\)</span> immediately.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-53"><script type="text/x-sage">show( solve(x+7==11,x) )
+</script></pre>
+<p>Use the <code class="code-inline tex2jax_ignore">solve()</code> tool to solve <span class="process-math">\(2x+5=x-7\)</span> automatically.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-54"><script type="text/x-sage"></script></pre></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<p>Use the <code class="code-inline tex2jax_ignore">solve()</code> tool to find both solutions to <span class="process-math">\(x^2+3x+7=4-x\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-55"><script type="text/x-sage"></script></pre></article></article><span class="incontext"><a href="programming-sagemath.html#activity-8" class="internal">in-context</a></span>
+</body>
+</html>

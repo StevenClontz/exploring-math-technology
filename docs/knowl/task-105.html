@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:23Z       *-->
+<!--*       on 2022-06-15T21:02:35Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,15 +13,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Task</span><span class="space"> </span><span class="codenumber">3.3.2.a</span><span class="period">.</span>
-</h6>
-<p>Save the following numbers as a list named <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">favorite_numbers</code>.</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-18, 7, -7, -\frac{7}{2}, 9, \frac{17}{4}, 0, -17, 19, 3
-\end{equation*}
-</div></article><span class="incontext"><a href="data-programming.html#task-105">in-context</a></span>
+<body class="ignore-math">
+<article class="task exercise-like"><h4 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">3.1.4.c</span><span class="period">.</span>
+</h4>
+<p>Fix the code in <a href="" class="xref" data-knowl="./knowl/visualization-tables-text-to-table.html" title="Listing 3.1.7">3.1.7</a> to save the chapters of the book to a <code class="code-inline tex2jax_ignore">datascience</code> table.</p>
+<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">with open("peterpan.txt") as book_file:
+    # Fix the order of the following lines
+    book_table = Table().with_column("Chapter", book_chapters) # creates table of chapters
+    book_chapters = book_string.split("Chapter ")[1:] # makes list of strings for each chapter
+    book_table.show() # displays table
+    book_string = book_file.read() # saves contents of the text file to a string
+</code></pre></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.1.7<span class="period">.</span></span><span class="space"> </span>Import book text to a table</figcaption></figure></article><span class="incontext"><a href="visualization-tables.html#task-105" class="internal">in-context</a></span>
 </body>
 </html>

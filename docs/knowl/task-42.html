@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:21Z       *-->
+<!--*       on 2022-06-15T21:02:34Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,12 +12,22 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
 </head>
-<body>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Task</span><span class="space"> </span><span class="codenumber">1.3.4.b</span><span class="period">.</span>
-</h6>
-<p>Math variables may be manipulated just like literal values or values store in CS variables. But since they don't store specific values, these combinations of variables represent an <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">expression</dfn>.</p>
-<p>Use SageMath's <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">show()</code> tool to display the expression \(x^2+4yz\) using a Code cell. Remember that \(4yz=4\times y\times z\) requires the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">*</code> operator to perform multiplication.</p></article><span class="incontext"><a href="programming-sagemath.html#task-42">in-context</a></span>
+<body class="ignore-math">
+<article class="task exercise-like"><h4 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">1.2.5.c</span><span class="period">.</span>
+</h4>
+<p>SageMath is able to verify the truth of simple equations by using the <code class="code-inline tex2jax_ignore">bool()</code> tool. For example, the below cell will return <code class="code-inline tex2jax_ignore">False</code>, since <span class="process-math">\(x\not=\sqrt{x^2}\)</span> when <span class="process-math">\(-4\)</span> is plugged into <span class="process-math">\(x\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-49"><script type="text/x-sage">show( bool(x==sqrt(x^2)) )
+</script></pre>
+<p>Use <code class="code-inline tex2jax_ignore">bool()</code> to verify that <span class="process-math">\(3e^{1-\frac{1}{2}i\pi}\)</span> has the same value as <span class="process-math">\(-3ei\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-50"><script type="text/x-sage"></script></pre></article><span class="incontext"><a href="programming-sagemath.html#task-42" class="internal">in-context</a></span>
 </body>
 </html>

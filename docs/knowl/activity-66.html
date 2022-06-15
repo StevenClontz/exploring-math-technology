@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:27Z       *-->
+<!--*       on 2022-06-15T21:02:37Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,17 +13,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.1.4</span><span class="period">.</span>
-</h6>
-<div class="introduction"><p>Like complex numbers, vectors can be multiplied by real numbers to manipulate them.</p></div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p>Run <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">3*vector([1,2,3])</code> to compute the product \(3\left(\begin{array}{r}1 \\2 \\3\end{array}\right)\text{.}\) Then write a sentence explaining the rule you think SageMath followed to compute this product.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p>Visualize \(\left(\begin{array}{r}1 \\2 \\3\end{array}\right)\) and \(3\left(\begin{array}{r}1 \\2 \\3\end{array}\right)\) by using the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">plot()</code> SageMath tool.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p>Write a sentence explaining how multiplying the vector by three changed the shape of the vector.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p>Put your intuition to the test! Simplify \(2\left(\begin{array}{r}3 \\-2 \\5\end{array}\right)\) by hand, and then using a Code cell. Then compare it with \(\left(\begin{array}{r}3 \\-2 \\5\end{array}\right)\) using a <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">plot()</code> visualization.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
-<p>Rewrite the sum \((-2,6,-4)+(-2,6,-4)\) as a product \(\Box(-2,6,4)\text{.}\) Then confirm with SageMath that they are indeed the same thing.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(f)</span></h6>
-<p>Give an example of multiplying a vector by a negative number. Then write a sentence explaining what happens to the direction of the vector arrow.</p></article></article><span class="incontext"><a href="vectors-euclidean.html#activity-66">in-context</a></span>
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.3.3</span><span class="period">.</span>
+</h3>
+<div class="introduction">
+<p>It turns out that the determinant of a <span class="process-math">\(2\times 2\)</span> matrix can be computed by multiplying its diagonals and subtracting:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\operatorname{det}\left(\begin{array}{rr}
+2 &amp; 3 \\
+1 &amp; 5
+\end{array}\right) = (2)(5)-(3)(1) = 10-3=7
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Use this technique to confirm your work from the previous activity.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>SageMath can also compute the determinant of a matrix <code class="code-inline tex2jax_ignore">A</code> directly: <code class="code-inline tex2jax_ignore">det(A)</code>. Use this to check your work from the previous task.</p></article></article><span class="incontext"><a href="vectors-determinants.html#activity-66" class="internal">in-context</a></span>
 </body>
 </html>

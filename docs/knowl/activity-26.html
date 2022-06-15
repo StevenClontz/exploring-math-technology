@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:23Z       *-->
+<!--*       on 2022-06-15T21:02:35Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,32 +13,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span>
-</h6>
-<div class="introduction"><p>Often the way you want to deal with data is <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">conditional</dfn>, that is, the code you want to run will depend on <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">if</em> a variable satisfies a certain condition.</p></div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p>Paste the code in <a class="xref" data-knowl="./knowl/data-programming-conditional-money.html" title="Listing 3.3.6">3.3.6</a> into three code cells, changing the value of <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">money_in_bank</code> so that each cell outputs a different response.</p>
-<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">money_in_bank = "this probably should be a number, huh"
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span>
+</h3>
+<div class="introduction"><p>The <code class="code-inline tex2jax_ignore">datascience</code> library supports quickly generating <dfn class="terminology">histograms</dfn> visualizing univariate data. Histograms are similar to dot plots, but measure how many values fall within a range rather than individual values.</p></div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Repeat the steps from <a href="visualization-tables.html" class="internal" title="Section 3.1: Tables">3.1</a> to make <code class="code-inline tex2jax_ignore">pizza_table</code> available in this Jupyter notebook.</p>
+<p>Confirm by running the code in <a href="" class="xref" data-knowl="./knowl/visualization-one-hist-0401.html" title="Listing 3.2.6">3.2.6</a> to create a histogram of prices for April 1st.</p>
+<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py"># The following two lines only need to be run once per notebook
+# that generates datascience graphics
+import matplotlib
+%matplotlib inline
 
-if money_in_bank &gt; 10000:
-    print("Wow you're rich!")
-elif money_in_bank &gt; 100:
-    print("Hey, not bad.")
-else:
-    print("I should save up a bit more.")
+# Generate histogram for April 1st
+# (Always leave normed=False to measure counts of data values)
+pizza_table.where("date","2015-04-01").select("price").hist(bins=20,normed=False)
 </code></pre></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.6<span class="period">.</span></span><span class="space"> </span>Conditional on amount of money</figcaption></figure></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p>Bugfix the code shown in <a class="xref" data-knowl="./knowl/data-programming-conditional-root.html" title="Listing 3.3.7">3.3.7</a>.</p>
-<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">from math import sqrt # makes the square root function available in Python
-
-for number in favorite_numbers:
-    root = sqrt(number)
-    print(f"The square root of {number} is {root}")
-    # TODO add if/else statements to handle numbers when square root is not allowed
-    # print(f"Taking the square root of {number} is not allowed!")
-</code></pre></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.7<span class="period">.</span></span><span class="space"> </span>Using conditionals inside loops</figcaption></figure></article></article><span class="incontext"><a href="data-programming.html#activity-26">in-context</a></span>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.2.6<span class="period">.</span></span><span class="space"> </span>Program to generate Apr 01 price histogram</figcaption></figure></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Each <dfn class="terminology">bin</dfn> or bar of the histogram counts how many prices fall within the range shown along its base (including the left endpoint but excluding the right endpoint). For example, seven pizzas were sold at a price of around $19.</p>
+<p>How many pizzas sold on April 1st had a price roughly between $12 and $13?</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>Compare the result of <a href="" class="xref" data-knowl="./knowl/visualization-one-hist-0401.html" title="Listing 3.2.6">3.2.6</a> to <a href="" class="xref" data-knowl="./knowl/visualization-one-dot-plot-large.html" title="Figure 3.2.5">3.2.5</a>. What do they have in common? How do they differ? What might explain these differences? Write a few sentences summarizing your thoughts.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p>Generate a histogram of pizza prices sold on June 19th, grouped into 15 bins.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p>Run the code <code class="code-inline tex2jax_ignore">pizza_table.select("size","price").hist(group="size",bins=20,normed=False)</code>. Write a few sentences summarizing what this graphic illustrates about the dataset.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<p>Create a useful visualization of the prices of pizzas sold at this restaurant throughout 2015, based on their type (supreme, veggie, classic, etc.).</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(g)</span></h4>
+<p>Write a sentence or two making an observation about the pizzas sold in 2015, based upon the graphic you created in the previous task.</p></article></article><span class="incontext"><a href="visualization-one.html#activity-26" class="internal">in-context</a></span>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:18Z       *-->
+<!--*       on 2022-06-15T21:02:33Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -9,23 +9,38 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>EMDST Two-variable Visualizations</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>window.MathJax = {
+<meta property="og:type" content="book">
+<meta property="book:title" content="Exploring Mathematics and Data Science with Technology">
+<meta property="book:author" content="Dr. Steven Clontz">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.88,
@@ -36,33 +51,66 @@
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://unpkg.com/prismjs@v1.22.0/themes/prism.css" rel="stylesheet">
-<script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="book-1.html"><span class="title">Exploring Mathematics and Data Science with Technology</span></a></h1>
 <p class="byline">Dr. Steven Clontz</p>
 </div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
 <a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="visualization-one.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="visualization.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="measurements.html" title="Next">Next</a></span>
@@ -72,89 +120,82 @@
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="visualization-one.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="visualization.html" title="Up">Up</a><a class="next-button button toolbar-item" href="measurements.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
-<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
-<li><a href="why.html" data-scroll="why">Why Study Mathematics?</a></li>
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="why.html" data-scroll="why" class="internal">Why Study Mathematics?</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="programming.html" data-scroll="programming"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
-<li><a href="programming-jupyter.html" data-scroll="programming-jupyter">Jupyter Notebooks and CoCalc</a></li>
-<li><a href="programming-python.html" data-scroll="programming-python">The Python Kernel</a></li>
-<li><a href="programming-sagemath.html" data-scroll="programming-sagemath">The SageMath Kernel</a></li>
+<a href="programming.html" data-scroll="programming" class="internal"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
+<li><a href="programming-python.html" data-scroll="programming-python" class="internal">Using Python</a></li>
+<li><a href="programming-sagemath.html" data-scroll="programming-sagemath" class="internal">Using SageMath</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="writing.html" data-scroll="writing"><span class="codenumber">2</span> <span class="title">Writing for Mathematicians and Data Scientists</span></a><ul>
-<li><a href="writing-math.html" data-scroll="writing-math">The Importance of Writing in Mathematics and Data Science</a></li>
-<li><a href="writing-markup.html" data-scroll="writing-markup">Using Markdown and LaTeX</a></li>
+<a href="data.html" data-scroll="data" class="internal"><span class="codenumber">2</span> <span class="title">Data and Collections</span></a><ul>
+<li><a href="data-numbers.html" data-scroll="data-numbers" class="internal">Numbers and Strings</a></li>
+<li><a href="data-collections.html" data-scroll="data-collections" class="internal">Collections of Data</a></li>
+<li><a href="data-programming.html" data-scroll="data-programming" class="internal">Programming with Data</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="data.html" data-scroll="data"><span class="codenumber">3</span> <span class="title">Data and Collections</span></a><ul>
-<li><a href="data-numbers.html" data-scroll="data-numbers">Numbers and Strings</a></li>
-<li><a href="data-collections.html" data-scroll="data-collections">Collections of Data</a></li>
-<li><a href="data-programming.html" data-scroll="data-programming">Programming with Data</a></li>
-</ul>
-</li>
-<li class="link">
-<a href="visualization.html" data-scroll="visualization"><span class="codenumber">4</span> <span class="title">Visualization of Data</span></a><ul>
-<li><a href="visualization-tables.html" data-scroll="visualization-tables">Tables</a></li>
-<li><a href="visualization-one.html" data-scroll="visualization-one">Single-Variable Visualizations</a></li>
+<a href="visualization.html" data-scroll="visualization" class="internal"><span class="codenumber">3</span> <span class="title">Visualization of Data</span></a><ul>
+<li><a href="visualization-tables.html" data-scroll="visualization-tables" class="internal">Tables</a></li>
+<li><a href="visualization-one.html" data-scroll="visualization-one" class="internal">Single-Variable Visualizations</a></li>
 <li><a href="visualization-two.html" data-scroll="visualization-two" class="active">Two-variable Visualizations</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="measurements.html" data-scroll="measurements"><span class="codenumber">5</span> <span class="title">Measurements of Data</span></a><ul>
-<li><a href="measurements-center.html" data-scroll="measurements-center">Centers of Data</a></li>
-<li><a href="measurement-spread.html" data-scroll="measurement-spread">Spread of Data</a></li>
+<a href="measurements.html" data-scroll="measurements" class="internal"><span class="codenumber">4</span> <span class="title">Measurements of Data</span></a><ul>
+<li><a href="measurements-center.html" data-scroll="measurements-center" class="internal">Centers of Data</a></li>
+<li><a href="measurement-spread.html" data-scroll="measurement-spread" class="internal">Spread of Data</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="predictions.html" data-scroll="predictions"><span class="codenumber">6</span> <span class="title">Making Predictions from Data</span></a><ul>
-<li><a href="predictions-correlation.html" data-scroll="predictions-correlation">Measuring Correlation</a></li>
-<li><a href="predictions-regression.html" data-scroll="predictions-regression">The Fit Line</a></li>
+<a href="predictions.html" data-scroll="predictions" class="internal"><span class="codenumber">5</span> <span class="title">Making Predictions from Data</span></a><ul>
+<li><a href="predictions-correlation.html" data-scroll="predictions-correlation" class="internal">Measuring Correlation</a></li>
+<li><a href="predictions-regression.html" data-scroll="predictions-regression" class="internal">The Fit Line</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a><ul>
-<li><a href="random-probability.html" data-scroll="random-probability">Introduction to Probability</a></li>
-<li><a href="random-combinatorics.html" data-scroll="random-combinatorics">Combinatorics</a></li>
+<a href="random.html" data-scroll="random" class="internal"><span class="codenumber">6</span> <span class="title">Modeling Random Events</span></a><ul>
+<li><a href="random-probability.html" data-scroll="random-probability" class="internal">Introduction to Probability</a></li>
+<li><a href="random-combinatorics.html" data-scroll="random-combinatorics" class="internal">Combinatorics</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a><ul>
-<li><a href="complex-cartesian.html" data-scroll="complex-cartesian">Cartesian Coordinates</a></li>
-<li><a href="complex-polar.html" data-scroll="complex-polar">Polar Form</a></li>
+<a href="complex.html" data-scroll="complex" class="internal"><span class="codenumber">7</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a><ul>
+<li><a href="complex-cartesian.html" data-scroll="complex-cartesian" class="internal">Cartesian Coordinates</a></li>
+<li><a href="complex-polar.html" data-scroll="complex-polar" class="internal">Polar Form</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Space</span></a><ul>
-<li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean">Euclidean Vectors</a></li>
-<li><a href="vectors-matrices.html" data-scroll="vectors-matrices">Matrices</a></li>
-<li><a href="vectors-determinants.html" data-scroll="vectors-determinants">Determinants</a></li>
+<a href="vectors.html" data-scroll="vectors" class="internal"><span class="codenumber">8</span> <span class="title">Higher-Dimensional Data and Euclidean Space</span></a><ul>
+<li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean" class="internal">Euclidean Vectors</a></li>
+<li><a href="vectors-matrices.html" data-scroll="vectors-matrices" class="internal">Matrices</a></li>
+<li><a href="vectors-determinants.html" data-scroll="vectors-determinants" class="internal">Determinants</a></li>
 </ul>
 </li>
-<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
-<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
-<li class="link"><a href="references.html" data-scroll="references"><span class="title">References</span></a></li>
-<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="references.html" data-scroll="references" class="internal"><span class="title">References</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="visualization-two"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">4.3</span> <span class="title">Two-variable Visualizations</span>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="visualization-two"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.3</span> <span class="title">Two-variable Visualizations</span>
 </h2>
-<article class="exploration project-like" id="visualization-two-preview"><h6 class="heading">
-<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
-</h6>
-<p id="p-376">By hand, sketch the \(xy\) coordinates in the following table as points on a coordinate plane.</p>
-<figure class="table table-like" id="table-7"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.3.1<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<article class="exploration project-like" id="visualization-two-preview"><h3 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span>
+</h3>
+<p id="p-320">By hand, sketch the <span class="process-math">\(xy\)</span> coordinates in the following table as points on a coordinate plane.</p>
+<figure class="table table-like" id="table-7"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.3.1<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
-<td class="l m b1 r0 l0 t0 lines">\(x\)</td>
-<td class="l m b1 r0 l0 t0 lines">\(y\)</td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(x\)</span></td>
+<td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(y\)</span></td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">1</td>
@@ -184,14 +225,14 @@
 <td class="l m b0 r0 l0 t0 lines">7</td>
 <td class="l m b0 r0 l0 t0 lines">3</td>
 </tr>
-</table></div></figure><p id="p-377">Suppose \(x\) measures for the number of days a student has been absent from class, and \(y\) represents their score on a quiz out of \(10\text{.}\) What conclusion might you draw from the table of data? How do the points you drew in the coordinate plane illustrate this conclusion? Write a sentence or two summarizing your thoughts.</p></article><article class="activity project-like" id="activity-34"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-40"><p id="p-378">Often data scientists need to consider data where each item has two properties. When one property is a category, and the other is numerical, a <dfn class="terminology">bar chart</dfn> is often the right tool for the job.</p></div>
-<article class="task exercise-like" id="task-141"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-379">Repeat the steps from previous sections to get a copy of <code class="code-inline tex2jax_ignore">pizza_table</code> available for this notebook.</p></article><article class="task exercise-like" id="task-142"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-380">The table in <a class="xref" data-knowl="./knowl/visualization-two-type-count-0620.html" title="Table 4.3.2: Pizzas sold on Jun 20, by type">4.3.2</a> describes how many pizzas of each type (Chicken, Classic, Supreme, Veggie) were sold on June 20th.</p>
-<figure class="table table-like" id="visualization-two-type-count-0620"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.3.2<span class="period">.</span></span><span class="space"> </span>Pizzas sold on Jun 20, by type</figcaption><div class="tabular-box natural-width"><table class="tabular">
+</table></div></figure><p id="p-321">Suppose <span class="process-math">\(x\)</span> measures for the number of days a student has been absent from class, and <span class="process-math">\(y\)</span> represents their score on a quiz out of <span class="process-math">\(10\text{.}\)</span> What conclusion might you draw from the table of data? How do the points you drew in the coordinate plane illustrate this conclusion? Write a sentence or two summarizing your thoughts.</p></article><article class="activity project-like" id="activity-28"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-34"><p id="p-322">Often data scientists need to consider data where each item has two properties. When one property is a category, and the other is numerical, a <dfn class="terminology">bar chart</dfn> is often the right tool for the job.</p></div>
+<article class="task exercise-like" id="task-121"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-323">Repeat the steps from previous sections to get a copy of <code class="code-inline tex2jax_ignore">pizza_table</code> available for this notebook.</p></article><article class="task exercise-like" id="task-122"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-324">The table in <a href="" class="xref" data-knowl="./knowl/visualization-two-type-count-0620.html" title="Table 3.3.2: Pizzas sold on Jun 20, by type">3.3.2</a> describes how many pizzas of each type (Chicken, Classic, Supreme, Veggie) were sold on June 20th.</p>
+<figure class="table table-like" id="visualization-two-type-count-0620"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.3.2<span class="period">.</span></span><span class="space"> </span>Pizzas sold on Jun 20, by type</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines">Type</td>
 <td class="l m b1 r0 l0 t0 lines">Count</td>
@@ -212,65 +253,65 @@
 <td class="l m b0 r0 l0 t0 lines">Veggie</td>
 <td class="l m b0 r0 l0 t0 lines">27</td>
 </tr>
-</table></div></figure><p id="p-381">This table was created by running <code class="code-inline tex2jax_ignore">june20_pizzas = pizza_table.where("date","2015-06-20").group("type")</code> and <code class="code-inline tex2jax_ignore">june20_pizzas.show()</code>. Modify this code to create the table <code class="code-inline tex2jax_ignore">may18</code> for May 18th instead, and show the result.</p></article><article class="task exercise-like" id="task-143"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-382">The bar chart in <a class="xref" data-knowl="./knowl/visualization-two-barchart-0620.html" title="Figure 4.3.3">4.3.3</a> visualizes the amounts of each pizza type sold on June 20. Each category (in this case, the type of pizza) is listed on the vertical axis, and the size of the bar in the horizontal direction represents each numerical value.</p>
-<figure class="figure figure-like" id="visualization-two-barchart-0620"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/visualization-two-barchart-0620.png" class="contained" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.3<span class="period">.</span></span><span class="space"> </span>Pizzas sold on June 20 by type</figcaption></figure><p id="p-383">Create a similar bar chart by hand for the May 18th table you displayed in the previous task.</p></article><article class="task exercise-like" id="task-144"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-384">The Python <code class="code-inline tex2jax_ignore">datascience</code> library can produce bar charts; the code <code class="code-inline tex2jax_ignore">june20_pizzas.barh("types")</code> was used to produce <a class="xref" data-knowl="./knowl/visualization-two-barchart-0620.html" title="Figure 4.3.3">4.3.3</a>. Adapt this line of code to generate a bar chart for the May 18th data instead. (Note: you'll need to run <code class="code-inline tex2jax_ignore">import matplotlib</code> and <code class="code-inline tex2jax_ignore">%matplotlib inline</code> first to display any visualizations.)</p></article><article class="task exercise-like" id="task-145"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-385">The code <code class="code-inline tex2jax_ignore">pizza_table.where("date","2015-06-20").select("type","price").group("type",sum)</code> captures the total sales for each type of pizza sold on June 20th.</p>
-<p id="p-386">Generate a bar chart visualizing the total sales for each type of pizza sold on May 18th.</p></article></article><article class="activity project-like" id="activity-35"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-41"><p id="p-387">The <dfn class="terminology">line chart</dfn> is a useful tool to visualize how data changes over time.</p></div>
-<article class="task exercise-like" id="task-146"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-388">Right now, the <code class="code-inline tex2jax_ignore">date</code> for each pizza sold is stored as a string of numbers and hyphens, such as <code class="code-inline tex2jax_ignore">"2015-08-19"</code>. The code in <a class="xref" data-knowl="./knowl/visualization-two-parse-dates.html" title="Listing 4.3.4">4.3.4</a> provides a <code class="code-inline tex2jax_ignore">datetime</code> column with values that Python understands better. (This is another example of “cleaning” data for analysis.)</p>
+</table></div></figure><p id="p-325">This table was created by running <code class="code-inline tex2jax_ignore">june20_pizzas = pizza_table.where("date","2015-06-20").group("type")</code> and <code class="code-inline tex2jax_ignore">june20_pizzas.show()</code>. Modify this code to create the table <code class="code-inline tex2jax_ignore">may18</code> for May 18th instead, and show the result.</p></article><article class="task exercise-like" id="task-123"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-326">The bar chart in <a href="" class="xref" data-knowl="./knowl/visualization-two-barchart-0620.html" title="Figure 3.3.3">3.3.3</a> visualizes the amounts of each pizza type sold on June 20. Each category (in this case, the type of pizza) is listed on the vertical axis, and the size of the bar in the horizontal direction represents each numerical value.</p>
+<figure class="figure figure-like" id="visualization-two-barchart-0620"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/visualization-two-barchart-0620.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.3<span class="period">.</span></span><span class="space"> </span>Pizzas sold on June 20 by type</figcaption></figure><p id="p-327">Create a similar bar chart by hand for the May 18th table you displayed in the previous task.</p></article><article class="task exercise-like" id="task-124"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-328">The Python <code class="code-inline tex2jax_ignore">datascience</code> library can produce bar charts; the code <code class="code-inline tex2jax_ignore">june20_pizzas.barh("types")</code> was used to produce <a href="" class="xref" data-knowl="./knowl/visualization-two-barchart-0620.html" title="Figure 3.3.3">3.3.3</a>. Adapt this line of code to generate a bar chart for the May 18th data instead. (Note: you'll need to run <code class="code-inline tex2jax_ignore">import matplotlib</code> and <code class="code-inline tex2jax_ignore">%matplotlib inline</code> first to display any visualizations.)</p></article><article class="task exercise-like" id="task-125"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-329">The code <code class="code-inline tex2jax_ignore">pizza_table.where("date","2015-06-20").select("type","price").group("type",sum)</code> captures the total sales for each type of pizza sold on June 20th.</p>
+<p id="p-330">Generate a bar chart visualizing the total sales for each type of pizza sold on May 18th.</p></article></article><article class="activity project-like" id="activity-29"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-35"><p id="p-331">The <dfn class="terminology">line chart</dfn> is a useful tool to visualize how data changes over time.</p></div>
+<article class="task exercise-like" id="task-126"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-332">Right now, the <code class="code-inline tex2jax_ignore">date</code> for each pizza sold is stored as a string of numbers and hyphens, such as <code class="code-inline tex2jax_ignore">"2015-08-19"</code>. The code in <a href="" class="xref" data-knowl="./knowl/visualization-two-parse-dates.html" title="Listing 3.3.4">3.3.4</a> provides a <code class="code-inline tex2jax_ignore">datetime</code> column with values that Python understands better. (This is another example of “cleaning” data for analysis.)</p>
 <figure class="listing figure-like" id="visualization-two-parse-dates"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py"># converts `date` string into a native datetime format
 from datetime import datetime
 pizza_table = pizza_table.with_column("datetime",pizza_table.apply(
     lambda x:datetime.strptime(x,"%Y-%m-%d"),"date"
 ))
 </code></pre></div>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.3.4<span class="period">.</span></span><span class="space"> </span>Script to add <code class="code-inline tex2jax_ignore">datetime</code> values</figcaption></figure><p id="p-389">Use this script to update your <code class="code-inline tex2jax_ignore">pizza_table</code>. Show twenty rows of the resulting table below to confirm that it has both a <code class="code-inline tex2jax_ignore">date</code> column (which stores strings) and a <code class="code-inline tex2jax_ignore">datetime</code> column (which stores datetimes).</p></article><article class="task exercise-like" id="task-147"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-390">The code in <a class="xref" data-knowl="./knowl/visualization-two-line-chart.html" title="Listing 4.3.5">4.3.5</a> displays the total number of pizzas sold each day of 2015 as the line chart given in <a class="xref" data-knowl="./knowl/visualization-two-linechart-figure.html" title="Figure 4.3.6">4.3.6</a>.</p>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.4<span class="period">.</span></span><span class="space"> </span>Script to add <code class="code-inline tex2jax_ignore">datetime</code> values</figcaption></figure><p id="p-333">Use this script to update your <code class="code-inline tex2jax_ignore">pizza_table</code>. Show twenty rows of the resulting table below to confirm that it has both a <code class="code-inline tex2jax_ignore">date</code> column (which stores strings) and a <code class="code-inline tex2jax_ignore">datetime</code> column (which stores datetimes).</p></article><article class="task exercise-like" id="task-127"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-334">The code in <a href="" class="xref" data-knowl="./knowl/visualization-two-line-chart.html" title="Listing 3.3.5">3.3.5</a> displays the total number of pizzas sold each day of 2015 as the line chart given in <a href="" class="xref" data-knowl="./knowl/visualization-two-linechart-figure.html" title="Figure 3.3.6">3.3.6</a>.</p>
 <figure class="listing figure-like" id="visualization-two-line-chart"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py"># .plot("datetime") creates a line chart with the datetime column on the
 # horizontal axis, and other numerical columns on the vertical axis
 pizza_table.select("datetime","price").group("datetime").plot("datetime")
 </code></pre></div>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.3.5<span class="period">.</span></span><span class="space"> </span>Displaying a line chart counting pizzas sold</figcaption></figure><figure class="figure figure-like" id="visualization-two-linechart-figure"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/visualization-two-linechart.png" class="contained" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.6<span class="period">.</span></span><span class="space"> </span>Amount of pizza sold by date</figcaption></figure><p id="p-391">Write a sentence describing the approximate time of year when the pizza parlor's best day of sales occurred, and how you determined this from the line chart.</p></article><article class="task exercise-like" id="task-148"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-392">Copy <a class="xref" data-knowl="./knowl/visualization-two-line-chart.html" title="Listing 4.3.5">4.3.5</a> into a new Code cell, but modify <code class="code-inline tex2jax_ignore">.group("datetime")</code> so that instead of showing the number of pizzas sold each day, the total (sum) of sales for each day are shown in the line chart instead.</p></article></article><article class="activity project-like" id="activity-36"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.4</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-42"><p id="p-393"><dfn class="terminology">Scatter plots</dfn> are often used to compare two numerical values throughout a dataset to determine if they have a relationship.</p></div>
-<article class="task exercise-like" id="task-149"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-394">Create a table called <code class="code-inline tex2jax_ignore">testing_table</code> populated with the “Math Placement Exam Results” dataset found at <a class="external" href="https://vincentarelbundock.github.io/Rdatasets/datasets.html" target="_blank"><code class="code-inline tex2jax_ignore">https://vincentarelbundock.github.io/Rdatasets/datasets.html</code></a>. This dataset describes the mathematics testing results from several freshmen students at a liberal arts college, including SAT, ACT, and the college's internal math placement exam results.</p>
-<p id="p-395">Show the first ten rows of this table.</p></article><article class="task exercise-like" id="task-150"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-396">You'll see many “Not a Number” <code class="code-inline tex2jax_ignore">nan</code> values in this table for when data was not available. To clean this data for analysis, you should remove these records as needed by only using values that are positive.</p>
-<p id="p-397">Use <code class="code-inline tex2jax_ignore">from datascience.predicates import are</code> and <code class="code-inline tex2jax_ignore">.where(column_name,are.above(0))</code> to, show the first ten rows of this table that don't have a <code class="code-inline tex2jax_ignore">nan</code> score for SAT math scores.</p></article><article class="task exercise-like" id="task-151"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-398">The script in <a class="xref" data-knowl="./knowl/visualization-two-scatter.html" title="Listing 4.3.7">4.3.7</a> results in a scatter plot. Each dot represents a different student's SAT Math score (by its horizontal position) with their college math placement score (by its vertical position). Note that scores of <code class="code-inline tex2jax_ignore">nan</code> and other non-positive results are ignored.</p>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.5<span class="period">.</span></span><span class="space"> </span>Displaying a line chart counting pizzas sold</figcaption></figure><figure class="figure figure-like" id="visualization-two-linechart-figure"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/visualization-two-linechart.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.6<span class="period">.</span></span><span class="space"> </span>Amount of pizza sold by date</figcaption></figure><p id="p-335">Write a sentence describing the approximate time of year when the pizza parlor's best day of sales occurred, and how you determined this from the line chart.</p></article><article class="task exercise-like" id="task-128"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-336">Copy <a href="" class="xref" data-knowl="./knowl/visualization-two-line-chart.html" title="Listing 3.3.5">3.3.5</a> into a new Code cell, but modify <code class="code-inline tex2jax_ignore">.group("datetime")</code> so that instead of showing the number of pizzas sold each day, the total (sum) of sales for each day are shown in the line chart instead.</p></article></article><article class="activity project-like" id="activity-30"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-36"><p id="p-337"><dfn class="terminology">Scatter plots</dfn> are often used to compare two numerical values throughout a dataset to determine if they have a relationship.</p></div>
+<article class="task exercise-like" id="task-129"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-338">Create a table called <code class="code-inline tex2jax_ignore">testing_table</code> populated with the “Math Placement Exam Results” dataset found at <a class="external" href="https://vincentarelbundock.github.io/Rdatasets/datasets.html" target="_blank"><code class="code-inline tex2jax_ignore">https://vincentarelbundock.github.io/Rdatasets/datasets.html</code></a>. This dataset describes the mathematics testing results from several freshmen students at a liberal arts college, including SAT, ACT, and the college's internal math placement exam results.</p>
+<p id="p-339">Show the first ten rows of this table.</p></article><article class="task exercise-like" id="task-130"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-340">You'll see many “Not a Number” <code class="code-inline tex2jax_ignore">nan</code> values in this table for when data was not available. To clean this data for analysis, you should remove these records as needed by only using values that are positive.</p>
+<p id="p-341">Use <code class="code-inline tex2jax_ignore">from datascience.predicates import are</code> and <code class="code-inline tex2jax_ignore">.where(column_name,are.above(0))</code> to, show the first ten rows of this table that don't have a <code class="code-inline tex2jax_ignore">nan</code> score for SAT math scores.</p></article><article class="task exercise-like" id="task-131"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-342">The script in <a href="" class="xref" data-knowl="./knowl/visualization-two-scatter.html" title="Listing 3.3.7">3.3.7</a> results in a scatter plot. Each dot represents a different student's SAT Math score (by its horizontal position) with their college math placement score (by its vertical position). Note that scores of <code class="code-inline tex2jax_ignore">nan</code> and other non-positive results are ignored.</p>
 <figure class="listing figure-like" id="visualization-two-scatter"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py"># The backslash can be used to continue a long line on multiple lines
 testing_table.where("PlcmtScore",are.above(0)).where("SATM",are.above(0)) \
     .select("SATM","PlcmtScore").scatter("SATM")
 </code></pre></div>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.3.7<span class="period">.</span></span><span class="space"> </span>Displaying a scatter plot of test scores.</figcaption></figure><figure class="figure figure-like" id="visualization-two-scatter-figure"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/visualization-two-scatter.png" class="contained" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.8<span class="period">.</span></span><span class="space"> </span>Scatter plot comparing SAT and math placement scores</figcaption></figure><p id="p-399">Run a modified copy of this script in a Code cell to display a scatter plot that compares ACT Math scores with college math placement scores.</p></article><article class="task exercise-like" id="task-152"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-400">When two values of data are <dfn class="terminology">correlated</dfn> (that is, possibly influenced by one another), this correlation is often apparent when visualized in a scatter plot.</p>
-<p id="p-401">Do you think SAT Math scores and correlated with this college's math placement exam results? What about ACT Math scores? Write a few sentences explaining why or why not.</p></article><article class="task exercise-like" id="task-153"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-402">Suppose you heard someone claim that this college's math placement score doesn't measure mathematical ability, but instead only reflects the size of each student's high school.</p>
-<p id="p-403">Show a scatter plot comparing the size of each student's high school with their math placement score. Then write a sentence or two explaining whether you agree with this claim or not, based on the scatter plot.</p></article><article class="task exercise-like" id="task-154"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-404">Suppose you heard someone claim that students shouldn't have to take a math placement test once they come to this college, and SAT or ACT socres should be used instead. Based on the scatter plots above, would you agree or disagree with that statement? Write a few sentences explaining your reasoning.</p></article></article><section class="exercises" id="exercises-9"><h3 class="heading hide-type">
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.3.7<span class="period">.</span></span><span class="space"> </span>Displaying a scatter plot of test scores.</figcaption></figure><figure class="figure figure-like" id="visualization-two-scatter-figure"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/visualization-two-scatter.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.8<span class="period">.</span></span><span class="space"> </span>Scatter plot comparing SAT and math placement scores</figcaption></figure><p id="p-343">Run a modified copy of this script in a Code cell to display a scatter plot that compares ACT Math scores with college math placement scores.</p></article><article class="task exercise-like" id="task-132"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-344">When two values of data are <dfn class="terminology">correlated</dfn> (that is, possibly influenced by one another), this correlation is often apparent when visualized in a scatter plot.</p>
+<p id="p-345">Do you think SAT Math scores and correlated with this college's math placement exam results? What about ACT Math scores? Write a few sentences explaining why or why not.</p></article><article class="task exercise-like" id="task-133"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-346">Suppose you heard someone claim that this college's math placement score doesn't measure mathematical ability, but instead only reflects the size of each student's high school.</p>
+<p id="p-347">Show a scatter plot comparing the size of each student's high school with their math placement score. Then write a sentence or two explaining whether you agree with this claim or not, based on the scatter plot.</p></article><article class="task exercise-like" id="task-134"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<p id="p-348">Suppose you heard someone claim that students shouldn't have to take a math placement test once they come to this college, and SAT or ACT socres should be used instead. Based on the scatter plots above, would you agree or disagree with that statement? Write a few sentences explaining your reasoning.</p></article></article><section class="exercises" id="exercises-8"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-63"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-405">Get copies of <code class="code-inline tex2jax_ignore">pizza_table</code> and <code class="code-inline tex2jax_ignore">testing_table</code> available in this notebook. Show the first ten rows of each.</p></article><article class="exercise exercise-like" id="exercise-64"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-406">Show a table counting how many pizzas of each name (BBQ Chicken, Five Cheese, etc.) were sold on February 28th.</p></article><article class="exercise exercise-like" id="exercise-65"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-407">Show a bar chart visualizing how many pizzas of each name were sold on February 28th. (Don't forget <code class="code-inline tex2jax_ignore">import matplotlib</code> and <code class="code-inline tex2jax_ignore">%matplotlib inline</code>.)</p></article><article class="exercise exercise-like" id="exercise-66"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-408">What two named pizzas were most popular on February 28th? Write a sentence or two explaining why the bar chart was better or worse than the table at communicating this fact.</p></article><article class="exercise exercise-like" id="exercise-67"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-409">Display a line chart visualizing the number of Spinach Fettuccine pizzas sold each day at this pizzeria. (Don't forget to use a <code class="code-inline tex2jax_ignore">datetime</code> column for displaying dates.)</p></article><article class="exercise exercise-like" id="exercise-68"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-410">On what day (roughly) was Spinach Fettuccine most popular? How many were sold? How does the line chart communicate this fact more clearly than a data table?</p></article><article class="exercise exercise-like" id="exercise-69"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
-<p id="p-411">Show a scatter plot comparing adjusted GPA records to the <code class="code-inline tex2jax_ignore">testing_table</code> college's math placement exam.</p></article><article class="exercise exercise-like" id="exercise-70"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
-<p id="p-412">Suppose someone claimed that adjusted GPAs should be used to determine what math course each student takes in college. Give at least one reason to agree, and at least one reason to disagree. Be sure to include the scatter plot in your argument.</p></article></section></section></div></main>
+<article class="exercise exercise-like" id="exercise-54"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<p id="p-349">Get copies of <code class="code-inline tex2jax_ignore">pizza_table</code> and <code class="code-inline tex2jax_ignore">testing_table</code> available in this notebook. Show the first ten rows of each.</p></article><article class="exercise exercise-like" id="exercise-55"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<p id="p-350">Show a table counting how many pizzas of each name (BBQ Chicken, Five Cheese, etc.) were sold on February 28th.</p></article><article class="exercise exercise-like" id="exercise-56"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<p id="p-351">Show a bar chart visualizing how many pizzas of each name were sold on February 28th. (Don't forget <code class="code-inline tex2jax_ignore">import matplotlib</code> and <code class="code-inline tex2jax_ignore">%matplotlib inline</code>.)</p></article><article class="exercise exercise-like" id="exercise-57"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<p id="p-352">What two named pizzas were most popular on February 28th? Write a sentence or two explaining why the bar chart was better or worse than the table at communicating this fact.</p></article><article class="exercise exercise-like" id="exercise-58"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<p id="p-353">Display a line chart visualizing the number of Spinach Fettuccine pizzas sold each day at this pizzeria. (Don't forget to use a <code class="code-inline tex2jax_ignore">datetime</code> column for displaying dates.)</p></article><article class="exercise exercise-like" id="exercise-59"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<p id="p-354">On what day (roughly) was Spinach Fettuccine most popular? How many were sold? How does the line chart communicate this fact more clearly than a data table?</p></article><article class="exercise exercise-like" id="exercise-60"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<p id="p-355">Show a scatter plot comparing adjusted GPA records to the <code class="code-inline tex2jax_ignore">testing_table</code> college's math placement exam.</p></article><article class="exercise exercise-like" id="exercise-61"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<p id="p-356">Suppose someone claimed that adjusted GPAs should be used to determine what math course each student takes in college. Give at least one reason to agree, and at least one reason to disagree. Be sure to include the scatter plot in your argument.</p></article></section></section></div></main>
 </div>
-<script src="https://unpkg.com/prismjs@v1.22.0/components/prism-core.min.js"></script><script src="https://unpkg.com/prismjs@v1.22.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 </html>

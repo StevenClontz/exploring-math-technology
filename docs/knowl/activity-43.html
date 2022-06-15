@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:25Z       *-->
+<!--*       on 2022-06-15T21:02:36Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,50 +13,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.2</span><span class="period">.</span>
-</h6>
-<div class="introduction">
-<p>When pairs of data values tend to fall along a line, that data is said to be linearly <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">correlated</dfn>. The <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">correlation coefficient</dfn> of these pairs of values is a number between \(-1\) and \(1\) that describes the strength of this correlation, known briefly as \(r\text{.}\)</p>
-<p>A value of \(r=1\) means that the points of data fall exactly along an upward line, that is, one value tends to increase as the other value increases. On the other hand, \(r=-1\) means that the points of data fall exactly along a downward line, that is, one value tends to increase as the otehr value decreases. A value of \(r=0\) means there's no recognizable linear relationship between the pairs of data values.</p>
-<p>However, most real datasets will have a fractional \(r\) value. Nonetheless, the closer this value is to \(1\) or \(-1\text{,}\) the stronger the correlation, while the closer this value is to \(0\text{,}\) the weaker the correlation. This is illustrated in <a class="xref" data-knowl="./knowl/predictions-correlation-coefficients.html" title="Figure 6.1.3">6.1.3</a> (obtained from <a class="external" href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient" target="_blank">Wikipedia</a>).</p>
-<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/predictions-correlation-coefficients.svg" class="contained" alt=""></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.3<span class="period">.</span></span><span class="space"> </span>Illustrations of correlation coefficients</figcaption></figure><p>The mathematics used to compute \(r\) are outside the scope of this course, so we will focus on understanding what \(r\) communicates about a dataset and how to compute \(r\) using technology.</p>
-</div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p>Unfortunately, the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">datascience</code> library doesn't provide a great out-of-the-box mechanism for computing \(r\text{.}\) Fortunately, we can add two features to our <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">datascience</code> tables by copy-pasting the snippet given in <a class="xref" data-knowl="./knowl/predictions-correlation-features.html" title="Listing 6.1.4">6.1.4</a> into a Code cell. (This will need to be done in every notebook that uses these features.)</p>
-<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">def with_correlated_columns(self,num_rows=100,x_range=5,slope=1,noise=1):
-    from random import random
-    table = self.select().with_columns("x",[],"y",[])
-    for _ in range(num_rows):
-        seed = random()
-        x = seed*x_range
-        y = seed*x_range*slope
-        y = y + (-1+2*random())*noise
-        table = table.with_row([x,y])
-    return table
-def correlation(self,col1_name,col2_name):
-    import statistics
-    # get column arrays
-    col1 = self.column(col1_name)
-    col2 = self.column(col2_name)
-    # standardize units
-    col1_s = (col1 - statistics.mean(col1))/statistics.stdev(col1)
-    col2_s = (col2 - statistics.mean(col2))/statistics.stdev(col2)
-    # correlation is the mean product of standard units
-    return statistics.mean(col1_s*col2_s)
-setattr(Table,"with_correlated_columns",with_correlated_columns)
-setattr(Table,"correlation",correlation)
-</code></pre></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">6.1.4<span class="period">.</span></span><span class="space"> </span>Correlation features for <code class="code-inline tex2jax_ignore">datascience</code></figcaption></figure><p>While we won't go into detail on how correlation is measured, it is related to the measures of center and spread studied in the previous chapter. Inspect the code shown in <a class="xref" data-knowl="./knowl/predictions-correlation-features.html" title="Listing 6.1.4">6.1.4</a>; what measure of center and what measure of spread appear to be used to compute correlation?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p>When <a class="xref" data-knowl="./knowl/predictions-correlation-features.html" title="Listing 6.1.4">6.1.4</a> is run successfully, no output will be shown. However, you should now be able to create a table by running <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">ctable = Table().with_correlated_columns()</code>. (Note that this table is generated somewhat randomly, so re-running that line will create a slightly different table.)</p>
-<p>Show ten rows and a scatter plot for this <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">ctable</code>.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p>Based on the definition of the correlation coefficient \(r\) and the illustration given in <a class="xref" data-knowl="./knowl/predictions-correlation-coefficients.html" title="Figure 6.1.3">6.1.3</a>, would you expect the correlation of these pairs of data to be closer to \(-1\text{,}\) \(0\text{,}\) or \(1\text{?}\)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p>Run <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">ctable.correlation("x","y")</code> to confirm your intuition.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
-<p>Show a scatter plot for <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">ctable2 = Table().with_correlated_columns(slope=3)</code>. Guess a value for <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">r</code> based on the scatter plot, and then confirm your guess using technology.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(f)</span></h6>
-<p>Show a scatter plot for <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">ctable3 = Table().with_correlated_columns(x_range=10,slope=-2)</code>. Guess a value for <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">r</code> based on the scatter plot, and then confirm your guess using technology.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(g)</span></h6>
-<p>Show a scatter plot for <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">ctable4 = Table().with_correlated_columns(noise=5,slope=2)</code>. Guess a value for <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">r</code> based on the scatter plot, and then confirm your guess using technology.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(h)</span></h6>
-<p>Show a scatter plot for <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">ctable5 = Table().with_correlated_columns(noise=100,slope=-4)</code>. Guess a value for <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">r</code> based on the scatter plot, and then confirm your guess using technology.</p></article></article><span class="incontext"><a href="predictions-correlation.html#activity-43">in-context</a></span>
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.3</span><span class="period">.</span>
+</h3>
+<div class="introduction"><p>Suppose a fair coin is flipped twice. The sample space for such an experiment could be described as <span class="process-math">\(\left\{HH,HT,TH,TT\right\}\text{.}\)</span></p></div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Describe the sample space for an experiment where a fair coin is tossed three times. (Hint: there are eight possible outcomes.)</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Describe the sample space for an experiment where a fair D6 is rolled twice.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>Describe the sample space for an experiment where a fair coin is flipped, and then a fair D6 is rolled.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p>How might this sample space change if the D6 was rolled before flipping the coin? What if both actions occurred at the same time?</p></article></article><span class="incontext"><a href="random-probability.html#activity-43" class="internal">in-context</a></span>
 </body>
 </html>

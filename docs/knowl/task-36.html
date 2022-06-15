@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:21Z       *-->
+<!--*       on 2022-06-15T21:02:34Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,12 +12,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
 </head>
-<body>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Task</span><span class="space"> </span><span class="codenumber">1.3.3.b</span><span class="period">.</span>
-</h6>
-<p>The value stored in a CS variable may be reused later by using the variable name. For example, <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">craig_pens+laura_pens+phillip_pens+sherill_pens+steven_pens</code> would return the result <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">74</code>.</p>
-<p>Use a code cell to find the sum of the pens in your group by writing the sum of the variable names. (Later we will learn much more elegant patterns for storing and using lists of data while still using long descriptive variable names as recommended.)</p></article><span class="incontext"><a href="programming-sagemath.html#task-36">in-context</a></span>
+<body class="ignore-math">
+<article class="task exercise-like"><h4 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">1.2.4.b</span><span class="period">.</span>
+</h4>
+<p>Other math variables are declared using by using the <code class="code-inline tex2jax_ignore">var()</code> tool. For example, the below code cell assigns the CS variables <code class="code-inline tex2jax_ignore">a</code>, <code class="code-inline tex2jax_ignore">b</code>, <code class="code-inline tex2jax_ignore">c</code> to the math variables named <span class="process-math">\(a,b,c\text{,}\)</span> and then shows one particular <dfn class="terminology">expression</dfn> with the result of adding/multiplying these math variables.</p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-38"><script type="text/x-sage">a = var("a")
+b,c = var("b c")
+show(a+b*c)
+</script></pre>
+<p>Use the below Code cell to declare <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> to be variables, and then show <span class="process-math">\(y\)</span> raised to the <span class="process-math">\(z\)</span> power, that is, <span class="process-math">\(y^z\text{.}\)</span></p>
+<pre class="ptx-sagecell sagecell-sage" id="sage-39"><script type="text/x-sage"></script></pre></article><span class="incontext"><a href="programming-sagemath.html#task-36" class="internal">in-context</a></span>
 </body>
 </html>

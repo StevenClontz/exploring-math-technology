@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:23Z       *-->
+<!--*       on 2022-06-15T21:02:35Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,49 +13,67 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span>
-</h6>
-<div class="introduction"><p>Sets are useful collections when you only care if a datum belongs to the set or not. But often you want your data to be ordered, and often you want to be able count the same datum multiple times in your collection. This is where <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">lists</dfn> are useful.</p></div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p>Lists use hard brackets <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">[2,8,1,4]</code> instead of curly brackets. Use <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">==</code> to verify that each of the lists <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">[100,101,100]</code>, <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">[101,100]</code>, and <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">[100,101]</code> are not considered equal to each other, since even though they contain the same data, it appears in different orders and frequencies.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p>The <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">concatentation</dfn> of many lists attaches them in order from end-to-end. For example, the concatenation of <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">[1,2,3]</code> with <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">[3,4,5]</code> may be found using the code <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">[1,2,3] + [3,4,5]</code>, resulting in <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">[1,2,3,3,4,5]</code>. (Note that <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">3</code> is repeated since lists allow repeats.)</p>
-<p>Find the concatenation of the three lists \([1,2,4,7]\text{,}\) \([2,5,7,9]\text{,}\) and \([0,2,3,7]\text{.}\)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p>Like sets, lists may contain data besides raw numbers, such as strings.</p>
-<p>Find the concatenation of the lists <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">[1,2,3]</code> and <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">[1,"2","three"]</code>.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p>Elements of a list can be changed as shown in <a class="xref" data-knowl="./knowl/data-collections-list-mutable.html" title="Listing 3.2.1">3.2.1</a>.</p>
-<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">favorite_numbers = [1,"two",7,3.14]
-# Characters after the hashtag sign are comments and don't affect code.
-# Python indexes with counting nunmbers, starting with 0 (known as 0-indexing).
-favorite_numbers[0] = "One."  # changes the initial element 1 to "One."
-favorite_numbers[2] = 42      # changes the element 7 to 42
-print(favorite_numbers)       # outputs ['One.', 'two', 42, 3.14]
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
+</h3>
+<div class="introduction">
+<p>As previously investigated, dictionaries can be used to describe complex data with many different properties. In <a href="" class="xref" data-knowl="./knowl/visualization-tables-dictionary-list.html" title="Listing 3.1.3">3.1.3</a> a list of dictionaries is used to describe several students in standard Python.</p>
+<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">[
+    {
+        "name":             "Jessica",
+        "age":              19,
+        "favorite_teacher": "Dr. Clontz",
+    },
+    {
+        "name":             "Lynn",
+        "age":              18,
+        "favorite_teacher": "Ms. Gilbreath",
+    },
+    {
+        "name":             "Julia",
+        "age":              17,
+        "favorite_teacher": "Mr. Fullinwider",
+    },
+]
 </code></pre></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.2.1<span class="period">.</span></span><span class="space"> </span>Changing elements of a list.</figcaption></figure><p>Let <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">favorite_things = ["raindrops", "roses", "whiskers", "kittens"]</code>, and then use the techniques from <a class="xref" data-knowl="./knowl/data-collections-list-mutable.html" title="Listing 3.2.1">3.2.1</a> to change “roses” and “kittens” into some of your favorite things (leaving "raindrops" and "whiskers" in place).</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
-<p><dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">Tuples</dfn> are similar to lists in that they store ordered collections of data, but are used in different contexts. An important difference is that their elements are fixed. (That is, lists are <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">mutable</dfn> while tuples are <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">immutable</dfn>.)</p>
-<p>Copy <a class="xref" data-knowl="./knowl/data-collections-tuple-immutable.html" title="Listing 3.2.2">3.2.2</a> to a Code cell, and replace the two indicated comments appropriately.</p>
-<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">triple_list = ["one", "two", "three"]
-triple_tuple = ("one", "two", "three")
-
-# Attempts indented block of code that may cause an error
-try:
-    print("Trying to change 'two' to 2 in the list.")
-    # REPLACE this line to change triple_list appropriately
-# Handles possible error
-except TypeError:
-    print("This should never appear since list elements can be replaced.")
-
-# Attempts indented block of code that may cause an error
-try:
-    print("Trying to change 'three' to 3 in the tuple.")
-    # REPLACE this line to try to change triple_list appropriately
-# Handles possible error
-except TypeError:
-    print("This should appear since tuple elements cannot be replaced.")
-
-print(triple_list, triple_tuple) # outputs ['one', 2, 'three'] ('one', 'two', 'three')
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.1.3<span class="period">.</span></span><span class="space"> </span>A list of student dictionaries</figcaption></figure>
+</div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Copy this list into a Code cell, and add data for at least three more students to the list.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Data is often stored in a spreadsheet or database as a <dfn class="terminology">table</dfn>. An illustration of this is given in <a href="" class="xref" data-knowl="./knowl/visualization-tables-student-table.html" title="Table 3.1.4: Student data table">3.1.4</a>.</p>
+<figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.4<span class="period">.</span></span><span class="space"> </span>Student data table</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r0 l0 t0 lines">Name</td>
+<td class="l m b1 r0 l0 t0 lines">Age</td>
+<td class="l m b1 r0 l0 t0 lines">Favorite Teacher</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Julia</td>
+<td class="l m b0 r0 l0 t0 lines">17</td>
+<td class="l m b0 r0 l0 t0 lines">Mr. Fullinwider</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Jessica</td>
+<td class="l m b0 r0 l0 t0 lines">19</td>
+<td class="l m b0 r0 l0 t0 lines">Dr. Clontz</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Lynn</td>
+<td class="l m b0 r0 l0 t0 lines">18</td>
+<td class="l m b0 r0 l0 t0 lines">Ms. Gilbreath</td>
+</tr>
+</table></div></figure><p>Tables can be created programmatically by using the technique from <a href="" class="xref" data-knowl="./knowl/visualization-tables-preview.html" title="Preview Activity 3.1.1">3.1.1</a> or by modifying <a href="" class="xref" data-knowl="./knowl/visualization-tables-from-rows.html" title="Listing 3.1.5">3.1.5</a>.</p>
+<figure class="listing figure-like"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">Table(labels=["Name", "Age", "Favorite Teacher"]).with_rows([
+    ["Jessica", 19, "Dr. Clontz"],
+    ["Lynn", 18, "Ms. Gilbreath"],
+    ["Julia", 17, "Mr. Fullinwider"],
+])
 </code></pre></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.2.2<span class="period">.</span></span><span class="space"> </span>Trying to alter a tuple.</figcaption></figure></article></article><span class="incontext"><a href="data-collections.html#activity-22">in-context</a></span>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.1.5<span class="period">.</span></span><span class="space"> </span>Table from rows</figcaption></figure><p>Run <code class="code-inline tex2jax_ignore">from datascience import Table</code> in a Code cell, and then copy <a href="" class="xref" data-knowl="./knowl/visualization-tables-from-rows.html" title="Listing 3.1.5">3.1.5</a> to another Code cell. Finally, append the student data you created in the previous task. <aside class="aside aside-like"></aside></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>Since data usually isn't hard-coded into a script, but instead entered by folks who may not be programmers into a spreadsheet or similar file, we will need a way to read external files containing data.</p>
+<p>Open a spreadsheet application such as Microsoft Excel or Google Sheets. Copy the table of data displayed in the previous task and paste it into your spreadsheet.</p>
+<p>Save the spreadsheet to a Comma-Separated Values file named <code class="code-inline tex2jax_ignore">student_data.csv</code> and use the <kbd class="kbdkey">(+) New</kbd> menu to upload it to CoCalc in the same folder as this Jupyter notebook.</p>
+<p>Finally, create a Code cell with the line <code class="code-inline tex2jax_ignore">Table.read_table('student_data.csv')</code> to check that your CSV data can be imported into a <code class="code-inline tex2jax_ignore">datascience</code> table.</p></article></article><span class="incontext"><a href="visualization-tables.html#activity-22" class="internal">in-context</a></span>
 </body>
 </html>

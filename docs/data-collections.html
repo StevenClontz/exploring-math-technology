@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:18Z       *-->
+<!--*       on 2022-06-15T21:02:33Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -9,23 +9,38 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>EMDST Collections of Data</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>window.MathJax = {
+<meta property="og:type" content="book">
+<meta property="book:title" content="Exploring Mathematics and Data Science with Technology">
+<meta property="book:author" content="Dr. Steven Clontz">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.88,
@@ -36,33 +51,66 @@
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://unpkg.com/prismjs@v1.22.0/themes/prism.css" rel="stylesheet">
-<script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="book-1.html"><span class="title">Exploring Mathematics and Data Science with Technology</span></a></h1>
 <p class="byline">Dr. Steven Clontz</p>
 </div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
 <a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="data-numbers.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="data.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="data-programming.html" title="Next">Next</a></span>
@@ -72,111 +120,104 @@
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="data-numbers.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="data.html" title="Up">Up</a><a class="next-button button toolbar-item" href="data-programming.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
-<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
-<li><a href="why.html" data-scroll="why">Why Study Mathematics?</a></li>
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="why.html" data-scroll="why" class="internal">Why Study Mathematics?</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="programming.html" data-scroll="programming"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
-<li><a href="programming-jupyter.html" data-scroll="programming-jupyter">Jupyter Notebooks and CoCalc</a></li>
-<li><a href="programming-python.html" data-scroll="programming-python">The Python Kernel</a></li>
-<li><a href="programming-sagemath.html" data-scroll="programming-sagemath">The SageMath Kernel</a></li>
+<a href="programming.html" data-scroll="programming" class="internal"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
+<li><a href="programming-python.html" data-scroll="programming-python" class="internal">Using Python</a></li>
+<li><a href="programming-sagemath.html" data-scroll="programming-sagemath" class="internal">Using SageMath</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="writing.html" data-scroll="writing"><span class="codenumber">2</span> <span class="title">Writing for Mathematicians and Data Scientists</span></a><ul>
-<li><a href="writing-math.html" data-scroll="writing-math">The Importance of Writing in Mathematics and Data Science</a></li>
-<li><a href="writing-markup.html" data-scroll="writing-markup">Using Markdown and LaTeX</a></li>
-</ul>
-</li>
-<li class="link">
-<a href="data.html" data-scroll="data"><span class="codenumber">3</span> <span class="title">Data and Collections</span></a><ul>
-<li><a href="data-numbers.html" data-scroll="data-numbers">Numbers and Strings</a></li>
+<a href="data.html" data-scroll="data" class="internal"><span class="codenumber">2</span> <span class="title">Data and Collections</span></a><ul>
+<li><a href="data-numbers.html" data-scroll="data-numbers" class="internal">Numbers and Strings</a></li>
 <li><a href="data-collections.html" data-scroll="data-collections" class="active">Collections of Data</a></li>
-<li><a href="data-programming.html" data-scroll="data-programming">Programming with Data</a></li>
+<li><a href="data-programming.html" data-scroll="data-programming" class="internal">Programming with Data</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="visualization.html" data-scroll="visualization"><span class="codenumber">4</span> <span class="title">Visualization of Data</span></a><ul>
-<li><a href="visualization-tables.html" data-scroll="visualization-tables">Tables</a></li>
-<li><a href="visualization-one.html" data-scroll="visualization-one">Single-Variable Visualizations</a></li>
-<li><a href="visualization-two.html" data-scroll="visualization-two">Two-variable Visualizations</a></li>
+<a href="visualization.html" data-scroll="visualization" class="internal"><span class="codenumber">3</span> <span class="title">Visualization of Data</span></a><ul>
+<li><a href="visualization-tables.html" data-scroll="visualization-tables" class="internal">Tables</a></li>
+<li><a href="visualization-one.html" data-scroll="visualization-one" class="internal">Single-Variable Visualizations</a></li>
+<li><a href="visualization-two.html" data-scroll="visualization-two" class="internal">Two-variable Visualizations</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="measurements.html" data-scroll="measurements"><span class="codenumber">5</span> <span class="title">Measurements of Data</span></a><ul>
-<li><a href="measurements-center.html" data-scroll="measurements-center">Centers of Data</a></li>
-<li><a href="measurement-spread.html" data-scroll="measurement-spread">Spread of Data</a></li>
+<a href="measurements.html" data-scroll="measurements" class="internal"><span class="codenumber">4</span> <span class="title">Measurements of Data</span></a><ul>
+<li><a href="measurements-center.html" data-scroll="measurements-center" class="internal">Centers of Data</a></li>
+<li><a href="measurement-spread.html" data-scroll="measurement-spread" class="internal">Spread of Data</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="predictions.html" data-scroll="predictions"><span class="codenumber">6</span> <span class="title">Making Predictions from Data</span></a><ul>
-<li><a href="predictions-correlation.html" data-scroll="predictions-correlation">Measuring Correlation</a></li>
-<li><a href="predictions-regression.html" data-scroll="predictions-regression">The Fit Line</a></li>
+<a href="predictions.html" data-scroll="predictions" class="internal"><span class="codenumber">5</span> <span class="title">Making Predictions from Data</span></a><ul>
+<li><a href="predictions-correlation.html" data-scroll="predictions-correlation" class="internal">Measuring Correlation</a></li>
+<li><a href="predictions-regression.html" data-scroll="predictions-regression" class="internal">The Fit Line</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a><ul>
-<li><a href="random-probability.html" data-scroll="random-probability">Introduction to Probability</a></li>
-<li><a href="random-combinatorics.html" data-scroll="random-combinatorics">Combinatorics</a></li>
+<a href="random.html" data-scroll="random" class="internal"><span class="codenumber">6</span> <span class="title">Modeling Random Events</span></a><ul>
+<li><a href="random-probability.html" data-scroll="random-probability" class="internal">Introduction to Probability</a></li>
+<li><a href="random-combinatorics.html" data-scroll="random-combinatorics" class="internal">Combinatorics</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a><ul>
-<li><a href="complex-cartesian.html" data-scroll="complex-cartesian">Cartesian Coordinates</a></li>
-<li><a href="complex-polar.html" data-scroll="complex-polar">Polar Form</a></li>
+<a href="complex.html" data-scroll="complex" class="internal"><span class="codenumber">7</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a><ul>
+<li><a href="complex-cartesian.html" data-scroll="complex-cartesian" class="internal">Cartesian Coordinates</a></li>
+<li><a href="complex-polar.html" data-scroll="complex-polar" class="internal">Polar Form</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Space</span></a><ul>
-<li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean">Euclidean Vectors</a></li>
-<li><a href="vectors-matrices.html" data-scroll="vectors-matrices">Matrices</a></li>
-<li><a href="vectors-determinants.html" data-scroll="vectors-determinants">Determinants</a></li>
+<a href="vectors.html" data-scroll="vectors" class="internal"><span class="codenumber">8</span> <span class="title">Higher-Dimensional Data and Euclidean Space</span></a><ul>
+<li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean" class="internal">Euclidean Vectors</a></li>
+<li><a href="vectors-matrices.html" data-scroll="vectors-matrices" class="internal">Matrices</a></li>
+<li><a href="vectors-determinants.html" data-scroll="vectors-determinants" class="internal">Determinants</a></li>
 </ul>
 </li>
-<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
-<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
-<li class="link"><a href="references.html" data-scroll="references"><span class="title">References</span></a></li>
-<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="references.html" data-scroll="references" class="internal"><span class="title">References</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="data-collections"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Collections of Data</span>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="data-collections"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Collections of Data</span>
 </h2>
-<article class="exploration project-like" id="exploration-7"><h6 class="heading">
-<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span>
-</h6>
-<article class="task exercise-like" id="task-86"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-241">Use code cells to find the squares of the counting numbers from \(0\) to \(9\text{:}\) \(0^2=0\text{,}\) \(1^2=1\text{,}\) \(2^2=4\text{,}\) \(\cdots\text{.}\) (Remember that <code class="code-inline tex2jax_ignore">**</code> is used in Python to denote an exponent.)</p></article><article class="task exercise-like" id="task-87"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-242">The sum of the cubes of \(0\) through \(4\) may be found by running <code class="code-inline tex2jax_ignore">0**3+1**3+2**3+3**3+4**3</code>, which turns out to be \(100\text{.}\)</p>
-<p id="p-243">Show that the sum of the squares of \(0\) through \(9\) is equal to \(285\text{.}\)</p></article><article class="task exercise-like" id="task-88"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-244">To avoid a lot of repetition, we may quickly produce the cubes of \(0\) through \(4\) as a <dfn class="terminology">list</dfn> by running <code class="code-inline tex2jax_ignore">cubes = [n**3 for n in range(5)]</code>. Then <code class="code-inline tex2jax_ignore">sum(cubes)</code> also results in \(100\text{.}\)</p>
-<p id="p-245">Adapt this technique to show that the sum of the squares of \(0\) through \(99\) is equal to \(328{,}350\text{.}\)</p></article></article><article class="activity project-like" id="activity-21"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-25"><p id="p-246">An unordered collection of mathematical objects is known as a <dfn class="terminology">set</dfn>. Sets are written as a pair of curly braces surrounding a description of its members, such as \(\{2,8,1,4\}\text{.}\)</p></div>
-<article class="task exercise-like" id="task-89"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-247">Sets may be declared in Python and SageMath using the syntax <code class="code-inline tex2jax_ignore">{2,8,1,4}</code>. Use this syntax and the equality operator <code class="code-inline tex2jax_ignore">==</code> to confirm that \(\{100,101,100\}\text{,}\) \(\{101,100\}\text{,}\) and \(\{100,101\}\) are all the same set (since they all contain exactly the same numbers).</p></article><article class="task exercise-like" id="task-90"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-248">The <dfn class="terminology">union</dfn> of many sets describes anything that belongs to any of the given sets. For example, the union of \(\{1,2,3\}\) with \(\{3,4,5\}\) may be found using the code <code class="code-inline tex2jax_ignore">{1,2,3} | {3,4,5}</code>, resulting in \(\{1,2,3,4,5\}\text{.}\)</p>
-<p id="p-249">Find the union of the three sets \(\{1,2,4,7\}\text{,}\) \(\{2,5,7,9\}\text{,}\) and \(\{0,2,3,7\}\text{.}\)</p></article><article class="task exercise-like" id="task-91"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-250">The <dfn class="terminology">intersection</dfn> of many sets describes only the things that belong to all of the given sets. For example, the intersection of \(\{1,2,3\}\) with \(\{3,4,5\}\) may be found using the code <code class="code-inline tex2jax_ignore">{1,2,3} &amp; {3,4,5}</code>, resulting in \(\{3\}\text{.}\)</p>
-<p id="p-251">Find the intersection of the three sets \(\{1,2,4,7\}\text{,}\) \(\{2,5,7,9\}\text{,}\) and \(\{0,2,3,7\}\text{.}\)</p></article><article class="task exercise-like" id="task-92"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-252">Sets may contain other kinds of data, such as strings.</p>
-<p id="p-253">Find the union and intersection of the sets <code class="code-inline tex2jax_ignore">{1,2,3}</code> and <code class="code-inline tex2jax_ignore">{1,"2","three"}</code>.</p></article></article><article class="activity project-like" id="activity-22"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-26"><p id="p-254">Sets are useful collections when you only care if a datum belongs to the set or not. But often you want your data to be ordered, and often you want to be able count the same datum multiple times in your collection. This is where <dfn class="terminology">lists</dfn> are useful.</p></div>
-<article class="task exercise-like" id="task-93"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-255">Lists use hard brackets <code class="code-inline tex2jax_ignore">[2,8,1,4]</code> instead of curly brackets. Use <code class="code-inline tex2jax_ignore">==</code> to verify that each of the lists <code class="code-inline tex2jax_ignore">[100,101,100]</code>, <code class="code-inline tex2jax_ignore">[101,100]</code>, and <code class="code-inline tex2jax_ignore">[100,101]</code> are not considered equal to each other, since even though they contain the same data, it appears in different orders and frequencies.</p></article><article class="task exercise-like" id="task-94"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-256">The <dfn class="terminology">concatentation</dfn> of many lists attaches them in order from end-to-end. For example, the concatenation of <code class="code-inline tex2jax_ignore">[1,2,3]</code> with <code class="code-inline tex2jax_ignore">[3,4,5]</code> may be found using the code <code class="code-inline tex2jax_ignore">[1,2,3] + [3,4,5]</code>, resulting in <code class="code-inline tex2jax_ignore">[1,2,3,3,4,5]</code>. (Note that <code class="code-inline tex2jax_ignore">3</code> is repeated since lists allow repeats.)</p>
-<p id="p-257">Find the concatenation of the three lists \([1,2,4,7]\text{,}\) \([2,5,7,9]\text{,}\) and \([0,2,3,7]\text{.}\)</p></article><article class="task exercise-like" id="task-95"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-258">Like sets, lists may contain data besides raw numbers, such as strings.</p>
-<p id="p-259">Find the concatenation of the lists <code class="code-inline tex2jax_ignore">[1,2,3]</code> and <code class="code-inline tex2jax_ignore">[1,"2","three"]</code>.</p></article><article class="task exercise-like" id="task-96"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-260">Elements of a list can be changed as shown in <a class="xref" data-knowl="./knowl/data-collections-list-mutable.html" title="Listing 3.2.1">3.2.1</a>.</p>
+<article class="exploration project-like" id="exploration-4"><h3 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span>
+</h3>
+<article class="task exercise-like" id="task-66"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-185">Use code cells to find the squares of the counting numbers from <span class="process-math">\(0\)</span> to <span class="process-math">\(9\text{:}\)</span> <span class="process-math">\(0^2=0\text{,}\)</span> <span class="process-math">\(1^2=1\text{,}\)</span> <span class="process-math">\(2^2=4\text{,}\)</span> <span class="process-math">\(\cdots\text{.}\)</span> (Remember that <code class="code-inline tex2jax_ignore">**</code> is used in Python to denote an exponent.)</p></article><article class="task exercise-like" id="task-67"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-186">The sum of the cubes of <span class="process-math">\(0\)</span> through <span class="process-math">\(4\)</span> may be found by running <code class="code-inline tex2jax_ignore">0**3+1**3+2**3+3**3+4**3</code>, which turns out to be <span class="process-math">\(100\text{.}\)</span></p>
+<p id="p-187">Show that the sum of the squares of <span class="process-math">\(0\)</span> through <span class="process-math">\(9\)</span> is equal to <span class="process-math">\(285\text{.}\)</span></p></article><article class="task exercise-like" id="task-68"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-188">To avoid a lot of repetition, we may quickly produce the cubes of <span class="process-math">\(0\)</span> through <span class="process-math">\(4\)</span> as a <dfn class="terminology">list</dfn> by running <code class="code-inline tex2jax_ignore">cubes = [n**3 for n in range(5)]</code>. Then <code class="code-inline tex2jax_ignore">sum(cubes)</code> also results in <span class="process-math">\(100\text{.}\)</span></p>
+<p id="p-189">Adapt this technique to show that the sum of the squares of <span class="process-math">\(0\)</span> through <span class="process-math">\(99\)</span> is equal to <span class="process-math">\(328{,}350\text{.}\)</span></p></article></article><article class="activity project-like" id="activity-15"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-19"><p id="p-190">An unordered collection of mathematical objects is known as a <dfn class="terminology">set</dfn>. Sets are written as a pair of curly braces surrounding a description of its members, such as <span class="process-math">\(\{2,8,1,4\}\text{.}\)</span></p></div>
+<article class="task exercise-like" id="task-69"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-191">Sets may be declared in Python and SageMath using the syntax <code class="code-inline tex2jax_ignore">{2,8,1,4}</code>. Use this syntax and the equality operator <code class="code-inline tex2jax_ignore">==</code> to confirm that <span class="process-math">\(\{100,101,100\}\text{,}\)</span> <span class="process-math">\(\{101,100\}\text{,}\)</span> and <span class="process-math">\(\{100,101\}\)</span> are all the same set (since they all contain exactly the same numbers).</p></article><article class="task exercise-like" id="task-70"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-192">The <dfn class="terminology">union</dfn> of many sets describes anything that belongs to any of the given sets. For example, the union of <span class="process-math">\(\{1,2,3\}\)</span> with <span class="process-math">\(\{3,4,5\}\)</span> may be found using the code <code class="code-inline tex2jax_ignore">{1,2,3} | {3,4,5}</code>, resulting in <span class="process-math">\(\{1,2,3,4,5\}\text{.}\)</span></p>
+<p id="p-193">Find the union of the three sets <span class="process-math">\(\{1,2,4,7\}\text{,}\)</span> <span class="process-math">\(\{2,5,7,9\}\text{,}\)</span> and <span class="process-math">\(\{0,2,3,7\}\text{.}\)</span></p></article><article class="task exercise-like" id="task-71"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-194">The <dfn class="terminology">intersection</dfn> of many sets describes only the things that belong to all of the given sets. For example, the intersection of <span class="process-math">\(\{1,2,3\}\)</span> with <span class="process-math">\(\{3,4,5\}\)</span> may be found using the code <code class="code-inline tex2jax_ignore">{1,2,3} &amp; {3,4,5}</code>, resulting in <span class="process-math">\(\{3\}\text{.}\)</span></p>
+<p id="p-195">Find the intersection of the three sets <span class="process-math">\(\{1,2,4,7\}\text{,}\)</span> <span class="process-math">\(\{2,5,7,9\}\text{,}\)</span> and <span class="process-math">\(\{0,2,3,7\}\text{.}\)</span></p></article><article class="task exercise-like" id="task-72"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-196">Sets may contain other kinds of data, such as strings.</p>
+<p id="p-197">Find the union and intersection of the sets <code class="code-inline tex2jax_ignore">{1,2,3}</code> and <code class="code-inline tex2jax_ignore">{1,"2","three"}</code>.</p></article></article><article class="activity project-like" id="activity-16"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-20"><p id="p-198">Sets are useful collections when you only care if a datum belongs to the set or not. But often you want your data to be ordered, and often you want to be able count the same datum multiple times in your collection. This is where <dfn class="terminology">lists</dfn> are useful.</p></div>
+<article class="task exercise-like" id="task-73"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-199">Lists use hard brackets <code class="code-inline tex2jax_ignore">[2,8,1,4]</code> instead of curly brackets. Use <code class="code-inline tex2jax_ignore">==</code> to verify that each of the lists <code class="code-inline tex2jax_ignore">[100,101,100]</code>, <code class="code-inline tex2jax_ignore">[101,100]</code>, and <code class="code-inline tex2jax_ignore">[100,101]</code> are not considered equal to each other, since even though they contain the same data, it appears in different orders and frequencies.</p></article><article class="task exercise-like" id="task-74"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-200">The <dfn class="terminology">concatentation</dfn> of many lists attaches them in order from end-to-end. For example, the concatenation of <code class="code-inline tex2jax_ignore">[1,2,3]</code> with <code class="code-inline tex2jax_ignore">[3,4,5]</code> may be found using the code <code class="code-inline tex2jax_ignore">[1,2,3] + [3,4,5]</code>, resulting in <code class="code-inline tex2jax_ignore">[1,2,3,3,4,5]</code>. (Note that <code class="code-inline tex2jax_ignore">3</code> is repeated since lists allow repeats.)</p>
+<p id="p-201">Find the concatenation of the three lists <span class="process-math">\([1,2,4,7]\text{,}\)</span> <span class="process-math">\([2,5,7,9]\text{,}\)</span> and <span class="process-math">\([0,2,3,7]\text{.}\)</span></p></article><article class="task exercise-like" id="task-75"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-202">Like sets, lists may contain data besides raw numbers, such as strings.</p>
+<p id="p-203">Find the concatenation of the lists <code class="code-inline tex2jax_ignore">[1,2,3]</code> and <code class="code-inline tex2jax_ignore">[1,"2","three"]</code>.</p></article><article class="task exercise-like" id="task-76"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-204">Elements of a list can be changed as shown in <a href="" class="xref" data-knowl="./knowl/data-collections-list-mutable.html" title="Listing 2.2.1">2.2.1</a>.</p>
 <figure class="listing figure-like" id="data-collections-list-mutable"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">favorite_numbers = [1,"two",7,3.14]
 # Characters after the hashtag sign are comments and don't affect code.
 # Python indexes with counting nunmbers, starting with 0 (known as 0-indexing).
@@ -184,9 +225,9 @@ favorite_numbers[0] = "One."  # changes the initial element 1 to "One."
 favorite_numbers[2] = 42      # changes the element 7 to 42
 print(favorite_numbers)       # outputs ['One.', 'two', 42, 3.14]
 </code></pre></div>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.2.1<span class="period">.</span></span><span class="space"> </span>Changing elements of a list.</figcaption></figure><p id="p-261">Let <code class="code-inline tex2jax_ignore">favorite_things = ["raindrops", "roses", "whiskers", "kittens"]</code>, and then use the techniques from <a class="xref" data-knowl="./knowl/data-collections-list-mutable.html" title="Listing 3.2.1">3.2.1</a> to change “roses” and “kittens” into some of your favorite things (leaving "raindrops" and "whiskers" in place).</p></article><article class="task exercise-like" id="task-97"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-262"><dfn class="terminology">Tuples</dfn> are similar to lists in that they store ordered collections of data, but are used in different contexts. An important difference is that their elements are fixed. (That is, lists are <dfn class="terminology">mutable</dfn> while tuples are <dfn class="terminology">immutable</dfn>.)</p>
-<p id="p-263">Copy <a class="xref" data-knowl="./knowl/data-collections-tuple-immutable.html" title="Listing 3.2.2">3.2.2</a> to a Code cell, and replace the two indicated comments appropriately.</p>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.2.1<span class="period">.</span></span><span class="space"> </span>Changing elements of a list.</figcaption></figure><p id="p-205">Let <code class="code-inline tex2jax_ignore">favorite_things = ["raindrops", "roses", "whiskers", "kittens"]</code>, and then use the techniques from <a href="" class="xref" data-knowl="./knowl/data-collections-list-mutable.html" title="Listing 2.2.1">2.2.1</a> to change “roses” and “kittens” into some of your favorite things (leaving "raindrops" and "whiskers" in place).</p></article><article class="task exercise-like" id="task-77"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-206"><dfn class="terminology">Tuples</dfn> are similar to lists in that they store ordered collections of data, but are used in different contexts. An important difference is that their elements are fixed. (That is, lists are <dfn class="terminology">mutable</dfn> while tuples are <dfn class="terminology">immutable</dfn>.)</p>
+<p id="p-207">Copy <a href="" class="xref" data-knowl="./knowl/data-collections-tuple-immutable.html" title="Listing 2.2.2">2.2.2</a> to a Code cell, and replace the two indicated comments appropriately.</p>
 <figure class="listing figure-like" id="data-collections-tuple-immutable"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">triple_list = ["one", "two", "three"]
 triple_tuple = ("one", "two", "three")
 
@@ -208,13 +249,13 @@ except TypeError:
 
 print(triple_list, triple_tuple) # outputs ['one', 2, 'three'] ('one', 'two', 'three')
 </code></pre></div>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.2.2<span class="period">.</span></span><span class="space"> </span>Trying to alter a tuple.</figcaption></figure></article></article><article class="activity project-like" id="activity-23"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-27"><p id="p-264">Lists are useful for organizing multiple values of data, but there's no great way to assign labels to each element in the list. <dfn class="terminology">Dictionaries</dfn> are used to mitigate this.</p></div>
-<article class="task exercise-like" id="task-98"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-265">The dictionary <code class="code-inline tex2jax_ignore">student_dict = {"name": "Jessica", "age": 19, "favorite_teacher": "Dr. Clontz"}</code> represents the student data given in <a class="xref" data-knowl="./knowl/data-collections-student-dictionary.html" title="Table 3.2.3: Data stored in student_dict.">3.2.3</a> as <dfn class="terminology">keys</dfn> and <dfn class="terminology">values</dfn>.</p>
-<figure class="table table-like" id="data-collections-student-dictionary"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.2.3<span class="period">.</span></span><span class="space"> </span>Data stored in <code class="code-inline tex2jax_ignore">student_dict</code>.</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.2.2<span class="period">.</span></span><span class="space"> </span>Trying to alter a tuple.</figcaption></figure></article></article><article class="activity project-like" id="activity-17"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-21"><p id="p-208">Lists are useful for organizing multiple values of data, but there's no great way to assign labels to each element in the list. <dfn class="terminology">Dictionaries</dfn> are used to mitigate this.</p></div>
+<article class="task exercise-like" id="task-78"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-209">The dictionary <code class="code-inline tex2jax_ignore">student_dict = {"name": "Jessica", "age": 19, "favorite_teacher": "Dr. Clontz"}</code> represents the student data given in <a href="" class="xref" data-knowl="./knowl/data-collections-student-dictionary.html" title="Table 2.2.3: Data stored in student_dict.">2.2.3</a> as <dfn class="terminology">keys</dfn> and <dfn class="terminology">values</dfn>.</p>
+<figure class="table table-like" id="data-collections-student-dictionary"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.2.3<span class="period">.</span></span><span class="space"> </span>Data stored in <code class="code-inline tex2jax_ignore">student_dict</code>.</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines">Key</td>
 <td class="l m b1 r0 l0 t0 lines">Value</td>
@@ -231,31 +272,31 @@ print(triple_list, triple_tuple) # outputs ['one', 2, 'three'] ('one', 'two', 't
 <td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">"favorite_teacher"</code></td>
 <td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">"Dr. Clontz"</code></td>
 </tr>
-</table></div></figure><p id="p-266">Create a dictionary with the same keys for someone in your group.</p></article><article class="task exercise-like" id="task-99"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-267">Values stored in a dictionary can be easy retrieved by looking them up by key. For example, <code class="code-inline tex2jax_ignore">student_dict["favorite_teacher"]</code> equals <code class="code-inline tex2jax_ignore">"Dr. Clontz"</code>, and <code class="code-inline tex2jax_ignore">print(f"{student_dict['name']} is {student_dict['age']} years old.")</code> outputs <code class="code-inline tex2jax_ignore">Jessica is 19 years old.</code>. (Note the switching of single and double quotes.)</p>
-<p id="p-268">Create a code cell that outputs a sentence similar to the following, using the dictionary you created in the previous task.</p>
-<blockquote class="blockquote" id="blockquote-4">[Student name]'s favorite teacher is [teacher name].</blockquote></article></article><article class="activity project-like" id="activity-24"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.5</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-28"><p id="p-269">To avoid repetition, <dfn class="terminology">ranges</dfn> and <dfn class="terminology">comprehension</dfn> may be used to quickly describe longer lists, sets, and dictionaries.</p></div>
-<article class="task exercise-like" id="task-100"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-270">Using the <code class="code-inline tex2jax_ignore">range()</code> tool, we can quickly create lists of counting numbers. For example, <code class="code-inline tex2jax_ignore">list(range(10))</code> returns the list <code class="code-inline tex2jax_ignore">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</code>. Note that this list contains ten different elements, but doesn't contain the number <code class="code-inline tex2jax_ignore">10</code> itself.</p>
-<p id="p-271">By providing two numbers, you can specify the starting number (included) and ending number (not included). For example, <code class="code-inline tex2jax_ignore">list(range(-5,5)) == [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4]</code>.</p>
-<p id="p-272">Use a range to create the list <code class="code-inline tex2jax_ignore">[-10, -9, ..., 9, 10]</code>.</p></article><article class="task exercise-like" id="task-101"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-273">Comprehension allows us to use formulas when defining a list. For example, <code class="code-inline tex2jax_ignore">[2*n for n in range(10)] == [0, 2, 4, ..., 18]</code>.</p>
-<p id="p-274">Use comprehension to square each of the numbers in the list <code class="code-inline tex2jax_ignore">[-10, -9, ..., 9, 10]</code>, producing <code class="code-inline tex2jax_ignore">[100, 81, ..., 81, 100]</code>.</p></article><article class="task exercise-like" id="task-102"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-275">Comprehension can also be used with sets and dictionaries. For example, <code class="code-inline tex2jax_ignore">{f"{n} doubled": 2*n for n in range(10)}</code> creates the dictionary <code class="code-inline tex2jax_ignore">{'0 doubled': 0, '1 doubled' 2, ..., '9 doubled': 18}</code>.</p>
-<p id="p-276">Use comprehension to create the dictionary <code class="code-inline tex2jax_ignore">{'-10 squared': 100, '-9 squared': 81, ..., '10 squared': 100}</code>.</p></article></article><section class="exercises" id="exercises-5"><h3 class="heading hide-type">
+</table></div></figure><p id="p-210">Create a dictionary with the same keys for someone in your group.</p></article><article class="task exercise-like" id="task-79"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-211">Values stored in a dictionary can be easy retrieved by looking them up by key. For example, <code class="code-inline tex2jax_ignore">student_dict["favorite_teacher"]</code> equals <code class="code-inline tex2jax_ignore">"Dr. Clontz"</code>, and <code class="code-inline tex2jax_ignore">print(f"{student_dict['name']} is {student_dict['age']} years old.")</code> outputs <code class="code-inline tex2jax_ignore">Jessica is 19 years old.</code>. (Note the switching of single and double quotes.)</p>
+<p id="p-212">Create a code cell that outputs a sentence similar to the following, using the dictionary you created in the previous task.</p>
+<blockquote class="blockquote" id="blockquote-3">[Student name]'s favorite teacher is [teacher name].</blockquote></article></article><article class="activity project-like" id="activity-18"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-22"><p id="p-213">To avoid repetition, <dfn class="terminology">ranges</dfn> and <dfn class="terminology">comprehension</dfn> may be used to quickly describe longer lists, sets, and dictionaries.</p></div>
+<article class="task exercise-like" id="task-80"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-214">Using the <code class="code-inline tex2jax_ignore">range()</code> tool, we can quickly create lists of counting numbers. For example, <code class="code-inline tex2jax_ignore">list(range(10))</code> returns the list <code class="code-inline tex2jax_ignore">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</code>. Note that this list contains ten different elements, but doesn't contain the number <code class="code-inline tex2jax_ignore">10</code> itself.</p>
+<p id="p-215">By providing two numbers, you can specify the starting number (included) and ending number (not included). For example, <code class="code-inline tex2jax_ignore">list(range(-5,5)) == [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4]</code>.</p>
+<p id="p-216">Use a range to create the list <code class="code-inline tex2jax_ignore">[-10, -9, ..., 9, 10]</code>.</p></article><article class="task exercise-like" id="task-81"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-217">Comprehension allows us to use formulas when defining a list. For example, <code class="code-inline tex2jax_ignore">[2*n for n in range(10)] == [0, 2, 4, ..., 18]</code>.</p>
+<p id="p-218">Use comprehension to square each of the numbers in the list <code class="code-inline tex2jax_ignore">[-10, -9, ..., 9, 10]</code>, producing <code class="code-inline tex2jax_ignore">[100, 81, ..., 81, 100]</code>.</p></article><article class="task exercise-like" id="task-82"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-219">Comprehension can also be used with sets and dictionaries. For example, <code class="code-inline tex2jax_ignore">{f"{n} doubled": 2*n for n in range(10)}</code> creates the dictionary <code class="code-inline tex2jax_ignore">{'0 doubled': 0, '1 doubled' 2, ..., '9 doubled': 18}</code>.</p>
+<p id="p-220">Use comprehension to create the dictionary <code class="code-inline tex2jax_ignore">{'-10 squared': 100, '-9 squared': 81, ..., '10 squared': 100}</code>.</p></article></article><section class="exercises" id="exercises-4"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-34"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-277">Create a set with all the multiples of three between \(0\) and \(20\text{:}\) \(\{0,3,\cdots,18\}\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-35"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-278">Create a set with all the multiples of four between \(0\) and \(20\text{:}\) \(\{0,4,\cdots,20\}\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-36"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-279">Find the intersection and union of the sets in the previous two exercises.</p></article><article class="exercise exercise-like" id="exercise-37"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-280">Create a list with words beginning with the letters “A” through “J”, such as <code class="code-inline tex2jax_ignore">["apple", "banana", ..., "jump"]</code>. Save it to a CS variable named <code class="code-inline tex2jax_ignore">alphabet_words</code>.</p></article><article class="exercise exercise-like" id="exercise-38"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-281">Concatentate your <code class="code-inline tex2jax_ignore">alphabet_words</code> with the list <code class="code-inline tex2jax_ignore">["kangaroo", "limbo", "mango"]</code>.</p></article><article class="exercise exercise-like" id="exercise-39"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-282">Replace your word beginning with “F” in <code class="code-inline tex2jax_ignore">alphabet_words</code> with the word “zebra”, leaving the others as-is.</p></article><article class="exercise exercise-like" id="exercise-40"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
-<p id="p-283">Create a dictionary with the data in the following table, and save it as the CS variable <code class="code-inline tex2jax_ignore">player_data</code>.</p>
+<article class="exercise exercise-like" id="exercise-25"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<p id="p-221">Create a set with all the multiples of three between <span class="process-math">\(0\)</span> and <span class="process-math">\(20\text{:}\)</span> <span class="process-math">\(\{0,3,\cdots,18\}\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-26"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<p id="p-222">Create a set with all the multiples of four between <span class="process-math">\(0\)</span> and <span class="process-math">\(20\text{:}\)</span> <span class="process-math">\(\{0,4,\cdots,20\}\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-27"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<p id="p-223">Find the intersection and union of the sets in the previous two exercises.</p></article><article class="exercise exercise-like" id="exercise-28"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<p id="p-224">Create a list with words beginning with the letters “A” through “J”, such as <code class="code-inline tex2jax_ignore">["apple", "banana", ..., "jump"]</code>. Save it to a CS variable named <code class="code-inline tex2jax_ignore">alphabet_words</code>.</p></article><article class="exercise exercise-like" id="exercise-29"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<p id="p-225">Concatentate your <code class="code-inline tex2jax_ignore">alphabet_words</code> with the list <code class="code-inline tex2jax_ignore">["kangaroo", "limbo", "mango"]</code>.</p></article><article class="exercise exercise-like" id="exercise-30"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<p id="p-226">Replace your word beginning with “F” in <code class="code-inline tex2jax_ignore">alphabet_words</code> with the word “zebra”, leaving the others as-is.</p></article><article class="exercise exercise-like" id="exercise-31"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<p id="p-227">Create a dictionary with the data in the following table, and save it as the CS variable <code class="code-inline tex2jax_ignore">player_data</code>.</p>
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines">Key</td>
@@ -277,12 +318,12 @@ print(triple_list, triple_tuple) # outputs ['one', 2, 'three'] ('one', 'two', 't
 <td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">"joined_on"</code></td>
 <td class="l m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">"2020-07-23"</code></td>
 </tr>
-</table></div></article><article class="exercise exercise-like" id="exercise-41"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
-<p id="p-284">Add 100 points to <code class="code-inline tex2jax_ignore">player_data</code>'s score.</p></article><article class="exercise exercise-like" id="exercise-42"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
-<p id="p-285">Use <code class="code-inline tex2jax_ignore">player_data</code> to print out a sentence using the following format.</p>
-<blockquote class="blockquote" id="blockquote-5">Player [user name] signed up on [date] and has earned [X] points.</blockquote></article><article class="exercise exercise-like" id="exercise-43"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
-<p id="p-286">Use comprehension to create the list <code class="code-inline tex2jax_ignore">['1+1=2', '2+2=4', ..., '100+100=200']</code>.</p></article></section></section></div></main>
+</table></div></article><article class="exercise exercise-like" id="exercise-32"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<p id="p-228">Add 100 points to <code class="code-inline tex2jax_ignore">player_data</code>'s score.</p></article><article class="exercise exercise-like" id="exercise-33"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<p id="p-229">Use <code class="code-inline tex2jax_ignore">player_data</code> to print out a sentence using the following format.</p>
+<blockquote class="blockquote" id="blockquote-4">Player [user name] signed up on [date] and has earned [X] points.</blockquote></article><article class="exercise exercise-like" id="exercise-34"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<p id="p-230">Use comprehension to create the list <code class="code-inline tex2jax_ignore">['1+1=2', '2+2=4', ..., '100+100=200']</code>.</p></article></section></section></div></main>
 </div>
-<script src="https://unpkg.com/prismjs@v1.22.0/components/prism-core.min.js"></script><script src="https://unpkg.com/prismjs@v1.22.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:20Z       *-->
+<!--*       on 2022-06-15T21:02:34Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -9,23 +9,38 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>EMDST Polar Form</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>window.MathJax = {
+<meta property="og:type" content="book">
+<meta property="book:title" content="Exploring Mathematics and Data Science with Technology">
+<meta property="book:author" content="Dr. Steven Clontz">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.88,
@@ -36,33 +51,66 @@
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://unpkg.com/prismjs@v1.22.0/themes/prism.css" rel="stylesheet">
-<script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="book-1.html"><span class="title">Exploring Mathematics and Data Science with Technology</span></a></h1>
 <p class="byline">Dr. Steven Clontz</p>
 </div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
 <a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="complex-cartesian.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="complex.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="vectors.html" title="Next">Next</a></span>
@@ -72,86 +120,79 @@
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="complex-cartesian.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="complex.html" title="Up">Up</a><a class="next-button button toolbar-item" href="vectors.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
-<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
-<li><a href="why.html" data-scroll="why">Why Study Mathematics?</a></li>
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="why.html" data-scroll="why" class="internal">Why Study Mathematics?</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="programming.html" data-scroll="programming"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
-<li><a href="programming-jupyter.html" data-scroll="programming-jupyter">Jupyter Notebooks and CoCalc</a></li>
-<li><a href="programming-python.html" data-scroll="programming-python">The Python Kernel</a></li>
-<li><a href="programming-sagemath.html" data-scroll="programming-sagemath">The SageMath Kernel</a></li>
+<a href="programming.html" data-scroll="programming" class="internal"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
+<li><a href="programming-python.html" data-scroll="programming-python" class="internal">Using Python</a></li>
+<li><a href="programming-sagemath.html" data-scroll="programming-sagemath" class="internal">Using SageMath</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="writing.html" data-scroll="writing"><span class="codenumber">2</span> <span class="title">Writing for Mathematicians and Data Scientists</span></a><ul>
-<li><a href="writing-math.html" data-scroll="writing-math">The Importance of Writing in Mathematics and Data Science</a></li>
-<li><a href="writing-markup.html" data-scroll="writing-markup">Using Markdown and LaTeX</a></li>
+<a href="data.html" data-scroll="data" class="internal"><span class="codenumber">2</span> <span class="title">Data and Collections</span></a><ul>
+<li><a href="data-numbers.html" data-scroll="data-numbers" class="internal">Numbers and Strings</a></li>
+<li><a href="data-collections.html" data-scroll="data-collections" class="internal">Collections of Data</a></li>
+<li><a href="data-programming.html" data-scroll="data-programming" class="internal">Programming with Data</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="data.html" data-scroll="data"><span class="codenumber">3</span> <span class="title">Data and Collections</span></a><ul>
-<li><a href="data-numbers.html" data-scroll="data-numbers">Numbers and Strings</a></li>
-<li><a href="data-collections.html" data-scroll="data-collections">Collections of Data</a></li>
-<li><a href="data-programming.html" data-scroll="data-programming">Programming with Data</a></li>
+<a href="visualization.html" data-scroll="visualization" class="internal"><span class="codenumber">3</span> <span class="title">Visualization of Data</span></a><ul>
+<li><a href="visualization-tables.html" data-scroll="visualization-tables" class="internal">Tables</a></li>
+<li><a href="visualization-one.html" data-scroll="visualization-one" class="internal">Single-Variable Visualizations</a></li>
+<li><a href="visualization-two.html" data-scroll="visualization-two" class="internal">Two-variable Visualizations</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="visualization.html" data-scroll="visualization"><span class="codenumber">4</span> <span class="title">Visualization of Data</span></a><ul>
-<li><a href="visualization-tables.html" data-scroll="visualization-tables">Tables</a></li>
-<li><a href="visualization-one.html" data-scroll="visualization-one">Single-Variable Visualizations</a></li>
-<li><a href="visualization-two.html" data-scroll="visualization-two">Two-variable Visualizations</a></li>
+<a href="measurements.html" data-scroll="measurements" class="internal"><span class="codenumber">4</span> <span class="title">Measurements of Data</span></a><ul>
+<li><a href="measurements-center.html" data-scroll="measurements-center" class="internal">Centers of Data</a></li>
+<li><a href="measurement-spread.html" data-scroll="measurement-spread" class="internal">Spread of Data</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="measurements.html" data-scroll="measurements"><span class="codenumber">5</span> <span class="title">Measurements of Data</span></a><ul>
-<li><a href="measurements-center.html" data-scroll="measurements-center">Centers of Data</a></li>
-<li><a href="measurement-spread.html" data-scroll="measurement-spread">Spread of Data</a></li>
+<a href="predictions.html" data-scroll="predictions" class="internal"><span class="codenumber">5</span> <span class="title">Making Predictions from Data</span></a><ul>
+<li><a href="predictions-correlation.html" data-scroll="predictions-correlation" class="internal">Measuring Correlation</a></li>
+<li><a href="predictions-regression.html" data-scroll="predictions-regression" class="internal">The Fit Line</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="predictions.html" data-scroll="predictions"><span class="codenumber">6</span> <span class="title">Making Predictions from Data</span></a><ul>
-<li><a href="predictions-correlation.html" data-scroll="predictions-correlation">Measuring Correlation</a></li>
-<li><a href="predictions-regression.html" data-scroll="predictions-regression">The Fit Line</a></li>
+<a href="random.html" data-scroll="random" class="internal"><span class="codenumber">6</span> <span class="title">Modeling Random Events</span></a><ul>
+<li><a href="random-probability.html" data-scroll="random-probability" class="internal">Introduction to Probability</a></li>
+<li><a href="random-combinatorics.html" data-scroll="random-combinatorics" class="internal">Combinatorics</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a><ul>
-<li><a href="random-probability.html" data-scroll="random-probability">Introduction to Probability</a></li>
-<li><a href="random-combinatorics.html" data-scroll="random-combinatorics">Combinatorics</a></li>
-</ul>
-</li>
-<li class="link">
-<a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a><ul>
-<li><a href="complex-cartesian.html" data-scroll="complex-cartesian">Cartesian Coordinates</a></li>
+<a href="complex.html" data-scroll="complex" class="internal"><span class="codenumber">7</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a><ul>
+<li><a href="complex-cartesian.html" data-scroll="complex-cartesian" class="internal">Cartesian Coordinates</a></li>
 <li><a href="complex-polar.html" data-scroll="complex-polar" class="active">Polar Form</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Space</span></a><ul>
-<li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean">Euclidean Vectors</a></li>
-<li><a href="vectors-matrices.html" data-scroll="vectors-matrices">Matrices</a></li>
-<li><a href="vectors-determinants.html" data-scroll="vectors-determinants">Determinants</a></li>
+<a href="vectors.html" data-scroll="vectors" class="internal"><span class="codenumber">8</span> <span class="title">Higher-Dimensional Data and Euclidean Space</span></a><ul>
+<li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean" class="internal">Euclidean Vectors</a></li>
+<li><a href="vectors-matrices.html" data-scroll="vectors-matrices" class="internal">Matrices</a></li>
+<li><a href="vectors-determinants.html" data-scroll="vectors-determinants" class="internal">Determinants</a></li>
 </ul>
 </li>
-<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
-<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
-<li class="link"><a href="references.html" data-scroll="references"><span class="title">References</span></a></li>
-<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="references.html" data-scroll="references" class="internal"><span class="title">References</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="complex-polar"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">8.2</span> <span class="title">Polar Form</span>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="complex-polar"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">7.2</span> <span class="title">Polar Form</span>
 </h2>
-<article class="exploration project-like" id="complex-polar-preview"><h6 class="heading">
-<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">8.2.1</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-76">
-<p id="p-671">The code in <a class="xref" data-knowl="./knowl/complex-polar-preview-listing.html" title="Listing 8.2.1">8.2.1</a> plots the complex numbers \((1+i)^0,(1+i)^1,(1+i)^2,(1+i)^3\text{,}\) along with a line connecting to each number from the origin.</p>
+<article class="exploration project-like" id="complex-polar-preview"><h3 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">7.2.1</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-70">
+<p id="p-615">The code in <a href="" class="xref" data-knowl="./knowl/complex-polar-preview-listing.html" title="Listing 7.2.1">7.2.1</a> plots the complex numbers <span class="process-math">\((1+i)^0,(1+i)^1,(1+i)^2,(1+i)^3\text{,}\)</span> along with a line connecting to each number from the origin.</p>
 <figure class="listing figure-like" id="complex-polar-preview-listing"><div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">complex_number = CDF(1,1)
 
 graph = points(
@@ -166,107 +207,107 @@ for power in range(4):
 
 graph
 </code></pre></div>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">8.2.1<span class="period">.</span></span><span class="space"> </span>Plotting powers of complex numbers</figcaption></figure>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">7.2.1<span class="period">.</span></span><span class="space"> </span>Plotting powers of complex numbers</figcaption></figure>
 </div>
-<article class="task exercise-like" id="task-291"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-672">Run <a class="xref" data-knowl="./knowl/complex-polar-preview-listing.html" title="Listing 8.2.1">8.2.1</a>. Then copy this code into three other code cells, modifying <code class="code-inline tex2jax_ignore">complex_number</code> to be \(2i\text{,}\) \(\sqrt{3}-i\text{,}\) and \(-0.7+1.8i\text{.}\)</p></article><article class="task exercise-like" id="task-292"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-673">What do you notice? (Write a sentence.)</p></article><article class="task exercise-like" id="task-293"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-674">What do you wonder? (Write a sentence.)</p></article></article><article class="activity project-like" id="activity-59"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.2.2</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-77">
-<p id="p-675">One important property for a complex number is its <dfn class="terminology">modulus</dfn> or <dfn class="terminology">absolute value</dfn>, which measures the distance between that number and the origin \(0+0i\text{.}\) For example, the modulus \(|4-3i|\) of \(4-3i\) happens to be \(5\text{,}\) illustrated in <a class="xref" data-knowl="./knowl/complex-polar-modulus.html" title="Figure 8.2.2">8.2.2</a>.</p>
-<figure class="figure figure-like" id="complex-polar-modulus"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/complex-polar-modulus.png" class="contained" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.2.2<span class="period">.</span></span><span class="space"> </span>Modulus of \(4-3i\)</figcaption></figure>
+<article class="task exercise-like" id="task-271"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-616">Run <a href="" class="xref" data-knowl="./knowl/complex-polar-preview-listing.html" title="Listing 7.2.1">7.2.1</a>. Then copy this code into three other code cells, modifying <code class="code-inline tex2jax_ignore">complex_number</code> to be <span class="process-math">\(2i\text{,}\)</span> <span class="process-math">\(\sqrt{3}-i\text{,}\)</span> and <span class="process-math">\(-0.7+1.8i\text{.}\)</span></p></article><article class="task exercise-like" id="task-272"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-617">What do you notice? (Write a sentence.)</p></article><article class="task exercise-like" id="task-273"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-618">What do you wonder? (Write a sentence.)</p></article></article><article class="activity project-like" id="activity-53"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.2.2</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-71">
+<p id="p-619">One important property for a complex number is its <dfn class="terminology">modulus</dfn> or <dfn class="terminology">absolute value</dfn>, which measures the distance between that number and the origin <span class="process-math">\(0+0i\text{.}\)</span> For example, the modulus <span class="process-math">\(|4-3i|\)</span> of <span class="process-math">\(4-3i\)</span> happens to be <span class="process-math">\(5\text{,}\)</span> illustrated in <a href="" class="xref" data-knowl="./knowl/complex-polar-modulus.html" title="Figure 7.2.2">7.2.2</a>.</p>
+<figure class="figure figure-like" id="complex-polar-modulus"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/complex-polar-modulus.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.2.2<span class="period">.</span></span><span class="space"> </span>Modulus of <span class="process-math">\(4-3i\)</span></figcaption></figure>
 </div>
-<article class="task exercise-like" id="task-294"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-676">Plot each of the following complex numbers in the plane. Then describe the modulus for each number.</p>
+<article class="task exercise-like" id="task-274"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-620">Plot each of the following complex numbers in the plane. Then describe the modulus for each number.</p>
 <ul class="disc">
-<li id="li-67"><p id="p-derived-li-67">\(\displaystyle 3\)</p></li>
-<li id="li-68"><p id="p-derived-li-68">\(\displaystyle 2i\)</p></li>
-<li id="li-69"><p id="p-derived-li-69">\(\displaystyle -4i\)</p></li>
-<li id="li-70"><p id="p-derived-li-70">\(\displaystyle -1\)</p></li>
-</ul></article><article class="task exercise-like" id="task-295"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-677">SageMath confirms that the modulus of \(4-3i\) is \(5\) by running the following code: <code class="code-inline tex2jax_ignore">abs(CDF(4,-3))</code>.</p>
-<p id="p-678">Use Code cells to confirm your modulus calculations from the previous task.</p></article><article class="task exercise-like" id="task-296"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-679">Modify <a class="xref" data-knowl="./knowl/complex-polar-preview-listing.html" title="Listing 8.2.1">8.2.1</a> to plot the following complex numbers. Then calculate their moduli using technology, to confirm that the largest modulus belongs to the number furthest from the origin, and the smallest modulus belongs to the number closest to the origin.</p>
+<li id="li-57"><p id="p-derived-li-57"><span class="process-math">\(\displaystyle 3\)</span></p></li>
+<li id="li-58"><p id="p-derived-li-58"><span class="process-math">\(\displaystyle 2i\)</span></p></li>
+<li id="li-59"><p id="p-derived-li-59"><span class="process-math">\(\displaystyle -4i\)</span></p></li>
+<li id="li-60"><p id="p-derived-li-60"><span class="process-math">\(\displaystyle -1\)</span></p></li>
+</ul></article><article class="task exercise-like" id="task-275"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-621">SageMath confirms that the modulus of <span class="process-math">\(4-3i\)</span> is <span class="process-math">\(5\)</span> by running the following code: <code class="code-inline tex2jax_ignore">abs(CDF(4,-3))</code>.</p>
+<p id="p-622">Use Code cells to confirm your modulus calculations from the previous task.</p></article><article class="task exercise-like" id="task-276"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-623">Modify <a href="" class="xref" data-knowl="./knowl/complex-polar-preview-listing.html" title="Listing 7.2.1">7.2.1</a> to plot the following complex numbers. Then calculate their moduli using technology, to confirm that the largest modulus belongs to the number furthest from the origin, and the smallest modulus belongs to the number closest to the origin.</p>
 <ul class="disc">
-<li id="li-71"><p id="p-derived-li-71">\(\displaystyle 12+5i\)</p></li>
-<li id="li-72"><p id="p-derived-li-72">\(\displaystyle -6+8i\)</p></li>
-<li id="li-73"><p id="p-derived-li-73">\(\displaystyle \sqrt{3}-i\)</p></li>
-<li id="li-74"><p id="p-derived-li-74">\(\displaystyle -3-3i\)</p></li>
-</ul></article><article class="task exercise-like" id="task-297"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-680">The formula to compute the modulus of \(a+bi\) is</p>
-<div class="displaymath">
+<li id="li-61"><p id="p-derived-li-61"><span class="process-math">\(\displaystyle 12+5i\)</span></p></li>
+<li id="li-62"><p id="p-derived-li-62"><span class="process-math">\(\displaystyle -6+8i\)</span></p></li>
+<li id="li-63"><p id="p-derived-li-63"><span class="process-math">\(\displaystyle \sqrt{3}-i\)</span></p></li>
+<li id="li-64"><p id="p-derived-li-64"><span class="process-math">\(\displaystyle -3-3i\)</span></p></li>
+</ul></article><article class="task exercise-like" id="task-277"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-624">The formula to compute the modulus of <span class="process-math">\(a+bi\)</span> is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 |a+bi|=\sqrt{a^2+b^2}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">Calculate the four moduli from the previous task using this formula.</p></article><article class="task exercise-like" id="task-298"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-681">The <dfn class="terminology">Pythagorean Theorem</dfn> says that \(a^2+b^2=c^2\text{,}\) where \(a,b\) are the leg lengths of a right triangle, and <code class="code-inline tex2jax_ignore">c</code> is the length of its hypotenuse, illustrated in <a class="xref" data-knowl="./knowl/complex-polar-pythagorean.html" title="Figure 8.2.3">8.2.3</a>.</p>
-<figure class="figure figure-like" id="complex-polar-pythagorean"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/complex-polar-pythagorean.png" class="contained" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.2.3<span class="period">.</span></span><span class="space"> </span>Illustration of the Pythagorean Theorem</figcaption></figure><p id="p-682">Write a sentence or two explaining why this theorem is related to the formula for the modulus of a complex number.</p></article></article><article class="activity project-like" id="activity-60"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.2.3</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-78">
-<p id="p-683">Another important property of complex numbers is their <dfn class="terminology">argument</dfn>. An argument of \(0\) means that the complex number is on the right half of the horizontal axis, a positive argument means that the complex number is rotated counter-clockwise above the horizontal axis, and a negative argument means that the complex number is rotated clockwise below the horizontal axis.</p>
-<p id="p-684">SageMath can calculate the argument of a complex numbers as follows: <code class="code-inline tex2jax_ignore">arg(CDF(4,-3))</code>, returning approximately \(-0.6435\text{.}\) (We often use approximations because arguments are usually irrational numbers; why this is so requires trigonometry, so we leave that for another day.)</p>
+<p class="continuation">Calculate the four moduli from the previous task using this formula.</p></article><article class="task exercise-like" id="task-278"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-625">The <dfn class="terminology">Pythagorean Theorem</dfn> says that <span class="process-math">\(a^2+b^2=c^2\text{,}\)</span> where <span class="process-math">\(a,b\)</span> are the leg lengths of a right triangle, and <code class="code-inline tex2jax_ignore">c</code> is the length of its hypotenuse, illustrated in <a href="" class="xref" data-knowl="./knowl/complex-polar-pythagorean.html" title="Figure 7.2.3">7.2.3</a>.</p>
+<figure class="figure figure-like" id="complex-polar-pythagorean"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/complex-polar-pythagorean.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.2.3<span class="period">.</span></span><span class="space"> </span>Illustration of the Pythagorean Theorem</figcaption></figure><p id="p-626">Write a sentence or two explaining why this theorem is related to the formula for the modulus of a complex number.</p></article></article><article class="activity project-like" id="activity-54"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.2.3</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-72">
+<p id="p-627">Another important property of complex numbers is their <dfn class="terminology">argument</dfn>. An argument of <span class="process-math">\(0\)</span> means that the complex number is on the right half of the horizontal axis, a positive argument means that the complex number is rotated counter-clockwise above the horizontal axis, and a negative argument means that the complex number is rotated clockwise below the horizontal axis.</p>
+<p id="p-628">SageMath can calculate the argument of a complex numbers as follows: <code class="code-inline tex2jax_ignore">arg(CDF(4,-3))</code>, returning approximately <span class="process-math">\(-0.6435\text{.}\)</span> (We often use approximations because arguments are usually irrational numbers; why this is so requires trigonometry, so we leave that for another day.)</p>
 </div>
-<article class="task exercise-like" id="task-299"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-685">Use SageMath to find the arguments for each of the following numbers you plotted earlier.</p>
+<article class="task exercise-like" id="task-279"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-629">Use SageMath to find the arguments for each of the following numbers you plotted earlier.</p>
 <ul class="disc">
-<li id="li-75"><p id="p-derived-li-75">\(\displaystyle 12+5i\)</p></li>
-<li id="li-76"><p id="p-derived-li-76">\(\displaystyle -6+8i\)</p></li>
-<li id="li-77"><p id="p-derived-li-77">\(\displaystyle \sqrt{3}-i\)</p></li>
-<li id="li-78"><p id="p-derived-li-78">\(\displaystyle -3-3i\)</p></li>
-</ul></article><article class="task exercise-like" id="task-300"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-686">Make up several other complex numbers and find their arguments. What values does it seem that an argument is allowed to have? Do you notice anything special or familiar about this range?</p></article></article><article class="activity project-like" id="activity-61"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.2.4</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-79">
-<p id="p-687">Complex numbers are often written in <dfn class="terminology">polar form</dfn>, where \(r\) describes the modulus and \(\theta\) describes the argument:</p>
-<div class="displaymath">
+<li id="li-65"><p id="p-derived-li-65"><span class="process-math">\(\displaystyle 12+5i\)</span></p></li>
+<li id="li-66"><p id="p-derived-li-66"><span class="process-math">\(\displaystyle -6+8i\)</span></p></li>
+<li id="li-67"><p id="p-derived-li-67"><span class="process-math">\(\displaystyle \sqrt{3}-i\)</span></p></li>
+<li id="li-68"><p id="p-derived-li-68"><span class="process-math">\(\displaystyle -3-3i\)</span></p></li>
+</ul></article><article class="task exercise-like" id="task-280"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-630">Make up several other complex numbers and find their arguments. What values does it seem that an argument is allowed to have? Do you notice anything special or familiar about this range?</p></article></article><article class="activity project-like" id="activity-55"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.2.4</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-73">
+<p id="p-631">Complex numbers are often written in <dfn class="terminology">polar form</dfn>, where <span class="process-math">\(r\)</span> describes the modulus and <span class="process-math">\(\theta\)</span> describes the argument:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 r\exp(\theta i)
 \end{equation*}
 </div>
-<p id="p-688">For example, the polar form of \(4-3i\) is (approximately) \(5\exp(-0.6435i)\text{,}\) which may be confirmed by running <code class="code-inline tex2jax_ignore">5*exp(-0.6435*CDF(I))</code> in a Code cell.</p>
+<p id="p-632">For example, the polar form of <span class="process-math">\(4-3i\)</span> is (approximately) <span class="process-math">\(5\exp(-0.6435i)\text{,}\)</span> which may be confirmed by running <code class="code-inline tex2jax_ignore">5*exp(-0.6435*CDF(I))</code> in a Code cell.</p>
 </div>
-<article class="task exercise-like" id="task-301"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-689">Write each of the following complex numbers in their polar forms, using their moduli and an approximation of their arguments found earlier:</p>
+<article class="task exercise-like" id="task-281"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-633">Write each of the following complex numbers in their polar forms, using their moduli and an approximation of their arguments found earlier:</p>
 <ul class="disc">
-<li id="li-79"><p id="p-derived-li-79">\(\displaystyle 12+5i\)</p></li>
-<li id="li-80"><p id="p-derived-li-80">\(\displaystyle -6+8i\)</p></li>
-<li id="li-81"><p id="p-derived-li-81">\(\displaystyle \sqrt{3}-i\)</p></li>
-<li id="li-82"><p id="p-derived-li-82">\(\displaystyle -3-3i\)</p></li>
-</ul></article><article class="task exercise-like" id="task-302"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-690">Use SageMath to confirm each of the (approximate) polar forms you found in the previous task.</p></article></article><article class="activity project-like" id="activity-62"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.2.5</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-80"><p id="p-691">Adding complex numbers combines their horizontal and vertical components. Multiplying a complex number by a real number scales its distance from the origin. But what does it mean to multiply two complex numbers?</p></div>
-<article class="task exercise-like" id="task-303"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-692">Describe the modulus, argument, and polar form for each complex number:</p>
+<li id="li-69"><p id="p-derived-li-69"><span class="process-math">\(\displaystyle 12+5i\)</span></p></li>
+<li id="li-70"><p id="p-derived-li-70"><span class="process-math">\(\displaystyle -6+8i\)</span></p></li>
+<li id="li-71"><p id="p-derived-li-71"><span class="process-math">\(\displaystyle \sqrt{3}-i\)</span></p></li>
+<li id="li-72"><p id="p-derived-li-72"><span class="process-math">\(\displaystyle -3-3i\)</span></p></li>
+</ul></article><article class="task exercise-like" id="task-282"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-634">Use SageMath to confirm each of the (approximate) polar forms you found in the previous task.</p></article></article><article class="activity project-like" id="activity-56"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.2.5</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-74"><p id="p-635">Adding complex numbers combines their horizontal and vertical components. Multiplying a complex number by a real number scales its distance from the origin. But what does it mean to multiply two complex numbers?</p></div>
+<article class="task exercise-like" id="task-283"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-636">Describe the modulus, argument, and polar form for each complex number:</p>
 <ul class="disc">
-<li id="li-83"><p id="p-derived-li-83">\(\displaystyle \frac{9}{5}+\frac{12}{5}i\)</p></li>
-<li id="li-84"><p id="p-derived-li-84">\(\displaystyle \frac{24}{13}+\frac{10}{13}i\)</p></li>
-<li id="li-85"><p id="p-derived-li-85">\((\frac{9}{5}+\frac{12}{5}i)\cdot(\frac{24}{13}+\frac{10}{13}i)\) (use SageMath to multiply these)</p></li>
-</ul></article><article class="task exercise-like" id="task-304"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-693">Compare the moduli of the product with the moduli of each factor. What relationship do you notice?</p></article><article class="task exercise-like" id="task-305"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-694">Compare the argument of the product with the arguments of each factor. What relationship do you notice?</p></article><article class="task exercise-like" id="task-306"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-695">Write a few sentences conjecturing what you think multiplying complex numbers does with their moduli and arguments. Then make up several examples to try and support your conjecture.</p></article></article><article class="activity project-like" id="activity-63"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.2.6</span><span class="period">.</span>
-</h6>
-<p id="p-696">Use a Code cell to confirm \(i\cdot i=-1\text{,}\) that is, \(i^2=-1\text{.}\) Then write a few sentences defending this result using what you've discovered about how multiplication affects moduli and arguments.</p></article><section class="exercises" id="exercises-17"><h3 class="heading hide-type">
+<li id="li-73"><p id="p-derived-li-73"><span class="process-math">\(\displaystyle \frac{9}{5}+\frac{12}{5}i\)</span></p></li>
+<li id="li-74"><p id="p-derived-li-74"><span class="process-math">\(\displaystyle \frac{24}{13}+\frac{10}{13}i\)</span></p></li>
+<li id="li-75"><p id="p-derived-li-75"><span class="process-math">\((\frac{9}{5}+\frac{12}{5}i)\cdot(\frac{24}{13}+\frac{10}{13}i)\)</span> (use SageMath to multiply these)</p></li>
+</ul></article><article class="task exercise-like" id="task-284"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-637">Compare the moduli of the product with the moduli of each factor. What relationship do you notice?</p></article><article class="task exercise-like" id="task-285"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-638">Compare the argument of the product with the arguments of each factor. What relationship do you notice?</p></article><article class="task exercise-like" id="task-286"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-639">Write a few sentences conjecturing what you think multiplying complex numbers does with their moduli and arguments. Then make up several examples to try and support your conjecture.</p></article></article><article class="activity project-like" id="activity-57"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.2.6</span><span class="period">.</span>
+</h3>
+<p id="p-640">Use a Code cell to confirm <span class="process-math">\(i\cdot i=-1\text{,}\)</span> that is, <span class="process-math">\(i^2=-1\text{.}\)</span> Then write a few sentences defending this result using what you've discovered about how multiplication affects moduli and arguments.</p></article><section class="exercises" id="exercises-16"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-121"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-697">Write a sentence describing why the modulus of \(-5i\) is \(5\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-122"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-698">Show how to find the modulus of \(-6+8i\) using both SageMath and a formula.</p></article><article class="exercise exercise-like" id="exercise-123"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-699">Find the arguments for \(3+2i\) and \(3-2i\text{.}\) Then write a sentence explaining why these arguments are negatives of each other.</p></article><article class="exercise exercise-like" id="exercise-124"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-700">Find the polar form of \((2-i)\cdot(1+3i)\) by using the moduli and arguments of \(2-i\) and \(1+3i\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-125"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-701">Use SageMath to compute \((2-i)\cdot(1+3i)\) from its polar form found in the previous exercise.</p></article><article class="exercise exercise-like" id="exercise-126"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-702">Use SageMath to multiply \((2-i)\cdot(1+3i)\) directly.</p></article></section></section></div></main>
+<article class="exercise exercise-like" id="exercise-112"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<p id="p-641">Write a sentence describing why the modulus of <span class="process-math">\(-5i\)</span> is <span class="process-math">\(5\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-113"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<p id="p-642">Show how to find the modulus of <span class="process-math">\(-6+8i\)</span> using both SageMath and a formula.</p></article><article class="exercise exercise-like" id="exercise-114"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<p id="p-643">Find the arguments for <span class="process-math">\(3+2i\)</span> and <span class="process-math">\(3-2i\text{.}\)</span> Then write a sentence explaining why these arguments are negatives of each other.</p></article><article class="exercise exercise-like" id="exercise-115"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<p id="p-644">Find the polar form of <span class="process-math">\((2-i)\cdot(1+3i)\)</span> by using the moduli and arguments of <span class="process-math">\(2-i\)</span> and <span class="process-math">\(1+3i\text{.}\)</span></p></article><article class="exercise exercise-like" id="exercise-116"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<p id="p-645">Use SageMath to compute <span class="process-math">\((2-i)\cdot(1+3i)\)</span> from its polar form found in the previous exercise.</p></article><article class="exercise exercise-like" id="exercise-117"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<p id="p-646">Use SageMath to multiply <span class="process-math">\((2-i)\cdot(1+3i)\)</span> directly.</p></article></section></section></div></main>
 </div>
-<script src="https://unpkg.com/prismjs@v1.22.0/components/prism-core.min.js"></script><script src="https://unpkg.com/prismjs@v1.22.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 </html>

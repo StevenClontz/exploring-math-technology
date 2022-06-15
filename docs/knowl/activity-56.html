@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:26Z       *-->
+<!--*       on 2022-06-15T21:02:36Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,19 +13,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">8.1.2</span><span class="period">.</span>
-</h6>
-<div class="introduction"><p>Both ordered pairs \((x,y)\) and complex numbers \(x+yi\) can be used to describe points in the plane. Ordered pairs are a kind of vector, which we'll discuss in the next chapter. For now, let's explore how SageMath can be used to handle complex numbers.</p></div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p>In SageMath, there are a few ways to describe complex numbers. We will use the symbol <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">CDF()</code> tool along with the arithmetic operators <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">+</code>,<code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">-</code>,<code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">*</code>,<code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">/</code>. For example, \(4-5i\) can be displayed by a Code cell by running <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">show(4-5*CDF(I))</code>.</p>
-<p>Display the complex number \(-5+2i\) using a Code cell. (Note that by default, SageMath will use decimal expressions for whole values in a complex number; that's okay.)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p>A useful shortcut is to assign <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">i=CDF(I)</code>. Then <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">show(4-5*CDF(I))</code> can be shortened to <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">show(4-5*i)</code>. (Pay attention to capitalization, though!)</p>
-<p>Use this shortcut to display \(3+4i\) from a Code cell.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p>Another shortcut to work with complex numbers in SageMath is to describe the equivalent ordered pair: <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">show(CDF(4,-5))</code> again produces \(4-5i\text{.}\)</p>
-<p>Use this shortcut to display \(-6-i\) from a code cell.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p>Run <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">show(3*i-5-7*i+3)</code> and <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">show(4*(i-2))</code> in a Code cell. Then write a couple sentences explaining how you think these results were obtained.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
-<p>Show how to compute \(7+4i-6i-5\) and \(3(2-3i)\) by hand. Then confirm your results using Code cells.</p></article></article><span class="incontext"><a href="complex-cartesian.html#activity-56">in-context</a></span>
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.2.5</span><span class="period">.</span>
+</h3>
+<div class="introduction"><p>Adding complex numbers combines their horizontal and vertical components. Multiplying a complex number by a real number scales its distance from the origin. But what does it mean to multiply two complex numbers?</p></div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Describe the modulus, argument, and polar form for each complex number:</p>
+<ul class="disc">
+<li><p><span class="process-math">\(\displaystyle \frac{9}{5}+\frac{12}{5}i\)</span></p></li>
+<li><p><span class="process-math">\(\displaystyle \frac{24}{13}+\frac{10}{13}i\)</span></p></li>
+<li><p><span class="process-math">\((\frac{9}{5}+\frac{12}{5}i)\cdot(\frac{24}{13}+\frac{10}{13}i)\)</span> (use SageMath to multiply these)</p></li>
+</ul></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Compare the moduli of the product with the moduli of each factor. What relationship do you notice?</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>Compare the argument of the product with the arguments of each factor. What relationship do you notice?</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p>Write a few sentences conjecturing what you think multiplying complex numbers does with their moduli and arguments. Then make up several examples to try and support your conjecture.</p></article></article><span class="incontext"><a href="complex-polar.html#activity-56" class="internal">in-context</a></span>
 </body>
 </html>

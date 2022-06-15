@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-13T17:44:18Z       *-->
+<!--*       on 2022-06-15T21:02:33Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -9,23 +9,38 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>EMDST Numbers and Strings</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>window.MathJax = {
+<meta property="og:type" content="book">
+<meta property="book:title" content="Exploring Mathematics and Data Science with Technology">
+<meta property="book:author" content="Dr. Steven Clontz">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.88,
@@ -36,33 +51,66 @@
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://unpkg.com/prismjs@v1.22.0/themes/prism.css" rel="stylesheet">
-<script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX Course: Title Here';
+eBookConfig.basecourse = 'PTX Base Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.runestone_version = '5.0.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runtime.b0f8547c48f16a9f.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.2.1/runestone.0e9550fe42760516.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/637.fafafbd97df8a0d1.css">
+<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.2.1/runestone.e4d5592da655219f.css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="book-1.html"><span class="title">Exploring Mathematics and Data Science with Technology</span></a></h1>
 <p class="byline">Dr. Steven Clontz</p>
 </div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
 <a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="data.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="data.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="data-collections.html" title="Next">Next</a></span>
@@ -72,201 +120,194 @@
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="data.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="data.html" title="Up">Up</a><a class="next-button button toolbar-item" href="data-collections.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
-<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1">Acknowledgements</a></li>
-<li><a href="why.html" data-scroll="why">Why Study Mathematics?</a></li>
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="why.html" data-scroll="why" class="internal">Why Study Mathematics?</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="programming.html" data-scroll="programming"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
-<li><a href="programming-jupyter.html" data-scroll="programming-jupyter">Jupyter Notebooks and CoCalc</a></li>
-<li><a href="programming-python.html" data-scroll="programming-python">The Python Kernel</a></li>
-<li><a href="programming-sagemath.html" data-scroll="programming-sagemath">The SageMath Kernel</a></li>
+<a href="programming.html" data-scroll="programming" class="internal"><span class="codenumber">1</span> <span class="title">Programming for Data Science and Mathematics</span></a><ul>
+<li><a href="programming-python.html" data-scroll="programming-python" class="internal">Using Python</a></li>
+<li><a href="programming-sagemath.html" data-scroll="programming-sagemath" class="internal">Using SageMath</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="writing.html" data-scroll="writing"><span class="codenumber">2</span> <span class="title">Writing for Mathematicians and Data Scientists</span></a><ul>
-<li><a href="writing-math.html" data-scroll="writing-math">The Importance of Writing in Mathematics and Data Science</a></li>
-<li><a href="writing-markup.html" data-scroll="writing-markup">Using Markdown and LaTeX</a></li>
-</ul>
-</li>
-<li class="link">
-<a href="data.html" data-scroll="data"><span class="codenumber">3</span> <span class="title">Data and Collections</span></a><ul>
+<a href="data.html" data-scroll="data" class="internal"><span class="codenumber">2</span> <span class="title">Data and Collections</span></a><ul>
 <li><a href="data-numbers.html" data-scroll="data-numbers" class="active">Numbers and Strings</a></li>
-<li><a href="data-collections.html" data-scroll="data-collections">Collections of Data</a></li>
-<li><a href="data-programming.html" data-scroll="data-programming">Programming with Data</a></li>
+<li><a href="data-collections.html" data-scroll="data-collections" class="internal">Collections of Data</a></li>
+<li><a href="data-programming.html" data-scroll="data-programming" class="internal">Programming with Data</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="visualization.html" data-scroll="visualization"><span class="codenumber">4</span> <span class="title">Visualization of Data</span></a><ul>
-<li><a href="visualization-tables.html" data-scroll="visualization-tables">Tables</a></li>
-<li><a href="visualization-one.html" data-scroll="visualization-one">Single-Variable Visualizations</a></li>
-<li><a href="visualization-two.html" data-scroll="visualization-two">Two-variable Visualizations</a></li>
+<a href="visualization.html" data-scroll="visualization" class="internal"><span class="codenumber">3</span> <span class="title">Visualization of Data</span></a><ul>
+<li><a href="visualization-tables.html" data-scroll="visualization-tables" class="internal">Tables</a></li>
+<li><a href="visualization-one.html" data-scroll="visualization-one" class="internal">Single-Variable Visualizations</a></li>
+<li><a href="visualization-two.html" data-scroll="visualization-two" class="internal">Two-variable Visualizations</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="measurements.html" data-scroll="measurements"><span class="codenumber">5</span> <span class="title">Measurements of Data</span></a><ul>
-<li><a href="measurements-center.html" data-scroll="measurements-center">Centers of Data</a></li>
-<li><a href="measurement-spread.html" data-scroll="measurement-spread">Spread of Data</a></li>
+<a href="measurements.html" data-scroll="measurements" class="internal"><span class="codenumber">4</span> <span class="title">Measurements of Data</span></a><ul>
+<li><a href="measurements-center.html" data-scroll="measurements-center" class="internal">Centers of Data</a></li>
+<li><a href="measurement-spread.html" data-scroll="measurement-spread" class="internal">Spread of Data</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="predictions.html" data-scroll="predictions"><span class="codenumber">6</span> <span class="title">Making Predictions from Data</span></a><ul>
-<li><a href="predictions-correlation.html" data-scroll="predictions-correlation">Measuring Correlation</a></li>
-<li><a href="predictions-regression.html" data-scroll="predictions-regression">The Fit Line</a></li>
+<a href="predictions.html" data-scroll="predictions" class="internal"><span class="codenumber">5</span> <span class="title">Making Predictions from Data</span></a><ul>
+<li><a href="predictions-correlation.html" data-scroll="predictions-correlation" class="internal">Measuring Correlation</a></li>
+<li><a href="predictions-regression.html" data-scroll="predictions-regression" class="internal">The Fit Line</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="random.html" data-scroll="random"><span class="codenumber">7</span> <span class="title">Modeling Random Events</span></a><ul>
-<li><a href="random-probability.html" data-scroll="random-probability">Introduction to Probability</a></li>
-<li><a href="random-combinatorics.html" data-scroll="random-combinatorics">Combinatorics</a></li>
+<a href="random.html" data-scroll="random" class="internal"><span class="codenumber">6</span> <span class="title">Modeling Random Events</span></a><ul>
+<li><a href="random-probability.html" data-scroll="random-probability" class="internal">Introduction to Probability</a></li>
+<li><a href="random-combinatorics.html" data-scroll="random-combinatorics" class="internal">Combinatorics</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="complex.html" data-scroll="complex"><span class="codenumber">8</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a><ul>
-<li><a href="complex-cartesian.html" data-scroll="complex-cartesian">Cartesian Coordinates</a></li>
-<li><a href="complex-polar.html" data-scroll="complex-polar">Polar Form</a></li>
+<a href="complex.html" data-scroll="complex" class="internal"><span class="codenumber">7</span> <span class="title">Two-Dimensional Data and Complex Numbers</span></a><ul>
+<li><a href="complex-cartesian.html" data-scroll="complex-cartesian" class="internal">Cartesian Coordinates</a></li>
+<li><a href="complex-polar.html" data-scroll="complex-polar" class="internal">Polar Form</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="vectors.html" data-scroll="vectors"><span class="codenumber">9</span> <span class="title">Higher-Dimensional Data and Euclidean Space</span></a><ul>
-<li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean">Euclidean Vectors</a></li>
-<li><a href="vectors-matrices.html" data-scroll="vectors-matrices">Matrices</a></li>
-<li><a href="vectors-determinants.html" data-scroll="vectors-determinants">Determinants</a></li>
+<a href="vectors.html" data-scroll="vectors" class="internal"><span class="codenumber">8</span> <span class="title">Higher-Dimensional Data and Euclidean Space</span></a><ul>
+<li><a href="vectors-euclidean.html" data-scroll="vectors-euclidean" class="internal">Euclidean Vectors</a></li>
+<li><a href="vectors-matrices.html" data-scroll="vectors-matrices" class="internal">Matrices</a></li>
+<li><a href="vectors-determinants.html" data-scroll="vectors-determinants" class="internal">Determinants</a></li>
 </ul>
 </li>
-<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
-<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
-<li class="link"><a href="references.html" data-scroll="references"><span class="title">References</span></a></li>
-<li class="link"><a href="colophon-1.html" data-scroll="colophon-1"><span class="title">Colophon</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="references.html" data-scroll="references" class="internal"><span class="title">References</span></a></li>
+<li class="link"><a href="colophon-1.html" data-scroll="colophon-1" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="data-numbers"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Numbers and Strings</span>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="data-numbers"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Numbers and Strings</span>
 </h2>
-<article class="exploration project-like" id="exploration-6"><h6 class="heading">
-<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-19"><p id="p-180">Write a sentence answering each question.</p></div>
-<article class="task exercise-like" id="task-66"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-181">How would you define a “number”?</p></article><article class="task exercise-like" id="task-67"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-182">Given your definition, are there certain numbers that cannot be understood by a computer?</p></article></article><article class="activity project-like" id="data-numbers-counting"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-20">
-<p id="p-183">The <dfn class="terminology">counting numbers</dfn> (sometimes written as the lowercase Greek letter omega \(\omega\text{,}\) also sometimes called “whole numbers” or “natural numbers”) are those numbers used to quantify whole items:</p>
-<div class="displaymath">
+<article class="exploration project-like" id="exploration-3"><h3 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-13"><p id="p-124">Write a sentence answering each question.</p></div>
+<article class="task exercise-like" id="task-46"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-125">How would you define a “number”?</p></article><article class="task exercise-like" id="task-47"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-126">Given your definition, are there certain numbers that cannot be understood by a computer?</p></article></article><article class="activity project-like" id="data-numbers-counting"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-14">
+<p id="p-127">The <dfn class="terminology">counting numbers</dfn> (sometimes written as the lowercase Greek letter omega <span class="process-math">\(\omega\text{,}\)</span> also sometimes called “whole numbers” or “natural numbers”) are those numbers used to quantify whole items:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \{0,1,2,3,\dots,100,101,\dots,8675309,8675310,\dots\}
 \end{equation*}
 </div>
-<p id="p-184">For each of the following possible rules for counting numbers, either decide that it should be true, or find an example showing why the rule should be false.</p>
+<p id="p-128">For each of the following possible rules for counting numbers, either decide that it should be true, or find an example showing why the rule should be false.</p>
 </div>
-<article class="task exercise-like" id="task-68"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-185"><em class="emphasis">Adding one</em> to a counting number results in another counting number. For example, \(6\) is a counting number, so \(6+1=7\) is also a counting number.</p></article><article class="task exercise-like" id="task-69"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-186"><em class="emphasis">Subtracting</em> one from a counting number results in another counting number. For example, \(6\) is a counting number, so \(6-1=5\) is also a counting number.</p></article><article class="task exercise-like" id="task-70"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-187"><em class="emphasis">Doubling</em> a counting number results in another counting number. For example, \(32\) is a counting number, so \(32\times 2=64\) is also a counting number.</p></article><article class="task exercise-like" id="task-71"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-188"><em class="emphasis">Halving</em> a counting number results in another counting number. For example, \(32\) is a counting number, so \(32\div 2=16\) is also a counting number.</p></article><article class="task exercise-like" id="task-72"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-189"><em class="emphasis">Squaring</em> a counting number results in another counting number. For example, \(9\) is a counting number, so \(9^2=81\) is also a counting number.</p></article><article class="task exercise-like" id="task-73"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-190"><em class="emphasis">Square rooting</em> a counting number results in another counting number. For example, \(9\) is a counting number, so \(\sqrt{9}=3\) is also a counting number.</p></article></article><article class="activity project-like" id="activity-16"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-21"><p id="p-191">The <dfn class="terminology">integers</dfn> \(\mathbb Z\) include all the counting numbers as well as their negatives: \(\{\dots,-2,-1,0,1,2,\dots\}\text{.}\)</p></div>
-<article class="task exercise-like" id="task-74"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-192">Explain which of the number rules from <a class="xref" data-knowl="./knowl/data-numbers-counting.html" title="Activity 3.1.2">3.1.2</a> work when “counting number” is replaced with “integer”, and which ones fail.</p>
+<article class="task exercise-like" id="task-48"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-129"><em class="emphasis">Adding one</em> to a counting number results in another counting number. For example, <span class="process-math">\(6\)</span> is a counting number, so <span class="process-math">\(6+1=7\)</span> is also a counting number.</p></article><article class="task exercise-like" id="task-49"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-130"><em class="emphasis">Subtracting</em> one from a counting number results in another counting number. For example, <span class="process-math">\(6\)</span> is a counting number, so <span class="process-math">\(6-1=5\)</span> is also a counting number.</p></article><article class="task exercise-like" id="task-50"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-131"><em class="emphasis">Doubling</em> a counting number results in another counting number. For example, <span class="process-math">\(32\)</span> is a counting number, so <span class="process-math">\(32\times 2=64\)</span> is also a counting number.</p></article><article class="task exercise-like" id="task-51"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-132"><em class="emphasis">Halving</em> a counting number results in another counting number. For example, <span class="process-math">\(32\)</span> is a counting number, so <span class="process-math">\(32\div 2=16\)</span> is also a counting number.</p></article><article class="task exercise-like" id="task-52"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-133"><em class="emphasis">Squaring</em> a counting number results in another counting number. For example, <span class="process-math">\(9\)</span> is a counting number, so <span class="process-math">\(9^2=81\)</span> is also a counting number.</p></article><article class="task exercise-like" id="task-53"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<p id="p-134"><em class="emphasis">Square rooting</em> a counting number results in another counting number. For example, <span class="process-math">\(9\)</span> is a counting number, so <span class="process-math">\(\sqrt{9}=3\)</span> is also a counting number.</p></article></article><article class="activity project-like" id="activity-10"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-15"><p id="p-135">The <dfn class="terminology">integers</dfn> <span class="process-math">\(\mathbb Z\)</span> include all the counting numbers as well as their negatives: <span class="process-math">\(\{\dots,-2,-1,0,1,2,\dots\}\text{.}\)</span></p></div>
+<article class="task exercise-like" id="task-54"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-136">Explain which of the number rules from <a href="" class="xref" data-knowl="./knowl/data-numbers-counting.html" title="Activity 2.1.2">2.1.2</a> work when “counting number” is replaced with “integer”, and which ones fail.</p>
 <ul class="disc">
-<li id="li-16"><p id="p-193">Adding one</p></li>
-<li id="li-17"><p id="p-194">Subtracting one</p></li>
-<li id="li-18"><p id="p-195">Doubling</p></li>
-<li id="li-19"><p id="p-196">Halving</p></li>
-<li id="li-20"><p id="p-197">Squaring</p></li>
-<li id="li-21"><p id="p-198">Square rooting</p></li>
-</ul></article><article class="task exercise-like" id="task-75"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-199">Choose from the words all/some/no to make the following sentence correct.</p>
-<blockquote class="blockquote" id="blockquote-2">All/some/no integers are also counting numbers, and all/some/no counting numbers are also integers.</blockquote></article></article><article class="activity project-like" id="activity-17"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-22"><p id="p-200">The <dfn class="terminology">rational numbers</dfn> \(\mathbb Q\) include all fractions of integers that don't divide by zero, such as \(\frac{1}{2}\text{,}\) \(\frac{22}{7}\text{,}\) and \(-\frac{1234812348}{42}\text{.}\)</p></div>
-<article class="task exercise-like" id="task-76"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-201">Explain which of the number rules from <a class="xref" data-knowl="./knowl/data-numbers-counting.html" title="Activity 3.1.2">3.1.2</a> work when “counting number” is replaced with “rational number”, and which ones fail.</p>
+<li id="li-6"><p id="p-137">Adding one</p></li>
+<li id="li-7"><p id="p-138">Subtracting one</p></li>
+<li id="li-8"><p id="p-139">Doubling</p></li>
+<li id="li-9"><p id="p-140">Halving</p></li>
+<li id="li-10"><p id="p-141">Squaring</p></li>
+<li id="li-11"><p id="p-142">Square rooting</p></li>
+</ul></article><article class="task exercise-like" id="task-55"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-143">Choose from the words all/some/no to make the following sentence correct.</p>
+<blockquote class="blockquote" id="blockquote-1">All/some/no integers are also counting numbers, and all/some/no counting numbers are also integers.</blockquote></article></article><article class="activity project-like" id="activity-11"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-16"><p id="p-144">The <dfn class="terminology">rational numbers</dfn> <span class="process-math">\(\mathbb Q\)</span> include all fractions of integers that don't divide by zero, such as <span class="process-math">\(\frac{1}{2}\text{,}\)</span> <span class="process-math">\(\frac{22}{7}\text{,}\)</span> and <span class="process-math">\(-\frac{1234812348}{42}\text{.}\)</span></p></div>
+<article class="task exercise-like" id="task-56"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-145">Explain which of the number rules from <a href="" class="xref" data-knowl="./knowl/data-numbers-counting.html" title="Activity 2.1.2">2.1.2</a> work when “counting number” is replaced with “rational number”, and which ones fail.</p>
 <ul class="disc">
-<li id="li-22"><p id="p-202">Adding one</p></li>
-<li id="li-23"><p id="p-203">Subtracting one</p></li>
-<li id="li-24"><p id="p-204">Doubling</p></li>
-<li id="li-25"><p id="p-205">Halving</p></li>
-<li id="li-26"><p id="p-206">Squaring</p></li>
-<li id="li-27"><p id="p-207">Square rooting</p></li>
-</ul></article><article class="task exercise-like" id="task-77"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-208">Choose from the words all/some/no to make the following sentence correct.</p>
-<blockquote class="blockquote" id="blockquote-3">All/some/no integers are also rational numbers, and all/some/no rational numbers are also integers.</blockquote></article></article><article class="activity project-like" id="activity-18"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span>
-</h6>
-<p id="p-209">There are other kinds of <dfn class="terminology">real numbers</dfn>, such as \(e\) and \(\pi\text{,}\) that aren't rational. (The technical definition of the system of real numbers requires experience with calculus, so we won't get into that here.) There are other kinds of numbers as well, such as the <dfn class="terminology">complex numbers</dfn> explorered in <a href="complex.html" class="internal" title="Chapter 8: Two-Dimensional Data and Complex Numbers">8</a>.</p>
-<p id="p-210">Since SageMath tries to model mathematics as authentically as possible, it will try to recognize when you are working with integers or rational numbers. For example, <code class="code-inline tex2jax_ignore">type(-17/3)</code> display that it is a “<code class="code-inline tex2jax_ignore">sage.rings.rational.Rational</code>”</p>
-<p id="p-211">Use the <code class="code-inline tex2jax_ignore">type()</code> tool to help explain why \(-\frac{1234812348}{42}\) is an integer or rational number.</p></article><article class="activity project-like" id="activity-19"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-23">
-<p id="p-212">Something all these sets of numbers described above is that they are <dfn class="terminology">infinite</dfn>: if you had a finite list of them, take the biggest and add one, and you'll have something you forgot in your list.</p>
-<p id="p-213">While SageMath does its best to hide this limitation from users, there's a limit to how many of these infinitely-many possible numerical values can be stored on a physical computer due to its finite storage space.</p>
-<p id="p-214">To account for this, some lower-level languages offer data types like the <dfn class="terminology">short</dfn> that account for a useful (but finite) range of integers. In particular, shorts are integers that may be stored as a short finite list of the binary digits \(0\) and \(1\text{.}\) (Each binary digit is also known as a <dfn class="terminology">bit</dfn>.)</p>
+<li id="li-12"><p id="p-146">Adding one</p></li>
+<li id="li-13"><p id="p-147">Subtracting one</p></li>
+<li id="li-14"><p id="p-148">Doubling</p></li>
+<li id="li-15"><p id="p-149">Halving</p></li>
+<li id="li-16"><p id="p-150">Squaring</p></li>
+<li id="li-17"><p id="p-151">Square rooting</p></li>
+</ul></article><article class="task exercise-like" id="task-57"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-152">Choose from the words all/some/no to make the following sentence correct.</p>
+<blockquote class="blockquote" id="blockquote-2">All/some/no integers are also rational numbers, and all/some/no rational numbers are also integers.</blockquote></article></article><article class="activity project-like" id="activity-12"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="period">.</span>
+</h3>
+<p id="p-153">There are other kinds of <dfn class="terminology">real numbers</dfn>, such as <span class="process-math">\(e\)</span> and <span class="process-math">\(\pi\text{,}\)</span> that aren't rational. (The technical definition of the system of real numbers requires experience with calculus, so we won't get into that here.) There are other kinds of numbers as well, such as the <dfn class="terminology">complex numbers</dfn> explorered in <a href="complex.html" class="internal" title="Chapter 7: Two-Dimensional Data and Complex Numbers">7</a>.</p>
+<p id="p-154">Since SageMath tries to model mathematics as authentically as possible, it will try to recognize when you are working with integers or rational numbers. For example, <code class="code-inline tex2jax_ignore">type(-17/3)</code> display that it is a “<code class="code-inline tex2jax_ignore">sage.rings.rational.Rational</code>”</p>
+<p id="p-155">Use the <code class="code-inline tex2jax_ignore">type()</code> tool to help explain why <span class="process-math">\(-\frac{1234812348}{42}\)</span> is an integer or rational number.</p></article><article class="activity project-like" id="activity-13"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.6</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-17">
+<p id="p-156">Something all these sets of numbers described above is that they are <dfn class="terminology">infinite</dfn>: if you had a finite list of them, take the biggest and add one, and you'll have something you forgot in your list.</p>
+<p id="p-157">While SageMath does its best to hide this limitation from users, there's a limit to how many of these infinitely-many possible numerical values can be stored on a physical computer due to its finite storage space.</p>
+<p id="p-158">To account for this, some lower-level languages offer data types like the <dfn class="terminology">short</dfn> that account for a useful (but finite) range of integers. In particular, shorts are integers that may be stored as a short finite list of the binary digits <span class="process-math">\(0\)</span> and <span class="process-math">\(1\text{.}\)</span> (Each binary digit is also known as a <dfn class="terminology">bit</dfn>.)</p>
 </div>
-<article class="task exercise-like" id="task-78"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-215">Only two numbers may be described using one binary digit: \(0_2\) and \(1_2\text{.}\) Only four numbers may be described using two binary digits: \(00_2\text{,}\) \(01_2\text{,}\) \(10_2\text{,}\) and \(11_2\text{.}\)</p>
-<p id="p-216">Describe all the possible numbers using three binary digits.</p>
-<div class="displaymath">
+<article class="task exercise-like" id="task-58"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-159">Only two numbers may be described using one binary digit: <span class="process-math">\(0_2\)</span> and <span class="process-math">\(1_2\text{.}\)</span> Only four numbers may be described using two binary digits: <span class="process-math">\(00_2\text{,}\)</span> <span class="process-math">\(01_2\text{,}\)</span> <span class="process-math">\(10_2\text{,}\)</span> and <span class="process-math">\(11_2\text{.}\)</span></p>
+<p id="p-160">Describe all the possible numbers using three binary digits.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \square\square\square_2
 \end{equation*}
-</div></article><article class="task exercise-like" id="task-79"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-217">What do you notice about this pattern? According to this pattern, how many numbers do you expect can be described using four binary digits? Five digits?</p></article><article class="task exercise-like" id="task-80"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-218">A <dfn class="terminology">byte</dfn> of computer storage is eight binary digits. How many different values of data can be stored in a byte?</p></article><article class="task exercise-like" id="task-81"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-219">How many different numbers can be stored as a short data type that uses two bytes?</p></article></article><article class="activity project-like" id="activity-20"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.7</span><span class="period">.</span>
-</h6>
-<div class="introduction" id="introduction-24"><p id="p-220">Since ultimately data is stored as bits, anything handled by a computer needs to be represented somehow as a (binary) number. For example, a <dfn class="terminology">character</dfn> is a letter or other glyph (such as an emoji 😃) that has a unique representation as a counting number.</p></div>
-<article class="task exercise-like" id="task-82"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-221">To denote a character in Python or SageMath, surround it with either single quotes <code class="code-inline tex2jax_ignore">'x'</code> or double quotes <code class="code-inline tex2jax_ignore">"x"</code>. Then the code <code class="code-inline tex2jax_ignore">ord('x')</code> (or <code class="code-inline tex2jax_ignore">ord("x")</code>) will reveal the number that is used to represent it in memory (for <code class="code-inline tex2jax_ignore">x</code>, that number is \(120\)), called a <dfn class="terminology">Unicode value</dfn>.</p>
-<p id="p-222">Find the Unicode values for the characters <code class="code-inline tex2jax_ignore">s</code>, <code class="code-inline tex2jax_ignore">S</code>, and <code class="code-inline tex2jax_ignore">😊</code>. (For the emoji, you may wish to copy-and-paste the character if you're using a standard keyboard.)</p></article><article class="task exercise-like" id="task-83"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-223">Given a Unicode value, Python and SageMath can return the character it represents by using the <code class="code-inline tex2jax_ignore">chr()</code> tool. For example, <code class="code-inline tex2jax_ignore">print(chr(120))</code> displays <code class="code-inline tex2jax_ignore">x</code> as expected.</p>
-<p id="p-224">Use <code class="code-inline tex2jax_ignore">chr()</code> to display the charcters with these Unicode values:</p>
+</div></article><article class="task exercise-like" id="task-59"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-161">What do you notice about this pattern? According to this pattern, how many numbers do you expect can be described using four binary digits? Five digits?</p></article><article class="task exercise-like" id="task-60"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-162">A <dfn class="terminology">byte</dfn> of computer storage is eight binary digits. How many different values of data can be stored in a byte?</p></article><article class="task exercise-like" id="task-61"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-163">How many different numbers can be stored as a short data type that uses two bytes?</p></article></article><article class="activity project-like" id="activity-14"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.7</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-18"><p id="p-164">Since ultimately data is stored as bits, anything handled by a computer needs to be represented somehow as a (binary) number. For example, a <dfn class="terminology">character</dfn> is a letter or other glyph (such as an emoji 😃) that has a unique representation as a counting number.</p></div>
+<article class="task exercise-like" id="task-62"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-165">To denote a character in Python or SageMath, surround it with either single quotes <code class="code-inline tex2jax_ignore">'x'</code> or double quotes <code class="code-inline tex2jax_ignore">"x"</code>. Then the code <code class="code-inline tex2jax_ignore">ord('x')</code> (or <code class="code-inline tex2jax_ignore">ord("x")</code>) will reveal the number that is used to represent it in memory (for <code class="code-inline tex2jax_ignore">x</code>, that number is <span class="process-math">\(120\)</span>), called a <dfn class="terminology">Unicode value</dfn>.</p>
+<p id="p-166">Find the Unicode values for the characters <code class="code-inline tex2jax_ignore">s</code>, <code class="code-inline tex2jax_ignore">S</code>, and <code class="code-inline tex2jax_ignore">😊</code>. (For the emoji, you may wish to copy-and-paste the character if you're using a standard keyboard.)</p></article><article class="task exercise-like" id="task-63"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-167">Given a Unicode value, Python and SageMath can return the character it represents by using the <code class="code-inline tex2jax_ignore">chr()</code> tool. For example, <code class="code-inline tex2jax_ignore">print(chr(120))</code> displays <code class="code-inline tex2jax_ignore">x</code> as expected.</p>
+<p id="p-168">Use <code class="code-inline tex2jax_ignore">chr()</code> to display the charcters with these Unicode values:</p>
 <ul class="disc">
-<li id="li-28"><p id="p-derived-li-28">89</p></li>
-<li id="li-29"><p id="p-derived-li-29">97</p></li>
-<li id="li-30"><p id="p-derived-li-30">121</p></li>
-<li id="li-31"><p id="p-derived-li-31">13025</p></li>
-</ul></article><article class="task exercise-like" id="task-84"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-225"><dfn class="terminology">Strings</dfn> of multiple characters may be used to represent words and sentences. Displaying the string <code class="code-inline tex2jax_ignore">test = "Hello World!"</code> is a common test used in setting up a new programming environment, done with <code class="code-inline tex2jax_ignore">print(test)</code>.</p>
-<p id="p-226">The value of a CS variable may be easily inserted into a string by using <dfn class="terminology">interpolation</dfn>. In updated versions of Python 3 and SageMath, this is done by typing an <code class="code-inline tex2jax_ignore">f</code> before the quotation marks: <code class="code-inline tex2jax_ignore">print(f"It's time to say {test} now.")</code> will display <code class="code-inline tex2jax_ignore">It's time to say Hello World! now.</code> (provided <code class="code-inline tex2jax_ignore">test = "Hello World!"</code> was executed previously).</p>
-<p id="p-227">Store the word “math” as a CS variable, then use interpolation to make it appear instead of the blank when running a Code cell with <code class="code-inline tex2jax_ignore">print("My favorite class is ____.")</code>.</p></article><article class="task exercise-like" id="task-85"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-228">Use string interpolation to replace the blank in the line <code class="code-inline tex2jax_ignore">print("The character ___ has Unicode value 42+42.")</code></p></article></article><section class="exercises" id="exercises-4"><h3 class="heading hide-type">
+<li id="li-18"><p id="p-derived-li-18">89</p></li>
+<li id="li-19"><p id="p-derived-li-19">97</p></li>
+<li id="li-20"><p id="p-derived-li-20">121</p></li>
+<li id="li-21"><p id="p-derived-li-21">13025</p></li>
+</ul></article><article class="task exercise-like" id="task-64"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-169"><dfn class="terminology">Strings</dfn> of multiple characters may be used to represent words and sentences. Displaying the string <code class="code-inline tex2jax_ignore">test = "Hello World!"</code> is a common test used in setting up a new programming environment, done with <code class="code-inline tex2jax_ignore">print(test)</code>.</p>
+<p id="p-170">The value of a CS variable may be easily inserted into a string by using <dfn class="terminology">interpolation</dfn>. In updated versions of Python 3 and SageMath, this is done by typing an <code class="code-inline tex2jax_ignore">f</code> before the quotation marks: <code class="code-inline tex2jax_ignore">print(f"It's time to say {test} now.")</code> will display <code class="code-inline tex2jax_ignore">It's time to say Hello World! now.</code> (provided <code class="code-inline tex2jax_ignore">test = "Hello World!"</code> was executed previously).</p>
+<p id="p-171">Store the word “math” as a CS variable, then use interpolation to make it appear instead of the blank when running a Code cell with <code class="code-inline tex2jax_ignore">print("My favorite class is ____.")</code>.</p></article><article class="task exercise-like" id="task-65"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-172">Use string interpolation to replace the blank in the line <code class="code-inline tex2jax_ignore">print("The character ___ has Unicode value 42+42.")</code></p></article></article><section class="exercises" id="exercises-3"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-25"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-229">Is \(-1.5\) a counting number, integer, and/or rational number?</p></article><article class="exercise exercise-like" id="exercise-26"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-230">Is \(+1.5\) a counting number, integer, and/or rational number?</p></article><article class="exercise exercise-like" id="exercise-27"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-231">Is \(-15\) a counting number, integer, and/or rational number?</p></article><article class="exercise exercise-like" id="exercise-28"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-232">Is \(+15\) a counting number, integer, and/or rational number?</p></article><article class="exercise exercise-like" id="exercise-29"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-233">A <dfn class="terminology">nibble</dfn> of computer storage uses four bits (binary digits). How many different values of data can be stored in a nibble?</p></article><article class="exercise exercise-like" id="exercise-30"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-234">How many bytes equals twelve nibbles?</p></article><article class="exercise exercise-like" id="exercise-31"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
-<p id="p-235">A <dfn class="terminology">float</dfn> data type is one used to store fractions using binary numbers. A simple float might use the following two bytes of data...</p>
+<article class="exercise exercise-like" id="exercise-16"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<p id="p-173">Is <span class="process-math">\(-1.5\)</span> a counting number, integer, and/or rational number?</p></article><article class="exercise exercise-like" id="exercise-17"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<p id="p-174">Is <span class="process-math">\(+1.5\)</span> a counting number, integer, and/or rational number?</p></article><article class="exercise exercise-like" id="exercise-18"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<p id="p-175">Is <span class="process-math">\(-15\)</span> a counting number, integer, and/or rational number?</p></article><article class="exercise exercise-like" id="exercise-19"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<p id="p-176">Is <span class="process-math">\(+15\)</span> a counting number, integer, and/or rational number?</p></article><article class="exercise exercise-like" id="exercise-20"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<p id="p-177">A <dfn class="terminology">nibble</dfn> of computer storage uses four bits (binary digits). How many different values of data can be stored in a nibble?</p></article><article class="exercise exercise-like" id="exercise-21"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<p id="p-178">How many bytes equals twelve nibbles?</p></article><article class="exercise exercise-like" id="exercise-22"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<p id="p-179">A <dfn class="terminology">float</dfn> data type is one used to store fractions using binary numbers. A simple float might use the following two bytes of data...</p>
 <pre class="code-display tex2jax_ignore">01101101 11111100</pre>
-<p id="p-236">... to represent the following rational number.</p>
-<div class="displaymath">
+<p id="p-180">... to represent the following rational number.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 01101101_2 \times 2^{11111100_2-256}
 \end{equation*}
 </div>
-<p id="p-237">Show how to verify that this float represents the decimal value \(6.8125\text{.}\) (Remember that the value of \(01101101_2\) may be calculated automatically by running <code class="code-inline tex2jax_ignore">int('01101101',2)</code> in either Python or SageMath.)</p></article><article class="exercise exercise-like" id="exercise-32"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
-<p id="p-238">Importantly, in the float implementation described by the previous exercise, a leading <code class="code-inline tex2jax_ignore">1</code> in either byte requires subtracting the value \(256\) from the usual binary value (in order to support negative values).</p>
-<p id="p-239">Use this rule to verify that this implementation might store the decimal \(-0.265625\) as <code class="code-inline tex2jax_ignore">11101111 11111010</code>.</p></article><article class="exercise exercise-like" id="exercise-33"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
-<p id="p-240">Use string interpolation along with <code class="code-inline tex2jax_ignore">chr()</code> and <code class="code-inline tex2jax_ignore">ord()</code> to replace the blanks in the following lines of code with sensible output.</p>
+<p id="p-181">Show how to verify that this float represents the decimal value <span class="process-math">\(6.8125\text{.}\)</span> (Remember that the value of <span class="process-math">\(01101101_2\)</span> may be calculated automatically by running <code class="code-inline tex2jax_ignore">int('01101101',2)</code> in either Python or SageMath.)</p></article><article class="exercise exercise-like" id="exercise-23"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<p id="p-182">Importantly, in the float implementation described by the previous exercise, a leading <code class="code-inline tex2jax_ignore">1</code> in either byte requires subtracting the value <span class="process-math">\(256\)</span> from the usual binary value (in order to support negative values).</p>
+<p id="p-183">Use this rule to verify that this implementation might store the decimal <span class="process-math">\(-0.265625\)</span> as <code class="code-inline tex2jax_ignore">11101111 11111010</code>.</p></article><article class="exercise exercise-like" id="exercise-24"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<p id="p-184">Use string interpolation along with <code class="code-inline tex2jax_ignore">chr()</code> and <code class="code-inline tex2jax_ignore">ord()</code> to replace the blanks in the following lines of code with sensible output.</p>
 <pre class="code-display tex2jax_ignore">print("The Unicode value of the @ character is ___.")
 print("The Unicode value of the emoji ___ is 128525.")</pre></article></section></section></div></main>
 </div>
-<script src="https://unpkg.com/prismjs@v1.22.0/components/prism-core.min.js"></script><script src="https://unpkg.com/prismjs@v1.22.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 </html>
